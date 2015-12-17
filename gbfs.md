@@ -8,15 +8,15 @@ This document explains the types of files and data that comprise the General Bik
 * [Files] (#files)
 * [File Requirements] (#file-requirements)
 * [Field Definitions] (#field-definitions)
-  * [system_information.json] (#system_informationjson)
-  * [station_information.json] (#station_informationjson)
-  * [station_status.json] (#station_statusjson)
-  * [free_bike_status.json] (#free_bike_statusjson)
-  * [system_hours.json] (#system_hoursjson)
-  * [system_calendar.json] (#system_calendarjson)
-  * [system_regions.json] (#system_regionsjson)
-  * [system_pricing_plans.json] (#system_pricing_plansjson)
-  * [system_alerts.json] (#system_alertsjson)
+    * [system_information.json] (#system_informationjson)
+    * [station_information.json] (#station_informationjson)
+    * [station_status.json] (#station_statusjson)
+    * [free_bike_status.json] (#free_bike_statusjson)
+    * [system_hours.json] (#system_hoursjson)
+    * [system_calendar.json] (#system_calendarjson)
+    * [system_regions.json] (#system_regionsjson)
+    * [system_pricing_plans.json] (#system_pricing_plansjson)
+    * [system_alerts.json] (#system_alertsjson)
 * [Possible Future Enhancements] (#possible-future-enhancements)
 
 ## Revision History
@@ -44,7 +44,7 @@ station_information.json    | Yes           | Mostly static list of all stations
 station_status.json         | Yes           | Number of available bikes and docks at each station and station availability
 free_bike_status.json       | Optional      | Describes bikes that are available in non station-based systems
 system_hours.json           | Optional      | Describes the hours of operation for the system
-system_calendar.json        |  Optional     | Describes the days of operation for the system
+system_calendar.json        | Optional      | Describes the days of operation for the system
 system_regions.json         | Optional      | Describes the regions the system is broken up into
 system_pricing_plans.json   | Optional      | Describes the system pricing
 system_alerts.json          | Optional      | Describes current system alerts
@@ -54,10 +54,10 @@ system_alerts.json          | Optional      | Describes current system alerts
 * All data should be UTF-8 encoded
 * Time stamps should be in POSIX time (i.e., the number of seconds since January 1st 1970 00:00:00 UTC)
 * ID fields in the document should be represented as strings that identify that particular object. They:
-  * a. must be unique within like fields (bike_id must be unique among bikes)
-  * b. do not have to be globally unique
-  * c. must not contain spaces
-  * d. should be persistent for a given object (station, plan, etc)
+    * a. must be unique within like fields (bike_id must be unique among bikes)
+    * b. do not have to be globally unique
+    * c. must not contain spaces
+    * d. should be persistent for a given object (station, plan, etc)
 * Text fields can only contain text - they must not contain any formatting codes (including HTML) other than newlines
 * Line breaks should be represented by unix newline characters only (\n)
 * Enumerable values should be expected to change over time. Values will not be removed, but new valid values may be added as business requirements change and consumers should be designed to handle these changes
@@ -65,25 +65,25 @@ system_alerts.json          | Optional      | Describes current system alerts
 ### File Distribution
 * This specification does not dictate the implementation details around the distribution of the JSON data files
 * If the publisher intends to distribute as individual HTTP endpoints then:
-  * Required files must not 404 - they should return a properly formatted JSON file as defined in Output Format
-  * Optional files may 404 - a 404 of an optional file should not be considered an error, it just indicates that the publisher has chosen not to publish this data
+    * Required files must not 404 - they should return a properly formatted JSON file as defined in Output Format
+    * Optional files may 404 - a 404 of an optional file should not be considered an error, it just indicates that the publisher has chosen not to publish this data
 * Auto-Discovery:
-  * This specification supports auto-discovery
-  * The location of the auto-discovery file will be provided in the HTML <head> area of the bikeshare landing page hosted at the URL specified in the url field of the system_infomation.json file
-  * This is referenced via a _link_ tag with the following format:
+    * This specification supports auto-discovery
+    * The location of the auto-discovery file will be provided in the HTML <head> area of the bikeshare landing page hosted at the URL specified in the url field of the system_infomation.json file
+    * This is referenced via a _link_ tag with the following format:
     * \<link rel="gbfs" type="application/json" href="http://mybikeshare.com/opendata/gbfs.json" />
-  * Reference:
-    * https://developers.facebook.com/docs/sharing/best-practices#tags
-    * https://dev.twitter.com/cards/markup
-    * http://microformats.org/wiki/existing-rel-values
-    * http://microformats.org/wiki/rel-faq#How_is_rel_used
+    * Reference:
+      * https://developers.facebook.com/docs/sharing/best-practices#tags
+      * https://dev.twitter.com/cards/markup
+      * http://microformats.org/wiki/existing-rel-values
+      * http://microformats.org/wiki/rel-faq#How_is_rel_used
 
 ### Localization
 
 * Each set of data files should be distributed in a single language as defined in system_information.json
 * A system that wants to publish feeds in multiple languages should do so by publishing multiple distributions, such as
-  * https://www.example.com/data/en/system_information.json
-  * https://www.example.com/data/fr/system_information.json
+    * https://www.example.com/data/en/system_information.json
+    * https://www.example.com/data/fr/system_information.json
 
 ## Field Definitions
 
@@ -316,12 +316,12 @@ alerts            | Yes         | Array - alert objects each indicating a separa
 There are some items that were proposed in an earlier version of this document but which do not fit into the current specification. They are collected here for reference and for possible discussion and inclusion in this or a future version.
 
 * system_information.json
-  * _system_data_ - Removed due to a lack of specificity; if metadata about the location of URLs is required / desired, the proposal is to include this in a separate feed_info.json feed which would contain an array with all of the feeds in addition to other feed information such as a feed version (if necessary)
-  * _equipment_ - Removed due to a lack of specificity behind the intent of this field and a question about the actual relevance to the public
-  * _jurisdictions_ - It is believed that the need for this field is negated by the presence of the system_regions.json feed
+    * _system_data_ - Removed due to a lack of specificity; if metadata about the location of URLs is required / desired, the proposal is to include this in a separate feed_info.json feed which would contain an array with all of the feeds in addition to other feed information such as a feed version (if necessary)
+    * _equipment_ - Removed due to a lack of specificity behind the intent of this field and a question about the actual relevance to the public
+    * _jurisdictions_ - It is believed that the need for this field is negated by the presence of the system_regions.json feed
 
 * station_status.json
-  * need a way to distinguish between multiple bike types at a station if/when  hybrid systems using e-bikes become available
+    * need a way to distinguish between multiple bike types at a station if/when  hybrid systems using e-bikes become available
 
 **Disclaimers**
 
