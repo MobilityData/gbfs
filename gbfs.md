@@ -285,7 +285,7 @@ File Name 				| Required 	| Defines
 --------------------------------------- | ------------  | ----------
 plans 	 				| Yes  		| Array of any number of plan objects as defined below:
 - plan_id 				| Yes  		| String - a unique identifier for this plan in the system
-- url 		 			| Optional  | String - a fully qualified URL where the customer can learn more about this particular scheme
+- url 		 			| Optional      | String - a fully qualified URL where the customer can learn more about this particular scheme
 - name  				| Yes  		| Name of this pricing scheme
 - currency 				| Yes  		| Currency this pricing is in (ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217)
 - price 				| Yes  		| Fee for this pricing scheme. This should be in the base unit as defined by the ISO 4217 currency code with the appropriate number of decimal places and omitting the currency symbol. e.g. if the price is in US Dollars the price would be 9.95
