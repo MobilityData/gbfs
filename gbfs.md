@@ -111,12 +111,12 @@ Example:
 ### gbfs.json
 The following fields are all attributes within the main “data” object for this feed.
 
-File Name 					| Required 	| Defines
------------------------------------------------ | ------------  | ----------
-_language_ 					| Yes  		| The language that all of the contained files will be published in. This language must match the value in the system_information file
-	- feeds					| Yes 		| An array of all of the feeds that are published by this auto-discovery file
-		- name 				| Yes 		| Key identifying the type of feed this is (e.g. “system_information”,"station_information”)
-		- url 				| Yes 		| Full URL for the feed
+File Name 				| Required 	| Defines
+--------------------------------------- | ------------  | ----------
+_language_ 				| Yes  		| The language that all of the contained files will be published in. This language must match the value in the system_information file
+	- feeds				| Yes 		| An array of all of the feeds that are published by this auto-discovery file
+		- name 			| Yes 		| Key identifying the type of feed this is (e.g. “system_information”,"station_information”)
+		- url 			| Yes 		| Full URL for the feed
 
 Example:
 
