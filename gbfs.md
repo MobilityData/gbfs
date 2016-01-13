@@ -203,7 +203,7 @@ stations              | Yes       | Array that contains one object per station i
 - last_reported       | Yes       | Timestamp of the last time this station reported its status to the backend
 
 ### free_bike_status.json
-Describes bikes that are not at a station but are available for rental
+Describes bikes that are not at a station and are not currently in the middle of an active ride.
 
 Field Name        | Required  | Defines
 ------------------| ----------| ----------
