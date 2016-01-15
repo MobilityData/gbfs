@@ -8,6 +8,7 @@ This document explains the types of files and data that comprise the General Bik
 * [Files](#files)
 * [File Requirements](#file-requirements)
 * [Field Definitions](#field-definitions)
+    * [gbfs.json](#gbfsjson)
     * [system_information.json](#system_informationjson)
     * [station_information.json](#station_informationjson)
     * [station_status.json](#station_statusjson)
@@ -185,6 +186,7 @@ stations          | Yes       | Array that contains one object per station in th
 - address         | Optional  | Valid street number and name where station is located. This field is intended to be an actual address, not a free form text description (see "cross_street" below)
 - cross_street    | Optional  | Cross street of where the station is located. This field is intended to be a descriptive field for human consumption. In cities, this would be a cross street, but could also be a description of a location in a park, etc.
 - region_id       | Optional  | ID of the region where station is located (see [system_regions.json](#system_regionsjson))
+- post_code       | Optional  | Postal code where station is located
 - rental_methods  | Optional  | Array of enumerables containing the payment methods accepted at this station. <br />Current valid values (in CAPS) are:<br /><ul><li>KEY _(i.e. operator issued bike key / fob / card)_</li> <li>CREDITCARD</li> <li>PAYPASS</li> <li>APPLEPAY</li> <li>APPLEPAY</li> <li>ANDROIDPAY</li> <li>TRANSITCARD</li> <li>ACCOUNTNUMBER</li> <li>PHONE</li> </ul> This list is intended to be as comprehensive at the time of publication as possible but is subject to change, as defined in [File Requirements](#file-requirements) above
 - capacity        | Optional  | Number of total docking points installed at this station, both available and unavailable
 
@@ -199,6 +201,7 @@ stations              | Yes       | Array that contains one object per station i
 - num_docks_available | Yes       | Number of docks accepting bike returns
 - num_docks_disabled  | Optional  | Number of empty but disabled dock points at the station. This value remains as part of the spec as it is possibly useful during development
 - is_installed        | Yes       | 1/0 boolean - is the station currently on the street
+- is_renting          | Yes       | 1/0 boolean - is the station currently renting bikes (even if the station is empty, if it is set to allow rentals this value should be 1)
 - is_returning        | Yes       | 1/0 boolean - is the station accepting bike returns (if a station is full but would allow a return if it was not full then this value should be 1)
 - last_reported       | Yes       | Timestamp of the last time this station reported its status to the backend
 
