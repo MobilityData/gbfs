@@ -195,9 +195,9 @@ Field Name            | Required  | Defines
 stations              | Yes       | Array that contains one object per station in the system as defined below
 - station_id          | Yes       | Unique identifier of a station (see station_information.json)
 - num_bikes_available | Yes       | Number of bikes available for rental
-- num_bikes_diabled   | Optional  | Number of disabled bikes at the station. Vendors who do not want to publicize the number of disabled bikes or docks in their system can opt to omit station capacity (in station_information), num_bikes_disabled and num_docks_disabled. If station capacity is published then broken docks/bikes can be inferred (though not specifically whether the decreased capacity is a broken bike or dock)
+- num_bikes_disabled  | Optional  | Number of disabled bikes at the station. Vendors who do not want to publicize the number of disabled bikes or docks in their system can opt to omit station capacity (in station_information), num_bikes_disabled and num_docks_disabled. If station capacity is published then broken docks/bikes can be inferred (though not specifically whether the decreased capacity is a broken bike or dock)
 - num_docks_available | Yes       | Number of docks accepting bike returns
-- num_docks_diabled   | Optional    | Number of empty but disabled dock points at the station. This value remains as part of the spec as it is possibly useful during development
+- num_docks_disabled  | Optional  | Number of empty but disabled dock points at the station. This value remains as part of the spec as it is possibly useful during development
 - is_installed        | Yes       | 1/0 boolean - is the station currently on the street
 - is_returning        | Yes       | 1/0 boolean - is the station accepting bike returns (if a station is full but would allow a return if it was not full then this value should be 1)
 - last_reported       | Yes       | Timestamp of the last time this station reported its status to the backend
@@ -276,7 +276,7 @@ Field Name        | Required  | Defines
 ------------------| ----------| ----------
 regions           | Yes       | Array of region objects as defined below
 - region_id       | Yes       | Unique identifier for the region
-- sname           | Yes       | Public name for this region
+- name           | Yes       | Public name for this region
 
 ### system_pricing_plans.json
 Describe pricing for the system. This scheme does not currently factor in lost bike fees as it seems outside of the scope of this specification, but they could be added. It is an array of pricing objects defined as follows:
