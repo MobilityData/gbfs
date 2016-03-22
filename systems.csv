@@ -1,4 +1,4 @@
-Country Code,Name,Location,Country,URL,Auto-Discovery URL
+Country Code,Name,Location,URL,Auto-Discovery URL
 AU,Monash Bike Share,"Monash University, Melbourne AU",https://monashbikeshare.com/,https://monashbikeshare.com/opendata/gbfs.json
 CA,Sobi Hamilton,"Hamilton Ontario",https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json
 US,Bike Share Jackson Hole,"Jackson Hole, WY",https://jacksonhole.socialbicycles.com/,https://jacksonhole.socialbicycles.com/opendata/gbfs.json
