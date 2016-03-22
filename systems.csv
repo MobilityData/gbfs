@@ -1,16 +1,16 @@
-Name,Location,URL,Auto-Discovery URL
-Bike Share Jackson Hole,"Jackson Hole, WY",https://jacksonhole.socialbicycles.com/,https://jacksonhole.socialbicycles.com/opendata/gbfs.json
-Bishop Ranch BRiteBikes,"San Ramon, CA",http://britebikes.socialbicycles.com/,http://britebikes.socialbicycles.com/opendata/gbfs.json
-Boise Green Bike,"Boise, ID",http://boise.greenbike.com/,http://boise.greenbike.com/opendata/gbfs.json
-Breeze Bike Share,"Sana Monica, CA",http://santamonicabikeshare.com/,http://santamonicabikeshare.com/opendata/gbfs.json
-Buffalo Bike Share,"Buffalo, NY",https://buffalo.socialbicycles.com/,https://buffalo.socialbicycles.com/opendata/gbfs.json
-Coast Bike Share,"Tampa, FL",http://coastbikeshare.com/,http://coastbikeshare.com/opendata/gbfs.json
-Grid Bike Share,"Phoenix, AZ",http://gridbikes.com/,https://grid.socialbicycles.com/opendata/gbfs.json
-Juice,"Orlando Florida",https://orlando.socialbicycles.com/,https://orlando.socialbicycles.com/opendata/gbfs.json
-Monash Bike Share,"Monash University, Melbourne AU",https://monashbikeshare.com/,https://monashbikeshare.com/opendata/gbfs.json
-Mountain Ride Bike Share,"Ketchum / Sun Valley, ID",http://mrbikeshare.org/,http://mrbikeshare.org/opendata/gbfs.json
-Share-a-Bull Bikes,"University of South Florida",https://usf.socialbicycles.com/,https://usf.socialbicycles.com/opendata/gbfs.json
-Sobi Hamilton,"Hamilton Ontario",https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json
-Sobi Long Beach,"Long Beach, CA",http://sobilongbeach.com/,http://sobilongbeach.com/opendata/gbfs.json
-Topeka Metro Bikes,"Topeka, KS",http://topekametrobikes.org/,http://topekametrobikes.org/opendata/gbfs.json
-Ubike,"University of Virginia",http://ubike.virginia.edu/,http://ubike.virginia.edu/opendata/gbfs.json
+Country Code,Name,Location,Country,URL,Auto-Discovery URL
+AU,Monash Bike Share,"Monash University, Melbourne AU",https://monashbikeshare.com/,https://monashbikeshare.com/opendata/gbfs.json
+CA,Sobi Hamilton,"Hamilton Ontario",https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json
+US,Bike Share Jackson Hole,"Jackson Hole, WY",https://jacksonhole.socialbicycles.com/,https://jacksonhole.socialbicycles.com/opendata/gbfs.json
+US,Bishop Ranch BRiteBikes,"San Ramon, CA",http://britebikes.socialbicycles.com/,http://britebikes.socialbicycles.com/opendata/gbfs.json
+US,Boise Green Bike,"Boise, ID",http://boise.greenbike.com/,http://boise.greenbike.com/opendata/gbfs.json
+US,Breeze Bike Share,"Sana Monica, CA",http://santamonicabikeshare.com/,http://santamonicabikeshare.com/opendata/gbfs.json
+US,Buffalo Bike Share,"Buffalo, NY",https://buffalo.socialbicycles.com/,https://buffalo.socialbicycles.com/opendata/gbfs.json
+US,Coast Bike Share,"Tampa, FL",http://coastbikeshare.com/,http://coastbikeshare.com/opendata/gbfs.json
+US,Grid Bike Share,"Phoenix, AZ",http://gridbikes.com/,https://grid.socialbicycles.com/opendata/gbfs.json
+US,Juice,"Orlando, FL",https://orlando.socialbicycles.com/,https://orlando.socialbicycles.com/opendata/gbfs.json
+US,Mountain Ride Bike Share,"Ketchum / Sun Valley, ID",http://mrbikeshare.org/,http://mrbikeshare.org/opendata/gbfs.json
+US,Share-a-Bull Bikes,"University of South Florida",https://usf.socialbicycles.com/,https://usf.socialbicycles.com/opendata/gbfs.json
+US,Sobi Long Beach,"Long Beach, CA",http://sobilongbeach.com/,http://sobilongbeach.com/opendata/gbfs.json
+US,Topeka Metro Bikes,"Topeka, KS",http://topekametrobikes.org/,http://topekametrobikes.org/opendata/gbfs.json
+US,Ubike,"University of Virginia",http://ubike.virginia.edu/,http://ubike.virginia.edu/opendata/gbfs.json

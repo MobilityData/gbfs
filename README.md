@@ -21,4 +21,4 @@ More information:
 
 * [systems.csv](systems.csv)
 
-If you would like to add a system, please fork this repository and submit a pull request. Please keep this list alphabetized by system name.
+If you would like to add a system, please fork this repository and submit a pull request. Please keep this list alphabetized by country and system name.
