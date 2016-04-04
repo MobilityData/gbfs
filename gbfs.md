@@ -72,7 +72,7 @@ system_alerts.json          | Optional      | Describes current system alerts
     * This specification supports auto-discovery
     * The location of the auto-discovery file will be provided in the HTML <head> area of the bikeshare landing page hosted at the URL specified in the url field of the system_infomation.json file
     * This is referenced via a _link_ tag with the following format:
-    * \<link rel="gbfs" type="application/json" href="http://mybikeshare.com/opendata/gbfs.json" />
+      * `<link rel="gbfs" type="application/json" href="https://www.example.com/data/gbfs.json" />`
     * Reference:
       * https://developers.facebook.com/docs/sharing/best-practices#tags
       * https://dev.twitter.com/cards/markup
