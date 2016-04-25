@@ -326,6 +326,10 @@ There are some items that were proposed in an earlier version of this document b
 * station_status.json
     * need a way to distinguish between multiple bike types at a station if/when  hybrid systems using e-bikes become available
 
-**Disclaimers**
+## Disclaimers
 
 _Apple Pay, PayPass and other third-party product and service names are trademarks or registered trademarks of their respective owners._
+
+## License
+
+Except as otherwise noted, the content of this page is licensed under the [Creative Commons Attribution 3.0 License](http://creativecommons.org/licenses/by/3.0/).
