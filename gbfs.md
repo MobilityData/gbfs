@@ -204,6 +204,7 @@ stations              | Yes       | Array that contains one object per station i
 - is_renting          | Yes       | 1/0 boolean - is the station currently renting bikes (even if the station is empty, if it is set to allow rentals this value should be 1)
 - is_returning        | Yes       | 1/0 boolean - is the station accepting bike returns (if a station is full but would allow a return if it was not full then this value should be 1)
 - last_reported       | Yes       | Timestamp of the last time this station reported its status to the backend
+- purchase_url        | Optional  | A fully qualified URL, to which the station_id can be passed as a parameter, where a user can rent a bike at this station_id.  For example, if a fully qualified URL to a rental webpage for this station is http://app.socialbicycles.com/map?station_id=1219, then the value of purchase_url would be http://app.socialbicycles.com/map, and station_id would be 1219.
 
 ### free_bike_status.json
 Describes bikes that are not at a station and are not currently in the middle of an active ride.
@@ -216,6 +217,7 @@ bikes             | Yes       | Array that contains one object per bike that is 
 - lon             | Yes       | Longitude of the bike. The field value must be a valid WGS 84 latitude. See: http://en.wikipedia.org/wiki/World_Geodetic_System
 - is_reserved     | Yes       | 1/0 value - is the bike currently reserved for someone else
 - is_disabled     | Yes       | 1/0 value - is the bike currently disabled (broken)
+- purchase_url    | Optional  | A fully qualified URL, to which the bike_id can be passed as a parameter, where a user can rent this bike_id.  For example, if a fully qualified URL to a rental webpage for this bike is http://app.socialbicycles.com/map?bike_id=3503, then the value of purchase_url would be http://app.socialbicycles.com/map, and bike_id would be 3503.
 
 ### system_hours.json
 Describes the system hours of operation. A JSON array of hours defined as follows:
