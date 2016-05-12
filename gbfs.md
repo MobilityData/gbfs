@@ -181,8 +181,8 @@ stations          | Yes       | Array that contains one object per station in th
 - station_id      | Yes       | Unique identifier of a station. See [Output Format](#output-format) above for ID field requirements
 - name            | Yes       | Public name of the station
 - short_name      | No        | Short name or other type of identifier, as used by the data publisher
-- lat             | Yes       | The latitude of station. The field value must be a valid WGS 84 latitude. See: http://en.wikipedia.org/wiki/World_Geodetic_System
-- lon             | Yes       | The longitude of station. The field value must be a valid WGS 84 longitude. See: http://en.wikipedia.org/wiki/World_Geodetic_System
+- lat             | Yes       | The latitude of station. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
+- lon             | Yes       | The longitude of station. The field value must be a valid WGS 84 longitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
 - address         | Optional  | Valid street number and name where station is located. This field is intended to be an actual address, not a free form text description (see "cross_street" below)
 - cross_street    | Optional  | Cross street of where the station is located. This field is intended to be a descriptive field for human consumption. In cities, this would be a cross street, but could also be a description of a location in a park, etc.
 - region_id       | Optional  | ID of the region where station is located (see [system_regions.json](#system_regionsjson))
@@ -212,8 +212,8 @@ Field Name        | Required  | Defines
 ------------------| ----------| ----------
 bikes             | Yes       | Array that contains one object per bike that is currently docked/stopped outside of the system as defined below
 - bike_id         | Yes       | Unique identifier of a bike
-- lat             | Yes       | Latitude of the bike. The field value must be a valid WGS 84 latitude. See: http://en.wikipedia.org/wiki/World_Geodetic_System
-- lon             | Yes       | Longitude of the bike. The field value must be a valid WGS 84 latitude. See: http://en.wikipedia.org/wiki/World_Geodetic_System
+- lat             | Yes       | Latitude of the bike. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
+- lon             | Yes       | Longitude of the bike. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
 - is_reserved     | Yes       | 1/0 value - is the bike currently reserved for someone else
 - is_disabled     | Yes       | 1/0 value - is the bike currently disabled (broken)
 
