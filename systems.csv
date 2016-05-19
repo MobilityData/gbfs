@@ -1,6 +1,6 @@
 Country Code,Name,Location,System ID,URL,Auto-Discovery URL
 AU,Monash Bike Share,"Monash University, Melbourne AU",monash_bike_share,https://monashbikeshare.com/,https://monashbikeshare.com/opendata/gbfs.json
-CA,Sobi Hamilton,"Hamilton Ontario",sobi_hamilton,https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json
+CA,Sobi Hamilton,Hamilton Ontario,sobi_hamilton,https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json
 US,ArborBike,"Ann Arbor, MI",bcycle_arborbike,http://arborbike.org,https://gbfs.bcycle.com/bcycle_arborbike/gbfs.json
 US,Austin B-cycle,"Austin, TX",bcycle_austin,http://austinbcycle.com,https://gbfs.bcycle.com/bcycle_austin/gbfs.json
 US,Bishop Ranch BRiteBikes,"San Ramon, CA",bishop_ranch,http://britebikes.socialbicycles.com/,http://britebikes.socialbicycles.com/opendata/gbfs.json
@@ -31,9 +31,10 @@ US,Kansas City B-cycle,"Kansas City, MO",bcycle_kc,https://kc.bcycle.com,https:/
 US,Link Dayton Bike Share,"Dayton, OH",bcycle_linkdayton,https://www.linkdayton.org,https://gbfs.bcycle.com/bcycle_linkdayton/gbfs.json
 US,Madison B-cycle,"Madison, WI",bcycle_madison,https://madison.bcycle.com,https://gbfs.bcycle.com/bcycle_madison/gbfs.json
 US,Mountain Ride Bike Share,"Ketchum / Sun Valley, ID",mountain_rides_bike_share,http://mrbikeshare.org/,http://mrbikeshare.org/opendata/gbfs.json
+US,Nice Ride Minnesota,"Minneapolis - Saint Paul, MN",niceridemn,https://www.niceridemn.org,https://api-core.niceridemn.org/gbfs/gbfs.json
 US,Pronto,"Seattle, WA",pronto,https://www.prontocycleshare.com,https://gbfs.prontocycleshare.com/gbfs/gbfs.json
-US,Share-a-Bull Bikes,"University of South Florida",usf_share-a-bull_bikes,https://usf.socialbicycles.com/,https://usf.socialbicycles.com/opendata/gbfs.json
-US,Sobi Long Beach,"Long Beach, CA",sobi_long_beach,http://sobilongbeach.com/,http://sobilongbeach.com/opendata/gbfs.json
+US,Share-a-Bull Bikes,University of South Florida,usf_share-a-bull_bikes,https://usf.socialbicycles.com/,https://usf.socialbicycles.com/opendata/gbfs.json
+US,Sobi Long Beach,"Long Beach, NY",sobi_long_beach,http://sobilongbeach.com/,http://sobilongbeach.com/opendata/gbfs.json
 US,Spartanburg BCycle,"Spartanburg, SC",bcycle_spartanburg,https://spartanburg.bcycle.com,https://gbfs.bcycle.com/bcycle_spartanburg/gbfs.json
 US,Topeka Metro Bikes,"Topeka, KS",topeka_metro_bikes,http://topekametrobikes.org/,http://topekametrobikes.org/opendata/gbfs.json
-US,Ubike,"University of Virginia",university_of_virginia,http://ubike.virginia.edu/,http://ubike.virginia.edu/opendata/gbfs.json
+US,Ubike,University of Virginia,university_of_virginia,http://ubike.virginia.edu/,http://ubike.virginia.edu/opendata/gbfs.json
