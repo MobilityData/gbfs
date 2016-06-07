@@ -53,7 +53,6 @@ system_alerts.json          | Optional      | Describes current system alerts
 ## File Requirements
 * All files should be valid JSON
 * All data should be UTF-8 encoded
-* Time stamps should be in POSIX time (i.e., the number of seconds since January 1st 1970 00:00:00 UTC)
 * Line breaks should be represented by unix newline characters only (\n)
 
 ### File Distribution
@@ -81,6 +80,7 @@ system_alerts.json          | Optional      | Describes current system alerts
 
 ## Field Definitions
 
+* Time stamp fields should be in POSIX time (i.e., the number of seconds since January 1st 1970 00:00:00 UTC)
 * ID fields in the document should be represented as strings that identify that particular object. They:
     * must be unique within like fields (bike_id must be unique among bikes)
     * do not have to be globally unique
