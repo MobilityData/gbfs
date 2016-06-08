@@ -53,15 +53,7 @@ system_alerts.json          | Optional      | Describes current system alerts
 ## File Requirements
 * All files should be valid JSON
 * All data should be UTF-8 encoded
-* Time stamps should be in POSIX time (i.e., the number of seconds since January 1st 1970 00:00:00 UTC)
-* ID fields in the document should be represented as strings that identify that particular object. They:
-    * must be unique within like fields (bike_id must be unique among bikes)
-    * do not have to be globally unique
-    * must not contain spaces
-    * should be persistent for a given object (station, plan, etc)
-* Text fields can only contain text - they must not contain any formatting codes (including HTML) other than newlines
 * Line breaks should be represented by unix newline characters only (\n)
-* Enumerable values should be expected to change over time. Values will not be removed, but new valid values may be added as business requirements change and consumers should be designed to handle these changes
 
 ### File Distribution
 * This specification does not dictate the implementation details around the distribution of the JSON data files
@@ -87,6 +79,15 @@ system_alerts.json          | Optional      | Describes current system alerts
     * https://www.example.com/data/fr/system_information.json
 
 ## Field Definitions
+
+* Time stamp fields should be in POSIX time (i.e., the number of seconds since January 1st 1970 00:00:00 UTC)
+* ID fields in the document should be represented as strings that identify that particular object. They:
+    * must be unique within like fields (bike_id must be unique among bikes)
+    * do not have to be globally unique
+    * must not contain spaces
+    * should be persistent for a given object (station, plan, etc)
+* Text fields can only contain text - they must not contain any formatting codes (including HTML) other than newlines
+* Enumerable values should be expected to change over time. Values will not be removed, but new valid values may be added as business requirements change and consumers should be designed to handle these changes
 
 ### Output Format
 Every JSON file presented in this specification contains the same common header information at the top level of the JSON response object:
@@ -178,7 +179,7 @@ All stations contained in this list are considered public (ie, can be shown on a
 Field Name        | Required  | Defines
 ------------------| --------- | ----------
 stations          | Yes       | Array that contains one object per station in the system as defined below
-- station_id      | Yes       | Unique identifier of a station. See [Output Format](#output-format) above for ID field requirements
+- station_id      | Yes       | Unique identifier of a station. See [Field Definitions](#field-definitions) above for ID field requirements
 - name            | Yes       | Public name of the station
 - short_name      | No        | Short name or other type of identifier, as used by the data publisher
 - lat             | Yes       | The latitude of station. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
