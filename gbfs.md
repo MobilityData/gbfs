@@ -189,7 +189,7 @@ stations          | Yes       | Array that contains one object per station in th
 - post_code       | Optional  | Postal code where station is located
 - rental_methods  | Optional  | Array of enumerables containing the payment methods accepted at this station. <br />Current valid values (in CAPS) are:<br /><ul><li>KEY _(i.e. operator issued bike key / fob / card)_</li> <li>CREDITCARD</li> <li>PAYPASS</li> <li>APPLEPAY</li> <li>APPLEPAY</li> <li>ANDROIDPAY</li> <li>TRANSITCARD</li> <li>ACCOUNTNUMBER</li> <li>PHONE</li> </ul> This list is intended to be as comprehensive at the time of publication as possible but is subject to change, as defined in [File Requirements](#file-requirements) above
 - capacity        | Optional  | Number of total docking points installed at this station, both available and unavailable
-- purchase_url    | Optional  | A fully qualified and encoded URL where a user can rent a bike at this station_id.  This URL should be a deep link specific to this station_id, and should not be a general rental page that includes information for more than one station.
+- rental_url      | Optional  | A fully qualified and encoded URL where a user can rent a bike at this station_id.  This URL should be a deep link specific to this station_id, and should not be a general rental page that includes information for more than one station.  The deep link should take users directly to this station_id, without any prompts, interstitial pages, or logins. Make sure that users can see this station_id even if they never previously opened the application.  This is the same principle as the ["first click free"](https://support.google.com/news/publisher/answer/40543) experience for web sites.
 
 ### station_status.json
 
@@ -217,7 +217,7 @@ bikes             | Yes       | Array that contains one object per bike that is 
 - lon             | Yes       | Longitude of the bike. The field value must be a valid WGS 84 latitude. See: http://en.wikipedia.org/wiki/World_Geodetic_System
 - is_reserved     | Yes       | 1/0 value - is the bike currently reserved for someone else
 - is_disabled     | Yes       | 1/0 value - is the bike currently disabled (broken)
-- purchase_url    | Optional  | A fully qualified and encoded URL where a user can rent this bike_id.  This URL should be a deep link specific to this bike_id, and should not be a general rental page that includes information for more than one bike.
+- rental_url      | Optional  | A fully qualified and encoded URL where a user can rent this bike_id.  This URL should be a deep link specific to this bike_id, and should not be a general rental page that includes information for more than one bike.  The deep link should take users directly to this bike_id, without any prompts, interstitial pages, or logins. Make sure that users can see this bike_id even if they never previously opened the application.  This is the same principle as the ["first click free"](https://support.google.com/news/publisher/answer/40543) experience for web sites.
 
 ### system_hours.json
 Describes the system hours of operation. A JSON array of hours defined as follows:
