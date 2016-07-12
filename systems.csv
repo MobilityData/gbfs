@@ -1,6 +1,8 @@
 Country Code,Name,Location,System ID,URL,Auto-Discovery URL
+AU,Curtin University,"Curtin University, Perth, WA",curtin_university,http://curtinbikeshare.com/,http://curtinbikeshare.com/opendata/gbfs.json
 AU,Monash Bike Share,"Monash University, Melbourne AU",monash_bike_share,https://monashbikeshare.com/,https://monashbikeshare.com/opendata/gbfs.json
 CA,Sobi Hamilton,Hamilton Ontario,sobi_hamilton,https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json
+CA,VeloGo,"Ottawa, ON",velgo,http://velogo.ca/,http://velogo.ca/opendata/gbfs.json
 US,ArborBike,"Ann Arbor, MI",bcycle_arborbike,http://arborbike.org,https://gbfs.bcycle.com/bcycle_arborbike/gbfs.json
 US,Austin B-cycle,"Austin, TX",bcycle_austin,http://austinbcycle.com,https://gbfs.bcycle.com/bcycle_austin/gbfs.json
 US,Bishop Ranch BRiteBikes,"San Ramon, CA",bishop_ranch,http://britebikes.socialbicycles.com/,http://britebikes.socialbicycles.com/opendata/gbfs.json
@@ -39,3 +41,4 @@ US,Sobi Long Beach,"Long Beach, NY",sobi_long_beach,http://sobilongbeach.com/,ht
 US,Spartanburg BCycle,"Spartanburg, SC",bcycle_spartanburg,https://spartanburg.bcycle.com,https://gbfs.bcycle.com/bcycle_spartanburg/gbfs.json
 US,Topeka Metro Bikes,"Topeka, KS",topeka_metro_bikes,http://topekametrobikes.org/,http://topekametrobikes.org/opendata/gbfs.json
 US,Ubike,University of Virginia,university_of_virginia,http://ubike.virginia.edu/,http://ubike.virginia.edu/opendata/gbfs.json
+US,University of South Florida,"University of South Florida, Tampa, FL",usf_share-a-bull_bikes,https://usf.socialbicycles.com/,https://usf.socialbicycles.com/opendata/gbfs.json
