@@ -33,6 +33,7 @@ US,Juice,"Orlando, FL",juice_bike_share,https://orlando.socialbicycles.com/,http
 US,Kansas City B-cycle,"Kansas City, MO",bcycle_kc,https://kc.bcycle.com,https://gbfs.bcycle.com/bcycle_kc/gbfs.json
 US,Link Dayton Bike Share,"Dayton, OH",bcycle_linkdayton,https://www.linkdayton.org,https://gbfs.bcycle.com/bcycle_linkdayton/gbfs.json
 US,Madison B-cycle,"Madison, WI",bcycle_madison,https://madison.bcycle.com,https://gbfs.bcycle.com/bcycle_madison/gbfs.json
+US,Metro Bike Share,"Los Angeles, CA",bcycle_lametro,https://bikeshare.metro.net,https://gbfs.bcycle.com/bcycle_lametro/gbfs.json
 US,Mountain Ride Bike Share,"Ketchum / Sun Valley, ID",mountain_rides_bike_share,http://mrbikeshare.org/,http://mrbikeshare.org/opendata/gbfs.json
 US,Nice Ride Minnesota,"Minneapolis - Saint Paul, MN",niceridemn,https://www.niceridemn.org,https://api-core.niceridemn.org/gbfs/gbfs.json
 US,Pronto,"Seattle, WA",pronto,https://www.prontocycleshare.com,https://gbfs.prontocycleshare.com/gbfs/gbfs.json
