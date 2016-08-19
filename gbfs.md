@@ -80,7 +80,7 @@ system_alerts.json          | Optional      | Describes current system alerts
 
 ## Field Definitions
 
-* Time stamp fields should be in POSIX time (i.e., the number of seconds since January 1st 1970 00:00:00 UTC)
+* Time stamp fields must be represented as integers in POSIX time (i.e., the number of seconds since January 1st 1970 00:00:00 UTC)
 * ID fields in the document should be represented as strings that identify that particular object. They:
     * must be unique within like fields (bike_id must be unique among bikes)
     * do not have to be globally unique
@@ -94,7 +94,7 @@ Every JSON file presented in this specification contains the same common header 
 
 Field Name          | Required  | Defines
 --------------------| ----------| ----------
-last_updated        | Yes       | POSIX timestamp indicating the last time the data in this feed was updated
+last_updated        | Yes       | Integer POSIX timestamp indicating the last time the data in this feed was updated
 ttl                 | Yes       | Integer representing the number of seconds before the data in this feed will be updated again (0 if the data should always be refreshed)
 data                | Yes       | JSON hash containing the data fields for this response
 
@@ -307,14 +307,14 @@ alerts            | Yes         | Array - alert objects each indicating a separa
 - alert_id        | Yes         | ID - unique identifier for this alert
 - type            | Yes         | Enumerable - valid values are: <ul><li>SYSTEM_CLOSURE</li> <li>STATION_CLOSURE</li> <li>STATION_MOVE</li> <li>OTHER</li> </ul>
 - times           | Optional    | Array of hashes with the keys "start" and "end" indicating when the alert is in effect (e.g. when the system or station is actually closed, or when it is scheduled to be moved). If this array is omitted then the alert should be displayed as long as it is in the feed.
-&emsp;- start     | Yes         | POSIX timestamp - required if container "times" key is present
-&emsp;- end       | Optional    | POSIX timestamp - if there is currently no end time planned for the alert, this key can be omitted indicating that there is no currently scheduled end time for the alert
+&emsp;- start     | Yes         | Integer POSIX timestamp - required if container "times" key is present
+&emsp;- end       | Optional    | Integer POSIX timestamp - if there is currently no end time planned for the alert, this key can be omitted indicating that there is no currently scheduled end time for the alert
 - station_ids     | Optional    | Array of strings - If this is an alert that affects one or more stations, include their ids, otherwise omit this field. If both station_ids and region_ids are omitted, assume this alert affects the entire system
 - region_ids      | Optional    | Array of strings - If this system has regions, and if this alert only affects certain regions, include their ids, otherwise, omit this field. If both station_ids and region_ids are omitted, assume this alert affects the entire system
 - url             | Optional    | String - URL where the customer can learn more information about this alert, if there is one
 - summary         | Yes         | String - A short summary of this alert to be displayed to the customer
 - description     | Optional    | String - Detailed text description of the alert
-- last_updated    | Optional    | POSIX timestamp indicating the last time the info for the particular alert was updated
+- last_updated    | Optional    | Integer POSIX timestamp indicating the last time the info for the particular alert was updated
 
 ## Possible Future Enhancements
 There are some items that were proposed in an earlier version of this document but which do not fit into the current specification. They are collected here for reference and for possible discussion and inclusion in this or a future version.
