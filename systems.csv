@@ -13,7 +13,6 @@ US,Boulder B-cycle,"Boulder, CO",bcycle_boulder,https://boulder.bcycle.com,https
 US,Breeze Bike Share,"Sana Monica, CA",breeze_bikeshare,http://santamonicabikeshare.com/,http://santamonicabikeshare.com/opendata/gbfs.json
 US,Broward B-cycle,"Fort Lauderdale, FL",bcycle_broward,https://broward.bcycle.com,https://gbfs.bcycle.com/bcycle_broward/gbfs.json
 US,Bublr Bikes,"Milwaukee, WI",bcycle_bublr,http://bublrbikes.com,https://gbfs.bcycle.com/bcycle_bublr/gbfs.json
-US,Buffalo Bike Share,"Buffalo, NY",buffalo_bike_share,https://buffalo.socialbicycles.com/,https://buffalo.socialbicycles.com/opendata/gbfs.json
 US,Capital Bike Share,"Washington, DC",cabi,http://www.capitalbikeshare.com,https://gbfs.capitalbikeshare.com/gbfs/gbfs.json
 US,Charlotte B-cycle,"Charlotte, NC",bcycle_charlotte,https://charlotte.bcycle.com,https://gbfs.bcycle.com/bcycle_charlotte/gbfs.json
 US,Cincy Red Bike,"Cincinnati, OH",bcycle_cincyredbike,http://www.cincyredbike.org,https://gbfs.bcycle.com/bcycle_cincyredbike/gbfs.json
@@ -40,6 +39,7 @@ US,Metro Bike Share,"Los Angeles, CA",bcycle_lametro,https://bikeshare.metro.net
 US,Mountain Ride Bike Share,"Ketchum / Sun Valley, ID",mountain_rides_bike_share,http://mrbikeshare.org/,http://mrbikeshare.org/opendata/gbfs.json
 US,Nice Ride Minnesota,"Minneapolis - Saint Paul, MN",niceridemn,https://www.niceridemn.org,https://api-core.niceridemn.org/gbfs/gbfs.json
 US,Pronto,"Seattle, WA",pronto,https://www.prontocycleshare.com,https://gbfs.prontocycleshare.com/gbfs/gbfs.json
+US,Reddy Bike Share,"Buffalo, NY",reddy_bikeshare,https://reddybikeshare.socialbicycles.com/,https://reddybikeshare.socialbicycles.com/opendata/gbfs.json
 US,San Antonio B-cycle,"San Antonio, TX",bcycle_sanantonio,https://sanantonio.bcycle.com/,https://gbfs.bcycle.com/bcycle_sanantonio/gbfs.json
 US,Share-a-Bull Bikes,University of South Florida,usf_share-a-bull_bikes,https://usf.socialbicycles.com/,https://usf.socialbicycles.com/opendata/gbfs.json
 US,Sobi Long Beach,"Long Beach, NY",sobi_long_beach,http://sobilongbeach.com/,http://sobilongbeach.com/opendata/gbfs.json
