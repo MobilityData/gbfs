@@ -205,7 +205,7 @@ stations              | Yes       | Array that contains one object per station i
 - is_installed        | Yes       | 1/0 boolean - is the station currently on the street
 - is_renting          | Yes       | 1/0 boolean - is the station currently renting bikes (even if the station is empty, if it is set to allow rentals this value should be 1)
 - is_returning        | Yes       | 1/0 boolean - is the station accepting bike returns (if a station is full but would allow a return if it was not full then this value should be 1)
-- last_reported       | Yes       | Timestamp of the last time this station reported its status to the backend
+- last_reported       | Yes       | Integer POSIX timestamp indicating the last time this station reported its status to the backend
 
 ### free_bike_status.json
 Describes bikes that are not at a station and are not currently in the middle of an active ride.
