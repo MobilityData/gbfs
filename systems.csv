@@ -1,5 +1,5 @@
 Country Code,Name,Location,System ID,URL,Auto-Discovery URL
-AE,ADCB Bikeshare,"Abu Dhabi, AE",abu_dhabi,https://www.bikeshare.ae/,https://api-core.bikeshare.ae/gbfs/gbfs.json
+AE,ADCB Bikeshare,"Abu Dhabi, AE",ABU,https://www.bikeshare.ae/,https://api-core.bikeshare.ae/gbfs/gbfs.json
 AU,Curtin University,"Curtin University, Perth, WA",curtin_university,http://curtinbikeshare.com/,http://curtinbikeshare.com/opendata/gbfs.json
 AU,Monash Bike Share,"Monash University, Melbourne, AU",monash_bike_share,https://monashbikeshare.com/,https://monashbikeshare.com/opendata/gbfs.json
 CA,Bike Share Toronto,"Toronto, ON",bike_share_toronto,https://www.bikesharetoronto.com/,https://gbfs.bikesharetoronto.com/gbfs/gbfs.json
