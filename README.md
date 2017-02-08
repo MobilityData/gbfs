@@ -6,7 +6,7 @@ Documentation for the General Bikeshare Feed Specification, a standardized data 
 
 General Bikeshare Feed Specification, known as GBFS, is the open data standard for bikeshare. GBFS will make real-time data feeds publicly available online in a uniform format so that map and transportation based apps can easily incorporate this data into their platforms.
 
-Under the North American Bikeshare Association’s leadership, bikeshare industry leaders including 8D Technologies, PBSC Urban Solutions, Social Bicycles, BCycle, Smoove, and Motivate developed the GBFS over the past year. All have agreed to implement the standard by the end of 2015.
+Under the North American Bikeshare Association’s leadership, bikeshare industry leaders including 8D Technologies, PBSC Urban Solutions, Social Bicycles, BCycle, Smoove, and Motivate developed the GBFS over the past year. All have agreed to implement the standard by the end of 2015, although the availability of a GBFS feed for each bikeshare deployment may vary.
 
 More information:
 * [North American Bikeshare Systems Adopt Open Data Standard](http://us11.campaign-archive1.com/?u=8327d4c9221c755645cd5334f&id=bfc8d7b6f0&e=ec9a6946e8), NABSA press release 11/23/15
