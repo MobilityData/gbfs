@@ -7,7 +7,6 @@ CA,Sobi Hamilton,Hamilton Ontario,sobi_hamilton,https://hamilton.socialbicycles.
 CA,VeloGo,"Ottawa, ON",velgo,http://velogo.ca/,http://velogo.ca/opendata/gbfs.json
 CZ,Velonet,"Prague - Brno, CZ",velonet_cz,http://velonet.cz/,http://velonet.cz/opendata/gbfs.json
 US,ArborBike,"Ann Arbor, MI",bcycle_arborbike,http://arborbike.org,https://gbfs.bcycle.com/bcycle_arborbike/gbfs.json
-US,Relay Bike Share,"Atlanta, GA",relay_atlanta,http://relaybikeshare.com/,https://relaybikeshare.socialbicycles.com/opendata/gbfs.json
 US,Austin B-cycle,"Austin, TX",bcycle_austin,http://austinbcycle.com,https://gbfs.bcycle.com/bcycle_austin/gbfs.json
 US,Bay Area Bike Share,"San Francisco, CA",bay_area_bike_share,http://www.bayareabikeshare.com,https://gbfs.bayareabikeshare.com/gbfs/gbfs.json
 US,BIKETOWN,"Portland, OR",biketown_pdx,https://www.biketownpdx.com/,http://biketownpdx.socialbicycles.com/opendata/gbfs.json
@@ -44,6 +43,7 @@ US,Mountain Ride Bike Share,"Ketchum / Sun Valley, ID",mountain_rides_bike_share
 US,Nice Ride Minnesota,"Minneapolis - Saint Paul, MN",niceridemn,https://www.niceridemn.org,https://api-core.niceridemn.org/gbfs/gbfs.json
 US,Pronto,"Seattle, WA",pronto,https://www.prontocycleshare.com,https://gbfs.prontocycleshare.com/gbfs/gbfs.json
 US,Reddy Bike Share,"Buffalo, NY",reddy_bikeshare,https://reddybikeshare.socialbicycles.com/,https://reddybikeshare.socialbicycles.com/opendata/gbfs.json
+US,Relay Bike Share,"Atlanta, GA",relay_bike_share,http://relaybikeshare.com/,https://relaybikeshare.socialbicycles.com/opendata/gbfs.json
 US,San Antonio B-cycle,"San Antonio, TX",bcycle_sanantonio,https://sanantonio.bcycle.com/,https://gbfs.bcycle.com/bcycle_sanantonio/gbfs.json
 US,Share-a-Bull Bikes,University of South Florida,usf_share-a-bull_bikes,https://usf.socialbicycles.com/,https://usf.socialbicycles.com/opendata/gbfs.json
 US,Sobi Long Beach,"Long Beach, NY",sobi_long_beach,http://sobilongbeach.com/,http://sobilongbeach.com/opendata/gbfs.json
