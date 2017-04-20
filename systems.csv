@@ -20,7 +20,7 @@ US,Capital Bike Share,"Washington, DC",cabi,http://www.capitalbikeshare.com,http
 US,Charlotte B-cycle,"Charlotte, NC",bcycle_charlotte,https://charlotte.bcycle.com,https://gbfs.bcycle.com/bcycle_charlotte/gbfs.json
 US,Cincy Red Bike,"Cincinnati, OH",bcycle_cincyredbike,http://www.cincyredbike.org,https://gbfs.bcycle.com/bcycle_cincyredbike/gbfs.json
 US,Citi Bike,"NYC, NY",NYC,https://www.citibikenyc.com,https://gbfs.citibikenyc.com/gbfs/gbfs.json
-US,Coast Bike Share,"Tampa, FL",coast_bike_share,http://coastbikeshare.com/,http://coastbikeshare.com/opendata/gbfs.json
+US,Coast Bike Share,"Tampa, FL",coast_bike_share,http://coastbikeshare.com/,http://coast.socialbicycles.com/opendata/gbfs.json
 US,CoGo,"Columbus, OH",cogo,http://www.cogobikeshare.com/,https://gbfs.cogobikeshare.com/gbfs/gbfs.json
 US,Denver B-cycle,"Denver, CO",bcycle_denver,https://denver.bcycle.com,https://gbfs.bcycle.com/bcycle_denver/gbfs.json
 US,Divvy,"Chicago, IL",divvy,http://www.divvybikes.com/,https://gbfs.divvybikes.com/gbfs/gbfs.json
