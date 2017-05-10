@@ -53,15 +53,7 @@ system_alerts.json          | Optional      | Describes current system alerts
 ## File Requirements
 * All files should be valid JSON
 * All data should be UTF-8 encoded
-* Time stamps should be in POSIX time (i.e., the number of seconds since January 1st 1970 00:00:00 UTC)
-* ID fields in the document should be represented as strings that identify that particular object. They:
-    * must be unique within like fields (bike_id must be unique among bikes)
-    * do not have to be globally unique
-    * must not contain spaces
-    * should be persistent for a given object (station, plan, etc)
-* Text fields can only contain text - they must not contain any formatting codes (including HTML) other than newlines
 * Line breaks should be represented by unix newline characters only (\n)
-* Enumerable values should be expected to change over time. Values will not be removed, but new valid values may be added as business requirements change and consumers should be designed to handle these changes
 
 ### File Distribution
 * This specification does not dictate the implementation details around the distribution of the JSON data files
@@ -88,12 +80,21 @@ system_alerts.json          | Optional      | Describes current system alerts
 
 ## Field Definitions
 
+* Time stamp fields must be represented as integers in POSIX time (i.e., the number of seconds since January 1st 1970 00:00:00 UTC)
+* ID fields in the document should be represented as strings that identify that particular object. They:
+    * must be unique within like fields (bike_id must be unique among bikes)
+    * do not have to be globally unique
+    * must not contain spaces
+    * should be persistent for a given object (station, plan, etc)
+* Text fields can only contain text - they must not contain any formatting codes (including HTML) other than newlines
+* Enumerable values should be expected to change over time. Values will not be removed, but new valid values may be added as business requirements change and consumers should be designed to handle these changes
+
 ### Output Format
 Every JSON file presented in this specification contains the same common header information at the top level of the JSON response object:
 
 Field Name          | Required  | Defines
 --------------------| ----------| ----------
-last_updated        | Yes       | POSIX timestamp indicating the last time the data in this feed was updated
+last_updated        | Yes       | Integer POSIX timestamp indicating the last time the data in this feed was updated
 ttl                 | Yes       | Integer representing the number of seconds before the data in this feed will be updated again (0 if the data should always be refreshed)
 data                | Yes       | JSON hash containing the data fields for this response
 
@@ -115,9 +116,9 @@ The following fields are all attributes within the main "data" object for this f
 Field Name              | Required    | Defines
 ------------------------| ------------| ----------
 _language_              | Yes         | The language that all of the contained files will be published in. This language must match the value in the system_information file
-  - feeds               | Yes         | An array of all of the feeds that are published by this auto-discovery file
-  - name                | Yes         | Key identifying the type of feed this is (e.g. "system_information", "station_information")
-  - url                 | Yes         | Full URL for the feed
+  \- feeds               | Yes         | An array of all of the feeds that are published by this auto-discovery file
+  \- name                | Yes         | Key identifying the type of feed this is (e.g. "system_information", "station_information")
+  \- url                 | Yes         | Full URL for the feed
 
 Example:
 
@@ -170,6 +171,7 @@ start_date        | Optional  | String in the form YYYY-MM-DD representing the d
 phone_number      | Optional  | A single voice telephone number for the specified system. This field is a string value that presents the telephone number as typical for the system's service area. It can and should contain punctuation marks to group the digits of the number. Dialable text (for example, Capital Bikeshare’s  "877-430-BIKE") is permitted, but the field must not contain any other descriptive text
 email             | Optional  | A single contact email address for customers to address questions about the system
 timezone          | Yes       | The time zone where the system is located. Time zone names never contain the space character but may contain an underscore. Please refer to the "TZ" value in https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for a list of valid values
+license_url       | Optional  | A fully qualified URL of a page that defines the license terms for the GBFS data for this system, as well as any other license terms the system would like to define (including the use of corporate trademarks, etc)
 
 
 ### station_information.json
@@ -178,33 +180,33 @@ All stations contained in this list are considered public (ie, can be shown on a
 Field Name        | Required  | Defines
 ------------------| --------- | ----------
 stations          | Yes       | Array that contains one object per station in the system as defined below
-- station_id      | Yes       | Unique identifier of a station. See [Output Format](#output-format) above for ID field requirements
-- name            | Yes       | Public name of the station
-- short_name      | No        | Short name or other type of identifier, as used by the data publisher
-- lat             | Yes       | The latitude of station. The field value must be a valid WGS 84 latitude. See: http://en.wikipedia.org/wiki/World_Geodetic_System
-- lon             | Yes       | The longitude of station. The field value must be a valid WGS 84 longitude. See: http://en.wikipedia.org/wiki/World_Geodetic_System
-- address         | Optional  | Valid street number and name where station is located. This field is intended to be an actual address, not a free form text description (see "cross_street" below)
-- cross_street    | Optional  | Cross street of where the station is located. This field is intended to be a descriptive field for human consumption. In cities, this would be a cross street, but could also be a description of a location in a park, etc.
-- region_id       | Optional  | ID of the region where station is located (see [system_regions.json](#system_regionsjson))
-- post_code       | Optional  | Postal code where station is located
-- rental_methods  | Optional  | Array of enumerables containing the payment methods accepted at this station. <br />Current valid values (in CAPS) are:<br /><ul><li>KEY _(i.e. operator issued bike key / fob / card)_</li> <li>CREDITCARD</li> <li>PAYPASS</li> <li>APPLEPAY</li> <li>APPLEPAY</li> <li>ANDROIDPAY</li> <li>TRANSITCARD</li> <li>ACCOUNTNUMBER</li> <li>PHONE</li> </ul> This list is intended to be as comprehensive at the time of publication as possible but is subject to change, as defined in [File Requirements](#file-requirements) above
-- capacity        | Optional  | Number of total docking points installed at this station, both available and unavailable
-- rental_url      | Optional  | A fully qualified and encoded URL where a user can rent a bike at this station_id.  This URL should be a deep link specific to this station_id, and should not be a general rental page that includes information for more than one station.  The deep link should take users directly to this station_id, without any prompts, interstitial pages, or logins. Make sure that users can see this station_id even if they never previously opened the application.  This is the same principle as the ["first click free"](https://support.google.com/news/publisher/answer/40543) experience for web sites.
+\- station_id      | Yes       | Unique identifier of a station. See [Field Definitions](#field-definitions) above for ID field requirements
+\- name            | Yes       | Public name of the station
+\- short_name      | No        | Short name or other type of identifier, as used by the data publisher
+\- lat             | Yes       | The latitude of station. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
+\- lon             | Yes       | The longitude of station. The field value must be a valid WGS 84 longitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
+\- address         | Optional  | Valid street number and name where station is located. This field is intended to be an actual address, not a free form text description (see "cross_street" below)
+\- cross_street    | Optional  | Cross street of where the station is located. This field is intended to be a descriptive field for human consumption. In cities, this would be a cross street, but could also be a description of a location in a park, etc.
+\- region_id       | Optional  | ID of the region where station is located (see [system_regions.json](#system_regionsjson))
+\- post_code       | Optional  | Postal code where station is located
+\- rental_methods  | Optional  | Array of enumerables containing the payment methods accepted at this station. <br />Current valid values (in CAPS) are:<br /><ul><li>KEY _(i.e. operator issued bike key / fob / card)_</li> <li>CREDITCARD</li> <li>PAYPASS</li> <li>APPLEPAY</li> <li>ANDROIDPAY</li> <li>TRANSITCARD</li> <li>ACCOUNTNUMBER</li> <li>PHONE</li> </ul> This list is intended to be as comprehensive at the time of publication as possible but is subject to change, as defined in [File Requirements](#file-requirements) above
+\- capacity        | Optional  | Number of total docking points installed at this station, both available and unavailable
+\- rental_url      | Optional  | A fully qualified and encoded URL where a user can rent a bike at this station_id.  This URL should be a deep link specific to this station_id, and should not be a general rental page that includes information for more than one station.  The deep link should take users directly to this station_id, without any prompts, interstitial pages, or logins. Make sure that users can see this station_id even if they never previously opened the application.  This is the same principle as the ["first click free"](https://support.google.com/news/publisher/answer/40543) experience for web sites.
 
 ### station_status.json
 
 Field Name            | Required  | Defines
 --------------------- | ----------| ----------
 stations              | Yes       | Array that contains one object per station in the system as defined below
-- station_id          | Yes       | Unique identifier of a station (see station_information.json)
-- num_bikes_available | Yes       | Number of bikes available for rental
-- num_bikes_disabled  | Optional  | Number of disabled bikes at the station. Vendors who do not want to publicize the number of disabled bikes or docks in their system can opt to omit station capacity (in station_information), num_bikes_disabled and num_docks_disabled. If station capacity is published then broken docks/bikes can be inferred (though not specifically whether the decreased capacity is a broken bike or dock)
-- num_docks_available | Yes       | Number of docks accepting bike returns
-- num_docks_disabled  | Optional  | Number of empty but disabled dock points at the station. This value remains as part of the spec as it is possibly useful during development
-- is_installed        | Yes       | 1/0 boolean - is the station currently on the street
-- is_renting          | Yes       | 1/0 boolean - is the station currently renting bikes (even if the station is empty, if it is set to allow rentals this value should be 1)
-- is_returning        | Yes       | 1/0 boolean - is the station accepting bike returns (if a station is full but would allow a return if it was not full then this value should be 1)
-- last_reported       | Yes       | Timestamp of the last time this station reported its status to the backend
+\- station_id          | Yes       | Unique identifier of a station (see station_information.json)
+\- num_bikes_available | Yes       | Number of bikes available for rental
+\- num_bikes_disabled  | Optional  | Number of disabled bikes at the station. Vendors who do not want to publicize the number of disabled bikes or docks in their system can opt to omit station capacity (in station_information), num_bikes_disabled and num_docks_disabled. If station capacity is published then broken docks/bikes can be inferred (though not specifically whether the decreased capacity is a broken bike or dock)
+\- num_docks_available | Yes       | Number of docks accepting bike returns
+\- num_docks_disabled  | Optional  | Number of empty but disabled dock points at the station. This value remains as part of the spec as it is possibly useful during development
+\- is_installed        | Yes       | 1/0 boolean - is the station currently on the street
+\- is_renting          | Yes       | 1/0 boolean - is the station currently renting bikes (even if the station is empty, if it is set to allow rentals this value should be 1)
+\- is_returning        | Yes       | 1/0 boolean - is the station accepting bike returns (if a station is full but would allow a return if it was not full then this value should be 1)
+\- last_reported       | Yes       | Integer POSIX timestamp indicating the last time this station reported its status to the backend
 
 ### free_bike_status.json
 Describes bikes that are not at a station and are not currently in the middle of an active ride.
@@ -212,12 +214,12 @@ Describes bikes that are not at a station and are not currently in the middle of
 Field Name        | Required  | Defines
 ------------------| ----------| ----------
 bikes             | Yes       | Array that contains one object per bike that is currently docked/stopped outside of the system as defined below
-- bike_id         | Yes       | Unique identifier of a bike
-- lat             | Yes       | Latitude of the bike. The field value must be a valid WGS 84 latitude. See: http://en.wikipedia.org/wiki/World_Geodetic_System
-- lon             | Yes       | Longitude of the bike. The field value must be a valid WGS 84 latitude. See: http://en.wikipedia.org/wiki/World_Geodetic_System
-- is_reserved     | Yes       | 1/0 value - is the bike currently reserved for someone else
-- is_disabled     | Yes       | 1/0 value - is the bike currently disabled (broken)
-- rental_url      | Optional  | A fully qualified and encoded URL where a user can rent this bike_id.  This URL should be a deep link specific to this bike_id, and should not be a general rental page that includes information for more than one bike.  The deep link should take users directly to this bike_id, without any prompts, interstitial pages, or logins. Make sure that users can see this bike_id even if they never previously opened the application.  This is the same principle as the ["first click free"](https://support.google.com/news/publisher/answer/40543) experience for web sites.
+\- bike_id         | Yes       | Unique identifier of a bike
+\- lat             | Yes       | Latitude of the bike. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
+\- lon             | Yes       | Longitude of the bike. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
+\- is_reserved     | Yes       | 1/0 value - is the bike currently reserved for someone else
+\- is_disabled     | Yes       | 1/0 value - is the bike currently disabled (broken)
+\- rental_url      | Optional  | A fully qualified and encoded URL where a user can rent this bike_id.  This URL should be a deep link specific to this bike_id, and should not be a general rental page that includes information for more than one bike.  The deep link should take users directly to this bike_id, without any prompts, interstitial pages, or logins. Make sure that users can see this bike_id even if they never previously opened the application.  This is the same principle as the ["first click free"](https://support.google.com/news/publisher/answer/40543) experience for web sites.
 
 ### system_hours.json
 Describes the system hours of operation. A JSON array of hours defined as follows:
@@ -225,10 +227,10 @@ Describes the system hours of operation. A JSON array of hours defined as follow
 Field Name          | Required    | Defines
 --------------------| ------------| ----------
 rental_hours        | Yes         | Array of hour objects as defined below. Can contain a minimum of one object identifying hours for all days of the week or a maximum of fourteen hour objects are allowed (one for each day of the week for each "member" or "nonmember" user type)
-- user_types        | Yes         | An array of "member" and "nonmember" values. This indicates that this set of rental hours applies to either members or non-members only.
-- days              | Yes         | An array of abbreviations (first 3 letters) of English names of the days of the week that this hour object applies to (i.e. ["mon", "tue"]). Each day can only appear once within all of the hours objects in this feed.
-- start_time        | Yes         | Start time for the hours of operation of the system in the time zone indicated in system_information.json  (00:00:00 - 23:59:59)
-- end_time          | Yes         | End time for the hours of operation of the system in the time zone indicated in system_information.json (00:00:00 - 47:59:59). Time can stretch up to one additional day in the future to accommodate situations where, for example, a system was open from 11:30pm - 11pm the next day (i.e. 23:30-47:00)
+\- user_types        | Yes         | An array of "member" and "nonmember" values. This indicates that this set of rental hours applies to either members or non-members only.
+\- days              | Yes         | An array of abbreviations (first 3 letters) of English names of the days of the week that this hour object applies to (i.e. ["mon", "tue"]). Each day can only appear once within all of the hours objects in this feed.
+\- start_time        | Yes         | Start time for the hours of operation of the system in the time zone indicated in system_information.json  (00:00:00 - 23:59:59)
+\- end_time          | Yes         | End time for the hours of operation of the system in the time zone indicated in system_information.json (00:00:00 - 47:59:59). Time can stretch up to one additional day in the future to accommodate situations where, for example, a system was open from 11:30pm - 11pm the next day (i.e. 23:30-47:00)
 
 Example:
 ```json
@@ -266,12 +268,12 @@ Describes the operating calendar for a system. An array of year objects defined 
 Field Name          | Required  | Defines
 --------------------| ----------| ----------
 calendars           | Yes       | Array of year objects describing the system operational calendar. A minimum of one calendar object is required, which could indicate a general calendar, or multiple calendars could be present indicating arbitrary start and end dates
-- start_month       | Yes       | Starting month for the system operations (1-12)
-- start_day         | Yes       | Starting day for the system operations (1-31)
-- start_year        | Optional  | Starting year for the system operations
-- end_month         | Yes       | Ending month for the system operations (1-12)
-- end_day           | Yes       | Ending day for the system operations (1-31)
-- end_year          | Optional  | Ending year for the system operations
+\- start_month       | Yes       | Starting month for the system operations (1-12)
+\- start_day         | Yes       | Starting day for the system operations (1-31)
+\- start_year        | Optional  | Starting year for the system operations
+\- end_month         | Yes       | Ending month for the system operations (1-12)
+\- end_day           | Yes       | Ending day for the system operations (1-31)
+\- end_year          | Optional  | Ending year for the system operations
 
 
 ### system_regions.json
@@ -280,8 +282,8 @@ Describe regions for a system that is broken up by geographic or political regio
 Field Name        | Required  | Defines
 ------------------| ----------| ----------
 regions           | Yes       | Array of region objects as defined below
-- region_id       | Yes       | Unique identifier for the region
-- name           | Yes       | Public name for this region
+\- region_id       | Yes       | Unique identifier for the region
+\- name           | Yes       | Public name for this region
 
 ### system_pricing_plans.json
 Describe pricing for the system. This scheme does not currently factor in lost bike fees as it seems outside of the scope of this specification, but they could be added. It is an array of pricing objects defined as follows:
@@ -289,13 +291,13 @@ Describe pricing for the system. This scheme does not currently factor in lost b
 Field Name        | Required  | Defines
 ------------------| --------- | ----------
 plans             | Yes       | Array of any number of plan objects as defined below:
-- plan_id         | Yes       | String - a unique identifier for this plan in the system
-- url             | Optional  | String - a fully qualified URL where the customer can learn more about this particular scheme
-- name            | Yes       | Name of this pricing scheme
-- currency        | Yes       | Currency this pricing is in (ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217)
-- price           | Yes       | Fee for this pricing scheme. This should be in the base unit as defined by the ISO 4217 currency code with the appropriate number of decimal places and omitting the currency symbol. e.g. if the price is in US Dollars the price would be 9.95
-- is_taxable      | Yes       | 1/0 value: <ul><li>0 indicates that no additional tax will be added (either because tax is not charged, or because it is included)</li> <li>1 indicates that tax will be added to the base price</li></ul>
-- description     | Yes       | Text field describing the particular pricing plan in human readable terms.  This should include the duration, price, conditions, etc. that the publisher would like users to see. This is intended to be a human-readable description and should not be used for automatic calculations
+\- plan_id         | Yes       | String - a unique identifier for this plan in the system
+\- url             | Optional  | String - a fully qualified URL where the customer can learn more about this particular scheme
+\- name            | Yes       | Name of this pricing scheme
+\- currency        | Yes       | Currency this pricing is in (ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217)
+\- price           | Yes       | Fee for this pricing scheme. This should be in the base unit as defined by the ISO 4217 currency code with the appropriate number of decimal places and omitting the currency symbol. e.g. if the price is in US Dollars the price would be 9.95
+\- is_taxable      | Yes       | 1/0 value: <ul><li>0 indicates that no additional tax will be added (either because tax is not charged, or because it is included)</li> <li>1 indicates that tax will be added to the base price</li></ul>
+\- description     | Yes       | Text field describing the particular pricing plan in human readable terms.  This should include the duration, price, conditions, etc. that the publisher would like users to see. This is intended to be a human-readable description and should not be used for automatic calculations
 
 ### system_alerts.json
 This feed is intended to inform customers about changes to the system that do not fall within the normal system operations. For example, system closures due to weather would be listed here, but a system that only operated for part of the year would have that schedule listed in the system_calendar.json feed.
@@ -305,17 +307,17 @@ This file is an array of alert objects defined as below. Obsolete alerts should 
 Field Name        | Required    | Defines
 ----------------- | ------------| ----------
 alerts            | Yes         | Array - alert objects each indicating a separate system alert as defined below
-- alert_id        | Yes         | ID - unique identifier for this alert
-- type            | Yes         | Enumerable - valid values are: <ul><li>SYSTEM_CLOSURE</li> <li>STATION_CLOSURE</li> <li>STATION_MOVE</li> <li>OTHER</li> </ul>
-- times           | Optional    | Array of hashes with the keys "start" and "end" indicating when the alert is in effect (e.g. when the system or station is actually closed, or when it is scheduled to be moved). If this array is omitted then the alert should be displayed as long as it is in the feed.
-&emsp;- start     | Yes         | POSIX timestamp - required if container "times" key is present
-&emsp;- end       | Optional    | POSIX timestamp - if there is currently no end time planned for the alert, this key can be omitted indicating that there is no currently scheduled end time for the alert
-- station_ids     | Optional    | Array of strings - If this is an alert that affects one or more stations, include their ids, otherwise omit this field. If both station_ids and region_ids are omitted, assume this alert affects the entire system
-- region_ids      | Optional    | Array of strings - If this system has regions, and if this alert only affects certain regions, include their ids, otherwise, omit this field. If both station_ids and region_ids are omitted, assume this alert affects the entire system
-- url             | Optional    | String - URL where the customer can learn more information about this alert, if there is one
-- summary         | Yes         | String - A short summary of this alert to be displayed to the customer
-- description     | Optional    | String - Detailed text description of the alert
-- last_updated    | Optional    | POSIX timestamp indicating the last time the info for the particular alert was updated
+\- alert_id        | Yes         | ID - unique identifier for this alert
+\- type            | Yes         | Enumerable - valid values are: <ul><li>SYSTEM_CLOSURE</li> <li>STATION_CLOSURE</li> <li>STATION_MOVE</li> <li>OTHER</li> </ul>
+\- times           | Optional    | Array of hashes with the keys "start" and "end" indicating when the alert is in effect (e.g. when the system or station is actually closed, or when it is scheduled to be moved). If this array is omitted then the alert should be displayed as long as it is in the feed.
+&emsp;- start     | Yes         | Integer POSIX timestamp - required if container "times" key is present
+&emsp;- end       | Optional    | Integer POSIX timestamp - if there is currently no end time planned for the alert, this key can be omitted indicating that there is no currently scheduled end time for the alert
+\- station_ids     | Optional    | Array of strings - If this is an alert that affects one or more stations, include their ids, otherwise omit this field. If both station_ids and region_ids are omitted, assume this alert affects the entire system
+\- region_ids      | Optional    | Array of strings - If this system has regions, and if this alert only affects certain regions, include their ids, otherwise, omit this field. If both station_ids and region_ids are omitted, assume this alert affects the entire system
+\- url             | Optional    | String - URL where the customer can learn more information about this alert, if there is one
+\- summary         | Yes         | String - A short summary of this alert to be displayed to the customer
+\- description     | Optional    | String - Detailed text description of the alert
+\- last_updated    | Optional    | Integer POSIX timestamp indicating the last time the info for the particular alert was updated
 
 ## Possible Future Enhancements
 There are some items that were proposed in an earlier version of this document but which do not fit into the current specification. They are collected here for reference and for possible discussion and inclusion in this or a future version.
