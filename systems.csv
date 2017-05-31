@@ -23,7 +23,7 @@ US,Charlotte B-cycle,"Charlotte, NC",bcycle_charlotte,https://charlotte.bcycle.c
 US,Cincy Red Bike,"Cincinnati, OH",bcycle_cincyredbike,http://www.cincyredbike.org,https://gbfs.bcycle.com/bcycle_cincyredbike/gbfs.json
 US,Citi Bike,"NYC, NY",NYC,https://www.citibikenyc.com,https://gbfs.citibikenyc.com/gbfs/gbfs.json
 US,Clarksville B-cycle,"Clarksville, TN",bcycle_clarksville,https://clarksville.bcycle.com,https://gbfs.bcycle.com/bcycle_clarksville/gbfs.json
-US,Clemson BikeShare,"Clemson , SC",bcycle_clemson,https://clemson.bcycle.com,https://gbfs.bcycle.com/bcycle_clemson/gbfs.json
+US,Clemson BikeShare,"Clemson, SC",bcycle_clemson,https://clemson.bcycle.com,https://gbfs.bcycle.com/bcycle_clemson/gbfs.json
 US,Coast Bike Share,"Tampa, FL",coast_bike_share,http://coastbikeshare.com/,http://coast.socialbicycles.com/opendata/gbfs.json
 US,CoGo,"Columbus, OH",cogo,http://www.cogobikeshare.com/,https://gbfs.cogobikeshare.com/gbfs/gbfs.json
 US,Columbia County B-cycle,"Evans, GA",bcycle_columbiacounty,https://columbiacounty.bcycle.com,https://gbfs.bcycle.com/bcycle_columbiacounty/gbfs.json
@@ -57,7 +57,7 @@ US,OKC Spokies,"Oklahoma City, OK",bcycle_spokies,http://spokiesokc.com/,https:/
 US,Rapid City B-cycle,"Rapid City, SD",bcycle_rapidcity,https://rapidcity.bcycle.com,https://gbfs.bcycle.com/bcycle_rapidcity/gbfs.json
 US,Reddy Bike Share,"Buffalo, NY",reddy_bikeshare,https://reddybikeshare.socialbicycles.com/,https://reddybikeshare.socialbicycles.com/opendata/gbfs.json
 US,Relay Bike Share,"Atlanta, GA",relay_bike_share,http://relaybikeshare.com/,https://relaybikeshare.socialbicycles.com/opendata/gbfs.json
-US,RTC Bike Share ,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
+US,RTC Bike Share,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
 US,San Antonio B-cycle,"San Antonio, TX",bcycle_sanantonio,https://sanantonio.bcycle.com/,https://gbfs.bcycle.com/bcycle_sanantonio/gbfs.json
 US,Savannah,"Savannah, GA",bcycle_catbike,https://catbike.bcycle.com,https://gbfs.bcycle.com/bcycle_catbike/gbfs.json
 US,Share-a-Bull Bikes,University of South Florida,usf_share-a-bull_bikes,https://usf.socialbicycles.com/,https://usf.socialbicycles.com/opendata/gbfs.json
