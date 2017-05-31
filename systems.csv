@@ -46,6 +46,7 @@ US,Indy - Pacers Bikeshare,"Indianapolis, IN",bcycle_pacersbikeshare,https://www
 US,Jackson County,"Jackson, MI",bcycle_jacksoncounty,https://jacksoncounty.bcycle.com,https://gbfs.bcycle.com/bcycle_jacksoncounty/gbfs.json
 US,Juice,"Orlando, FL",juice_bike_share,https://www.juicebikeshare.com/,https://www.juicebikeshare.com/opendata/gbfs.json
 US,Kansas City B-cycle,"Kansas City, MO",bcycle_kc,https://kc.bcycle.com,https://gbfs.bcycle.com/bcycle_kc/gbfs.json
+US,Las Vegas,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
 US,Link Dayton Bike Share,"Dayton, OH",bcycle_linkdayton,https://www.linkdayton.org,https://gbfs.bcycle.com/bcycle_linkdayton/gbfs.json
 US,Madison B-cycle,"Madison, WI",bcycle_madison,https://madison.bcycle.com,https://gbfs.bcycle.com/bcycle_madison/gbfs.json
 US,McAllen B-cycle,"McAllen, TX",bcycle_mcallen,https://mcallen.bcycle.com,https://gbfs.bcycle.com/bcycle_mcallen/gbfs.json
@@ -57,7 +58,6 @@ US,OKC Spokies,"Oklahoma City, OK",bcycle_spokies,http://spokiesokc.com/,https:/
 US,Rapid City B-cycle,"Rapid City, SD",bcycle_rapidcity,https://rapidcity.bcycle.com,https://gbfs.bcycle.com/bcycle_rapidcity/gbfs.json
 US,Reddy Bike Share,"Buffalo, NY",reddy_bikeshare,https://reddybikeshare.socialbicycles.com/,https://reddybikeshare.socialbicycles.com/opendata/gbfs.json
 US,Relay Bike Share,"Atlanta, GA",relay_bike_share,http://relaybikeshare.com/,https://relaybikeshare.socialbicycles.com/opendata/gbfs.json
-US,RTC Bike Share,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
 US,San Antonio B-cycle,"San Antonio, TX",bcycle_sanantonio,https://sanantonio.bcycle.com/,https://gbfs.bcycle.com/bcycle_sanantonio/gbfs.json
 US,Savannah,"Savannah, GA",bcycle_catbike,https://catbike.bcycle.com,https://gbfs.bcycle.com/bcycle_catbike/gbfs.json
 US,Share-a-Bull Bikes,University of South Florida,usf_share-a-bull_bikes,https://usf.socialbicycles.com/,https://usf.socialbicycles.com/opendata/gbfs.json
