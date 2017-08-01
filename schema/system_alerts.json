@@ -1,0 +1,129 @@
+{
+  "definitions": {
+    "AlertTime": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "start": {
+          "type": "integer"
+        },
+        "end": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ]
+    },
+    "Alert": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "alert_id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "times": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/AlertTime"
+          }
+        },
+        "station_ids": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "region_ids": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "summary": {
+          "type": "string"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "last_updated": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "alert_id",
+        "type",
+        "times",
+        "station_ids",
+        "region_ids",
+        "url",
+        "summary",
+        "description",
+        "last_updated"
+      ]
+    },
+    "SystemAlertsData": {
+      "type": "object",
+      "properties": {
+        "alerts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Alert"
+          }
+        }
+      },
+      "required": [
+        "alerts"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "#/definitions/SystemAlertsData"
+    },
+    "last_updated": {
+      "type": "integer"
+    },
+    "ttl": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "data",
+    "last_updated",
+    "ttl"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "definitions": {
+    "RentalHours": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "user_types": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "days": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "start_time": {
+          "type": "string"
+        },
+        "end_time": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "user_types",
+        "days",
+        "start_time",
+        "end_time"
+      ]
+    },
+    "SystemHoursData": {
+      "type": "object",
+      "properties": {
+        "rental_hours": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/RentalHours"
+          }
+        }
+      },
+      "required": [
+        "rental_hours"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "#/definitions/SystemHoursData"
+    },
+    "last_updated": {
+      "type": "integer"
+    },
+    "ttl": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "data",
+    "last_updated",
+    "ttl"
+  ]
+}

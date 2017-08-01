@@ -1,0 +1,76 @@
+{
+  "definitions": {
+    "PricingPlan": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "plan_id": {
+          "type": "string"
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        },
+        "is_taxable": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "plan_id",
+        "url",
+        "name",
+        "currency",
+        "price",
+        "is_taxable",
+        "description"
+      ]
+    },
+    "SystemPricingPlansData": {
+      "type": "object",
+      "properties": {
+        "plans": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PricingPlan"
+          }
+        }
+      },
+      "required": [
+        "plans"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "#/definitions/SystemPricingPlansData"
+    },
+    "last_updated": {
+      "type": "integer"
+    },
+    "ttl": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "data",
+    "last_updated",
+    "ttl"
+  ]
+}

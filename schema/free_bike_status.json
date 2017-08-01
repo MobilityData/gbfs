@@ -1,0 +1,65 @@
+{
+  "definitions": {
+    "Bike": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "bike_id": {
+          "type": "string"
+        },
+        "lat": {
+          "type": "number"
+        },
+        "lon": {
+          "type": "number"
+        },
+        "is_reserved": {
+          "type": "string"
+        },
+        "is_disabled": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bike_id",
+        "lat",
+        "lon",
+        "is_reserved",
+        "is_disabled"
+      ]
+    },
+    "FreeBikeStatusData": {
+      "type": "object",
+      "properties": {
+        "bikes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Bike"
+          }
+        }
+      },
+      "required": [
+        "bikes"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "#/definitions/FreeBikeStatusData"
+    },
+    "last_updated": {
+      "type": "integer"
+    },
+    "ttl": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "data",
+    "last_updated",
+    "ttl"
+  ]
+}

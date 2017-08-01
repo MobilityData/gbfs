@@ -1,0 +1,53 @@
+{
+  "definitions": {
+    "Region": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "region_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "region_id",
+        "name"
+      ]
+    },
+    "SystemRegionsData": {
+      "type": "object",
+      "properties": {
+        "regions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Region"
+          }
+        }
+      },
+      "required": [
+        "regions"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "#/definitions/SystemRegionsData"
+    },
+    "last_updated": {
+      "type": "integer"
+    },
+    "ttl": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "data",
+    "last_updated",
+    "ttl"
+  ]
+}

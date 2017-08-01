@@ -1,0 +1,71 @@
+{
+  "definitions": {
+    "Feed": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "url"
+      ]
+    },
+    "ManifestFeeds": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "feeds": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/Feed"
+          }
+        }
+      },
+      "required": [
+        "feeds"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": {
+        "$ref": "#/definitions/ManifestFeeds"
+      }
+    },
+    "last_updated": {
+      "type": "integer"
+    },
+    "ttl": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "data",
+    "last_updated",
+    "ttl"
+  ]
+}

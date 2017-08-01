@@ -1,0 +1,113 @@
+{
+  "definitions": {
+    "Station": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "station_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "short_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lat": {
+          "type": "number"
+        },
+        "lon": {
+          "type": "number"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cross_street": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "region_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "post_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rental_methods": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "capacity": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "station_id",
+        "name",
+        "short_name",
+        "lat",
+        "lon",
+        "address",
+        "cross_street",
+        "region_id",
+        "post_code",
+        "rental_methods",
+        "capacity"
+      ]
+    },
+    "StationInformationData": {
+      "type": "object",
+      "properties": {
+        "stations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Station"
+          }
+        }
+      },
+      "required": [
+        "stations"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "#/definitions/StationInformationData"
+    },
+    "last_updated": {
+      "type": "integer"
+    },
+    "ttl": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "data",
+    "last_updated",
+    "ttl"
+  ]
+}

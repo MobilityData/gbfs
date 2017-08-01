@@ -1,0 +1,72 @@
+{
+  "definitions": {
+    "Calendar": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "start_month": {
+          "type": "integer"
+        },
+        "start_day": {
+          "type": "integer"
+        },
+        "start_year": {
+          "type": "integer"
+        },
+        "end_month": {
+          "type": "integer"
+        },
+        "end_day": {
+          "type": "integer"
+        },
+        "end_year": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "start_month",
+        "start_day",
+        "start_year",
+        "end_month",
+        "end_day",
+        "end_year"
+      ]
+    },
+    "SystemCalendarData": {
+      "type": "object",
+      "properties": {
+        "calendars": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/Calendar"
+          }
+        }
+      },
+      "required": [
+        "calendars"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "#/definitions/SystemCalendarData"
+    },
+    "last_updated": {
+      "type": "integer"
+    },
+    "ttl": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "data",
+    "last_updated",
+    "ttl"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "definitions": {
+    "Status": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "station_id": {
+          "type": "string"
+        },
+        "num_bikes_available": {
+          "type": "integer"
+        },
+        "num_bikes_disabled": {
+          "type": "integer"
+        },
+        "num_docks_available": {
+          "type": "integer"
+        },
+        "num_docks_disabled": {
+          "type": "integer"
+        },
+        "is_installed": {
+          "type": "boolean"
+        },
+        "is_renting": {
+          "type": "boolean"
+        },
+        "is_returning": {
+          "type": "boolean"
+        },
+        "last_reported": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "station_id",
+        "num_bikes_available",
+        "num_bikes_disabled",
+        "num_docks_available",
+        "num_docks_disabled",
+        "is_installed",
+        "is_renting",
+        "is_returning",
+        "last_reported"
+      ]
+    },
+    "StationStatusData": {
+      "type": "object",
+      "properties": {
+        "stations": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/Status"
+          }
+        }
+      },
+      "required": [
+        "stations"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "#/definitions/StationStatusData"
+    },
+    "last_updated": {
+      "type": "integer"
+    },
+    "ttl": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "data",
+    "last_updated",
+    "ttl"
+  ]
+}
