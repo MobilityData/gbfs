@@ -1,15 +1,19 @@
 {
+  "description": "Describes the regions the system is broken up into.",
   "definitions": {
     "Region": {
+      "description": "A region object.",
       "type": [
         "object",
         "null"
       ],
       "properties": {
         "region_id": {
+          "description": "Unique identifier for the region",
           "type": "string"
         },
         "name": {
+          "description": "Public name for this region",
           "type": "string"
         }
       },
@@ -19,13 +23,16 @@
       ]
     },
     "SystemRegionsData": {
+      "description": "Object containing the data fields for this response",
       "type": "object",
       "properties": {
         "regions": {
+          "description": "Array of region objects",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Region"
-          }
+          },
+          "minItems": 0
         }
       },
       "required": [
@@ -39,10 +46,14 @@
       "$ref": "#/definitions/SystemRegionsData"
     },
     "last_updated": {
+      "description": "Integer POSIX timestamp indicating the last time the data in this feed was updated",
       "type": "integer"
     },
     "ttl": {
-      "type": "integer"
+      "description": "Integer representing the number of seconds before the data in this feed will be updated again (0 if the data should always be refreshed)",
+      "type": "integer",
+      "minimum": 0.0,
+      "maximum": "Infinity"
     }
   },
   "required": [

@@ -1,39 +1,47 @@
 {
+  "description": "Describes the system pricing.",
   "definitions": {
     "PricingPlan": {
+      "description": "A plan object.",
       "type": [
         "object",
         "null"
       ],
       "properties": {
         "plan_id": {
+          "description": "A unique identifier for this plan in the system",
           "type": "string"
         },
         "url": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "description": "A fully qualified URL where the customer can learn more about this particular scheme",
+          "type": "string",
+          "format": "uri"
         },
         "name": {
+          "description": "Name of this pricing scheme",
           "type": "string"
         },
         "currency": {
+          "description": "Currency this pricing is in (ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217)",
           "type": "string"
         },
         "price": {
+          "description": "Fee for this pricing scheme. This should be in the base unit as defined by the ISO 4217 currency code with the appropriate number of decimal places and omitting the currency symbol. e.g. if the price is in US Dollars the price would be 9.95",
           "type": "number"
         },
         "is_taxable": {
-          "type": "boolean"
+          "description": "1/0 value:\n        0 indicates that no additional tax will be added (either because tax is not charged, or because it is included)\n        1 indicates that tax will be added to the base price",
+          "type": "integer",
+          "minimum": 0.0,
+          "maximum": 1.0
         },
         "description": {
+          "description": "Text field describing the particular pricing plan in human readable terms.  This should include the duration, price, conditions, etc. that the publisher would like users to see. This is intended to be a human-readable description and should not be used for automatic calculations",
           "type": "string"
         }
       },
       "required": [
         "plan_id",
-        "url",
         "name",
         "currency",
         "price",
@@ -42,13 +50,16 @@
       ]
     },
     "SystemPricingPlansData": {
+      "description": "Object containing the data fields for this response",
       "type": "object",
       "properties": {
         "plans": {
+          "description": "Array of any number of plan objects.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/PricingPlan"
-          }
+          },
+          "minItems": 0
         }
       },
       "required": [
@@ -62,10 +73,14 @@
       "$ref": "#/definitions/SystemPricingPlansData"
     },
     "last_updated": {
+      "description": "Integer POSIX timestamp indicating the last time the data in this feed was updated",
       "type": "integer"
     },
     "ttl": {
-      "type": "integer"
+      "description": "Integer representing the number of seconds before the data in this feed will be updated again (0 if the data should always be refreshed)",
+      "type": "integer",
+      "minimum": 0.0,
+      "maximum": "Infinity"
     }
   },
   "required": [
