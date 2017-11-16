@@ -2,7 +2,7 @@ Country Code,Name,Location,System ID,URL,Auto-Discovery URL
 AE,ADCB Bikeshare,"Abu Dhabi, AE",ABU,https://www.bikeshare.ae/,https://api-core.bikeshare.ae/gbfs/gbfs.json
 AU,Curtin University,"Curtin University, Perth, WA",curtin_university,http://curtinbikeshare.com/,http://curtinbikeshare.com/opendata/gbfs.json
 AU,Monash Bike Share,"Monash University, Melbourne, AU",monash_bike_share,https://monashbikeshare.com/,https://monashbikeshare.com/opendata/gbfs.json
-AW,Aruba,"Aruba",greenbike_aruba,http://greenbikearuba.com,https://aru.publicbikesystem.net/ube/gbfs/v1/
+AW,Greenbike Aruba,"Aruba",greenbike_aruba,http://greenbikearuba.com,https://aru.publicbikesystem.net/ube/gbfs/v1/
 BR,Bike Itaú,"Recife, BR",bike_itau,https://bikeitau.com.br/,https://rec.publicbikesystem.net/ube/gbfs/v1/
 CA,Bike Share Toronto,"Toronto, ON",bike_share_toronto,https://www.bikesharetoronto.com/,https://tor.publicbikesystem.net/ube/gbfs/v1/
 CA,Sobi Hamilton,Hamilton Ontario,sobi_hamilton,https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json
