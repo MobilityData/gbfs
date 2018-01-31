@@ -52,6 +52,7 @@ US,Indego,"Philadelphia, PA",bcycle_indego,https://www.rideindego.com,https://gb
 US,Indy - Pacers Bikeshare,"Indianapolis, IN",bcycle_pacersbikeshare,https://www.pacersbikeshare.org,https://gbfs.bcycle.com/bcycle_pacersbikeshare/gbfs.json
 US,Jackson County,"Jackson, MI",bcycle_jacksoncounty,https://jacksoncounty.bcycle.com,https://gbfs.bcycle.com/bcycle_jacksoncounty/gbfs.json
 US,Juice,"Orlando, FL",juice_bike_share,https://www.juicebikeshare.com/,https://www.juicebikeshare.com/opendata/gbfs.json
+US,JUMP DC,"Washington, DC",jump_dc,https://jumpbikes.com/,https://dc.jumpmobility.com/opendata/gbfs.json
 US,Kansas City B-cycle,"Kansas City, MO",bcycle_kc,https://kc.bcycle.com,https://gbfs.bcycle.com/bcycle_kc/gbfs.json
 US,Las Vegas,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
 US,Link Dayton Bike Share,"Dayton, OH",bcycle_linkdayton,https://www.linkdayton.org,https://gbfs.bcycle.com/bcycle_linkdayton/gbfs.json
