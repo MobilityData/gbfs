@@ -11,6 +11,7 @@ CZ,Velonet,"Prague - Brno, CZ",velonet_cz,http://velonet.cz/,http://velonet.cz/o
 DE,nextbike Germany,"DE",nextbike_de,https://www.nextbike.de/,https://nextbike.net/maps/gbfs/v1/nextbike_de/gbfs.json
 IS,WOW citybike,"Reykjavik, IS",wow_citybike,https://wowcitybike.com/,https://rey.publicbikesystem.net/ube/gbfs/v1/
 MX,Mibici Guadalajara,"Guadalajara, MX",mibici_guadalajara,https://www.mibici.net/en/,https://guad.publicbikesystem.net/ube/gbfs/v1/
+NZ,nextbike New Zealand,"NZ",nextbike_nz,http://www.nextbike.co.nz/,https://nextbike.net/maps/gbfs/v1/nextbike_nz/gbfs.json
 US,ArborBike,"Ann Arbor, MI",bcycle_arborbike,http://arborbike.org,https://gbfs.bcycle.com/bcycle_arborbike/gbfs.json
 US,Austin B-cycle,"Austin, TX",bcycle_austin,http://austinbcycle.com,https://gbfs.bcycle.com/bcycle_austin/gbfs.json
 US,Aventura BCycle,"Aventura, FL",bcycle_aventura,https://aventura.bcycle.com,https://gbfs.bcycle.com/bcycle_aventura/gbfs.json
