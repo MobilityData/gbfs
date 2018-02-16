@@ -10,7 +10,6 @@ CA,VeloGo,"Ottawa, ON",velgo,http://velogo.ca/,http://velogo.ca/opendata/gbfs.js
 CZ,Velonet,"Prague - Brno, CZ",velonet_cz,http://velonet.cz/,http://velonet.cz/opendata/gbfs.json
 DE,MVG Rad Germany,"München, DE",nextbike_mg,http://www.mvgrad.de/,https://nextbike.net/maps/gbfs/v1/nextbike_mg/gbfs.json
 DE,nextbike Germany (Test),"Hamburg, DE",nextbike_de,https://www.nextbike.de/,https://nextbike.net/maps/gbfs/v1/nextbike_de/gbfs.json
-GB,Milton Keynes,"Milton Keynes, GB",nextbike_ku,https://santandercyclesmk.co.uk/,https://nextbike.net/maps/gbfs/v1/nextbike_ku/gbfs.json
 IS,WOW citybike,"Reykjavik, IS",wow_citybike,https://wowcitybike.com/,https://rey.publicbikesystem.net/ube/gbfs/v1/
 MX,Mibici Guadalajara,"Guadalajara, MX",mibici_guadalajara,https://www.mibici.net/en/,https://guad.publicbikesystem.net/ube/gbfs/v1/
 PL,VETURILO ( testsystem ),"Warszawa, PL",nextbike_vp,http://www.veturilo.waw.pl/,https://nextbike.net/maps/gbfs/v1/nextbike_vp/gbfs.json
