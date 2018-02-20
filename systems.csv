@@ -1,5 +1,6 @@
 Country Code,Name,Location,System ID,URL,Auto-Discovery URL
 AE,ADCB Bikeshare,"Abu Dhabi, AE",ABU,https://www.bikeshare.ae/,https://api-core.bikeshare.ae/gbfs/gbfs.json
+AR,MiBiciTuBici,"Rosario, Santa Fe, AR",biketobike,https://www.mibicitubici.gob.ar/,https://www.mibicitubici.gob.ar/opendata/gbfs.json
 AU,Monash Bike Share,"Monash University, Melbourne, AU",monash_bike_share,https://monashbikeshare.com/,https://monashbikeshare.com/opendata/gbfs.json
 AW,Greenbike Aruba,"Aruba",greenbike_aruba,http://greenbikearuba.com,https://aru.publicbikesystem.net/ube/gbfs/v1/
 BR,Bike Itaú,"Recife, BR",bike_itau,https://bikeitau.com.br/,https://rec.publicbikesystem.net/ube/gbfs/v1/
