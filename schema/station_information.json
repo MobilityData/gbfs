@@ -108,8 +108,7 @@
     "ttl": {
       "description": "Integer representing the number of seconds before the data in this feed will be updated again (0 if the data should always be refreshed)",
       "type": "integer",
-      "minimum": 0.0,
-      "maximum": "Infinity"
+      "minimum": 0.0
     }
   },
   "required": [
