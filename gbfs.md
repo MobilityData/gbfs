@@ -12,6 +12,8 @@ This document explains the types of files and data that comprise the General Bik
     * [system_information.json](#system_informationjson)
     * [station_information.json](#station_informationjson)
     * [station_status.json](#station_statusjson)
+    * [geofencing_zone_information.json](#geofencing_zone_statusjson)
+    * [geofencing_zone_status.json](#geofencing_zone_statusjson)    
     * [free_bike_status.json](#free_bike_statusjson)
     * [system_hours.json](#system_hoursjson)
     * [system_calendar.json](#system_calendarjson)
@@ -21,6 +23,7 @@ This document explains the types of files and data that comprise the General Bik
 * [Possible Future Enhancements](#possible-future-enhancements)
 
 ## Revision History
+* 07/02/2018 - GBFS V1.1 Adding support for electric bikes and geofenced bike return areas
 * 11/05/2015 - GBFS V1.0 Adopted by NABSA board
 * 08/2015 - Latest changes incorporated and name change to GBFS (comments from Motivate, 8D, others)
 * 06/2015 - Proposed refinements (prepared by Jesse Chan-Norris on behalf of Motivate)
@@ -42,7 +45,9 @@ File Name                   | Required      | Defines
 gbfs.json                   | Optional      | Auto-discovery file that links to all of the other files published by the system. This file is optional, but highly recommended.
 system_information.json     | Yes           | Describes the system including System operator, System location, year implemented, URLs, contact info, time zone
 station_information.json    | Yes           | Mostly static list of all stations, their capacities and locations
-station_status.json         | Yes           | Number of available bikes and docks at each station and station availability
+station_status.json         | Optional      | Number of available bikes and docks at each station and station availability. Optional as system can be free floating.
+geofencing_zone_information.json    | Optional   | Mostly static list of all geofencing zones, their capacities, locations and areas
+geofencing_zone_status.json      | Optional      | Defines geofencing zones available in the system and their link to physical stations if any. Optional because system might be based on physical stations only.
 free_bike_status.json       | Optional      | Describes bikes that are available in non station-based systems
 system_hours.json           | Optional      | Describes the hours of operation for the system
 system_calendar.json        | Optional      | Describes the days of operation for the system
@@ -192,6 +197,23 @@ stations          | Yes       | Array that contains one object per station in th
 \- rental_methods  | Optional  | Array of enumerables containing the payment methods accepted at this station. <br />Current valid values (in CAPS) are:<br /><ul><li>KEY _(i.e. operator issued bike key / fob / card)_</li> <li>CREDITCARD</li> <li>PAYPASS</li> <li>APPLEPAY</li> <li>ANDROIDPAY</li> <li>TRANSITCARD</li> <li>ACCOUNTNUMBER</li> <li>PHONE</li> </ul> This list is intended to be as comprehensive at the time of publication as possible but is subject to change, as defined in [File Requirements](#file-requirements) above
 \- capacity        | Optional  | Number of total docking points installed at this station, both available and unavailable
 
+### geofencing_zone_information.json
+All geofencing zones contained in this list are considered public (ie, can be shown on a map for public use). If there are private geofencing zones these should not be exposed here and their status should not be included in geofencing_zone_information.json.
+
+Field Name        | Required  | Defines
+------------------| --------- | ----------
+geofencing_zones   | Yes       | Array that contains one object per geofencing zone in the system as defined below
+\- geofencing_zone_id      | Yes       | Unique identifier of a geofencing zone. See [Field Definitions](#field-definitions) above for ID field requirements
+\- name            | Optional       | Public name of the geofencing zone
+\- lat             | Yes       | The latitude of the centroid of the geofencing zone. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
+\- lon             | Yes       | The longitude of the centroid of the geofencing zone. The field value must be a valid WGS 84 longitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
+\- region_id       | Optional  | ID of the region where geofencing zone is located (see [system_regions.json](#system_regionsjson))
+\- post_code       | Optional  | Postal code where the geofencing zone is located
+\- capacity        | Optional  | Total bike capacity approved for this geofencing zone, as approved by the city or the operator.
+\- zone_area	    | Yes	    | A valid GeoJSON MultiPolygon that describes the area where free bikes can be dropped off. 
+\- station_id      | Optional  | Unique identifier of the station this geofencing zone is attached to, if any (see station_information.json)
+
+
 ### station_status.json
 
 Field Name            | Required  | Defines
@@ -199,6 +221,9 @@ Field Name            | Required  | Defines
 stations              | Yes       | Array that contains one object per station in the system as defined below
 \- station_id          | Yes       | Unique identifier of a station (see station_information.json)
 \- num_bikes_available | Yes       | Number of bikes available for rental
+\- num_bikes_available_types | Yes | Array that contains one entry per bike type as defined below (more types can be added)
+\-- mechanical 		   | Optional | Count of this type of bike at the station
+\-- ebike 			   | Optional | Count of this type of bike at the station
 \- num_bikes_disabled  | Optional  | Number of disabled bikes at the station. Vendors who do not want to publicize the number of disabled bikes or docks in their system can opt to omit station capacity (in station_information), num_bikes_disabled and num_docks_disabled. If station capacity is published then broken docks/bikes can be inferred (though not specifically whether the decreased capacity is a broken bike or dock)
 \- num_docks_available | Yes       | Number of docks accepting bike returns
 \- num_docks_disabled  | Optional  | Number of empty but disabled dock points at the station. This value remains as part of the spec as it is possibly useful during development
@@ -206,6 +231,19 @@ stations              | Yes       | Array that contains one object per station i
 \- is_renting          | Yes       | 1/0 boolean - is the station currently renting bikes (even if the station is empty, if it is set to allow rentals this value should be 1)
 \- is_returning        | Yes       | 1/0 boolean - is the station accepting bike returns (if a station is full but would allow a return if it was not full then this value should be 1)
 \- last_reported       | Yes       | Integer POSIX timestamp indicating the last time this station reported its status to the backend
+\- is_charging_station         | Optional  | 1/0 boolean - is this station able to charge ebikes
+
+### geofencing_zone_status.json
+Field Name            | Required  | Defines
+--------------------- | ----------| ----------
+geofencing_zones      | Yes       | Array that contains one object per geofencing zone in the system as defined below
+\- geofencing_zone_id  | Yes       | Unique identifier of a geofencing zone (see geofencing_zone_information.json)
+\- num_bikes_available | Yes       | Number of bikes available for rental
+\- num_bikes_available_types | Yes | Array that contains one entry per bike type as defined below (more types can be added)
+\-- mechanical 		   | Optional | Count of this type of bike at the station
+\-- ebike 			   | Optional | Count of this type of bike at the station
+\- num_bikes_disabled  | Optional  | Number of disabled bikes in the geofencing zone. 
+\- is_returning        | Yes       | 1/0 boolean - is the geofencing zone accepting bike returns (business rules, such as city regulation may affect whether we are allowed to return in this zone or not during certain time slots)
 
 ### free_bike_status.json
 Describes bikes that are not at a station and are not currently in the middle of an active ride.
@@ -218,6 +256,9 @@ bikes             | Yes       | Array that contains one object per bike that is 
 \- lon             | Yes       | Longitude of the bike. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
 \- is_reserved     | Yes       | 1/0 value - is the bike currently reserved for someone else
 \- is_disabled     | Yes       | 1/0 value - is the bike currently disabled (broken)
+\- is_ebike	       | Yes       | 1/0 value - is the bike an electric bike
+\- station_id      | Optional  | Unique identifier of the station this bike is parked at, if any (see station_information.json). If both station_id and geofence_zone_id are set, then the geofence is associated to the station.
+\- geofence_zone_id      | Optional  | Unique identifier of the geofence zone this bike is parked at, if any (see geofence_zone_information.json). If both station_id and geofence_zone_id are set, then the geofence is associated to the station.
 
 ### system_hours.json
 Describes the system hours of operation. A JSON array of hours defined as follows:
