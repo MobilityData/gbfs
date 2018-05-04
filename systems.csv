@@ -2,7 +2,7 @@ Country Code,Name,Location,System ID,URL,Auto-Discovery URL
 AE,ADCB Bikeshare,"Abu Dhabi, AE",ABU,https://www.bikeshare.ae/,https://api-core.bikeshare.ae/gbfs/gbfs.json
 AR,MiBiciTuBici,"Rosario, Santa Fe, AR",biketobike,https://www.mibicitubici.gob.ar/,https://www.mibicitubici.gob.ar/opendata/gbfs.json
 AU,Monash Bike Share,"Monash University, Melbourne, AU",monash_bike_share,https://monashbikeshare.com/,https://monashbikeshare.com/opendata/gbfs.json
-AW,Greenbike Aruba,"Aruba",greenbike_aruba,http://greenbikearuba.com,https://aru.publicbikesystem.net/ube/gbfs/v1/
+AW,Greenbike Aruba,Aruba,greenbike_aruba,http://greenbikearuba.com,https://aru.publicbikesystem.net/ube/gbfs/v1/
 BR,Bike Itaú,"Recife, BR",bike_itau,https://bikeitau.com.br/,https://rec.publicbikesystem.net/ube/gbfs/v1/
 CA,Bike Share Toronto,"Toronto, ON",bike_share_toronto,https://www.bikesharetoronto.com/,https://tor.publicbikesystem.net/ube/gbfs/v1/
 CA,BIXI-Montreal,"Montreal, QC",Bixi_MTL,https://www.bixi.com/,https://api-core.bixi.com/gbfs/gbfs.json
@@ -62,6 +62,7 @@ US,Louvelo,"Louisville, KY",Louvelo,https://louvelo.com/,https://lou.publicbikes
 US,Madison B-cycle,"Madison, WI",bcycle_madison,https://madison.bcycle.com,https://gbfs.bcycle.com/bcycle_madison/gbfs.json
 US,McAllen B-cycle,"McAllen, TX",bcycle_mcallen,https://mcallen.bcycle.com,https://gbfs.bcycle.com/bcycle_mcallen/gbfs.json
 US,Metro Bike Share,"Los Angeles, CA",bcycle_lametro,https://bikeshare.metro.net,https://gbfs.bcycle.com/bcycle_lametro/gbfs.json
+US,Mobike DC,"Washington, DC",mobike,https://mobike.com/us/,https://mobike.com/us/gbfs/v1/gbfs
 US,Mogo Detroit,"Detroit, MI",mogo,https://mogodetroit.org/,https://det.publicbikesystem.net/ube/gbfs/v1/
 US,Mountain Ride Bike Share,"Ketchum / Sun Valley, ID",mountain_rides_bike_share,http://mrbikeshare.org/,http://mrbikeshare.org/opendata/gbfs.json
 US,Nashville B-cycle,"Nashville, TN",bcycle_nashville,https://nashville.bcycle.com,https://gbfs.bcycle.com/bcycle_nashville/gbfs.json
@@ -74,6 +75,7 @@ US,San Antonio B-cycle,"San Antonio, TX",bcycle_sanantonio,https://sanantonio.bc
 US,Savannah,"Savannah, GA",bcycle_catbike,https://catbike.bcycle.com,https://gbfs.bcycle.com/bcycle_catbike/gbfs.json
 US,Sobi Long Beach,"Long Beach, NY",sobi_long_beach,http://sobilongbeach.com/,http://sobilongbeach.com/opendata/gbfs.json
 US,Spartanburg BCycle,"Spartanburg, SC",bcycle_spartanburg,https://spartanburg.bcycle.com,https://gbfs.bcycle.com/bcycle_spartanburg/gbfs.json
+US,Spin DC,"Washington, DC",spin,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/gbfs
 US,Topeka Metro Bikes,"Topeka, KS",topeka_metro_bikes,http://topekametrobikes.org/,http://topekametrobikes.org/opendata/gbfs.json
 US,Ubike,University of Virginia,university_of_virginia,http://ubike.virginia.edu/,http://ubike.virginia.edu/opendata/gbfs.json
 US,We-cycle,"Aspen, CO",we_cycle,https://www.we-cycle.org/,https://asp.publicbikesystem.net/ube/gbfs/v1/
