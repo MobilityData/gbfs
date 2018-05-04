@@ -198,6 +198,8 @@ Field Name            | Required  | Defines
 --------------------- | ----------| ----------
 stations              | Yes       | Array that contains one object per station in the system as defined below
 \- station_id          | Yes       | Unique identifier of a station (see station_information.json)
+\- num_usable_bikes    | Yes       | Number of usable bikes at the station. A bike is usable if it's not broken and could be rented if `is_renting` was true.
+\- num_usable_spaces   | Yes       | Number of usable docks at the station. A dock is usable if it's not broken and could receive bikes if `is_returning` was true.
 \- num_bikes_available | Yes       | Number of bikes available for rental
 \- num_bikes_disabled  | Optional  | Number of disabled bikes at the station. Vendors who do not want to publicize the number of disabled bikes or docks in their system can opt to omit station capacity (in station_information), num_bikes_disabled and num_docks_disabled. If station capacity is published then broken docks/bikes can be inferred (though not specifically whether the decreased capacity is a broken bike or dock)
 \- num_docks_available | Yes       | Number of docks accepting bike returns
