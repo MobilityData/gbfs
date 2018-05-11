@@ -70,6 +70,7 @@ US,Mountain Ride Bike Share,"Ketchum / Sun Valley, ID",mountain_rides_bike_share
 US,Nashville B-cycle,"Nashville, TN",bcycle_nashville,https://nashville.bcycle.com,https://gbfs.bcycle.com/bcycle_nashville/gbfs.json
 US,Nice Ride Minnesota,"Minneapolis - Saint Paul, MN",niceridemn,https://www.niceridemn.org,https://api-core.niceridemn.org/gbfs/gbfs.json
 US,OKC Spokies,"Oklahoma City, OK",bcycle_spokies,http://spokiesokc.com/,https://gbfs.bcycle.com/bcycle_spokies/gbfs.json
+US,Pike Ride,"Colorado Springs, CO",bcycle_coloradosprings,https://coloradosprings.bcycle.com,https://gbfs.bcycle.com/bcycle_coloradosprings/gbfs.json
 US,Rapid City B-cycle,"Rapid City, SD",bcycle_rapidcity,https://rapidcity.bcycle.com,https://gbfs.bcycle.com/bcycle_rapidcity/gbfs.json
 US,Reddy Bike Share,"Buffalo, NY",reddy_bikeshare,https://reddybikeshare.socialbicycles.com/,https://reddybikeshare.socialbicycles.com/opendata/gbfs.json
 US,Relay Bike Share,"Atlanta, GA",relay_bike_share,http://relaybikeshare.com/,https://relaybikeshare.socialbicycles.com/opendata/gbfs.json
@@ -78,7 +79,7 @@ US,Savannah,"Savannah, GA",bcycle_catbike,https://catbike.bcycle.com,https://gbf
 US,Sobi Long Beach,"Long Beach, NY",sobi_long_beach,http://sobilongbeach.com/,http://sobilongbeach.com/opendata/gbfs.json
 US,Spartanburg BCycle,"Spartanburg, SC",bcycle_spartanburg,https://spartanburg.bcycle.com,https://gbfs.bcycle.com/bcycle_spartanburg/gbfs.json
 US,Spin DC,"Washington, DC",spin,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/gbfs
-US,START Bike,"Jackson, WY",bcycle_startbike,https://startbikejh.com,https://gbfs.bcycle.com/bcycle_startbike/gbfs.json
+US,START Bike,"Jackson, WY",bcycle_startbike,https://startbike.bcycle.com,https://gbfs.bcycle.com/bcycle_startbike/gbfs.json
 US,Topeka Metro Bikes,"Topeka, KS",topeka_metro_bikes,http://topekametrobikes.org/,http://topekametrobikes.org/opendata/gbfs.json
 US,Ubike,University of Virginia,university_of_virginia,http://ubike.virginia.edu/,http://ubike.virginia.edu/opendata/gbfs.json
 US,We-cycle,"Aspen, CO",we_cycle,https://www.we-cycle.org/,https://asp.publicbikesystem.net/ube/gbfs/v1/
