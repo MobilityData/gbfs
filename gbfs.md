@@ -37,18 +37,18 @@ Historical data, including station details and ride data is to be provided by a 
 ## Files
 This specification defines the following files along with their associated content:
 
-File Name                   | Required      | Defines
---------------------------- | ------------  | ----------
-gbfs.json                   | Optional      | Auto-discovery file that links to all of the other files published by the system. This file is optional, but highly recommended.
-system_information.json     | Yes           | Describes the system including System operator, System location, year implemented, URLs, contact info, time zone
-station_information.json    | Yes           | Mostly static list of all stations, their capacities and locations
-station_status.json         | Yes           | Number of available bikes and docks at each station and station availability
-free_bike_status.json       | Optional      | Describes bikes that are available in non station-based systems
-system_hours.json           | Optional      | Describes the hours of operation for the system
-system_calendar.json        | Optional      | Describes the days of operation for the system
-system_regions.json         | Optional      | Describes the regions the system is broken up into
-system_pricing_plans.json   | Optional      | Describes the system pricing
-system_alerts.json          | Optional      | Describes current system alerts
+File Name                   | Required                |       Defines
+--------------------------- | ----------------------- | ----------
+gbfs.json                   | Optional                | Auto-discovery file that links to all of the other files published by the system. This file is optional, but highly recommended.
+system_information.json     | Yes                     | Describes the system including System operator, System location, year implemented, URLs, contact info, time zone
+station_information.json    | Conditionally required  | Mostly static list of all stations, their capacities and locations. Either (station_information.json and station_status.json) or free_bike_status.json should be provided.
+station_status.json         | Conditionally required  | Number of available bikes and docks at each station and station availability. Either (station_information.json and station_status.json) or free_bike_status.json should be provided.
+free_bike_status.json       | Conditionally required  | Describes bikes that are available in non station-based systems. Either (station_information.json and station_status.json) or free_bike_status.json should be provided.
+system_hours.json           | Optional                | Describes the hours of operation for the system
+system_calendar.json        | Optional                | Describes the days of operation for the system
+system_regions.json         | Optional                | Describes the regions the system is broken up into
+system_pricing_plans.json   | Optional                | Describes the system pricing
+system_alerts.json          | Optional                | Describes current system alerts
 
 ## File Requirements
 * All files should be valid JSON
