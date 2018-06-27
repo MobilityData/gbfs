@@ -41,9 +41,9 @@ File Name                   | Required                |       Defines
 --------------------------- | ----------------------- | ----------
 gbfs.json                   | Optional                | Auto-discovery file that links to all of the other files published by the system. This file is optional, but highly recommended.
 system_information.json     | Yes                     | Describes the system including System operator, System location, year implemented, URLs, contact info, time zone
-station_information.json    | Conditionally required  | Mostly static list of all stations, their capacities and locations. Either (station_information.json and station_status.json) or free_bike_status.json should be provided.
-station_status.json         | Conditionally required  | Number of available bikes and docks at each station and station availability. Either (station_information.json and station_status.json) or free_bike_status.json should be provided.
-free_bike_status.json       | Conditionally required  | Describes bikes that are available in non station-based systems. Either (station_information.json and station_status.json) or free_bike_status.json should be provided.
+station_information.json    | Conditionally required  | Mostly static list of all stations, their capacities and locations. Required of systems utilizing docks.
+station_status.json         | Conditionally required  | Number of available bikes and docks at each station and station availability. Required of systems utilizing docks.
+free_bike_status.json       | Conditionally required  | Describes bikes that are available for rent. Required of systems that don't utilize docks or offer bikes for rent outside of stations.
 system_hours.json           | Optional                | Describes the hours of operation for the system
 system_calendar.json        | Optional                | Describes the days of operation for the system
 system_regions.json         | Optional                | Describes the regions the system is broken up into
