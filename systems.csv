@@ -11,8 +11,8 @@ AW,Greenbike Aruba,Aruba,greenbike_aruba,http://greenbikearuba.com,https://aru.p
 BA,BL bike,"Banja Luka, BA",nextbike_bj,https://www.nextbike.ba/xx/banjaluka/,https://api.nextbike.net/maps/gbfs/v1/nextbike_bj/gbfs.json
 BA,Sarajevo Bosnia and Herzegovina,"Sarajevo, BA",nextbike_ba,https://www.nextbike.ba/xx/sarajevo/,https://api.nextbike.net/maps/gbfs/v1/nextbike_ba/gbfs.json
 BA,Tuzla,"Tuzla, BA",nextbike_ct,https://www.nextbike.ba/xx/tuzla/,https://api.nextbike.net/maps/gbfs/v1/nextbike_ct/gbfs.json
-BR,Bike Itaú - Poa,"Porto Alegre, BR",bike_poa,https://bikeitau.com.br/bikepoa,https://poa.publicbikesystem.net/ube/gbfs/v1/
 BR,Bike Itaú - Pernambuco,"Recife, BR",bike_pe,https://bikeitau.com.br/bikepe,https://rec.publicbikesystem.net/ube/gbfs/v1/
+BR,Bike Itaú - Poa,"Porto Alegre, BR",bike_poa,https://bikeitau.com.br/bikepoa,https://poa.publicbikesystem.net/ube/gbfs/v1/
 BR,Bike Itaú - Rio,"Rio de Janeiro, BR",bike_rio,https://bikeitau.com.br/bikerio/,https://riodejaneiro.publicbikesystem.net/ube/gbfs/v1/
 BR,Bike Itaú - Salvador,"Salvador, BR",bike_salvador,https://bikeitau.com.br/bikesalvador/,https://salvador.publicbikesystem.net/ube/gbfs/v1/
 BR,Bike Itaú - Sampa,"São Paulo, BR",bike_sampa,https://bikeitau.com.br/bikesampa,https://saopaulo.publicbikesystem.net/ube/gbfs/v1/
