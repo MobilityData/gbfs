@@ -11,7 +11,12 @@ AW,Greenbike Aruba,Aruba,greenbike_aruba,http://greenbikearuba.com,https://aru.p
 BA,BL bike,"Banja Luka, BA",nextbike_bj,https://www.nextbike.ba/xx/banjaluka/,https://api.nextbike.net/maps/gbfs/v1/nextbike_bj/gbfs.json
 BA,Sarajevo Bosnia and Herzegovina,"Sarajevo, BA",nextbike_ba,https://www.nextbike.ba/xx/sarajevo/,https://api.nextbike.net/maps/gbfs/v1/nextbike_ba/gbfs.json
 BA,Tuzla,"Tuzla, BA",nextbike_ct,https://www.nextbike.ba/xx/tuzla/,https://api.nextbike.net/maps/gbfs/v1/nextbike_ct/gbfs.json
-BR,Bike Itaú,"Recife, BR",bike_itau,https://bikeitau.com.br/,https://rec.publicbikesystem.net/ube/gbfs/v1/
+BR,Bike Itaú - Pernambuco,"Recife, BR",bike_pe,https://bikeitau.com.br/bikepe,https://rec.publicbikesystem.net/ube/gbfs/v1/
+BR,Bike Itaú - Poa,"Porto Alegre, BR",bike_poa,https://bikeitau.com.br/bikepoa,https://poa.publicbikesystem.net/ube/gbfs/v1/
+BR,Bike Itaú - Rio,"Rio de Janeiro, BR",bike_rio,https://bikeitau.com.br/bikerio/,https://riodejaneiro.publicbikesystem.net/ube/gbfs/v1/
+BR,Bike Itaú - Salvador,"Salvador, BR",bike_salvador,https://bikeitau.com.br/bikesalvador/,https://salvador.publicbikesystem.net/ube/gbfs/v1/
+BR,Bike Itaú - Sampa,"São Paulo, BR",bike_sampa,https://bikeitau.com.br/bikesampa,https://saopaulo.publicbikesystem.net/ube/gbfs/v1/
+BR,Bike VV,"Vila Velha, BR",bike_vv,https://www.bikevv.com.br/,https://vilavelha.publicbikesystem.net/ube/gbfs/v1/
 CA,Bike Share Toronto,"Toronto, ON",bike_share_toronto,https://www.bikesharetoronto.com/,https://tor.publicbikesystem.net/ube/gbfs/v1/
 CA,BIXI-Montreal,"Montreal, QC",Bixi_MTL,https://www.bixi.com/,https://api-core.bixi.com/gbfs/gbfs.json
 CA,Mobi Bike Share,"Vancouver, BC",mobi_bikes,https://www.mobibikes.ca/,https://vancouver-gbfs.smoove.pro/gbfs/gbfs.json
@@ -20,6 +25,7 @@ CA,Sobi Hamilton,Hamilton Ontario,sobi_hamilton,https://hamilton.socialbicycles.
 CA,VeloGo,"Ottawa, ON",velgo,http://velogo.ca/,http://velogo.ca/opendata/gbfs.json
 CH,nextbike Switzerland,"CH",nextbike_ch,https://www.nextbike.ch/xx/sursee/,https://api.nextbike.net/maps/gbfs/v1/nextbike_ch/gbfs.json
 CY,nextbike Cyprus,"CY",nextbike_cy,https://www.nextbike.com.cy/xx/limassol/,https://api.nextbike.net/maps/gbfs/v1/nextbike_cy/gbfs.json
+CY,Velespeed,"Nicosia, CY",velespeed,https://en.velespeed.net/,https://nicosia.publicbikesystem.net/ube/gbfs/v1/
 CZ,Velonet,"Prague - Brno, CZ",velonet_cz,http://velonet.cz/,http://velonet.cz/opendata/gbfs.json
 DE,Berlin-Buch Campus,"Berlin-Buch, DE",nextbike_cb,https://www.nextbike.de/xx/berlin-buch/,https://germany.nextbike.net/maps/gbfs/v1/nextbike_cb/gbfs.json
 DE,Deezer nextbike,"Berlin, DE",nextbike_bn,https://www.deezernextbike.de/xx/berlin/,https://deezer.nextbike.net/maps/gbfs/v1/nextbike_bn/gbfs.json
@@ -202,5 +208,6 @@ US,Spartanburg BCycle,"Spartanburg, SC",bcycle_spartanburg,https://spartanburg.b
 US,Spin DC,"Washington, DC",spin,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/gbfs
 US,START Bike,"Jackson, WY",bcycle_startbike,https://startbike.bcycle.com,https://gbfs.bcycle.com/bcycle_startbike/gbfs.json
 US,Topeka Metro Bikes,"Topeka, KS",topeka_metro_bikes,http://topekametrobikes.org/,http://topekametrobikes.org/opendata/gbfs.json
+US,Tugo,"Tucson, AZ",tugo,https://tugobikeshare.com/,https://tuc.publicbikesystem.net/ube/gbfs/v1/
 US,Ubike,University of Virginia,university_of_virginia,http://ubike.virginia.edu/,http://ubike.virginia.edu/opendata/gbfs.json
 US,We-cycle,"Aspen, CO",we_cycle,https://www.we-cycle.org/,https://asp.publicbikesystem.net/ube/gbfs/v1/
