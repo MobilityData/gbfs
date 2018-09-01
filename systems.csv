@@ -22,11 +22,11 @@ CA,BIXI-Montreal,"Montreal, QC",Bixi_MTL,https://www.bixi.com/,https://api-core.
 CA,Mobi Bike Share,"Vancouver, BC",mobi_bikes,https://www.mobibikes.ca/,https://vancouver-gbfs.smoove.pro/gbfs/gbfs.json
 CA,nextbike Canada,"Victoria, CA",nextbike_ca,https://canada.nextbike.net/xx/,https://api.nextbike.net/maps/gbfs/v1/nextbike_ca/gbfs.json
 CA,Sobi Hamilton,Hamilton Ontario,sobi_hamilton,https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json
-CA,VeloGo,"Ottawa, ON",velgo,http://velogo.ca/,http://velogo.ca/opendata/gbfs.json/gbfs.json
+CA,VeloGo,"Ottawa, ON",velgo,http://velogo.ca/,http://velogo.ca/opendata/gbfs.json
 CH,nextbike Switzerland,"CH",nextbike_ch,https://www.nextbike.ch/xx/sursee/,https://api.nextbike.net/maps/gbfs/v1/nextbike_ch/gbfs.json
 CY,nextbike Cyprus,"CY",nextbike_cy,https://www.nextbike.com.cy/xx/limassol/,https://api.nextbike.net/maps/gbfs/v1/nextbike_cy/gbfs.json
 CY,Velespeed,"Nicosia, CY",velespeed,https://en.velespeed.net/,https://nicosia.publicbikesystem.net/ube/gbfs/v1/
-CZ,Velonet,"Prague - Brno, CZ",velonet_cz,http://velonet.cz/,http://velonet.cz/opendata/gbfs.json/gbfs.json
+CZ,Velonet,"Prague - Brno, CZ",velonet_cz,http://velonet.cz/,http://velonet.cz/opendata/gbfs.json
 DE,Berlin-Buch Campus,"Berlin-Buch, DE",nextbike_cb,https://www.nextbike.de/xx/berlin-buch/,https://germany.nextbike.net/maps/gbfs/v1/nextbike_cb/gbfs.json
 DE,Deezer nextbike,"Berlin, DE",nextbike_bn,https://www.deezernextbike.de/xx/berlin/,https://deezer.nextbike.net/maps/gbfs/v1/nextbike_bn/gbfs.json
 DE,ebikestation Stuttgart Germany,"DE",nextbike_eg,https://www.e-bike-stationen.de/,https://api.nextbike.net/maps/gbfs/v1/nextbike_eg/gbfs.json
