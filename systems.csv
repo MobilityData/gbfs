@@ -20,7 +20,7 @@ BR,Bike VV,"Vila Velha, BR",bike_vv,https://www.bikevv.com.br/,https://vilavelha
 CA,Bike Share Toronto,"Toronto, ON",bike_share_toronto,https://www.bikesharetoronto.com/,https://tor.publicbikesystem.net/ube/gbfs/v1/
 CA,BIXI-Montreal,"Montreal, QC",Bixi_MTL,https://www.bixi.com/,https://api-core.bixi.com/gbfs/gbfs.json
 CA,Mobi Bike Share,"Vancouver, BC",mobi_bikes,https://www.mobibikes.ca/,https://vancouver-gbfs.smoove.pro/gbfs/gbfs.json
-CA,nextbike Canada,"Victoria, CA",nextbike_ca,https://canada.nextbike.net/xx/,https://api.nextbike.net/maps/gbfs/v1/nextbike_ca/gbfs.json
+CA,nextbike Canada,"Victoria, BC",nextbike_ca,https://canada.nextbike.net/xx/,https://api.nextbike.net/maps/gbfs/v1/nextbike_ca/gbfs.json
 CA,Sobi Hamilton,Hamilton Ontario,sobi_hamilton,https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json
 CA,VeloGo,"Ottawa, ON",velgo,http://velogo.ca/,http://velogo.ca/opendata/gbfs.json
 CH,nextbike Switzerland,"CH",nextbike_ch,https://www.nextbike.ch/xx/sursee/,https://api.nextbike.net/maps/gbfs/v1/nextbike_ch/gbfs.json
