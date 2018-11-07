@@ -183,7 +183,7 @@ US,JUMP NYC,"NYC, NY",jump_nyc,https://jumpbikes.com/,https://nyc.jumpbikes.com/
 US,JUMP Providence,"Providence, RI",jump_pvd,https://jumpbikes.com/,https://pvd.jumpbikes.com/opendata
 US,JUMP Sacramento,"Sacramento, CA",jump_sacramento,https://jumpbikes.com/,https://sac.jumpbikes.com/opendata
 US,JUMP SF,"San Francisco, CA",jump_sf,https://jumpbikes.com/,https://sf.jumpbikes.com/opendata
-US,JUMP SC,"Santa Cruz, CA",jump_dc,https://jumpbikes.com/,https://sc.jumpbikes.com/opendata
+US,JUMP SC,"Santa Cruz, CA",jump_sc,https://jumpbikes.com/,https://sc.jumpbikes.com/opendata
 US,Kansas City B-cycle,"Kansas City, MO",bcycle_kc,https://kc.bcycle.com,https://gbfs.bcycle.com/bcycle_kc/gbfs.json
 US,Las Vegas,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
 US,Link Dayton Bike Share,"Dayton, OH",bcycle_linkdayton,https://www.linkdayton.org,https://gbfs.bcycle.com/bcycle_linkdayton/gbfs.json
