@@ -175,15 +175,17 @@ US,Indy - Pacers Bikeshare,"Indianapolis, IN",bcycle_pacersbikeshare,https://www
 US,Jackson County,"Jackson, MI",bcycle_jacksoncounty,https://jacksoncounty.bcycle.com,https://gbfs.bcycle.com/bcycle_jacksoncounty/gbfs.json
 US,JerseyBike,"US",nextbike_nj,http://www.hudsonbikeshare.com/xx/hoboken/,https://api.nextbike.net/maps/gbfs/v1/nextbike_nj/gbfs.json
 US,Juice,"Orlando, FL",juice_bike_share,https://www.juicebikeshare.com/,https://www.juicebikeshare.com/opendata/gbfs.json
-US,JUMP Austin,"Austin, TX",jump_austin,https://jumpbikes.com/,https://atx.jumpbikes.com/opendata
-US,JUMP Chicago,"Chicago, IL",jump_chicago,https://jumpbikes.com/,https://chi.jumpbikes.com/opendata
-US,JUMP DC,"Washington, DC",jump_dc,https://jumpbikes.com/,https://dc.jumpmobility.com/opendata/gbfs.json
-US,JUMP Denver,"Denver, CO",jump_denver,https://jumpbikes.com/,https://den.jumpbikes.com/opendata
-US,JUMP NYC,"NYC, NY",jump_nyc,https://jumpbikes.com/,https://nyc.jumpbikes.com/opendata
-US,JUMP Providence,"Providence, RI",jump_providence,https://jumpbikes.com/,https://pvd.jumpbikes.com/opendata
-US,JUMP Sacramento,"Sacramento, CA",jump_sacramento,https://jumpbikes.com/,https://sac.jumpbikes.com/opendata
-US,JUMP SF,"San Francisco, CA",jump_sf,https://jumpbikes.com/,https://sf.jumpbikes.com/opendata
-US,JUMP SC,"Santa Cruz, CA",jump_sc,https://jumpbikes.com/,https://sc.jumpbikes.com/opendata
+US,JUMP Austin,"Austin, TX",jump_austin,https://jump.com/,https://atx.jumpbikes.com/opendata
+US,JUMP Chicago,"Chicago, IL",jump_chicago,https://jump.com/,https://chi.jumpbikes.com/opendata
+US,JUMP DC,"Washington, DC",jump_dc,https://jump.com/,https://dc.jumpmobility.com/opendata/gbfs.json
+US,JUMP Denver,"Denver, CO",jump_denver,https://jump.com/,https://den.jumpbikes.com/opendata
+US,JUMP NYC,"NYC, NY",jump_nyc,https://jump.com/,https://nyc.jumpbikes.com/opendata
+US,JUMP Providence,"Providence, RI",jump_providence,https://jump.com/,https://pvd.jumpbikes.com/opendata
+US,JUMP Sacramento,"Sacramento, CA",jump_sacramento,https://jump.com/,https://sac.jumpbikes.com/opendata
+US,JUMP San Diego,"San Diego, CA",jump_san_diego,https://jump.com,https://san.jumpbikes.com/opendata
+US,JUMP SF,"San Francisco, CA",jump_sf,https://jump.com/,https://sf.jumpbikes.com/opendata
+US,JUMP SC,"Santa Cruz, CA",jump_sc,https://jump.com/,https://sc.jumpbikes.com/opendata
+US,JUMP Seattle,"Seattle, WA",jump_seattle,https://jump.com,https://san.jumpbikes.com/opendata
 US,Kansas City B-cycle,"Kansas City, MO",bcycle_kc,https://kc.bcycle.com,https://gbfs.bcycle.com/bcycle_kc/gbfs.json
 US,Las Vegas,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
 US,Link Dayton Bike Share,"Dayton, OH",bcycle_linkdayton,https://www.linkdayton.org,https://gbfs.bcycle.com/bcycle_linkdayton/gbfs.json
