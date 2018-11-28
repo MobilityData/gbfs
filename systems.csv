@@ -22,7 +22,6 @@ CA,BIXI-Montreal,"Montreal, QC",Bixi_MTL,https://www.bixi.com/,https://api-core.
 CA,Mobi Bike Share,"Vancouver, BC",mobi_bikes,https://www.mobibikes.ca/,https://vancouver-gbfs.smoove.pro/gbfs/gbfs.json
 CA,nextbike Canada,"Victoria, BC",nextbike_ca,https://canada.nextbike.net/,https://api.nextbike.net/maps/gbfs/v1/nextbike_ca/gbfs.json
 CA,Sobi Hamilton,Hamilton Ontario,sobi_hamilton,https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json
-CA,VeloGo,"Ottawa, ON",velgo,http://velogo.ca/,http://velogo.ca/opendata/gbfs.json
 CH,nextbike Switzerland,"CH",nextbike_ch,https://www.nextbike.ch/xx/sursee/,https://api.nextbike.net/maps/gbfs/v1/nextbike_ch/gbfs.json
 CY,nextbike Cyprus,"CY",nextbike_cy,https://www.nextbike.com.cy/xx/limassol/,https://api.nextbike.net/maps/gbfs/v1/nextbike_cy/gbfs.json
 CY,Velespeed,"Nicosia, CY",velespeed,https://en.velespeed.net/,https://nicosia.publicbikesystem.net/ube/gbfs/v1/
@@ -153,7 +152,6 @@ US,Coast Bike Share,"Tampa, FL",coast_bike_share,http://coastbikeshare.com/,http
 US,CoGo,"Columbus, OH",cogo,http://www.cogobikeshare.com/,https://gbfs.cogobikeshare.com/gbfs/gbfs.json
 US,Columbia County B-cycle,"Evans, GA",bcycle_columbiacounty,https://columbiacounty.bcycle.com,https://gbfs.bcycle.com/bcycle_columbiacounty/gbfs.json
 US,columbike,"Columbus, IN",bcycle_columbike,https://columbike.bcycle.com/,https://gbfs.bcycle.com/bcycle_columbike/gbfs.json
-US,Dallas Fair Park,"Dallas, TX",bcycle_dallasfairpark,https://fairparktx.bcycle.com,https://gbfs.bcycle.com/bcycle_dallasfairpark/gbfs.json
 US,Denver B-cycle,"Denver, CO",bcycle_denver,https://denver.bcycle.com,https://gbfs.bcycle.com/bcycle_denver/gbfs.json
 US,Des Moines B-cycle,"Des Moines, IA",bcycle_desmoines,https://desmoines.bcycle.com,https://gbfs.bcycle.com/bcycle_desmoines/gbfs.json
 US,Divvy,"Chicago, IL",divvy,http://www.divvybikes.com/,https://gbfs.divvybikes.com/gbfs/gbfs.json
@@ -175,17 +173,17 @@ US,Indy - Pacers Bikeshare,"Indianapolis, IN",bcycle_pacersbikeshare,https://www
 US,Jackson County,"Jackson, MI",bcycle_jacksoncounty,https://jacksoncounty.bcycle.com,https://gbfs.bcycle.com/bcycle_jacksoncounty/gbfs.json
 US,JerseyBike,"US",nextbike_nj,http://www.hudsonbikeshare.com/xx/hoboken/,https://api.nextbike.net/maps/gbfs/v1/nextbike_nj/gbfs.json
 US,Juice,"Orlando, FL",juice_bike_share,https://www.juicebikeshare.com/,https://www.juicebikeshare.com/opendata/gbfs.json
-US,JUMP Austin,"Austin, TX",jump_austin,https://jump.com/,https://atx.jumpbikes.com/opendata
-US,JUMP Chicago,"Chicago, IL",jump_chicago,https://jump.com/,https://chi.jumpbikes.com/opendata
+US,JUMP Austin,"Austin, TX",jump_austin,https://jump.com/,https://atx.jumpbikes.com/opendata/gbfs.json
+US,JUMP Chicago,"Chicago, IL",jump_chicago,https://jump.com/,https://chi.jumpbikes.com/opendata/gbfs.json
 US,JUMP DC,"Washington, DC",jump_dc,https://jump.com/,https://dc.jumpmobility.com/opendata/gbfs.json
-US,JUMP Denver,"Denver, CO",jump_denver,https://jump.com/,https://den.jumpbikes.com/opendata
-US,JUMP NYC,"NYC, NY",jump_nyc,https://jump.com/,https://nyc.jumpbikes.com/opendata
-US,JUMP Providence,"Providence, RI",jump_providence,https://jump.com/,https://pvd.jumpbikes.com/opendata
-US,JUMP Sacramento,"Sacramento, CA",jump_sacramento,https://jump.com/,https://sac.jumpbikes.com/opendata
-US,JUMP San Diego,"San Diego, CA",jump_san_diego,https://jump.com,https://san.jumpbikes.com/opendata
-US,JUMP SF,"San Francisco, CA",jump_sf,https://jump.com/,https://sf.jumpbikes.com/opendata
-US,JUMP SC,"Santa Cruz, CA",jump_sc,https://jump.com/,https://sc.jumpbikes.com/opendata
-US,JUMP Seattle,"Seattle, WA",jump_seattle,https://jump.com,https://sea.jumpbikes.com/opendata
+US,JUMP Denver,"Denver, CO",jump_denver,https://jump.com/,https://den.jumpbikes.com/opendata/gbfs.json
+US,JUMP NYC,"NYC, NY",jump_nyc,https://jump.com/,https://nyc.jumpbikes.com/opendata/gbfs.json
+US,JUMP Providence,"Providence, RI",jump_providence,https://jump.com/,https://pvd.jumpbikes.com/opendata/gbfs.json
+US,JUMP Sacramento,"Sacramento, CA",jump_sacramento,https://jump.com/,https://sac.jumpbikes.com/opendata/gbfs.json
+US,JUMP San Diego,"San Diego, CA",jump_san_diego,https://jump.com,https://san.jumpbikes.com/opendata/gbfs.json
+US,JUMP SF,"San Francisco, CA",jump_sf,https://jump.com/,https://sf.jumpbikes.com/opendata/gbfs.json
+US,JUMP SC,"Santa Cruz, CA",jump_sc,https://jump.com/,https://sc.jumpbikes.com/opendata/gbfs.json
+US,JUMP Seattle,"Seattle, WA",jump_seattle,https://jump.com,https://sea.jumpbikes.com/opendata/gbfs.json
 US,Kansas City B-cycle,"Kansas City, MO",bcycle_kc,https://kc.bcycle.com,https://gbfs.bcycle.com/bcycle_kc/gbfs.json
 US,Las Vegas,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
 US,Link Dayton Bike Share,"Dayton, OH",bcycle_linkdayton,https://www.linkdayton.org,https://gbfs.bcycle.com/bcycle_linkdayton/gbfs.json
@@ -193,7 +191,6 @@ US,Louvelo,"Louisville, KY",Louvelo,https://louvelo.com/,https://lou.publicbikes
 US,Madison B-cycle,"Madison, WI",bcycle_madison,https://madison.bcycle.com,https://gbfs.bcycle.com/bcycle_madison/gbfs.json
 US,McAllen B-cycle,"McAllen, TX",bcycle_mcallen,https://mcallen.bcycle.com,https://gbfs.bcycle.com/bcycle_mcallen/gbfs.json
 US,Metro Bike Share,"Los Angeles, CA",bcycle_lametro,https://bikeshare.metro.net,https://gbfs.bcycle.com/bcycle_lametro/gbfs.json
-US,Mobike DC,"Washington, DC",mobike,https://mobike.com/us/,https://mobike.com/us/gbfs/v1/gbfs
 US,Mogo Detroit,"Detroit, MI",mogo,https://mogodetroit.org/,https://det.publicbikesystem.net/ube/gbfs/v1/
 US,Mountain Ride Bike Share,"Ketchum / Sun Valley, ID",mountain_rides_bike_share,http://mrbikeshare.org/,http://mrbikeshare.org/opendata/gbfs.json
 US,Nashville B-cycle,"Nashville, TN",bcycle_nashville,https://nashville.bcycle.com,https://gbfs.bcycle.com/bcycle_nashville/gbfs.json
