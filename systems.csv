@@ -179,6 +179,7 @@ US,JUMP Austin,"Austin, TX",jump_austin,https://jump.com/,https://atx.jumpbikes.
 US,JUMP Chicago,"Chicago, IL",jump_chicago,https://jump.com/,https://chi.jumpbikes.com/opendata
 US,JUMP DC,"Washington, DC",jump_dc,https://jump.com/,https://dc.jumpmobility.com/opendata/gbfs.json
 US,JUMP Denver,"Denver, CO",jump_denver,https://jump.com/,https://den.jumpbikes.com/opendata
+US,JUMP LA,"Los Angeles, CA",jump_la,https://jump.com/,https://la.jumpbikes.com/opendata/gbfs.json
 US,JUMP NYC,"NYC, NY",jump_nyc,https://jump.com/,https://nyc.jumpbikes.com/opendata
 US,JUMP Providence,"Providence, RI",jump_providence,https://jump.com/,https://pvd.jumpbikes.com/opendata
 US,JUMP Sacramento,"Sacramento, CA",jump_sacramento,https://jump.com/,https://sac.jumpbikes.com/opendata
@@ -188,6 +189,7 @@ US,JUMP SC,"Santa Cruz, CA",jump_sc,https://jump.com/,https://sc.jumpbikes.com/o
 US,JUMP Seattle,"Seattle, WA",jump_seattle,https://jump.com,https://sea.jumpbikes.com/opendata
 US,Kansas City B-cycle,"Kansas City, MO",bcycle_kc,https://kc.bcycle.com,https://gbfs.bcycle.com/bcycle_kc/gbfs.json
 US,Las Vegas,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
+US,Lime Bike,"Los Angeles, CA",limebike,https://www.li.me/,https://lime.bike/api/partners/v1/gbfs/los_angeles/gbfs.json
 US,Link Dayton Bike Share,"Dayton, OH",bcycle_linkdayton,https://www.linkdayton.org,https://gbfs.bcycle.com/bcycle_linkdayton/gbfs.json
 US,Louvelo,"Louisville, KY",Louvelo,https://louvelo.com/,https://lou.publicbikesystem.net/ube/gbfs/v1/
 US,Madison B-cycle,"Madison, WI",bcycle_madison,https://madison.bcycle.com,https://gbfs.bcycle.com/bcycle_madison/gbfs.json
