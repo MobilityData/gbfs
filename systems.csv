@@ -187,10 +187,12 @@ US,JUMP SC,"Santa Cruz, CA",jump_sc,https://jump.com/,https://sc.jumpbikes.com/o
 US,JUMP Seattle,"Seattle, WA",jump_seattle,https://jump.com,https://sea.jumpbikes.com/opendata/gbfs.json
 US,Kansas City B-cycle,"Kansas City, MO",bcycle_kc,https://kc.bcycle.com,https://gbfs.bcycle.com/bcycle_kc/gbfs.json
 US,Las Vegas,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
-US,Lime,"Arlington, VA",limebike,https://www.li.me/,https://lime.bike/api/partners/v1/gbfs/arlington/gbfs.json
-US,Lime,"Detroit, MI",limebike,https://www.li.me/,https://lime.bike/api/partners/v1/gbfs/detroit/gbfs.json
-US,Lime,"Los Angeles, CA",limebike,https://www.li.me/,https://lime.bike/api/partners/v1/gbfs/los_angeles/gbfs.json
-US,Lime,"Washington, DC",limebike,https://www.li.me/,https://lime.bike/api/partners/v1/gbfs/washington_dc/gbfs.json
+US,Lime,"Arlington, VA",lime_arlington,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/arlington/gbfs.json
+US,Lime,"Chicago, IL",lime_chicago,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/chicago/gbfs.json
+US,Lime,"Detroit, MI",lime_detroit,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/detroit/gbfs.json
+US,Lime,"Los Angeles, CA",lime_los_angeles,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/los_angeles/gbfs.json
+US,Lime,"New York, NY",lime_new_york,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/new_york/gbfs.json
+US,Lime,"Washington, DC",lime_washington_dc,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/washington_dc/gbfs.json
 US,Link Dayton Bike Share,"Dayton, OH",bcycle_linkdayton,https://www.linkdayton.org,https://gbfs.bcycle.com/bcycle_linkdayton/gbfs.json
 US,Louvelo,"Louisville, KY",Louvelo,https://louvelo.com/,https://lou.publicbikesystem.net/ube/gbfs/v1/
 US,Madison B-cycle,"Madison, WI",bcycle_madison,https://madison.bcycle.com,https://gbfs.bcycle.com/bcycle_madison/gbfs.json
