@@ -186,7 +186,6 @@ US,JUMP SF,"San Francisco, CA",jump_sf,https://jump.com/,https://sf.jumpbikes.co
 US,JUMP SC,"Santa Cruz, CA",jump_sc,https://jump.com/,https://sc.jumpbikes.com/opendata/gbfs.json
 US,JUMP Seattle,"Seattle, WA",jump_seattle,https://jump.com,https://sea.jumpbikes.com/opendata/gbfs.json
 US,Kansas City B-cycle,"Kansas City, MO",bcycle_kc,https://kc.bcycle.com,https://gbfs.bcycle.com/bcycle_kc/gbfs.json
-US,Las Vegas,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
 US,Lime Arlington,"Arlington, VA",lime_arlington,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/arlington/gbfs.json
 US,Lime Chicago,"Chicago, IL",lime_chicago,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/chicago/gbfs.json
 US,Lime Detroit,"Detroit, MI",lime_detroit,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/detroit/gbfs.json
@@ -208,6 +207,7 @@ US,Pike Ride,"Colorado Springs, CO",bcycle_coloradosprings,https://coloradosprin
 US,Rapid City B-cycle,"Rapid City, SD",bcycle_rapidcity,https://rapidcity.bcycle.com,https://gbfs.bcycle.com/bcycle_rapidcity/gbfs.json
 US,Reddy Bike Share,"Buffalo, NY",reddy_bikeshare,https://reddybikeshare.socialbicycles.com/,https://reddybikeshare.socialbicycles.com/opendata/gbfs.json
 US,Relay Bike Share,"Atlanta, GA",relay_bike_share,http://relaybikeshare.com/,https://relaybikeshare.socialbicycles.com/opendata/gbfs.json
+US,RTC Bike Share,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
 US,San Antonio B-cycle,"San Antonio, TX",bcycle_sanantonio,https://sanantonio.bcycle.com/,https://gbfs.bcycle.com/bcycle_sanantonio/gbfs.json
 US,Savannah,"Savannah, GA",bcycle_catbike,https://catbike.bcycle.com,https://gbfs.bcycle.com/bcycle_catbike/gbfs.json
 US,Skybike West Palm Beach,"West Palm Beach Florida, US",nextbike_wb,http://www.skybikewpb.com/,https://api.nextbike.net/maps/gbfs/v1/nextbike_wb/gbfs.json
