@@ -467,9 +467,6 @@ There are some items that were proposed in an earlier version of this document b
     * _equipment_ - Removed due to a lack of specificity behind the intent of this field and a question about the actual relevance to the public
     * _jurisdictions_ - It is believed that the need for this field is negated by the presence of the system_regions.json feed
 
-* station_status.json
-    * need a way to distinguish between multiple vehicle types at a station if/when  hybrid systems using e-vehicles become available
-
 ## Disclaimers
 
 _Apple Pay, PayPass and other third-party product and service names are trademarks or registered trademarks of their respective owners._
