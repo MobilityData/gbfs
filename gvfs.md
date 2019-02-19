@@ -327,7 +327,7 @@ vehicles             | Yes       | Array that contains one object per vehicle th
 \- lon             | Yes       | Longitude of the vehicle. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
 \- is_reserved     | Yes       | 1/0 value - is the vehicle currently reserved for someone else
 \- is_disabled     | Yes       | 1/0 value - is the vehicle currently disabled (broken)
-\- vehicle_type | Yes | The vehicle_type_id of this vehicle as described in [system_information.json](#system_informationjson)
+\- vehicle_type_id | Yes | The vehicle_type_id of this vehicle as described in [system_information.json](#system_informationjson)
 \- range_with_current_energy_potential | Optional | The furthest distance in kilometers that the vehicle can travel with the vehicle's current amount of energy potential
 
 Example:
@@ -344,7 +344,7 @@ Example:
         "lon": 56.78,
         "is_reserved": 0,
         "is_disabled": 0,
-        "vehicle_type": "m1",
+        "vehicle_type_id": "m1",
         "range_with_current_energy_potential": 3
       }, {
         "vehicle_id": "123abc",
@@ -352,7 +352,7 @@ Example:
         "lon": 56.78,
         "is_reserved": 0,
         "is_disabled": 0,
-        "vehicle_type": "tg",
+        "vehicle_type_id": "tg",
         "range_with_current_energy_potential": 4.5
       }
     ]
