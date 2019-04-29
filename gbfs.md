@@ -213,7 +213,6 @@ Describes bikes that are not at a station and are not currently in the middle of
 Field Name        | Required  | Defines
 ------------------| ----------| ----------
 bikes             | Yes       | Array that contains one object per bike that is currently docked/stopped outside of the system as defined below
-\- bike_id         | Yes       | Unique identifier of a bike
 \- lat             | Yes       | Latitude of the bike. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
 \- lon             | Yes       | Longitude of the bike. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
 \- is_reserved     | Yes       | 1/0 value - is the bike currently reserved for someone else
