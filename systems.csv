@@ -180,7 +180,6 @@ US,Indego,"Philadelphia, PA",bcycle_indego,https://www.rideindego.com,https://gb
 US,Indy - Pacers Bikeshare,"Indianapolis, IN",bcycle_pacersbikeshare,https://www.pacersbikeshare.org,https://gbfs.bcycle.com/bcycle_pacersbikeshare/gbfs.json
 US,Jackson County,"Jackson, MI",bcycle_jacksoncounty,https://jacksoncounty.bcycle.com,https://gbfs.bcycle.com/bcycle_jacksoncounty/gbfs.json
 US,JerseyBike,"US",nextbike_nj,https://www.hudsonbikeshare.com/xx/hoboken/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_nj/gbfs.json
-US,Juice,"Orlando, FL",juice_bike_share,https://www.juicebikeshare.com/,https://www.juicebikeshare.com/opendata/gbfs.json
 US,JUMP Austin,"Austin, TX",jump_austin,https://jump.com/,https://atx.jumpbikes.com/opendata/gbfs.json
 US,JUMP Chicago,"Chicago, IL",jump_chicago,https://jump.com/,https://chi.jumpbikes.com/opendata/gbfs.json
 US,JUMP DC,"Washington, DC",jump_dc,https://jump.com/,https://dc.jumpmobility.com/opendata/gbfs.json
