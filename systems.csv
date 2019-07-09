@@ -145,7 +145,9 @@ US,BikeLNK,"Lincoln, NE",bcycle_bikelnk,https://bikelnk.bcycle.com,https://gbfs.
 US,Bikeshare Kona,"Kona, HI",bikeshare_kona,https://hawaiiislandbikeshare.org/,https://kona.publicbikesystem.net/ube/gbfs/v1/
 US,BIKETOWN,"Portland, OR",biketown_pdx,https://www.biketownpdx.com/,http://biketownpdx.socialbicycles.com/opendata/gbfs.json
 US,Biki,"Honolulu, HI",go_biki,https://gobiki.org/,https://hon.publicbikesystem.net/ube/gbfs/v1/
+US,Bird Chicago,"Chicago, IL",bird-chicago,https://www.bird.co,https://mds.bird.co/gbfs/chicago/gbfs.json
 US,Bishop Ranch BRiteBikes,"San Ramon, CA",bishop_ranch,http://britebikes.socialbicycles.com/,http://britebikes.socialbicycles.com/opendata/gbfs.json
+US,Bolt Chicago,"Chicago, IL",bolt_chi,https://www.micromobility.com,https://www.bolt.miami/bolt2/chi/gbfs/gbfs.json
 US,Boise Green Bike,"Boise, ID",boise_greenbike,http://boise.greenbike.com/,http://boise.greenbike.com/opendata/gbfs.json
 US,Boulder B-cycle,"Boulder, CO",bcycle_boulder,https://boulder.bcycle.com,https://gbfs.bcycle.com/bcycle_boulder/gbfs.json
 US,Breeze Bike Share,"Santa Monica, CA",breeze_bikeshare,http://santamonicabikeshare.com/,http://santamonicabikeshare.com/opendata/gbfs.json
@@ -172,6 +174,7 @@ US,Great Rides Bike Share,"Fargo, ND",bcycle_greatrides,https://greatrides.bcycl
 US,GREENbike,"Salt Lake City, UT",bcycle_greenbikeslc,https://greenbikeslc.org,https://gbfs.bcycle.com/bcycle_greenbikeslc/gbfs.json
 US,Greenville B-cycle,"Greenville, SC",bcycle_greenville,https://greenville.bcycle.com,https://gbfs.bcycle.com/bcycle_greenville/gbfs.json
 US,Grid Bike Share,"Phoenix, AZ",grid_bike_share,http://gridbikes.com/,https://grid.socialbicycles.com/opendata/gbfs.json
+US,gruv Chicago,"Chicago, IL",daecbe87-a9f2-4a5a-b5df-8e3e14180513,https://clevrmobility.com,https://portal.clevrmobility.com/api/gbfs/chicago/en/discovery/?format=json
 US,Healthy Ride Pittsburgh,"Pittsburgh, US",nextbike_pp,https://healthyridepgh.com/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pp/gbfs.json
 US,Heartland B-cycle,"Omaha, NE",bcycle_heartland,https://heartland.bcycle.com,https://gbfs.bcycle.com/bcycle_heartland/gbfs.json
 US,Houston B-cycle,"Houston, TX",bcycle_houston,https://houston.bcycle.com,https://gbfs.bcycle.com/bcycle_houston/gbfs.json
@@ -181,7 +184,8 @@ US,Indy - Pacers Bikeshare,"Indianapolis, IN",bcycle_pacersbikeshare,https://www
 US,Jackson County,"Jackson, MI",bcycle_jacksoncounty,https://jacksoncounty.bcycle.com,https://gbfs.bcycle.com/bcycle_jacksoncounty/gbfs.json
 US,JerseyBike,"US",nextbike_nj,https://www.hudsonbikeshare.com/xx/hoboken/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_nj/gbfs.json
 US,JUMP Austin,"Austin, TX",jump_austin,https://jump.com/,https://atx.jumpbikes.com/opendata/gbfs.json
-US,JUMP Chicago,"Chicago, IL",jump_chicago,https://jump.com/,https://chi.jumpbikes.com/opendata/gbfs.json
+US,JUMP Chicago Bikes,"Chicago, IL",jump_chicago,https://jump.com/,https://chi.jumpbikes.com/opendata/gbfs.json
+US,JUMP Chicago Scooters,"Chicago, IL",chicago_jump_system,https://www.jumpbikes.com,https://gbfs.uber.com/v1/chicago/gbfs.json
 US,JUMP DC,"Washington, DC",jump_dc,https://jump.com/,https://dc.jumpmobility.com/opendata/gbfs.json
 US,JUMP Denver,"Denver, CO",jump_denver,https://jump.com/,https://den.jumpbikes.com/opendata/gbfs.json
 US,JUMP LA,"Los Angeles, CA",jump_la,https://jump.com/,https://la.jumpbikes.com/opendata/gbfs.json
@@ -203,6 +207,7 @@ US,Lime Washington DC,"Washington, DC",lime_washington_dc,https://www.li.me/,htt
 US,Link Dayton Bike Share,"Dayton, OH",bcycle_linkdayton,https://www.linkdayton.org,https://gbfs.bcycle.com/bcycle_linkdayton/gbfs.json
 US,Louvelo,"Louisville, KY",Louvelo,https://louvelo.com/,https://lou.publicbikesystem.net/ube/gbfs/v1/
 US,Lyft,"Washington, DC",lyft_dca,https://www.lyft.com/scooters/washington-dc,https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/dca/gbfs.json
+US,Lyft Chicago,"Chicago, IL",lyft_chi,https://www.lyft.com/scooters/chicago-il,https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/chi/gbfs.json
 US,Madison B-cycle,"Madison, WI",bcycle_madison,https://madison.bcycle.com,https://gbfs.bcycle.com/bcycle_madison/gbfs.json
 US,McAllen B-cycle,"McAllen, TX",bcycle_mcallen,https://mcallen.bcycle.com,https://gbfs.bcycle.com/bcycle_mcallen/gbfs.json
 US,Metro Bike Share,"Los Angeles, CA",bcycle_lametro,https://bikeshare.metro.net,https://gbfs.bcycle.com/bcycle_lametro/gbfs.json
@@ -217,9 +222,11 @@ US,Relay Bike Share,"Atlanta, GA",relay_bike_share,http://relaybikeshare.com/,ht
 US,RTC Bike Share,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
 US,San Antonio B-cycle,"San Antonio, TX",bcycle_sanantonio,https://sanantonio.bcycle.com/,https://gbfs.bcycle.com/bcycle_sanantonio/gbfs.json
 US,Savannah,"Savannah, GA",bcycle_catbike,https://catbike.bcycle.com,https://gbfs.bcycle.com/bcycle_catbike/gbfs.json
+US,Sherpa Chicago,"Chicago, IL",bird-platform-partner-sherpa-chicago,http://sherpachicago.co,https://mds.bird.co/gbfs/platform-partner/sherpa/chicago/gbfs.json
 US,Skybike West Palm Beach,"West Palm Beach Florida, US",nextbike_wb,https://skybikewpb.com/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_wb/gbfs.json
 US,Sobi Long Beach,"Long Beach, NY",sobi_long_beach,http://sobilongbeach.com/,http://sobilongbeach.com/opendata/gbfs.json
 US,Spartanburg BCycle,"Spartanburg, SC",bcycle_spartanburg,https://spartanburg.bcycle.com,https://gbfs.bcycle.com/bcycle_spartanburg/gbfs.json
+US,Spin Chicago,"Chicago, IL",spin chicago,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/chicago/gbfs.json
 US,Spin Detroit,"Detroit, MI",spin detroit,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/detroit/gbfs
 US,Spin Washington DC,"Washington, DC",spin washington_dc,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/washington_dc/gbfs
 US,START Bike,"Jackson, WY",bcycle_startbike,https://startbike.bcycle.com,https://gbfs.bcycle.com/bcycle_startbike/gbfs.json
@@ -227,3 +234,5 @@ US,Topeka Metro Bikes,"Topeka, KS",topeka_metro_bikes,http://topekametrobikes.or
 US,Tugo,"Tucson, AZ",tugo,https://tugobikeshare.com/,https://tuc.publicbikesystem.net/ube/gbfs/v1/
 US,Ubike,University of Virginia,university_of_virginia,http://ubike.virginia.edu/,http://ubike.virginia.edu/opendata/gbfs.json
 US,We-cycle,"Aspen, CO",we_cycle,https://www.we-cycle.org/,https://asp.publicbikesystem.net/ube/gbfs/v1/
+US,Wheels,"Chicago, IL",9f74fa80-fb2f-48dc-b2d8-01a889ac008a,https://wheels.co,https://chicago-gbfs.getwheelsapp.com/gbfs.json
+US,VeoRide,"Chicago, IL",veoride-micro-mobility,https://www.veoride.com,https://share.veoride.com/api/share/gbfs
