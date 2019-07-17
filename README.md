@@ -1,5 +1,5 @@
 # General Bikeshare Feed Specification
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 Documentation for the General Bikeshare Feed Specification, a standardized data feed for bike share system availability.
 
@@ -71,6 +71,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="http://www.linkedin.com/in/seanbarbeau/"><img src="https://avatars0.githubusercontent.com/u/928045?v=4" width="100px;" alt="Sean Barbeau"/><br /><sub><b>Sean Barbeau</b></sub></a><br /><a href="https://github.com/NABSA/gbfs/commits?author=barbeau" title="Tests">⚠️</a> <a href="#question-barbeau" title="Answering Questions">💬</a></td>
+    <td align="center"><a href="https://github.com/mplsmitch"><img src="https://avatars3.githubusercontent.com/u/15235861?v=4" width="100px;" alt="Mitch Vars"/><br /><sub><b>Mitch Vars</b></sub></a><br /><a href="https://github.com/NABSA/gbfs/commits?author=mplsmitch" title="Tests">⚠️</a> <a href="#question-mplsmitch" title="Answering Questions">💬</a> <a href="#projectManagement-mplsmitch" title="Project Management">📆</a></td>
   </tr>
 </table>
 
