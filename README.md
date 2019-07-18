@@ -62,19 +62,106 @@ This list contains all known systems publishing GBFS feeds and is maintained by 
 
 If you would like to add a system, please fork this repository and submit a pull request. Please keep this list alphabetized by country and system name.
 
-## Contributors ✨
+## Contributors ✨ via [octohatrack](https://github.com/LABHR/octohatrack)
+Everyone who has contributed code, "created an issue, opened a pull requests, commented on an issue, replied to a pull request, made any in-line comments on code, edited the repo wiki, or in any other way interacted with the repo," excluding reactions. Those we like to see that feedback, too!
+* aaronbrethorst (Aaron Brethorst)
+* aaronlidman (Aaron Lidman)
+* adamscarroll
+* afischer (Andrew Fischer)
+* albloptor (Alberto López del Toro)
+* allcontributors[bot]
+* alleyhector (Alley Hector)
+* andmos (Andreas Mosti)
+* AntoineGiraud (Antoine Giraud)
+* antrim (Aaron Antrim)
+* aospan (Abylay Ospan)
+* apinho-fm
+* asosnovsky (Ari Sosnovsky)
+* barbeau (Sean Barbeau)
+* bengavin (Ben Gavin)
+* bettez (Jean-Sébastien Bettez)
+* black-tea (Tim Black)
+* brookemckim (Brooke McKim)
+* burton024
+* c-fang
+* colinmcglynn (Colin McGlynn)
+* contra
+* cubbi (Marcin Pyla)
+* daimler82
+* davem2020
+* davevsdave
+* dierkp
+* dmah21
+* dsgermain
+* edraheim
+* edumucelli (Eduardo)
+* efel85 (Edoardo Felici)
+* emilesalem (emile)
+* eric-poitras (Eric Poitras)
+* evansiroky (Evan Siroky)
+* f3d0r (Fedor Paretsky)
+* f8full (Fabrice V.)
+* fickas
+* fkh (Frank Hebbert)
+* fpurcell (Frank Purcell)
+* fruminator (Michael Frumin)
+* fscottfoti (Fletcher Foti)
+* gaelhameon (Gaël Haméon)
+* ghost (Deleted user)
+* HeidiMG (Heidi G)
+* hkieferling
+* hobochild (Craig Mulligan)
+* hpl002 (Herman Stoud Platou)
+* hunterowens (Hunter Owens)
+* idoco (Ido Cohen)
+* iOS4ever (Jerry)
+* j0kan (Johannes Vockeroth)
+* jasongdove (Jason Dove)
+* jcn (Jesse Chan-Norris)
+* johnclary (John Clary)
+* jsierles (Joshua Sierles)
+* kardaj (Hassene Ben Salem)
+* khonami (Matias Boselli)
+* khwilson (Kevin Wilson)
+* lhyfst (liheyuan)
+* macroexpanse (Alex Hill)
+* madupras (Marc-André Dupras)
+* maduprasPBSC (Marc-André Dupras)
+* marianosimone (Mariano Simone)
+* mattdsteele (Matt Steele)
+* mdarveau (Manuel Darveau)
+* mfp22 (Mike Pearson)
+* michalnaka (Michal Naka)
+* midnightcomm
+* mlaug (Matthias Laug)
+* morganherlocker (Morgan Herlocker)
+* mplsmitch (Mitch Vars)
+* mvs202 (Michael Schade)
+* nbdh (Daniel)
+* nekromoff (Galimatias Nekromoff)
+* nicklucius (Nick Lucius)
+* Noe-Santana
+* PierrickP (Pierrick PAUL)
+* plcstpierre (Pier-Luc Caron St-Pierre)
+* quicklywilliam (William Henderson)
+* randyzwitch (Randy Zwitch)
+* rolinger
+* rompic
+* rouge8 (Andy Freeland)
+* sankalpsg (Sankalp Gupta)
+* schnuerle (Michael Schnuerle)
+* serialc (Cyrille Medard de Chardon)
+* skinkie (Stefan de Konink)
+* sven4all (Sven Boor)
+* tague (Tague Griffith)
+* tanushha
+* tedder (Ted Timmons)
+* TheLordHighExecutioner (Joe Huang)
+* thzinc (Daniel James)
+* tmontes (Tiago Montes)
+* tomschenkjr (Tom Schenk Jr)
+* trevorgerhardt (Trevor Gerhardt)
+* wrenj
+* yuzawa-san (James Yuzawa)
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-<table>
-  <tr>
-    <td align="center"><a href="http://www.linkedin.com/in/seanbarbeau/"><img src="https://avatars0.githubusercontent.com/u/928045?v=4" width="100px;" alt="Sean Barbeau"/><br /><sub><b>Sean Barbeau</b></sub></a><br /><a href="https://github.com/NABSA/gbfs/commits?author=barbeau" title="Tests">⚠️</a> <a href="#question-barbeau" title="Answering Questions">💬</a></td>
-    <td align="center"><a href="https://github.com/mplsmitch"><img src="https://avatars3.githubusercontent.com/u/15235861?v=4" width="100px;" alt="Mitch Vars"/><br /><sub><b>Mitch Vars</b></sub></a><br /><a href="https://github.com/NABSA/gbfs/commits?author=mplsmitch" title="Tests">⚠️</a> <a href="#question-mplsmitch" title="Answering Questions">💬</a> <a href="#projectManagement-mplsmitch" title="Project Management">📆</a></td>
-  </tr>
-</table>
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project will soon follow the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+All Contributors: 99
