@@ -70,8 +70,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore -->
 <table>
   <tr>
-    <td align="center"><a href="http://www.linkedin.com/in/seanbarbeau/"><img src="https://avatars0.githubusercontent.com/u/928045?v=4" width="100px;" alt="Sean Barbeau"/><br /><sub><b>Sean Barbeau</b></sub></a><br /><a href="https://github.com/NABSA/gbfs/commits?author=barbeau" title="Tests">⚠️</a> <a href="#question-barbeau" title="Answering Questions">💬</a></td>
     <td align="center"><a href="https://github.com/mplsmitch"><img src="https://avatars3.githubusercontent.com/u/15235861?v=4" width="100px;" alt="Mitch Vars"/><br /><sub><b>Mitch Vars</b></sub></a><br /><a href="https://github.com/NABSA/gbfs/commits?author=mplsmitch" title="Tests">⚠️</a> <a href="#question-mplsmitch" title="Answering Questions">💬</a> <a href="#projectManagement-mplsmitch" title="Project Management">📆</a></td>
+   <td align="center"><a href="https://github.com/jcn"><img src="https://avatars1.githubusercontent.com/u/2909?v=4" width="100px;" alt="Jesse Chan-Norris"/><br /><sub><b>Jesse Chan-Norris</b></sub></a><br /><a href="https://github.com/NABSA/gbfs/commits?author=jcn" title="Tests">⚠️</a> <a href="#question-jcn" title="Answering Questions">💬</a></td>
+   <td align="center"><a href="https://github.com/alleyhector"><img src="https://avatars2.githubusercontent.com/u/1653653?v=4" width="100px;" alt="Alley Hector"/><br /><sub><b>Alley Hector</b></sub></a><br /><a href="https://github.com/NABSA/gbfs/commits?author=alleyhector" title="Tests">⚠️</a> <a href="#question-alleyhector" title="Answering Questions">💬</a></td>
+       <td align="center"><a href="http://www.linkedin.com/in/seanbarbeau/"><img src="https://avatars0.githubusercontent.com/u/928045?v=4" width="100px;" alt="Sean Barbeau"/><br /><sub><b>Sean Barbeau</b></sub></a><br /><a href="https://github.com/NABSA/gbfs/commits?author=barbeau" title="Tests">⚠️</a> <a href="#question-barbeau" title="Answering Questions">💬</a></td>
   </tr>
 </table>
 
