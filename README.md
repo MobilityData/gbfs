@@ -1,7 +1,16 @@
 # General Bikeshare Feed Specification
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
-
 Documentation for the General Bikeshare Feed Specification, a standardized data feed for bike share system availability.
+
+## Summer/Fall 2019 Update
+NABSA is excited to begin our work to update and enhance GBFS. NABSA has selected [MobilityData IO](https://github.com/MobilityData) to support GBFS as NABSA’s data consultant for this project. MobilityData works to improve the coverage, completeness, and quality of mobility data standards around the world, including the General Transit Feed Specification (GTFS).
+
+Our goals for this project are:
+   * to enable new features in bikeshare systems and applications through data standardization,
+   * to protect traveler privacy,
+   * to support data needs for oversight and planning, and
+   * to make GBFS easier to implement through specification reference clarity improvements and best practices development.
+
+We hope you will share your valuable expertise with us by taking our [survey about GBFS business and technical needs](https://docs.google.com/forms/u/2/d/1B7OlczY1mm4Y0MIzuqGoR9ZMn695oRlGhnjgvvgu434/edit?usp=drive_web) and by joining in the conversation here.
 
 ## What is GBFS?
 The General Bikeshare Feed Specification, known as GBFS, is the open data standard for bikeshare. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability.
@@ -62,106 +71,5 @@ This list contains all known systems publishing GBFS feeds and is maintained by 
 
 If you would like to add a system, please fork this repository and submit a pull request. Please keep this list alphabetized by country and system name.
 
-## Contributors ✨ via [octohatrack](https://github.com/LABHR/octohatrack)
-Everyone who has contributed code, "created an issue, opened a pull requests, commented on an issue, replied to a pull request, made any in-line comments on code, edited the repo wiki, or in any other way interacted with the repo," excluding reactions. Those we like to see that feedback, too!
-* aaronbrethorst (Aaron Brethorst)
-* aaronlidman (Aaron Lidman)
-* adamscarroll
-* afischer (Andrew Fischer)
-* albloptor (Alberto López del Toro)
-* allcontributors[bot]
-* alleyhector (Alley Hector)
-* andmos (Andreas Mosti)
-* AntoineGiraud (Antoine Giraud)
-* antrim (Aaron Antrim)
-* aospan (Abylay Ospan)
-* apinho-fm
-* asosnovsky (Ari Sosnovsky)
-* barbeau (Sean Barbeau)
-* bengavin (Ben Gavin)
-* bettez (Jean-Sébastien Bettez)
-* black-tea (Tim Black)
-* brookemckim (Brooke McKim)
-* burton024
-* c-fang
-* colinmcglynn (Colin McGlynn)
-* contra
-* cubbi (Marcin Pyla)
-* daimler82
-* davem2020
-* davevsdave
-* dierkp
-* dmah21
-* dsgermain
-* edraheim
-* edumucelli (Eduardo)
-* efel85 (Edoardo Felici)
-* emilesalem (emile)
-* eric-poitras (Eric Poitras)
-* evansiroky (Evan Siroky)
-* f3d0r (Fedor Paretsky)
-* f8full (Fabrice V.)
-* fickas
-* fkh (Frank Hebbert)
-* fpurcell (Frank Purcell)
-* fruminator (Michael Frumin)
-* fscottfoti (Fletcher Foti)
-* gaelhameon (Gaël Haméon)
-* ghost (Deleted user)
-* HeidiMG (Heidi G)
-* hkieferling
-* hobochild (Craig Mulligan)
-* hpl002 (Herman Stoud Platou)
-* hunterowens (Hunter Owens)
-* idoco (Ido Cohen)
-* iOS4ever (Jerry)
-* j0kan (Johannes Vockeroth)
-* jasongdove (Jason Dove)
-* jcn (Jesse Chan-Norris)
-* johnclary (John Clary)
-* jsierles (Joshua Sierles)
-* kardaj (Hassene Ben Salem)
-* khonami (Matias Boselli)
-* khwilson (Kevin Wilson)
-* lhyfst (liheyuan)
-* macroexpanse (Alex Hill)
-* madupras (Marc-André Dupras)
-* maduprasPBSC (Marc-André Dupras)
-* marianosimone (Mariano Simone)
-* mattdsteele (Matt Steele)
-* mdarveau (Manuel Darveau)
-* mfp22 (Mike Pearson)
-* michalnaka (Michal Naka)
-* midnightcomm
-* mlaug (Matthias Laug)
-* morganherlocker (Morgan Herlocker)
-* mplsmitch (Mitch Vars)
-* mvs202 (Michael Schade)
-* nbdh (Daniel)
-* nekromoff (Galimatias Nekromoff)
-* nicklucius (Nick Lucius)
-* Noe-Santana
-* PierrickP (Pierrick PAUL)
-* plcstpierre (Pier-Luc Caron St-Pierre)
-* quicklywilliam (William Henderson)
-* randyzwitch (Randy Zwitch)
-* rolinger
-* rompic
-* rouge8 (Andy Freeland)
-* sankalpsg (Sankalp Gupta)
-* schnuerle (Michael Schnuerle)
-* serialc (Cyrille Medard de Chardon)
-* skinkie (Stefan de Konink)
-* sven4all (Sven Boor)
-* tague (Tague Griffith)
-* tanushha
-* tedder (Ted Timmons)
-* TheLordHighExecutioner (Joe Huang)
-* thzinc (Daniel James)
-* tmontes (Tiago Montes)
-* tomschenkjr (Tom Schenk Jr)
-* trevorgerhardt (Trevor Gerhardt)
-* wrenj
-* yuzawa-san (James Yuzawa)
-
-All Contributors: 99
+## Copyright
+The copyright for GBFS is held by [Mitch Vars](https://github.com/mplsmitch).
