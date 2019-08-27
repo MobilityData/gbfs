@@ -71,5 +71,8 @@ This list contains all known systems publishing GBFS feeds and is maintained by 
 
 If you would like to add a system, please fork this repository and submit a pull request. Please keep this list alphabetized by country and system name.
 
+## GBFS and Other Shared Micromobility Resources
+Including APIs, datasets, validators, research, and software can be found [here](https://github.com/NABSA/micromobility-tools-and-resources).
+
 ## Copyright
 The copyright for GBFS is held by [Mitch Vars](https://github.com/mplsmitch).
