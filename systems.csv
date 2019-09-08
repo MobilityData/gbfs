@@ -181,7 +181,7 @@ US,Great Rides Bike Share,"Fargo, ND",bcycle_greatrides,https://greatrides.bcycl
 US,GREENbike,"Salt Lake City, UT",bcycle_greenbikeslc,https://greenbikeslc.org,https://gbfs.bcycle.com/bcycle_greenbikeslc/gbfs.json
 US,Greenville B-cycle,"Greenville, SC",bcycle_greenville,https://greenville.bcycle.com,https://gbfs.bcycle.com/bcycle_greenville/gbfs.json
 US,Grid Bike Share,"Phoenix, AZ",grid_bike_share,http://gridbikes.com/,https://grid.socialbicycles.com/opendata/gbfs.json
-US,gruv Chicago,"Chicago, IL",daecbe87-a9f2-4a5a-b5df-8e3e14180513,https://clevrmobility.com,https://portal.clevrmobility.com/api/gbfs/chicago/en/discovery/?format=json
+US,gruv Chicago,"Chicago, IL",daecbe87-a9f2-4a5a-b5df-8e3e14180513,https://clevrmobility.com,https://clevr-api.joyridecity.bike/gbfs/en/gbfs.json?operator_id=3
 US,Healthy Ride Pittsburgh,"Pittsburgh, US",nextbike_pp,https://healthyridepgh.com/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pp/gbfs.json
 US,Heartland B-cycle,"Omaha, NE",bcycle_heartland,https://heartland.bcycle.com,https://gbfs.bcycle.com/bcycle_heartland/gbfs.json
 US,Houston B-cycle,"Houston, TX",bcycle_houston,https://houston.bcycle.com,https://gbfs.bcycle.com/bcycle_houston/gbfs.json
