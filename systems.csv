@@ -21,6 +21,8 @@ BR,Bike Itaú - Riviera,"Riviera, BR",rivi_bike,https://www.rivieradesaolourenco
 BR,Bike VV,"Vila Velha, BR",bike_vv,https://www.bikevv.com.br/,https://vilavelha.publicbikesystem.net/ube/gbfs/v1/
 CA,Bike Share Toronto,"Toronto, ON",bike_share_toronto,https://www.bikesharetoronto.com/,https://tor.publicbikesystem.net/ube/gbfs/v1/
 CA,BIXI-Montreal,"Montreal, QC",Bixi_MTL,https://www.bixi.com/,https://api-core.bixi.com/gbfs/gbfs.json
+CA,HOPR Ottawa,"Ottawa, ON",6,https://gohopr.com/velogo/,https://gbfs.hopr.city/api/gbfs/6/
+CA,HOPR Vancouver,"Vancouver, BC",13,https://www.mobibikes.ca/,https://gbfs.hopr.city/api/gbfs/13/
 CA,Mobi Bike Share,"Vancouver, BC",mobi_bikes,https://www.mobibikes.ca/,https://vancouver-gbfs.smoove.pro/gbfs/gbfs.json
 CA,nextbike Canada,"Victoria, CA",nextbike_ca,https://canada.nextbike.net/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ca/gbfs.json
 CA,Sobi Hamilton,Hamilton Ontario,sobi_hamilton,https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json
@@ -184,6 +186,13 @@ US,Grid Bike Share,"Phoenix, AZ",grid_bike_share,http://gridbikes.com/,https://g
 US,gruv Chicago,"Chicago, IL",daecbe87-a9f2-4a5a-b5df-8e3e14180513,https://clevrmobility.com,https://portal.clevrmobility.com/api/gbfs/chicago/en/discovery/?format=json
 US,Healthy Ride Pittsburgh,"Pittsburgh, US",nextbike_pp,https://healthyridepgh.com/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pp/gbfs.json
 US,Heartland B-cycle,"Omaha, NE",bcycle_heartland,https://heartland.bcycle.com,https://gbfs.bcycle.com/bcycle_heartland/gbfs.json
+US,HOPR Chicago,"Chicago, IL",3,https://gohopr.com/chicagoland/,https://gbfs.hopr.city/api/gbfs/3/
+US,HOPR Freemont,"Freemont, CA",16,https://gohopr.com/,https://gbfs.hopr.city/api/gbfs/16/
+US,HOPR Los Angeles,"Los Angeles, CA",10,https://gohopr.com/la/,https://gbfs.hopr.city/api/gbfs/10/
+US,HOPR Miami,"Miami, FL",11,https://gohopr.com/,https://gbfs.hopr.city/api/gbfs/11/
+US,HOPR Orlando,"Orlando, FL",12,https://gohopr.com/orlando/,https://gbfs.hopr.city/api/gbfs/12/
+US,HOPR Santa Barbara,"Santa Barbara, CA",5,https://gohopr.com/ucsb/,https://gbfs.hopr.city/api/gbfs/5/
+US,HOPR Tampa,"Tampa, FL",8,https://gohopr.com/tampabay/,https://gbfs.hopr.city/api/gbfs/8/
 US,Houston B-cycle,"Houston, TX",bcycle_houston,https://houston.bcycle.com,https://gbfs.bcycle.com/bcycle_houston/gbfs.json
 US,Hubway,"Boston, MA",hubway,https://www.thehubway.com,https://gbfs.thehubway.com/gbfs/gbfs.json
 US,Indego,"Philadelphia, PA",bcycle_indego,https://www.rideindego.com,https://gbfs.bcycle.com/bcycle_indego/gbfs.json
