@@ -154,8 +154,10 @@ US,Bikeshare Kona,"Kona, HI",bikeshare_kona,https://hawaiiislandbikeshare.org/,h
 US,BIKETOWN,"Portland, OR",biketown_pdx,https://www.biketownpdx.com/,http://biketownpdx.socialbicycles.com/opendata/gbfs.json
 US,Biki,"Honolulu, HI",go_biki,https://gobiki.org/,https://hon.publicbikesystem.net/ube/gbfs/v1/
 US,Bird Chicago,"Chicago, IL",bird-chicago,https://www.bird.co,https://mds.bird.co/gbfs/chicago/gbfs.json
+US,Bird Louisville,"Louisville, KY",bird-louisville,https://www.bird.co,https://mds.bird.co/gbfs/louisville/free_bikes
 US,Bishop Ranch BRiteBikes,"San Ramon, CA",bishop_ranch,http://britebikes.socialbicycles.com/,http://britebikes.socialbicycles.com/opendata/gbfs.json
 US,Bolt Chicago,"Chicago, IL",bolt_chi,https://www.micromobility.com,https://www.bolt.miami/bolt2/chi/gbfs/gbfs.json
+US,Bolt Louisville,"Louisville, KY",bolt_lou,https://www.micromobility.com,https://www.bolt.miami/bolt2/lou/gbfs/gbfs.json
 US,Boise Green Bike,"Boise, ID",boise_greenbike,http://boise.greenbike.com/,http://boise.greenbike.com/opendata/gbfs.json
 US,Boulder B-cycle,"Boulder, CO",bcycle_boulder,https://boulder.bcycle.com,https://gbfs.bcycle.com/bcycle_boulder/gbfs.json
 US,Breeze Bike Share,"Santa Monica, CA",breeze_bikeshare,http://santamonicabikeshare.com/,http://santamonicabikeshare.com/opendata/gbfs.json
@@ -236,6 +238,7 @@ US,Sobi Long Beach,"Long Beach, NY",sobi_long_beach,http://sobilongbeach.com/,ht
 US,Spartanburg BCycle,"Spartanburg, SC",bcycle_spartanburg,https://spartanburg.bcycle.com,https://gbfs.bcycle.com/bcycle_spartanburg/gbfs.json
 US,Spin Chicago,"Chicago, IL",spin chicago,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/chicago/gbfs.json
 US,Spin Detroit,"Detroit, MI",spin detroit,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/detroit/gbfs
+US,Spin Louisville,"Louisville, KY",spin louisville,https://web.spin.pm/api/gbfs/v1/louisville/free_bike_status
 US,Spin Washington DC,"Washington, DC",spin washington_dc,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/washington_dc/gbfs
 US,START Bike,"Jackson, WY",bcycle_startbike,https://startbike.bcycle.com,https://gbfs.bcycle.com/bcycle_startbike/gbfs.json
 US,Topeka Metro Bikes,"Topeka, KS",topeka_metro_bikes,http://topekametrobikes.org/,http://topekametrobikes.org/opendata/gbfs.json
