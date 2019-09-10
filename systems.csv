@@ -169,7 +169,7 @@ US,Cincy Red Bike,"Cincinnati, OH",bcycle_cincyredbike,http://www.cincyredbike.o
 US,Citi Bike,"NYC, NY",NYC,https://www.citibikenyc.com,https://gbfs.citibikenyc.com/gbfs/gbfs.json
 US,Clarksville B-cycle,"Clarksville, TN",bcycle_clarksville,https://clarksville.bcycle.com,https://gbfs.bcycle.com/bcycle_clarksville/gbfs.json
 US,Clemson BikeShare,"Clemson, SC",bcycle_clemson,https://clemson.bcycle.com,https://gbfs.bcycle.com/bcycle_clemson/gbfs.json
-US,Coast Bike Share,"Tampa, FL",coast_bike_share,http://coastbikeshare.com/,http://coast.socialbicycles.com/opendata/gbfs.json
+US,Coast Bike Share,"St. Petersburg, FL",coast_bike_share,http://coastbikeshare.com/,http://coast.socialbicycles.com/opendata/gbfs.json
 US,CoGo,"Columbus, OH",cogo,http://www.cogobikeshare.com/,https://gbfs.cogobikeshare.com/gbfs/gbfs.json
 US,Columbia County B-cycle,"Evans, GA",bcycle_columbiacounty,https://columbiacounty.bcycle.com,https://gbfs.bcycle.com/bcycle_columbiacounty/gbfs.json
 US,columbike,"Columbus, IN",bcycle_columbike,https://columbike.bcycle.com/,https://gbfs.bcycle.com/bcycle_columbike/gbfs.json
