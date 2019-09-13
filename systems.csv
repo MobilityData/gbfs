@@ -243,4 +243,4 @@ US,Tugo,"Tucson, AZ",tugo,https://tugobikeshare.com/,https://tuc.publicbikesyste
 US,Ubike,University of Virginia,university_of_virginia,http://ubike.virginia.edu/,http://ubike.virginia.edu/opendata/gbfs.json
 US,We-cycle,"Aspen, CO",we_cycle,https://www.we-cycle.org/,https://asp.publicbikesystem.net/ube/gbfs/v1/
 US,Wheels,"Chicago, IL",9f74fa80-fb2f-48dc-b2d8-01a889ac008a,https://wheels.co,https://chicago-gbfs.getwheelsapp.com/gbfs.json
-US,VeoRide,"Chicago, IL",veoride-micro-mobility,https://www.veoride.com,https://share.veoride.com/api/share/gbfs
+US,VeoRide,"Chicago, IL",veoride-micro-mobility,https://www.veoride.com,https://share.veoride.com/api/share/gbfs/free_bike_status?area_name=chicago
