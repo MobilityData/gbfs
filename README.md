@@ -1,6 +1,16 @@
 # General Bikeshare Feed Specification
-
 Documentation for the General Bikeshare Feed Specification, a standardized data feed for bike share system availability.
+
+## Summer/Fall 2019 Update
+NABSA is excited to begin our work to update and enhance GBFS. NABSA has selected [MobilityData IO](https://github.com/MobilityData) to support GBFS as NABSA’s data consultant for this project. MobilityData works to improve the coverage, completeness, and quality of mobility data standards around the world, including the General Transit Feed Specification (GTFS).
+
+Our goals for this project are:
+   * to enable new features in bikeshare systems and applications through data standardization,
+   * to protect traveler privacy,
+   * to support data needs for oversight and planning, and
+   * to make GBFS easier to implement through specification reference clarity improvements and best practices development.
+
+We hope you will share your valuable expertise with us by taking our [survey about GBFS business and technical needs](https://docs.google.com/forms/u/2/d/1B7OlczY1mm4Y0MIzuqGoR9ZMn695oRlGhnjgvvgu434/edit?usp=drive_web) and by joining in the conversation here.
 
 ## What is GBFS?
 The General Bikeshare Feed Specification, known as GBFS, is the open data standard for bikeshare. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability.
@@ -60,3 +70,9 @@ This list contains all known systems publishing GBFS feeds and is maintained by 
 * [systems.csv](systems.csv)
 
 If you would like to add a system, please fork this repository and submit a pull request. Please keep this list alphabetized by country and system name.
+
+## GBFS and Other Shared Micromobility Resources
+Including APIs, datasets, validators, research, and software can be found [here](https://github.com/NABSA/micromobility-tools-and-resources).
+
+## Copyright
+The copyright for GBFS is held by [Mitch Vars](https://github.com/mplsmitch).
