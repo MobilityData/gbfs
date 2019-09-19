@@ -1,5 +1,5 @@
-# General Vehicleshare Feed Specification (GVFS)
-This document explains the types of files and data that comprise the General Vehicleshare Feed Specification (GVFS) and defines the fields used in all of those files.
+# General Bikeshare Feed Specification (GBFS)
+This document explains the types of files and data that comprise the General Bikeshare Feed Specification (GBFS) and defines the fields used in all of those files.
 
 ## Table of Contents
 
@@ -8,11 +8,12 @@ This document explains the types of files and data that comprise the General Veh
 * [Files](#files)
 * [File Requirements](#file-requirements)
 * [Field Definitions](#field-definitions)
-    * [gvfs.json](#gvfsjson)
+    * [gbfs.json](#gbfsjson)
     * [system_information.json](#system_informationjson)
+    * [vehicle_types.json](#vehicle_typesjson)
     * [station_information.json](#station_informationjson)
     * [station_status.json](#station_statusjson)
-    * [free_vehicle_status.json](#free_vehicle_statusjson)
+    * [free_bike_status.json](#free_bike_statusjson)
     * [system_hours.json](#system_hoursjson)
     * [system_calendar.json](#system_calendarjson)
     * [system_regions.json](#system_regionsjson)
@@ -21,9 +22,8 @@ This document explains the types of files and data that comprise the General Veh
 * [Possible Future Enhancements](#possible-future-enhancements)
 
 ## Revision History
-* ? - Update standard to accommodate different vehicle types
-* 11/05/2015 - GVFS V1.0 Adopted by NABSA board
-* 08/2015 - Latest changes incorporated and name change to GVFS (comments from Motivate, 8D, others)
+* 11/05/2015 - GBFS V1.0 Adopted by NABSA board
+* 08/2015 - Latest changes incorporated and name change to GBFS (comments from Motivate, 8D, others)
 * 06/2015 - Proposed refinements (prepared by Jesse Chan-Norris on behalf of Motivate)
 * 01/2015 - NABSA Draft (prepared by Mitch Vars)
 
@@ -40,11 +40,12 @@ This specification defines the following files along with their associated conte
 
 File Name                   | Required                |       Defines
 --------------------------- | ----------------------- | ----------
-gvfs.json                   | Optional                | Auto-discovery file that links to all of the other files published by the system. This file is optional, but highly recommended.
-system_information.json     | Yes                     | Describes the system including System operator, System location, year implemented, URLs, contact info, time zone and vehicle types
+gbfs.json                   | Optional                | Auto-discovery file that links to all of the other files published by the system. This file is optional, but highly recommended.
+system_information.json     | Yes                     | Describes the system including System operator, System location, year implemented, URLs, contact info, time zone
+vehicle_types.json     | Conditionally required                     | Describes the types of vehicles that System operator has available for rent. Required of systems that include information about vehicle types in the station_status and/or free_bike_status files. If this file is not included, then all vehicles in the feed are assumed to be non-motorized bicycles
 station_information.json    | Conditionally required  | Mostly static list of all stations, their capacities and locations. Required of systems utilizing docks.
-station_status.json         | Conditionally required  | Number of available vehicles and docks at each station and station availability. Required of systems utilizing docks.
-free_vehicle_status.json       | Conditionally required  | Describes vehicles that are available for rent. Required of systems that don't utilize docks or offer vehicles for rent outside of stations.
+station_status.json         | Conditionally required  | Number of available bikes and docks at each station and station availability. Required of systems utilizing docks.
+free_bike_status.json       | Conditionally required  | Describes bikes that are available for rent. Required of systems that don't utilize docks or offer bikes for rent outside of stations.
 system_hours.json           | Optional                | Describes the hours of operation for the system
 system_calendar.json        | Optional                | Describes the days of operation for the system
 system_regions.json         | Optional                | Describes the regions the system is broken up into
@@ -63,9 +64,9 @@ system_alerts.json          | Optional                | Describes current system
     * Optional files may 404 - a 404 of an optional file should not be considered an error, it just indicates that the publisher has chosen not to publish this data
 * Auto-Discovery:
     * This specification supports auto-discovery
-    * The location of the auto-discovery file will be provided in the HTML <head> area of the vehicleshare landing page hosted at the URL specified in the url field of the system_infomation.json file
+    * The location of the auto-discovery file will be provided in the HTML <head> area of the bikeshare landing page hosted at the URL specified in the url field of the system_infomation.json file
     * This is referenced via a _link_ tag with the following format:
-      * `<link rel="gvfs" type="application/json" href="https://www.example.com/data/gvfs.json" />`
+      * `<link rel="gbfs" type="application/json" href="https://www.example.com/data/gbfs.json" />`
     * Reference:
       * https://developers.facebook.com/docs/sharing/best-practices#tags
       * https://dev.twitter.com/cards/markup
@@ -83,7 +84,7 @@ system_alerts.json          | Optional                | Describes current system
 
 * Time stamp fields must be represented as integers in POSIX time (i.e., the number of seconds since January 1st 1970 00:00:00 UTC)
 * ID fields in the document should be represented as strings that identify that particular object. They:
-    * must be unique within like fields (vehicle_id must be unique among vehicles)
+    * must be unique within like fields (bike_id must be unique among bikes)
     * do not have to be globally unique
     * must not contain spaces
     * should be persistent for a given object (station, plan, etc)
@@ -111,7 +112,7 @@ Example:
 }
 ```
 
-### gvfs.json
+### gbfs.json
 The following fields are all attributes within the main "data" object for this feed.
 
 Field Name              | Required    | Defines
@@ -161,81 +162,56 @@ The following fields are all attributes within the main "data" object for this f
 
 Field Name        | Required  | Defines
 ------------------| --------- | ----------
-system_id         | Yes       | ID field - identifier for this vehicle share system. This should be globally unique (even between different systems) and it is currently up to the publisher of the feed to guarantee uniqueness. In addition, this value is intended to remain the same over the life of the system
+system_id         | Yes       | ID field - identifier for this bike share system. This should be globally unique (even between different systems) and it is currently up to the publisher of the feed to guarantee uniqueness. In addition, this value is intended to remain the same over the life of the system
 language          | Yes       | An IETF language tag indicating the language that will be used throughout the rest of the files. This is a string that defines a single language tag only. See https://tools.ietf.org/html/bcp47 and https://en.wikipedia.org/wiki/IETF_language_tag for details about the format of this tag
 name              | Yes       | Full name of the system to be displayed to customers
 short_name        | Optional  | Optional abbreviation for a system
 operator          | Optional  | Name of the operator of the system
-url               | Optional  | The URL of the vehicle share system. The value must be a fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped. See http://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values
+url               | Optional  | The URL of the bike share system. The value must be a fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped. See http://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values
 purchase_url      | Optional  | A fully qualified URL where a customer can purchase a membership or learn more about purchasing memberships
 start_date        | Optional  | String in the form YYYY-MM-DD representing the date that the system began operations
 phone_number      | Optional  | A single voice telephone number for the specified system. This field is a string value that presents the telephone number as typical for the system's service area. It can and should contain punctuation marks to group the digits of the number. Dialable text (for example, Capital Bikeshare’s  "877-430-BIKE") is permitted, but the field must not contain any other descriptive text
 email             | Optional  | A single contact email address for customers to address questions about the system
 timezone          | Yes       | The time zone where the system is located. Time zone names never contain the space character but may contain an underscore. Please refer to the "TZ" value in https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for a list of valid values
-license_url       | Optional  | A fully qualified URL of a page that defines the license terms for the GVFS data for this system, as well as any other license terms the system would like to define (including the use of corporate trademarks, etc)
-vehicle_types | Yes | An array of vehicles available for rent in this system. See following fields for details.
-\- vehicle_type_id | Yes | The id of the vehicle type. This is referenced in other tables.
-\- name | Yes | The name of this kind of vehicle
+license_url       | Optional  | A fully qualified URL of a page that defines the license terms for the GBFS data for this system, as well as any other license terms the system would like to define (including the use of corporate trademarks, etc)
+
+### vehicle_types.json
+The following fields are all attributes within the main "data" object for this feed.
+
+ield Name        | Required  | Defines
+------------------| --------- | ----------
+vehicle_types          | Yes       | Array that contains one object per vehicle type in the system as defined below
+\- vehicle_type_id      | Yes       | Unique identifier of a vehicle type. See [Field Definitions](#field-definitions) above for ID field requirements
+\- form_factor      | Yes       | An enumerable describing the vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`scooter`</li><li>`car`</li></ul>
+\- propulsion_types | Yes | An array consisting of enumerables that describe the propulsion type of the vehicle. <br /><br />A device may have one or more values from the propulsion_type, depending on the number of modes of operation. For example, a scooter that can be powered by foot or by electric motor would have the propulsion_type represented by the array ['human', 'electric']. A bicycle with pedal-assist would have the propulsion_type represented by the array ['human', 'electric_assist'] if it can also be operated as a traditional bicycle. A car with an internal combustion engine would be represented by the array ['combustion']<br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric assist` _(Provides power only alongside human propulsion)_</li><li>`electric` _(Contains throttle mode with a battery-powered motor)_</li><li>`combustion` _(Contains throttle mode with a gas engine-powered motor)_</li></ul> This field was copied from [City of Los Angeles Mobility Data Specification](https://github.com/CityOfLosAngeles/mobility-data-specification/blob/73995a151f0a1d67aab3d617a4693f8f81967936/provider/README.md#propulsion-types)
 \- description | Optional | A free text description of the vehicle
-\- vehicle_url | Optional | A url where more detailed information about the vehicle can be found
-\- image_small | Optional | A url to a an image with a resolution of no larger than 400px x 400px for the purposes of displaying a thumbnail image in an end-user application
-\- image_large | Optional | A url to a an image with a resolution larger than 800px x 400px for the purposes of displaying a full-size image in an end-user application
-\- propulsion_type | Yes | An enumerable describing the propulsion type of the vehicle. <br /><br />Current valid values (in CAPS) are:<br /><ul><li>HUMAN _(Pedal or foot propulsion)_</li><li>ELECTRIC_ASSIST _(Provides power only alongside human propulsion)_</li><li>ELECTRIC _(Contains throttle mode with a battery-powered motor)_</li><li>COMBUSTION _(Contains throttle mode with a gas engine-powered motor)_</li></ul> This field was copied from [City of Los Angeles Mobility Data Specification](https://github.com/CityOfLosAngeles/mobility-data-specification/blob/73995a151f0a1d67aab3d617a4693f8f81967936/provider/README.md#propulsion-types)
-\- cruising_speed | Optional | The recommended top cruising speed that the vehicle can travel at in a safe manner in kilometers per hour
-\- range_with_full_energy_potential | Optional | The furthest distance in kilometers that the vehicle can travel when it has the maximum amount of energy potential (for example a full battery or full tank of gas)
-\- vehicle_weight | Optional | The weight in kilograms of the vehicle
-\- power_output | Optional | The maximum power output in watts that can be generated with the vehicle's motor during a safe and normal acceleration of the vehicle
-\- passenger_capacity | Optional | The amount of people than can travel at once on this vehicle
-\- enclosed | Optional | 1/0 boolean - whether the vehicle contains an enclosed environment that isolates the passenger(s) from the outside elements
+\- max_range | Optional | If the vehicle has a motor, this represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example a full battery or full tank of gas)
 
 Example:
 
 ```json
 {
   "last_updated": 1434054678,
-  "ttl": 12345,
+  "ttl": 0,
   "data": {
-    "system_id": "inboard",
-    "language": "en",
-    "name": "Inboard",
-    "short_name": "ib",
-    "url": "https://www.inboardtechnology.com/",
-    "timezone": "America/Los_Angeles",
     "vehicle_types": [
       {
-        "vehicle_type_id": "m1",
-        "name": "M1 Electric Skateboard",
-        "description": "Experience the most advanced e-board deck ever developed. A custom designed composite deck that combines an inverted 3D Poplar wood core with full sandwich PU sidewalls and wrapped in the same fiberglass top sheet found in premium snowboards and skis. Integrated electronics, reinforced truck mounting points, and resilient TPU nose and tail bumpers at the rails yield a remarkably light and durable platform optimized for a more responsive ride.",
-        "vehicle_url": "https://www.inboardtechnology.com/products/m1-electric-skateboard",
-        "image_small": "http://cdn.shopify.com/s/files/1/1136/4406/files/Skateboard_x150.png?11016692238788873189",
-        "image_large": "http://cdn.shopify.com/s/files/1/1136/4406/products/m1_pdp_fullBleed_6_9e6614b5-c3e4-4dd1-b18b-fd51451d0c17_1600x.jpg?v=1535665708",
-        "propulsion_type": "ELECTRIC",
-        "maximum_cruising_speed": 25,
-        "range_with_full_energy_potential": 11,
-        "vehicle_weight": 6.57,
-        "power_output": 200,
-        "passenger_capacity": 1,
-        "enclosed": 0
-      }, {
-        "vehicle_type_id": "tg",
-        "name": "The Glider Scooter",
-        "description": "The ultimate scooter experience, crafted with premium components, top-quality materials, and relentless attention to detail. We engineered our Glider from the ground up, with the ride experience as our ultimate focus at every step of the way; providing a smooth, safe, and insanely fun ride, every time.",
-        "vehicle_url": "https://www.inboardtechnology.com/products/the-glider",
-        "image_small": "http://cdn.shopify.com/s/files/1/1136/4406/files/glider_nav_1_x150.png?11016692238788873189",
-        "image_large": "http://cdn.shopify.com/s/files/1/1136/4406/products/glider_pdp_4_super_duper_extended_2_de0ab82e-e603-4455-8395-dd6ec3b28cbb_375x375_crop_center.png?v=1542056407,%20//cdn.shopify.com/s/files/1/1136/4406/products/glider_pdp_4_super_duper_extended_2_de0ab82e-e603-4455-8395-dd6ec3b28cbb_750x750_crop_center.png?v=1542056407%202x",
-        "propulsion_type": "ELECTRIC",
-        "maximum_cruising_speed": 25,
-        "range_with_full_energy_potential": 19.3,
-        "vehicle_weight": 15.88,
-        "power_output": 350,
-        "passenger_capacity": 1,
-        "enclosed": 0
+        "vehicle_type_id": "abc123",
+        "form_factor": "bicycle",
+        "propulsion_types": ["human"],
+        "description": "a bicycle without a motor"
+      },
+      {
+        "vehicle_type_id": "def456",
+        "form_factor": "scooter",
+        "propulsion_types": ["human", "electric"],
+        "description": "an electric scooter",
+        "max_range": 12345
       }
     ]
   }
 }
 ```
-
 
 ### station_information.json
 All stations contained in this list are considered public (ie, can be shown on a map for public use). If there are private stations (such as Capital Bikeshare’s White House station) these should not be exposed here and their status should not be included in station_status.json.
@@ -252,9 +228,9 @@ stations          | Yes       | Array that contains one object per station in th
 \- cross_street    | Optional  | Cross street of where the station is located. This field is intended to be a descriptive field for human consumption. In cities, this would be a cross street, but could also be a description of a location in a park, etc.
 \- region_id       | Optional  | ID of the region where station is located (see [system_regions.json](#system_regionsjson))
 \- post_code       | Optional  | Postal code where station is located
-\- rental_methods  | Optional  | Array of enumerables containing the payment methods accepted at this station. <br />Current valid values (in CAPS) are:<br /><ul><li>KEY _(i.e. operator issued vehicle key / fob / card)_</li> <li>CREDITCARD</li> <li>PAYPASS</li> <li>APPLEPAY</li> <li>ANDROIDPAY</li> <li>TRANSITCARD</li> <li>ACCOUNTNUMBER</li> <li>PHONE</li> </ul> This list is intended to be as comprehensive at the time of publication as possible but is subject to change, as defined in [File Requirements](#file-requirements) above
-\- capacity        | Optional  | Number of total docking points installed at this station, both available and unavailable
-\-allowed_vehicle_types | Required | An array of vehicle_type_ids that are allowed to be dropped off or picked up at this station
+\- rental_methods  | Optional  | Array of enumerables containing the payment methods accepted at this station. <br />Current valid values (in CAPS) are:<br /><ul><li>KEY _(i.e. operator issued bike key / fob / card)_</li> <li>CREDITCARD</li> <li>PAYPASS</li> <li>APPLEPAY</li> <li>ANDROIDPAY</li> <li>TRANSITCARD</li> <li>ACCOUNTNUMBER</li> <li>PHONE</li> </ul> This list is intended to be as comprehensive at the time of publication as possible but is subject to change, as defined in [File Requirements](#file-requirements) above
+\- capacity        | Optional  | Number of total docking points installed at this station, both available and unavailable, regardless of what vehicle types are allowed at each dock. This field should only be used if every dock at the station is able to accept every vehicle type used in the system.
+\- vehicle_type_capacity        | Optional  | An object where each key is a vehicle_type_id as described in [vehicle_types.json](#vehicle_typesjson) and the value is a number representing the total docking points installed at this station, both available and unavailable for the specified vehicle type.
 
 Example:
 
@@ -269,7 +245,10 @@ Example:
         "name": "Parking garage A",
         "lat": 12.34,
         "lon": 45.67,
-        "allowed_vehicle_types": ["m1", "tg"]
+        "vehicle_type_capacity": {
+          "abc123": 7,
+          "def456": 9
+        }
       }
     ]
   }
@@ -277,20 +256,23 @@ Example:
 ```
 
 ### station_status.json
-The station status is organized according to vehicle type.
 
 Field Name            | Required  | Defines
 --------------------- | ----------| ----------
 stations              | Yes       | Array that contains one object per station in the system as defined below
 \- station_id          | Yes       | Unique identifier of a station (see station_information.json)
+\- num_bikes_available | Conditionally required       | Number of vehicles of all types available for rental. This field is not required if the `vehicles_available` field has been defined.
+\- num_bikes_disabled  | Optional  | Number of disabled bikes at the station. Vendors who do not want to publicize the number of disabled bikes or docks in their system can opt to omit station capacity (in station_information), num_bikes_disabled and num_docks_disabled. If station capacity is published then broken docks/bikes can be inferred (though not specifically whether the decreased capacity is a broken bike or dock)
+\- num_docks_available | Conditionally Required       | Number of docks accepting returns of any vehicle type. This field is not required if the `vehicle_docks_available` field has been defined. This field should only be used if every dock at the station is able to accept every vehicle type in the system
+\- num_docks_disabled  | Optional  | Number of empty but disabled dock points at the station. This value remains as part of the spec as it is possibly useful during development
 \- is_installed        | Yes       | 1/0 boolean - is the station currently on the street
-\- is_renting          | Yes       | 1/0 boolean - is the station currently renting vehicles (even if the station is empty, if it is set to allow rentals this value should be 1)
-\- is_returning        | Yes       | 1/0 boolean - is the station accepting vehicle returns (if a station is full but would allow a return if it was not full then this value should be 1)
+\- is_renting          | Yes       | 1/0 boolean - is the station currently renting bikes (even if the station is empty, if it is set to allow rentals this value should be 1)
+\- is_returning        | Yes       | 1/0 boolean - is the station accepting bike returns (if a station is full but would allow a return if it was not full then this value should be 1)
 \- last_reported       | Yes       | Integer POSIX timestamp indicating the last time this station reported its status to the backend
-\- num_vehicles_available | Yes       | An object consisting of keys that are vehicle_type_ids and values that represent the number of vehicles of the respective vehicle type available for rental
-\- num_vehicles_disabled  | Optional  | An object consisting of keys that are vehicle_type_ids and values that represent the number of disabled vehicles of the respective vehicle type at the station. Vendors who do not want to publicize the number of disabled vehicles or docks in their system can opt to omit station capacity (in station_information), num_vehicles_disabled and num_docks_disabled. If station capacity is published then broken docks/vehicles can be inferred (though not specifically whether the decreased capacity is a broken vehicle or dock)
-\- num_docks_available | Yes       | An object consisting of keys that are vehicle_type_ids and values that represent the number of docks accepting vehicle returns of vehicles of the respective vehicle type
-\- num_docks_disabled  | Optional  | An object consisting of keys that are vehicle_type_ids and values that represent the number of empty but disabled dock points for vehicles of the respective vehicle type at the station. This value remains as part of the spec as it is possibly useful during development
+\- vehicle_docks_available | Conditionally Required       | This field is required if the [vehicle_types.json](#vehicle_typesjson) file has been defined and the `num_docks_available` field is not defined. This field's value is an object consisting of keys that are vehicle_type_ids as described in [vehicle_types.json](#vehicle_typesjson) and values that represent the number of docks accepting vehicle returns of vehicles of the respective vehicle type. If a single dock can accept multiple types, these should be added to the count of available docks for each applicable vehicle type.
+\- vehicle_docks_disabled  | Optional  | An object consisting of keys that are vehicle_type_ids as described in [vehicle_types.json](#vehicle_typesjson) and values that represent the number of empty but disabled dock points for vehicles of the respective vehicle type at the station.
+\- vehicles_available | Conditionally Required       | This field is required if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field's value is an object consisting of keys that are vehicle_type_ids as described in [vehicle_types.json](#vehicle_typesjson) and values that represent the number of vehicles of the respective vehicle type available for rental
+\- vehicles_disabled | Optional  | An object consisting of keys that are vehicle_type_ids as described in [vehicle_types.json](#vehicle_typesjson) and values that represent the number of disabled vehicles of the respective vehicle type at the station. Vendors who do not want to publicize the number of disabled vehicles or docks in their system can opt to omit station capacity (in station_information), num_vehicles_disabled and num_docks_disabled.
 
 Example:
 
@@ -299,66 +281,82 @@ Example:
   "last_updated": 1434054678,
   "ttl": 0,
   "data": {
-    "station_id": "pga",
-    "is_installed": 1,
-    "is_renting": 1,
-    "is_returning": 1,
-    "last_reported": 1434054678,
-    "num_vehicles_available": {
-      "m1": 3,
-      "tg": 4
-    },
-    "num_docks_available": {
-      "m1": 2,
-      "tg": 1
-    }
-  }
-}
-```
-
-### free_vehicle_status.json
-Describes vehicles that are not at a station and are not currently in the middle of an active ride.
-
-Field Name        | Required  | Defines
-------------------| ----------| ----------
-vehicles             | Yes       | Array that contains one object per vehicle that is currently docked/stopped outside of the system as defined below
-\- vehicle_id         | Yes       | Unique identifier of a vehicle
-\- lat             | Yes       | Latitude of the vehicle. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
-\- lon             | Yes       | Longitude of the vehicle. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
-\- is_reserved     | Yes       | 1/0 value - is the vehicle currently reserved for someone else
-\- is_disabled     | Yes       | 1/0 value - is the vehicle currently disabled (broken)
-\- vehicle_type_id | Yes | The vehicle_type_id of this vehicle as described in [system_information.json](#system_informationjson)
-\- range_with_current_energy_potential | Optional | The furthest distance in kilometers that the vehicle can travel with the vehicle's current amount of energy potential
-
-Example:
-
-```json
-{
-  "last_updated": 1434054678,
-  "ttl": 0,
-  "data": {
-    "vehicles": [
+    "stations": [
       {
-        "vehicle_id": "abc123",
-        "lat": 12.34,
-        "lon": 56.78,
-        "is_reserved": 0,
-        "is_disabled": 0,
-        "vehicle_type_id": "m1",
-        "range_with_current_energy_potential": 3
+        "station_id": "station 1",
+        "is_installed": 1,
+        "is_renting": 1,
+        "is_returning": 1,
+        "last_reported": 1434054678,
+        "vehicles_available": {
+          "abc123": 3,
+          "def456": 4
+        },
+        "vehicle_docks_available": {
+          "abc123": 2,
+          "def456": 1
+        }
       }, {
-        "vehicle_id": "123abc",
-        "lat": 12.34,
-        "lon": 56.78,
-        "is_reserved": 0,
-        "is_disabled": 0,
-        "vehicle_type_id": "tg",
-        "range_with_current_energy_potential": 4.5
+        "station_id": "station 2",
+        "is_installed": 1,
+        "is_renting": 1,
+        "is_returning": 1,
+        "last_reported": 1434054678,
+        "num_docks_available": 8,
+        "vehicles_available": {
+          "abc123": 2,
+          "def456": 3
+        }
       }
     ]
   }
 }
 ```
+
+
+### free_bike_status.json
+Describes bikes that are not at a station and are not currently in the middle of an active ride.
+
+Field Name        | Required  | Defines
+------------------| ----------| ----------
+bikes             | Yes       | Array that contains one object per bike that is currently docked/stopped outside of the system as defined below
+\- bike_id         | Yes       | Unique identifier of a bike
+\- lat             | Yes       | Latitude of the bike. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
+\- lon             | Yes       | Longitude of the bike. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
+\- is_reserved     | Yes       | 1/0 value - is the bike currently reserved for someone else
+\- is_disabled     | Yes       | 1/0 value - is the bike currently disabled (broken)
+\- vehicle_type_id | Conditionally Required | The vehicle_type_id of this vehicle as described in [vehicle_types.json](#vehicle_typesjson). This field is required if the [vehicle_types.json](#vehicle_typesjson) is defined.
+\- range | Optional | If the vehicle has a motor, this value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
+
+Example:
+
+```json
+{
+  "last_updated": 1434054678,
+  "ttl": 0,
+  "data": {
+    "bikes": [
+      {
+        "bike_id": "ghi789",
+        "lat": 12.34,
+        "lon": 56.78,
+        "is_reserved": 0,
+        "is_disabled": 0,
+        "vehicle_type_id": "abc123"
+      }, {
+        "bike_id": "jkl012",
+        "lat": 12.34,
+        "lon": 56.78,
+        "is_reserved": 0,
+        "is_disabled": 0,
+        "vehicle_type_id": "def456",
+        "range": 450
+      }
+    ]
+  }
+}
+```
+
 
 ### system_hours.json
 Describes the system hours of operation. A JSON array of hours defined as follows:
@@ -425,7 +423,7 @@ regions           | Yes       | Array of region objects as defined below
 \- name           | Yes       | Public name for this region
 
 ### system_pricing_plans.json
-Describe pricing for the system. This scheme does not currently factor in lost vehicle fees as it seems outside of the scope of this specification, but they could be added. It is an array of pricing objects defined as follows:
+Describe pricing for the system. This scheme does not currently factor in lost bike fees as it seems outside of the scope of this specification, but they could be added. It is an array of pricing objects defined as follows:
 
 Field Name        | Required  | Defines
 ------------------| --------- | ----------
@@ -451,9 +449,8 @@ alerts            | Yes         | Array - alert objects each indicating a separa
 \- times           | Optional    | Array of hashes with the keys "start" and "end" indicating when the alert is in effect (e.g. when the system or station is actually closed, or when it is scheduled to be moved). If this array is omitted then the alert should be displayed as long as it is in the feed.
 &emsp;- start     | Yes         | Integer POSIX timestamp - required if container "times" key is present
 &emsp;- end       | Optional    | Integer POSIX timestamp - if there is currently no end time planned for the alert, this key can be omitted indicating that there is no currently scheduled end time for the alert
-\- station_ids     | Optional    | Array of strings - If this is an alert that affects one or more stations, include their ids, otherwise omit this field. If station_ids, region_ids and vehicle_type_ids are omitted, assume this alert affects the entire system
-\- region_ids      | Optional    | Array of strings - If this system has regions, and if this alert only affects certain regions, include their ids, otherwise, omit this field. If station_ids, region_ids and vehicle_type_ids are omitted, assume this alert affects the entire system
-\- vehicle_type_ids      | Optional    | Array of strings - If this is an alert that affects one or more vehicle types, include their ids, otherwise, omit this field. If station_ids, region_ids and vehicle_type_ids are omitted, assume this alert affects the entire system
+\- station_ids     | Optional    | Array of strings - If this is an alert that affects one or more stations, include their ids, otherwise omit this field. If both station_ids and region_ids are omitted, assume this alert affects the entire system
+\- region_ids      | Optional    | Array of strings - If this system has regions, and if this alert only affects certain regions, include their ids, otherwise, omit this field. If both station_ids and region_ids are omitted, assume this alert affects the entire system
 \- url             | Optional    | String - URL where the customer can learn more information about this alert, if there is one
 \- summary         | Yes         | String - A short summary of this alert to be displayed to the customer
 \- description     | Optional    | String - Detailed text description of the alert
