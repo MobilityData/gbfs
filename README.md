@@ -13,7 +13,7 @@ Our goals for this project are:
 We hope you will share your valuable expertise with us by taking our [survey about GBFS business and technical needs](https://docs.google.com/forms/u/2/d/1B7OlczY1mm4Y0MIzuqGoR9ZMn695oRlGhnjgvvgu434/edit?usp=drive_web) and by joining in the conversation here.
 
 ## What is GBFS?
-The General Bikeshare Feed Specification, known as GBFS, is the open data standard for bikeshare. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability.
+The General Bikeshare Feed Specification, known as GBFS, is the open data standard for bikeshare. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. Because GBFS is intended to make information publicly available online, information that is potentially personally identifiable is not currently and will not become part of the core specification.
 
 Under the [North American Bikeshare Association’s](http://www.nabsa.net) leadership, GBFS has been developed by public, private sector and non-profit bike share system owners and operators, application developers, and technology vendors.
 
