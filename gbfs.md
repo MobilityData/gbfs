@@ -178,14 +178,14 @@ license_url       | Optional  | A fully qualified URL of a page that defines the
 ### vehicle_types.json
 The following fields are all attributes within the main "data" object for this feed.
 
-ield Name        | Required  | Defines
+Field Name        | Required  | Defines
 ------------------| --------- | ----------
 vehicle_types          | Yes       | Array that contains one object per vehicle type in the system as defined below
 \- vehicle_type_id      | Yes       | Unique identifier of a vehicle type. See [Field Definitions](#field-definitions) above for ID field requirements
 \- form_factor      | Yes       | An enumerable describing the vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`scooter`</li><li>`car`</li></ul>
 \- propulsion_types | Yes | An array consisting of enumerables that describe the propulsion type of the vehicle. <br /><br />A device may have one or more values from the propulsion_type, depending on the number of modes of operation. For example, a scooter that can be powered by foot or by electric motor would have the propulsion_type represented by the array ['human', 'electric']. A bicycle with pedal-assist would have the propulsion_type represented by the array ['human', 'electric_assist'] if it can also be operated as a traditional bicycle. A car with an internal combustion engine would be represented by the array ['combustion']<br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric assist` _(Provides power only alongside human propulsion)_</li><li>`electric` _(Contains throttle mode with a battery-powered motor)_</li><li>`combustion` _(Contains throttle mode with a gas engine-powered motor)_</li></ul> This field was copied from [City of Los Angeles Mobility Data Specification](https://github.com/CityOfLosAngeles/mobility-data-specification/blob/73995a151f0a1d67aab3d617a4693f8f81967936/provider/README.md#propulsion-types)
-\- description | Optional | A free text description of the vehicle
-\- max_range | Optional | If the vehicle has a motor, this represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example a full battery or full tank of gas)
+\- description | Optional | Description of the vehicle that provides useful, quality information in human readable terms. This field should include helpful descriptions about how to identify vehicles. Include infromation about color, form factor and any special features the vehicles have. For example, include information such about the presence of baskets, if the scooters have seats or if the vehicle has 3 wheels.
+\- max_range_meters | Optional | If the vehicle has a motor, this represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example a full battery or full tank of gas)
 
 Example:
 
@@ -206,7 +206,7 @@ Example:
         "form_factor": "scooter",
         "propulsion_types": ["human", "electric"],
         "description": "an electric scooter",
-        "max_range": 12345
+        "max_range_meters": 12345
       }
     ]
   }
@@ -326,7 +326,8 @@ bikes             | Yes       | Array that contains one object per bike that is 
 \- is_reserved     | Yes       | 1/0 value - is the bike currently reserved for someone else
 \- is_disabled     | Yes       | 1/0 value - is the bike currently disabled (broken)
 \- vehicle_type_id | Conditionally Required | The vehicle_type_id of this vehicle as described in [vehicle_types.json](#vehicle_typesjson). This field is required if the [vehicle_types.json](#vehicle_typesjson) is defined.
-\- range | Optional | If the vehicle has a motor, this value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
+\- last_reported | Yes       | Integer POSIX timestamp indicating the last time this vehicle reported its status to the backend
+\- current_range_meters | Optional | If the vehicle has a motor, this value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
 
 Example:
 
@@ -338,6 +339,7 @@ Example:
     "bikes": [
       {
         "bike_id": "ghi789",
+        "last_reported": 1434054678,
         "lat": 12.34,
         "lon": 56.78,
         "is_reserved": 0,
@@ -345,12 +347,13 @@ Example:
         "vehicle_type_id": "abc123"
       }, {
         "bike_id": "jkl012",
+        "last_reported": 1434054687,
         "lat": 12.34,
         "lon": 56.78,
         "is_reserved": 0,
         "is_disabled": 0,
         "vehicle_type_id": "def456",
-        "range": 450
+        "current_range_meters": 450
       }
     ]
   }
