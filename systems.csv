@@ -61,6 +61,9 @@ ES,Bilbaobizi (Bilbao),"Bilbao, ES",nextbike_bo,https://www.bilbaobizi.bilbao.eu
 ES,Sitycleta (Las Palmas),"Las Palmas de Gran Canaria, ES",nextbike_el,https://www.sitycleta.com/xx/laspalmas/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_el/gbfs.json
 FR,Libélo,"Valence, FR",libelo,http://www.citea.info/presentation/?rub_code=92,https://valence.publicbikesystem.net/ube/gbfs/v1/gbfs.json
 GB,BelfastBikes,"Belfast, GB",nextbike_bu,https://www.belfastbikes.co.uk/xx/belfast/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bu/gbfs.json
+GB,Beryl - BCP,"Bournemouth, Christchurch, Poole, GB",beryl_bc,https://www.beryl.cc,http://gbfs.basis-pdn.bike/BCP/gbfs.json
+GB,Beryl - Hereford,"Hereford, GB",beryl_he,https://www.beryl.cc,http://gbfs.basis-pdn.bike/Hereford/gbfs.json
+GB,Beryl - London,"London, GB",beryl_lo,https://www.beryl.cc,http://gbfs.basis-pdn.bike/London/gbfs.json
 GB,Co-bikes,"Exeter, GB",nextbike_eu,https://www.co-bikes.co.uk/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_eu/gbfs.json
 GB,nextbike Cardiff,"Cardiff, GB",nextbike_uc,https://www.nextbike.co.uk/xx/cardiff/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_uc/gbfs.json
 GB,nextbike Glasgow,"Glasgow, GB",nextbike_gg,https://www.nextbike.co.uk/xx/glasgow/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_gg/gbfs.json
