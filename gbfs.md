@@ -1,6 +1,8 @@
 # General Bikeshare Feed Specification (GBFS)
 This document explains the types of files and data that comprise the General Bikeshare Feed Specification (GBFS) and defines the fields used in all of those files.
 
+This branch and associated pull request is to discuss (a proposal)[https://docs.google.com/document/d/1po4tlv5p7jXB6KQYohLAIS0qKJfxI1e-EH3JjiyUWoc/edit] to add support for dockless, geofencing, and virtual stations.
+
 ## Table of Contents
 
 * [Revision History](#revision-history)
