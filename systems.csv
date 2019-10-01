@@ -202,6 +202,7 @@ US,Indy - Pacers Bikeshare,"Indianapolis, IN",bcycle_pacersbikeshare,https://www
 US,Jackson County,"Jackson, MI",bcycle_jacksoncounty,https://jacksoncounty.bcycle.com,https://gbfs.bcycle.com/bcycle_jacksoncounty/gbfs.json
 US,JerseyBike,"US",nextbike_nj,https://www.hudsonbikeshare.com/xx/hoboken/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_nj/gbfs.json
 US,JUMP Austin,"Austin, TX",jump_austin,https://jump.com/,https://atx.jumpbikes.com/opendata/gbfs.json
+US,JUMP Baltimore,"Baltimore, MD",jump_baltimore,https://jump.com/,https://gbfs.uber.com/v1/balts/free_bike_status.json
 US,JUMP Chicago Bikes,"Chicago, IL",jump_chicago,https://jump.com/,https://chi.jumpbikes.com/opendata/gbfs.json
 US,JUMP Chicago Scooters,"Chicago, IL",chicago_jump_system,https://www.jumpbikes.com,https://gbfs.uber.com/v1/chicago/gbfs.json
 US,JUMP DC,"Washington, DC",washington_dc_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/dcb/gbfs.json
@@ -217,6 +218,7 @@ US,JUMP Seattle,"Seattle, WA",jump_seattle,https://jump.com,https://sea.jumpbike
 US,JUMP SF,"San Francisco, CA",jump_sf,https://jump.com/,https://sf.jumpbikes.com/opendata/gbfs.json
 US,Kansas City B-cycle,"Kansas City, MO",bcycle_kc,https://kc.bcycle.com,https://gbfs.bcycle.com/bcycle_kc/gbfs.json
 US,Lime Arlington,"Arlington, VA",lime_arlington,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/arlington/gbfs.json
+US,Lime Baltimore,"Baltimore, MD",lime_baltimore,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/baltimore/gbfs.json
 US,Lime Chicago,"Chicago, IL",lime_chicago,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/chicago/gbfs.json
 US,Lime Detroit,"Detroit, MI",lime_detroit,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/detroit/gbfs.json
 US,Lime Los Angeles,"Los Angeles, CA",lime_los_angeles,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/los_angeles/gbfs.json
@@ -246,6 +248,7 @@ US,Skybike West Palm Beach,"West Palm Beach Florida, US",nextbike_wb,https://sky
 US,Sobi Long Beach,"Long Beach, NY",sobi_long_beach,http://sobilongbeach.com/,http://sobilongbeach.com/opendata/gbfs.json
 US,Spartanburg BCycle,"Spartanburg, SC",bcycle_spartanburg,https://spartanburg.bcycle.com,https://gbfs.bcycle.com/bcycle_spartanburg/gbfs.json
 US,Spin Chicago,"Chicago, IL",spin chicago,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/chicago/gbfs.json
+US,Spin Baltimore, "Baltimore, MD,spin baltimore,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/baltimore/free_bike_status.json
 US,Spin Detroit,"Detroit, MI",spin detroit,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/detroit/gbfs
 US,Spin Louisville,"Louisville, KY",spin louisville,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/louisville/gbfs
 US,Spin Washington DC,"Washington, DC",spin washington_dc,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/washington_dc/gbfs
