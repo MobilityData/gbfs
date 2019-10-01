@@ -170,6 +170,7 @@ purchase_url      | Optional  | A fully qualified URL where a customer can purch
 start_date        | Optional  | String in the form YYYY-MM-DD representing the date that the system began operations
 phone_number      | Optional  | A single voice telephone number for the specified system. This field is a string value that presents the telephone number as typical for the system's service area. It can and should contain punctuation marks to group the digits of the number. Dialable text (for example, Capital Bikeshare’s  "877-430-BIKE") is permitted, but the field must not contain any other descriptive text
 email             | Optional  | A single contact email address for customers to address questions about the system
+technical_email   | Optional  | A single contact email address for consumers of this feed to report technical issues
 timezone          | Yes       | The time zone where the system is located. Time zone names never contain the space character but may contain an underscore. Please refer to the "TZ" value in https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for a list of valid values
 license_url       | Optional  | A fully qualified URL of a page that defines the license terms for the GBFS data for this system, as well as any other license terms the system would like to define (including the use of corporate trademarks, etc)
 
