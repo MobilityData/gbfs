@@ -272,8 +272,12 @@ stations              | Yes       | Array that contains one object per station i
 \- last_reported       | Yes       | Integer POSIX timestamp indicating the last time this station reported its status to the operator's backend
 \- vehicle_docks_available | Conditionally Required       | This field is required if the [vehicle_types.json](#vehicle_typesjson) file has been defined and the `num_docks_available` field is not defined. This field's value is an object consisting of keys that are vehicle_type_ids as described in [vehicle_types.json](#vehicle_typesjson) and values that represent the number of docks accepting vehicle returns of vehicles of the respective vehicle type. If a single dock can accept multiple types, these should be added to the count of available docks for each applicable vehicle type.
 \- vehicle_docks_disabled  | Optional  | An object consisting of keys that are vehicle_type_ids as described in [vehicle_types.json](#vehicle_typesjson) and values that represent the number of empty but disabled dock points for vehicles of the respective vehicle type at the station.
-\- vehicles_available | Conditionally Required       | This field is required if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field's value is an object consisting of keys that are vehicle_type_ids as described in [vehicle_types.json](#vehicle_typesjson) and values that represent the number of vehicles of the respective vehicle type available for rental
-\- vehicles_disabled | Optional  | An object consisting of keys that are vehicle_type_ids as described in [vehicle_types.json](#vehicle_typesjson) and values that represent the number of disabled vehicles of the respective vehicle type at the station. Vendors who do not want to publicize the number of disabled vehicles or docks in their system can opt to omit station capacity (in station_information), num_vehicles_disabled and num_docks_disabled.
+\- vehicles | Conditionally Required       | This field is required if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field's value is an array of objects. Each object contains data about a specific vehicle that is currently present at the docking station. Each of these vehicles is assumed to be rentable unless otherwise indicated with the is_reserved or is_disabled flags. All of the remaining fields in this table represent key/values for each vehicle object in this array.
+\-- bike_id         | Yes       | Unique identifier of a bike
+\-- is_reserved     | Yes       | 1/0 value - is the bike currently reserved for someone else
+\-- is_disabled     | Yes       | 1/0 value - is the bike currently disabled (broken)
+\-- vehicle_type_id | Required | The vehicle_type_id of this vehicle as described in [vehicle_types.json](#vehicle_typesjson).
+\-- current_range_meters | Conditionally Required | If the corresponding vehicle_type definition for this vehicle has a motor, then this field is required. This value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
 
 Example:
 
@@ -289,10 +293,18 @@ Example:
         "is_renting": 1,
         "is_returning": 1,
         "last_reported": 1434054678,
-        "vehicles_available": {
-          "abc123": 3,
-          "def456": 4
-        },
+        "vehicles": [{
+          "bike_id": "mno345",
+          "is_reserved": 0,
+          "is_disabled": 0,
+          "vehicle_type_id": "abc123"
+        }, {
+          "bike_id": "pqr678",
+          "is_reserved": 0,
+          "is_disabled": 0,
+          "vehicle_type_id": "def456",
+          "current_range_meters": 5432
+        }],
         "vehicle_docks_available": {
           "abc123": 2,
           "def456": 1
@@ -304,10 +316,18 @@ Example:
         "is_returning": 1,
         "last_reported": 1434054678,
         "num_docks_available": 8,
-        "vehicles_available": {
-          "abc123": 2,
-          "def456": 3
-        }
+        "vehicles": [{
+          "bike_id": "stu901",
+          "is_reserved": 0,
+          "is_disabled": 0,
+          "vehicle_type_id": "abc123"
+        }, {
+          "bike_id": "vwx234",
+          "is_reserved": 0,
+          "is_disabled": 0,
+          "vehicle_type_id": "def456",
+          "current_range_meters": 5432
+        }]
       }
     ]
   }
