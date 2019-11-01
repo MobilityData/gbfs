@@ -30,6 +30,9 @@ The data in the specification contained in this document is intended for consump
 * [Current spec](gbfs.md)
 * [Original draft spec in a Google doc](https://docs.google.com/document/d/1BQPZCKpem4-n6lUQDD4Mi8E5hNZ0-lhY62IVtWuyhec/edit#heading=h.ic7i1m4gcev7) (reference only)
 
+## GBFS validation
+It is expected that producers of GBFS feeds will make sure to test their feed to ensure that it conforms to this specification. See [this list of validation tools for testing the GBFS](https://github.com/NABSA/micromobility-tools-and-resources#gbfs-validators).
+
 ## Overview of the Change Process
 GBFS is an open specification, developed and maintained by the community of producers and consumers of GBFS data.
 The specification is not fixed or unchangeable. As the bikeshare industry evolves, it is expected that the specification will be extended by the GBFS community to include new features and capabilities over time. To manage the change process, the following guidelines have been established.
