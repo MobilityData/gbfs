@@ -39,7 +39,7 @@ This specification defines the following files along with their associated conte
 
 File Name                   | Required                |       Defines
 --------------------------- | ----------------------- | ----------
-gbfs.json                   | Optional                | Auto-discovery file that links to all of the other files published by the system. This file is optional, but highly recommended.
+gbfs.json                   | Yes                     | Auto-discovery file that links to all of the other files published by the system. This file is required.
 system_information.json     | Yes                     | Describes the system including System operator, System location, year implemented, URLs, contact info, time zone
 station_information.json    | Conditionally required  | Mostly static list of all stations, their capacities and locations. Required of systems utilizing docks.
 station_status.json         | Conditionally required  | Number of available bikes and docks at each station and station availability. Required of systems utilizing docks.
@@ -117,7 +117,7 @@ Field Name              | Required    | Defines
 ------------------------| ------------| ----------
 _language_              | Yes         | The language that all of the contained files will be published in. This language must match the value in the system_information file
   \- feeds               | Yes         | An array of all of the feeds that are published by this auto-discovery file
-  \- name                | Yes         | Key identifying the type of feed this is (e.g. "system_information", "station_information")
+  \- name                | Yes         | Key identifying the type of feed this is. The key must be the base file name defined in the spec for the corresponding feed type (`system_information` for `system_information.json` file, `station_information` for `station_information.json` file). Note that the actual feed endpoints (urls) may not be defined in the `file_name.json` format. For example, a valid feed endpoint could end with `station_info` instead of `station_information.json`. 
   \- url                 | Yes         | Full URL for the feed
 
 Example:
