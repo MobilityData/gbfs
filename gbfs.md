@@ -35,11 +35,11 @@ This specification has been designed with the following concepts in mind:
 Historical data, including station details and ride data is to be provided by a more compact specification designed specifically for such archival purposes. The data in the specification contained in this document is intended for consumption by clients intending to provide real-time (or semi-real-time) transit advice and is designed as such.
 
 ## Versioning
-The version of the GBFS documentation in which a feed is encoded is declared in all file headers. See [Output Format][#Output Format]. GBFS 
+The version of the GBFS documentation in which a feed is encoded is declared in all file headers. See [Output Format](#output-format).
 
 GBFS Best Practice defines that:
-* *GBFS producers* should provide an endpoint that conforms to the current long term support (LTS) branch and the latest release branch (within 3 months of release). See [specification versioning](README.md#Specification_Versioning)
-* *GBFS consumers* should, at a minumum, consume the current LTS branch. It highly recommended that GBFS consumers support later releases.
+* _GBFS producers_ should provide an endpoint that conforms to the current long term support (LTS) branch and the latest release branch (within 3 months of release). See [specification versioning](README.md#specification-versioning)
+* _GBFS consumers_ should, at a minumum, consume the current LTS branch. It highly recommended that GBFS consumers support later releases.
 
 Default GBFS feed URLs, e.g. `https://www.example.com/data/gbfs.json` or `https://www.example.com/data/fr/system_information.json` should direct consumers to the feed encoded according to the current LTS documentation branch.
 

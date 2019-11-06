@@ -40,7 +40,7 @@ The general outline for changing the spec has 4 steps:
 3.	Find at least one GBFS producer to implement and test the proposed change.
 4.	Submit a final request-for-comments on the proposed change to the issue discussion. If no outstanding issues are identified after one week’s time, and there is general agreement that the proposed change is worthwhile and follows the GBFS guiding principles outlined below, the proposal will be officially adopted.
 
-## Specification versioning
+## Specification Versioning
 To enable the evolution of GBFS, including changes that would otherwise break backwards-compatibility with consuming applications, GBFS documentation is versioned. A git tag in the form of `X.Y` establishes semantic versions. Git tags batch pull requests into versions.
 
 A whole integer increase is used for breaking changes (MAJOR changes). A decimal increase is used for non-breaking changes (MINOR changes or patches).
@@ -56,7 +56,7 @@ Examples of non-breaking changes include:
 * Adding or removing enum values
 * Modifying documentation or spec language in a way that clarifies semantics or recommended practices
 
-### Version release cycles
+### Version Release Cycles
 * There is no strict limitation on the frequency of MAJOR releases, but the GBFS community aims to limit the MAJOR releases to 2 or less every 12 months. To limit releases, breaking changes can be batched together.
 * MINOR changes may be applied at any time. There is no guideline to limit the number of MINOR changes.
 * GBFS documentation will include a designated long-term support (LTS) branch. The LTS branch must maintain backwards compatibility for a period of 2 years. Non-breaking changes (MINOR) may be applied to the LTS branch.
