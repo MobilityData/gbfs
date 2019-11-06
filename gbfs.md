@@ -34,12 +34,23 @@ This specification has been designed with the following concepts in mind:
 
 Historical data, including station details and ride data is to be provided by a more compact specification designed specifically for such archival purposes. The data in the specification contained in this document is intended for consumption by clients intending to provide real-time (or semi-real-time) transit advice and is designed as such.
 
+## Versioning
+The version of the GBFS documentation in which a feed is encoded is declared in all file headers. See [Output Format][#Output Format]. GBFS 
+
+GBFS Best Practice defines that:
+* *GBFS producers* should provide an endpoint that conforms to the current long term support (LTS) branch and the latest release branch (within 3 months of release). See [specification versioning](README.md#Specification_Versioning)
+* *GBFS consumers* should, at a minumum, consume the current LTS branch. It highly recommended that GBFS consumers support later releases.
+
+Default GBFS feed URLs, e.g. `https://www.example.com/data/gbfs.json` or `https://www.example.com/data/fr/system_information.json` should direct consumers to the feed encoded according to the current LTS documentation branch.
+
+
 ## Files
 This specification defines the following files along with their associated content:
 
 File Name                   | Required                |       Defines
 --------------------------- | ----------------------- | ----------
 gbfs.json                   | Optional                | Auto-discovery file that links to all of the other files published by the system. This file is optional, but highly recommended.
+gbfs_versions.json          | Optional                | Lists all  feed endpoints published according to versions of the GBFS documentation.
 system_information.json     | Yes                     | Describes the system including System operator, System location, year implemented, URLs, contact info, time zone
 station_information.json    | Conditionally required  | Mostly static list of all stations, their capacities and locations. Required of systems utilizing docks.
 station_status.json         | Conditionally required  | Number of available bikes and docks at each station and station availability. Required of systems utilizing docks.
@@ -96,13 +107,16 @@ Field Name          | Required  | Defines
 --------------------| ----------| ----------
 last_updated        | Yes       | Integer POSIX timestamp indicating the last time the data in this feed was updated
 ttl                 | Yes       | Integer representing the number of seconds before the data in this feed will be updated again (0 if the data should always be refreshed)
+version             | Yes       | GBFS version number in which feed data is encoded, according to the versioning framework.
 data                | Yes       | JSON hash containing the data fields for this response
+
 
 Example:
 ```json
 {
   "last_updated": 1434054678,
   "ttl": 3600,
+  "version":"1.0",
   "data": {
     "name": "Citi Bike",
     "system_id": "citibike_com"
@@ -115,10 +129,13 @@ The following fields are all attributes within the main "data" object for this f
 
 Field Name              | Required    | Defines
 ------------------------| ------------| ----------
+stations          | Yes       | Array that contains one object per station in the system as defined below
+
 _language_              | Yes         | The language that all of the contained files will be published in. This language must match the value in the system_information file
   \- feeds               | Yes         | An array of all of the feeds that are published by this auto-discovery file
   \- name                | Yes         | Key identifying the type of feed this is (e.g. "system_information", "station_information")
   \- url                 | Yes         | Full URL for the feed
+
 
 Example:
 
@@ -126,16 +143,17 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 0,
+  "version":"1.0",
   "data": {
     "en": {
       "feeds": [
         {
           "name": "system_information",
-          "url": "https://www.example.com/gbfs/en/system_information"
+          "url": "https://www.example.com/gbfs/1.0/en/system_information"
         },
         {
           "name": "station_information",
-          "url": "https://www.example.com/gbfs/en/station_information"
+          "url": "https://www.example.com/gbfs/1.0/en/station_information"
         }
       ]
     },
@@ -143,14 +161,49 @@ Example:
       "feeds": [
         {
           "name": "system_information",
-          "url": "https://www.example.com/gbfs/fr/system_information"
+          "url": "https://www.example.com/gbfs/1.0/fr/system_information"
         },
         {
           "name": "station_information",
-          "url": "https://www.example.com/gbfs/fr/station_information"
+          "url": "https://www.example.com/gbfs/1.0/fr/station_information"
         }
       ]
     }
+  }
+}
+```
+
+### gbfs_versions.json
+Each expression of a GBFS feed describes all of the versions that are available.
+
+The following fields are all attributes within the main "data" object for this feed.
+
+Field Name              | Required    | Defines
+------------------------| ------------| ----------
+_versions_              | Yes         | Array that contains one object, as defined below, for each of the available versions of a feed.
+  \- version            | Yes         | String identifying the semantic version of the feed in the form X.Y.
+  \- url                | Yes         | URL of the corresponding gbfs.json endpoint.
+  
+```json
+{
+  "last_updated": 1434054678,
+  "ttl": 0,
+  "version":"1.0",
+  "data": {
+    [
+      {
+         "version":"1.0",
+         "url":"https://www.example.com/gbfs/1.0/gbfs"
+      },
+      {
+         "version":"1.1",
+         "url":"https://www.example.com/gbfs/1.1/gbfs"
+      },
+      {
+         "version":"2.0",
+         "url":"https://www.example.com/gbfs/2.0/gbfs"
+      }
+    ]
   }
 }
 ```
@@ -235,6 +288,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 0,
+  "version":"1.0",
   "data": {
     "rental_hours": [
       {
