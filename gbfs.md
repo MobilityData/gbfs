@@ -118,7 +118,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 3600,
-  "version":"1.0",
+  "version": "1.0",
   "data": {
     "name": "Citi Bike",
     "system_id": "citibike_com"
@@ -143,7 +143,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 0,
-  "version":"1.0",
+  "version": "1.0",
   "data": {
     "en": {
       "feeds": [
@@ -188,22 +188,23 @@ _versions_              | Yes         | Array that contains one object, as defin
 {
   "last_updated": 1434054678,
   "ttl": 0,
-  "version":"1.0",
+  "version": "1.0",
   "data": {
-    [
-      {
-         "version":"1.0",
-         "url":"https://www.example.com/gbfs/1.0/gbfs"
-      },
-      {
-         "version":"1.1",
-         "url":"https://www.example.com/gbfs/1.1/gbfs"
-      },
-      {
-         "version":"2.0",
-         "url":"https://www.example.com/gbfs/2.0/gbfs"
-      }
-    ]
+  	"versions":
+		[
+		  {
+			 "version": "1.0",
+			 "url":"https://www.example.com/gbfs/1.0/gbfs"
+		  },
+		  {
+			 "version":"1.1",
+			 "url":"https://www.example.com/gbfs/1.1/gbfs"
+		  },
+		  {
+			 "version":"2.0",
+			 "url":"https://www.example.com/gbfs/2.0/gbfs"
+		  }
+		]
   }
 }
 ```
@@ -288,7 +289,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 0,
-  "version":"1.0",
+  "version": "1.0",
   "data": {
     "rental_hours": [
       {
