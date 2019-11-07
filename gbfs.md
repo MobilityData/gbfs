@@ -35,13 +35,15 @@ This specification has been designed with the following concepts in mind:
 Historical data, including station details and ride data is to be provided by a more compact specification designed specifically for such archival purposes. The data in the specification contained in this document is intended for consumption by clients intending to provide real-time (or semi-real-time) transit advice and is designed as such.
 
 ## Versioning
-The version of the GBFS documentation in which a feed is encoded is declared in all file headers. See [Output Format](#output-format).
+The version of the GBFS specification to which a feed conforms is declared in the `version` field in all files. See [Output Format](#output-format).
 
 GBFS Best Practice defines that:
-* _GBFS producers_ should provide an endpoint that conforms to the current long term support (LTS) branch and the latest release branch (within 3 months of release). See [specification versioning](README.md#specification-versioning)
-* _GBFS consumers_ should, at a minumum, consume the current LTS branch. It highly recommended that GBFS consumers support later releases.
 
-Default GBFS feed URLs, e.g. `https://www.example.com/data/gbfs.json` or `https://www.example.com/data/fr/system_information.json` should direct consumers to the feed encoded according to the current LTS documentation branch.
+_GBFS producers_ should provide endpoints that conform to both the current specification long term support (LTS) branch as well as the latest release branch within at least 3 months of a new spec `MAJOR` or `MINOR` version release. See [specification versioning](README.md#specification-versioning)
+
+_GBFS consumers_ should, at a minumum, support the current LTS branch. It highly recommended that GBFS consumers support later releases.
+
+Default GBFS feed URLs, e.g. `https://www.example.com/data/gbfs.json` or `https://www.example.com/data/fr/system_information.json` must direct consumers to the feed that conforms to the current LTS documentation branch.
 
 
 ## Files
@@ -50,7 +52,7 @@ This specification defines the following files along with their associated conte
 File Name                   | Required                |       Defines
 --------------------------- | ----------------------- | ----------
 gbfs.json                   | Optional                | Auto-discovery file that links to all of the other files published by the system. This file is optional, but highly recommended.
-gbfs_versions.json          | Optional                | Lists all  feed endpoints published according to versions of the GBFS documentation.
+gbfs_versions.json          | Optional                | Lists all feed endpoints published according to versions of the GBFS documentation.
 system_information.json     | Yes                     | Describes the system including System operator, System location, year implemented, URLs, contact info, time zone
 station_information.json    | Conditionally required  | Mostly static list of all stations, their capacities and locations. Required of systems utilizing docks.
 station_status.json         | Conditionally required  | Number of available bikes and docks at each station and station availability. Required of systems utilizing docks.
@@ -107,7 +109,7 @@ Field Name          | Required  | Defines
 --------------------| ----------| ----------
 last_updated        | Yes       | Integer POSIX timestamp indicating the last time the data in this feed was updated
 ttl                 | Yes       | Integer representing the number of seconds before the data in this feed will be updated again (0 if the data should always be refreshed)
-version             | Yes       | GBFS version number in which feed data is encoded, according to the versioning framework.
+version             | Yes       | String - GBFS version number to which the feed confirms, according to the versioning framework.
 data                | Yes       | JSON hash containing the data fields for this response
 
 
@@ -129,8 +131,6 @@ The following fields are all attributes within the main "data" object for this f
 
 Field Name              | Required    | Defines
 ------------------------| ------------| ----------
-stations          | Yes       | Array that contains one object per station in the system as defined below
-
 _language_              | Yes         | The language that all of the contained files will be published in. This language must match the value in the system_information file
   \- feeds               | Yes         | An array of all of the feeds that are published by this auto-discovery file
   \- name                | Yes         | Key identifying the type of feed this is (e.g. "system_information", "station_information")
@@ -180,7 +180,7 @@ The following fields are all attributes within the main "data" object for this f
 
 Field Name              | Required    | Defines
 ------------------------| ------------| ----------
-_versions_              | Yes         | Array that contains one object, as defined below, for each of the available versions of a feed.
+_versions_              | Yes         | Array that contains one object, as defined below, for each of the available versions of a feed. The array must be sorted by increasing MAJOR and MINOR version number.
   \- version            | Yes         | String identifying the semantic version of the feed in the form X.Y.
   \- url                | Yes         | URL of the corresponding gbfs.json endpoint.
   
