@@ -39,7 +39,7 @@ The version of the GBFS specification to which a feed conforms is declared in th
 
 GBFS Best Practice defines that:
 
-_GBFS producers_ should provide endpoints that conform to both the current specification long term support (LTS) branch as well as the latest release branch within at least 3 months of a new spec `MAJOR` or `MINOR` version release. See [specification versioning](README.md#specification-versioning)
+_GBFS producers_ should provide endpoints that conform to both the current specification long term support (LTS) branch as well as the latest release branch within at least 3 months of a new spec `MAJOR` or `MINOR` version release. It is not necessary to support more than one `MINOR` release of the same `MAJOR` release group because `MINOR` releases are backwards-compatible. See [specification versioning](README.md#specification-versioning)
 
 _GBFS consumers_ should, at a minumum, support the current LTS branch. It highly recommended that GBFS consumers support later releases.
 
@@ -118,7 +118,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 3600,
-  "version": "1.0",
+  "version": "2.1",
   "data": {
     "name": "Citi Bike",
     "system_id": "citibike_com"
@@ -143,17 +143,17 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 0,
-  "version": "1.0",
+  "version": "2.1",
   "data": {
     "en": {
       "feeds": [
         {
           "name": "system_information",
-          "url": "https://www.example.com/gbfs/1.0/en/system_information"
+          "url": "https://www.example.com/gbfs/2/en/system_information"
         },
         {
           "name": "station_information",
-          "url": "https://www.example.com/gbfs/1.0/en/station_information"
+          "url": "https://www.example.com/gbfs/2/en/station_information"
         }
       ]
     },
@@ -161,11 +161,11 @@ Example:
       "feeds": [
         {
           "name": "system_information",
-          "url": "https://www.example.com/gbfs/1.0/fr/system_information"
+          "url": "https://www.example.com/gbfs/2/fr/system_information"
         },
         {
           "name": "station_information",
-          "url": "https://www.example.com/gbfs/1.0/fr/station_information"
+          "url": "https://www.example.com/gbfs/2/fr/station_information"
         }
       ]
     }
@@ -188,21 +188,17 @@ _versions_              | Yes         | Array that contains one object, as defin
 {
   "last_updated": 1434054678,
   "ttl": 0,
-  "version": "1.0",
+  "version": "2.1",
   "data": {
   	"versions":
 		[
 		  {
-			 "version": "1.0",
-			 "url":"https://www.example.com/gbfs/1.0/gbfs"
+			 "version":"1",
+			 "url":"https://www.example.com/gbfs/1/gbfs"
 		  },
 		  {
-			 "version":"1.1",
-			 "url":"https://www.example.com/gbfs/1.1/gbfs"
-		  },
-		  {
-			 "version":"2.0",
-			 "url":"https://www.example.com/gbfs/2.0/gbfs"
+			 "version":"2",
+			 "url":"https://www.example.com/gbfs/2/gbfs"
 		  }
 		]
   }
@@ -289,7 +285,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 0,
-  "version": "1.0",
+  "version": "2.1",
   "data": {
     "rental_hours": [
       {
