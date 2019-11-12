@@ -223,7 +223,7 @@ US,JUMP SC,"Santa Cruz, CA",santa_cruz_bike_jump_system,https://jump.com/,https:
 US,JUMP Seattle,"Seattle, WA",seattle_bike_jump_system,https://jump.com,https://gbfs.uber.com/v1/seab/gbfs.json
 US,JUMP SF,"San Francisco, CA",san_francisco_scooter_jump_system,https://jump.com/,https://gbfs.uber.com/v1/sfs/gbfs.json
 US,JUMP SF,"San Francisco, CA",san_francisco_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/sfb/gbfs.json
-US,JUMP Tampa,"Tampa, CA",tampa_scooter_jump_system,https://jump.com/,https://gbfs.uber.com/v1/tpas/gbfs.json
+US,JUMP Tampa,"Tampa, FL",tampa_scooter_jump_system,https://jump.com/,https://gbfs.uber.com/v1/tpas/gbfs.json
 US,Kansas City B-cycle,"Kansas City, MO",bcycle_kc,https://kc.bcycle.com,https://gbfs.bcycle.com/bcycle_kc/gbfs.json
 US,Lime Arlington,"Arlington, VA",lime_arlington,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/arlington/gbfs.json
 US,Lime Chicago,"Chicago, IL",lime_chicago,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/chicago/gbfs.json
