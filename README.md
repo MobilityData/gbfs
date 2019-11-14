@@ -56,7 +56,7 @@ The spec is not intended for historical or archival data such as trip records.
 The spec is about public information intended for bikeshare users.
 
 * **GBFS is targeted at providing transit information to the bikeshare end user.**
- It’s primary purpose is to power tools for riders that will make bikesharing more accessible to users.  GBFS is about public information. Producers and owners of GBFS data should take licensing and discoverability into account when publishing GBFS feeds.
+ Its primary purpose is to power tools for riders that will make bikesharing more accessible to users.  GBFS is about public information. Producers and owners of GBFS data should take licensing and discoverability into account when publishing GBFS feeds.
 
 * **Changes to the spec should be backwards-compatible.**
 Caution should be taken to avoid making changes to the spec that would render existing feeds invalid.
