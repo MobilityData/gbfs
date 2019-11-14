@@ -49,7 +49,7 @@ Submitted by | Field Name  | File Name | Required | Defines
 publisher_name | field_name |  name of GBFS end point where field is used | yes/no | description of purpose or use
 
 ## Guiding Principles
-To preserve the original vision of GBFS, the following guiding principles should be taken into consideration when proposing extensions the spec:
+To preserve the original vision of GBFS, the following guiding principles should be taken into consideration when proposing extensions to the spec:
 
 * **GBFS is a specification for real-time or semi-real-time, read-only data.**
 The spec is not intended for historical or archival data such as trip records.
