@@ -39,7 +39,7 @@ This specification defines the following files along with their associated conte
 
 File Name                   | Required                |       Defines
 --------------------------- | ----------------------- | ----------
-gbfs.json                   | Yes                     | Auto-discovery file that links to all of the other files published by the system. This file is required and must be named `gbfs.json`.
+gbfs.json                   | Yes                     | Auto-discovery file that links to all of the other files published by the system. This file is required.
 system_information.json     | Yes                     | Describes the system including System operator, System location, year implemented, URLs, contact info, time zone
 station_information.json    | Conditionally required  | Mostly static list of all stations, their capacities and locations. Required of systems utilizing docks.
 station_status.json         | Conditionally required  | Number of available bikes and docks at each station and station availability. Required of systems utilizing docks.
@@ -52,7 +52,7 @@ system_alerts.json          | Optional                | Describes current system
 
 ## File Requirements
 * All files should be valid JSON
-* All files in the spec (except `gbfs.json`) may be published at a URL path or with an alternate name (e.g., `station_info` instead of `station_information.json`).
+* All files in the spec may be published at a URL path or with an alternate name (e.g., `station_info` instead of `station_information.json`).
 * All data should be UTF-8 encoded
 * Line breaks should be represented by unix newline characters only (\n)
 
@@ -63,7 +63,6 @@ system_alerts.json          | Optional                | Describes current system
     * Optional files may 404 - a 404 of an optional file should not be considered an error, it just indicates that the publisher has chosen not to publish this data
 * Auto-Discovery:
     * This specification supports auto-discovery
-    * The auto-discovery `gbfs.json` file must be published using the name `gbfs.json`.
     * The location of the auto-discovery file will be provided in the HTML <head> area of the bikeshare landing page hosted at the URL specified in the url field of the system_infomation.json file
     * This is referenced via a _link_ tag with the following format:
       * `<link rel="gbfs" type="application/json" href="https://www.example.com/data/gbfs.json" />`
