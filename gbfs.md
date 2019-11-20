@@ -1,6 +1,8 @@
 # General Bikeshare Feed Specification (GBFS)
 This document explains the types of files and data that comprise the General Bikeshare Feed Specification (GBFS) and defines the fields used in all of those files.
 
+This branch and associated pull request is to discuss (a proposal)[https://docs.google.com/document/d/1Y5Muz_yJpwy-_zlfPPtMkpofZxV72zM09wV_h8eXIJ8] to add support for pricing models and price estimation.
+
 ## Table of Contents
 
 * [Revision History](#revision-history)
