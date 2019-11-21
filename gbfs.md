@@ -149,11 +149,11 @@ Example:
       "feeds": [
         {
           "name": "system_information",
-          "url": "https://www.example.com/gbfs/2/en/system_information"
+          "url": "https://www.example.com/gbfs/1/en/system_information"
         },
         {
           "name": "station_information",
-          "url": "https://www.example.com/gbfs/2/en/station_information"
+          "url": "https://www.example.com/gbfs/1/en/station_information"
         }
       ]
     },
@@ -161,11 +161,11 @@ Example:
       "feeds": [
         {
           "name": "system_information",
-          "url": "https://www.example.com/gbfs/2/fr/system_information"
+          "url": "https://www.example.com/gbfs/1/fr/system_information"
         },
         {
           "name": "station_information",
-          "url": "https://www.example.com/gbfs/2/fr/station_information"
+          "url": "https://www.example.com/gbfs/1/fr/station_information"
         }
       ]
     }
