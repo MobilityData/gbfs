@@ -198,9 +198,9 @@ Field Name            | Required  | Defines
 --------------------- | ----------| ----------
 stations              | Yes       | Array that contains one object per station in the system as defined below
 \- station_id          | Yes       | Unique identifier of a station (see station_information.json)
-\- num_bikes_available | Yes       | Number of bikes available for rental
+\- num_bikes_available | Yes       | Number of functional bikes physically at the station. To know if the bikes are available for rental, see is_renting.
 \- num_bikes_disabled  | Optional  | Number of disabled bikes at the station. Vendors who do not want to publicize the number of disabled bikes or docks in their system can opt to omit station capacity (in station_information), num_bikes_disabled and num_docks_disabled. If station capacity is published then broken docks/bikes can be inferred (though not specifically whether the decreased capacity is a broken bike or dock)
-\- num_docks_available | Yes       | Number of docks accepting bike returns
+\- num_docks_available | Yes       | Number of functional docks physically at the station. To know if the docks are accepting bike returns, see is_returning.
 \- num_docks_disabled  | Optional  | Number of empty but disabled dock points at the station. This value remains as part of the spec as it is possibly useful during development
 \- is_installed        | Yes       | 1/0 boolean - is the station currently on the street
 \- is_renting          | Yes       | 1/0 boolean - is the station currently renting bikes (even if the station is empty, if it is set to allow rentals this value should be 1)
