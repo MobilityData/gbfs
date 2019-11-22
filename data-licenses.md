@@ -6,7 +6,7 @@ Definitions of terms:
 - Requires attribution: Data users must give credit (attribution) to the data publisher and provide a link to the license.
 - Share-alike (viral): Derivative works (remixed, transformed, or built upon the material) must be distributed under the same license as the original.
 
-| *License shorthand* | *Full name*                                           | *Human-readable license summary*                                                      | *License text*                                                | *Requires attribution* | *Share-alike (viral)* |
+| *[SPDX License Identifier](https://spdx.org/licenses/)* | *Full name*                                           | *Human-readable license summary*                                                      | *License text*                                                | *Requires attribution* | *Share-alike (viral)* |
 |-------------------|-----------------------------------------------------|--------------------------------------------------------------|-------------------------------------------------------------|----------------------|---------------------|
 | CC0 1.0           | Creative Commons Universal Public Domain Dedication | [Summary @ creativecommons.org](https://creativecommons.org/publicdomain/zero/1.0/)           | [Text @ creativecommons.org](https://creativecommons.org/publicdomain/zero/1.0/legalcode) | No                   | No                  |
 | CC BY 4.0         | Creative Commons Attribution 4.0 International      | [Summary @ creativecommons.org](https://creativecommons.org/licenses/by/4.0/)                 | [Text @ creativecommons.org](https://creativecommons.org/licenses/by/4.0/legalcode)       | Yes                  | No                  |
