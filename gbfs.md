@@ -202,9 +202,9 @@ stations              | Yes       | Array that contains one object per station i
 \- num_bikes_disabled  | Optional  | Number of disabled bikes at the station. Vendors who do not want to publicize the number of disabled bikes or docks in their system can opt to omit station capacity (in station_information), num_bikes_disabled and num_docks_disabled. If station capacity is published then broken docks/bikes can be inferred (though not specifically whether the decreased capacity is a broken bike or dock)
 \- num_docks_available | Yes       | Number of docks accepting bike returns
 \- num_docks_disabled  | Optional  | Number of empty but disabled dock points at the station. This value remains as part of the spec as it is possibly useful during development
-\- is_installed        | Yes       | 1/0 boolean - is the station currently on the street
-\- is_renting          | Yes       | 1/0 boolean - is the station currently renting bikes (even if the station is empty, if it is set to allow rentals this value should be 1)
-\- is_returning        | Yes       | 1/0 boolean - is the station accepting bike returns (if a station is full but would allow a return if it was not full then this value should be 1)
+\- is_installed        | Yes       | true/false boolean - is the station currently on the street
+\- is_renting          | Yes       | true/false boolean - is the station currently renting bikes (even if the station is empty, if it is set to allow rentals this value should be 1)
+\- is_returning        | Yes       | true/false boolean - is the station accepting bike returns (if a station is full but would allow a return if it was not full then this value should be 1)
 \- last_reported       | Yes       | Integer POSIX timestamp indicating the last time this station reported its status to the backend
 
 ### free_bike_status.json
@@ -216,8 +216,8 @@ bikes             | Yes       | Array that contains one object per bike that is 
 \- bike_id         | Yes       | Unique identifier of a bike
 \- lat             | Yes       | Latitude of the bike. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
 \- lon             | Yes       | Longitude of the bike. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
-\- is_reserved     | Yes       | 1/0 value - is the bike currently reserved for someone else
-\- is_disabled     | Yes       | 1/0 value - is the bike currently disabled (broken)
+\- is_reserved     | Yes       | true/false boolean - is the bike currently reserved for someone else
+\- is_disabled     | Yes       | true/false boolean - is the bike currently disabled (broken)
 
 ### system_hours.json
 Describes the system hours of operation. A JSON array of hours defined as follows:
