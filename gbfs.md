@@ -88,6 +88,7 @@ system_alerts.json          | Optional                | Describes current system
     * should be persistent for a given object (station, plan, etc)
 * Text fields can only contain text - they must not contain any formatting codes (including HTML) other than newlines
 * Enumerable values should be expected to change over time. Values will not be removed, but new valid values may be added as business requirements change and consumers should be designed to handle these changes
+* Boolean values must be JSON booleans, not strings (i.e. true or false, not "true" or "false")
 
 ### Output Format
 Every JSON file presented in this specification contains the same common header information at the top level of the JSON response object:
