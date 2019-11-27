@@ -245,11 +245,11 @@ stations                | Yes       | Array that contains one object per station
 \- post_code            | Optional  | Postal code where station is located
 \- rental_methods       | Optional  | Array of enumerables containing the payment methods accepted at this station. <br />Current valid values (in CAPS) are:<br /><ul><li>KEY _(i.e. operator issued bike key / fob / card)_</li> <li>CREDITCARD</li> <li>PAYPASS</li> <li>APPLEPAY</li> <li>ANDROIDPAY</li> <li>TRANSITCARD</li> <li>ACCOUNTNUMBER</li> <li>PHONE</li> </ul> This list is intended to be as comprehensive at the time of publication as possible but is subject to change, as defined in [File Requirements](#file-requirements) above
 \- capacity             | Optional  | Number of total docking points installed at this station, both available and unavailable
-\- is_virtual_station   | Optional  | 1/0 Boolean- Is this a virtual station? 1 - The station is a location without physical infrastructure, defined by a point (lat/lon) and/or station_area (below). 0 - The station consists of physical infrastructure (docks).
+\- is_virtual_station   | Optional  | 1/0 Boolean- Is this a virtual station? <br /> <ul><li>1 - The station is a location without physical infrastructure, defined by a point (lat/lon) and/or station_area (below).</li> <li>0 - The station consists of physical infrastructure (docks).</li> </ul>
 \- station_area         | Optional  | A GeoJSON multipolygon that describes the area of a virtual station. If station_area is supplied then the record describes a virtual station. If lat/lon and 'station_area' are both defined, the lat/lon is the significant coordinate of the station (e.g. dock facility or valet drop-off and pick up point).
 \- capacity             | Optional  | Non-negative Integer- Number of total docking points installed at this station, both available and unavailable. Empty indicates unlimited capacity.
 \- vehicle_capacity     | Optional  | _*"vehicle_capacity" depends on passage of the [vehicle_types proposal](https://github.com/NABSA/gbfs/pull/136)._ An object where each key is a vehicle_type_id as described in vehicle_types.json, and the value is a number representing the total number of vehicles of this type that can park within the area defined in the station_area field. If the field station_area is defined, and a particular vehicle type id is not defined in this object, then that vehicle type has unlimited capacity.
-\- valet                | Optional  | 1/0 Boolean- Are there valet services at this station? 1 - Valet services. 0 - No valet services [default].
+\- valet                | Optional  | 1/0 Boolean- Are there valet services at this station? <br /> <ul><li>1 - Valet services.</li> <li>0 - No valet services [default].</li> </ul>
 
 ### station_status.json
 
@@ -390,9 +390,9 @@ geofencing_zones{}                   | Yes         | A GeoJSON FeatureCollection
 &emsp;- name                         | Optional    | String- Name of the geofencing zone.
 &emsp;- rules[]                      | Optional    | Array that contains one object per rule as defined below. In the event of overlapping or colliding rule, the earlier defined rule (in order of the JSON file) takes precedence.
 &emsp;&emsp;- vehicle_type_id        | Optional    | Array of IDs of vehicle types for which any restrictions should be applied (see vehicle type definitions in [PR #136](https://github.com/NABSA/gbfs/pull/136)). If vehicle_type_ids are not specified, then restrictions apply to all vehicle types.
-&emsp;&emsp;- ride_start_allowed     | Yes		   | 1/0 Boolean- Is a ride allowed to start in this zone? 1 - Undocked (“free bike”) ride can start in this zone. 0 - Undocked (“free bike”) ride cannot start in this zone.
-&emsp;&emsp;- ride_end_allowed       | Yes		   | 1/0 Boolean- Is a ride allowed to end in this zone? 1 - Undocked (“free bike”) drop-offs are allowed in this zone. 0 - Undocked (“free bike”) drop-offs are not allowed in this zone.
-&emsp;&emsp;- ride_through_allowed   | Yes		   | 1/0 Boolean- Is a ride allowed to travel through this zone? 1 - Ride can travel through this zone. 0 - Ride cannot travel through this zone.
+&emsp;&emsp;- ride_start_allowed     | Yes		   | 1/0 Boolean- Is a ride allowed to start in this zone? <br /> <ul><li>1 - Undocked (“free bike”) ride can start in this zone.</li> <li>0 - Undocked (“free bike”) ride cannot start in this zone.</li> </ul>
+&emsp;&emsp;- ride_end_allowed       | Yes		   | 1/0 Boolean- Is a ride allowed to end in this zone? <br /> <ul><li>1 - Undocked (“free bike”) drop-offs are allowed in this zone.</li> <li>0 - Undocked (“free bike”) drop-offs are not allowed in this zone.</li> </ul>
+&emsp;&emsp;- ride_through_allowed   | Yes		   | 1/0 Boolean- Is a ride allowed to travel through this zone? <br /> <ul><li>1 - Ride can travel through this zone.</li> <li>0 - Ride cannot travel through this zone.</li></ul>
 
 ## Possible Future Enhancements
 There are some items that were proposed in an earlier version of this document but which do not fit into the current specification. They are collected here for reference and for possible discussion and inclusion in this or a future version.
