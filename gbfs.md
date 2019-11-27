@@ -185,7 +185,7 @@ Field Name              | Required    | Defines
 _versions_              | Yes         | Array that contains one object, as defined below, for each of the available versions of a feed. The array must be sorted by increasing MAJOR and MINOR version number.
   \- version            | Yes         | String identifying the semantic version of the feed in the form X.Y.
   \- url                | Yes         | URL of the corresponding gbfs.json endpoint.
-  
+
 ```json
 {
   "last_updated": 1434054678,
@@ -245,6 +245,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 0,
+  "version": "1.0",
   "data": {
     "vehicle_types": [
       {
@@ -292,6 +293,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 0,
+  "version": "1.0",
   "data": {
     "stations": [
       {
@@ -338,6 +340,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 0,
+  "version": "1.0",
   "data": {
     "stations": [
       {
@@ -409,6 +412,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 0,
+  "version": "1.0",
   "data": {
     "bikes": [
       {
