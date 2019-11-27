@@ -9,6 +9,7 @@ This document explains the types of files and data that comprise the General Bik
 * [File Requirements](#file-requirements)
 * [Field Definitions](#field-definitions)
     * [gbfs.json](#gbfsjson)
+    * [gbfs_versions.json](#gbfs_versionsjson)
     * [system_information.json](#system_informationjson)
     * [vehicle_types.json](#vehicle_typesjson)
     * [station_information.json](#station_informationjson)
