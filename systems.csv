@@ -206,8 +206,6 @@ US,Jackson County,"Jackson, MI",bcycle_jacksoncounty,https://jacksoncounty.bcycl
 US,JerseyBike,"US",nextbike_nj,https://www.hudsonbikeshare.com/xx/hoboken/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_nj/gbfs.json
 US,Austin Bike JUMP System,"Austin, TX",austin_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/atxb/gbfs.json
 US,Austin Scooter JUMP System,"Austin, TX",austin_scooter_jump_system,https://jump.com/,https://gbfs.uber.com/v1/atxs/gbfs.json
-US,Chicago Bike JUMP System,"Chicago, IL",jump_chicago,https://jump.com/,https://chi.jumpbikes.com/opendata/gbfs.json
-US,Chicago Scooter JUMP System,"Chicago, IL",chicago_jump_system,https://www.jumpbikes.com,https://gbfs.uber.com/v1/chicago/gbfs.json
 US,Washington DC Bike JUMP System,"Washington, DC",washington_dc_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/dcb/gbfs.json
 US,Washington DC Scooter JUMP System,"Washington, DC",washington_dc_scooter_jump_system,https://jump.com/,https://gbfs.uber.com/v1/dcs/gbfs.json
 US,Denver Bike JUMP System,"Denver, CO",denver_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/denb/gbfs.json
