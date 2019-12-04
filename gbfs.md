@@ -237,8 +237,8 @@ stations                | Yes       | Array that contains one object per station
 \- station_id           | Yes       | Unique identifier of a station. See [Field Definitions](#field-definitions) above for ID field requirements
 \- name                 | Yes       | Public name of the station
 \- short_name           | No        | Short name or other type of identifier, as used by the data publisher
-\- lat                  | Yes       | The latitude of station. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
-\- lon                  | Yes       | The longitude of station. The field value must be a valid WGS 84 longitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees
+\- lat                  | Conditionally required       | The latitude of station. The field value must be a valid WGS 84 latitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees. Required if `station_area` is not defined. 
+\- lon                  | Conditionally required       | The longitude of station. The field value must be a valid WGS 84 longitude in decimal degrees format. See: http://en.wikipedia.org/wiki/World_Geodetic_System, https://en.wikipedia.org/wiki/Decimal_degrees. Required if `station_area` is not defined.
 \- address              | Optional  | Valid street number and name where station is located. This field is intended to be an actual address, not a free form text description (see "cross_street" below)
 \- cross_street         | Optional  | Cross street of where the station is located. This field is intended to be a descriptive field for human consumption. In cities, this would be a cross street, but could also be a description of a location in a park, etc.
 \- region_id            | Optional  | ID of the region where station is located (see [system_regions.json](#system_regionsjson))
@@ -246,8 +246,8 @@ stations                | Yes       | Array that contains one object per station
 \- rental_methods       | Optional  | Array of enumerables containing the payment methods accepted at this station. <br />Current valid values (in CAPS) are:<br /><ul><li>KEY _(i.e. operator issued bike key / fob / card)_</li> <li>CREDITCARD</li> <li>PAYPASS</li> <li>APPLEPAY</li> <li>ANDROIDPAY</li> <li>TRANSITCARD</li> <li>ACCOUNTNUMBER</li> <li>PHONE</li> </ul> This list is intended to be as comprehensive at the time of publication as possible but is subject to change, as defined in [File Requirements](#file-requirements) above
 \- capacity             | Optional  | Number of total docking points installed at this station, both available and unavailable
 \- is_virtual_station   | Optional  | 1/0 Boolean- Is this a virtual station? <br /> <ul><li>1 - The station is a location without physical infrastructure, defined by a point (lat/lon) and/or station_area (below).</li> <li>0 - The station consists of physical infrastructure (docks).</li> </ul>
-\- station_area         | Optional  | A GeoJSON multipolygon that describes the area of a virtual station. If station_area is supplied then the record describes a virtual station. If lat/lon and 'station_area' are both defined, the lat/lon is the significant coordinate of the station (e.g. dock facility or valet drop-off and pick up point).
-\- capacity             | Optional  | Non-negative Integer- Number of total docking points installed at this station, both available and unavailable. Empty indicates unlimited capacity.
+\- station_area         | Conditionally required  | A GeoJSON multipolygon that describes the area of a virtual station. If station_area is supplied then the record describes a virtual station. If lat/lon and 'station_area' are both defined, the lat/lon is the significant coordinate of the station (e.g. dock facility or valet drop-off and pick up point). Required if `lat` and `lon` are not provided.
+\- capacity             | Optional  | Number of total docking points installed at this station, both available and unavailable. Empty indicates unlimited capacity.
 \- vehicle_capacity     | Optional  | _*"vehicle_capacity" depends on passage of the [vehicle_types proposal](https://github.com/NABSA/gbfs/pull/136)._ An object where each key is a vehicle_type_id as described in vehicle_types.json, and the value is a number representing the total number of vehicles of this type that can park within the area defined in the station_area field. If the field station_area is defined, and a particular vehicle type id is not defined in this object, then that vehicle type has unlimited capacity.
 \- valet                | Optional  | 1/0 Boolean- Are there valet services at this station? <br /> <ul><li>1 - Valet services.</li> <li>0 - No valet services [default].</li> </ul>
 
@@ -393,6 +393,69 @@ geofencing_zones{}                   | Yes         | A GeoJSON FeatureCollection
 &emsp;&emsp;- ride_start_allowed     | Yes		   | 1/0 Boolean- Is a ride allowed to start in this zone? <br /> <ul><li>1 - Undocked (“free bike”) ride can start in this zone.</li> <li>0 - Undocked (“free bike”) ride cannot start in this zone.</li> </ul>
 &emsp;&emsp;- ride_end_allowed       | Yes		   | 1/0 Boolean- Is a ride allowed to end in this zone? <br /> <ul><li>1 - Undocked (“free bike”) drop-offs are allowed in this zone.</li> <li>0 - Undocked (“free bike”) drop-offs are not allowed in this zone.</li> </ul>
 &emsp;&emsp;- ride_through_allowed   | Yes		   | 1/0 Boolean- Is a ride allowed to travel through this zone? <br /> <ul><li>1 - Ride can travel through this zone.</li> <li>0 - Ride cannot travel through this zone.</li></ul>
+
+Example:
+```json
+{
+   "last_updated":1434054678,
+   "ttl":0,
+   "version":"2.X",
+   "data":{
+      "geofencing_zones":{
+         "type":"FeatureCollection",
+         "features":[
+            {
+               "type":"Feature",
+               "properties":{
+                  "name":"Downtown Waterfront",
+                  "rules":[
+                     {
+                        "vehicle_type_id":"scooter",
+                        "ride_start_allowed":0,
+                        "ride_end_allowed":0,
+                        "ride_through_allowed":0
+                     }
+                  ]
+               },
+               "geometry":{
+                  "type":"MultiPolygon",
+                  "coordinates":[
+                     [
+                        [
+                           [
+                              -122.66780376434326,
+                              45.49896266763551
+                           ],
+                           [
+                              -122.66810417175292,
+                              45.49824825558575
+                           ],
+                           [
+                              -122.66830801963805,
+                              45.49632305799116
+                           ],
+                           [
+                              -122.66762137413023,
+                              45.49625537406554
+                           ],
+                           [
+                              -122.66721367835997,
+                              45.49924842991741
+                           ],
+                           [
+                              -122.66780376434326,
+                              45.49896266763551
+                           ]
+                        ]
+                     ]
+                  ]
+               }
+            }
+         ]
+      }
+   }
+}
+```
 
 ## Possible Future Enhancements
 There are some items that were proposed in an earlier version of this document but which do not fit into the current specification. They are collected here for reference and for possible discussion and inclusion in this or a future version.
