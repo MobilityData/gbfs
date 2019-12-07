@@ -2,6 +2,7 @@ Country Code,Name,Location,System ID,URL,Auto-Discovery URL
 AE,ADCB Bikeshare,"Abu Dhabi, AE",ABU,https://www.bikeshare.ae/,https://api-core.bikeshare.ae/gbfs/gbfs.json
 AR,MiBiciTuBici,"Rosario, Santa Fe, AR",biketobike,https://www.mibicitubici.gob.ar/,https://www.mibicitubici.gob.ar/opendata/gbfs.json
 AR,Ecobici,"Buenos Aires, AR",bike_buenosaires,https://www.buenosaires.gob.ar/ecobici,https://buenosaires.publicbikesystem.net/ube/gbfs/v1/gbfs.json
+AR,MOVO Buenos Aires,"Buenos Aires, AR",movo_bue,https://movo.me/ar,https://gbfs.movo.me/buenosaires
 AT,nextbike Burgenland Austria,"Neusiedler See, AT",nextbike_na,https://www.nextbike.at/xx/burgenland/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_na/gbfs.json
 AT,nextbike Klagenfurt Austria,"Klagenfurt, AT",nextbike_ka,https://www.nextbike.at/xx/klagenfurt/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ka/gbfs.json
 AT,nextbike Niederösterreich Austria,"AT",nextbike_la,https://www.nextbike.at/xx/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_la/gbfs.json
@@ -28,6 +29,9 @@ CA,nextbike Canada,"Victoria, CA",nextbike_ca,https://canada.nextbike.net/,https
 CA,Sobi Hamilton,Hamilton Ontario,sobi_hamilton,https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json
 CH,nextbike Switzerland,"CH",nextbike_ch,https://www.nextbike.ch/xx/sursee/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ch/gbfs.json
 CL,Bike Itaú - Santiago,"Santiago, CL",bike_santiago,https://www.bikesantiago.cl/,https://santiago.publicbikesystem.net/ube/gbfs/v1/gbfs.json
+CL,MOVO Vitacura,"Vitacura, CL",movo_scl,https://movo.me/cl/,https://gbfs.movo.me/vitacura
+CO,VOOM Bogotá,"Bogotá, CO",movo_bog,https://voom.com.co/,https://gbfs.movo.me/bogota
+CO,VOOM Medellín,"Medellín, CO",movo_mde,https://voom.com.co/,https://gbfs.movo.me/medellin
 CY,nextbike Cyprus,"CY",nextbike_cy,https://www.nextbike.com.cy/xx/limassol/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_cy/gbfs.json
 CY,Velespeed,"Nicosia, CY",velespeed,https://en.velespeed.net/,https://nicosia.publicbikesystem.net/ube/gbfs/v1/
 CZ,nextbike Czech Republic,"Prostejov, CZ",nextbike_cz,https://nextbikeczech.com/xx/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_cz/gbfs.json
@@ -59,8 +63,12 @@ EE,SIXT jalgrattarent,"Tallinn, EE",nextbike_ee,http://www.sixtbicycle.ee/,https
 ES,Bicing,"Barcelona, ES",bike_barcelona,https://www.bicing.barcelona/,https://barcelona.publicbikesystem.net/ube/gbfs/v1/gbfs.json
 ES,Bilbaobizi (Bilbao),"Bilbao, ES",nextbike_bo,https://www.bilbaobizi.bilbao.eus/xx/bilbao/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bo/gbfs.json
 ES,Sitycleta (Las Palmas),"Las Palmas de Gran Canaria, ES",nextbike_el,https://www.sitycleta.com/xx/laspalmas/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_el/gbfs.json
+FR,LE vélo STAR,"Rennes, FR",le_velo_star,https://www.star.fr/le-velo/nos-offres/vls/,https://eu.ftp.opendatasoft.com/star/gbfs/gbfs.json
 FR,Libélo,"Valence, FR",libelo,http://www.citea.info/presentation/?rub_code=92,https://valence.publicbikesystem.net/ube/gbfs/v1/gbfs.json
 GB,BelfastBikes,"Belfast, GB",nextbike_bu,https://www.belfastbikes.co.uk/xx/belfast/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bu/gbfs.json
+GB,Beryl - BCP,"Bournemouth, Christchurch, Poole, GB",beryl_bc,https://www.beryl.cc,http://gbfs.basis-pdn.bike/BCP/gbfs.json
+GB,Beryl - Hereford,"Hereford, GB",beryl_he,https://www.beryl.cc,http://gbfs.basis-pdn.bike/Hereford/gbfs.json
+GB,Beryl - London,"London, GB",beryl_lo,https://www.beryl.cc,http://gbfs.basis-pdn.bike/London/gbfs.json
 GB,Co-bikes,"Exeter, GB",nextbike_eu,https://www.co-bikes.co.uk/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_eu/gbfs.json
 GB,nextbike Cardiff,"Cardiff, GB",nextbike_uc,https://www.nextbike.co.uk/xx/cardiff/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_uc/gbfs.json
 GB,nextbike Glasgow,"Glasgow, GB",nextbike_gg,https://www.nextbike.co.uk/xx/glasgow/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_gg/gbfs.json
@@ -159,6 +167,7 @@ US,Bird Chicago,"Chicago, IL",bird-chicago,https://www.bird.co,https://mds.bird.
 US,Bird Louisville,"Louisville, KY",bird-louisville,https://www.bird.co,https://mds.bird.co/gbfs/louisville/gbfs.json
 US,Bishop Ranch BRiteBikes,"San Ramon, CA",bishop_ranch,http://britebikes.socialbicycles.com/,http://britebikes.socialbicycles.com/opendata/gbfs.json
 US,Bolt Chicago,"Chicago, IL",bolt_chi,https://www.micromobility.com,https://www.bolt.miami/bolt2/chi/gbfs/gbfs.json
+US,Bolt Los Angeles,"Los Angeles, CA",BOLT_LA,https://www.micromobility.com,https://www.bolt.miami/bolt2/la/gbfs/gbfs.json
 US,Bolt Louisville,"Louisville, KY",BOLT_LOU,https://www.micromobility.com,https://www.bolt.miami/bolt2/lou/gbfs/gbfs.json
 US,Boise Green Bike,"Boise, ID",boise_greenbike,http://boise.greenbike.com/,http://boise.greenbike.com/opendata/gbfs.json
 US,Boulder B-cycle,"Boulder, CO",bcycle_boulder,https://boulder.bcycle.com,https://gbfs.bcycle.com/bcycle_boulder/gbfs.json
@@ -186,7 +195,7 @@ US,GREENbike,"Salt Lake City, UT",bcycle_greenbikeslc,https://greenbikeslc.org,h
 US,Greenville B-cycle,"Greenville, SC",bcycle_greenville,https://greenville.bcycle.com,https://gbfs.bcycle.com/bcycle_greenville/gbfs.json
 US,Grid Bike Share,"Phoenix, AZ",grid_bike_share,http://gridbikes.com/,https://grid.socialbicycles.com/opendata/gbfs.json
 US,gruv Chicago,"Chicago, IL",daecbe87-a9f2-4a5a-b5df-8e3e14180513,https://clevrmobility.com,https://portal.clevrmobility.com/api/gbfs/chicago/en/discovery/?format=json
-US,Healthy Ride Pittsburgh,"Pittsburgh, US",nextbike_pp,https://healthyridepgh.com/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pp/gbfs.json
+US,Healthy Ride Pittsburgh,"Pittsburgh, PA",nextbike_pp,https://healthyridepgh.com/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pp/gbfs.json
 US,Heartland B-cycle,"Omaha, NE",bcycle_heartland,https://heartland.bcycle.com,https://gbfs.bcycle.com/bcycle_heartland/gbfs.json
 US,HOPR Chicago,"Chicago, IL",3,https://gohopr.com/chicagoland/,https://gbfs.hopr.city/api/gbfs/3/
 US,HOPR Freemont,"Freemont, CA",16,https://gohopr.com/,https://gbfs.hopr.city/api/gbfs/16/
@@ -201,20 +210,23 @@ US,Indego,"Philadelphia, PA",bcycle_indego,https://www.rideindego.com,https://gb
 US,Indy - Pacers Bikeshare,"Indianapolis, IN",bcycle_pacersbikeshare,https://www.pacersbikeshare.org,https://gbfs.bcycle.com/bcycle_pacersbikeshare/gbfs.json
 US,Jackson County,"Jackson, MI",bcycle_jacksoncounty,https://jacksoncounty.bcycle.com,https://gbfs.bcycle.com/bcycle_jacksoncounty/gbfs.json
 US,JerseyBike,"US",nextbike_nj,https://www.hudsonbikeshare.com/xx/hoboken/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_nj/gbfs.json
-US,JUMP Austin,"Austin, TX",jump_austin,https://jump.com/,https://atx.jumpbikes.com/opendata/gbfs.json
-US,JUMP Chicago Bikes,"Chicago, IL",jump_chicago,https://jump.com/,https://chi.jumpbikes.com/opendata/gbfs.json
-US,JUMP Chicago Scooters,"Chicago, IL",chicago_jump_system,https://www.jumpbikes.com,https://gbfs.uber.com/v1/chicago/gbfs.json
-US,JUMP DC,"Washington, DC",washington_dc_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/dcb/gbfs.json
-US,JUMP DC,"Washington, DC",washington_dc_scooter_jump_system,https://jump.com/,https://gbfs.uber.com/v1/dcs/gbfs.json
-US,JUMP Denver,"Denver, CO",jump_denver,https://jump.com/,https://den.jumpbikes.com/opendata/gbfs.json
-US,JUMP LA,"Los Angeles, CA",jump_la,https://jump.com/,https://la.jumpbikes.com/opendata/gbfs.json
-US,JUMP NYC,"NYC, NY",jump_nyc,https://jump.com/,https://nyc.jumpbikes.com/opendata/gbfs.json
-US,JUMP Providence,"Providence, RI",jump_providence,https://jump.com/,https://pvd.jumpbikes.com/opendata/gbfs.json
-US,JUMP Sacramento,"Sacramento, CA",jump_sacramento,https://jump.com/,https://sac.jumpbikes.com/opendata/gbfs.json
-US,JUMP San Diego,"San Diego, CA",jump_san_diego,https://jump.com,https://san.jumpbikes.com/opendata/gbfs.json
-US,JUMP SC,"Santa Cruz, CA",jump_sc,https://jump.com/,https://sc.jumpbikes.com/opendata/gbfs.json
-US,JUMP Seattle,"Seattle, WA",jump_seattle,https://jump.com,https://sea.jumpbikes.com/opendata/gbfs.json
-US,JUMP SF,"San Francisco, CA",jump_sf,https://jump.com/,https://sf.jumpbikes.com/opendata/gbfs.json
+US,Austin Bike JUMP System,"Austin, TX",austin_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/atxb/gbfs.json
+US,Austin Scooter JUMP System,"Austin, TX",austin_scooter_jump_system,https://jump.com/,https://gbfs.uber.com/v1/atxs/gbfs.json
+US,Washington DC Bike JUMP System,"Washington, DC",washington_dc_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/dcb/gbfs.json
+US,Washington DC Scooter JUMP System,"Washington, DC",washington_dc_scooter_jump_system,https://jump.com/,https://gbfs.uber.com/v1/dcs/gbfs.json
+US,Denver Bike JUMP System,"Denver, CO",denver_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/denb/gbfs.json
+US,Los Angeles Bike JUMP System,"Los Angeles, CA",los_angeles_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/laxb/gbfs.json
+US,Los Angeles Scooter JUMP System,"Los Angeles, CA",los_angeles_scooter_jump_system,https://jump.com/,https://gbfs.uber.com/v1/laxs/gbfs.json
+US,New York City Bike JUMP System,"NYC, NY",new_york city_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/nycb/gbfs.json
+US,Sacramento Bike JUMP System,"Sacramento, CA",sacramento_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/sacb/gbfs.json
+US,Sacramento Scooter JUMP System,"Sacramento, CA",sacramento_scooter_jump_system,https://jump.com/,https://gbfs.uber.com/v1/sacs/gbfs.json
+US,San Diego Bike JUMP System,"San Diego, CA",sd_bike_jump_system,https://jump.com,https://gbfs.uber.com/v1/sdb/gbfs.json
+US,San Diego Scooter JUMP System,"San Diego, CA",sd_scooter_jump_system,https://jump.com,https://gbfs.uber.com/v1/sds/gbfs.json
+US,Santa Cruz Bike JUMP System,"Santa Cruz, CA",santa_cruz_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/scb/gbfs.json
+US,Seattle Bike JUMP System,"Seattle, WA",seattle_bike_jump_system,https://jump.com,https://gbfs.uber.com/v1/seab/gbfs.json
+US,San Francisco Bike JUMP System,"San Francisco, CA",san_francisco_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/sfb/gbfs.json
+US,San Francisco Scooter JUMP System,"San Francisco, CA",san_francisco_scooter_jump_system,https://jump.com/,https://gbfs.uber.com/v1/sfs/gbfs.json
+US,Tampa Scooter JUMP System,"Tampa, FL",tampa_scooter_jump_system,https://jump.com/,https://gbfs.uber.com/v1/tpas/gbfs.json
 US,Kansas City B-cycle,"Kansas City, MO",bcycle_kc,https://kc.bcycle.com,https://gbfs.bcycle.com/bcycle_kc/gbfs.json
 US,Lime Arlington,"Arlington, VA",lime_arlington,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/arlington/gbfs.json
 US,Lime Chicago,"Chicago, IL",lime_chicago,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/chicago/gbfs.json

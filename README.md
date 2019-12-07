@@ -10,7 +10,7 @@ Our goals for this project are:
    * to support data needs for oversight and planning, and
    * to make GBFS easier to implement through specification reference clarity improvements and best practices development.
 
-We hope you will share your valuable expertise with us by taking our [survey about GBFS business and technical needs](https://docs.google.com/forms/u/2/d/1B7OlczY1mm4Y0MIzuqGoR9ZMn695oRlGhnjgvvgu434/edit?usp=drive_web) and by joining in the conversation here.
+We hope you will share your valuable expertise with us by joining in the conversation here.
 
 ## What is GBFS?
 The General Bikeshare Feed Specification, known as GBFS, is the open data standard for bikeshare. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. Because GBFS is intended to make information publicly available online, information that is potentially personally identifiable is not currently and will not become part of the core specification.
@@ -40,6 +40,26 @@ The general outline for changing the spec has 4 steps:
 3.	Find at least one GBFS producer to implement and test the proposed change.
 4.	Submit a final request-for-comments on the proposed change to the issue discussion. If no outstanding issues are identified after one week’s time, and there is general agreement that the proposed change is worthwhile and follows the GBFS guiding principles outlined below, the proposal will be officially adopted.
 
+## Specification Versioning
+To enable the evolution of GBFS, including changes that would otherwise break backwards-compatibility with consuming applications, GBFS documentation is versioned. Semantic versions are established by a git tag in the form of `vX.Y` where `X.Y` is the version name. Multiple changes (commits) may be batched into a single new release.
+
+A whole integer increase is used for breaking changes (MAJOR changes). A decimal increase is used for non-breaking changes (MINOR changes or patches).
+
+Examples of breaking changes include:
+
+* Adding or removing a required endpoint or field
+* Changing the data type or semantics of an existing field
+
+Examples of non-breaking changes include:
+ 
+* Adding or removing an optional endpoint or field
+* Adding or removing enum values
+* Modifying documentation or spec language in a way that clarifies semantics or recommended practices
+
+### Version Release Cycles
+* There is no strict limitation on the frequency of MAJOR releases, but the GBFS community aims to limit the MAJOR releases to 2 or fewer every 12 months. To limit releases, breaking changes can be batched together.
+* MINOR changes may be applied at any time. There is no guideline to limit the number of MINOR changes. MINOR changes may be batched or released immediately, at the discretion of the pull request author and advocate.
+* GBFS documentation will include a designated long-term support (LTS) branch. The LTS branch would maintain its LTS status for at least 2 years, after which a new LTS release and branch would be designated. The LTS branch will be determined according to the GBFS voting process. Non-breaking changes (MINOR) will be applied to the LTS branch when relevant.
 
 ## Extensions Outside of the Specification ##
 To accommodate the needs of feed producers and consumers prior to the adoption of a change, additional fields can be added to feeds even if these fields are not part of the official specification. It's strongly recommended that these additional fields be documented on the wiki page in this format:
