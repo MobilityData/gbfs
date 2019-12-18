@@ -69,7 +69,7 @@ Submitted by | Field Name  | File Name | Required | Defines
 publisher_name | field_name |  name of GBFS end point where field is used | yes/no | description of purpose or use
 
 ## Guiding Principles
-To preserve the original vision of GBFS, the following guiding principles should be taken into consideration when proposing extensions the spec:
+To preserve the original vision of GBFS, the following guiding principles should be taken into consideration when proposing extensions to the spec:
 
 * **GBFS is a specification for real-time or semi-real-time, read-only data.**
 The spec is not intended for historical or archival data such as trip records.
@@ -78,7 +78,7 @@ The spec is about public information intended for bikeshare users.
 * **GBFS is targeted at providing transit information to the bikeshare end user.**
  It’s primary purpose is to power tools for riders that will make bikesharing more accessible to users.  GBFS is about public information. Producers and owners of GBFS data should take licensing and discoverability into account when publishing GBFS feeds.
 
-* **Changes to the spec should be backwards-compatible.**
+* **Changes to the spec should be backwards-compatible, when possible.**
 Caution should be taken to avoid making changes to the spec that would render existing feeds invalid.
 
 * **Speculative features are discouraged.**
