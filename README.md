@@ -95,4 +95,4 @@ If you would like to add a system, please fork this repository and submit a pull
 Including APIs, datasets, validators, research, and software can be found [here](https://github.com/NABSA/micromobility-tools-and-resources).
 
 ## Copyright
-The copyright for GBFS is held by [Mitch Vars](https://github.com/mplsmitch).
+The copyright for GBFS is held by the [North American Bikeshare Association](https://nabsa.net/). 
