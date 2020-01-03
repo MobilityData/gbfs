@@ -32,7 +32,7 @@ The data in the specification contained in this document is intended for consump
   * 2015 August - Latest changes incorporated and name change to GBFS (comments from Motivate, 8D, others)
   * 2015 June - Proposed refinements (prepared by Jesse Chan-Norris on behalf of Motivate)
   * 2015 January - NABSA Draft (prepared by Mitch Vars)
-* **[v1.1: MINOR Release Candidate](https://github.com/NABSA/gbfs/blob/master/gbfs.md)**
+* **[v1.1: MINOR Release Candidate](https://github.com/NABSA/gbfs/blob/a4aa9d62affb21f868d9e3cd8a70becba704cf3e/gbfs.md)**
   * [#25](https://github.com/NABSA/gbfs/pull/25) - Add deep links for iOS, Android, and web apps
   * [#181](https://github.com/NABSA/gbfs/pull/181) - Add feed\_contact\_email field to system\_information.json
   * [#188](https://github.com/NABSA/gbfs/pull/188) - GBFS documentation versioning and and feed conformance
