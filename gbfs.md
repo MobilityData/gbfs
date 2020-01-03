@@ -117,7 +117,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 3600,
-  "version": "1.0",
+  "version": "1.1",
   "data": {
     "name": "Citi Bike",
     "system_id": "citibike_com"
@@ -142,7 +142,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 0,
-  "version": "1.0",
+  "version": "1.1",
   "data": {
     "en": {
       "feeds": [
@@ -187,7 +187,7 @@ _versions_              | Yes         | Array that contains one object, as defin
 {
   "last_updated": 1434054678,
   "ttl": 0,
-  "version": "1.0",
+  "version": "1.1",
   "data": {
   	"versions":
 		[
@@ -299,7 +299,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 0,
-  "version": "1.0",
+  "version": "1.1",
   "data": {
     "rental_hours": [
       {
