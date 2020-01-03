@@ -168,6 +168,7 @@ US,Biki,"Honolulu, HI",go_biki,https://gobiki.org/,https://hon.publicbikesystem.
 US,Bird Chicago,"Chicago, IL",bird-chicago,https://www.bird.co,https://mds.bird.co/gbfs/chicago/gbfs.json
 US,Bird Louisville,"Louisville, KY",bird-louisville,https://www.bird.co,https://mds.bird.co/gbfs/louisville/gbfs.json
 US,Bishop Ranch BRiteBikes,"San Ramon, CA",bishop_ranch,http://britebikes.socialbicycles.com/,http://britebikes.socialbicycles.com/opendata/gbfs.json
+US,Bolt Baltimore,"Baltimore, MD",bolt_bal,https://www.micromobility.com,https://www.bolt.miami/bolt2/bal/gbfs/en/gbfs.json
 US,Bolt Chicago,"Chicago, IL",bolt_chi,https://www.micromobility.com,https://www.bolt.miami/bolt2/chi/gbfs/gbfs.json
 US,Bolt Los Angeles,"Los Angeles, CA",BOLT_LA,https://www.micromobility.com,https://www.bolt.miami/bolt2/la/gbfs/gbfs.json
 US,Bolt Louisville,"Louisville, KY",BOLT_LOU,https://www.micromobility.com,https://www.bolt.miami/bolt2/lou/gbfs/gbfs.json
