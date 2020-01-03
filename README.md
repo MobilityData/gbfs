@@ -27,7 +27,7 @@ The data in the specification contained in this document is intended for consump
 
 ## Read the spec
 * [v1.0](https://github.com/NABSA/gbfs/blob/df473ca4adbff982d67b50ac00b625191591d8f8/gbfs.md)
-* [v1.1: MINOR Release Candidate]
+* [v1.1: MINOR Release Candidate](https://github.com/NABSA/gbfs/blob/master/gbfs.md)
   * #25 - Add deep links for iOS, Android, and web apps
   * #181 - Add feed\_contact\_email field to system\_information.json
   * #188 - GBFS documentation versioning and and feed conformance
