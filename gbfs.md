@@ -22,7 +22,6 @@ This documentation refers to **version 1.1**. For past and upcoming versions see
     * [system_pricing_plans.json](#system_pricing_plansjson)
     * [system_alerts.json](#system_alertsjson)
 * [Deep Links - Analytics and Examples](#Deep-Links)
-* [Possible Future Enhancements](#possible-future-enhancements)
 
 ## Introduction
 This specification has been designed with the following concepts in mind:

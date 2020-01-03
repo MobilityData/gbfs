@@ -37,7 +37,7 @@ The data in the specification contained in this document is intended for consump
   * [#181](https://github.com/NABSA/gbfs/pull/181) - Add feed\_contact\_email field to system\_information.json
   * [#188](https://github.com/NABSA/gbfs/pull/188) - GBFS documentation versioning and and feed conformance
 * **[v2.0: MAJOR Release Candidate](https://github.com/NABSA/gbfs/labels/v2.0)**
-  * [#182](https://github.com/NABSA/gbfs/pull/182) - Require license\_url, add attribution fields PR #182 
+  * [#182](https://github.com/NABSA/gbfs/pull/182) - Require license\_url, add attribution fields 
   * [#189](https://github.com/NABSA/gbfs/pull/189) - Require autodiscovery gbfs.json file, define feed names
   * [#195](https://github.com/NABSA/gbfs/pull/195) - Clarify num\_bikes\_available and num\_docks\_available
   * [#196](https://github.com/NABSA/gbfs/pull/196) - Change boolean from 1/0 to true/false
