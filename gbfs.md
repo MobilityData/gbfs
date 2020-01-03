@@ -1,6 +1,9 @@
 # General Bikeshare Feed Specification (GBFS)
 This document explains the types of files and data that comprise the General Bikeshare Feed Specification (GBFS) and defines the fields used in all of those files.
 
+# Reference version
+This documentation refers to **version 1.1**. For past and upcoming versions see the [README](README.md).
+
 ## Table of Contents
 
 * [Revision History](#revision-history)
@@ -21,12 +24,6 @@ This document explains the types of files and data that comprise the General Bik
 * [Deep Links - Analytics and Examples](#Deep-Links)
 * [Possible Future Enhancements](#possible-future-enhancements)
 
-## Revision History
-* 11/05/2015 - GBFS V1.0 Adopted by NABSA board
-* 08/2015 - Latest changes incorporated and name change to GBFS (comments from Motivate, 8D, others)
-* 06/2015 - Proposed refinements (prepared by Jesse Chan-Norris on behalf of Motivate)
-* 01/2015 - NABSA Draft (prepared by Mitch Vars)
-
 ## Introduction
 This specification has been designed with the following concepts in mind:
 
@@ -35,7 +32,7 @@ This specification has been designed with the following concepts in mind:
 
 Historical data, including station details and ride data is to be provided by a more compact specification designed specifically for such archival purposes. The data in the specification contained in this document is intended for consumption by clients intending to provide real-time (or semi-real-time) transit advice and is designed as such.
 
-## Versioning
+## Version endpoints
 The version of the GBFS specification to which a feed conforms is declared in the `version` field in all files. See [Output Format](#output-format).
 
 GBFS Best Practice defines that:
@@ -511,17 +508,6 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
    },
    ...
 ```
-
-## Possible Future Enhancements
-There are some items that were proposed in an earlier version of this document but which do not fit into the current specification. They are collected here for reference and for possible discussion and inclusion in this or a future version.
-
-* system_information.json
-    * _system_data_ - Removed due to a lack of specificity; if metadata about the location of URLs is required / desired, the proposal is to include this in a separate feed_info.json feed which would contain an array with all of the feeds in addition to other feed information such as a feed version (if necessary)
-    * _equipment_ - Removed due to a lack of specificity behind the intent of this field and a question about the actual relevance to the public
-    * _jurisdictions_ - It is believed that the need for this field is negated by the presence of the system_regions.json feed
-
-* station_status.json
-    * need a way to distinguish between multiple bike types at a station if/when  hybrid systems using e-bikes become available
 
 ## Disclaimers
 
