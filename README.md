@@ -33,14 +33,14 @@ The data in the specification contained in this document is intended for consump
   * 2015 June - Proposed refinements (prepared by Jesse Chan-Norris on behalf of Motivate)
   * 2015 January - NABSA Draft (prepared by Mitch Vars)
 * **[v1.1: MINOR Release Candidate](https://github.com/NABSA/gbfs/blob/master/gbfs.md)**
-  * #25 - Add deep links for iOS, Android, and web apps
-  * #181 - Add feed\_contact\_email field to system\_information.json
-  * #188 - GBFS documentation versioning and and feed conformance
+  * [#25](https://github.com/NABSA/gbfs/pull/25) - Add deep links for iOS, Android, and web apps
+  * [#181](https://github.com/NABSA/gbfs/pull/181) - Add feed\_contact\_email field to system\_information.json
+  * [#188](https://github.com/NABSA/gbfs/pull/188) - GBFS documentation versioning and and feed conformance
 * **[v2.0: MAJOR Release Candidate](https://github.com/NABSA/gbfs/labels/v2.0)**
-  * #182 - Require license\_url, add attribution fields PR #182 
-  * #189 - Require autodiscovery gbfs.json file, define feed names
-  * #195 - Clarify num\_bikes\_available and num\_docks\_available
-  * #196 - Change boolean from 1/0 to true/false
+  * [#182](https://github.com/NABSA/gbfs/pull/182) - Require license\_url, add attribution fields PR #182 
+  * [#189](https://github.com/NABSA/gbfs/pull/189) - Require autodiscovery gbfs.json file, define feed names
+  * [#195](https://github.com/NABSA/gbfs/pull/195) - Clarify num\_bikes\_available and num\_docks\_available
+  * [#196](https://github.com/NABSA/gbfs/pull/196) - Change boolean from 1/0 to true/false
 
 ## Overview of the Change Process
 GBFS is an open specification, developed and maintained by the community of producers and consumers of GBFS data.
