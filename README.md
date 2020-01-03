@@ -25,24 +25,22 @@ The specification has been designed with the following concepts in mind:
 
 The data in the specification contained in this document is intended for consumption by clients intending to provide real-time (or semi-real-time) transit advice and is designed as such.
 
-## Read the spec
-* [v1.0](https://github.com/NABSA/gbfs/blob/df473ca4adbff982d67b50ac00b625191591d8f8/gbfs.md)
-* [v1.1: MINOR Release Candidate](https://github.com/NABSA/gbfs/blob/master/gbfs.md)
+## Read the spec & version history
+* **[v1.0: Current Version](https://github.com/NABSA/gbfs/blob/df473ca4adbff982d67b50ac00b625191591d8f8/gbfs.md)**
+  * 2019 December 20 - GBFS copyright [transfered to NABSA](https://github.com/NABSA/gbfs/commit/b1260b9c59eeff810a62e0aedc72ce1d4fb8f3ab)
+  * 2015 November 05 - GBFS V1.0 Adopted by NABSA board - [Original draft spec in a Google doc](https://docs.google.com/document/d/1BQPZCKpem4-n6lUQDD4Mi8E5hNZ0-lhY62IVtWuyhec/edit#heading=h.ic7i1m4gcev7) (reference only)
+  * 2015 August - Latest changes incorporated and name change to GBFS (comments from Motivate, 8D, others)
+  * 2015 June - Proposed refinements (prepared by Jesse Chan-Norris on behalf of Motivate)
+  * 2015 January - NABSA Draft (prepared by Mitch Vars)
+* **[v1.1: MINOR Release Candidate](https://github.com/NABSA/gbfs/blob/master/gbfs.md)**
   * #25 - Add deep links for iOS, Android, and web apps
   * #181 - Add feed\_contact\_email field to system\_information.json
   * #188 - GBFS documentation versioning and and feed conformance
-* [v2.0: MAJOR Release Candidate](https://github.com/NABSA/gbfs/labels/v2.0)
+* **[v2.0: MAJOR Release Candidate](https://github.com/NABSA/gbfs/labels/v2.0)**
   * #182 - Require license\_url, add attribution fields PR #182 
   * #189 - Require autodiscovery gbfs.json file, define feed names
   * #195 - Clarify num\_bikes\_available and num\_docks\_available
   * #196 - Change boolean from 1/0 to true/false
-
-## Version History
-* 2019 December 20 - GBFS copyright [transfered to NABSA](https://github.com/NABSA/gbfs/commit/b1260b9c59eeff810a62e0aedc72ce1d4fb8f3ab)
-* 2015 November 05 - GBFS V1.0 Adopted by NABSA board - [Original draft spec in a Google doc](https://docs.google.com/document/d/1BQPZCKpem4-n6lUQDD4Mi8E5hNZ0-lhY62IVtWuyhec/edit#heading=h.ic7i1m4gcev7) (reference only)
-* 2015 August - Latest changes incorporated and name change to GBFS (comments from Motivate, 8D, others)
-* 2015 June - Proposed refinements (prepared by Jesse Chan-Norris on behalf of Motivate)
-* 2015 January - NABSA Draft (prepared by Mitch Vars)
 
 ## Overview of the Change Process
 GBFS is an open specification, developed and maintained by the community of producers and consumers of GBFS data.
