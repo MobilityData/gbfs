@@ -22,11 +22,15 @@ BR,Bike Itaú - Riviera,"Riviera, BR",rivi_bike,https://www.rivieradesaolourenco
 BR,Bike VV,"Vila Velha, BR",bike_vv,https://www.bikevv.com.br/,https://vilavelha.publicbikesystem.net/ube/gbfs/v1/
 CA,Bike Share Toronto,"Toronto, ON",bike_share_toronto,https://www.bikesharetoronto.com/,https://tor.publicbikesystem.net/ube/gbfs/v1/
 CA,BIXI-Montreal,"Montreal, QC",Bixi_MTL,https://www.bixi.com/,https://api-core.bixi.com/gbfs/gbfs.json
+CA,Bunny,"Kelowna, BC",bunny_kelowna,http://bunnyscooters.com/,https://bunny-api.joyridecity.bike//gbfs/en/gbfs.json
 CA,HOPR Ottawa,"Ottawa, ON",6,https://gohopr.com/velogo/,https://gbfs.hopr.city/api/gbfs/6/
 CA,HOPR Vancouver,"Vancouver, BC",13,https://www.mobibikes.ca/,https://gbfs.hopr.city/api/gbfs/13/
 CA,Mobi Bike Share,"Vancouver, BC",mobi_bikes,https://www.mobibikes.ca/,https://vancouver-gbfs.smoove.pro/gbfs/gbfs.json
 CA,nextbike Canada,"Victoria, CA",nextbike_ca,https://canada.nextbike.net/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ca/gbfs.json
+CA,ROLL Technologies Inc,"Kelowna, BC",roll_kelowna,https://www.rollscooters.com/,https://main.rollapi.com/v1/gbfs/gbfs.json
+CA,Segway OGO,"Kelowna, BC",Segway ogo_kelowna,https://www.ogoscooters.com/,https://us-dashboard.segway.pt/gbfs/partners/v1/Segway%20OGO/gbfs.json
 CA,Sobi Hamilton,Hamilton Ontario,sobi_hamilton,https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json
+CA,Zip,"Kelowna, BC",zip_kelowna,https://www.ridezip.co/,http://zip-api.joyridecity.bike/gbfs/en/gbfs.json
 CH,nextbike Switzerland,"CH",nextbike_ch,https://www.nextbike.ch/xx/sursee/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ch/gbfs.json
 CL,Bike Itaú - Santiago,"Santiago, CL",bike_santiago,https://www.bikesantiago.cl/,https://santiago.publicbikesystem.net/ube/gbfs/v1/gbfs.json
 CL,MOVO Vitacura,"Vitacura, CL",movo_scl,https://movo.me/cl/,https://gbfs.movo.me/vitacura
