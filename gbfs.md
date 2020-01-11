@@ -12,7 +12,7 @@ This documentation refers to **version 1.1 release candidate**. For past and upc
 * [File Requirements](#file-requirements)
 * [Field Definitions](#field-definitions)
     * [gbfs.json](#gbfsjson)
-    * [gbfs_versions.json (beta)](#gbfs_versionsjson)
+    * [gbfs_versions.json (beta)](#gbfs_versionsjson-beta)
     * [system_information.json](#system_informationjson)
     * [station_information.json](#station_informationjson)
     * [station_status.json](#station_statusjson)
@@ -22,7 +22,7 @@ This documentation refers to **version 1.1 release candidate**. For past and upc
     * [system_regions.json](#system_regionsjson)
     * [system_pricing_plans.json](#system_pricing_plansjson)
     * [system_alerts.json](#system_alertsjson)
-* [Deep Links - Analytics and Examples](#Deep-Links) *(beta)*
+* [Deep Links - Analytics and Examples](#deep-links-beta) *(beta)*
 
 ## Introduction
 This specification has been designed with the following concepts in mind:
