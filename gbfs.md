@@ -2,7 +2,7 @@
 This document explains the types of files and data that comprise the General Bikeshare Feed Specification (GBFS) and defines the fields used in all of those files.
 
 # Reference version
-This documentation refers to **version 1.1**. For past and upcoming versions see the [README](README.md).
+This documentation refers to **version 1.1 release candidate**. For past and upcoming versions see the [README](README.md).
 
 ## Table of Contents
 
@@ -12,6 +12,7 @@ This documentation refers to **version 1.1**. For past and upcoming versions see
 * [File Requirements](#file-requirements)
 * [Field Definitions](#field-definitions)
     * [gbfs.json](#gbfsjson)
+    * [gbfs_versions.json (beta)](#gbfs_versionsjson-beta)
     * [system_information.json](#system_informationjson)
     * [station_information.json](#station_informationjson)
     * [station_status.json](#station_statusjson)
@@ -21,7 +22,7 @@ This documentation refers to **version 1.1**. For past and upcoming versions see
     * [system_regions.json](#system_regionsjson)
     * [system_pricing_plans.json](#system_pricing_plansjson)
     * [system_alerts.json](#system_alertsjson)
-* [Deep Links - Analytics and Examples](#Deep-Links)
+* [Deep Links - Analytics and Examples](#deep-links-beta) *(beta)*
 
 ## Introduction
 This specification has been designed with the following concepts in mind:
@@ -49,7 +50,7 @@ This specification defines the following files along with their associated conte
 File Name                   | Required                |       Defines
 --------------------------- | ----------------------- | ----------
 gbfs.json                   | Optional                | Auto-discovery file that links to all of the other files published by the system. This file is optional, but highly recommended.
-gbfs_versions.json          | Optional                | Lists all feed endpoints published according to versions of the GBFS documentation.
+gbfs_versions.json *(beta)* | Optional                | Lists all feed endpoints published according to versions of the GBFS documentation.
 system_information.json     | Yes                     | Describes the system including System operator, System location, year implemented, URLs, contact info, time zone
 station_information.json    | Conditionally required  | Mostly static list of all stations, their capacities and locations. Required of systems utilizing docks.
 station_status.json         | Conditionally required  | Number of available bikes and docks at each station and station availability. Required of systems utilizing docks.
@@ -107,7 +108,7 @@ Field Name          | Required  | Defines
 --------------------| ----------| ----------
 last_updated        | Yes       | Integer POSIX timestamp indicating the last time the data in this feed was updated
 ttl                 | Yes       | Integer representing the number of seconds before the data in this feed will be updated again (0 if the data should always be refreshed)
-version             | Yes       | String - GBFS version number to which the feed confirms, according to the versioning framework.
+version *(beta)*    | Yes       | String - GBFS version number to which the feed confirms, according to the versioning framework.
 data                | Yes       | JSON hash containing the data fields for this response
 
 
@@ -171,7 +172,8 @@ Example:
 }
 ```
 
-### gbfs_versions.json
+### gbfs_versions.json *(beta)*
+
 Each expression of a GBFS feed describes all of the versions that are available.
 
 The following fields are all attributes within the main "data" object for this feed.
@@ -217,7 +219,7 @@ purchase_url      | Optional  | A fully qualified URL where a customer can purch
 start_date        | Optional  | String in the form YYYY-MM-DD representing the date that the system began operations
 phone_number      | Optional  | A single voice telephone number for the specified system. This field is a string value that presents the telephone number as typical for the system's service area. It can and should contain punctuation marks to group the digits of the number. Dialable text (for example, Capital Bikeshare’s  "877-430-BIKE") is permitted, but the field must not contain any other descriptive text
 email             | Optional  | A single contact email address for customers to address questions about the system
-feed_contact_email| Optional  | A single contact email address for consumers of this feed to report technical issues
+feed_contact_email *(beta)* | Optional  | A single contact email address for consumers of this feed to report technical issues
 timezone          | Yes       | The time zone where the system is located. Time zone names never contain the space character but may contain an underscore. Please refer to the "TZ" value in https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for a list of valid values
 license_url       | Optional  | A fully qualified URL of a page that defines the license terms for the GBFS data for this system, as well as any other license terms the system would like to define (including the use of corporate trademarks, etc)
 rental_apps *(beta)* | Optional  | A JSON object that contains rental app information in the android and ios JSON objects.
