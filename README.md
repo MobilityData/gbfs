@@ -1,17 +1,6 @@
 # General Bikeshare Feed Specification
 Documentation for the General Bikeshare Feed Specification, a standardized data feed for bike share system availability.
 
-## Summer/Fall 2019 Update
-NABSA is excited to begin our work to update and enhance GBFS. NABSA has selected [MobilityData IO](https://github.com/MobilityData) to support GBFS as NABSA’s data consultant for this project. MobilityData works to improve the coverage, completeness, and quality of mobility data standards around the world, including the General Transit Feed Specification (GTFS).
-
-Our goals for this project are:
-   * to enable new features in bikeshare systems and applications through data standardization,
-   * to protect traveler privacy,
-   * to support data needs for oversight and planning, and
-   * to make GBFS easier to implement through specification reference clarity improvements and best practices development.
-
-We hope you will share your valuable expertise with us by joining in the conversation here.
-
 ## What is GBFS?
 The General Bikeshare Feed Specification, known as GBFS, is the open data standard for bikeshare. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.
 
