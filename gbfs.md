@@ -11,8 +11,6 @@ This documentation refers to **version 1.1 release candidate**. For past and upc
 * [Term Definitions](#term-definitions)
 * [Files](#files)
 * [File Requirements](#file-requirements)
-* [File Distribution](#file-distribution)
-* [Localization](#localization)
 * [Field Types](#field-types)
     * [gbfs.json](#gbfsjson)
     * [gbfs_versions.json (beta)](#gbfs_versionsjson-beta)
