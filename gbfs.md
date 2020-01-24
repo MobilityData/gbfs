@@ -8,7 +8,7 @@ This documentation refers to **version 1.1 release candidate**. For past and upc
 
 * [Revision History](#revision-history)
 * [Introduction](#introduction)
-* [Version endpoints](#version-endpoints)
+* [Version Endpoints](#version-endpoints)
 * [Term Definitions](#term-definitions)
 * [Files](#files)
 * [File Requirements](#file-requirements)
@@ -98,8 +98,8 @@ system_alerts.json          | Optional                | Current system alerts.
 
 * Each set of data files should be distributed in a single language as defined in system_information.json.
 * A system that wants to publish feeds in multiple languages should do so by publishing multiple distributions, such as:
-    * https://www.example.com/data/en/system_information.json
-    * https://www.example.com/data/fr/system_information.json
+    * `https://www.example.com/data/en/system_information.json`
+    * `https://www.example.com/data/fr/system_information.json`
 
 ## Field Types
 
@@ -144,6 +144,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 3600,
+  "version": "1.1",
   "data": {
     "name": "Citi Bike",
     "system_id": "citibike_com"
@@ -155,7 +156,7 @@ Example:
 
 Field Name              | Required    |  Type         | Defines
 ------------------------| ------------| ------------  | -------------------
-_language_              | Yes         | Language code | The language that will be used throughout the rest of the files. It must match the value in the system_information file.
+_language_              | Yes         | Language      | The language that will be used throughout the rest of the files. It must match the value in the [system_information](#system-information) file.
 \-&nbsp;feeds           | Yes         | Array         | An array of all of the feeds that are published by this auto-discovery file.
 \-&nbsp;name            | Yes         | String        | The type of feed this is (e.g. "system_information", "station_information").
 \-&nbsp;url             | Yes         | URL           | URL for the feed.
@@ -235,7 +236,7 @@ The following fields are all attributes within the main "data" object for this f
 Field Name                      | Required               | Type          | Defines
 -----------------------------   | ---------------------  | ----------    | -----------------------
 system_id                       | Yes                    | ID            | Identifier for this bike share system. This should be globally unique (even between different systems) - for example,  bcycle_austin or biketown_pdx. It is up to the publisher of the feed to guarantee uniqueness. This value is intended to remain the same over the life of the system.
-language                        | Yes                    | Language code | The language that will be used throughout the rest of the files. It must match the value in the gbfs.json file.
+language                        | Yes                    | Language      | The language that will be used throughout the rest of the files. It must match the value in the gbfs.json file.
 name                            | Yes                    | String        | Name of the system to be displayed to customers.
 short_name                      | Optional               | String        | Optional abbreviation for a system.
 operator                        | Optional               | String        | Name of the operator.
@@ -326,6 +327,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 0,
+  "version": "1.1",
   "data": {
     "rental_hours": [
       {
