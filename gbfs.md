@@ -104,7 +104,7 @@ Example: The rental_methods field contains values CREDITCARD, PAYPASS, etc...
 	* should be persistent for a given entity (station, plan, etc)
 * String - Can only contain text. Strings must not contain any formatting codes (including HTML) other than newlines.
 * Language - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to http://www.rfc-editor.org/rfc/bcp/bcp47.txt and http://www.w3.org/International/articles/language-tags/.
-Examples: en for English, en-US for American English, or de for German.
+Examples: _en_ for English, _en-US_ for American English, or _de_ for German.
 * Latitude - WGS84 latitude in decimal degrees. The value must be greater than or equal to -90.0 and less than or equal to 90.0.
 _Example: 41.890169 for the Colosseum in Rome._
 * Longitude - WGS84 longitude in decimal degrees. The value must be greater than or equal to -180.0 and less than or equal to 180.0.
