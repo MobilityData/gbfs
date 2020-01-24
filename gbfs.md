@@ -108,7 +108,7 @@ system_alerts.json          | Optional                | Current system alerts.
 * Date - Service day in the YYYY-MM-DD format. _Example: 2019-09-13 for September 13th, 2019._
 * Email - An email address. _Example: example@example.com_
 * Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column.
-Example: The rental_methods field contains values CREDITCARD, PAYPASS, etc...
+_Example: The rental_methods field contains values_ CREDITCARD, PAYPASS, etc...
 * Timestamp - Timestamp fields must be represented as integers in POSIX time. (e.g., the number of seconds since January 1st 1970 00:00:00 UTC)
 * ID - Should be represented as a string that identifies that particular entity. An ID:
 	* must be unique within like fields (e.g. bike_id must be unique among bikes)
