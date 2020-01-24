@@ -30,6 +30,7 @@ The data in the specification contained in this document is intended for consump
   * [#189](https://github.com/NABSA/gbfs/pull/189) - Require autodiscovery gbfs.json file, define feed names
   * [#195](https://github.com/NABSA/gbfs/pull/195) - Clarify num\_bikes\_available and num\_docks\_available
   * [#196](https://github.com/NABSA/gbfs/pull/196) - Change boolean from 1/0 to true/false
+  * [#147](https://github.com/NABSA/gbfs/pull/147) - Rotate bike\_id on free\_bike\_status
 
 ## Overview of the Change Process
 GBFS is an open specification, developed and maintained by the community of producers and consumers of GBFS data.
