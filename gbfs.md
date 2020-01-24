@@ -8,7 +8,8 @@ This documentation refers to **version 1.1 release candidate**. For past and upc
 
 * [Revision History](#revision-history)
 * [Introduction](#introduction)
-* [Term Definitions](#Term Definitions)
+* [Version endpoints](#version-endpoints)
+* [Term Definitions](#term-definitions)
 * [Files](#files)
 * [File Requirements](#file-requirements)
 * [Field Definitions](#field-definitions)
@@ -32,6 +33,18 @@ This specification has been designed with the following concepts in mind:
 * Do not provide information whose primary purpose is historical
 
 The specification supports real-time travel advice in GBFS-consuming applications.
+
+## Version endpoints
+The version of the GBFS specification to which a feed conforms is declared in the `version` field in all files. See [Output Format](#output-format).<br />
+
+GBFS Best Practice defines that:<br />
+
+_GBFS producers_ should provide endpoints that conform to both the current specification long term support (LTS) branch as well as the latest release branch within at least 3 months of a new spec `MAJOR` or `MINOR` version release. It is not necessary to support more than one MINOR release of the same `MAJOR` release group because `MINOR` releases are backwards-compatible. See [specification versioning](https://github.com/NABSA/gbfs/blob/master/README.md#specification-versioning)<br />
+
+_GBFS consumers_ should, at a minumum, support the current LTS branch. It highly recommended that GBFS consumers support later releases.<br />
+
+Default GBFS feed URLs, e.g. `https://www.example.com/data/gbfs.json` or `https://www.example.com/data/fr/system_information.json` must direct consumers to the feed that conforms to the current LTS documentation branch.
+
 
 ## Term Definitions
 This section defines terms that are used throughout this document.
