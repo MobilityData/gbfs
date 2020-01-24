@@ -2,7 +2,7 @@
 This document explains the types of files and data that comprise the General Bikeshare Feed Specification (GBFS) and defines the fields used in all of those files.
 
 # Reference version
-This documentation refers to **version 1.1 release candidate**. For past and upcoming versions see the [README](README.md).
+This documentation refers to **version 1.1 release candidate**. For past and upcoming versions see the [README](README.md#read-the-spec--version-history).
 
 ## Table of Contents
 
