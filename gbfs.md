@@ -88,7 +88,7 @@ system_alerts.json          | Optional                | Current system alerts.
 * Auto-Discovery:
     * This specification supports auto-discovery.
     * The location of the auto-discovery file will be provided in the HTML area of the shared mobility landing page hosted at the URL specified in the URL field of the system_infomation.json file.
-    * This is referenced via a link tag with the following format:
+    * This is referenced via a _link_ tag with the following format:
       * `<link rel="gbfs" type="application/json" href="https://www.example.com/data/gbfs.json" />`
     * References:
       * http://microformats.org/wiki/existing-rel-values
