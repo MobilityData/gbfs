@@ -87,7 +87,7 @@ system_alerts.json          | Optional                | Current system alerts.
     * Optional files may 404. A 404 of an optional file should not be considered an error.
 * Auto-Discovery:
     * This specification supports auto-discovery.
-    * The location of the auto-discovery file will be provided in the HTML area of the bikeshare landing page hosted at the URL specified in the URL field of the system_infomation.json file.
+    * The location of the auto-discovery file will be provided in the HTML area of the shared mobility landing page hosted at the URL specified in the URL field of the system_infomation.json file.
     * This is referenced via a link tag with the following format:
       * `<link rel="gbfs" type="application/json" href="https://www.example.com/data/gbfs.json" />`
     * References:
