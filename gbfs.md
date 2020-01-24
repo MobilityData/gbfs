@@ -156,7 +156,7 @@ Example:
 
 Field Name              | Required    |  Type         | Defines
 ------------------------| ------------| ------------  | -------------------
-_language_              | Yes         | Language      | The language that will be used throughout the rest of the files. It must match the value in the [system_information](#system-information) file.
+_language_              | Yes         | Language      | The language that will be used throughout the rest of the files. It must match the value in the [system_information.json](#system_informationjson) file.
 \-&nbsp;feeds           | Yes         | Array         | An array of all of the feeds that are published by this auto-discovery file.
 \-&nbsp;name            | Yes         | String        | The type of feed this is (e.g. "system_information", "station_information").
 \-&nbsp;url             | Yes         | URL           | URL for the feed.
