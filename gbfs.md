@@ -106,7 +106,7 @@ Example: The rental_methods field contains values CREDITCARD, PAYPASS, etc...
 * Language - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to http://www.rfc-editor.org/rfc/bcp/bcp47.txt and http://www.w3.org/International/articles/language-tags/.
 Examples: en for English, en-US for American English, or de for German.
 * Latitude - WGS84 latitude in decimal degrees. The value must be greater than or equal to -90.0 and less than or equal to 90.0.
-Example: 41.890169 for the Colosseum in Rome.
+_Example: 41.890169 for the Colosseum in Rome._
 * Longitude - WGS84 longitude in decimal degrees. The value must be greater than or equal to -180.0 and less than or equal to 180.0.
 _Example: 12.492269 for the Colosseum in Rome._
 * Non-negative Integer - An integer greater than or equal to 0.
