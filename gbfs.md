@@ -105,7 +105,7 @@ system_alerts.json          | Optional                | Current system alerts.
 
 * Array - A JSON element consisting of an ordered sequence of zero or more values.
 * Boolean - One of two possible values, 1= true and 0= false. Boolean values must be JSON booleans, not strings (i.e. true or false, not "true" or "false")
-* Date - Service day in the YYYY-MM-DD format. Example: 2019-09-13 for September 13th, 2019.
+* Date - Service day in the YYYY-MM-DD format. _Example: 2019-09-13 for September 13th, 2019._
 * Email - An email address. _Example: example@example.com_
 * Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column.
 Example: The rental_methods field contains values CREDITCARD, PAYPASS, etc...
