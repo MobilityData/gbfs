@@ -106,7 +106,7 @@ system_alerts.json          | Optional                | Current system alerts.
 * Array - A JSON element consisting of an ordered sequence of zero or more values.
 * Boolean - One of two possible values, 1= true and 0= false. Boolean values must be JSON booleans, not strings (i.e. true or false, not "true" or "false")
 * Date - Service day in the YYYY-MM-DD format. Example: 2019-09-13 for September 13th, 2019.
-* Email - An email address. Example: example@example.com
+* Email - An email address. _Example: example@example.com_
 * Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column.
 Example: The rental_methods field contains values CREDITCARD, PAYPASS, etc...
 * Timestamp - Timestamp fields must be represented as integers in POSIX time. (e.g., the number of seconds since January 1st 1970 00:00:00 UTC)
@@ -117,15 +117,15 @@ Example: The rental_methods field contains values CREDITCARD, PAYPASS, etc...
 	* should be persistent for a given entity (station, plan, etc)
 * String - Can only contain text. Strings must not contain any formatting codes (including HTML) other than newlines.
 * Language - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to http://www.rfc-editor.org/rfc/bcp/bcp47.txt and http://www.w3.org/International/articles/language-tags/.
-Examples: en for English, en-US for American English, or de for German.
+Examples: _en_ for English, _en-US_ for American English, or _de_ for German.
 * Latitude - WGS84 latitude in decimal degrees. The value must be greater than or equal to -90.0 and less than or equal to 90.0.
-Example: 41.890169 for the Colosseum in Rome.
+_Example: 41.890169 for the Colosseum in Rome._
 * Longitude - WGS84 longitude in decimal degrees. The value must be greater than or equal to -180.0 and less than or equal to 180.0.
-Example: 12.492269 for the Colosseum in Rome.
+_Example: 12.492269 for the Colosseum in Rome._
 * Non-negative Integer - An integer greater than or equal to 0.
 * Non-negative Float - A floating point number greater than or equal to 0.
 * Timezone - TZ timezone from the https://www.iana.org/time-zones. Timezone names never contain the space character but may contain an underscore. Refer to http://en.wikipedia.org/wiki/List_of_tz_zones for a list of valid values.
-Example: Asia/Tokyo, America/Los_Angeles or Africa/Cairo.
+_Example: Asia/Tokyo, America/Los_Angeles or Africa/Cairo._
 * URL - A fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped. See the following http://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values.
 
 ### Output Format
