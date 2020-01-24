@@ -6,13 +6,14 @@ This documentation refers to **version 1.1 release candidate**. For past and upc
 
 ## Table of Contents
 
-* [Revision History](#revision-history)
 * [Introduction](#introduction)
 * [Version Endpoints](#version-endpoints)
 * [Term Definitions](#term-definitions)
 * [Files](#files)
 * [File Requirements](#file-requirements)
-* [Field Definitions](#field-definitions)
+* [File Distribution](#file-distribution)
+* [Localization](#localization)
+* [Field Types](#field-types)
     * [gbfs.json](#gbfsjson)
     * [gbfs_versions.json (beta)](#gbfs_versionsjson-beta)
     * [system_information.json](#system_informationjson)
@@ -34,7 +35,7 @@ This specification has been designed with the following concepts in mind:
 
 The specification supports real-time travel advice in GBFS-consuming applications.
 
-## Version endpoints
+## Version Endpoints
 The version of the GBFS specification to which a feed conforms is declared in the `version` field in all files. See [Output Format](#output-format).<br />
 
 GBFS Best Practice defines that:<br />
