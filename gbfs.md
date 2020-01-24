@@ -108,7 +108,7 @@ Examples: en for English, en-US for American English, or de for German.
 * Latitude - WGS84 latitude in decimal degrees. The value must be greater than or equal to -90.0 and less than or equal to 90.0.
 Example: 41.890169 for the Colosseum in Rome.
 * Longitude - WGS84 longitude in decimal degrees. The value must be greater than or equal to -180.0 and less than or equal to 180.0.
-Example: 12.492269 for the Colosseum in Rome.
+_Example: 12.492269 for the Colosseum in Rome._
 * Non-negative Integer - An integer greater than or equal to 0.
 * Non-negative Float - A floating point number greater than or equal to 0.
 * Timezone - TZ timezone from the https://www.iana.org/time-zones. Timezone names never contain the space character but may contain an underscore. Refer to http://en.wikipedia.org/wiki/List_of_tz_zones for a list of valid values.
