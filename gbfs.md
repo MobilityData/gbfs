@@ -72,7 +72,7 @@ free_bike_status.json       | Conditionally required  | Bikes that are available
 system_hours.json           | Optional                | Hours of operation for the system.
 system_calendar.json        | Optional                | Dates of operation for the system.
 system_regions.json         | Optional                | Regions the system is broken up into.
-system_pricing_plans.json   | Optional                | The system pricing scheme.
+system_pricing_plans.json   | Optional                | System pricing scheme.
 system_alerts.json          | Optional                | Current system alerts.
 
 ## File Requirements
@@ -87,10 +87,10 @@ system_alerts.json          | Optional                | Current system alerts.
     * Optional files may 404. A 404 of an optional file should not be considered an error.
 * Auto-Discovery:
     * This specification supports auto-discovery.
-    * The location of the auto-discovery file will be provided in the HTML area of the bikeshare landing page hosted at the URL specified in the URL field of the system_infomation.json file.
-    * This is referenced via a link tag with the following format:
+    * The location of the auto-discovery file will be provided in the HTML area of the shared mobility landing page hosted at the URL specified in the URL field of the system_infomation.json file.
+    * This is referenced via a _link_ tag with the following format:
       * `<link rel="gbfs" type="application/json" href="https://www.example.com/data/gbfs.json" />`
-    * Reference:
+    * References:
       * http://microformats.org/wiki/existing-rel-values
       * http://microformats.org/wiki/rel-faq#How_is_rel_used
 
@@ -105,10 +105,10 @@ system_alerts.json          | Optional                | Current system alerts.
 
 * Array - A JSON element consisting of an ordered sequence of zero or more values.
 * Boolean - One of two possible values, 1= true and 0= false. Boolean values must be JSON booleans, not strings (i.e. true or false, not "true" or "false")
-* Date - Service day in the YYYY-MM-DD format. Example: 2019-09-13 for September 13th, 2019.
+* Date - Service day in the YYYY-MM-DD format. _Example: 2019-09-13 for September 13th, 2019._
 * Email - An email address. _Example: example@example.com_
 * Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column.
-Example: The rental_methods field contains values CREDITCARD, PAYPASS, etc...
+_Example: The rental_methods field contains values_ CREDITCARD, PAYPASS, etc...
 * Timestamp - Timestamp fields must be represented as integers in POSIX time. (e.g., the number of seconds since January 1st 1970 00:00:00 UTC)
 * ID - Should be represented as a string that identifies that particular entity. An ID:
 	* must be unique within like fields (e.g. bike_id must be unique among bikes)
