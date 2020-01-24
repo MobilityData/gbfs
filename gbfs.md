@@ -72,7 +72,7 @@ free_bike_status.json       | Conditionally required  | Bikes that are available
 system_hours.json           | Optional                | Hours of operation for the system.
 system_calendar.json        | Optional                | Dates of operation for the system.
 system_regions.json         | Optional                | Regions the system is broken up into.
-system_pricing_plans.json   | Optional                | The system pricing scheme.
+system_pricing_plans.json   | Optional                | System pricing scheme.
 system_alerts.json          | Optional                | Current system alerts.
 
 ## File Requirements
