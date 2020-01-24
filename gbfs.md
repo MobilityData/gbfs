@@ -236,7 +236,7 @@ The following fields are all attributes within the main "data" object for this f
 Field Name                      | Required               | Type          | Defines
 -----------------------------   | ---------------------  | ----------    | -----------------------
 system_id                       | Yes                    | ID            | Identifier for this bike share system. This should be globally unique (even between different systems) - for example,  bcycle_austin or biketown_pdx. It is up to the publisher of the feed to guarantee uniqueness. This value is intended to remain the same over the life of the system.
-language                        | Yes                    | Language      | The language that will be used throughout the rest of the files. It must match the value in the gbfs.json file.
+language                        | Yes                    | Language      | The language that will be used throughout the rest of the files. It must match the value in the [gbfs.json](#gbfsjson) file.
 name                            | Yes                    | String        | Name of the system to be displayed to customers.
 short_name                      | Optional               | String        | Optional abbreviation for a system.
 operator                        | Optional               | String        | Name of the operator.
