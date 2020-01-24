@@ -139,7 +139,7 @@ data                | Yes       | Object               | Response data in the fo
 
 
 Example:
-```
+```jsonc
 {
   "last_updated": 1434054678,
   "ttl": 3600,
@@ -163,7 +163,7 @@ _language_              | Yes         | Language      | The language that will b
 
 Example:
 
-```
+```jsonc
 {
   "last_updated": 1434054678,
   "ttl": 0,
@@ -209,7 +209,7 @@ _versions_              | Yes         | Array      | Contains one object, as def
 \-&nbsp;version         | Yes         | String     | The semantic version of the feed in the form X.Y.
 \-&nbsp;url             | Yes         | URL        | URL of the corresponding gbfs.json endpoint.
   
-```
+```jsonc
 {
   "last_updated": 1434054678,
   "ttl": 0,
@@ -322,7 +322,7 @@ _rental_hours_      | Yes         | Array       | Array of objects as defined be
 \-&nbsp;end_time    | Yes         | Time        | End time for the hours of operation of the system in the time zone indicated in system_information.json.
 
 Example:
-```
+```jsonc
 {
   "last_updated": 1434054678,
   "ttl": 0,
@@ -438,7 +438,7 @@ Other supported parameters include:
 
 *system_information.json*
 
-```
+```jsonc
 {
   "last_updated": 1572447999,
   "data": {
@@ -457,7 +457,7 @@ Other supported parameters include:
 
 *station_information.json*
 
-```
+```jsonc
 "stations": [
   { 
     "station_id": 425,
@@ -480,7 +480,7 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
 
 *system_information.json*
 
-```
+```jsonc
 {
   "last_updated": 1572447999,
   "data": {
@@ -501,7 +501,7 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
 
 *station_information.json*
 
-```
+```jsonc
 "stations": [
   { 
     "station_id": 425,
@@ -520,7 +520,7 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
 
 *station_information.json*
 
-```
+```jsonc
 "stations": [ 
   {
     "station_id":425,
