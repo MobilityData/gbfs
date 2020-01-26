@@ -56,29 +56,25 @@ This section defines terms that are used throughout this document.
 * Optional - The field may be omitted from the dataset. If an optional column is included, some of the entries in that field may be empty strings. An omitted field is equivalent to a field that is empty.
 * Conditionally required - The field or file is required under certain conditions, which are outlined in the field or file description. Outside of these conditions, this field or file is optional.
 
-
-
-## Files
-This specification defines the following files along with their associated content:
-
-File Name                   | Required                |       Defines
---------------------------- | ----------------------- | ----------
-gbfs.json                   | Optional                | Auto-discovery file that links to all of the other files published by the system. This file is optional, but highly recommended.
-gbfs_versions.json *(beta)* | Optional                | Lists all feed endpoints published according to versions of the GBFS documentation.
-system_information.json     | Yes                     | Details including system operator, system location, year implemented, URL, contact info, time zone.
-station_information.json    | Conditionally required  | List of all stations, their capacities and locations. Required of systems utilizing docks.
-station_status.json         | Conditionally required  | Number of available bikes and docks at each station and station availability. Required of systems utilizing docks.
-free_bike_status.json       | Conditionally required  | Bikes that are available for rent. Required of systems that offer bikes for rent outside of stations.
-system_hours.json           | Optional                | Hours of operation for the system.
-system_calendar.json        | Optional                | Dates of operation for the system.
-system_regions.json         | Optional                | Regions the system is broken up into.
-system_pricing_plans.json   | Optional                | System pricing scheme.
-system_alerts.json          | Optional                | Current system alerts.
+| File Name                 | Required                            | Defines                                                                                                                                                                                              |
+|---------------------------|-------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| gbfs.json                 | Optional<br/>*beta (v2.0-RC):* Yes  | Auto-discovery file that links to all of the other files published by the system.<br/>*Current version:* This file is optional, but highly recommended.<br/>*Beta (v2.0-RC):* This file is required. |
+| gbfs_versions.json        | Optional                            | Lists all feed endpoints published according to versions of the GBFS documentation.                                                                                                                  |
+| system_information.json   | Yes                                 | Describes the system including System operator, System location, year implemented, URLs, contact info, time zone                                                                                     |
+| station_information.json  | Conditionally required              | Mostly static list of all stations, their capacities and locations. Required of systems utilizing docks.                                                                                             |
+| station_status.json       | Conditionally required              | Number of available bikes and docks at each station and station availability. Required of systems utilizing docks.                                                                                   |
+| free_bike_status.json     | Conditionally required              | Bikes that are available for rent. Required of systems that offer bikes for rent outside of stations.                                                                                                |
+| system_hours.json         | Optional                            | Hours of operation for the system.                                                                                                                                                                   |
+| system_calendar.json      | Optional                            | Dates of operation for the system.                                                                                                                                                                   |
+| system_regions.json       | Optional                            | Regions the system is broken up into.                                                                                                                                                                |
+| system_pricing_plans.json | Optional                            | System pricing scheme.                                                                                                                                                                               |
+| system_alerts.json        | Optional                            | Current system alerts.                                                                                                                                                                               |
 
 ## File Requirements
-* All files should be valid JSON.
-* All data should be UTF-8 encoded.
-* Line breaks should be represented by unix newline characters only (\n).
+* All files should be valid JSON
+* *Beta (v2.0-RC):* All files in the spec may be published at a URL path or with an alternate name (e.g., `station_info` instead of `station_information.json`).
+* All data should be UTF-8 encoded
+* Line breaks should be represented by unix newline characters only (\n)
 * Pagination is not supported.
 
 ### File Distribution
@@ -159,9 +155,8 @@ Field Name              | Required    |  Type         | Defines
 ------------------------| ------------| ------------  | -------------------
 _`language`_            | Yes         | Language      | The language that will be used throughout the rest of the files. It must match the value in the [system_information.json](#system_informationjson) file.
 \-&nbsp;`feeds`         | Yes         | Array         | An array of all of the feeds that are published by this auto-discovery file. Each element in the array is an object with the keys below.
-&emsp;\-&nbsp;`name`    | Yes         | String        | The type of feed this is (e.g. `system_information`, `station_information``).
-&emsp;\-&nbsp;`url`     | Yes         | URL           | URL for the feed.
-
+&emsp;\-&nbsp;`name`    | Yes         | String        | Key identifying the type of feed this is. The key must be the base file name defined in the spec for the corresponding feed type (`system_information` for `system_information.json` file, `station_information` for `station_information.json` file). 
+&emsp;\-&nbsp;`url`     | Yes         | URL           | URL for the feed. Note that the actual feed endpoints (urls) may not be defined in the `file_name.json` format. For example, a valid feed endpoint could end with `station_info` instead of `station_information.json`. 
 
 Example:
 
