@@ -457,7 +457,7 @@ Other supported parameters include:
 ```jsonc
 "stations": [
   { 
-    "station_id": 425,
+    "station_id": "425",
     "name": "Coppertail",
     "lat": 27.9563335328521,
     "lon": -82.430436084371,
@@ -501,7 +501,7 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
 ```jsonc
 "stations": [
   { 
-    "station_id": 425,
+    "station_id": "425",
     "name": "Coppertail",
     "lat": 27.9563335328521,
     "lon": -82.430436084371,
@@ -520,7 +520,7 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
 ```jsonc
 "stations": [ 
   {
-    "station_id":425,
+    "station_id":"425",
     "name":"Coppertail",
     "lat":27.9563335328521,
     "lon":-82.430436084371,
