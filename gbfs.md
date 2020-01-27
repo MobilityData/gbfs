@@ -101,7 +101,7 @@ This section defines terms that are used throughout this document.
 
 * Array - A JSON element consisting of an ordered sequence of zero or more values.
 * Object - A JSON element consisting of key-value pairs (fields).
-* Boolean - One of two possible values, `1`=true and `0`=false. Boolean values must be JSON booleans, not strings (i.e. true or false, not `"true"` or `"false"`).
+* Boolean - One of two possible values, `1`=true and `0`=false. *Beta (v2.0-RC): Boolean values must be JSON booleans, not strings (i.e. true or false, not `"true"` or `"false"`).
 * Date - Service day in the YYYY-MM-DD format. Example: `2019-09-13` for September 13th, 2019.
 * Email - An email address. Example: `example@example.com`
 * Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column.
