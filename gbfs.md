@@ -384,7 +384,7 @@ _`plans`_               | Yes       | Array              | Array of objects as d
 \-&nbsp;`url`           | Optional  | URL                | URL where the customer can learn more about this pricing plan.
 \-&nbsp;`name`          | Yes       | String             | Name of this pricing plan.
 \-&nbsp;`currency`      | Yes       | String             | Currency used to pay the fare. <br /><br /> This pricing is in ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217 <br />(e.g. `CAD` for Canadian dollars, `EUR` for euros, or `JPY` for Japanese yen.)
-\-&nbsp;`price`         | Yes       | Non-negative float | Fare price, in the unit specified by currency.
+\-&nbsp;`price`         | Yes       | Non-negative float OR String | Fare price, in the unit specified by currency. If String, must be in decimal monetary value.
 \-&nbsp;`is_taxable`    | Yes       | Boolean            | Will additional tax be added to the base price?<br /><br />1 - Yes.<br />  0 - No.  <br /><br />0 may be used to indicate that tax is not charged or that tax is included in the base price.
 \-&nbsp;`description`   | Yes       | String             | Customer-readable description of the pricing plan. This should include the duration, price, conditions, etc. that the publisher would like users to see.
 
