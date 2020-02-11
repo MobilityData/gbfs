@@ -105,6 +105,7 @@ LV,SiXT Latvia,"LV",nextbike_lv,https://www.sixtbicycle.lv/,https://gbfs.nextbik
 MC,MonaBike,"Monaco, MC",mona_bike,https://monabike.mc/,https://monaco.publicbikesystem.net/ube/gbfs/v1/gbfs.json
 MT,nextbike Malta,"Malta, MT",nextbike_mt,https://www.nextbike.com.mt/xx/malta/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_mt/gbfs.json
 MX,Mibici Guadalajara,"Guadalajara, MX",mibici_guadalajara,https://www.mibici.net/en/,https://guad.publicbikesystem.net/ube/gbfs/v1/
+MX,MOVO Guadalajara,"Guadalajara, MX",movo_gdl,https://movo.me/mx/,https://gbfs.movo.me/guadalajara
 NL,Cykl,"Wageningen, NL",CKL,https://www.cykl.nl/,https://www.cykl.nl/gbfs/gbfs.json
 NL,nextbike Dordrecht,"Dordrecht, NL",nextbike_nd,https://www.nextbike.nl/xx/dordrecht/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_nd/gbfs.json
 NL,nextbike Maastricht,"Maastricht, NL",nextbike_nl,https://www.nextbike.nl/xx/maastricht/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_nl/gbfs.json
