@@ -83,6 +83,8 @@ GB,BelfastBikes,"Belfast, GB",nextbike_bu,https://www.belfastbikes.co.uk/en/belf
 GB,Beryl - BCP,"Bournemouth, Christchurch, Poole, GB",beryl_bcp,https://www.beryl.cc,http://gbfs.basis-pdn.bike/BCP/gbfs.json
 GB,Beryl - Hereford,"Hereford, GB",beryl_hereford,https://www.beryl.cc,http://gbfs.basis-pdn.bike/Hereford/gbfs.json
 GB,Beryl - London,"London, GB",beryl_london,https://www.beryl.cc,http://gbfs.basis-pdn.bike/London/gbfs.json
+GB,Beryl - Norwich,"Norwich, GB",beryl_norwich,https://www.beryl.cc,http://gbfs.basis-pdn.bike/Norwich/gbfs.json
+GB,Beryl - Watford,"Watford, GB",beryl_watford,https://www.beryl.cc,http://gbfs.basis-pdn.bike/Watford/gbfs.json
 GB,Co-bikes,"Exeter, GB",nextbike_eu,https://www.co-bikes.co.uk/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_eu/gbfs.json
 GB,nextbike Cardiff,"Cardiff, GB",nextbike_uc,https://www.nextbike.co.uk/en/cardiff/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_uc/gbfs.json
 GB,nextbike Glasgow,"Glasgow, GB",nextbike_gg,https://www.nextbike.co.uk/en/glasgow/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_gg/gbfs.json
