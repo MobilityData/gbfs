@@ -368,7 +368,7 @@ Field Name | Required | Type | Defines
 \-&nbsp;`is_returning` | Yes | Boolean | Is the station accepting vehicle returns? <br /><br />`1` - Station is accepting vehicle returns. If a station is full but would allow a return if it was not full, then this value should be 1.<br /> `0` - Station is not accepting vehicle returns.
 \-&nbsp;`last_reported` | Yes | Timestamp | The last time this station reported its status to the operator's backend.
 \- `vehicle_docks_available` | Conditionally Required | Array | This field is required in feeds where the [vehicle_types.json](#vehicle_typesjson) is defined and where certain docks are only able to accept certain vehicle types. If every dock at the station is able to accept any vehicle type, then this field is not required. This field's value is an array of objects. Each of these objects is used to model the number of docks available for certain vehicle types. The total number of docks from each of these objects should add up to match the value specified in the `num_docks_available` field.
-&emsp;\- `vehicle_types` | Yes | Array of Strings | An array of strings where each string represents a vehicle_type_id that is able to use a particular type of dock at the station
+&emsp;\- `vehicle_type_ids` | Yes | Array of Strings | An array of strings where each string represents a vehicle_type_id that is able to use a particular type of dock at the station
 &emsp;\- `count` | Yes | Non-negative integer | A number representing the total number of available docks at the station that can accept vehicles of the specified types in the `vehicle_types` array.
 \- `vehicles` | Conditionally Required | Array | This field is required if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field's value is an array of objects. Each object contains data about a specific vehicle that is currently present at the docking station. Each of these vehicles is assumed to be rentable unless otherwise indicated with the is_reserved or is_disabled flags. All of the remaining fields in this table represent key/values for each vehicle object in this array. The length of this array must equal the value of the `num_bikes_available` field.
 &emsp;\- `bike_id` | Yes | ID | Identifier of this vehicle. *Beta (v2.0-RC):* Identifier of this vehicle, rotated to a random string, at minimum, after each trip to protect privacy. Note: Persistent bike_id, published publicly, could pose a threat to individual traveler privacy.
@@ -407,10 +407,10 @@ Example:
           "current_range_meters": 5432
         }],
         "vehicle_docks_available": [{
-          "vehicle_types": ["abc123"],
+          "vehicle_type_ids": ["abc123"],
           "count": 2
         }, {
-          "vehicle_types": ["def456"],
+          "vehicle_type_ids": ["def456"],
           "count": 1
         }]
       }, {
