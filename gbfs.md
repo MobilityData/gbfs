@@ -268,8 +268,7 @@ Field Name | Required | Type | Defines
 \- `vehicle_type_id` | Yes | ID | Unique identifier of a vehicle type. See [Field Definitions](#field-definitions) above for ID field requirements
 \- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`car`</li><li>`moped`</li><li>`other`</li><li>`scooter`</li></ul>
 \- `propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides power only alongside human propulsion)_</li><li>`electric` _(Contains throttle mode with a battery-powered motor)_</li><li>`combustion` _(Contains throttle mode with a gas engine-powered motor)_</li></ul> This field was insipred by, but differs from the propulsion types field described in the [City of Los Angeles Mobility Data Specification](https://github.com/CityOfLosAngeles/mobility-data-specification/blob/73995a151f0a1d67aab3d617a4693f8f81967936/provider/README.md#propulsion-types)
-\- `maximum_energy_potential` | Conditionally Required | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is required. This represents the maximum amount of energy potential (for example a full battery or full tank of gas). If the `propulsion_type` field is `electric` or `electric_assist` the unit type for this field is watt-hours. If the `propulsion_type` field is `combustion` then the unit type is liters.
-\- `meters_per_energy_potential_unit` | Conditionally Required | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is required. This represents the energy efficiency of the vehicle expressed as the amount of meters that the motor can propel the vehicle forward per unit of energy potential. If the `propulsion_type` field is `electric` or `electric_assist` the unit type for this field is meters per watt-hour. If the `propulsion_type` field is `combustion` then the unit type is meters per liter. Multiplying this field and the `maximum_energy_potential` together will yield the vehicle's maximum range in meters.
+\- `max_range_meters` | Conditionally Required | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is required. This represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example a full battery or full tank of gas).
 \- `name` | Optional | String | The public name of this vehicle type.
 
 Example:
@@ -292,26 +291,14 @@ Example:
         "form_factor": "scooter",
         "propulsion_type": "electric",
         "name": "Example E-scooter V2",
-        // since this vehicle has an electric motor, the value of the
-        // maximum_energy_potential is 250 watt-hours
-        "maximum_energy_potential": 250,
-        // since this vehicle has an electric motor, the unit type of the
-        // meters_per_energy_potential_unit is meters per watt-hour. Therefore,
-        // this vehicle has a range of 20,000 meters or 20 kilometers.
-        "meters_per_energy_potential_unit": 80
+        "max_range_meters": 12345
       },
       {
         "vehicle_type_id": "car1",
         "form_factor": "car",
         "propulsion_type": "combustion",
         "name": "Foor-door Sedan",
-        // since this vehicle has a combustion motor, the value of the
-        // maximum_energy_potential is 56 liters
-        "maximum_energy_potential": 56,
-        // since this vehicle has a combustion motor, the unit type of the
-        // meters_per_energy_potential_unit is meters per liter. Therefore,
-        // this vehicle has a range of 523,992 meters or ~524 kilometers
-        "meters_per_energy_potential_unit": 9357
+        "max_range_meters": 523992
       }
     ]
   }
@@ -388,7 +375,8 @@ Field Name | Required | Type | Defines
 &emsp;\- `is_reserved` | Yes | Boolean | Is the vehicle currently reserved for someone else
 &emsp;\- `is_disabled` | Yes | Boolean | Is the vehicle currently disabled (broken)
 &emsp;\- `vehicle_type_id` | Yes | ID | The vehicle_type_id of this vehicle as described in [vehicle_types.json](#vehicle_typesjson).
-&emsp;\- `remaining_energy_potential_percent` | Conditionally Required | Non-negative float | If the corresponding vehicle_type definition for this vehicle has a motor, then this field is required. This value represents the percent of fuel or electricity currently available in this vehicle. Multiplying this number with the corresponding `maximum_energy_potential` and `meters_per_energy_potential_unit` fields in the [vehicle_types.json](#vehicle_typesjson) file will result in the current range in meters of the vehicle.
+&emsp;\- `current_range_meters` | Conditionally Required | Non-negative float | If the corresponding vehicle_type definition for this vehicle has a motor, then this field is required. This value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
+
 
 Example:
 
@@ -416,12 +404,7 @@ Example:
           "is_reserved": 0,
           "is_disabled": 0,
           "vehicle_type_id": "def456",
-          // the vehicle type "def456" has corresponding
-          // `maximum_energy_potential` and `meters_per_energy_potential_unit`
-          // values of 250 and 80 respectively yielding a total range of
-          // 20,000 meters or 20 kilometers. Therefore, the remaining range
-          // is 10,000 meters or 10 kilometers.
-          "remaining_energy_potential_percent": 50
+          "current_range_meters": 5432
         }],
         "vehicle_docks_available": [{
           "vehicle_types": ["abc123"],
@@ -447,12 +430,7 @@ Example:
           "is_reserved": 0,
           "is_disabled": 0,
           "vehicle_type_id": "def456",
-          // the vehicle type "def456" has corresponding
-          // `maximum_energy_potential` and `meters_per_energy_potential_unit`
-          // values of 250 and 80 respectively yielding a total range of
-          // 20,000 meters or 20 kilometers. Therefore, the remaining range
-          // is 15,000 meters or 10 kilometers.
-          "remaining_energy_potential_percent": 75
+          "current_range_meters": 4321
         }]
       }
     ]
@@ -478,7 +456,7 @@ Field Name | Required | Type | Defines
 &emsp;\-&nbsp;`web` *(beta)* | Optional | URL | URL that can be used by a web browser to show more information about renting a vehicle at this vehicle. <br><br>This URL should be a deep link specific to this vehicle, and should not be a general rental page that includes information for more than one vehicle.  The deep link should take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported for web browsers. <br><br>Example value: https://www.abc.com/app?sid=1234567890
 \- `vehicle_type_id` | Conditionally Required | ID | The vehicle_type_id of this vehicle as described in [vehicle_types.json](#vehicle_typesjson). This field is required if the [vehicle_types.json](#vehicle_typesjson) is defined.
 \- `last_reported` | Optional | Timestamp | The last time this vehicle reported its status to the operator's backend
-\- `remaining_energy_potential_percent` | Conditionally Required | Non-negative float | If the [vehicle_types.json](#vehicle_typesjson) file is defined and the corresponding vehicle_type definition for this vehicle has a motor, then this field is required. This value represents the percent of fuel or electricity currently available in this vehicle. Multiplying this number with the corresponding `maximum_energy_potential` and `meters_per_energy_potential_unit` fields in the [vehicle_types.json](#vehicle_typesjson) file will result in the current range in meters of the vehicle.
+\- `current_range_meters` | Conditionally Required | Non-negative float | If the corresponding vehicle_type definition for this vehicle has a motor, then this field is required. This value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
 
 Example:
 
@@ -505,12 +483,7 @@ Example:
         "is_reserved": 0,
         "is_disabled": 0,
         "vehicle_type_id": "def456",
-        // the vehicle type "def456" has corresponding
-        // `maximum_energy_potential` and `meters_per_energy_potential_unit`
-        // values of 250 and 80 respectively yielding a total range of
-        // 20,000 meters or 20 kilometers. Therefore, the remaining range
-        // is 12,500 meters or 12.5 kilometers.
-        "remaining_energy_potential_percent": 62.5
+        "current_range_meters": 6543
       }
     ]
   }
