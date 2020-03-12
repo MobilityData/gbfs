@@ -299,7 +299,7 @@ Describes bikes that are not at a station and are not currently in the middle of
 Field Name | Required | Type | Defines
 --|--|--|--
 `bikes` | Yes | Array | Array that contains one object per bike that is currently stopped as defined below.
-\-&nbsp;`bike_id` | Yes | ID | Identifier of a bike. *Beta (v2.0-RC):* Identifier of a bike, rotated to a random string, at minimum, after each trip to protect privacy. Note: Persistent bike_id, published publicly, could pose a threat to individual traveler privacy.
+\-&nbsp;`bike_id` | Yes | ID | Identifier of a bike, rotated to a random string, at minimum, after each trip to protect privacy *(as of v2.0-RC)*. Note: Persistent bike_id, published publicly, could pose a threat to individual traveler privacy.
 \-&nbsp;`lat` | Yes | Latitude | Latitude of the bike.
 \-&nbsp;`lon` | Yes | Longitude | Longitude of the bike.
 \-&nbsp;`is_reserved` | Yes | Boolean | Is the bike currently reserved? <br /><br /> `1` - Bike is currently reserved. <br /> `0` - Bike is not currently reserved.
