@@ -440,7 +440,7 @@ Other supported parameters include:
 {
   "last_updated": 1572447999,
   "data": {
-  "system_id": "1000",
+  "system_id": "abc_cityname",
   "short_name": "ABC Bike Rental",
   "rental_apps": {
     "android": {
@@ -482,7 +482,7 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
 {
   "last_updated": 1572447999,
   "data": {
-    "system_id": "1000",
+    "system_id": "abc_cityname",
     "short_name": "ABC Bike Rental",
     "rental_apps": {
       "android": {
