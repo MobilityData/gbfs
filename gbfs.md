@@ -58,7 +58,7 @@ This section defines terms that are used throughout this document.
 
 ## Files
 File Name | Required | Defines
---|--|--
+---|---|---
 gbfs.json | Yes <br/>*(as of v2.0-RC)* | Auto-discovery file that links to all of the other files published by the system.
 gbfs_versions.json <br/>*(added in v1.1-RC)* | Optional | Lists all feed endpoints published according to versions of the GBFS documentation.
 system_information.json | Yes | Details including system operator, system location, year implemented, URL, contact info, time zone.
@@ -130,7 +130,7 @@ Example: `Asia/Tokyo`, `America/Los_Angeles` or `Africa/Cairo`.
 Every JSON file presented in this specification contains the same common header information at the top level of the JSON response object:
 
 Field Name | Required | Type | Defines
---|--|--|--
+---|---|---|---
 `last_updated` | Yes | Timestamp | Last time the data in the feed was updated.
 `ttl` | Yes | Non-negative integer | Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).
 `version` <br/>*(added in v1.1-RC)* | Yes | String | GBFS version number to which the feed confirms, according to the versioning framework.
@@ -153,7 +153,7 @@ Example:
 ### gbfs.json
 
 Field Name | Required | Type | Defines
---|--|--|--
+---|---|---|---
 `language` | Yes | Language | The language that will be used throughout the rest of the files. It must match the value in the [system_information.json](#system_informationjson) file.
 \-&nbsp;`feeds` | Yes | Array | An array of all of the feeds that are published by this auto-discovery file. Each element in the array is an object with the keys below.
 &emsp;\-&nbsp;`name` | Yes | String | Key identifying the type of feed this is. The key must be the base file name defined in the spec for the corresponding feed type (`system_information` for `system_information.json` file, `station_information` for `station_information.json` file).
@@ -202,7 +202,7 @@ Each expression of a GBFS feed describes all of the versions that are available.
 The following fields are all attributes within the main "data" object for this feed.
 
 Field Name | Required | Type | Defines
---|--|--|--
+---|---|---|---
 `versions` | Yes | Array | Contains one object, as defined below, for each of the available versions of a feed. The array must be sorted by increasing MAJOR and MINOR version number.
 \-&nbsp;`version` | Yes | String | The semantic version of the feed in the form `X.Y`.
 \-&nbsp;`url` | Yes | URL | URL of the corresponding gbfs.json endpoint.
@@ -231,7 +231,7 @@ Field Name | Required | Type | Defines
 The following fields are all attributes within the main "data" object for this feed.
 
 Field Name | Required | Type | Defines
---|--|--|--
+---|---|---|---
 `system_id` | Yes | ID | Identifier for this bike share system. This should be globally unique (even between different systems) - for example,  `bcycle_austin` or `biketown_pdx`. It is up to the publisher of the feed to guarantee uniqueness. This value is intended to remain the same over the life of the system.
 `language` | Yes | Language | The language that will be used throughout the rest of the files. It must match the value in the [gbfs.json](#gbfsjson) file.
 `name` | Yes | String | Name of the system to be displayed to customers.
@@ -260,7 +260,7 @@ Field Name | Required | Type | Defines
 All stations included in station_information.json are considered public (e.g., can be shown on a map for public use). If there are private stations (such as Capital Bikeshare’s White House station), these should not be included here.
 
 Field Name | Required | Type | Defines
---|--|--|--
+---|---|---|---
 `stations` | Yes | Array | Array that contains one object per station as defined below.
 \-&nbsp;`station_id` | Yes | ID | Identifier of a station.
 \-&nbsp;`name` | Yes | String | Public name of the station.
@@ -282,7 +282,7 @@ Field Name | Required | Type | Defines
 Describes the capacity and rental availability of a station.
 
 Field Name | Required | Type | Defines
---|--|--|--
+---|---|---|---
 `stations` | Yes | Array | Array that contains one object per station in the system as defined below.
 \-&nbsp;`station_id` | Yes | ID | Identifier of a station see [station_information.json](#station_informationjson).
 \-&nbsp;`num_bikes_available` | Yes | Non-negative integer | Number of bikes available for rental. Number of functional bikes physically at the station. To know if the bikes are available for rental, see `is_renting`.
@@ -298,7 +298,7 @@ Field Name | Required | Type | Defines
 Describes bikes that are not at a station and are not currently in the middle of an active ride.
 
 Field Name | Required | Type | Defines
---|--|--|--
+---|---|---|---
 `bikes` | Yes | Array | Array that contains one object per bike that is currently stopped as defined below.
 \-&nbsp;`bike_id` | Yes | ID | Identifier of a bike, rotated to a random string, at minimum, after each trip to protect privacy *(as of v2.0-RC)*. Note: Persistent bike_id, published publicly, could pose a threat to individual traveler privacy.
 \-&nbsp;`lat` | Yes | Latitude | Latitude of the bike.
@@ -314,7 +314,7 @@ Field Name | Required | Type | Defines
 Describes the system hours of operation.
 
 Field Name | Required | Type | Defines
---|--|--|--
+---|---|---|---
 `rental_hours` | Yes | Array | Array of objects as defined below. The array must contain a minimum of one object identifying hours for every day of the week or a maximum of two for each day of the week  objects ( one for each user type).
 \-&nbsp;`user_types` | Yes | Array | An array of `member` and/or `nonmember` value(s). This indicates that this set of rental hours applies to either members or non-members only.
 \-&nbsp;`days` | Yes | Array | An array of abbreviations (first 3 letters) of English names of the days of the week for which this object applies (e.g. `["mon", "tue", "wed", "thu", "fri", "sat, "sun"]`). Rental hours must not be defined more than once for each day and user type.
@@ -356,7 +356,7 @@ Example:
 Describes the operating calendar for a system.
 
 Field Name | Required | Type | Defines
---|--|--|--
+---|---|---|---
 `calendars` | Yes | Array | Array of objects describing the system operational calendar. A minimum of one calendar object is required. If start and end dates are the same every year, then start_year and end_year should be omitted.
 \-&nbsp;`start_month` | Yes | Non-negative Integer | Starting month for the system operations (`1`-`12`).
 \-&nbsp;`start_day` | Yes | Non-negative Integer | Starting date for the system operations (`1`-`31`).
@@ -370,7 +370,7 @@ Field Name | Required | Type | Defines
 Describe regions for a system that is broken up by geographic or political region.
 
 Field Name | Required | Type | Defines
---|--|--|--
+---|---|---|---
 `regions` | Yes | Array | Array of objects as defined below.
 \-&nbsp;`region_id` | Yes | ID | Identifier for the region.
 \-&nbsp;`name` | Yes | String | Public name for this region.
@@ -379,7 +379,7 @@ Field Name | Required | Type | Defines
 Describes pricing for the system.
 
 Field Name | Required | Type | Defines
---|--|--|--
+---|---|---|---
 `plans` | Yes | Array | Array of objects as defined below.
 \-&nbsp;`plan_id` | Yes | ID | Identifier for a pricing plan in the system.
 \-&nbsp;`url` | Optional | URL | URL where the customer can learn more about this pricing plan.
@@ -394,7 +394,7 @@ This feed is intended to inform customers about changes to the system that do no
 Obsolete alerts should be removed so the client application can safely present to the end user everything present in the feed.
 
 Field Name | Required | Type | Defines
---|--|--|--
+---|---|---|---
 `alerts` | Yes | Array | Array of objects each indicating a system alert as defined below.
 \-&nbsp;`alert_id` | Yes | ID | Identifier for this alert.
 \-&nbsp;`type` | Yes | Enum | Valid values are:<br /><br /><ul><li>`SYSTEM_CLOSURE`</li><li>`STATION_CLOSURE`</li><li>`STATION_MOVE`</li><li>`OTHER`</li></ul>
