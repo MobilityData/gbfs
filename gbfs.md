@@ -12,7 +12,7 @@ This documentation refers to **version 1.1**. For past and upcoming versions see
 * [File Requirements](#file-requirements)
 * [Field Definitions](#field-definitions)
     * [gbfs.json](#gbfsjson)
-    * [gbfs_versions.json)](#gbfs_versionsjson-added-in-v11) *(added in v1.1)*
+    * [gbfs_versions.json](#gbfs_versionsjson-added-in-v11) *(added in v1.1)*
     * [system_information.json](#system_informationjson)
     * [station_information.json](#station_informationjson)
     * [station_status.json](#station_statusjson)
