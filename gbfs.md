@@ -59,7 +59,7 @@ This section defines terms that are used throughout this document.
 ## Files
 File Name | Required | Defines
 ---|---|---
-gbfs.json | Yes <br/>*(as of v2.0-RC)* | Auto-discovery file that links to all of the other files published by the system.
+gbfs.json | Yes <br/>*(as of v2.0)* | Auto-discovery file that links to all of the other files published by the system.
 gbfs_versions.json <br/>*(added in v1.1)* | Optional | Lists all feed endpoints published according to versions of the GBFS documentation.
 system_information.json | Yes | Details including system operator, system location, year implemented, URL, contact info, time zone.
 station_information.json | Conditionally required | List of all stations, their capacities and locations. Required of systems utilizing docks.
@@ -73,7 +73,7 @@ system_alerts.json | Optional | Current system alerts.
 
 ## File Requirements
 * All files should be valid JSON
-* All files in the spec may be published at a URL path or with an alternate name (e.g., `station_info` instead of `station_information.json`) *(as of v2.0-RC)*.
+* All files in the spec may be published at a URL path or with an alternate name (e.g., `station_info` instead of `station_information.json`) *(as of v2.0)*.
 * All data should be UTF-8 encoded
 * Line breaks should be represented by unix newline characters only (\n)
 * Pagination is not supported.
@@ -101,7 +101,7 @@ system_alerts.json | Optional | Current system alerts.
 
 * Array - A JSON element consisting of an ordered sequence of zero or more values.
 * Object - A JSON element consisting of key-value pairs (fields).
-* Boolean - One of two possible values, `true`or `false`. Boolean values must be JSON booleans, not strings (i.e. `true` or `false`, not `"true"` or `"false"`). *(as of v2.0-RC)*
+* Boolean - One of two possible values, `true`or `false`. Boolean values must be JSON booleans, not strings (i.e. `true` or `false`, not `"true"` or `"false"`). *(as of v2.0)*
 * Date - Service day in the YYYY-MM-DD format. Example: `2019-09-13` for September 13th, 2019.
 * Email - An email address. Example: `example@example.com`
 * Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column.
@@ -111,7 +111,7 @@ Example: The `rental_methods` field contains values `CREDITCARD`, `PAYPASS`, etc
 	* must be unique within like fields (e.g. `station_id` must be unique among stations)
 	* does not have to be globally unique, unless otherwise specified
 	* must not contain spaces
-	* should be persistent for a given entity (station, plan, etc). An exception is floating bike `bike_id`, which should not be persistent for privacy reasons (see `free_bike_status.json`). *(as of v2.0-RC)*
+	* should be persistent for a given entity (station, plan, etc). An exception is floating bike `bike_id`, which should not be persistent for privacy reasons (see `free_bike_status.json`). *(as of v2.0)*
 * String - Can only contain text. Strings must not contain any formatting codes (including HTML) other than newlines.
 * Language - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to http://www.rfc-editor.org/rfc/bcp/bcp47.txt and http://www.w3.org/International/articles/language-tags/.
 Examples: `en` for English, `en-US` for American English, or `de` for German.
@@ -244,10 +244,10 @@ Field Name | Required | Type | Defines
 `email` | Optional | Email | Email address actively monitored by the operator’s customer service department. This email address should be a direct contact point where riders can reach a customer service representative.
 `feed_contact_email` <br/>*(added in v1.1)* | Optional | Email | A single contact email address for consumers of this feed to report technical issues.
 `timezone` | Yes | Timezone | The time zone where the system is located.
-`license_id` <br/>*(added in v2.0-RC)* | Conditionally required | String | Required if the dataset is provided under a standard license. An identifier for a standard license from the [SPDX License List](https://spdx.org/licenses/). Provide `license_id` rather than `license_url` if the license is included in the SPDX License List. See the GBFS wiki for a [comparison of a subset of standard licenses](data-licenses.md). If the license_id or license_url fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
-`license_url` | Conditionally required <br/>*(as of v2.0-RC)* | URL | Required if the dataset is  provided under a customized license. A fully qualified URL of a page that defines the license terms for the GBFS data for this system. Do not specify a `license_url` if `license_id` is specified. If the license_id or license_url fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode). *(as of v2.0-RC)*
-`attribution_organization_name` <br/>*(added in v2.0-RC)* | Optional | String | If the feed license requires attribution, name of the organization to which attribution should be provided.
-`attribution_url` <br/>*(added in v2.0-RC)* | Optional | URL | URL of the organization to which attribution should be provided.
+`license_id` <br/>*(added in v3.0-RC)* | Conditionally required | String | Required if the dataset is provided under a standard license. An identifier for a standard license from the [SPDX License List](https://spdx.org/licenses/). Provide `license_id` rather than `license_url` if the license is included in the SPDX License List. See the GBFS wiki for a [comparison of a subset of standard licenses](data-licenses.md). If the license_id or license_url fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
+`license_url` | Conditionally required <br/>*(as of v3.0-RC)* | URL | Required if the dataset is  provided under a customized license. A fully qualified URL of a page that defines the license terms for the GBFS data for this system. Do not specify a `license_url` if `license_id` is specified. If the license_id or license_url fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode). *(as of v3.0-RC)*
+`attribution_organization_name` <br/>*(added in v3.0-RC)* | Optional | String | If the feed license requires attribution, name of the organization to which attribution should be provided.
+`attribution_url` <br/>*(added in v3.0-RC)* | Optional | URL | URL of the organization to which attribution should be provided.
 `rental_apps` <br/>*(added in v1.1)* | Optional | Object | Contains rental app information in the android and ios JSON objects.
 \-&nbsp;`android` <br/>*(added in v1.1)* | Optional | Object | Contains rental app download and app discovery information for the Android platform in the `store_uri` and `discovery_uri` fields. See [examples](#Examples) of how to use these fields and [supported analytics](#Analytics).
 &emsp;- `store_uri` <br/>*(added in v1.1)* | Conditionally Required | URI | URI where the rental Android app can be downloaded from. Typically this will be a URI to an app store such as Google Play. If the URI points to an app store such as Google Play, the URI should follow Android best practices so the viewing app can directly open the URI to the native app store app instead of a website. <br><br> If a `rental_uris`.`android` field is populated then this field is required, otherwise it is optional. <br><br>See the [Analytics](#Analytics) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Example value: `https://play.google.com/store/apps/details?id=com.abcrental.android`
@@ -286,8 +286,8 @@ Field Name | Required | Type | Defines
 `stations` | Yes | Array | Array that contains one object per station in the system as defined below.
 \-&nbsp;`station_id` | Yes | ID | Identifier of a station see [station_information.json](#station_informationjson).
 \-&nbsp;`num_bikes_available` | Yes | Non-negative integer | Number of bikes available for rental. Number of functional bikes physically at the station. To know if the bikes are available for rental, see `is_renting`.
-\-&nbsp;`num_bikes_disabled` | Optional | Non-negative integer | Number of disabled bikes at the station. Vendors who do not want to publicize the number of disabled bikes or docks in their system can opt to omit station capacity (in station_information), `num_bikes_disabled` and `num_docks_disabled` *(as of v2.0-RC)*. If station capacity is published, then broken docks/bikes can be inferred (though not specifically whether the decreased capacity is a broken bike or dock).
-\-&nbsp;`num_docks_available` | Conditionally required <br/>*(as of v2.0-RC)* | Non-negative integer | Required except for stations that have unlimited docking capacity (e.g. virtual stations) *(as of v2.0-RC)*. Number of functional docks physically at the station. To know if the docks are accepting bike returns, see `is_returning`.
+\-&nbsp;`num_bikes_disabled` | Optional | Non-negative integer | Number of disabled bikes at the station. Vendors who do not want to publicize the number of disabled bikes or docks in their system can opt to omit station capacity (in station_information), `num_bikes_disabled` and `num_docks_disabled` *(as of v2.0)*. If station capacity is published, then broken docks/bikes can be inferred (though not specifically whether the decreased capacity is a broken bike or dock).
+\-&nbsp;`num_docks_available` | Conditionally required <br/>*(as of v2.0)* | Non-negative integer | Required except for stations that have unlimited docking capacity (e.g. virtual stations) *(as of v2.0)*. Number of functional docks physically at the station. To know if the docks are accepting bike returns, see `is_returning`.
 \-&nbsp;`num_docks_disabled` | Optional | Non-negative integer | Number of empty but disabled dock points at the station.
 \-&nbsp;`is_installed` | Yes | Boolean | Is the station currently on the street? <br /><br />`true` - Station is installed on the street.<br />`false` - Station is not installed on the street.
 \-&nbsp;`is_renting` | Yes | Boolean | Is the station currently renting bikes? <br /><br />`true` - Station is renting bikes. Even if the station is empty, if it is set to allow rentals this value should be 1.<br /> `false` - Station is not renting bikes.
@@ -300,7 +300,7 @@ Describes bikes that are not at a station and are not currently in the middle of
 Field Name | Required | Type | Defines
 ---|---|---|---
 `bikes` | Yes | Array | Array that contains one object per bike that is currently stopped as defined below.
-\-&nbsp;`bike_id` | Yes | ID | Identifier of a bike, rotated to a random string, at minimum, after each trip to protect privacy *(as of v2.0-RC)*. Note: Persistent bike_id, published publicly, could pose a threat to individual traveler privacy.
+\-&nbsp;`bike_id` | Yes | ID | Identifier of a bike, rotated to a random string, at minimum, after each trip to protect privacy *(as of v2.0)*. Note: Persistent bike_id, published publicly, could pose a threat to individual traveler privacy.
 \-&nbsp;`lat` | Yes | Latitude | Latitude of the bike.
 \-&nbsp;`lon` | Yes | Longitude | Longitude of the bike.
 \-&nbsp;`is_reserved` | Yes | Boolean | Is the bike currently reserved? <br /><br /> `true` - Bike is currently reserved. <br /> `false` - Bike is not currently reserved.
