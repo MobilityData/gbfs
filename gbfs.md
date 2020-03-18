@@ -416,23 +416,24 @@ Field Name | Required | Type | Defines
 \-&nbsp;`last_updated` | Optional | Timestamp | Indicates the last time the info for the alert was updated.
 
 ### geofencing_zones.json
-Describes geofencing zones and their associated rules and attributes.
+Describes geofencing zones and their associated rules and attributes.<br />
+By default, no restrictions apply everywhere. Geofencing zones should be modeled according to restrictions rather than allowance. An operational area (outside of which vehicles cannot be used) should be define with a counterclockwise polygon, and a limitation area (in which vehicles can be used under certain restrictions) should be define with a clockwise polygon.
 
-Field Name                                       | Required | Type                      | Defines
------------------------------------------------- | ---------| ------------------------- | ---------------------------
-_`geofencing_zones`_                             | Yes      | GeoJSON FeatureCollection | A FeatureCollection (as described by the IETF (as described by the IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)). Each geofenced zone and its associated rules and attributes is described as an object within the array of features, as follows.
-\-&nbsp;`features`                               | Yes      | Array                     | Array of objects as defined below.
-&emsp;\-&nbsp;`type`                             | Yes      | String                    | “Feature” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
-&emsp;\-&nbsp;`geometry`                         | Yes      | GeoJSON Multipolygon      | A multipolygon that describes where rides might not be able to start, end, go through, or have other limitations. A clockwise arrangement of points defines the area enclosed by the polygon, while a counterclockwise order defines the area outside the polygon ([right-hand rule](https://tools.ietf.org/html/rfc7946#section-3.1.6)). All geofencing zones contained in this list are public (ie, can be shown on a map for public use).
-&emsp;\-&nbsp;`properties`                       | Yes      | Object                    | Properties: As defined below, describing travel allowances and limitations.
-&emsp;&emsp;\-&nbsp;`name`                       | Optional | String                    | Public name of the geofencing zone.
-&emsp;&emsp;\-&nbsp;`start`                      | Optional | Timestamp                 | Start time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
-&emsp;&emsp;\-&nbsp;`end`                        | Optional | Timestamp                 | End time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
-&emsp;&emsp;\-&nbsp;`rules`                      | Optional | Array                     | Array that contains one object per rule as defined below. <br /><br /> In the event of overlapping or colliding rule, the earlier defined rule (in order of the JSON file) takes precedence.
-&emsp;&emsp;&emsp;\-&nbsp;`vehicle_type_id`      | Optional | Array                     | Array of IDs of vehicle types for which any restrictions should be applied (see vehicle type definitions in [PR #136](https://github.com/NABSA/gbfs/pull/136)). If vehicle_type_ids are not specified, then restrictions apply to all vehicle types.
-&emsp;&emsp;&emsp;\-&nbsp;`ride_allowed`         | Optional | Boolean                   | Is the undocked (“free bike”) ride allowed to start and end in this zone? <br /><br /> `1` - Undocked (“free bike”) ride can start and end in this zone. <br /> `0` - Undocked (“free bike”) ride cannot start and end in this zone.
-&emsp;&emsp;&emsp;\-&nbsp;`ride_through_allowed` | Optional | Boolean                   | Is the ride allowed to travel through this zone? <br /><br /> `1` - Ride can travel through this zone. <br /> `0` - Ride cannot travel through this zone.
-&emsp;&emsp;&emsp;\-&nbsp;`maximum_speed_kph`    | Optional | Non-negative Integer      | What is the maximum speed allowed, in kilometers per hour? <br /><br /> If there is no maximum speed to observe, this can be omitted.
+Field Name | Required | Type | Defines
+---|---|---|---
+`geofencing_zones` | Yes | GeoJSON FeatureCollection | A FeatureCollection (as described by the IETF (as described by the IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)). Each geofenced zone and its associated rules and attributes is described as an object within the array of features, as follows.
+\-&nbsp;`features` | Yes | Array | Array of objects as defined below.
+&emsp;\-&nbsp;`type` | Yes | String | “Feature” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
+&emsp;\-&nbsp;`geometry` | Yes | GeoJSON Multipolygon | A polygon that describes where rides might not be able to start, end, go through, or have other limitations. A clockwise arrangement of points defines the area enclosed by the polygon, while a counterclockwise order defines the area outside the polygon ([right-hand rule](https://tools.ietf.org/html/rfc7946#section-3.1.6)). All geofencing zones contained in this list are public (ie, can be shown on a map for public use).
+&emsp;\-&nbsp;`properties` | Yes | Object | Properties: As defined below, describing travel allowances and limitations.
+&emsp;&emsp;\-&nbsp;`name` | Optional | String | Public name of the geofencing zone.
+&emsp;&emsp;\-&nbsp;`start` | Optional | Timestamp | Start time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
+&emsp;&emsp;\-&nbsp;`end` | Optional | Timestamp | End time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
+&emsp;&emsp;\-&nbsp;`rules` | Optional | Array | Array that contains one object per rule as defined below. <br /><br /> In the event of overlapping or colliding rule, the earlier defined rule (in order of the JSON file) takes precedence.
+&emsp;&emsp;&emsp;\-&nbsp;`vehicle_type_id` | Optional | Array | Array of IDs of vehicle types for which any restrictions should be applied (see vehicle type definitions in [PR #136](https://github.com/NABSA/gbfs/pull/136)). If vehicle_type_ids are not specified, then restrictions apply to all vehicle types.
+&emsp;&emsp;&emsp;\-&nbsp;`ride_allowed` | Required | Boolean | Is the undocked (“free bike”) ride allowed to start and end in this zone? <br /><br /> `1` - Undocked (“free bike”) ride can start and end in this zone. <br /> `0` - Undocked (“free bike”) ride cannot start and end in this zone.
+&emsp;&emsp;&emsp;\-&nbsp;`ride_through_allowed` | Required | Boolean | Is the ride allowed to travel through this zone? <br /><br /> `1` - Ride can travel through this zone. <br /> `0` - Ride cannot travel through this zone.
+&emsp;&emsp;&emsp;\-&nbsp;`maximum_speed_kph` | Optional | Non-negative Integer | What is the maximum speed allowed, in kilometers per hour? <br /><br /> If there is no maximum speed to observe, this can be omitted.
 
 ## Deep Links *(added in v1.1)*
 
