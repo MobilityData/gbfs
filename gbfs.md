@@ -361,8 +361,8 @@ Field Name | Required | Type | Defines
 `stations` | Yes | Array | Array that contains one object per station in the system as defined below.
 \-&nbsp;`station_id` | Yes | ID | Identifier of a station see [station_information.json](#station_informationjson).
 \-&nbsp;`num_bikes_available` | Yes | Non-negative integer | Number of vehicles of any type available for rental. Number of functional vehicles physically at the station. To know if the vehicles are available for rental, see `is_renting`.
-\-&nbsp;`num_bikes_disabled` | Optional | Non-negative integer | Number of disabled vehicles of any type at the station. Vendors who do not want to publicize the number of disabled vehicles or docks in their system can opt to omit station capacity (in station_information), `num_bikes_disabled` and `num_docks_disabled` *(as of v2.0)*. If station capacity is published then broken docks/vehciles can be inferred (though not specifically whether the decreased capacity is a broken vehicle or dock).
-\-&nbsp;`num_docks_available` | Yes<br/> Conditionally required *(as of v2.0)* | Non-negative integer | Required except for stations that have unlimited docking capacity (e.g. virtual stations) *(as of v2.0)*. Number of functional docks physically at the station. To know if the docks are accepting vehicle returns, see `is_returning`.
+\-&nbsp;`num_bikes_disabled` | Optional | Non-negative integer | Number of disabled vehicles of any type at the station. Vendors who do not want to publicize the number of disabled vehicles or docks in their system can opt to omit station capacity (in station_information), `num_bikes_disabled` and `num_docks_disabled` *(as of v2.0)*. If station capacity is published, then broken docks/vehciles can be inferred (though not specifically whether the decreased capacity is a broken vehicle or dock).
+\-&nbsp;`num_docks_available` | Conditionally required <br/>*(as of v2.0)* | Non-negative integer | Required except for stations that have unlimited docking capacity (e.g. virtual stations) *(as of v2.0)*. Number of functional docks physically at the station. To know if the docks are accepting vehicle returns, see `is_returning`.
 \-&nbsp;`num_docks_disabled` | Optional | Non-negative integer | Number of empty but disabled dock points at the station.
 \-&nbsp;`is_installed` | Yes | Boolean | Is the station currently on the street? <br /><br />`true` - Station is installed on the street.<br />`false` - Station is not installed on the street.
 \-&nbsp;`is_renting` | Yes | Boolean | Is the station currently renting vehicles? <br /><br />`true` - Station is renting vehicles. Even if the station is empty, if it is set to allow rentals this value should be `true`.<br /> `false` - Station is not renting vehicles.
@@ -372,7 +372,7 @@ Field Name | Required | Type | Defines
 &emsp;\- `vehicle_type_ids` | Yes | Array of Strings | An array of strings where each string represents a vehicle_type_id that is able to use a particular type of dock at the station
 &emsp;\- `count` | Yes | Non-negative integer | A number representing the total number of available docks at the station that can accept vehicles of the specified types in the `vehicle_types` array.
 \- `vehicles` | Conditionally Required | Array | This field is required if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field's value is an array of objects. Each object contains data about a specific vehicle that is currently present at the docking station. Each of these vehicles is assumed to be rentable unless otherwise indicated with the is_reserved or is_disabled flags. All of the remaining fields in this table represent key/values for each vehicle object in this array. The length of this array must equal the value of the `num_bikes_available` field.
-&emsp;\- `bike_id` | Yes | ID | Identifier of this vehicle. *Beta (v2.0-RC):* Identifier of this vehicle, rotated to a random string, at minimum, after each trip to protect privacy. Note: Persistent bike_id, published publicly, could pose a threat to individual traveler privacy.
+&emsp;\- `bike_id` | Yes | ID | Identifier of a vehicle, rotated to a random string, at minimum, after each trip to protect privacy *(as of v2.0)*. Note: Persistent bike_id, published publicly, could pose a threat to individual traveler privacy.
 &emsp;\- `is_reserved` | Yes | Boolean | Is the vehicle currently reserved for someone else
 &emsp;\- `is_disabled` | Yes | Boolean | Is the vehicle currently disabled (broken)
 &emsp;\- `vehicle_type_id` | Yes | ID | The vehicle_type_id of this vehicle as described in [vehicle_types.json](#vehicle_typesjson).
@@ -446,7 +446,7 @@ Describes vehicles that are not at a station and are not currently in the middle
 Field Name | Required | Type | Defines
 ---|---|---|---
 `bikes` | Yes | Array | Array that contains one object per vehicle that is currently stopped as defined below.
-\-&nbsp;`bike_id` | Yes | ID | Identifier of this vehicle, rotated to a random string, at minimum, after each trip to protect privacy. Note: Persistent bike_id, published publicly, could pose a threat to individual traveler privacy. *(as of v2.0)*
+\-&nbsp;`bike_id` | Yes | ID | Identifier of a vehicle, rotated to a random string, at minimum, after each trip to protect privacy *(as of v2.0)*. Note: Persistent bike_id, published publicly, could pose a threat to individual traveler privacy.
 \-&nbsp;`lat` | Yes | Latitude | Latitude of the vehicle.
 \-&nbsp;`lon` | Yes | Longitude | Longitude of the vehicle.
 \-&nbsp;`is_reserved` | Yes | Boolean | Is the vehicle currently reserved? <br /><br /> `true` - Vehicle is currently reserved. <br /> `false` - Vehicle is not currently reserved.
