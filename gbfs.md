@@ -264,7 +264,7 @@ Field Name | Required | Type | Defines
 The following fields are all attributes within the main "data" object for this feed.
 
 Field Name | Required | Type | Defines
---|--|--|--
+---|---|---|---
 `vehicle_types` | Yes | Array | Array that contains one object per vehicle type in the system as defined below
 \- `vehicle_type_id` | Yes | ID | Unique identifier of a vehicle type. See [Field Definitions](#field-definitions) above for ID field requirements
 \- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`car`</li><li>`moped`</li><li>`other`</li><li>`scooter`</li></ul>
