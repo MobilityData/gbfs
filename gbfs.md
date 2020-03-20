@@ -278,7 +278,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 0,
-  "version": "1.0",
+  "version": "3.0",
   "data": {
     "vehicle_types": [
       {
@@ -335,7 +335,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 0,
-  "version": "1.0",
+  "version": "3.0",
   "data": {
     "stations": [
       {
@@ -385,7 +385,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 0,
-  "version": "1.0",
+  "version": "3.0",
   "data": {
     "stations": [
       {
@@ -465,7 +465,7 @@ Example:
 {
   "last_updated": 1434054678,
   "ttl": 0,
-  "version": "1.0",
+  "version": "3.0",
   "data": {
     "bikes": [
       {
