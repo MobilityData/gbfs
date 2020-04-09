@@ -421,7 +421,8 @@ By default, no restrictions apply everywhere. Geofencing zones should be modeled
 
 Field Name | Required | Type | Defines
 ---|---|---|---
-`geofencing_zones` | Yes | GeoJSON FeatureCollection | A FeatureCollection (as described by the IETF (as described by the IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)). Each geofenced zone and its associated rules and attributes is described as an object within the array of features, as follows.
+`geofencing_zones` | Yes | GeoJSON FeatureCollection | A FeatureCollection (as described by the IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)). Each geofenced zone and its associated rules and attributes is described as an object within the array of features, as follows.
+\-&nbsp;`type` | Yes | String | “FeatureCollection” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
 \-&nbsp;`features` | Yes | Array | Array of objects as defined below.
 &emsp;\-&nbsp;`type` | Yes | String | “Feature” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
 &emsp;\-&nbsp;`geometry` | Yes | GeoJSON Multipolygon | A polygon that describes where rides might not be able to start, end, go through, or have other limitations. A clockwise arrangement of points defines the area enclosed by the polygon, while a counterclockwise order defines the area outside the polygon ([right-hand rule](https://tools.ietf.org/html/rfc7946#section-3.1.6)). All geofencing zones contained in this list are public (ie, can be shown on a map for public use).
