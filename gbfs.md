@@ -18,7 +18,7 @@ This documentation refers to **v3.0-RC (release candidate)**. For past and upcom
     * [system_information.json](#system_informationjson)
     * [station_information.json](#station_informationjson)
     * [station_status.json](#station_statusjson)
-    * [free_bike_status.json](#free_bike_statusjson)
+    * [free_vehicle_status.json](#free_vehicle_statusjson)
     * [system_hours.json](#system_hoursjson)
     * [system_calendar.json](#system_calendarjson)
     * [system_regions.json](#system_regionsjson)
@@ -63,8 +63,8 @@ gbfs.json | Yes <br/>*(as of v2.0)* | Auto-discovery file that links to all of t
 gbfs_versions.json <br/>*(added in v1.1)* | Optional | Lists all feed endpoints published according to versions of the GBFS documentation.
 system_information.json | Yes | Details including system operator, system location, year implemented, URL, contact info, time zone.
 station_information.json | Conditionally required | List of all stations, their capacities and locations. Required of systems utilizing docks.
-station_status.json | Conditionally required | Number of available bikes and docks at each station and station availability. Required of systems utilizing docks.
-free_bike_status.json | Conditionally required | Bikes that are available for rent. Required of systems that offer bikes for rent outside of stations.
+station_status.json | Conditionally required | Number of available vehicles and docks at each station and station availability. Required of systems utilizing docks.
+free_vehicle_status.json | Conditionally required | Vehicles that are available for rent. Required of systems that offer vehicles for rent outside of stations.
 system_hours.json | Optional | Hours of operation for the system.
 system_calendar.json | Optional | Dates of operation for the system.
 system_regions.json | Optional | Regions the system is broken up into.
@@ -111,7 +111,7 @@ Example: The `rental_methods` field contains values `CREDITCARD`, `PAYPASS`, etc
 	* must be unique within like fields (e.g. `station_id` must be unique among stations)
 	* does not have to be globally unique, unless otherwise specified
 	* must not contain spaces
-	* should be persistent for a given entity (station, plan, etc). An exception is floating bike `bike_id`, which should not be persistent for privacy reasons (see `free_bike_status.json`). *(as of v2.0)*
+	* should be persistent for a given entity (station, plan, etc). An exception is floating vehicle `vehicle_id`, which should not be persistent for privacy reasons (see `free_vehicle_status.json`). *(as of v2.0)*
 * String - Can only contain text. Strings must not contain any formatting codes (including HTML) other than newlines.
 * Language - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to http://www.rfc-editor.org/rfc/bcp/bcp47.txt and http://www.w3.org/International/articles/language-tags/.
 Examples: `en` for English, `en-US` for American English, or `de` for German.
@@ -232,12 +232,12 @@ The following fields are all attributes within the main "data" object for this f
 
 Field Name | Required | Type | Defines
 ---|---|---|---
-`system_id` | Yes | ID | Identifier for this bike share system. This should be globally unique (even between different systems) - for example,  `bcycle_austin` or `biketown_pdx`. It is up to the publisher of the feed to guarantee uniqueness. This value is intended to remain the same over the life of the system.
+`system_id` | Yes | ID | Identifier for this vehicle share system. This should be globally unique (even between different systems) - for example,  `bcycle_austin` or `biketown_pdx`. It is up to the publisher of the feed to guarantee uniqueness. This value is intended to remain the same over the life of the system.
 `language` | Yes | Language | The language that will be used throughout the rest of the files. It must match the value in the [gbfs.json](#gbfsjson) file.
 `name` | Yes | String | Name of the system to be displayed to customers.
 `short_name` | Optional | String | Optional abbreviation for a system.
 `operator` | Optional | String | Name of the operator.
-`url` | Optional | URL | The URL of the bike share system.
+`url` | Optional | URL | The URL of the vehicle share system.
 `purchase_url` | Optional | URL | URL where a customer can purchase a membership.
 `start_date` | Optional | Date | Date that the system began operations.
 `phone_number` | Optional | Phone Number | A single voice telephone number for the specified system that presents the telephone number as typical for the system's service area. It can and should contain punctuation marks to group the digits of the number. Dialable text (for example, Capital Bikeshare’s "877-430-BIKE") is permitted, but the field must not contain any other descriptive text.
@@ -285,30 +285,30 @@ Field Name | Required | Type | Defines
 ---|---|---|---
 `stations` | Yes | Array | Array that contains one object per station in the system as defined below.
 \-&nbsp;`station_id` | Yes | ID | Identifier of a station see [station_information.json](#station_informationjson).
-\-&nbsp;`num_bikes_available` | Yes | Non-negative integer | Number of bikes available for rental. Number of functional bikes physically at the station. To know if the bikes are available for rental, see `is_renting`.
-\-&nbsp;`num_bikes_disabled` | Optional | Non-negative integer | Number of disabled bikes at the station. Vendors who do not want to publicize the number of disabled bikes or docks in their system can opt to omit station capacity (in station_information), `num_bikes_disabled` and `num_docks_disabled` *(as of v2.0)*. If station capacity is published, then broken docks/bikes can be inferred (though not specifically whether the decreased capacity is a broken bike or dock).
-\-&nbsp;`num_docks_available` | Conditionally required <br/>*(as of v2.0)* | Non-negative integer | Required except for stations that have unlimited docking capacity (e.g. virtual stations) *(as of v2.0)*. Number of functional docks physically at the station. To know if the docks are accepting bike returns, see `is_returning`.
+\-&nbsp;`num_vehicles_available` | Yes | Non-negative integer | Number of vehicles available for rental. Number of functional vehicles physically at the station. To know if the vehicles are available for rental, see `is_renting`.
+\-&nbsp;`num_vehicles_disabled` | Optional | Non-negative integer | Number of disabled vehicles at the station. Vendors who do not want to publicize the number of disabled vehicles or docks in their system can opt to omit station capacity (in station_information), `num_vehicles_disabled` and `num_docks_disabled` *(as of v2.0)*. If station capacity is published, then broken docks/vehicles can be inferred (though not specifically whether the decreased capacity is a broken vehicle or dock).
+\-&nbsp;`num_docks_available` | Conditionally required <br/>*(as of v2.0)* | Non-negative integer | Required except for stations that have unlimited docking capacity (e.g. virtual stations) *(as of v2.0)*. Number of functional docks physically at the station. To know if the docks are accepting vehicle returns, see `is_returning`.
 \-&nbsp;`num_docks_disabled` | Optional | Non-negative integer | Number of empty but disabled dock points at the station.
 \-&nbsp;`is_installed` | Yes | Boolean | Is the station currently on the street? <br /><br />`true` - Station is installed on the street.<br />`false` - Station is not installed on the street.
-\-&nbsp;`is_renting` | Yes | Boolean | Is the station currently renting bikes? <br /><br />`true` - Station is renting bikes. Even if the station is empty, if it is set to allow rentals this value should be 1.<br /> `false` - Station is not renting bikes.
-\-&nbsp;`is_returning` | Yes | Boolean | Is the station accepting bike returns? <br /><br />`true` - Station is accepting bike returns. If a station is full but would allow a return if it was not full, then this value should be 1.<br /> `false` - Station is not accepting bike returns.
+\-&nbsp;`is_renting` | Yes | Boolean | Is the station currently renting vehicles? <br /><br />`true` - Station is renting vehicles. Even if the station is empty, if it is set to allow rentals this value should be 1.<br /> `false` - Station is not renting vehicles.
+\-&nbsp;`is_returning` | Yes | Boolean | Is the station accepting vehicle returns? <br /><br />`true` - Station is accepting vehicle returns. If a station is full but would allow a return if it was not full, then this value should be 1.<br /> `false` - Station is not accepting vehicle returns.
 \-&nbsp;`last_reported` | Yes | Timestamp | The last time this station reported its status.
 
-### free_bike_status.json
-Describes bikes that are not at a station and are not currently in the middle of an active ride.
+### free_vehicle_status.json
+Describes vehicles that are not at a station and are not currently in the middle of an active ride.
 
 Field Name | Required | Type | Defines
 ---|---|---|---
-`bikes` | Yes | Array | Array that contains one object per bike that is currently stopped as defined below.
-\-&nbsp;`bike_id` | Yes | ID | Identifier of a bike, rotated to a random string, at minimum, after each trip to protect privacy *(as of v2.0)*. Note: Persistent bike_id, published publicly, could pose a threat to individual traveler privacy.
-\-&nbsp;`lat` | Yes | Latitude | Latitude of the bike.
-\-&nbsp;`lon` | Yes | Longitude | Longitude of the bike.
-\-&nbsp;`is_reserved` | Yes | Boolean | Is the bike currently reserved? <br /><br /> `true` - Bike is currently reserved. <br /> `false` - Bike is not currently reserved.
-\-&nbsp;`is_disabled` | Yes | Boolean | Is the bike currently disabled (broken)? <br /><br /> `true` - Bike is currently disabled. <br /> `false` - Bike is not currently disabled.
+`vehicles` | Yes | Array | Array that contains one object per vehicle that is currently stopped as defined below.
+\-&nbsp;`vehicle_id` | Yes | ID | Identifier of a vehicle, rotated to a random string, at minimum, after each trip to protect privacy *(as of v2.0)*. Note: Persistent vehicle_id, published publicly, could pose a threat to individual traveler privacy.
+\-&nbsp;`lat` | Yes | Latitude | Latitude of the vehicle.
+\-&nbsp;`lon` | Yes | Longitude | Longitude of the vehicle.
+\-&nbsp;`is_reserved` | Yes | Boolean | Is the vehicle currently reserved? <br /><br /> `true` - Vehicle is currently reserved. <br /> `false` - Vehicle is not currently reserved.
+\-&nbsp;`is_disabled` | Yes | Boolean | Is the vehicle currently disabled (broken)? <br /><br /> `true` - Vehicle is currently disabled. <br /> `false` - Vehicle is not currently disabled.
 \-&nbsp;`rental_uris` <br/>*(added in v1.1)* | Optional | Object | JSON object that contains rental URIs for Android, iOS, and web in the android, ios, and web fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
-&emsp;\-&nbsp;`android` <br/>*(added in v1.1)* | Optional | URI | URI that can be passed to an Android app with an android.intent.action.VIEW Android intent to support Android Deep Links (https://developer.android.com/training/app-links/deep-linking). Please use Android App Links (https://developer.android.com/training/app-links) if possible so viewing apps don’t need to manually manage the redirect of the user to the app store if the user doesn’t have the application installed. <br><br>This URI should be a deep link specific to this bike, and should not be a general rental page that includes information for more than one bike. The deep link should take users directly to this bike, without any prompts, interstitial pages, or logins. Make sure that users can see this bike even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported in the native Android rental app. <br><br>Note that URIs do not necessarily include the bike_id for this bike - other identifiers can be used by the rental app within the URI to uniquely identify this bike. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Android App Links example value: `https://www.abc.com/app?sid=1234567890&platform=android` <br><br>Deep Link (without App Links) example value: `com.abcrental.android://open.abc.app/app?sid=1234567890`
-&emsp;\-&nbsp;`ios` <br/>*(added in v1.1)* | Optional | URI | URI that can be used on iOS to launch the rental app for this bike. More information on this iOS feature can be found [here](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/communicating_with_other_apps_using_custom_urls?language=objc). Please use iOS Universal Links (https://developer.apple.com/ios/universal-links/) if possible so viewing apps don’t need to manually manage the redirect of the user to the app store if the user doesn’t have the application installed. <br><br>This URI should be a deep link specific to this bike, and should not be a general rental page that includes information for more than one bike.  The deep link should take users directly to this bike, without any prompts, interstitial pages, or logins. Make sure that users can see this bike even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported in the native iOS rental app. <br><br>Note that the URI does not necessarily include the bike_id - other identifiers can be used by the rental app within the URL to uniquely identify this bike. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>iOS Universal Links example value: `https://www.abc.com/app?sid=1234567890&platform=ios` <br><br>Deep Link (without Universal Links) example value: `com.abcrental.ios://open.abc.app/app?sid=1234567890`
-&emsp;\-&nbsp;`web` <br/>*(added in v1.1)* | Optional | URL | URL that can be used by a web browser to show more information about renting a vehicle at this bike. <br><br>This URL should be a deep link specific to this bike, and should not be a general rental page that includes information for more than one bike.  The deep link should take users directly to this bike, without any prompts, interstitial pages, or logins. Make sure that users can see this bike even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported for web browsers. <br><br>Example value: `https://www.abc.com/app?sid=1234567890`
+&emsp;\-&nbsp;`android` <br/>*(added in v1.1)* | Optional | URI | URI that can be passed to an Android app with an android.intent.action.VIEW Android intent to support Android Deep Links (https://developer.android.com/training/app-links/deep-linking). Please use Android App Links (https://developer.android.com/training/app-links) if possible so viewing apps don’t need to manually manage the redirect of the user to the app store if the user doesn’t have the application installed. <br><br>This URI should be a deep link specific to this vehicle, and should not be a general rental page that includes information for more than one vehicle. The deep link should take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported in the native Android rental app. <br><br>Note that URIs do not necessarily include the vehicle_id for this vehicle - other identifiers can be used by the rental app within the URI to uniquely identify this vehicle. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Android App Links example value: `https://www.abc.com/app?sid=1234567890&platform=android` <br><br>Deep Link (without App Links) example value: `com.abcrental.android://open.abc.app/app?sid=1234567890`
+&emsp;\-&nbsp;`ios` <br/>*(added in v1.1)* | Optional | URI | URI that can be used on iOS to launch the rental app for this vehicle. More information on this iOS feature can be found [here](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/communicating_with_other_apps_using_custom_urls?language=objc). Please use iOS Universal Links (https://developer.apple.com/ios/universal-links/) if possible so viewing apps don’t need to manually manage the redirect of the user to the app store if the user doesn’t have the application installed. <br><br>This URI should be a deep link specific to this vehicle, and should not be a general rental page that includes information for more than one vehicle.  The deep link should take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported in the native iOS rental app. <br><br>Note that the URI does not necessarily include the vehicle_id - other identifiers can be used by the rental app within the URL to uniquely identify this vehicle. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>iOS Universal Links example value: `https://www.abc.com/app?sid=1234567890&platform=ios` <br><br>Deep Link (without Universal Links) example value: `com.abcrental.ios://open.abc.app/app?sid=1234567890`
+&emsp;\-&nbsp;`web` <br/>*(added in v1.1)* | Optional | URL | URL that can be used by a web browser to show more information about renting a vehicle at this vehicle. <br><br>This URL should be a deep link specific to this vehicle, and should not be a general rental page that includes information for more than one vehicle.  The deep link should take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported for web browsers. <br><br>Example value: `https://www.abc.com/app?sid=1234567890`
 
 ### system_hours.json
 Describes the system hours of operation.
@@ -410,7 +410,7 @@ Field Name | Required | Type | Defines
 
 ## Deep Links *(added in v1.1)*
 
-Deep links to iOS, Android, and web apps are supported via URIs in the `system_information.json`, `station_information.json`, and `free_bike_status.json` files. The following sections describe how analytics can be added to these URIs, as well as some examples.
+Deep links to iOS, Android, and web apps are supported via URIs in the `system_information.json`, `station_information.json`, and `free_vehicle_status.json` files. The following sections describe how analytics can be added to these URIs, as well as some examples.
 
 ### Analytics *(added in v1.1)*
 

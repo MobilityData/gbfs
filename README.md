@@ -1,12 +1,12 @@
 # General Bikeshare Feed Specification
-Documentation for the General Bikeshare Feed Specification, a standardized data feed for bike share system availability.
+Documentation for the General Bikeshare Feed Specification, a standardized data feed for shared mobility system availability.
 
 ## What is GBFS?
-The General Bikeshare Feed Specification, known as GBFS, is the open data standard for bikeshare. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.
+The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.
 
-Under the [North American Bikeshare Association’s](http://www.nabsa.net) leadership, GBFS has been developed by public, private sector and non-profit bike share system owners and operators, application developers, and technology vendors.
+Under the [North American Bikeshare Association’s](http://www.nabsa.net) leadership, GBFS has been developed by public, private sector and non-profit shared mobility system owners and operators, application developers, and technology vendors.
 
- GBFS is intended as a specification for real-time, read-only data - any data being written back into individual bikeshare systems are excluded from this spec.
+ GBFS is intended as a specification for real-time, read-only data - any data being written back into individual shared mobility systems are excluded from this spec.
 
 The specification has been designed with the following concepts in mind:
 *	Provide the status of the system at this moment
@@ -30,7 +30,7 @@ The data in the specification contained in this document is intended for consump
   * [#181](https://github.com/NABSA/gbfs/pull/181) - Add `feed_contact_email` field to `system_information.json`
   * [#188](https://github.com/NABSA/gbfs/pull/188) - GBFS documentation versioning and and feed conformance (adds `gbfs_versions.json`)
 * **[v2.0-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/v2.0-RC/gbfs.md)**
-  * [#182](https://github.com/NABSA/gbfs/pull/182) - Require license\_url, add attribution fields 
+  * [#182](https://github.com/NABSA/gbfs/pull/182) - Require license\_url, add attribution fields
   * [#189](https://github.com/NABSA/gbfs/pull/189) - Require autodiscovery gbfs.json file, define feed names
   * [#195](https://github.com/NABSA/gbfs/pull/195) - Clarify num\_bikes\_available and num\_docks\_available
   * [#196](https://github.com/NABSA/gbfs/pull/196) - Change boolean from 1/0 to true/false
@@ -41,11 +41,11 @@ The data in the specification contained in this document is intended for consump
   * [#196](https://github.com/NABSA/gbfs/pull/196) - Change boolean from 1/0 to true/false
   * [#147](https://github.com/NABSA/gbfs/pull/147) - Rotate bike\_id on free\_bike\_status
 * **[v3.0-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md)**
-  * [#182](https://github.com/NABSA/gbfs/pull/182) - Require license\_url, add attribution fields 
+  * [#182](https://github.com/NABSA/gbfs/pull/182) - Require license\_url, add attribution fields
 
 ## Overview of the Change Process
 GBFS is an open specification, developed and maintained by the community of producers and consumers of GBFS data.
-The specification is not fixed or unchangeable. As the bikeshare industry evolves, it is expected that the specification will be extended by the GBFS community to include new features and capabilities over time. To manage the change process, the following guidelines have been established.
+The specification is not fixed or unchangeable. As the shared mobility industry evolves, it is expected that the specification will be extended by the GBFS community to include new features and capabilities over time. To manage the change process, the following guidelines have been established.
 
 The general outline for changing the spec has 4 steps:
 1.	Propose a change by opening an issue at the GBFS GitHub repository.
@@ -64,7 +64,7 @@ Examples of breaking changes include:
 * Changing the data type or semantics of an existing field
 
 Examples of non-breaking changes include:
- 
+
 * Adding or removing an optional endpoint or field
 * Adding or removing enum values
 * Modifying documentation or spec language in a way that clarifies semantics or recommended practices
@@ -86,16 +86,16 @@ To preserve the original vision of GBFS, the following guiding principles should
 
 * **GBFS is a specification for real-time or semi-real-time, read-only data.**
 The spec is not intended for historical or archival data such as trip records.
-The spec is about public information intended for bikeshare users.
+The spec is about public information intended for shared mobility users.
 
-* **GBFS is targeted at providing transit information to the bikeshare end user.**
- Its primary purpose is to power tools for riders that will make bikesharing more accessible to users.  GBFS is about public information. Producers and owners of GBFS data should take licensing and discoverability into account when publishing GBFS feeds.
+* **GBFS is targeted at providing transit information to the shared mobility end user.**
+ Its primary purpose is to power tools for riders that will make shared mobility more accessible to users.  GBFS is about public information. Producers and owners of GBFS data should take licensing and discoverability into account when publishing GBFS feeds.
 
 * **Changes to the spec should be backwards-compatible, when possible.**
 Caution should be taken to avoid making changes to the spec that would render existing feeds invalid.
 
 * **Speculative features are discouraged.**
-Each new addition to the spec adds complexity. We want to avoid additions to the spec that do not provide additional value to the bikeshare end user.
+Each new addition to the spec adds complexity. We want to avoid additions to the spec that do not provide additional value to the shared mobility end user.
 
 ## Systems Implementing GBFS
 This list contains all known systems publishing GBFS feeds and is maintained by the GBFS community. If you have or are aware of a system that doesn’t appear on the list please add it.
@@ -108,4 +108,4 @@ If you would like to add a system, please fork this repository and submit a pull
 Including APIs, datasets, validators, research, and software can be found [here](https://github.com/NABSA/micromobility-tools-and-resources).
 
 ## Copyright
-The copyright for GBFS is held by the [North American Bikeshare Association](https://nabsa.net/). 
+The copyright for GBFS is held by the [North American Bikeshare Association](https://nabsa.net/).
