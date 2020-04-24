@@ -41,7 +41,7 @@ GBFS Best Practice defines that:<br />
 
 _GBFS producers_ should provide endpoints that conform to both the current specification long term support (LTS) branch as well as the latest release branch within at least 3 months of a new spec _MAJOR_ or _MINOR_ version release. It is not necessary to support more than one _MINOR_ release of the same _MAJOR_ release group because _MINOR_ releases are backwards-compatible. See [specification versioning](https://github.com/NABSA/gbfs/blob/master/README.md#specification-versioning)<br />
 
-_GBFS consumers_ should, at a minumum, support the current LTS branch. It highly recommended that GBFS consumers support later releases.<br />
+_GBFS consumers_ should, at a minimum, support the current LTS branch. It highly recommended that GBFS consumers support later releases.<br />
 
 Default GBFS feed URLs, e.g. `https://www.example.com/data/gbfs.json` or `https://www.example.com/data/fr/system_information.json` must direct consumers to the feed that conforms to the current LTS documentation branch.
 
