@@ -103,6 +103,7 @@ system_alerts.json | Optional | Current system alerts.
 * Object - A JSON element consisting of key-value pairs (fields).
 * Boolean - One of two possible values, `true`or `false`. Boolean values must be JSON booleans, not strings (i.e. `true` or `false`, not `"true"` or `"false"`). *(as of v2.0)*
 * Date - Service day in the YYYY-MM-DD format. Example: `2019-09-13` for September 13th, 2019.
+* Time - Service time in the HH:MM:SS format. Example: `21:20:02` or `01:58:00`
 * Email - An email address. Example: `example@example.com`
 * Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column.
 Example: The `rental_methods` field contains values `CREDITCARD`, `PAYPASS`, etc...
