@@ -264,7 +264,7 @@ Field Name | Required | Type | Defines
 `stations` | Yes | Array | Array that contains one object per station as defined below.
 \-&nbsp;`station_id` | Yes | ID | Identifier of a station.
 \-&nbsp;`name` | Yes | String | Public name of the station.
-\-&nbsp;`short_name` | No | String | Short name or other type of identifier.
+\-&nbsp;`short_name` | Optional | String | Short name or other type of identifier.
 \-&nbsp;`lat` | Yes | Latitude | The latitude of station.
 \-&nbsp;`lon` | Yes | Longitude | The longitude of station.
 \-&nbsp;`address` | Optional | String | Address (street number and name) where station is located. This must be a valid address, not a free-form text description (see "cross_street" below).
