@@ -25,6 +25,7 @@ This documentation refers to **v3.0-RC (release candidate)**. For past and upcom
     * [system_regions.json](#system_regionsjson)
     * [system_pricing_plans.json](#system_pricing_plansjson)
     * [system_alerts.json](#system_alertsjson)
+    * [geofencing_zones.json](#geofencing_zonesjson) *(added in v2.1-RC)*
 * [Deep Links - Analytics and Examples](#deep-links-added-in-v11) *(added in v1.1)*
 
 ## Introduction
@@ -73,6 +74,7 @@ system_calendar.json | Optional | Dates of operation for the system.
 system_regions.json | Optional | Regions the system is broken up into.
 system_pricing_plans.json | Optional | System pricing scheme.
 system_alerts.json | Optional | Current system alerts.
+geofencing_zones.json <br/>*(added in v2.1-RC)* | Optional | Geofencing zones and their associated rules and attributes.    
 
 ## File Requirements
 * All files should be valid JSON
@@ -323,7 +325,11 @@ Field Name | Required | Type | Defines
 \-&nbsp;`region_id` | Optional | ID | Identifier of the region where station is located. See [system_regions.json](#system_regionsjson).
 \-&nbsp;`post_code` | Optional | String | Postal code where station is located.
 \-&nbsp;`rental_methods` | Optional | Array | Payment methods accepted at this station. <br /> Current valid values are:<br /> <ul><li>`KEY` (e.g. operator issued vehicle key / fob / card)</li><li>`CREDITCARD`</li><li>`PAYPASS`</li><li>`APPLEPAY`</li><li>`ANDROIDPAY`</li><li>`TRANSITCARD`</li><li>`ACCOUNTNUMBER`</li><li>`PHONE`</li></ul>
-\-&nbsp;`capacity` | Optional | Non-negative integer | Number of total docking points installed at this station, both available and unavailable, regardless of what vehicle types are allowed at each dock.
+\-&nbsp;`is_virtual_station` <br/>*(added in v2.1-RC)* | Optional | Boolean | Is this station a location with or without physical infrastructures (docks)? <br /><br /> `1` - The station is a location without physical infrastructure, defined by a point (lat/lon) and/or station_area (below). <br /> `0` - The station consists of physical infrastructure (docks). <br /><br /> If this field is empty, it means the station consists of physical infrastructure (docks).
+\-&nbsp;`station_area` <br/>*(added in v2.1-RC)* | Optional | GeoJSON Multipolygon | A multipolygon that describes the area of a virtual station. If station_area is supplied then the  record describes a virtual station. <br /><br /> If lat/lon and 'station_area' are both defined, the lat/lon is the significant coordinate of the station (e.g. dock facility or valet drop-off and pick up point).
+\-&nbsp;`capacity` | Optional | Non-negative integer | Number of total docking points installed at this station, both available and unavailable, regardless of what vehicle types are allowed at each dock. Empty indicates unlimited capacity.
+\-&nbsp;`vehicle_capacity` <br/>*(added in v2.1-RC)* | Optional | ID | An object where each key is a vehicle_type_id as described in [vehicle_types.json](#vehicle_typesjson) and the value is a number representing the total number of vehicles of this type that can park within the area defined in the station_area field. If the field station_area is defined and a particular vehicle type id is not defined in this object, then an unlimited virtual capacity is assumed for that vehicle type.
+\-&nbsp;`is_valet_station` <br/>*(added in v2.1-RC)* | Optional | ID | Are valet services provided at this station? <br /><br /> `1` - Valet services are provided at this station. <br /> `0` - Valet services are not provided at this station. <br /><br /> If this field is empty, it means valet services are not provided at this station.
 \-&nbsp;`rental_uris` <br/>*(added in v1.1)* | Optional | Object | Contains rental URIs for Android, iOS, and web in the android, ios, and web fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
 &emsp;\-&nbsp;`android` <br/>*(added in v1.1)* | Optional | URI | URI that can be passed to an Android app with an `android.intent.action.VIEW` Android intent to support Android Deep Links (https://developer.android.com/training/app-links/deep-linking). Please use Android App Links (https://developer.android.com/training/app-links) if possible so viewing apps don’t need to manually manage the redirect of the user to the app store if the user doesn’t have the application installed. <br><br>This URI should be a deep link specific to this station, and should not be a general rental page that includes information for more than one station. The deep link should take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported in the native Android rental app. <br><br>Note that URIs do not necessarily include the station_id for this station - other identifiers can be used by the rental app within the URI to uniquely identify this station. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Android App Links example value: `https://www.abc.com/app?sid=1234567890&platform=android` <br><br>Deep Link (without App Links) example value: `com.abcrental.android://open.abc.app/app?sid=1234567890`
 &emsp;\-&nbsp;`ios` <br/>*(added in v1.1)* | Optional | URI | URI that can be used on iOS to launch the rental app for this station. More information on this iOS feature can be found [here](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/communicating_with_other_apps_using_custom_urls?language=objc). Please use iOS Universal Links (https://developer.apple.com/ios/universal-links/) if possible so viewing apps don’t need to manually manage the redirect of the user to the app store if the user doesn’t have the application installed. <br><br>This URI should be a deep link specific to this station, and should not be a general rental page that includes information for more than one station.  The deep link should take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported in the native iOS rental app. <br><br>Note that the URI does not necessarily include the station_id - other identifiers can be used by the rental app within the URL to uniquely identify this station. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>iOS Universal Links example value: `https://www.abc.com/app?sid=1234567890&platform=ios` <br><br>Deep Link (without Universal Links) example value: `com.abcrental.ios://open.abc.app/app?sid=1234567890`
@@ -448,6 +454,7 @@ Field Name | Required | Type | Defines
 ---|---|---|---
 `bikes` | Yes | Array | Array that contains one object per vehicle that is currently stopped as defined below.
 \-&nbsp;`bike_id` | Yes | ID | Identifier of a vehicle, rotated to a random string, at minimum, after each trip to protect privacy *(as of v2.0)*. Note: Persistent bike_id, published publicly, could pose a threat to individual traveler privacy.
+\-&nbsp;`system_id` <br/>*(added in v3.0-RC)* | Conditionally required | ID | Identifier referencing the system_id field in system_information.json. Required in the case of feeds that specify free (undocked) bikes and define systems in system_information.json.
 \-&nbsp;`lat` | Yes | Latitude | Latitude of the vehicle.
 \-&nbsp;`lon` | Yes | Longitude | Longitude of the vehicle.
 \-&nbsp;`is_reserved` | Yes | Boolean | Is the vehicle currently reserved? <br /><br /> `true` - Vehicle is currently reserved. <br /> `false` - Vehicle is not currently reserved.
@@ -589,6 +596,27 @@ Field Name | Required | Type | Defines
 \-&nbsp;`summary` | Yes | String | A short summary of this alert to be displayed to the customer.
 \-&nbsp;`description` | Optional | String | Detailed description of the alert.
 \-&nbsp;`last_updated` | Optional | Timestamp | Indicates the last time the info for the alert was updated.
+
+### geofencing_zones.json *(added in v2.1-RC)*
+Describes geofencing zones and their associated rules and attributes.<br />
+By default, no restrictions apply everywhere. Geofencing zones should be modeled according to restrictions rather than allowance. An operational area (outside of which vehicles cannot be used) should be define with a counterclockwise polygon, and a limitation area (in which vehicles can be used under certain restrictions) should be define with a clockwise polygon.
+
+Field Name | Required | Type | Defines
+---|---|---|---
+`geofencing_zones` | Yes | GeoJSON FeatureCollection | A FeatureCollection (as described by the IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)). Each geofenced zone and its associated rules and attributes is described as an object within the array of features, as follows.
+\-&nbsp;`type` | Yes | String | “FeatureCollection” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
+\-&nbsp;`features` | Yes | Array | Array of objects as defined below.
+&emsp;\-&nbsp;`type` | Yes | String | “Feature” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
+&emsp;\-&nbsp;`geometry` | Yes | GeoJSON Multipolygon | A polygon that describes where rides might not be able to start, end, go through, or have other limitations. A clockwise arrangement of points defines the area enclosed by the polygon, while a counterclockwise order defines the area outside the polygon ([right-hand rule](https://tools.ietf.org/html/rfc7946#section-3.1.6)). All geofencing zones contained in this list are public (ie, can be shown on a map for public use).
+&emsp;\-&nbsp;`properties` | Yes | Object | Properties: As defined below, describing travel allowances and limitations.
+&emsp;&emsp;\-&nbsp;`name` | Optional | String | Public name of the geofencing zone.
+&emsp;&emsp;\-&nbsp;`start` | Optional | Timestamp | Start time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
+&emsp;&emsp;\-&nbsp;`end` | Optional | Timestamp | End time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
+&emsp;&emsp;\-&nbsp;`rules` | Optional | Array | Array that contains one object per rule as defined below. <br /><br /> In the event of colliding rules within the same polygon, the earlier rule (in order of the JSON file) takes precedence. <br> In the case of overlapping polygons, the combined set of rules associated with the overlapping polygons applies to the union of the polygons. In the event of colliding rules in this set, the earlier rule (in order of the JSON file) also takes precedence.
+&emsp;&emsp;&emsp;\-&nbsp;`vehicle_type_id` | Optional | Array | Array of IDs of vehicle types for which any restrictions should be applied (see vehicle type definitions in [PR #136](https://github.com/NABSA/gbfs/pull/136)). If vehicle_type_ids are not specified, then restrictions apply to all vehicle types.
+&emsp;&emsp;&emsp;\-&nbsp;`ride_allowed` | Required | Boolean | Is the undocked (“free bike”) ride allowed to start and end in this zone? <br /><br /> `1` - Undocked (“free bike”) ride can start and end in this zone. <br /> `0` - Undocked (“free bike”) ride cannot start and end in this zone.
+&emsp;&emsp;&emsp;\-&nbsp;`ride_through_allowed` | Required | Boolean | Is the ride allowed to travel through this zone? <br /><br /> `1` - Ride can travel through this zone. <br /> `0` - Ride cannot travel through this zone.
+&emsp;&emsp;&emsp;\-&nbsp;`maximum_speed_kph` | Optional | Non-negative Integer | What is the maximum speed allowed, in kilometers per hour? <br /><br /> If there is no maximum speed to observe, this can be omitted.
 
 ## Deep Links *(added in v1.1)*
 
