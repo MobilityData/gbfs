@@ -42,9 +42,7 @@ The data in the specification contained in this document is intended for consump
   * [#147](https://github.com/NABSA/gbfs/pull/147) - Rotate `bike_id` on `free_bike_status`
 * [v2.1-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/v2.1-RC/gbfs.md)
   * [#136](https://github.com/NABSA/gbfs/pull/136) - Add vehicle type definitions
-  * [#219](https://github.com/NABSA/gbfs/pull/219) - Add geofencing, virtual station, and dockless support
-* [v3.0-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/master/gbfs.md)
-  * [#182](https://github.com/NABSA/gbfs/pull/182) - Require `license_url`, add attribution fields 
+  * [#219](https://github.com/NABSA/gbfs/pull/219) - Add geofencing, virtual station, and dockless support 
 
 ## Overview of the Change Process
 GBFS is an open specification, developed and maintained by the community of producers and consumers of GBFS data.

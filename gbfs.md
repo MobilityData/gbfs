@@ -3,7 +3,7 @@
 This document explains the types of files and data that comprise the General Bikeshare Feed Specification (GBFS) and defines the fields used in all of those files.
 
 # Reference version
-This documentation refers to **v3.0-RC (release candidate)**. For past and upcoming versions see the [README](README.md#read-the-spec--version-history).
+This documentation refers to **v2.1-RC (release candidate)**. For past and upcoming versions see the [README](https://github.com/NABSA/gbfs/blob/master/README.md#read-the-spec--version-history).
 
 ## Table of Contents
 
@@ -250,10 +250,7 @@ Field Name | Required | Type | Defines
 `email` | Optional | Email | Email address actively monitored by the operator’s customer service department. This email address should be a direct contact point where riders can reach a customer service representative.
 `feed_contact_email` <br/>*(added in v1.1)* | Optional | Email | A single contact email address for consumers of this feed to report technical issues.
 `timezone` | Yes | Timezone | The time zone where the system is located.
-`license_id` <br/>*(added in v3.0-RC)* | Conditionally required | String | Required if the dataset is provided under a standard license. An identifier for a standard license from the [SPDX License List](https://spdx.org/licenses/). Provide `license_id` rather than `license_url` if the license is included in the SPDX License List. See the GBFS wiki for a [comparison of a subset of standard licenses](data-licenses.md). If the license_id and license_url fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
-`license_url` | Conditionally required <br/>*(as of v3.0-RC)* | URL | Required if the dataset is provided under a customized license. A fully qualified URL of a page that defines the license terms for the GBFS data for this system. Do not specify a `license_url` if `license_id` is specified. If the license_id and license_url fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode). *(as of v3.0-RC)*
-`attribution_organization_name` <br/>*(added in v3.0-RC)* | Optional | String | If the feed license requires attribution, name of the organization to which attribution should be provided.
-`attribution_url` <br/>*(added in v3.0-RC)* | Optional | URL | URL of the organization to which attribution should be provided.
+`license_url` | Optional | URL | A fully qualified URL of a page that defines the license terms for the GBFS data for this system, as well as any other license terms the system would like to define (including the use of corporate trademarks, etc)
 `rental_apps` <br/>*(added in v1.1)* | Optional | Object | Contains rental app information in the android and ios JSON objects.
 \-&nbsp;`android` <br/>*(added in v1.1)* | Optional | Object | Contains rental app download and app discovery information for the Android platform in the `store_uri` and `discovery_uri` fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
 &emsp;- `store_uri` <br/>*(added in v1.1)* | Conditionally Required | URI | URI where the rental Android app can be downloaded from. Typically this will be a URI to an app store such as Google Play. If the URI points to an app store such as Google Play, the URI should follow Android best practices so the viewing app can directly open the URI to the native app store app instead of a website. <br><br> If a `rental_uris`.`android` field is populated then this field is required, otherwise it is optional. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Example value: `https://play.google.com/store/apps/details?id=com.abcrental.android`
@@ -454,7 +451,6 @@ Field Name | Required | Type | Defines
 ---|---|---|---
 `bikes` | Yes | Array | Array that contains one object per vehicle that is currently stopped as defined below.
 \-&nbsp;`bike_id` | Yes | ID | Identifier of a vehicle, rotated to a random string, at minimum, after each trip to protect privacy *(as of v2.0)*. Note: Persistent bike_id, published publicly, could pose a threat to individual traveler privacy.
-\-&nbsp;`system_id` <br/>*(added in v3.0-RC)* | Conditionally required | ID | Identifier referencing the system_id field in system_information.json. Required in the case of feeds that specify free (undocked) bikes and define systems in system_information.json.
 \-&nbsp;`lat` | Yes | Latitude | Latitude of the vehicle.
 \-&nbsp;`lon` | Yes | Longitude | Longitude of the vehicle.
 \-&nbsp;`is_reserved` | Yes | Boolean | Is the vehicle currently reserved? <br /><br /> `true` - Vehicle is currently reserved. <br /> `false` - Vehicle is not currently reserved.
