@@ -15,21 +15,21 @@ The specification has been designed with the following concepts in mind:
 The data in the specification contained in this document is intended for consumption by clients intending to provide real-time (or semi-real-time) transit advice and is designed as such.
 
 ## Read the spec & version history
-* **[v1.0](https://github.com/NABSA/gbfs/blob/v1.0/gbfs.md)**
+* [v1.0](https://github.com/NABSA/gbfs/blob/v1.0/gbfs.md)
   * 2019 December 20 - GBFS copyright [transfered to NABSA](https://github.com/NABSA/gbfs/commit/b1260b9c59eeff810a62e0aedc72ce1d4fb8f3ab)
   * 2015 November 05 - GBFS V1.0 Adopted by NABSA board - [Original draft spec in a Google doc](https://docs.google.com/document/d/1BQPZCKpem4-n6lUQDD4Mi8E5hNZ0-lhY62IVtWuyhec/edit#heading=h.ic7i1m4gcev7) (reference only)
   * 2015 August - Latest changes incorporated and name change to GBFS (comments from Motivate, 8D, others)
   * 2015 June - Proposed refinements (prepared by Jesse Chan-Norris on behalf of Motivate)
   * 2015 January - NABSA Draft (prepared by Mitch Vars)
-* **[v1.1-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/v1.1-RC/gbfs.md)**
+* [v1.1-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/v1.1-RC/gbfs.md)
   * [#25](https://github.com/NABSA/gbfs/pull/25) - Add deep links for iOS, Android, and web apps
   * [#181](https://github.com/NABSA/gbfs/pull/181) - Add `feed_contact_email` field to `system_information.json`
   * [#188](https://github.com/NABSA/gbfs/pull/188) - GBFS documentation versioning and and feed conformance (adds `gbfs_versions.json`)
-* **[v1.1](https://github.com/NABSA/gbfs/blob/v1.1/gbfs.md)**
+* [v1.1](https://github.com/NABSA/gbfs/blob/v1.1/gbfs.md)
   * [#25](https://github.com/NABSA/gbfs/pull/25) - Add deep links for iOS, Android, and web apps
   * [#181](https://github.com/NABSA/gbfs/pull/181) - Add `feed_contact_email` field to `system_information.json`
   * [#188](https://github.com/NABSA/gbfs/pull/188) - GBFS documentation versioning and and feed conformance (adds `gbfs_versions.json`)
-* **[v2.0-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/v2.0-RC/gbfs.md)**
+* [v2.0-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/v2.0-RC/gbfs.md)
   * [#182](https://github.com/NABSA/gbfs/pull/182) - Require `license_url`, add attribution fields 
   * [#189](https://github.com/NABSA/gbfs/pull/189) - Require autodiscovery gbfs.json file, define feed names
   * [#195](https://github.com/NABSA/gbfs/pull/195) - Clarify `num_bikes_available` and `num_docks_available`
@@ -40,10 +40,10 @@ The data in the specification contained in this document is intended for consump
   * [#195](https://github.com/NABSA/gbfs/pull/195) - Clarify `num_bikes_available` and `num_docks_available`
   * [#196](https://github.com/NABSA/gbfs/pull/196) - Change boolean from 1/0 to true/false
   * [#147](https://github.com/NABSA/gbfs/pull/147) - Rotate `bike_id` on `free_bike_status`
-* **[v2.1-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/v2.1-RC/gbfs.md)**
+* [v2.1-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/v2.1-RC/gbfs.md)
   * [#136](https://github.com/NABSA/gbfs/pull/136) - Add vehicle type definitions
   * [#219](https://github.com/NABSA/gbfs/pull/219) - Add geofencing, virtual station, and dockless support
-* **[v3.0-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/master/gbfs.md)**
+* [v3.0-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/master/gbfs.md)
   * [#182](https://github.com/NABSA/gbfs/pull/182) - Require `license_url`, add attribution fields 
 
 ## Overview of the Change Process
