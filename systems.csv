@@ -1,6 +1,6 @@
 Country Code,Name,Location,System ID,URL,Auto-Discovery URL
 AE,ADCB Bikeshare,"Abu Dhabi, AE",ABU,https://www.bikeshare.ae/,https://api-core.bikeshare.ae/gbfs/gbfs.json
-AE,Careem BIKE, "Dubai, AE",careem_bike,https://www.careem.com/en-ae/careem-bike/,https://dubai.publicbikesystem.net/ube/gbfs/v1/gbfs.json
+AE,Careem BIKE,"Dubai, AE",careem_bike,https://www.careem.com/en-ae/careem-bike/,https://dubai.publicbikesystem.net/ube/gbfs/v1/gbfs.json
 AR,Ecobici,"Buenos Aires, AR",bike_buenosaires,https://www.buenosaires.gob.ar/ecobici,https://buenosaires.publicbikesystem.net/ube/gbfs/v1/gbfs.json
 AR,MiBiciTuBici,"Rosario, Santa Fe, AR",biketobike,https://www.mibicitubici.gob.ar/,https://www.mibicitubici.gob.ar/opendata/gbfs.json
 AR,MOVO Buenos Aires,"Buenos Aires, AR",movo_bue,https://movo.me/ar,https://gbfs.movo.me/buenosaires
@@ -77,6 +77,7 @@ ES,Lovesharing (Canary Islands),"Lovesharing (Canary Islands), ES",nextbike_ls,h
 ES,Sitycleta (Las Palmas),"Las Palmas de Gran Canaria, ES",nextbike_el,https://www.sitycleta.com/es/laspalmas/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_el/gbfs.json
 FR,LE vélo STAR,"Rennes, FR",le_velo_star,https://www.star.fr/le-velo/nos-offres/vls/,https://eu.ftp.opendatasoft.com/star/gbfs/gbfs.json
 FR,Libélo,"Valence, FR",libelo,http://www.citea.info/presentation/?rub_code=92,https://valence.publicbikesystem.net/ube/gbfs/v1/gbfs.json
+FR,Vélib' Metropole,"Paris, FR",Paris,https://www.velib-metropole.fr/,https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/gbfs.json
 FR,Vélivert,"Saint-Etienne, FR",Velivert_FR_Saint-Etienne,https://www.velivert.fr/,https://saint-etienne-gbfs.klervi.net/gbfs/gbfs.json
 FR,Vélocéo,"Vannes, FR",Veloceo_FR_Vannes,https://veloceo.kiceo.fr/,https://vannes-gbfs.klervi.net/gbfs/gbfs.json
 FR,Vélopop,"Avignon, FR","Vélopop_FR_Avignon",https://www.velopop.fr/,https://avignon-gbfs.klervi.net/gbfs/gbfs.json
