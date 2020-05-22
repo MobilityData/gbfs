@@ -16,7 +16,7 @@ This documentation refers to **v2.1-RC (release candidate)**. For past and upcom
     * [gbfs.json](#gbfsjson)
     * [gbfs_versions.json](#gbfs_versionsjson-added-in-v11) *(added in v1.1)*
     * [system_information.json](#system_informationjson)
-    * [vehicle_types.json](#vehicle_typesjson) *(added in v2.1-RC)*
+    * [vehicle_types.json](#vehicle_typesjson-added-in-v21-rc) *(added in v2.1-RC)*
     * [station_information.json](#station_informationjson)
     * [station_status.json](#station_statusjson)
     * [free_bike_status.json](#free_bike_statusjson)
@@ -25,7 +25,7 @@ This documentation refers to **v2.1-RC (release candidate)**. For past and upcom
     * [system_regions.json](#system_regionsjson)
     * [system_pricing_plans.json](#system_pricing_plansjson)
     * [system_alerts.json](#system_alertsjson)
-    * [geofencing_zones.json](#geofencing_zonesjson) *(added in v2.1-RC)*
+    * [geofencing_zones.json](#geofencing_zonesjson-added-in-v21-rc) *(added in v2.1-RC)*
 * [Deep Links - Analytics and Examples](#deep-links-added-in-v11) *(added in v1.1)*
 
 ## Introduction
@@ -65,7 +65,7 @@ File Name | Required | Defines
 gbfs.json | Yes <br/>*(as of v2.0)* | Auto-discovery file that links to all of the other files published by the system.
 gbfs_versions.json <br/>*(added in v1.1)* | Optional | Lists all feed endpoints published according to versions of the GBFS documentation.
 system_information.json | Yes | Details including system operator, system location, year implemented, URL, contact info, time zone.
-vehicle_types.json <br/>*(added in v2.1-RC)* | Conditionally required | Describes the types of vehicles that System operator has available for rent. Required of systems that include information about vehicle types in the station_status and/or free_bike_status files. If this file is not included, then all vehicles in the feed are assumed to be non-motorized bicycles
+vehicle_types.json <br/>*(added in v2.1-RC)* | Conditionally required | Describes the types of vehicles that System operator has available for rent. Required of systems that include information about vehicle types in the station_status and/or free_bike_status files. If this file is not included, then all vehicles in the feed are assumed to be non-motorized bicycles.
 station_information.json | Conditionally required | List of all stations, their capacities and locations. Required of systems utilizing docks.
 station_status.json | Conditionally required | Number of available vehicles and docks at each station and station availability. Required of systems utilizing docks.
 free_bike_status.json | Conditionally required | Vehicles that are available for rent. Required of systems that offer vehicles for rent outside of stations.
