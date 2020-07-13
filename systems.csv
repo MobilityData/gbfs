@@ -157,7 +157,6 @@ SI,NomagoBikes (Slovenia),"SI",nextbike_cn,https://bikes.nomago.si/,https://gbfs
 SK,Arriva Nitra Slovakia,"Nitra, SK",nextbike_as,https://arriva.bike/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_as/gbfs.json
 SK,BikeKIA,"Žilina, SK",nextbike_ak,https://bikekia.sk/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ak/gbfs.json
 TR,Ordu Bisikletli Turkey,"Ordu, TR",nextbike_ot,https://ordu.nextbike.com.tr/tr/ordu/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ot/gbfs.json
-UA,nextbike Kyiv (Ukraine),"Kyiv, UA",nextbike_kv,https://www.nextbike.ua/uk/kyiv/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_kv/gbfs.json
 UA,nextbike (Ukraine),"Lviv, Kharkiv, Odesa, UA",nextbike_nu,https://www.nextbike.ua/uk/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_nu/gbfs.json
 UA,nextbike Vinnitsa (Ukraine),"Vinnytsia, UA",nextbike_uv,https://www.nextbike.ua/uk/Vinnytsia/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_uv/gbfs.json
 US,ArborBike,"Ann Arbor, MI",bcycle_arborbike,http://arborbike.org,https://gbfs.bcycle.com/bcycle_arborbike/gbfs.json
