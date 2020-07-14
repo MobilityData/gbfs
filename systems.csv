@@ -263,6 +263,7 @@ US,Spin Baltimore,"Baltimore, MD",spin baltimore,https://www.spin.pm/,https://we
 US,Spin Chicago,"Chicago, IL",spin chicago,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/chicago/gbfs.json
 US,Spin Detroit,"Detroit, MI",spin detroit,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/detroit/gbfs
 US,Spin Louisville,"Louisville, KY",spin louisville,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/louisville/gbfs
+US,Spin Providence,"Providence, RI",spin providence,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/providence/gbfs
 US,Spin Washington DC,"Washington, DC",spin washington_dc,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/washington_dc/gbfs
 US,START Bike,"Jackson, WY",bcycle_startbike,https://startbike.bcycle.com,https://gbfs.bcycle.com/bcycle_startbike/gbfs.json
 US,Tampa Scooter JUMP System,"Tampa, FL",tampa_scooter_jump_system,https://jump.com/,https://gbfs.uber.com/v1/tpas/gbfs.json
