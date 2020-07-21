@@ -567,18 +567,58 @@ Field Name | Required | Type | Defines
 \-&nbsp;`name` | Yes | String | Public name for this region.
 
 ### system_pricing_plans.json
-Describes pricing for the system.
+Describes pricing for the system. <br /><br />Additional proposed extensions supporting zone-dependent pricing, multi-unit pricing and price capping can be found [here](https://docs.google.com/document/d/1xzC0nS3M-ora32k5RbfhFCsfZp4B-wVKK2-pOokpxmQ/edit?usp=sharing).
 
 Field Name | Required | Type | Defines
 ---|---|---|---
-`plans` | Yes | Array | Array of objects as defined below.
+`plans` | Yes | Array | Array of objects as defined below.<br /><br /> In the event of colliding plans, the earlier plan (ir order of the JSON file) takes precedence.
 \-&nbsp;`plan_id` | Yes | ID | Identifier for a pricing plan in the system.
+\-&nbsp;`days` | Optional | Array | An array of abbreviations (first 3 letters) of English names of the days of the week when this plan is active. <br /><br /> Valid values are:<br /><br /><ul><li>`mon`</li><li>`tue`</li><li>`wed`</li><li>`thu`</li></li>`fri`</li></li>`sat`</li></li>`sun`</li></li> <br /><br />If this field is empty, the plan does not vary depending on day of the week.
+\-&nbsp;`months` | Optional | Array | An array of abbreviations (first 3 letters) of English names of the months of the year when this plan is active. <br /><br /> Valid values are: <br /><br /><ul><li>`jan`</li><li>`feb`</li><li>`mar`</li><li>`apr`</li><li>`may`</li><li>`jun`</li><li>`jul`</li><li>`aug`</li><li>`sep`</li><li>`oct`</li><li>`nov`</li><li>`dec`<br /><br />If this field is empty, the plan does not vary depending on month.
+\-&nbsp;`start_time` | Conditionally Required | Time | Time of the day when this plan starts being active. <br /><br /> If this field is empty, the plan does not vary depending on time of day.<br /><br />Conditionally Required: Required if `system_pricing_plans.end_time` is provided. Optional otherwise.
+\-&nbsp;`end_time` | Conditionally Required | Time | Time of the day when this plan stops being active. <br /><br /> If this field is empty, the plan does not vary depending on time of day.<br /><br />Conditionally Required: Required if `system_pricing_plans.start_time` is provided. Optional otherwise.
+\-&nbsp;`vehicle_type_id` | Optional | Array | `vehicle_type_id` of the vehicle eligible for this pricing plan as described in [vehicle_types.json](#vehicle_typesjson-added-in-v21-rc).<br /><br />If this field is empty, the plan applies to all vehicle types defined in the dataset.<br /><br />In the case of a vehicle type being attributed to different plans, all plans associated with the vehicle type are valid.   
 \-&nbsp;`url` | Optional | URL | URL where the customer can learn more about this pricing plan.
 \-&nbsp;`name` | Yes | String | Name of this pricing plan.
 \-&nbsp;`currency` | Yes | String | Currency used to pay the fare. <br /><br /> This pricing is in ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217 <br />(e.g. `CAD` for Canadian dollars, `EUR` for euros, or `JPY` for Japanese yen.)
-\-&nbsp;`price` | Yes | Non-negative float OR String | Fare price, in the unit specified by currency. If String, must be in decimal monetary value.
+\-&nbsp;`price` | Yes | Non-negative float OR String | Fare price, in the unit specified by currency. If String, must be in decimal monetary value.<br /><br />In case of non-variable price, this field is the total price. In case of variable price, this field is the base price that is charged only once per trip (e.g., price for unlocking).
 \-&nbsp;`is_taxable` | Yes | Boolean | Will additional tax be added to the base price?<br /><br />`true` - Yes.<br />  `false` - No.  <br /><br />`false` may be used to indicate that tax is not charged or that tax is included in the base price.
 \-&nbsp;`description` | Yes | String | Customer-readable description of the pricing plan. This should include the duration, price, conditions, etc. that the publisher would like users to see.
+\-&nbsp;`variable_price` | Optional | Array | Array of segments when `variable_unit` varies.<br /><br />The total variable price in the unit specified by the currency becomes the sum of prices issued of rate segments and flat segments.<br /><br /> If this array is not provided, there are no variable prices.
+&emsp;\-&nbsp;`variable_unit` | Yes | Enum | Unit of the rate.<br /><br />Valid issues are:<br /><br /><ul><li>`km`</li><li>`min`</li><li>`hour`</li><li>`day`</li><li>`week`<br /><br />Each variable_unit can be used only once in the array `variable_price`.
+&emsp;\-&nbsp;`rate_segments` | Conditionally Required | Array | Array of the rate in increasing order. Each `rate_segment` defines one rate per `variable_unit` of riding in the pricing plan currency. The variable price become the sum of `rate_segment` prices. A `rate_segment` price depends on the rate per `variable_unit` elapsed.<br /><br />At least one `rate_segment` or `flat_segment` is required.
+&emsp;&emsp;\-&nbsp;`start` | Optional | Non-Negative Integer | Number of units that have to elapse before this segment starts applying.<br /><br />If this field is empty, the price issued from this segment is charged immediately upon rental.
+&emsp;&emsp;\-&nbsp;`rate` | Yes | Float | Rate that serves to calculate the variable price based on the amount of variable unites. The rate is valid for the segment. Can be a negative number.
+&emsp;\-&nbsp;`flat_segments` | Conditionally Required | Array | Array of flat prices in increasing order. Each segment defines the flat price and the interval of `variable_unit` of riding in the pricing plan currency, in which the flat price is reapplied.<br /><br />At least on `rate_segment` or `flat_segment` is required.
+&emsp;&emsp;\-&nbsp;`price` | Required | Float | Flat price charged per interval. Currency is defined by the `currency` field.
+&emsp;&emsp;\-&nbsp;`interval` | Required | Non-Negative Integer | Interval in `variable_unit` at which the price of this segment is charged.
+&emsp;&emsp;\-&nbsp;`start` | Optional | Non-Negative Integer | Number of units that have to elapse before this segment starts applying.<br /><br />If this field is empty, the price issued from this segment is charged immediately upon rental.
+\-&nbsp;`surge_pricing` | Optional | Non-Negative Float | Multiplier that is applied during period of increased demand. If this field is empty, there is no surge pricing.
+
+Example:
+
+```jsonc
+ "variable_price": {
+   "variable_unit": "km",
+   "rate_segments": [
+     {
+       "start": 10,
+       "rate": 1
+     },
+     {
+       "start": 25,
+       "rate": 0.5
+     }
+   ]
+   "flat_segments": [
+     {
+       "start": 25,
+       "price": 3,
+       "interval": 5,
+     }
+   ]
+ }
+```
 
 ### system_alerts.json
 This feed is intended to inform customers about changes to the system that do not fall within the normal system operations. For example, system closures due to weather would be listed here, but a system that only operated for part of the year would have that schedule listed in the system_calendar.json feed.<br />
