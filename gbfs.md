@@ -567,7 +567,7 @@ Field Name | Required | Type | Defines
 \-&nbsp;`name` | Yes | String | Public name for this region.
 
 ### system_pricing_plans.json
-Describes pricing for the system. <br /><br />Additional proposed extensions supporting zone-dependent pricing, multi-unit pricing, and price capping can be found [here](https://docs.google.com/document/d/1xzC0nS3M-ora32k5RbfhFCsfZp4B-wVKK2-pOokpxmQ/edit?usp=sharing).
+Describes pricing for the system.
 
 Field Name | Required | Type | Defines
 ---|---|---|---
@@ -581,21 +581,57 @@ Field Name | Required | Type | Defines
 \-&nbsp;`url` | Optional | URL | URL where the customer can learn more about this pricing plan.
 \-&nbsp;`name` | Yes | String | Name of this pricing plan.
 \-&nbsp;`currency` | Yes | String | Currency used to pay the fare. <br /><br /> This pricing is in ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217 <br />(e.g. `CAD` for Canadian dollars, `EUR` for euros, or `JPY` for Japanese yen.)
-\-&nbsp;`price` | Yes | Non-negative float OR String | Fare price, in the unit specified by currency. If String, must be in decimal monetary value.<br /><br />In case of non-variable price, this field is the total price. In case of variable price, this field is the base price that is charged only once per trip (e.g., price for unlocking).
+\-&nbsp;`price` | Yes | Non-negative float OR String | Fare price, in the unit specified by currency. If String, must be in decimal monetary value.<br /><br />In case of non-variable price, this field is the total price. In case of variable price, this field is the base price that is charged only once per trip (e.g., price for unlocking). See `variable_price` for details.
 \-&nbsp;`is_taxable` | Yes | Boolean | Will additional tax be added to the base price?<br /><br />`true` - Yes.<br />  `false` - No.  <br /><br />`false` may be used to indicate that tax is not charged or that tax is included in the base price.
 \-&nbsp;`description` | Yes | String | Customer-readable description of the pricing plan. This should include the duration, price, conditions, etc. that the publisher would like users to see.
 \-&nbsp;`variable_price` | Optional | Array | Array of segments when `variable_unit` varies.<br /><br />The total variable price in the unit specified by the currency becomes the sum of prices issued of rate segments and flat segments.<br /><br /> If this array is not provided, there are no variable prices.
 &emsp;\-&nbsp;`variable_unit` | Yes | Enum | Unit of the rate.<br /><br />Valid issues are:<br /><br /><ul><li>`km`</li><li>`min`</li><li>`hour`</li><li>`day`</li><li>`week`</li></ul>Each variable_unit can be used only once in the array `variable_price`.
 &emsp;\-&nbsp;`rate_segments` | Conditionally Required | Array | Array of the rate in increasing order. Each `rate_segment` defines one rate per `variable_unit` of riding in the pricing plan currency. The variable price become the sum of `rate_segment` prices. A `rate_segment` price depends on the rate per `variable_unit` elapsed.<br /><br />At least one `rate_segment` or `flat_segment` is required.
 &emsp;&emsp;\-&nbsp;`start` | Optional | Non-Negative Integer | Number of units that have to elapse before this segment starts applying.<br /><br />If this field is empty, the price issued from this segment is charged immediately upon rental.
-&emsp;&emsp;\-&nbsp;`rate` | Yes | Float | Rate that serves to calculate the variable price based on the amount of variable unites. The rate is valid for the segment. Can be a negative number.
+&emsp;&emsp;\-&nbsp;`rate` | Yes | Float | Rate that serves to calculate the variable price based on the amount of variable unites. The rate is valid for the segment. Can be a negative number, which indicated that the traveller will receive a discount.
 &emsp;\-&nbsp;`flat_segments` | Conditionally Required | Array | Array of flat prices in increasing order. Each segment defines the flat price and the interval of `variable_unit` of riding in the pricing plan currency, in which the flat price is reapplied.<br /><br />At least on `rate_segment` or `flat_segment` is required.
-&emsp;&emsp;\-&nbsp;`price` | Required | Float | Flat price charged per interval. Currency is defined by the `currency` field.
-&emsp;&emsp;\-&nbsp;`interval` | Required | Non-Negative Integer | Interval in `variable_unit` at which the price of this segment is charged.
+&emsp;&emsp;\-&nbsp;`price` | Yes | Float | Flat price charged per interval. Currency is defined by the `currency` field.
+&emsp;&emsp;\-&nbsp;`interval` | Yes | Non-Negative Integer | Interval in `variable_unit` at which the price of this segment is charged.
 &emsp;&emsp;\-&nbsp;`start` | Optional | Non-Negative Integer | Number of units that have to elapse before this segment starts applying.<br /><br />If this field is empty, the price issued from this segment is charged immediately upon rental.
 \-&nbsp;`surge_pricing` | Optional | Non-Negative Float | Multiplier that is applied during period of increased demand. If this field is empty, there is no surge pricing.
 
 Example:
+This example demonstrates a pricing scheme that has a rate both by minute and by km. The user is charged $0.25 per km as well as $0.50 per minute. Both of these rates happen concurrently and are not dependent on one another. 
+```jsonc
+{
+  "plans": {
+    "plan_id": "plan2",
+    "start_time": "7:00:00",
+    "end_time": "9:30:00",
+    "vehicle_type_id": "def",
+    "name": "Rush Hour Rate",
+    "currency": "CAD",
+    "price": 3,
+    "is_taxable": true,
+    "description": "$3 unlock fee, $0.25 per kilometer and $0.50 per minute",
+    "variable_price": [
+      {
+        "variable_unit": "km",
+        "rate_segments": {
+          "start": 0,
+          "rate": 0.25
+        }
+      },
+      {
+        "variable_unit": "minute",
+        "rate_segments": {
+          "start": 0,
+          "rate": 0.5
+        }
+      }
+    ]
+  }
+}
+```
+
+Example:
+
+The user does not pay more than the base price for the first 10 km. After 10 km the user pays $1 per km. After 25 km the user pays $0.50 per km and an additional $3 every 5 km, the extension price, in addition to $0.50 per km. 
 
 ```jsonc
  "variable_price": {
