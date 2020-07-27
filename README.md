@@ -51,7 +51,7 @@ GBFS is an open specification, developed and maintained by the community of prod
 The specification is not fixed or unchangeable. As the shared mobility industry evolves, it is expected that the specification will be extended by the GBFS community to include new features and capabilities over time. To manage the change process, the following guidelines have been established.
 
 
-* A change is proposed by opening a Pull Request on the GBFS GitHub repository. Comments and feedback from the GBFS community are received to iterate on the proposed change. Discussion lasts for as long as the proposer feels necessary, but must be at least 7 calendar days.
+* A change is proposed by opening a Pull Request on the GBFS GitHub repository. Comments and feedback from the GBFS community are received to iterate on the proposed change. Discussion lasts for as long as the proposer feels necessary, but must be at least 7  days.
 * Anyone can call for a vote. Vote lasts the minimum period sufficient to cover 7 full calendar days. Voting ends at 23:59:59 UTC. The vote announcement must conform to this template: 
   * *I hereby call a vote on this proposal. Voting will be open for 7 full calendar days until 11:59PM UTC on X.<br /> Please vote for or against the proposal, and include the organization for which you are voting in your comment. <br /> Please note if you can commit to implementing the proposal.*
 * The person calling for the vote should announce the vote in the [GBFS Slack channel](https://mobilittydata-io.slack.com) with a link to the PR. The message should conform to this template:
@@ -63,7 +63,7 @@ The specification is not fixed or unchangeable. As the shared mobility industry 
 * At least 3 votes in favour are required for a proposal to pass. At least 1 of these votes must be from a producer and at least 1 from a consumer. 
 * Implementation requirements are that both 1 producer and 1 consumer commit to implementing the changes. A change is placed into RC status pending implementation. Once implemented successfully, the change is merged into an official release.
 * Editorial changes do not need to voted on. Extensions that include new capabilities and features must be voted on. 
-* Issues and Pull Requests will be considered "stale" after 120 days, at which point participants will be notified via comment. Should they wish to keep the discussion open, it is the repsonsibility of the participants to re-engage in the conversation. If there is no re-engagement, the issue or pull request will be closed 60 days after the stale data. 
+* Issues and Pull Requests will be considered "stale" after 120 days, at which point participants will be notified via comment. Should they wish to keep the discussion open, it is the responsibility of the participants to re-engage in the conversation. If there is no re-engagement, the issue or pull request will be closed 60 days after the stale date. 
  
 
 ## Specification Versioning
