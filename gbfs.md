@@ -247,6 +247,8 @@ Field Name | Required | Type | Defines
 `operator` | Optional | String | Name of the operator.
 `url` | Optional | URL | The URL of the vehicle share system.
 `purchase_url` | Optional | URL | URL where a customer can purchase a membership.
+`terms_url` | Optional | URL | URL where the terms and conditions are stated.
+`terms_release_date` | Optional | Date | Date when the terms and conditions where published.
 `start_date` | Optional | Date | Date that the system began operations.
 `phone_number` | Optional | Phone Number | A single voice telephone number for the specified system that presents the telephone number as typical for the system's service area. It can and should contain punctuation marks to group the digits of the number. Dialable text (for example, Capital Bikeshare’s "877-430-BIKE") is permitted, but the field must not contain any other descriptive text.
 `email` | Optional | Email | Email address actively monitored by the operator’s customer service department. This email address should be a direct contact point where riders can reach a customer service representative.
