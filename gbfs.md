@@ -310,9 +310,8 @@ Example:
       {
         "vehicle_type_id": "car1",
         "form_factor": "car",
-        "car_type": "sedan",
+        "car_type": "full_size",
         "seating_capacity": 5,
-        "return_type": "one_way",
         "propulsion_type": "combustion",
         "min_fuel_level": "half_full",
         "name": "Mercedes E 450",
