@@ -74,12 +74,24 @@ ES,Bilbaobizi (Bilbao),"Bilbao, ES",nextbike_bo,https://www.bilbaobizi.bilbao.eu
 ES,ibizi,"Ibiza-City, ES",nextbike_ei,https://www.nextbike.es/es/ibiza/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ei/gbfs.json
 ES,Lovesharing (Canary Islands),"Lovesharing (Canary Islands), ES",nextbike_ls,https://www.lovesharing.com/bikesharing/es/lovesharing/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ls/gbfs.json
 ES,Sitycleta (Las Palmas),"Las Palmas de Gran Canaria, ES",nextbike_el,https://www.sitycleta.com/es/laspalmas/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_el/gbfs.json
+FR,Bicloo,"Nantes, FR",nantes,https://www.bicloo.nantesmetropole.fr/en/home,https://transport.data.gouv.fr/gbfs/nantes/gbfs.json
+FR,CristoLib,"Créteilcs, Paris, FR",creteil,https://www.cristolib.fr/,https://transport.data.gouv.fr/gbfs/creteil/gbfs.json
+FR,Cy'clic,"Rouen, FR",rouen,http://cyclic.rouen.fr/,https://transport.data.gouv.fr/gbfs/rouen/gbfs.json
 FR,LE vélo STAR,"Rennes, FR",le_velo_star,https://www.star.fr/le-velo/nos-offres/vls/,https://eu.ftp.opendatasoft.com/star/gbfs/gbfs.json
+FR,levélo,"Marseille, FR",marseille,http://www.levelo-mpm.fr/,https://transport.data.gouv.fr/gbfs/marseille/gbfs.json
 FR,Libélo,"Valence, FR",libelo,http://www.citea.info/presentation/?rub_code=92,https://valence.publicbikesystem.net/ube/gbfs/v1/gbfs.json
+FR,Vélam,"Amiens, FR",amiens,http://www.velam.amiens.fr/,https://transport.data.gouv.fr/gbfs/amiens/gbfs.json
+FR,Vélhop,"Strasbourg, FR",strasbourg,https://velhop.strasbourg.eu/,https://transport.data.gouv.fr/gbfs/strasbourg/gbfs.json
 FR,Vélib' Metropole,"Paris, FR",Paris,https://www.velib-metropole.fr/,https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/gbfs.json
 FR,Vélivert,"Saint-Etienne, FR",Velivert_FR_Saint-Etienne,https://www.velivert.fr/,https://saint-etienne-gbfs.klervi.net/gbfs/gbfs.json
+FR,Vélo'v,"Lyon, FR",lyon,https://velov.grandlyon.com/en/home,https://transport.data.gouv.fr/gbfs/lyon/gbfs.json
+FR,VélO2,"Cergy-Pontoise, FR",cergy-pontoise,http://www.velo2.cergypontoise.fr/,https://transport.data.gouv.fr/gbfs/cergy-pontoise/gbfs.json
 FR,Vélocéo,"Vannes, FR",Veloceo_FR_Vannes,https://veloceo.kiceo.fr/,https://vannes-gbfs.klervi.net/gbfs/gbfs.json
+FR,VéloCité,"Mulhouse, FR",mulhouse,https://www.compte-mobilite.fr/services/velos-en-libre-service/,https://transport.data.gouv.fr/gbfs/mulhouse/gbfs.json
+FR,Vélomagg',"Montpellier, FR",montpellier,https://www.tam-voyages.com/presentation/?rub_code=1&thm_id=6,https://transport.data.gouv.fr/gbfs/montpellier/gbfs.json
 FR,Vélopop,"Avignon, FR","Vélopop_FR_Avignon",https://www.velopop.fr/,https://avignon-gbfs.klervi.net/gbfs/gbfs.json
+FR,VélOstan'lib,"Nancy, FR",nancy,http://www.velostanlib.fr/,https://transport.data.gouv.fr/gbfs/nancy/gbfs.json
+FR,VélÔToulouse,"Toulouse, FR",toulouse,http://www.velo.toulouse.fr/,https://transport.data.gouv.fr/gbfs/toulouse/gbfs.json
 GB,BelfastBikes,"Belfast, GB",nextbike_bu,https://www.belfastbikes.co.uk/en/belfast/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bu/gbfs.json
 GB,Beryl - BCP,"Bournemouth, Christchurch, Poole, GB",beryl_bcp,https://www.beryl.cc,http://gbfs.basis-pdn.bike/BCP/gbfs.json
 GB,Beryl - Hereford,"Hereford, GB",beryl_hereford,https://www.beryl.cc,http://gbfs.basis-pdn.bike/Hereford/gbfs.json
@@ -173,6 +185,7 @@ US,Biki,"Honolulu, HI",go_biki,https://gobiki.org/,https://hon.publicbikesystem.
 US,Bird Chicago,"Chicago, IL",bird-chicago,https://www.bird.co,https://mds.bird.co/gbfs/chicago/gbfs.json
 US,Bird Louisville,"Louisville, KY",bird-louisville,https://www.bird.co,https://mds.bird.co/gbfs/louisville/gbfs.json
 US,Bishop Ranch BRiteBikes,"San Ramon, CA",bishop_ranch,http://britebikes.socialbicycles.com/,http://britebikes.socialbicycles.com/opendata/gbfs.json
+US,Blue Bikes,"Boston, MA",bluebikes,https://www.bluebikes.com/,https://gbfs.bluebikes.com/gbfs/gbfs.json
 US,Boise Green Bike,"Boise, ID",boise_greenbike,http://boise.greenbike.com/,http://boise.greenbike.com/opendata/gbfs.json
 US,Bolt Baltimore,"Baltimore, MD",bolt_bal,https://www.micromobility.com,https://www.bolt.miami/bolt2/bal/gbfs/en/gbfs.json
 US,Bolt Chicago,"Chicago, IL",bolt_chi,https://www.micromobility.com,https://www.bolt.miami/bolt2/chi/gbfs/gbfs.json
@@ -188,6 +201,7 @@ US,Cincy Red Bike,"Cincinnati, OH",bcycle_cincyredbike,http://www.cincyredbike.o
 US,Citi Bike,"NYC, NY",NYC,https://www.citibikenyc.com,https://gbfs.citibikenyc.com/gbfs/gbfs.json
 US,Clarksville B-cycle,"Clarksville, TN",bcycle_clarksville,https://clarksville.bcycle.com,https://gbfs.bcycle.com/bcycle_clarksville/gbfs.json
 US,Clemson BikeShare,"Clemson, SC",bcycle_clemson,https://clemson.bcycle.com,https://gbfs.bcycle.com/bcycle_clemson/gbfs.json
+US,CLEVR Mobility,"Oakland, CA",daecbe87-a9f2-4a5a-b5df-8e3e14180513,https://www.clevrmobility.com/,https://portal.clevrmobility.com/api/gbfs/oakland/en/discovery/
 US,Coast Bike Share,"St. Petersburg, FL",coast_bike_share,http://coastbikeshare.com/,http://coast.socialbicycles.com/opendata/gbfs.json
 US,CoGo,"Columbus, OH",cogo,http://www.cogobikeshare.com/,https://gbfs.cogobikeshare.com/gbfs/gbfs.json
 US,Columbia County B-cycle,"Evans, GA",bcycle_columbiacounty,https://columbiacounty.bcycle.com,https://gbfs.bcycle.com/bcycle_columbiacounty/gbfs.json
@@ -227,6 +241,7 @@ US,Lime Detroit,"Detroit, MI",lime_detroit,https://www.li.me/,https://data.lime.
 US,Lime Los Angeles,"Los Angeles, CA",lime_los_angeles,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/los_angeles/gbfs.json
 US,Lime Louisville,"Louisville, KY",lime_louisville,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/louisville/gbfs.json
 US,Lime New York,"New York, NY",lime_new_york,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/new_york/gbfs.json
+US,Lime Oakland,"Oakland, CA",lime_oakland,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/oakland/gbfs.json
 US,Lime Washington DC,"Washington, DC",lime_washington_dc,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/washington_dc/gbfs.json
 US,Link Dayton Bike Share,"Dayton, OH",bcycle_linkdayton,https://www.linkdayton.org,https://gbfs.bcycle.com/bcycle_linkdayton/gbfs.json
 US,Los Angeles Bike JUMP System,"Los Angeles, CA",los_angeles_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/laxb/gbfs.json
