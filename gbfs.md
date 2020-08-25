@@ -380,12 +380,7 @@ Field Name | Required | Type | Defines
 \- `vehicle_docks_available` <br/>*(added in v2.1-RC)* | Conditionally Required | Array | This field is required in feeds where the [vehicle_types.json](#vehicle_typesjson) is defined and where certain docks are only able to accept certain vehicle types. If every dock at the station is able to accept any vehicle type, then this field is not required. This field's value is an array of objects. Each of these objects is used to model the number of docks available for certain vehicle types. The total number of docks from each of these objects should add up to match the value specified in the `num_docks_available` field.
 &emsp;\- `vehicle_type_ids` <br/>*(added in v2.1-RC)* | Yes | Array of Strings | An array of strings where each string represents a vehicle_type_id that is able to use a particular type of dock at the station
 &emsp;\- `count` <br/>*(added in v2.1-RC)* | Yes | Non-negative integer | A number representing the total number of available docks at the station that can accept vehicles of the specified types in the `vehicle_types` array.
-\- `vehicles` <br/>*(added in v2.1-RC)* | Conditionally Required | Array | This field is required if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field's value is an array of objects. Each object contains data about a specific vehicle that is currently present at the docking station. Each of these vehicles is assumed to be rentable unless otherwise indicated with the is_reserved or is_disabled flags. All of the remaining fields in this table represent key/values for each vehicle object in this array. The length of this array must equal the value of the `num_bikes_available` field.
-&emsp;\- `bike_id` <br/>*(added in v2.1-RC)* | Yes | ID | Identifier of a vehicle, rotated to a random string, at minimum, after each trip to protect privacy *(as of v2.0)*. Note: Persistent bike_id, published publicly, could pose a threat to individual traveler privacy.
-&emsp;\- `is_reserved` <br/>*(added in v2.1-RC)* | Yes | Boolean | Is the vehicle currently reserved for someone else
-&emsp;\- `is_disabled` <br/>*(added in v2.1-RC)* | Yes | Boolean | Is the vehicle currently disabled (broken)
-&emsp;\- `vehicle_type_id` <br/>*(added in v2.1-RC)* | Yes | ID | The vehicle_type_id of this vehicle as described in [vehicle_types.json](#vehicle_typesjson).
-&emsp;\- `current_range_meters` <br/>*(added in v2.1-RC)* | Conditionally Required | Non-negative float | If the corresponding vehicle_type definition for this vehicle has a motor, then this field is required. This value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
+\- `vehicle_types_available <br/>*(added in v2.1-RC)* | Conditionally Required | Object | This field is required if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field is an object where each key is a `vehicle_type_id` as described in [vehicle_types.json](#vehicle_typesjson) and the value is a number representing the total number of available vehicle at this station for the specified vehicle type.
 
 
 Example:
@@ -404,18 +399,11 @@ Example:
         "is_returning": true,
         "last_reported": 1434054678,
         "num_docks_available": 3,
-        "vehicles": [{
-          "bike_id": "mno345",
-          "is_reserved": false,
-          "is_disabled": false,
-          "vehicle_type_id": "abc123"
-        }, {
-          "bike_id": "pqr678",
-          "is_reserved": false,
-          "is_disabled": false,
-          "vehicle_type_id": "def456",
-          "current_range_meters": 5432
-        }],
+        "num_bikes_available": 1,
+		"vehicle_types_available": {
+          "abc123": 1,
+          "def456": 0
+        },
         "vehicle_docks_available": [{
           "vehicle_type_ids": ["abc123"],
           "count": 2
@@ -430,18 +418,11 @@ Example:
         "is_returning": true,
         "last_reported": 1434054678,
         "num_docks_available": 8,
-        "vehicles": [{
-          "bike_id": "stu901",
-          "is_reserved": false,
-          "is_disabled": false,
-          "vehicle_type_id": "abc123"
-        }, {
-          "bike_id": "vwx234",
-          "is_reserved": false,
-          "is_disabled": false,
-          "vehicle_type_id": "def456",
-          "current_range_meters": 4321
-        }]
+		"num_bikes_available": 6,
+        "vehicle_types_available": {
+          "abc123": 4,
+          "def456": 2
+        }
       }
     ]
   }
@@ -450,15 +431,15 @@ Example:
 
 ### free_bike_status.json
 
-Describes vehicles that are not at a station and are not currently in the middle of an active ride.
+Describes all vehicles that are not at a station and are not currently in the middle of an active ride. From v2.1-RC, also provides more information about vehicles that are at a station if the [vehicle_types.json](#vehicle_typesjson) file has been defined.
 
 Field Name | Required | Type | Defines
 ---|---|---|---
 `bikes` | Yes | Array | Array that contains one object per vehicle that is currently stopped as defined below.
 \-&nbsp;`bike_id` | Yes | ID | Identifier of a vehicle, rotated to a random string, at minimum, after each trip to protect privacy *(as of v2.0)*. Note: Persistent bike_id, published publicly, could pose a threat to individual traveler privacy.
 \-&nbsp;`system_id` <br/>*(added in v3.0-RC)* | Conditionally required | ID | Identifier referencing the system_id field in system_information.json. Required in the case of feeds that specify free (undocked) bikes and define systems in system_information.json.
-\-&nbsp;`lat` | Yes | Latitude | Latitude of the vehicle.
-\-&nbsp;`lon` | Yes | Longitude | Longitude of the vehicle.
+\-&nbsp;`lat` | Conditionally required | Latitude | Latitude of the vehicle. This field is required if station_id is not provided for this vehicle (free floating).
+\-&nbsp;`lon` | Conditionally required | Longitude | Longitude of the vehicle. This field is required if station_id is not provided for this vehicle (free floating).
 \-&nbsp;`is_reserved` | Yes | Boolean | Is the vehicle currently reserved? <br /><br /> `true` - Vehicle is currently reserved. <br /> `false` - Vehicle is not currently reserved.
 \-&nbsp;`is_disabled` | Yes | Boolean | Is the vehicle currently disabled (broken)? <br /><br /> `true` - Vehicle is currently disabled. <br /> `false` - Vehicle is not currently disabled.
 \-&nbsp;`rental_uris` <br/>*(added in v1.1)* | Optional | Object | JSON object that contains rental URIs for Android, iOS, and web in the android, ios, and web fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
@@ -468,6 +449,7 @@ Field Name | Required | Type | Defines
 \- `vehicle_type_id` <br/>*(added in v2.1-RC)* | Conditionally Required | ID | The vehicle_type_id of this vehicle as described in [vehicle_types.json](#vehicle_typesjson-added-in-v21-rc). This field is required if the [vehicle_types.json](#vehicle_typesjson-added-in-v21-rc) is defined.
 \- `last_reported` <br/>*(added in v2.1-RC)* | Optional | Timestamp | The last time this vehicle reported its status to the operator's backend.
 \- `current_range_meters` <br/>*(added in v2.1-RC)* | Conditionally Required | Non-negative float | If the corresponding vehicle_type definition for this vehicle has a motor, then this field is required. This value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
+\- `station_id` <br/>*(added in v2.1-RC)* | Conditionally required | ID | Identifier referencing the station_id field in system_information.json. Required only if the vehicle is currently at a station and the [vehicle_types.json](#vehicle_typesjson) file has been defined.
 
 Example:
 
@@ -489,12 +471,11 @@ Example:
       }, {
         "bike_id": "jkl012",
         "last_reported": 1434054687,
-        "lat": 12.34,
-        "lon": 56.78,
         "is_reserved": false,
         "is_disabled": false,
         "vehicle_type_id": "def456",
-        "current_range_meters": 6543
+        "current_range_meters": 6543,
+		"station_id": 86
       }
     ]
   }
