@@ -130,6 +130,7 @@ IN,Smartbike (Chennai - India),"Chennai, IN",nextbike_ic,https://www.smartbikemo
 IN,Smartbike (Hyderabad - India),"Hyderabad, IN",nextbike_hi,https://www.smartbikemobility.com/en/hyderabad/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_hi/gbfs.json
 IN,Smartbike (New Delhi - India),"Delhi, IN",nextbike_in,https://www.smartbikemobility.com/en/delhi/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_in/gbfs.json
 IN,Smartbike (Vijayawada - India),"Vijayawada, IN",nextbike_vi,https://www.smartbikemobility.com/en/vijayawada/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_vi/gbfs.json
+IT,Verona Bike,"Verona, IT",verona-bike,https://bikeverona.it/en,https://gbfs.urbansharing.com/bikeverona.it/gbfs.json
 LB,bike4all,"Byblos, LB",nextbike_bl,https://www.bikeforall-lb.com/en/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bl/gbfs.json
 LV,SiXT Latvia,"Rīga, LV",nextbike_lv,https://www.sixtbicycle.lv/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_lv/gbfs.json
 MC,MonaBike,"Monaco, MC",mona_bike,https://monabike.mc/,https://monaco.publicbikesystem.net/ube/gbfs/v1/gbfs.json
