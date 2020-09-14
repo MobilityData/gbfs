@@ -68,7 +68,7 @@ system_information.json | Yes | Details including system operator, system locati
 vehicle_types.json <br/>*(added in v2.1-RC)* | Conditionally required | Describes the types of vehicles that System operator has available for rent. Required of systems that include information about vehicle types in the station_status and/or free_bike_status files. If this file is not included, then all vehicles in the feed are assumed to be non-motorized bicycles.
 station_information.json | Conditionally required | List of all stations, their capacities and locations. Required of systems utilizing docks.
 station_status.json | Conditionally required | Number of available vehicles and docks at each station and station availability. Required of systems utilizing docks.
-free_bike_status.json | Conditionally required | Vehicles that are available for rent. Required of systems that offer vehicles for rent outside of stations.
+free_bike_status.json | Conditionally required | Describes all vehicles that are not currently in active rental. Required of free floating (dockless) vehicles. Conditionally required of station based (docked) vehicles when [vehicle_types.json](#vehicle_typesjson) has been defined. Vehicles that are part of an active rental must not appear in this feed.
 system_hours.json | Optional | Hours of operation for the system.
 system_calendar.json | Optional | Dates of operation for the system.
 system_regions.json | Optional | Regions the system is broken up into.
@@ -380,7 +380,7 @@ Field Name | Required | Type | Defines
 \- `vehicle_docks_available` <br/>*(added in v2.1-RC)* | Conditionally Required | Array | This field is required in feeds where the [vehicle_types.json](#vehicle_typesjson) is defined and where certain docks are only able to accept certain vehicle types. If every dock at the station is able to accept any vehicle type, then this field is not required. This field's value is an array of objects. Each of these objects is used to model the number of docks available for certain vehicle types. The total number of docks from each of these objects should add up to match the value specified in the `num_docks_available` field.
 &emsp;\- `vehicle_type_ids` <br/>*(added in v2.1-RC)* | Yes | Array of Strings | An array of strings where each string represents a vehicle_type_id that is able to use a particular type of dock at the station
 &emsp;\- `count` <br/>*(added in v2.1-RC)* | Yes | Non-negative integer | A number representing the total number of available docks at the station that can accept vehicles of the specified types in the `vehicle_types` array.
-\- `vehicle_types_available` <br/>*(added in v2.1-RC)* | Conditionally Required | Object | This field is required if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field is an object where each key is a `vehicle_type_id` as described in [vehicle_types.json](#vehicle_typesjson) and the value is a number representing the total number of available vehicle at this station for the specified vehicle type.
+\- `vehicle_types_available` <br/>*(added in v2.1-RC)* | Conditionally Required | Object | This field is required if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field is an object where each key is a `vehicle_type_id` as described in [vehicle_types.json](#vehicle_typesjson) and the value is a number representing the total number of available vehicles at this station for the specified vehicle type.
 
 
 Example:
@@ -431,7 +431,7 @@ Example:
 
 ### free_bike_status.json
 
-Describes all vehicles that are not at a station and are not currently in the middle of an active ride. From v2.1-RC, also provides more information about vehicles that are at a station if the [vehicle_types.json](#vehicle_typesjson) file has been defined.
+Describes all vehicles that are not currently in active rental. Required of free floating (dockless) vehicles. Conditionally required of station based (docked) vehicles when [vehicle_types.json](#vehicle_typesjson) has been defined. Vehicles that are part of an active rental must not appear in this feed.
 
 Field Name | Required | Type | Defines
 ---|---|---|---
