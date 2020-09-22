@@ -273,9 +273,14 @@ Field Name | Required | Type | Defines
 `vehicle_types` | Yes | Array | Array that contains one object per vehicle type in the system as defined below.
 \- `vehicle_type_id` | Yes | ID | Unique identifier of a vehicle type. See [Field Types](#field-types) above for ID field requirements.
 \- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`car`</li><li>`moped`</li><li>`other`</li><li>`scooter`</li></ul>
-\- `propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides power only alongside human propulsion)_</li><li>`electric` _(Contains throttle mode with a battery-powered motor)_</li><li>`combustion` _(Contains throttle mode with a gas engine-powered motor)_</li></ul> This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/master/provider/README.md#propulsion-types).
+\- `car_type` | Optional | Enum | The type of car. <br /><br />Current valid issues are: <br /><ul><li>`microcar` _(smallest size of car, engine smaller than 700cc, e.g Smart Fortwo)_ </li><li>`subcompact` _(sedan with interior volume index no larger than 99 cu ft, e.g. Kia Rio)_</li><li>`compact` _(sedan with interior volume index no larger than 109 cu ft, e.g. Hyundai Elantra)_ </li><li>`mid_size` _(sedan with interior volume index no larger than 119 u ft, e.g. Toyota Camry)_</li><li>`full_size` _(sedan with interior volume index larger than 120 cu ft, e.g. Tesla Model S)_</li><li>`station_wagon` _(large cargo area with rear hinged tailgate, e.g. Subaru Outback)_ </li><li>`suv` _(similar to station-wagon with a light truck frame, e.g. Honda Pilot)_ </li><li>`minivan` _(also known as multi-purpose vehicle or people mover, e.g. Dodge Grand Caravan)_ </li><li>`pickup_truck` _(enclosed cab with open cargo area and tailgate, e.g. Ford F-150)_</li><li>`other`
+\- `rider_capacity` | Optional | Non-negative integer | The number of riders the vehicle can legally accommodate.
+\- `propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides power only alongside human propulsion)_</li><li>`electric` _(Contains throttle mode with a battery-powered motor)_</li><li>`combustion` _(Contains throttle mode with a gas engine-powered motor)_</li></li>`combustion_diesel` _(Contains throttle mode with a diesel engine-powered motor)_</li><li>`hyrbid` _(Contains throttle mode with a mixed gas engine-powered and battery-powered motor)_</li><li>`hybrid_diesel` _(Contains throttle mode with a mixed diesel engine-powered and battery-powered motor)_</li><li>`hydrogen` _(Contains throttle mode with a hydrogen fuel cell powered motor)_ <br /><br />This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/master/provider/README.md#propulsion-types).
+\- `min_fuel_level` | Optional | Enum | Minimum amount of fuel that must be left in the vehicle at the end of a trip.<br /><br />Current valid values are:<br /><br /><ul><li>`quarter_full`</li><li>`half_full`</li><li>`three_quarters_full`</li><li>`full`</li><li>`pickup_level` _(Same amount of fuel as at start of trip)_
 \- `max_range_meters` | Conditionally Required | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is required. This represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example, a full battery or full tank of gas).
 \- `name` | Optional | String | The public name of this vehicle type.
+\- `vehicle_desc` | Optional | String | Description of the vehicle that provides useful, quality information. Do not simply duplicate the information already specified.
+\- `use_conditions` | Optional | String | Conditions of use for this vehicle (e.g. age restrictions, license restrictions).
 
 Example:
 
@@ -302,9 +307,13 @@ Example:
       {
         "vehicle_type_id": "car1",
         "form_factor": "car",
+        "car_type": "full_size",
+        "rider_capacity": 5,
         "propulsion_type": "combustion",
-        "name": "Foor-door Sedan",
-        "max_range_meters": 523992
+        "min_fuel_level": "half_full",
+        "name": "Mercedes E 450",
+        "max_range_meters": 523992,
+        "vehicle_desc": "Four-door black sedan" 
       }
     ]
   }
@@ -326,9 +335,14 @@ Field Name | Required | Type | Defines
 \-&nbsp;`cross_street` | Optional | String | Cross street or landmark where the station is located.
 \-&nbsp;`region_id` | Optional | ID | Identifier of the region where station is located. See [system_regions.json](#system_regionsjson).
 \-&nbsp;`post_code` | Optional | String | Postal code where station is located.
-\-&nbsp;`rental_methods` | Optional | Array | Payment methods accepted at this station. <br /> Current valid values are:<br /> <ul><li>`KEY` (e.g. operator issued vehicle key / fob / card)</li><li>`CREDITCARD`</li><li>`PAYPASS`</li><li>`APPLEPAY`</li><li>`ANDROIDPAY`</li><li>`TRANSITCARD`</li><li>`ACCOUNTNUMBER`</li><li>`PHONE`</li></ul>
-\-&nbsp;`is_virtual_station` <br/>*(added in v2.1-RC)* | Optional | Boolean | Is this station a location with or without physical infrastructures (docks)? <br /><br /> `true` - The station is a location without physical infrastructure, defined by a point (lat/lon) and/or station_area (below). <br /> `false` - The station consists of physical infrastructure (docks). <br /><br /> If this field is empty, it means the station consists of physical infrastructure (docks).
+\-&nbsp;`rental_methods` | Optional | Array | Payment methods accepted at this station. <br /> Current valid values are:<br /><ul><li>`KEY` (e.g. operator issued vehicle key / fob / card)</li><li>`CREDITCARD`</li><li>`PAYPASS`</li><li>`APPLEPAY`</li><li>`ANDROIDPAY`</li><li>`TRANSITCARD`</li><li>`ACCOUNTNUMBER`</li><li>`PHONE`</li></ul>
+\-&nbsp;`is_virtual_station` <br/>*(added in v2.1-RC)* | Optional | Boolean | Is this station a location with or without physical infrastructures? <br /><br /> `true` - The station is a location without physical infrastructure, defined by a point (lat/lon) and/or station_area (below). <br /> `false` - The station consists of physical infrastructure (docks, charging stations, dropbox, operator branch, gate arm, parking hoop, etc.). <br /><br /> If this field is empty, it means the station consists of physical infrastructure.
 \-&nbsp;`station_area` <br/>*(added in v2.1-RC)* | Optional | GeoJSON Multipolygon | A multipolygon that describes the area of a virtual station. If station_area is supplied then the  record describes a virtual station. <br /><br /> If lat/lon and 'station_area' are both defined, the lat/lon is the significant coordinate of the station (e.g. dock facility or valet drop-off and pick up point).
+\-&nbsp;`station_type` | Optional | Enum | Type of station. <br /><br />Current valid values are:<br /><ul><li>`parking_lot` _(Off-street parking lot)_</li><li>`street_parking` _(Curbside parking)_</li><li>`underground_parking` _(Parking that is below street level, station may be non-communicating)_</li><li>`sidewalk_parking` _(Park vehicle directly on sidewalk)_</li><li>`other` 
+\-&nbsp;`parking_hoop` | Optional | Boolean | Are parking hoops present at this station? If this field is empty, it means this station does not have parking hoops. <br /><br />`true` - This station has parking hoops.<br />`false` - This station does not have parking hoops.
+\-&nbsp;`step_free_access` | Optional | Boolean | Can this station be accessed without having to take stairs? If this field is empty it means this station is not step free.<br /><br />`true` - This station has step free access.<br />`false` - This station does not have step free access.
+\-&nbsp;`night_light` | Optional | Boolean | Does this station have nighttime lighting?<br /><br />`true` - This station does have nighttime lighting.<br />`false` - This station does not have nighttime lighting.
+\-&nbsp;`station_desc` | Optional | String | Description of the station that provides useful, quality information. Do not simply duplicate the information already specified.
 \-&nbsp;`capacity` | Optional | Non-negative integer | Number of total docking points installed at this station, both available and unavailable, regardless of what vehicle types are allowed at each dock. Empty indicates unlimited capacity.
 \-&nbsp;`vehicle_capacity` <br/>*(added in v2.1-RC)* | Optional | ID | An object where each key is a vehicle_type_id as described in [vehicle_types.json](#vehicle_typesjson) and the value is a number representing the total number of vehicles of this type that can park within the area defined in the station_area field. If the field station_area is defined and a particular vehicle type id is not defined in this object, then an unlimited virtual capacity is assumed for that vehicle type.
 \-&nbsp;`is_valet_station` <br/>*(added in v2.1-RC)* | Optional | Boolean | Are valet services provided at this station? <br /><br /> `true` - Valet services are provided at this station. <br /> `false` - Valet services are not provided at this station. <br /><br /> If this field is empty, it means valet services are not provided at this station.
@@ -352,6 +366,11 @@ Example:
         "name": "Parking garage A",
         "lat": 12.34,
         "lon": 45.67,
+        "is_virtual_station": false,
+        "station_type": "underground_parking",
+        "parking_hoop": false,
+        "step_free_access": true,
+        "night_light": true,
         "vehicle_type_capacity": {
           "abc123": 7,
           "def456": 9
@@ -467,9 +486,11 @@ Field Name | Required | Type | Defines
 &emsp;\-&nbsp;`web` <br/>*(added in v1.1)* | Optional | URL | URL that can be used by a web browser to show more information about renting a vehicle at this vehicle. <br><br>This URL should be a deep link specific to this vehicle, and should not be a general rental page that includes information for more than one vehicle.  The deep link should take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application. Note that as a best practice providers should rotate identifiers within deep links after each rental to avoid unintentionally exposing private vehicle trip origins and destinations.<br><br>If this field is empty, it means deep linking isn’t supported for web browsers. <br><br>Example value: https://www.abc.com/app?sid=1234567890
 \- `vehicle_type_id` <br/>*(added in v2.1-RC)* | Conditionally Required | ID | The vehicle_type_id of this vehicle as described in [vehicle_types.json](#vehicle_typesjson-added-in-v21-rc). This field is required if the [vehicle_types.json](#vehicle_typesjson-added-in-v21-rc) is defined.
 \- `last_reported` <br/>*(added in v2.1-RC)* | Optional | Timestamp | The last time this vehicle reported its status to the operator's backend.
-\- `current_range_meters` <br/>*(added in v2.1-RC)* | Conditionally Required | Non-negative float | If the corresponding vehicle_type definition for this vehicle has a motor, then this field is required. This value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
-
-Example:
+\- `current_range_meters` <br/>*(added in v2.1-RC)* | Conditionally Required | Non-negative float | If the corresponding vehicle_type definition for this vehicle has a motor, and `current_range_percent` is not defined, then this field is required. This value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
+\- `current_range_percent` | Conditionally Required | Non-negative float | If the corresponding vehicle_type definition for this vehicle has a motor, and `current_range_meters` is not defined, then this field is required. This value represents the percentage, expressed from 0 to 1 of fuel or battery power remaining with the vehicle's current charge or fuel level. 
+\- `vehicle_accessories` | Optional | Array | Description of accessories available in the vehicle. <br /><br /> Current valid issues are:<br /><ul><li>`baby_seat` </li><li>`child_seat` </li><li>`winter_tires` </li><li> `gps`
+\- `vehicle_image` | Optional | URL | URL to image that would assist the user in identifying the vehicle (e.g. logo, image of vehicle). 
+ Example:
 
 ```jsonc
 {
@@ -494,7 +515,11 @@ Example:
         "is_reserved": false,
         "is_disabled": false,
         "vehicle_type_id": "def456",
-        "current_range_meters": 6543
+        "current_range_meters": 6543,
+        "vehicle_accessories" [
+          "child_seat",
+          "gps"
+        ]
       }
     ]
   }
@@ -579,6 +604,12 @@ Field Name | Required | Type | Defines
 \-&nbsp;`price` | Yes | Non-negative float OR String | Fare price, in the unit specified by currency. If String, must be in decimal monetary value.
 \-&nbsp;`is_taxable` | Yes | Boolean | Will additional tax be added to the base price?<br /><br />`true` - Yes.<br />  `false` - No.  <br /><br />`false` may be used to indicate that tax is not charged or that tax is included in the base price.
 \-&nbsp;`description` | Yes | String | Customer-readable description of the pricing plan. This should include the duration, price, conditions, etc. that the publisher would like users to see.
+\-&nbsp;`reservation` | Optional | Array | Array of reservation price information in minutes.
+&emsp;\-&nbsp;`min_duration` | Optional | Non-negative integer | Minimum number of minutes the vehicle must be reserved for.<br /><br />If this field is empty, it means there is no minimum reservation time.
+&emsp;\-&nbsp;`max_duration` | Optional | Non-negative integer | Maximum number of minutes the reservation is valid for. After this duration, the vehicle is no longer reserved.
+&emsp;\-&nbsp;`price` | Optional | Non-negative float | Flat price to reserve a vehicle.<br /><br />If this field is empty, there is no price to reserve a vehicle.
+&emsp;\-&nbsp;`start` | Optional | Non-negative integer | Number of minutes that must elapse after reservation is made for `price` to be applied.
+&emsp;\-&nbsp;`interval` | Optional | Non-negative integer | Interval in minutes at which `price` is reapplied. 
 
 ### system_alerts.json
 This feed is intended to inform customers about changes to the system that do not fall within the normal system operations. For example, system closures due to weather would be listed here, but a system that only operated for part of the year would have that schedule listed in the system_calendar.json feed.<br />
