@@ -68,7 +68,7 @@ system_information.json | Yes | Details including system operator, system locati
 vehicle_types.json <br/>*(added in v2.1-RC)* | Conditionally required | Describes the types of vehicles that System operator has available for rent. Required of systems that include information about vehicle types in the station_status and/or free_bike_status files. If this file is not included, then all vehicles in the feed are assumed to be non-motorized bicycles.
 station_information.json | Conditionally required | List of all stations, their capacities and locations. Required of systems utilizing docks.
 station_status.json | Conditionally required | Number of available vehicles and docks at each station and station availability. Required of systems utilizing docks.
-free_bike_status.json | Conditionally required | Describes all vehicles that are not currently in active rental. Required for free floating (dockless) vehicles. Conditionally required for station based (docked) vehicles when [vehicle_types.json](#vehicle_typesjson) has been defined. Optional for station based (docked) vehicles when [vehicle_types.json](#vehicle_typesjson) has not been defined. Vehicles that are part of an active rental must not appear in this feed.
+free_bike_status.json | Conditionally required | Describes all vehicles that are not currently in active rental. Required for free floating (dockless) vehicles. Optional for station based (docked) vehicles. Vehicles that are part of an active rental must not appear in this feed.
 system_hours.json | Optional | Hours of operation for the system.
 system_calendar.json | Optional | Dates of operation for the system.
 system_regions.json | Optional | Regions the system is broken up into.
@@ -371,7 +371,7 @@ Field Name | Required | Type | Defines
 \-&nbsp;`station_id` | Yes | ID | Identifier of a station see [station_information.json](#station_informationjson).
 \-&nbsp;`num_bikes_available` | Yes | Non-negative integer | Number of vehicles of any type available for rental. Number of functional vehicles physically at the station. To know if the vehicles are available for rental, see `is_renting`.
 \- `vehicle_types_available` <br/>*(added in v2.1-RC)* | Conditionally Required | Array | This field is required if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field's value is an array of objects. Each of these objects is used to model the total number of each defined vehicle type available at a station. The total number of vehicles from each of these objects should add up to match the value specified in the `num_bikes_available`  field.
-&emsp;\- `vehicle_type_id` <br/>*(added in v2.1-RC)* | Yes | ID | The `vehicle_type_id` of each vehicle type at the station as described in [vehicle_types.json](#vehicle_typesjson). This field is required if the [vehicle_types.json](#vehicle_typesjson) is defined..
+&emsp;\- `vehicle_type_id` <br/>*(added in v2.1-RC)* | Yes | ID | The `vehicle_type_id` of each vehicle type at the station as described in [vehicle_types.json](#vehicle_typesjson). This field is required if the [vehicle_types.json](#vehicle_typesjson) is defined.
 &emsp;\- `count` <br/>*(added in v2.1-RC)* | Yes | Non-negative integer | A number representing the total number of available vehicles of the corresponding `vehicle_type_id` as defined in [vehicle_types.json](#vehicle_typesjson) at the station.
 \-&nbsp;`num_bikes_disabled` | Optional | Non-negative integer | Number of disabled vehicles of any type at the station. Vendors who do not want to publicize the number of disabled vehicles or docks in their system can opt to omit station capacity (in station_information), `num_bikes_disabled` and `num_docks_disabled` *(as of v2.0)*. If station capacity is published, then broken docks/vehicles can be inferred (though not specifically whether the decreased capacity is a broken vehicle or dock).
 \-&nbsp;`num_docks_available` | Conditionally required <br/>*(as of v2.0)* | Non-negative integer | Required except for stations that have unlimited docking capacity (e.g. virtual stations) *(as of v2.0)*. Number of functional docks physically at the station. To know if the docks are accepting vehicle returns, see `is_returning`.
@@ -382,7 +382,7 @@ Field Name | Required | Type | Defines
 \-&nbsp;`is_installed` | Yes | Boolean | Is the station currently on the street? <br /><br />`true` - Station is installed on the street.<br />`false` - Station is not installed on the street.
 \-&nbsp;`is_renting` | Yes | Boolean | Is the station currently renting vehicles? <br /><br />`true` - Station is renting vehicles. Even if the station is empty, if it is set to allow rentals this value should be `true`.<br /> `false` - Station is not renting vehicles.
 \-&nbsp;`is_returning` | Yes | Boolean | Is the station accepting vehicle returns? <br /><br />`true` - Station is accepting vehicle returns. If a station is full but would allow a return if it was not full, then this value should be `true`.<br /> `false` - Station is not accepting vehicle returns.
-\-&nbsp;`last_reported` | Yes | Timestamp | The last time this station reported its status to the operator's backend.\- `vehicle_types_available` <br/>*(added in v2.1-RC)* | Conditionally Required | Object | This field is required if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field is an object where each key is a `vehicle_type_id` as described in [vehicle_types.json](#vehicle_typesjson) and the value is a number representing the total number of available vehicles at this station for the specified vehicle type.
+\-&nbsp;`last_reported` | Yes | Timestamp | The last time this station reported its status to the operator's backend. 
 
 
 Example:
@@ -446,7 +446,7 @@ Example:
 
 ### free_bike_status.json
 
-Describes all vehicles that are not currently in active rental. Required for free floating (dockless) vehicles. Conditionally required for station based (docked) vehicles when [vehicle_types.json](#vehicle_typesjson) has been defined. Optional for station based (docked) vehicles when [vehicle_types.json](#vehicle_typesjson) has not been defined. Vehicles that are part of an active rental must not appear in this feed.
+Describes all vehicles that are not currently in active rental. Required for free floating (dockless) vehicles. Optional for station based (docked) vehicles. Vehicles that are part of an active rental must not appear in this feed.
 
 Field Name | Required | Type | Defines
 ---|---|---|---
