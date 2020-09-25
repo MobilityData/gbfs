@@ -181,7 +181,7 @@ US,Bay Wheels,"San Francisco Bay Area, CA",BA,https://www.baywheels.com/,https:/
 US,Bike Chattanooga,"Chattanooga, TN",bike_chattanooga,http://www.bikechattanooga.com/,https://chat.publicbikesystem.net/ube/gbfs/v1/
 US,BikeLNK,"Lincoln, NE",bcycle_bikelnk,https://bikelnk.bcycle.com,https://gbfs.bcycle.com/bcycle_bikelnk/gbfs.json
 US,Bikeshare Kona,"Kona, HI",bikeshare_kona,https://hawaiiislandbikeshare.org/,https://kona.publicbikesystem.net/ube/gbfs/v1/
-US,BIKETOWN,"Portland, OR",biketown_pdx,https://www.biketownpdx.com/,http://biketownpdx.socialbicycles.com/opendata/gbfs.json
+US,BIKETOWN,"Portland, OR",biketown_pdx,https://www.biketownpdx.com/,https://gbfs.biketownpdx.com/gbfs/gbfs.json
 US,Biki,"Honolulu, HI",go_biki,https://gobiki.org/,https://hon.publicbikesystem.net/ube/gbfs/v1/
 US,Bird Chicago,"Chicago, IL",bird-chicago,https://www.bird.co,https://mds.bird.co/gbfs/chicago/gbfs.json
 US,Bird Louisville,"Louisville, KY",bird-louisville,https://www.bird.co,https://mds.bird.co/gbfs/louisville/gbfs.json
