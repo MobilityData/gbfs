@@ -70,6 +70,7 @@ DE,VRNnextbike,"DE",nextbike_vn,https://www.vrnnextbike.de/de/,https://gbfs.next
 DE,WK-Bike (Bremen),"Bremen, DE",nextbike_wk,https://www.wk-bike.de/de/bremen/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_wk/gbfs.json
 DE,wupsiRad Leverkusen,"Leverkusen, DE",nextbike_dw,https://www.wupsirad.de/de/leverkusen/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_dw/gbfs.json
 ES,Bicing,"Barcelona, ES",bike_barcelona,https://www.bicing.barcelona/,https://barcelona.publicbikesystem.net/ube/gbfs/v1/gbfs.json
+ES,BiciMAD (unofficial),"Madrid, ES",bici_madrid,https://www.bicimad.com/,https://gbfs.bici.madrid/gbfs.json
 ES,Bilbaobizi (Bilbao),"Bilbao, ES",nextbike_bo,https://www.bilbaobizi.bilbao.eus/eu/bilbao/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bo/gbfs.json
 ES,ibizi,"Ibiza-City, ES",nextbike_ei,https://www.nextbike.es/es/ibiza/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ei/gbfs.json
 ES,Lovesharing (Canary Islands),"Lovesharing (Canary Islands), ES",nextbike_ls,https://www.lovesharing.com/bikesharing/es/lovesharing/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ls/gbfs.json
