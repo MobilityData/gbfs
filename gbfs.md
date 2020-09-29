@@ -126,8 +126,8 @@ Example: `41.890169` for the Colosseum in Rome.
 * Longitude - WGS84 longitude in decimal degrees. The value must be greater than or equal to -180.0 and less than or equal to 180.0.
 Example: `12.492269` for the Colosseum in Rome.
 * Non-negative Integer - An integer greater than or equal to 0.
-* Non-negative Float - A floating point number greater than or equal to 0.
-* Float - A floating point number.
+* Non-negative Float - A 32-bit floating point number greater than or equal to 0.
+* Float - A 32-bit floating point number.
 * Timezone - TZ timezone from the https://www.iana.org/time-zones. Timezone names never contain the space character but may contain an underscore. Refer to http://en.wikipedia.org/wiki/List_of_tz_zones for a list of valid values.
 Example: `Asia/Tokyo`, `America/Los_Angeles` or `Africa/Cairo`.
 * URI *(added in v1.1)* - A fully qualified URI that includes the scheme (e.g., `com.abcrental.android://`), and any special characters in the URI must be correctly escaped. See the following http://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URI values. Note that URIs may be URLs.
@@ -578,17 +578,17 @@ Field Name | Required | Type | Defines
 \-&nbsp;`url` | Optional | URL | URL where the customer can learn more about this pricing plan.
 \-&nbsp;`name` | Yes | String | Name of this pricing plan.
 \-&nbsp;`currency` | Yes | String | Currency used to pay the fare. <br /><br /> This pricing is in ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217 <br />(e.g. `CAD` for Canadian dollars, `EUR` for euros, or `JPY` for Japanese yen.)
-\-&nbsp;`price` | Yes | String | Fare price, in the unit specified by currency. Must be in decimal monetary value.<br /><br />In case of non-rate price, this field is the total price. In case of rate price, this field is the base price that is charged only once per trip (e.g., price for unlocking) in addition to `per_km_pricing` and/or `per_min_pricing`.
+\-&nbsp;`price` | Yes | Non-Negative float OR String | Fare price, in the unit specified by currency. If string must be in decimal monetary value. Note: v3.0 will only allow non-negative float, therefore future implementations must be non-negative float.<br /><br />In case of non-rate price, this field is the total price. In case of rate price, this field is the base price that is charged only once per trip (e.g., price for unlocking) in addition to `per_km_pricing` and/or `per_min_pricing`.
 \-&nbsp;`is_taxable` | Yes | Boolean | Will additional tax be added to the base price?<br /><br />`true` - Yes.<br />  `false` - No.  <br /><br />`false` may be used to indicate that tax is not charged or that tax is included in the base price.
 \-&nbsp;`description` | Yes | String | Customer-readable description of the pricing plan. This should include the duration, price, conditions, etc. that the publisher would like users to see.
 \-&nbsp;`per_km_pricing` | Optional | Array | Array of segments when the price is a function of distance travelled, displayed in kilometers.<br /><br />Total price is the addition of `price` and all segments in `per_km_pricing` and `per_min_pricing`. If this array is not provided, there are no variable prices based on distance.
 &emsp;&emsp;\-&nbsp;`start` | Yes | Non-Negative Integer | Number of kilometers that have to elapse before this segment starts applying.
-&emsp;&emsp;\-&nbsp;`rate` | Yes | String | Rate that is charged for each kilometer `interval` after the `start`. Must be in decimal monetary value. Can be a negative number, which indicates that the traveller will receive a discount.
+&emsp;&emsp;\-&nbsp;`rate` | Yes | Float | Rate that is charged for each kilometer `interval` after the `start`. Can be a negative number, which indicates that the traveller will receive a discount.
 &emsp;&emsp;\-&nbsp;`interval` | Yes | Non-Negative Integer | Interval in kilometers at which the `rate` of this segment is either reapplied indefinitely, or if defined, up until (but not including) `end` kilometer.<br /><br />An interval of 0 indicates the rate is only charged once.
 &emsp;&emsp;\-&nbsp; `end` | Optional | Non-Negative Integer | The kilometer at which the rate will no longer apply.<br /><br /> If this field is empty, the price issued for this segment is charged until the trip ends, in addition to following segments.
 \-&nbsp;`per_min_pricing` | Optional | Array | Array of segments when the price is a function of time travelled, displayed in minutes.<br /><br />Total price is the addition of `price` and all segments in `per_km_pricing` and `per_min_pricing`. If this array is not provided, there are no variable prices based on time.
 &emsp;&emsp;\-&nbsp;`start` | Yes | Non-Negative Integer | Number of minutes that have to elapse before this segment starts applying.
-&emsp;&emsp;\-&nbsp;`rate` | Yes | String | Rate that is charged for each minute `interval` after the `start`. Must be in decimal monetary value. Can be a negative number, which indicates that the traveller will receive a discount.
+&emsp;&emsp;\-&nbsp;`rate` | Yes | Float | Rate that is charged for each minute `interval` after the `start`. Can be a negative number, which indicates that the traveller will receive a discount.
 &emsp;&emsp;\-&nbsp;`interval` | Yes | Non-Negative Integer | Interval in minutes at which the `rate` of this segment is either reapplied indefinitely, or if defined, up until (but not including) `end` minute.<br /><br />An interval of 0 indicates the rate is only charged once.
 &emsp;&emsp;\-&nbsp; `end` | Yes | Non-Negative Integer | The minute at which the rate will no longer apply.<br /><br />If this field is empty, the price issued for this segment is charged until the trip ends, in addition to following segments. 
 \-&nbsp;`surge_pricing` | Optional | Boolean | Is there currently an increase in price in response to increased demand in this pricing plan? If this field is empty, it means these is no surge pricing in effect.<br /><br />`true` - Surge pricing is in effect.<br />  `false` - Surge pricing is not in effect. 
