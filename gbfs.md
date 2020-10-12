@@ -83,8 +83,7 @@ Datasets should be published at an easily accessible, public, permanent URL. (e.
 To be compliant with GBFS, all systems must have an entry in the [systems.csv](https://github.com/NABSA/gbfs/blob/master/systems.csv) file.
 ### Feed Availability 
 Automated tools for application performance monitoring should be used to ensure feed availability.  
-
-Producers should provide a technical contact who can respond to feed outages in the `feed_contact_email` field in the `system_information.json` feed.
+Producers should provide a technical contact who can respond to feed outages in the `feed_contact_email` field in the `system_information.json` file.
  
 ### Seasonal Shutdowns, Disruptions of Service
 Feeds should continue to be published during seasonal or temporary shutdowns.  Feed URLs should not return a 404.  An empty bikes array should be returned by `free_bike_status.json`. Stations in `station_status.json` should be set to `is_renting:false`, `is_returning:false` and `is_installed:false` where applicable. Seasonal shut down dates should be reflected in `system_calendar.json`.
@@ -105,7 +104,7 @@ Announcements for disruptions of service, including disabled stations or tempora
     
 ### Auto-Discovery 
 Publishers should implement auto-discovery of GBFS feeds by linking to the location of the `gbf.json` auto-discovery endpoint.
- * The location of the auto-discovery file will be provided in the HTML area of the shared mobility landing page hosted at the URL specified in the URL field of the `system_infomation.json` file.
+ * The location of the auto-discovery file should be provided in the HTML area of the shared mobility landing page hosted at the URL specified in the URL field of the `system_infomation.json` file.
  * This is referenced via a _link_ tag with the following format:
       * `<link rel="gbfs" type="application/json" href="https://www.example.com/data/gbfs.json" />`
     * References:
@@ -191,9 +190,7 @@ Decimal places | Degrees | Distance at the Equator
 7|0.0000001|1.11 cm
 
 ## Licensing 
-It is recommended that all GBFS data be offered under an open data license. Open data licenses allow consumers to freely use, modify and share GBFS data for any purpose in perpetuity. Licensing of GBFS data provides certainty to GBFS consumers, allowing them to integrate GBFS data into their work.  
-
-A link to the data license terms should be included via the `license_id` or `license_url` fields in `system_information.json`. See the GBFS repo for a [comparison of a subset of standard licenses](https://github.com/NABSA/gbfs/blob/master/data-licenses.md).
+It is recommended that all GBFS data sets be offered under an open data license. Open data licenses allow consumers to freely use, modify and share GBFS data for any purpose in perpetuity. Licensing of GBFS data provides certainty to GBFS consumers, allowing them to integrate GBFS data into their work. All GBFS data sets should specify a license using the `license_id` field with an [SPDX identifier](https://spdx.org/licenses/) or by using `license_url` field with a URL pointing to a custom license in `system_information.json`. See the GBFS repo for a [comparison of a subset of standard licenses](https://github.com/NABSA/gbfs/blob/master/data-licenses.md). 
 ### Output Format
 Every JSON file presented in this specification contains the same common header information at the top level of the JSON response object:
 
@@ -313,8 +310,8 @@ Field Name | Required | Type | Defines
 `email` | Optional | Email | This optional field should contain a single contact email address actively monitored by the operator’s customer service department. This email address should be a direct contact point where riders can reach a customer service representative.
 `feed_contact_email` <br/>*(added in v1.1)* | Optional | Email | This optional field should contain a single contact email for feed consumers to report technical issues with the feed.
 `timezone` | Yes | Timezone | The time zone where the system is located.
-`license_id` <br/>*(added in v3.0-RC)* | Conditionally required | String | Required if the dataset is provided under a standard license. An identifier for a standard license from the [SPDX License List](https://spdx.org/licenses/). Provide `license_id` rather than `license_url` if the license is included in the SPDX License List. See the GBFS wiki for a [comparison of a subset of standard licenses](data-licenses.md). If the license_id and license_url fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
-`license_url` | Conditionally required <br/>*(as of v3.0-RC)* | URL | Required if the dataset is provided under a customized license. A fully qualified URL of a page that defines the license terms for the GBFS data for this system. Do not specify a `license_url` if `license_id` is specified. If the license_id and license_url fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode). *(as of v3.0-RC)*
+`license_id` <br/>*(added in v3.0-RC)* | Conditionally required | String | Required if the dataset is provided under a standard license. An identifier for a standard license from the [SPDX License List](https://spdx.org/licenses/). Provide `license_id` rather than `license_url` if the license is included in the SPDX License List. See the GBFS wiki for a [comparison of a subset of standard licenses](data-licenses.md). If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
+`license_url` | Conditionally required <br/>*(as of v3.0-RC)* | URL | Required if the dataset is provided under a customized license. A fully qualified URL of a page that defines the license terms for the GBFS data for this system. Do not specify a `license_url` if `license_id` is specified. If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode). *(as of v3.0-RC)*
 `attribution_organization_name` <br/>*(added in v3.0-RC)* | Optional | String | If the feed license requires attribution, name of the organization to which attribution should be provided.
 `attribution_url` <br/>*(added in v3.0-RC)* | Optional | URL | URL of the organization to which attribution should be provided.
 `rental_apps` <br/>*(added in v1.1)* | Optional | Object | Contains rental app information in the android and ios JSON objects.
