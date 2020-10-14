@@ -46,8 +46,6 @@ The data in the specification contained in this document is intended for consump
 * [v2.1-RC2 (Release Candidate)](https://github.com/NABSA/gbfs/blob/v2.1-RC2/gbfs.md)
   * [#261](https://github.com/NABSA/gbfs/pull/261) - Aggregate available vehicle_types at a station
   * [#252](https://github.com/NABSA/gbfs/pull/252) - Extend system_pricing_plans.json
-* [v3.0-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/master/gbfs.md)
-  * [#182](https://github.com/NABSA/gbfs/pull/182) - Require `license_url`, add attribution fields 
 
 ## Overview of the Change Process
 GBFS is an open specification, developed and maintained by the community of producers and consumers of GBFS data.
