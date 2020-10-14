@@ -68,7 +68,7 @@ system_information.json | Yes | Details including system operator, system locati
 vehicle_types.json <br/>*(added in v2.1-RC)* | Conditionally required | Describes the types of vehicles that System operator has available for rent. Required of systems that include information about vehicle types in the station_status and/or free_bike_status files. If this file is not included, then all vehicles in the feed are assumed to be non-motorized bicycles.
 station_information.json | Conditionally required | List of all stations, their capacities and locations. Required of systems utilizing docks.
 station_status.json | Conditionally required | Number of available vehicles and docks at each station and station availability. Required of systems utilizing docks.
-free_bike_status.json | Conditionally required | Vehicles that are available for rent. Required of systems that offer vehicles for rent outside of stations.
+free_bike_status.json | Conditionally required | *(as of v2.1-RC2)* Describes all vehicles that are not currently in active rental. Required for free floating (dockless) vehicles. Optional for station based (docked) vehicles. Vehicles that are part of an active rental must not appear in this feed.
 system_hours.json | Optional | Hours of operation for the system.
 system_calendar.json | Optional | Dates of operation for the system.
 system_regions.json | Optional | Regions the system is broken up into.
@@ -273,7 +273,7 @@ Field Name | Required | Type | Defines
 ---|---|---|---
 `vehicle_types` | Yes | Array | Array that contains one object per vehicle type in the system as defined below.
 \- `vehicle_type_id` | Yes | ID | Unique identifier of a vehicle type. See [Field Types](#field-types) above for ID field requirements.
-\- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`car`</li><li>`moped`</li><li>`other`</li><li>`scooter`</li></ul>
+\- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`car`</li><li>`moped`</li><li>`scooter`</li><li>`other`</li></ul>
 \- `propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides power only alongside human propulsion)_</li><li>`electric` _(Contains throttle mode with a battery-powered motor)_</li><li>`combustion` _(Contains throttle mode with a gas engine-powered motor)_</li></ul> This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/master/provider/README.md#propulsion-types).
 \- `max_range_meters` | Conditionally Required | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is required. This represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example, a full battery or full tank of gas).
 \- `name` | Optional | String | The public name of this vehicle type.
@@ -331,7 +331,7 @@ Field Name | Required | Type | Defines
 \-&nbsp;`is_virtual_station` <br/>*(added in v2.1-RC)* | Optional | Boolean | Is this station a location with or without physical infrastructures (docks)? <br /><br /> `true` - The station is a location without physical infrastructure, defined by a point (lat/lon) and/or station_area (below). <br /> `false` - The station consists of physical infrastructure (docks). <br /><br /> If this field is empty, it means the station consists of physical infrastructure (docks).
 \-&nbsp;`station_area` <br/>*(added in v2.1-RC)* | Optional | GeoJSON Multipolygon | A multipolygon that describes the area of a virtual station. If station_area is supplied then the  record describes a virtual station. <br /><br /> If lat/lon and 'station_area' are both defined, the lat/lon is the significant coordinate of the station (e.g. dock facility or valet drop-off and pick up point).
 \-&nbsp;`capacity` | Optional | Non-negative integer | Number of total docking points installed at this station, both available and unavailable, regardless of what vehicle types are allowed at each dock. Empty indicates unlimited capacity.
-\-&nbsp;`vehicle_capacity` <br/>*(added in v2.1-RC)* | Optional | ID | An object where each key is a vehicle_type_id as described in [vehicle_types.json](#vehicle_typesjson) and the value is a number representing the total number of vehicles of this type that can park within the area defined in the station_area field. If the field station_area is defined and a particular vehicle type id is not defined in this object, then an unlimited virtual capacity is assumed for that vehicle type.
+\-&nbsp;`vehicle_capacity` <br/>*(added in v2.1-RC)* | Optional | Object | An object where each key is a vehicle_type_id as described in [vehicle_types.json](#vehicle_typesjson) and the value is a number representing the total number of vehicles of this type that can park within the area defined in the station_area field. If the field station_area is defined and a particular vehicle type id is not defined in this object, then an unlimited virtual capacity is assumed for that vehicle type.
 \-&nbsp;`is_valet_station` <br/>*(added in v2.1-RC)* | Optional | Boolean | Are valet services provided at this station? <br /><br /> `true` - Valet services are provided at this station. <br /> `false` - Valet services are not provided at this station. <br /><br /> If this field is empty, it means valet services are not provided at this station.
 \-&nbsp;`rental_uris` <br/>*(added in v1.1)* | Optional | Object | Contains rental URIs for Android, iOS, and web in the android, ios, and web fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
 &emsp;\-&nbsp;`android` <br/>*(added in v1.1)* | Optional | URI | URI that can be passed to an Android app with an `android.intent.action.VIEW` Android intent to support Android Deep Links (https://developer.android.com/training/app-links/deep-linking). Please use Android App Links (https://developer.android.com/training/app-links) if possible so viewing apps don’t need to manually manage the redirect of the user to the app store if the user doesn’t have the application installed. <br><br>This URI should be a deep link specific to this station, and should not be a general rental page that includes information for more than one station. The deep link should take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported in the native Android rental app. <br><br>Note that URIs do not necessarily include the station_id for this station - other identifiers can be used by the rental app within the URI to uniquely identify this station. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Android App Links example value: `https://www.abc.com/app?sid=1234567890&platform=android` <br><br>Deep Link (without App Links) example value: `com.abcrental.android://open.abc.app/app?sid=1234567890`
@@ -341,7 +341,7 @@ Field Name | Required | Type | Defines
 
 Example:
 
-```json
+```jsonc
 {
   "last_updated": 1434054678,
   "ttl": 0,
@@ -371,22 +371,19 @@ Field Name | Required | Type | Defines
 `stations` | Yes | Array | Array that contains one object per station in the system as defined below.
 \-&nbsp;`station_id` | Yes | ID | Identifier of a station see [station_information.json](#station_informationjson).
 \-&nbsp;`num_bikes_available` | Yes | Non-negative integer | Number of vehicles of any type available for rental. Number of functional vehicles physically at the station. To know if the vehicles are available for rental, see `is_renting`.
+\- `vehicle_types_available` <br/>*(added in v2.1-RC)* | Conditionally Required | Array | This field is required if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field's value is an array of objects. Each of these objects is used to model the total number of each defined vehicle type available at a station. The total number of vehicles from each of these objects should add up to match the value specified in the `num_bikes_available`  field.
+&emsp;\- `vehicle_type_id` <br/>*(added in v2.1-RC)* | Yes | ID | The `vehicle_type_id` of each vehicle type at the station as described in [vehicle_types.json](#vehicle_typesjson). This field is required if the [vehicle_types.json](#vehicle_typesjson) is defined.
+&emsp;\- `count` <br/>*(added in v2.1-RC)* | Yes | Non-negative integer | A number representing the total number of available vehicles of the corresponding `vehicle_type_id` as defined in [vehicle_types.json](#vehicle_typesjson) at the station.
 \-&nbsp;`num_bikes_disabled` | Optional | Non-negative integer | Number of disabled vehicles of any type at the station. Vendors who do not want to publicize the number of disabled vehicles or docks in their system can opt to omit station capacity (in station_information), `num_bikes_disabled` and `num_docks_disabled` *(as of v2.0)*. If station capacity is published, then broken docks/vehicles can be inferred (though not specifically whether the decreased capacity is a broken vehicle or dock).
 \-&nbsp;`num_docks_available` | Conditionally required <br/>*(as of v2.0)* | Non-negative integer | Required except for stations that have unlimited docking capacity (e.g. virtual stations) *(as of v2.0)*. Number of functional docks physically at the station. To know if the docks are accepting vehicle returns, see `is_returning`.
+\- `vehicle_docks_available` <br/>*(added in v2.1-RC)* | Conditionally Required | Array | This field is required in feeds where the [vehicle_types.json](#vehicle_typesjson) is defined and where certain docks are only able to accept certain vehicle types. If every dock at the station is able to accept any vehicle type, then this field is not required. This field's value is an array of objects. Each of these objects is used to model the number of docks available for certain vehicle types. The total number of docks from each of these objects should add up to match the value specified in the `num_docks_available` field.
+&emsp;\- `vehicle_type_ids` <br/>*(added in v2.1-RC)* | Yes | Array of Strings | An array of strings where each string represents a vehicle_type_id that is able to use a particular type of dock at the station
+&emsp;\- `count` <br/>*(added in v2.1-RC)* | Yes | Non-negative integer | A number representing the total number of available vehicles of the corresponding vehicle type as defined in the `vehicle_types` array at the station that can accept vehicles of the specified types in the `vehicle_types` array.
 \-&nbsp;`num_docks_disabled` | Optional | Non-negative integer | Number of empty but disabled dock points at the station.
 \-&nbsp;`is_installed` | Yes | Boolean | Is the station currently on the street? <br /><br />`true` - Station is installed on the street.<br />`false` - Station is not installed on the street.
 \-&nbsp;`is_renting` | Yes | Boolean | Is the station currently renting vehicles? <br /><br />`true` - Station is renting vehicles. Even if the station is empty, if it is set to allow rentals this value should be `true`.<br /> `false` - Station is not renting vehicles.
 \-&nbsp;`is_returning` | Yes | Boolean | Is the station accepting vehicle returns? <br /><br />`true` - Station is accepting vehicle returns. If a station is full but would allow a return if it was not full, then this value should be `true`.<br /> `false` - Station is not accepting vehicle returns.
-\-&nbsp;`last_reported` | Yes | Timestamp | The last time this station reported its status to the operator's backend.
-\- `vehicle_docks_available` <br/>*(added in v2.1-RC)* | Conditionally Required | Array | This field is required in feeds where the [vehicle_types.json](#vehicle_typesjson) is defined and where certain docks are only able to accept certain vehicle types. If every dock at the station is able to accept any vehicle type, then this field is not required. This field's value is an array of objects. Each of these objects is used to model the number of docks available for certain vehicle types. The total number of docks from each of these objects should add up to match the value specified in the `num_docks_available` field.
-&emsp;\- `vehicle_type_ids` <br/>*(added in v2.1-RC)* | Yes | Array of Strings | An array of strings where each string represents a vehicle_type_id that is able to use a particular type of dock at the station
-&emsp;\- `count` <br/>*(added in v2.1-RC)* | Yes | Non-negative integer | A number representing the total number of available docks at the station that can accept vehicles of the specified types in the `vehicle_types` array.
-\- `vehicles` <br/>*(added in v2.1-RC)* | Conditionally Required | Array | This field is required if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field's value is an array of objects. Each object contains data about a specific vehicle that is currently present at the docking station. Each of these vehicles is assumed to be rentable unless otherwise indicated with the is_reserved or is_disabled flags. All of the remaining fields in this table represent key/values for each vehicle object in this array. The length of this array must equal the value of the `num_bikes_available` field.
-&emsp;\- `bike_id` <br/>*(added in v2.1-RC)* | Yes | ID | Identifier of a vehicle, rotated to a random string, at minimum, after each trip to protect privacy *(as of v2.0)*. Note: Persistent bike_id, published publicly, could pose a threat to individual traveler privacy.
-&emsp;\- `is_reserved` <br/>*(added in v2.1-RC)* | Yes | Boolean | Is the vehicle currently reserved for someone else
-&emsp;\- `is_disabled` <br/>*(added in v2.1-RC)* | Yes | Boolean | Is the vehicle currently disabled (broken)
-&emsp;\- `vehicle_type_id` <br/>*(added in v2.1-RC)* | Yes | ID | The vehicle_type_id of this vehicle as described in [vehicle_types.json](#vehicle_typesjson).
-&emsp;\- `current_range_meters` <br/>*(added in v2.1-RC)* | Conditionally Required | Non-negative float | If the corresponding vehicle_type definition for this vehicle has a motor, then this field is required. This value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
+\-&nbsp;`last_reported` | Yes | Timestamp | The last time this station reported its status to the operator's backend. 
 
 
 Example:
@@ -405,25 +402,21 @@ Example:
         "is_returning": true,
         "last_reported": 1434054678,
         "num_docks_available": 3,
-        "vehicles": [{
-          "bike_id": "mno345",
-          "is_reserved": false,
-          "is_disabled": false,
-          "vehicle_type_id": "abc123"
-        }, {
-          "bike_id": "pqr678",
-          "is_reserved": false,
-          "is_disabled": false,
-          "vehicle_type_id": "def456",
-          "current_range_meters": 5432
-        }],
         "vehicle_docks_available": [{
           "vehicle_type_ids": ["abc123"],
           "count": 2
         }, {
           "vehicle_type_ids": ["def456"],
           "count": 1
-        }]
+        }],
+        "num_bikes_available": 1,
+        "vehicle_types_available": [{
+          "vehicle_type_id": "abc123",
+          "count": 1
+        }, {
+          "vehicle_type_id": "def456",
+          "count": 0
+        }]        
       }, {
         "station_id": "station 2",
         "is_installed": true,
@@ -431,17 +424,20 @@ Example:
         "is_returning": true,
         "last_reported": 1434054678,
         "num_docks_available": 8,
-        "vehicles": [{
-          "bike_id": "stu901",
-          "is_reserved": false,
-          "is_disabled": false,
-          "vehicle_type_id": "abc123"
+        "vehicle_docks_available": [{
+          "vehicle_type_ids": ["abc123"],
+          "count": 6
         }, {
-          "bike_id": "vwx234",
-          "is_reserved": false,
-          "is_disabled": false,
+          "vehicle_type_ids": ["def456"],
+          "count": 2
+        }],
+        "num_bikes_available": 6,
+        "vehicle_types_available": [{
+          "vehicle_type_id": "abc123",
+          "count": 2
+        }, {
           "vehicle_type_id": "def456",
-          "current_range_meters": 4321
+          "count": 4
         }]
       }
     ]
@@ -451,15 +447,15 @@ Example:
 
 ### free_bike_status.json
 
-Describes vehicles that are not at a station and are not currently in the middle of an active ride.
+*(as of v2.1-RC2)* Describes all vehicles that are not currently in active rental. Required for free floating (dockless) vehicles. Optional for station based (docked) vehicles. Vehicles that are part of an active rental must not appear in this feed.
 
 Field Name | Required | Type | Defines
 ---|---|---|---
 `bikes` | Yes | Array | Array that contains one object per vehicle that is currently stopped as defined below.
 \-&nbsp;`bike_id` | Yes | ID | Identifier of a vehicle, rotated to a random string, at minimum, after each trip to protect privacy *(as of v2.0)*. Note: Persistent bike_id, published publicly, could pose a threat to individual traveler privacy.
 \-&nbsp;`system_id` <br/>*(added in v3.0-RC)* | Conditionally required | ID | Identifier referencing the system_id field in system_information.json. Required in the case of feeds that specify free (undocked) bikes and define systems in system_information.json.
-\-&nbsp;`lat` | Yes | Latitude | Latitude of the vehicle.
-\-&nbsp;`lon` | Yes | Longitude | Longitude of the vehicle.
+\-&nbsp;`lat` | Conditionally required <br/>*(as of v2.1-RC2)* | Latitude | Latitude of the vehicle. *(as of v2.1-RC2)* This field is required if station_id is not provided for this vehicle (free floating).
+\-&nbsp;`lon` | Conditionally required <br/>*(as of v2.1-RC2)* | Longitude | Longitude of the vehicle. *(as of v2.1-RC2)* This field is required if station_id is not provided for this vehicle (free floating).
 \-&nbsp;`is_reserved` | Yes | Boolean | Is the vehicle currently reserved? <br /><br /> `true` - Vehicle is currently reserved. <br /> `false` - Vehicle is not currently reserved.
 \-&nbsp;`is_disabled` | Yes | Boolean | Is the vehicle currently disabled (broken)? <br /><br /> `true` - Vehicle is currently disabled. <br /> `false` - Vehicle is not currently disabled.
 \-&nbsp;`rental_uris` <br/>*(added in v1.1)* | Optional | Object | JSON object that contains rental URIs for Android, iOS, and web in the android, ios, and web fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
@@ -469,6 +465,7 @@ Field Name | Required | Type | Defines
 \- `vehicle_type_id` <br/>*(added in v2.1-RC)* | Conditionally Required | ID | The vehicle_type_id of this vehicle as described in [vehicle_types.json](#vehicle_typesjson-added-in-v21-rc). This field is required if the [vehicle_types.json](#vehicle_typesjson-added-in-v21-rc) is defined.
 \- `last_reported` <br/>*(added in v2.1-RC)* | Optional | Timestamp | The last time this vehicle reported its status to the operator's backend.
 \- `current_range_meters` <br/>*(added in v2.1-RC)* | Conditionally Required | Non-negative float | If the corresponding vehicle_type definition for this vehicle has a motor, then this field is required. This value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
+\- `station_id` <br/>*(added in v2.1-RC2)* | Conditionally required | ID | Identifier referencing the station_id field in system_information.json. Required only if the vehicle is currently at a station and the [vehicle_types.json](#vehicle_typesjson) file has been defined.
 \- `pricing_plan_id` <br/>*(added in v2.1-RC2)* | Optional | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plans.json). 
 
 Example:
@@ -491,12 +488,12 @@ Example:
       }, {
         "bike_id": "jkl012",
         "last_reported": 1434054687,
-        "lat": 12.34,
-        "lon": 56.78,
         "is_reserved": false,
         "is_disabled": false,
         "vehicle_type_id": "def456",
-        "current_range_meters": 6543
+        "current_range_meters": 6543,
+	"station_id": 86,
+	"pricing_plan_id": "plan3"
       }
     ]
   }
