@@ -578,7 +578,7 @@ Field Name | Required | Type | Defines
 \-&nbsp;`url` | Optional | URL | URL where the customer can learn more about this pricing plan.
 \-&nbsp;`name` | Yes | String | Name of this pricing plan.
 \-&nbsp;`currency` | Yes | String | Currency used to pay the fare. <br /><br /> This pricing is in ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217 <br />(e.g. `CAD` for Canadian dollars, `EUR` for euros, or `JPY` for Japanese yen.)
-\-&nbsp;`price` | Yes | Non-Negative float OR String | Fare price, in the unit specified by currency. If string must be in decimal monetary value. Note: v3.0 will only allow non-negative float, therefore future implementations must be non-negative float.<br /><br />In case of non-rate price, this field is the total price. In case of rate price, this field is the base price that is charged only once per trip (e.g., price for unlocking) in addition to `per_km_pricing` and/or `per_min_pricing`.
+\-&nbsp;`price` | Yes | Non-Negative float OR String | Fare price, in the unit specified by currency. If string, must be in decimal monetary value. Note: v3.0 will only allow non-negative float, therefore future implementations must be non-negative float.<br /><br />In case of non-rate price, this field is the total price. In case of rate price, this field is the base price that is charged only once per trip (e.g., price for unlocking) in addition to `per_km_pricing` and/or `per_min_pricing`.
 \-&nbsp;`is_taxable` | Yes | Boolean | Will additional tax be added to the base price?<br /><br />`true` - Yes.<br />  `false` - No.  <br /><br />`false` may be used to indicate that tax is not charged or that tax is included in the base price.
 \-&nbsp;`description` | Yes | String | Customer-readable description of the pricing plan. This should include the duration, price, conditions, etc. that the publisher would like users to see.
 \-&nbsp;`per_km_pricing` | Optional | Array | Array of segments when the price is a function of distance travelled, displayed in kilometers.<br /><br />Total price is the addition of `price` and all segments in `per_km_pricing` and `per_min_pricing`. If this array is not provided, there are no variable prices based on distance.
@@ -590,7 +590,7 @@ Field Name | Required | Type | Defines
 &emsp;&emsp;\-&nbsp;`start` | Yes | Non-Negative Integer | Number of minutes that have to elapse before this segment starts applying.
 &emsp;&emsp;\-&nbsp;`rate` | Yes | Float | Rate that is charged for each minute `interval` after the `start`. Can be a negative number, which indicates that the traveller will receive a discount.
 &emsp;&emsp;\-&nbsp;`interval` | Yes | Non-Negative Integer | Interval in minutes at which the `rate` of this segment is either reapplied indefinitely, or if defined, up until (but not including) `end` minute.<br /><br />An interval of 0 indicates the rate is only charged once.
-&emsp;&emsp;\-&nbsp; `end` | Yes | Non-Negative Integer | The minute at which the rate will no longer apply.<br /><br />If this field is empty, the price issued for this segment is charged until the trip ends, in addition to following segments. 
+&emsp;&emsp;\-&nbsp; `end` | Optional | Non-Negative Integer | The minute at which the rate will no longer apply.<br /><br />If this field is empty, the price issued for this segment is charged until the trip ends, in addition to following segments. 
 \-&nbsp;`surge_pricing` | Optional | Boolean | Is there currently an increase in price in response to increased demand in this pricing plan? If this field is empty, it means these is no surge pricing in effect.<br /><br />`true` - Surge pricing is in effect.<br />  `false` - Surge pricing is not in effect. 
 
 
@@ -602,7 +602,6 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 {
   "plans": {
     "plan_id": "plan2",
-    "vehicle_type_id": "bike1",
     "name": "One-Way",
     "currency": "USD",
     "price": 2,
@@ -636,7 +635,6 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
 {
   "plans": {
     "plan_id": "plan3",
-    "vehicle_type_id": "scooter1",
     "name": "Simple Rate",
     "currency": "CAD",
     "price": 3,
