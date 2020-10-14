@@ -126,7 +126,8 @@ Example: `41.890169` for the Colosseum in Rome.
 * Longitude - WGS84 longitude in decimal degrees. The value must be greater than or equal to -180.0 and less than or equal to 180.0.
 Example: `12.492269` for the Colosseum in Rome.
 * Non-negative Integer - An integer greater than or equal to 0.
-* Non-negative Float - A floating point number greater than or equal to 0.
+* Non-negative Float - A 32-bit floating point number greater than or equal to 0.
+* Float *(added in v2.1-RC2)* - A 32-bit floating point number.
 * Timezone - TZ timezone from the https://www.iana.org/time-zones. Timezone names never contain the space character but may contain an underscore. Refer to http://en.wikipedia.org/wiki/List_of_tz_zones for a list of valid values.
 Example: `Asia/Tokyo`, `America/Los_Angeles` or `Africa/Cairo`.
 * URI *(added in v1.1)* - A fully qualified URI that includes the scheme (e.g., `com.abcrental.android://`), and any special characters in the URI must be correctly escaped. See the following http://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URI values. Note that URIs may be URLs.
@@ -465,6 +466,7 @@ Field Name | Required | Type | Defines
 \- `last_reported` <br/>*(added in v2.1-RC)* | Optional | Timestamp | The last time this vehicle reported its status to the operator's backend.
 \- `current_range_meters` <br/>*(added in v2.1-RC)* | Conditionally Required | Non-negative float | If the corresponding vehicle_type definition for this vehicle has a motor, then this field is required. This value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
 \- `station_id` <br/>*(added in v2.1-RC2)* | Conditionally required | ID | Identifier referencing the station_id field in system_information.json. Required only if the vehicle is currently at a station and the [vehicle_types.json](#vehicle_typesjson) file has been defined.
+\- `pricing_plan_id` <br/>*(added in v2.1-RC2)* | Optional | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plans.json). 
 
 Example:
 
@@ -573,10 +575,82 @@ Field Name | Required | Type | Defines
 \-&nbsp;`url` | Optional | URL | URL where the customer can learn more about this pricing plan.
 \-&nbsp;`name` | Yes | String | Name of this pricing plan.
 \-&nbsp;`currency` | Yes | String | Currency used to pay the fare. <br /><br /> This pricing is in ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217 <br />(e.g. `CAD` for Canadian dollars, `EUR` for euros, or `JPY` for Japanese yen.)
-\-&nbsp;`price` | Yes | Non-negative float OR String | Fare price, in the unit specified by currency. If String, must be in decimal monetary value.
+\-&nbsp;`price` | Yes | Non-Negative float OR String | Fare price, in the unit specified by currency. If string, must be in decimal monetary value. <br/>*(added in v2.1-RC2)* Note: v3.0 may only allow non-negative float, therefore future implementations should be non-negative float.<br /><br />In case of non-rate price, this field is the total price. In case of rate price, this field is the base price that is charged only once per trip (e.g., price for unlocking) in addition to `per_km_pricing` and/or `per_min_pricing`.
 \-&nbsp;`is_taxable` | Yes | Boolean | Will additional tax be added to the base price?<br /><br />`true` - Yes.<br />  `false` - No.  <br /><br />`false` may be used to indicate that tax is not charged or that tax is included in the base price.
 \-&nbsp;`description` | Yes | String | Customer-readable description of the pricing plan. This should include the duration, price, conditions, etc. that the publisher would like users to see.
+\-&nbsp;`per_km_pricing` <br/>*(added in v2.1-RC2)* | Optional | Array | Array of segments when the price is a function of distance travelled, displayed in kilometers.<br /><br />Total price is the addition of `price` and all segments in `per_km_pricing` and `per_min_pricing`. If this array is not provided, there are no variable prices based on distance.
+&emsp;&emsp;\-&nbsp;`start` <br/>*(added in v2.1-RC2)* | Yes | Non-Negative Integer | Number of kilometers that have to elapse before this segment starts applying.
+&emsp;&emsp;\-&nbsp;`rate` <br/>*(added in v2.1-RC2)* | Yes | Float | Rate that is charged for each kilometer `interval` after the `start`. Can be a negative number, which indicates that the traveller will receive a discount.
+&emsp;&emsp;\-&nbsp;`interval` <br/>*(added in v2.1-RC2)* | Yes | Non-Negative Integer | Interval in kilometers at which the `rate` of this segment is either reapplied indefinitely, or if defined, up until (but not including) `end` kilometer.<br /><br />An interval of 0 indicates the rate is only charged once.
+&emsp;&emsp;\-&nbsp; `end` <br/>*(added in v2.1-RC2)* | Optional | Non-Negative Integer | The kilometer at which the rate will no longer apply.<br /><br /> If this field is empty, the price issued for this segment is charged until the trip ends, in addition to following segments.
+\-&nbsp;`per_min_pricing` <br/>*(added in v2.1-RC2)* | Optional | Array | Array of segments when the price is a function of time travelled, displayed in minutes.<br /><br />Total price is the addition of `price` and all segments in `per_km_pricing` and `per_min_pricing`. If this array is not provided, there are no variable prices based on time.
+&emsp;&emsp;\-&nbsp;`start` <br/>*(added in v2.1-RC2)* | Yes | Non-Negative Integer | Number of minutes that have to elapse before this segment starts applying.
+&emsp;&emsp;\-&nbsp;`rate` <br/>*(added in v2.1-RC2)* | Yes | Float | Rate that is charged for each minute `interval` after the `start`. Can be a negative number, which indicates that the traveller will receive a discount.
+&emsp;&emsp;\-&nbsp;`interval` <br/>*(added in v2.1-RC2)* | Yes | Non-Negative Integer | Interval in minutes at which the `rate` of this segment is either reapplied indefinitely, or if defined, up until (but not including) `end` minute.<br /><br />An interval of 0 indicates the rate is only charged once.
+&emsp;&emsp;\-&nbsp; `end` <br/>*(added in v2.1-RC2)* | Optional | Non-Negative Integer | The minute at which the rate will no longer apply.<br /><br />If this field is empty, the price issued for this segment is charged until the trip ends, in addition to following segments. 
+\-&nbsp;`surge_pricing` <br/>*(added in v2.1-RC2)* | Optional | Boolean | Is there currently an increase in price in response to increased demand in this pricing plan? If this field is empty, it means these is no surge pricing in effect.<br /><br />`true` - Surge pricing is in effect.<br />  `false` - Surge pricing is not in effect. 
 
+### Examples *(added in v2.1-RC2)*
+
+#### Example 1: 
+
+The user does not pay more than the base price for the first 10 km. After 10 km the user pays $1 per km. After 25 km the user pays $0.50 per km and an additional $3 every 5 km, the extension price, in addition to $0.50 per km. 
+
+```jsonc
+{
+  "plans": {
+    "plan_id": "plan2",
+    "name": "One-Way",
+    "currency": "USD",
+    "price": 2,
+    "is_taxable": false,
+    "description": "Includes 10km, overage fees apply after 10km.",
+    "per_km_pricing": [
+      {
+        "start": 10,
+        "rate": 1,
+        "interval": 1,
+        "end": 25
+      }, 
+      {
+        "start": 25,
+        "rate": 0.5,
+        "interval": 1
+      },
+      {
+        "start": 25,
+        "rate": 3,
+        "interval": 5
+      }
+    ]
+  }
+}
+```
+#### Example 2:
+
+This example demonstrates a pricing scheme that has a rate both by minute and by km. The user is charged $0.25 per km as well as $0.50 per minute. Both of these rates happen concurrently and are not dependent on one another. 
+```jsonc
+{
+  "plans": {
+    "plan_id": "plan3",
+    "name": "Simple Rate",
+    "currency": "CAD",
+    "price": 3,
+    "is_taxable": true,
+    "description": "$3 unlock fee, $0.25 per kilometer and 0.50 per minute.",
+    "per_km_pricing": [{
+      "start": 0,
+      "rate": 0.25,
+      "interval": 1
+    }],
+    "per_min_pricing": [{
+      "start": 0,
+      "rate": 0.50,
+      "interval": 1
+    }]
+  }
+}
+```
 ### system_alerts.json
 This feed is intended to inform customers about changes to the system that do not fall within the normal system operations. For example, system closures due to weather would be listed here, but a system that only operated for part of the year would have that schedule listed in the system_calendar.json feed.<br />
 Obsolete alerts should be removed so the client application can safely present to the end user everything present in the feed.
@@ -619,7 +693,7 @@ Field Name | Required | Type | Defines
 
 ## Deep Links *(added in v1.1)*
 
-Deep links to iOS, Android, and web apps are supported via URIs in the `system_information.json`, `station_information.json`, and `free_bike_status.json` files. The following sections describe how analytics can be added to these URIs, as well as some examples.
+Deep links to iOS, Android, and web apps are supported via URIs in the `system_information.json`, `station_information.json`, and `free_bike_status.json` files. The following sections describe how analytics can be added to these URIs, as well as some examples. For further examples, see ["What's New in GBFS"](https://medium.com/@mobilitydata/whats-new-in-gbfs-v2-0-63eb46e6bdc4).
 
 ### Analytics *(added in v1.1)*
 
