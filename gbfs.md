@@ -508,7 +508,8 @@ Example:
 
 ### free_bike_status.json
 
-This endpoint contains an array of all vehicles in a system that are not currently in an active rental. Vehicles in active rental must not appear in this feed. Vehicles listed as available for rental in feeds must be in the field and accessible to users. Vehicles that are not accessible (e.g. in a warehouse or in transit) must not appear as available for rental.
+*(as of v2.1-RC2)* Describes all vehicles that are not currently in active rental. Required for free floating (dockless) vehicles. Optional for station based (docked) vehicles. Vehicles that are part of an active rental must not appear in this feed. Vehicles listed as available for rental must be in the field and accessible to users. Vehicles that are not accessible (e.g. in a warehouse or in transit) must not appear as available for rental.
+
 
 
 Field Name | Required | Type | Defines
