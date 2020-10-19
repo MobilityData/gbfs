@@ -13,7 +13,9 @@ This documentation refers to **v3.0-RC (release candidate)**. For past and upcom
 * [Files](#files)
 * [Accessibility](#accessibility)
 * [File Requirements](#file-requirements)
+* [Licensing](#licensing)
 * [Field Types](#field-types)
+* [Files](#files)
     * [gbfs.json](#gbfsjson)
     * [gbfs_versions.json](#gbfs_versionsjson-added-in-v11) *(added in v1.1)*
     * [system_information.json](#system_informationjson)
@@ -105,12 +107,13 @@ Announcements for disruptions of service, including disabled stations or tempora
 ### Auto-Discovery 
 Publishers should implement auto-discovery of GBFS feeds by linking to the location of the `gbf.json` auto-discovery endpoint.
  * The location of the auto-discovery file should be provided in the HTML area of the shared mobility landing page hosted at the URL specified in the URL field of the `system_infomation.json` file.
+
  * This is referenced via a _link_ tag with the following format:
       * `<link rel="gbfs" type="application/json" href="https://www.example.com/data/gbfs.json" />`
     * References:
       * http://microformats.org/wiki/existing-rel-values
       * http://microformats.org/wiki/rel-faq#How_is_rel_used
-
+ * A shared mobility landing page may contain links to auto-discovery files for multiple systems.
 ### Localization
 * Each set of data files should be distributed in a single language as defined in system_information.json.
 * A system that wants to publish feeds in multiple languages should do so by publishing multiple distributions, such as:
@@ -133,6 +136,24 @@ Abbreviations should not be used for names and other text (e.g. St. for Street) 
 Names used for stations, virtual stations and geofenced areas should be human readable. Naming conventions used for locations should consider a variety of use cases including both text and maps. 
 
 Descriptions should not include information so specific that it could be used in tracking of vehicles or trips.
+
+### Coordinate Precision
+Feeds should provide 6 digits (0.000001) of precision for decimal degrees lat/lon coordinates.
+
+Decimal places | Degrees | Distance at the Equator
+---|---|---
+0|1.0|111 km
+1|0.1|11.1 km
+2|0.01|1.11 km
+3|0.001|111 m
+4|0.0001|11.1 m
+5|0.00001|1.11 m
+**6**|**0.000001**|**0.111 m**
+7|0.0000001|1.11 cm
+### Data Latentcy 
+The data returned by the near-realtime endpoints `station_status.json` and `free_bike_status.json` should be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  Appropriate values should be set using the `ttl` property for each endpoint based on how often the data in feeds are refreshed or updated.
+## Licensing 
+It is recommended that all GBFS data sets be offered under an open data license. Open data licenses allow consumers to freely use, modify and share GBFS data for any purpose in perpetuity. Licensing of GBFS data provides certainty to GBFS consumers, allowing them to integrate GBFS data into their work. All GBFS data sets should specify a license using the `license_id` field with an [SPDX identifier](https://spdx.org/licenses/) or by using `license_url` field with a URL pointing to a custom license in `system_information.json`. See the GBFS repo for a [comparison of a subset of standard licenses](https://github.com/NABSA/gbfs/blob/master/data-licenses.md). 
 
 ## Field Types
 
@@ -175,22 +196,7 @@ Submitted by | Field Name | File Name | Defines
 ---|---|---|---
 Publisher's name|_field_name|Name of GBFS endpoint where field is used|Description of purpose of use
 
-### Coordinate Precision
-Feeds should provide 6 digits (0.000001) of precision for decimal degrees lat/lon coordinates.
-
-Decimal places | Degrees | Distance at the Equator
----|---|---
-0|1.0|111 km
-1|0.1|11.1 km
-2|0.01|1.11 km
-3|0.001|111 m
-4|0.0001|11.1 m
-5|0.00001|1.11 m
-**6**|**0.000001**|**0.111 m**
-7|0.0000001|1.11 cm
-
-## Licensing 
-It is recommended that all GBFS data sets be offered under an open data license. Open data licenses allow consumers to freely use, modify and share GBFS data for any purpose in perpetuity. Licensing of GBFS data provides certainty to GBFS consumers, allowing them to integrate GBFS data into their work. All GBFS data sets should specify a license using the `license_id` field with an [SPDX identifier](https://spdx.org/licenses/) or by using `license_url` field with a URL pointing to a custom license in `system_information.json`. See the GBFS repo for a [comparison of a subset of standard licenses](https://github.com/NABSA/gbfs/blob/master/data-licenses.md). 
+## Files
 ### Output Format
 Every JSON file presented in this specification contains the same common header information at the top level of the JSON response object:
 
@@ -376,7 +382,7 @@ Field Name | Required | Type | Defines
 ---|---|---|---
 `stations` | Yes | Array | Array that contains one object per station as defined below.
 \-&nbsp;`station_id` | Yes | ID | Identifier of a station.
-\-&nbsp;`name` | Yes | String | This field contains the public name of the station for display in maps, digital signage and other text applications. Names should reflect the station location through the use of a cross street or local landmark. Abbreviations should not be used for names and other text (e.g. St. for Street) unless a location is called by its abbreviated name (e.g. “JFK Airport”). See [Text Fields and Naming](#text-fields-and-naming). <br>Examples: <ul><li>Broadway and East 22nd Street</li><li>Convention Center</li><li>Central Park South</li></ul>
+\-&nbsp;`name` | Yes | String | The public name of the station for display in maps, digital signage and other text applications. Names should reflect the station location through the use of a cross street or local landmark. Abbreviations should not be used for names and other text (e.g. St. for Street) unless a location is called by its abbreviated name (e.g. “JFK Airport”). See [Text Fields and Naming](#text-fields-and-naming). <br>Examples: <ul><li>Broadway and East 22nd Street</li><li>Convention Center</li><li>Central Park South</li></ul>
 \-&nbsp;`short_name` | Optional | String | Short name or other type of identifier.
 \-&nbsp;`lat` | Yes | Latitude | Latitude of the station in decimal degrees. This field should have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 \-&nbsp;`lon` | Yes | Longitude | Longitude of the station in decimal degrees. This field should have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
@@ -421,7 +427,7 @@ Example:
 ```
 
 ### station_status.json
-Describes the capacity and rental availability of a station. Data reflects the operators most recent knowledge of the station’s status. Any station that is represented in `station_status.json` must have a corresponding entry in `station_information.json`.
+Describes the capacity and rental availability of a station. Data returned should be should be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  See [Data Latency](#data-latency). Data reflects the operators most recent knowledge of the station’s status. Any station that is represented in `station_status.json` must have a corresponding entry in `station_information.json`.
 
 Field Name | Required | Type | Defines
 ---|---|---|---
@@ -508,7 +514,7 @@ Example:
 
 ### free_bike_status.json
 
-*(as of v2.1-RC2)* Describes all vehicles that are not currently in active rental. Required for free floating (dockless) vehicles. Optional for station based (docked) vehicles. Vehicles that are part of an active rental must not appear in this feed. Vehicles listed as available for rental must be in the field and accessible to users. Vehicles that are not accessible (e.g. in a warehouse or in transit) must not appear as available for rental.
+*(as of v2.1-RC2)* Describes all vehicles that are not currently in active rental. Required for free floating (dockless) vehicles. Optional for station based (docked) vehicles. Data returned should be should be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  See [Data Latency](#data-latency). Vehicles that are part of an active rental must not appear in this feed. Vehicles listed as available for rental must be in the field and accessible to users. Vehicles that are not accessible (e.g. in a warehouse or in transit) must not appear as available for rental.
 
 
 
