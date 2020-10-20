@@ -88,7 +88,7 @@ Automated tools for application performance monitoring should be used to ensure 
 Producers should provide a technical contact who can respond to feed outages in the `feed_contact_email` field in the `system_information.json` file.
  
 ### Seasonal Shutdowns, Disruptions of Service
-Feeds should continue to be published during seasonal or temporary shutdowns.  Feed URLs should not return a 404.  An empty bikes array should be returned by `free_bike_status.json`. Stations in `station_status.json` should be set to `is_renting:false`, `is_returning:false` and `is_installed:false` where applicable. Seasonal shut down dates should be reflected in `system_calendar.json`.
+Feeds should continue to be published during seasonal or temporary shutdowns.  Feed URLs should not return a 404.  An empty bikes array should be returned by `free_bike_status.json`. Stations in `station_status.json` should be set to `is_renting:false`, `is_returning:false` and `is_installed:false` where applicable. Seasonal shutdown dates should be reflected in `system_calendar.json`.
 
 Announcements for disruptions of service, including disabled stations or temporary closures of stations or systems should be made in `system_alerts.json`.
 
@@ -105,7 +105,7 @@ Announcements for disruptions of service, including disabled stations or tempora
     * Optional files may 404. A 404 of an optional file should not be considered an error.
     
 ### Auto-Discovery 
-Publishers should implement auto-discovery of GBFS feeds by linking to the location of the `gbf.json` auto-discovery endpoint.
+Publishers should implement auto-discovery of GBFS feeds by linking to the location of the `gbfs.json` auto-discovery endpoint.
  * The location of the auto-discovery file should be provided in the HTML area of the shared mobility landing page hosted at the URL specified in the URL field of the `system_infomation.json` file.
 
  * This is referenced via a _link_ tag with the following format:
@@ -331,7 +331,7 @@ Field Name | Required | Type | Defines
 
 ### vehicle_types.json *(added in v2.1-RC)*
 
-This file should be published by systems offering multiple vehicle types for rental, for example pedal bikes and ebikes. <br>The following fields are all attributes within the main "data" object for this feed.
+This file should be published by systems offering multiple vehicle types for rental, for example pedal bikes and ebikes. <br/>The following fields are all attributes within the main "data" object for this feed.
 
 Field Name | Required | Type | Defines
 ---|---|---|---
@@ -393,7 +393,7 @@ Field Name | Required | Type | Defines
 \-&nbsp;`post_code` | Optional | String | Postal code where station is located.
 \-&nbsp;`rental_methods` | Optional | Array | Payment methods accepted at this station. <br /> Current valid values are:<br /> <ul><li>`KEY` (e.g. operator issued vehicle key / fob / card)</li><li>`CREDITCARD`</li><li>`PAYPASS`</li><li>`APPLEPAY`</li><li>`ANDROIDPAY`</li><li>`TRANSITCARD`</li><li>`ACCOUNTNUMBER`</li><li>`PHONE`</li></ul>
 \-&nbsp;`is_virtual_station` <br/>*(added in v2.1-RC)* | Optional | Boolean | Is this station a location with or without physical infrastructures (docks)? <br /><br /> `true` - The station is a location without physical infrastructure, defined by a point (lat/lon) and/or `station_area` (below). <br /> `false` - The station consists of physical infrastructure (docks). <br /><br /> If this field is empty, it means the station consists of physical infrastructure (docks).<br><br>This field should be published in systems that have station locations without standard, internet connected physical docking infrastructure. These may be racks or geofenced areas designated for rental and/or return of vehicles. Locations that fit within this description should have the `is_virtual_station` boolean set to `true`. 
-\-&nbsp;`station_area` <br/>*(added in v2.1-RC)* | Optional | GeoJSON Multipolygon | A GeoJASON multipolygon that describes the area of a virtual station. If `station_area` is supplied then the record describes a virtual station. <br /><br /> If lat/lon and `station_area` are both defined, the lat/lon is the significant coordinate of the station (e.g. dock facility or valet drop-off and pick up point).
+\-&nbsp;`station_area` <br/>*(added in v2.1-RC)* | Optional | GeoJSON Multipolygon | A GeoJSON multipolygon that describes the area of a virtual station. If `station_area` is supplied then the record describes a virtual station. <br /><br /> If lat/lon and `station_area` are both defined, the lat/lon is the significant coordinate of the station (e.g. dock facility or valet drop-off and pick up point).
 \-&nbsp;`capacity` | Optional | Non-negative integer | Number of total docking points installed at this station, both available and unavailable, regardless of what vehicle types are allowed at each dock. Empty indicates unlimited capacity.
 
 \-&nbsp;`is_valet_station` <br/>*(added in v2.1-RC)* | Optional | Boolean | Are valet services provided at this station? <br /><br /> `true` - Valet services are provided at this station. <br /> `false` - Valet services are not provided at this station. <br /><br /> If this field is empty, it is assumed that valet services are not provided at this station. <br><br>This field’s boolean should be set to `true` during the hours which valet service is provided at the station. Valet service is defined as providing unlimited capacity at a station. 
