@@ -428,12 +428,12 @@ Example:
 ```
 
 ### station_status.json
-Describes the capacity and rental availability of a station. Data returned should be should be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  See [Data Latency](#data-latency). Data reflects the operators most recent knowledge of the station’s status. Any station that is represented in `station_status.json` must have a corresponding entry in `station_information.json`.
+Describes the capacity and rental availability of a station. Data returned should be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  See [Data Latency](#data-latentcy). Data reflects the operators most recent knowledge of the station’s status. Any station that is represented in `station_status.json` must have a corresponding entry in `station_information.json`.
 
 Field Name | Required | Type | Defines
 ---|---|---|---
 `stations` | Yes | Array | Array that contains one object per station in the system as defined below.
-\-&nbsp;`station_id` | Yes | ID | Identifier of a station see [station_information.json](#station_informationjson).
+\-&nbsp;`station_id` | Yes | ID | Identifier of a station. See [station_information.json](#station_informationjson).
 \-&nbsp;`num_bikes_available` | Yes | Non-negative integer | The total number of vehicles of all types that are currently available and offered for rental at the station. If the `is_renting` boolean is set to`false` this number should be zero.
 \-&nbsp;`num_bikes_disabled` | Optional | Non-negative integer | Number of disabled vehicles of any type at the station. Vendors who do not want to publicize the number of disabled vehicles or docks in their system can opt to omit station capacity (in station_information), `num_bikes_disabled` and `num_docks_disabled` *(as of v2.0)*. If station capacity is published, then disabled docks/vehicles can be inferred (though not specifically whether the decreased capacity is a disabled vehicle or dock).
 \-&nbsp;`num_docks_available` | Conditionally required <br/>*(as of v2.0)* | Non-negative integer | Required except for stations that have unlimited docking capacity (e.g. virtual stations) *(as of v2.0)*. Total number of functional open docks that are currently available to receive vehicles at the station. If the `is_returning` boolean is set to `false` this number should be zero.
@@ -514,7 +514,7 @@ Example:
 
 ### free_bike_status.json
 
-*(as of v2.1-RC2)* Describes all vehicles that are not currently in active rental. Required for free floating (dockless) vehicles. Optional for station based (docked) vehicles. Data returned should be should be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  See [Data Latency](#data-latency). Vehicles that are part of an active rental must not appear in this feed. Vehicles listed as available for rental must be in the field and accessible to users. Vehicles that are not accessible (e.g. in a warehouse or in transit) must not appear as available for rental.
+*(as of v2.1-RC2)* Describes all vehicles that are not currently in active rental. Required for free floating (dockless) vehicles. Optional for station based (docked) vehicles. Data returned should be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  See [Data Latency](#data-latentcy). Vehicles that are part of an active rental must not appear in this feed. Vehicles listed as available for rental must be in the field and accessible to users. Vehicles that are not accessible (e.g. in a warehouse or in transit) must not appear as available for rental.
 
 Field Name | Required | Type | Defines
 ---|---|---|---
