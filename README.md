@@ -57,11 +57,11 @@ The specification is not fixed or unchangeable. As the shared mobility industry 
 * The person calling for the vote should announce the vote in the [GBFS Slack channel](https://mobilittydata-io.slack.com) with a link to the PR. The message should conform to this template:
   * *A vote has been called on PR # [title of PR] (link to PR). This vote will be open for 10 full calendar days, until 11:59PM UTC on X. Please vote for or against the proposal on GitHub.*
 * MobilityData will both comment on the PR on GitHub and send a reminder in the GBFS Slack channel when there are 2 calendar days remaining on the vote. The reminder should conform to this template: 
-  * Slack: <br />*Voting on PR # [title of PR] (link to PR) closes in 2 calendar days. Please cote for or against the proposal on GitHub.* 
-  * GitHub:<br />*Voting on this PR closes in 2 calendar days. Please vote for or against hte proposal, and include the organization for which you are voting in your comment. Please note if you can commit to implementing the proposal.*
+  * Slack: <br />*Voting on PR # [title of PR] (link to PR) closes in 2 calendar days. Please vote for or against the proposal on GitHub.* 
+  * GitHub:<br />*Voting on this PR closes in 2 calendar days. Please vote for or against the proposal, and include the organization for which you are voting in your comment. Please note if you can commit to implementing the proposal.*
 * Once a vote is called, a "Vote Open" label will be added to the PR. After the 2 day reminder, the label will be replaced with "Vote Closing Soon", once the vote is closed, the label will become either “Vote Passed” or “Voted Failed” depending on the vote outcome.
 * At least 3 votes in favor, in addition to the author of the Pull Request, are required for a proposal to pass. At least one of these votes must be from a producer and at least one from a consumer.
-* Implementation requirements are that both 1 producer and 1 consumer commit to implementing the changes. A change is placed into RC status pending implementation. Once implemented successfully, the change is merged into an official release. .
+* Implementation requirements are that both 1 producer and 1 consumer commit to implementing the changes. A change is placed into RC status pending implementation. Once implemented successfully, the change is merged into an official release.
 * Editorial changes as well as items that are not found in gbfs.md do not need to be voted on. Extensions that include new capabilities and features must be voted on.
 * Issues and pull requests will be considered stale after 120 days, at which point participants will be notified via comment. Should they wish to keep the discussion open, it is the responsibility of the participants to re-engage in the conversation. If there is no re-engagement, the issue or pull request will be closed 60 days after the stale date. 
  
