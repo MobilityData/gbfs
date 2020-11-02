@@ -197,7 +197,7 @@ Submitted by | Field Name | File Name | Defines
 ---|---|---|---
 Publisher's name|_field_name|Name of GBFS endpoint where field is used|Description of purpose of use
 
-## Files
+## JSON Files
 ### Output Format
 Every JSON file presented in this specification contains the same common header information at the top level of the JSON response object:
 
@@ -331,7 +331,7 @@ Field Name | Required | Type | Defines
 
 ### vehicle_types.json *(added in v2.1-RC)*
 
-This file should be published by systems offering multiple vehicle types for rental, for example pedal bikes and ebikes. <br/>The following fields are all attributes within the main "data" object for this feed.
+Required of systems that include information about vehicle types in the `free_bike_status` file. If this file is not included, then all vehicles in the feed are assumed to be non-motorized bicycles. This file should be published by systems offering multiple vehicle types for rental, for example pedal bikes and ebikes. <br/>The following fields are all attributes within the main "data" object for this feed.
 
 Field Name | Required | Type | Defines
 ---|---|---|---
