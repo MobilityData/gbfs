@@ -61,7 +61,7 @@ The specification is not fixed or unchangeable. As the shared mobility industry 
   * GitHub:<br />*Voting on this PR closes in 2 calendar days. Please vote for or against the proposal, and include the organization for which you are voting in your comment. Please note if you can commit to implementing the proposal.*
 * Once a vote is called, a "Vote Open" label will be added to the PR. After the 2 day reminder, the label will be replaced with "Vote Closing Soon", once the vote is closed, the label will become either “Vote Passed” or “Voted Failed” depending on the vote outcome.
 * At least 3 votes in favor, in addition to the author of the Pull Request, are required for a proposal to pass. At least one of these votes must be from a producer and at least one from a consumer.
-* The advocate should cancel a vote if significent changes are made to the proposal after stakeholders have already voted.
+* The advocate should cancel a vote if significant changes are made to the proposal after stakeholders have already voted.
 * Should the vote fail, the advocate can choose to continue work on the proposal with the feedback received and restart the governance process, or abandon the proposal by closing the Pull Request. Another interested member of the community can take over the proposal if they feel the addition is valuable. 
 * Implementation requirements are that both 1 producer and 1 consumer commit to implementing the changes. A change is placed into RC status pending implementation. Once implemented successfully, the change is merged into an official release.
 * Editorial changes as well as items that are not found in gbfs.md do not need to be voted on. Extensions that include new capabilities and features must be voted on.
