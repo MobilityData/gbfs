@@ -3,13 +3,13 @@ daysUntilStale: 120
 # Number of days of inactivity before a stale issue is closed
 daysUntilClose: 60
 # Issues with these labels will never be considered stale
-exemptLabels:
+exemptLabels: [ ]
 # Label to use when marking an issue as stale
 staleLabel: stale
 # Comment to post when marking an issue as stale. Set to `false` to disable
 markComment: >
-  This issue has been automatically marked as stale because it has not had
+  This disucssion has been automatically marked as stale because it has not had
   recent activity. It will be closed if no further activity occurs. Thank you
   for your contributions.
 # Comment to post when closing a stale issue. Set to `false` to disable
-closeComment: This issue has been closed due to inactivity. Issues can always be reopened and rediscussed after they have been closed.
+closeComment: This discussion has been closed due to inactivity. Discussions can always be reopened after they have been closed.
