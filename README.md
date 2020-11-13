@@ -92,12 +92,6 @@ Examples of non-breaking changes include:
 * MINOR changes may be applied at any time. There is no guideline to limit the number of MINOR changes. MINOR changes may be batched or released immediately, at the discretion of the pull request author and advocate.
 * GBFS documentation will include a designated long-term support (LTS) branch. The LTS branch would maintain its LTS status for at least 2 years, after which a new LTS release and branch would be designated. The LTS branch will be determined according to the GBFS voting process. Non-breaking changes (MINOR) will be applied to the LTS branch when relevant.
 
-## Extensions Outside of the Specification ##
-To accommodate the needs of feed producers and consumers prior to the adoption of a change, additional fields can be added to feeds even if these fields are not part of the official specification. It's strongly recommended that these additional fields be documented on the wiki page in this format:
-
-Submitted by | Field Name  | File Name | Required | Defines
----------- | ------------ | -------- | ------- |-------
-publisher_name | field_name |  name of GBFS end point where field is used | yes/no | description of purpose or use
 
 ## Guiding Principles
 To preserve the original vision of GBFS, the following guiding principles should be taken into consideration when proposing extensions to the spec:
