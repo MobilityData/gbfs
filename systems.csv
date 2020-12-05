@@ -208,8 +208,6 @@ US,CLEVR Mobility,"Oakland, CA",daecbe87-a9f2-4a5a-b5df-8e3e14180513,https://www
 US,Coast Bike Share,"St. Petersburg, FL",coast_bike_share,http://coastbikeshare.com/,http://coast.socialbicycles.com/opendata/gbfs.json
 US,CoGo,"Columbus, OH",cogo,http://www.cogobikeshare.com/,https://gbfs.cogobikeshare.com/gbfs/gbfs.json
 US,Columbia County B-cycle,"Evans, GA",bcycle_columbiacounty,https://columbiacounty.bcycle.com,https://gbfs.bcycle.com/bcycle_columbiacounty/gbfs.json
-US,columbike,"Columbus, IN",bcycle_columbike,https://columbike.bcycle.com/,https://gbfs.bcycle.com/bcycle_columbike/gbfs.json
-US,Denver B-cycle,"Denver, CO",bcycle_denver,https://denver.bcycle.com,https://gbfs.bcycle.com/bcycle_denver/gbfs.json
 US,Denver Bike JUMP System,"Denver, CO",denver_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/denb/gbfs.json
 US,Des Moines B-cycle,"Des Moines, IA",bcycle_desmoines,https://desmoines.bcycle.com,https://gbfs.bcycle.com/bcycle_desmoines/gbfs.json
 US,Divvy,"Chicago, IL",divvy,http://www.divvybikes.com/,https://gbfs.divvybikes.com/gbfs/gbfs.json
@@ -246,7 +244,6 @@ US,Lime New York,"New York, NY",lime_new_york,https://www.li.me/,https://data.li
 US,Lime Oakland,"Oakland, CA",lime_oakland,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/oakland/gbfs.json
 US,Lime Portland,"Portland, OR",lime_portland,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/portland/gbfs.json
 US,Lime Washington DC,"Washington, DC",lime_washington_dc,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/washington_dc/gbfs.json
-US,Link Dayton Bike Share,"Dayton, OH",bcycle_linkdayton,https://www.linkdayton.org,https://gbfs.bcycle.com/bcycle_linkdayton/gbfs.json
 US,Los Angeles Bike JUMP System,"Los Angeles, CA",los_angeles_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/laxb/gbfs.json
 US,Los Angeles Scooter JUMP System,"Los Angeles, CA",los_angeles_scooter_jump_system,https://jump.com/,https://gbfs.uber.com/v1/laxs/gbfs.json
 US,Louvelo,"Louisville, KY",Louvelo,https://louvelo.com/,https://lou.publicbikesystem.net/ube/gbfs/v1/
@@ -259,7 +256,6 @@ US,Nashville B-cycle,"Nashville, TN",bcycle_nashville,https://nashville.bcycle.c
 US,New York City Bike JUMP System,"NYC, NY",new_york city_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/nycb/gbfs.json
 US,Nice Ride Minnesota,"Minneapolis - Saint Paul, MN",niceridemn,https://www.niceridemn.com,https://gbfs.niceridemn.com/gbfs/gbfs.json
 US,OKC Spokies,"Oklahoma City, OK",bcycle_spokies,http://spokiesokc.com/,https://gbfs.bcycle.com/bcycle_spokies/gbfs.json
-US,Rapid City B-cycle,"Rapid City, SD",bcycle_rapidcity,https://rapidcity.bcycle.com,https://gbfs.bcycle.com/bcycle_rapidcity/gbfs.json
 US,Reddy Bike Share,"Buffalo, NY",reddy_bikeshare,https://reddybikeshare.socialbicycles.com/,https://reddybikeshare.socialbicycles.com/opendata/gbfs.json
 US,Relay Bike Share,"Atlanta, GA",relay_bike_share,http://relaybikeshare.com/,https://relaybikeshare.socialbicycles.com/opendata/gbfs.json
 US,RTC Bike Share,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
@@ -271,7 +267,6 @@ US,San Diego Scooter JUMP System,"San Diego, CA",sd_scooter_jump_system,https://
 US,San Francisco Bike JUMP System,"San Francisco, CA",san_francisco_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/sfb/gbfs.json
 US,San Francisco Scooter JUMP System,"San Francisco, CA",san_francisco_scooter_jump_system,https://jump.com/,https://gbfs.uber.com/v1/sfs/gbfs.json
 US,Santa Cruz Bike JUMP System,"Santa Cruz, CA",santa_cruz_bike_jump_system,https://jump.com/,https://gbfs.uber.com/v1/scb/gbfs.json
-US,Savannah,"Savannah, GA",bcycle_catbike,https://catbike.bcycle.com,https://gbfs.bcycle.com/bcycle_catbike/gbfs.json
 US,Seattle Bike JUMP System,"Seattle, WA",seattle_bike_jump_system,https://jump.com,https://gbfs.uber.com/v1/seab/gbfs.json
 US,Spartanburg BCycle,"Spartanburg, SC",bcycle_spartanburg,https://spartanburg.bcycle.com,https://gbfs.bcycle.com/bcycle_spartanburg/gbfs.json
 US,Spin Baltimore,"Baltimore, MD",spin baltimore,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/baltimore/gbfs.json
