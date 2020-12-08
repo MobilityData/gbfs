@@ -2,11 +2,11 @@
 Documentation for the General Bikeshare Feed Specification, a standardized data feed for bike share system availability.
 
 ## What is GBFS?
-The General Bikeshare Feed Specification, known as GBFS, is the open data standard for bikeshare. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.
+The General Bikeshare Feed Specification, known as GBFS, is the open data standard for micromobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.
 
-Under the [North American Bikeshare Association’s](http://www.nabsa.net) leadership, GBFS has been developed by public, private sector and non-profit bike share system owners and operators, application developers, and technology vendors.
+Under the [North American Bikeshare Association’s](http://www.nabsa.net) leadership, GBFS has been developed by public, private sector and non-profit micromobility system owners and operators, application developers, and technology vendors.
 
- GBFS is intended as a specification for real-time, read-only data - any data being written back into individual bikeshare systems are excluded from this spec.
+ GBFS is intended as a specification for real-time, read-only data - any data being written back into individual micromobility systems are excluded from this spec.
 
 The specification has been designed with the following concepts in mind:
 *	Provide the status of the system at this moment
@@ -98,16 +98,16 @@ To preserve the original vision of GBFS, the following guiding principles should
 
 * **GBFS is a specification for real-time or semi-real-time, read-only data.**
 The spec is not intended for historical or archival data such as trip records.
-The spec is about public information intended for bikeshare users.
+The spec is about public information intended for micromobility users.
 
-* **GBFS is targeted at providing transit information to the bikeshare end user.**
- Its primary purpose is to power tools for riders that will make bikesharing more accessible to users.  GBFS is about public information. Producers and owners of GBFS data should take licensing and discoverability into account when publishing GBFS feeds.
+* **GBFS is targeted at providing transit information to the micromobility end user.**
+ Its primary purpose is to power tools for riders that will make micromobility more accessible to users.  GBFS is about public information. Producers and owners of GBFS data should take licensing and discoverability into account when publishing GBFS feeds.
 
 * **Changes to the spec should be backwards-compatible, when possible.**
 Caution should be taken to avoid making changes to the spec that would render existing feeds invalid.
 
 * **Speculative features are discouraged.**
-Each new addition to the spec adds complexity. We want to avoid additions to the spec that do not provide additional value to the bikeshare end user.
+Each new addition to the spec adds complexity. We want to avoid additions to the spec that do not provide additional value to the micromobility end user.
 
 ## Systems Implementing GBFS
 This list contains all known systems publishing GBFS feeds and is maintained by the GBFS community. If you have or are aware of a system that doesn’t appear on the list please add it.
