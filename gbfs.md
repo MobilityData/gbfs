@@ -158,35 +158,33 @@ It is recommended that all GBFS data sets be offered under an open data license.
 ## Field Types
 
 * Array - A JSON element consisting of an ordered sequence of zero or more values.
-* Object - A JSON element consisting of key-value pairs (fields).
 * Boolean - One of two possible values, `true`or `false`. Boolean values must be JSON booleans, not strings (i.e. `true` or `false`, not `"true"` or `"false"`). *(as of v2.0)*
 * Date - Service day in the YYYY-MM-DD format. Example: `2019-09-13` for September 13th, 2019.
-* Time - Service time in the HH:MM:SS format for the time zone indicated in system_information.json (00:00:00 - 47:59:59). Time can stretch up to one additional day in the future to accommodate situations where, for example, a system was open from 11:30pm - 11pm the next day (i.e. 23:30:00-47:00:00).
 * Email - An email address. Example: `example@example.com`
 * Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column.
 Example: The `rental_methods` field contains values `CREDITCARD`, `PAYPASS`, etc...
-* Timestamp - Timestamp fields must be represented as integers in POSIX time. (e.g., the number of seconds since January 1st 1970 00:00:00 UTC)
+* Float *(added in v2.1-RC2)* - A 32-bit floating point number.
+* GeoJSON FeatureCollection - A FeatureCollection as described by the IETF RFC 7946 https://tools.ietf.org/html/rfc7946#section-3.3.
+* GeoJSON Multipolygon - A Geometry Object as described by the IETF RFC https://tools.ietf.org/html/rfc7946#section-3.1.7.
 * ID - Should be represented as a string that identifies that particular entity. An ID:
 	* must be unique within like fields (e.g. `station_id` must be unique among stations)
 	* does not have to be globally unique, unless otherwise specified
 	* must not contain spaces
-	* must be persistent for a given entity (station, plan, etc). An exception is floating bike `bike_id`, which must not be persistent for privacy reasons (see `free_bike_status.json`). *(as of v2.0)*
-* String - Can only contain text. Strings must not contain any formatting codes (including HTML) other than newlines.
-* Language - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to http://www.rfc-editor.org/rfc/bcp/bcp47.txt and http://www.w3.org/International/articles/language-tags/.
-Examples: `en` for English, `en-US` for American English, or `de` for German.
-* Latitude - WGS84 latitude in decimal degrees. The value must be greater than or equal to -90.0 and less than or equal to 90.0.
-Example: `41.890169` for the Colosseum in Rome.
-* Longitude - WGS84 longitude in decimal degrees. The value must be greater than or equal to -180.0 and less than or equal to 180.0.
-Example: `12.492269` for the Colosseum in Rome.
-* Non-negative Integer - An integer greater than or equal to 0.
+	* must be persistent for a given entity (station, plan, etc). An exception is floating bike `bike_id`, which should not be persistent for privacy reasons (see `free_bike_status.json`). *(as of v2.0)*
+* Language - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to http://www.rfc-editor.org/rfc/bcp/bcp47.txt and http://www.w3.org/International/articles/language-tags/. Examples: `en` for English, `en-US` for American English, or `de` for German.
+* Latitude - WGS84 latitude in decimal degrees. The value must be greater than or equal to -90.0 and less than or equal to 90.0. Example: `41.890169` for the Colosseum in Rome.
+* Longitude - WGS84 longitude in decimal degrees. The value must be greater than or equal to -180.0 and less than or equal to 180.0. Example: `12.492269` for the Colosseum in Rome.
 * Non-negative Float - A 32-bit floating point number greater than or equal to 0.
-* Float *(added in v2.1-RC2)* - A 32-bit floating point number.
+* Non-negative Integer - An integer greater than or equal to 0.
+* Object - A JSON element consisting of key-value pairs (fields).
+* String - Can only contain text. Strings must not contain any formatting codes (including HTML) other than newlines.
+* Time - Service time in the HH:MM:SS format for the time zone indicated in system_information.json (00:00:00 - 47:59:59). Time can stretch up to one additional day in the future to accommodate situations where, for example, a system was open from 11:30pm - 11pm the next day (i.e. 23:30:00-47:00:00).
+* Timestamp - Timestamp fields must be represented as integers in POSIX time. (e.g., the number of seconds since January 1st 1970 00:00:00 UTC)
 * Timezone - TZ timezone from the https://www.iana.org/time-zones. Timezone names never contain the space character but may contain an underscore. Refer to http://en.wikipedia.org/wiki/List_of_tz_zones for a list of valid values.
 Example: `Asia/Tokyo`, `America/Los_Angeles` or `Africa/Cairo`.
 * URI *(added in v1.1)* - A fully qualified URI that includes the scheme (e.g., `com.abcrental.android://`), and any special characters in the URI must be correctly escaped. See the following http://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URI values. Note that URIs may be URLs.
 * URL - A fully qualified URL that includes `http://` or `https://`, and any special characters in the URL must be correctly escaped. See the following http://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values.
-* GeoJSON FeatureCollection - A FeatureCollection as described by the IETF RFC 7946 https://tools.ietf.org/html/rfc7946#section-3.3.
-* GeoJSON Multipolygon - A Geometry Object as described by the IETF RFC https://tools.ietf.org/html/rfc7946#section-3.1.7.
+
 
 ### Extensions Outside of the Specification
 To accommodate the needs of feed producers and consumers prior to the adoption of a change, additional fields can be added to feeds even if these fields are not part of the official specification. Custom extensions that may provide value to the GBFS community and align with the [GBFS Guiding Principles](https://github.com/NABSA/gbfs/blob/master/README.md#guiding-principles) should be proposed for inclusion in the specification through the change process.
@@ -209,7 +207,8 @@ Field Name | Required | Type | Defines
 `data` | Yes | Object | Response data in the form of name:value pairs.
 
 
-Example:
+#### Example:
+
 ```jsonc
 {
   "last_updated": 1434054678,
@@ -232,7 +231,7 @@ Field Name | Required | Type | Defines
 &emsp;\-&nbsp;`name` | Yes | String | Key identifying the type of feed this is. The key must be the base file name defined in the spec for the corresponding feed type (`system_information` for `system_information.json` file, `station_information` for `station_information.json` file).
 &emsp;\-&nbsp;`url` | Yes | URL | URL for the feed. Note that the actual feed endpoints (urls) may not be defined in the `file_name.json` format. For example, a valid feed endpoint could end with `station_info` instead of `station_information.json`.
 
-Example:
+#### Example:
 
 ```jsonc
 {
@@ -279,6 +278,8 @@ Field Name | Required | Type | Defines
 `versions` | Yes | Array | Contains one object, as defined below, for each of the available versions of a feed. The array must be sorted by increasing MAJOR and MINOR version number.
 \-&nbsp;`version` | Yes | String | The semantic version of the feed in the form `X.Y`.
 \-&nbsp;`url` | Yes | URL | URL of the corresponding gbfs.json endpoint.
+
+##### Example:
 
 ```jsonc
 {
@@ -342,7 +343,7 @@ Field Name | Required | Type | Defines
 \- `max_range_meters` | Conditionally Required | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is required. This represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example, a full battery or full tank of gas).
 \- `name` | Optional | String | The public name of this vehicle type.
 
-Example:
+#### Example:
 
 ```jsonc
 {
@@ -403,7 +404,7 @@ Field Name | Required | Type | Defines
 &emsp;\-&nbsp;`web` <br/>*(added in v1.1)* | Optional | URL | URL that can be used by a web browser to show more information about renting a vehicle at this station. <br><br>This URL should be a deep link specific to this station, and should not be a general rental page that includes information for more than one station.  The deep link should take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported for web browsers. <br><br>Example value: `https://www.abc.com/app?sid=1234567890`
 \- `vehicle_type_capacity` <br/>*(added in v2.1-RC)* | Optional | Object | An object where each key is a `vehicle_type_id` as described in [vehicle_types.json](#vehicle_typesjson-added-in-v21-rc) and the value is a number representing the total docking points installed at this station, both available and unavailable for the specified vehicle type.
 
-Example:
+##### Example 1:
 
 ```jsonc
 {
@@ -415,8 +416,8 @@ Example:
       {
         "station_id": "pga",
         "name": "Parking garage A",
-        "lat": 12.34,
-        "lon": 45.67,
+        "lat": 12.345678,
+        "lon": 45.678901,
         "vehicle_type_capacity": {
           "abc123": 7,
           "def456": 9
@@ -427,6 +428,54 @@ Example:
 }
 ```
 
+##### Example 2: Virtual station
+
+```jsonc
+{
+  "stations":[
+    {
+      "station_id":"station12",
+      "station_name":"SE Belmont & SE 10 th ",
+      "is_valet_station":false,
+      "is_virtual_station":true,
+      "station_area":{
+        "type":"MultiPolygon",
+        "coordinates":[
+          [
+            [
+              [
+                -122.655775,
+                45.516445
+              ],
+              [
+                -122.655705,
+                45.516445
+              ],
+              [
+                -122.655705,
+                45.516495
+              ],
+              [
+                -122.655775,
+                45.516495
+              ],
+              [
+                -122.655775,
+                45.516445
+              ]
+            ]
+          ]
+        ]
+      },
+      "capacity":16,
+      "vehicle_capacity":{
+        "abc123":8,
+        "def456":8
+      }
+    }
+  ]
+}        
+```
 ### station_status.json
 Describes the capacity and rental availability of a station. Data returned should be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  See [Data Latency](#data-latentcy). Data reflects the operators most recent knowledge of the station’s status. Any station that is represented in `station_status.json` must have a corresponding entry in `station_information.json`.
 
@@ -449,7 +498,8 @@ Field Name | Required | Type | Defines
 \-&nbsp;`is_returning` | Yes | Boolean | Is the station accepting vehicle returns? <br /><br />`true` - Station is accepting vehicle returns. Even if the station is full, if it would otherwise allow vehicle returns this value must be `true`.<br /> `false` - Station is not accepting vehicle returns.<br/><br/>If the station is temporarily taken out of service and not allowing vehicle returns this field must be set to `false`.<br/><br/>If a station becomes inaccessible to users due to road construction or other factors this field should be set to `false`.
 \-&nbsp;`last_reported` | Yes | Timestamp | The last time this station reported its status to the operator's backend. 
 
-Example:
+
+#### Example:
 
 ```jsonc
 {
@@ -531,36 +581,38 @@ Field Name | Required | Type | Defines
 \- `station_id` <br/>*(added in v2.1-RC2)* | Conditionally required | ID | Identifier referencing the station_id field in system_information.json. Required only if the vehicle is currently at a station and the [vehicle_types.json](#vehicle_typesjson) file has been defined.
 \- `pricing_plan_id` <br/>*(added in v2.1-RC2)* | Optional | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plans.json). 
 
-Example:
+#### Example:
 
 ```jsonc
 {
-  "last_updated": 1434054678,
-  "ttl": 0,
-  "version": "3.0",
-  "data": {
-    "bikes": [
+  "last_updated":1434054678,
+  "ttl":0,
+  "version":"3.0",
+  "data":{
+    "bikes":[
       {
-        "bike_id": "ghi789",
-        "last_reported": 1434054678,
-        "lat": 12.34,
-        "lon": 56.78,
-        "is_reserved": false,
-        "is_disabled": false,
-        "vehicle_type_id": "abc123"
-      }, {
-        "bike_id": "jkl012",
-        "last_reported": 1434054687,
-        "is_reserved": false,
-        "is_disabled": false,
-        "vehicle_type_id": "def456",
-        "current_range_meters": 6543,
-	"station_id": 86,
-	"pricing_plan_id": "plan3"
+        "bike_id":"ghi789",
+        "last_reported":1434054678,
+        "lat":12.34,
+        "lon":56.78,
+        "is_reserved":false,
+        "is_disabled":false,
+        "vehicle_type_id":"abc123"
+      },
+      {
+        "bike_id":"jkl012",
+        "last_reported":1434054687,
+        "is_reserved":false,
+        "is_disabled":false,
+        "vehicle_type_id":"def456",
+        "current_range_meters":6543,
+        "station_id":86,
+        "pricing_plan_id":"plan3"
       }
     ]
   }
 }
+
 ```
 
 ### system_hours.json
@@ -574,7 +626,7 @@ Field Name | Required | Type | Defines
 \-&nbsp;`start_time` | Yes | Time | Start time for the hours of operation of the system in the time zone indicated in system_information.json.
 \-&nbsp;`end_time` | Yes | Time | End time for the hours of operation of the system in the time zone indicated in system_information.json.
 
-Example:
+#### Example:
 ```jsonc
 {
   "last_updated": 1434054678,
@@ -618,7 +670,26 @@ Field Name | Required | Type | Defines
 \-&nbsp;`end_day` | Yes | Non-negative Integer | Ending date for the system operations (`1`-`31`).
 \-&nbsp;`end_year` | Optional | Non-negative Integer | Ending year for the system operations.
 
+#### Example:
+```jsonc
+{
+  "last_updated":1604333830,
+  "ttl":3600,
+  "data":{
+    "calendars":[
+      {
+        "start_month":4,
+        "start_day":1,
+        "start_year":2020,
+        "end_month":11,
+        "end_day":5,
+        "end_year":2020
+      }
+    ]
+  }
+}
 
+```
 ### system_regions.json
 Describe regions for a system that is broken up by geographic or political region.
 
@@ -628,6 +699,33 @@ Field Name | Required | Type | Defines
 \-&nbsp;`region_id` | Yes | ID | Identifier for the region.
 \-&nbsp;`name` | Yes | String | Public name for this region.
 
+#### Example:
+```jsonc
+{
+  "last_updated":1604332380,
+  "ttl":86400,
+  "data":{
+    "regions":[
+      {
+        "name":"North",
+        "region_id":"3"
+      },
+      {
+        "name":"East",
+        "region_id":"4"
+      },
+      {
+        "name":"South",
+        "region_id":"5"
+      },
+      {
+        "name":"West",
+        "region_id":"6"
+      }
+    ]
+  }
+}
+```
 ### system_pricing_plans.json
 Describes pricing for the system.
 
@@ -655,7 +753,7 @@ Field Name | Required | Type | Defines
 
 ### Examples *(added in v2.1-RC2)*
 
-#### Example 1: 
+##### Example 1: 
 
 The user does not pay more than the base price for the first 10 km. After 10 km the user pays $1 per km. After 25 km the user pays $0.50 per km and an additional $3 every 5 km, the extension price, in addition to $0.50 per km. 
 
@@ -689,7 +787,7 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
   }
 }
 ```
-#### Example 2:
+##### Example 2:
 
 This example demonstrates a pricing scheme that has a rate both by minute and by km. The user is charged $0.25 per km as well as $0.50 per minute. Both of these rates happen concurrently and are not dependent on one another. 
 ```jsonc
@@ -733,6 +831,36 @@ Field Name | Required | Type | Defines
 \-&nbsp;`description` | Optional | String | Detailed description of the alert.
 \-&nbsp;`last_updated` | Optional | Timestamp | Indicates the last time the info for the alert was updated.
 
+#### Example:
+```jsonc
+{
+  "last_updated":1604198100,
+  "ttl":10,
+  "data":{
+    "alerts":[
+      {
+        "alert_id":"21",
+        "type":"STATION_CLOSURE",
+        "station_ids":[
+          "123",
+          "456",
+          "789"
+        ],
+        "times":[
+          {
+            "start":"1604448000",
+            "end":"1604674800"
+          }
+        ],
+        "url":"https://example.com/more-info",
+        "summary":"Disruption of Service",
+        "description":"The three stations on Broadway will be out of service from 12:00am Nov 3 to 3:00pm Nov 6th to accommodate road work",
+        "last_updated":1604519393
+      }
+    ]
+  }
+}
+```
 ### geofencing_zones.json *(added in v2.1-RC)*
 Describes geofencing zones and their associated rules and attributes.<br />
 Geofenced areas are delineated using GeoJSON in accordance with [RFC 7946](https://tools.ietf.org/html/rfc7946). By default, no restrictions apply everywhere. Geofencing zones should be modeled according to restrictions rather than allowance. An operational area (outside of which vehicles cannot be used) should be defined with a counterclockwise polygon, and a limitation area (in which vehicles can be used under certain restrictions) should be defined with a clockwise polygon.<br><br>Geofences and GPS operate in two dimensions. Restrictions placed on an overpass or bridge will also  be applied to the roadway or path beneath.<br><br>Care should be taken when developing geofence based policies that rely on location data.  Location data from GPS, cellular and Wi-Fi signals are subject to interference resulting in accuracy levels in the tens of meters or greater.  This may result in vehicles being placed within a geofenced zone when they are actually outside or adjacent to the zone. Transit time between server and client can also impact when a user is notified of a geofence based policy. A vehicle traveling at 15kph can be well inside of a restricted zone before a notification is received. 
@@ -754,6 +882,89 @@ Field Name | Required | Type | Defines
 &emsp;&emsp;&emsp;\-&nbsp;`ride_through_allowed` | Required | Boolean | Is the ride allowed to travel through this zone? <br /><br /> `true` - Ride can travel through this zone. <br /> `false` - Ride cannot travel through this zone.
 &emsp;&emsp;&emsp;\-&nbsp;`maximum_speed_kph` | Optional | Non-negative Integer | What is the maximum speed allowed, in kilometers per hour? <br /><br /> If there is no maximum speed to observe, this can be omitted.
 
+
+#### Example:
+```jsonc
+{
+  "geofencing_zones":[
+    {
+      "type":"FeatureCollection",
+      "features":[
+        {
+          "type":"Feature",
+          "geometry":{
+            "type":"MultiPolygon",
+            "coordinates":[
+              [
+                [
+                  [
+                    -122.578067,
+                    45.562982
+                  ],
+                  [
+                    -122.661838,
+                    45.562741
+                  ],
+                  [
+                    -122.661151,
+                    45.504542
+                  ],
+                  [
+                    -122.578926,
+                    45.5046625
+                  ],
+                  [
+                    -122.578067,
+                    45.562982
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    -122.650680,
+                    45.548197
+                  ],
+                  [
+                    -122.650852,
+                    45.534731
+                  ],
+                  [
+                    -122.630939,
+                    45.535212
+                  ],
+                  [
+                    -122.630424,
+                    45.548197
+                  ],
+                  [
+                    -122.650680,
+                    45.548197
+                  ]
+                ]
+              ]
+            ]
+          },
+          "properties":{
+            "name":"NE 24th/NE Knott",
+            "start":1593878400,
+            "end":1593907260,
+            "rules":{
+              "vehicle_type_id":[
+                "moped1",
+                "car1"
+              ],
+              "ride_allowed":false,
+              "ride_through_allowed":true,
+              "maximum_speed_kph":10
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
 ## Deep Links *(added in v1.1)*
 
 Deep links to iOS, Android, and web apps are supported via URIs in the `system_information.json`, `station_information.json`, and `free_bike_status.json` files. The following sections describe how analytics can be added to these URIs, as well as some examples. For further examples, see ["What's New in GBFS"](https://medium.com/@mobilitydata/whats-new-in-gbfs-v2-0-63eb46e6bdc4).
@@ -781,7 +992,7 @@ Other supported parameters include:
 
 #### Example 1 - App Links on Android and Universal Links on iOS are supported:
 
-*system_information.json*
+##### *system_information.json*
 
 ```jsonc
 {
@@ -800,7 +1011,7 @@ Other supported parameters include:
   ...
 ```
 
-*station_information.json*
+##### *station_information.json*
 
 ```jsonc
 "stations": [
@@ -821,9 +1032,9 @@ Other supported parameters include:
 Note that the Android URI and iOS Universal Link URLs don’t necessarily use the same identifier as the station_id.
 
 
-#### Example 2 - App Links are not supported on Android and Universal Links are not supported on iOS, but deep links are still supported on Android and iOS:
+##### Example 2 - App Links are not supported on Android and Universal Links are not supported on iOS, but deep links are still supported on Android and iOS:
 
-*system_information.json*
+##### *system_information.json*
 
 ```jsonc
 {
@@ -844,7 +1055,7 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
     ...
 ```
 
-*station_information.json*
+##### *station_information.json*
 
 ```jsonc
 "stations": [
@@ -861,9 +1072,9 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
   ...
 ```
 
-#### Example 3 - Deep link web URLs are supported, but not Android or iOS native apps:
+##### Example 3 - Deep link web URLs are supported, but not Android or iOS native apps:
 
-*station_information.json*
+##### *station_information.json*
 
 ```jsonc
 "stations": [
