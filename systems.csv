@@ -172,11 +172,12 @@ FR,Vélopop,"Avignon, FR",Vélopop_FR_Avignon,https://www.velopop.fr/,https://av
 FR,VélOstan'lib,"Nancy, FR",nancy,http://www.velostanlib.fr/,https://transport.data.gouv.fr/gbfs/nancy/gbfs.json
 FR,VélÔToulouse,"Toulouse, FR",toulouse,http://www.velo.toulouse.fr/,https://transport.data.gouv.fr/gbfs/toulouse/gbfs.json
 GB,BelfastBikes,"Belfast, GB",nextbike_bu,https://www.belfastbikes.co.uk/en/belfast/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bu/gbfs.json
-GB,Beryl - BCP,"Bournemouth, Christchurch, Poole, GB",beryl_bcp,https://www.beryl.cc,http://gbfs.basis-pdn.bike/BCP/gbfs.json
-GB,Beryl - Hereford,"Hereford, GB",beryl_hereford,https://www.beryl.cc,http://gbfs.basis-pdn.bike/Hereford/gbfs.json
-GB,Beryl - London,"London, GB",beryl_london,https://www.beryl.cc,http://gbfs.basis-pdn.bike/London/gbfs.json
-GB,Beryl - Norwich,"Norwich, GB",beryl_norwich,https://www.beryl.cc,http://gbfs.basis-pdn.bike/Norwich/gbfs.json
-GB,Beryl - Watford,"Watford, GB",beryl_watford,https://www.beryl.cc,http://gbfs.basis-pdn.bike/Watford/gbfs.json
+GB,Beryl - BCP,"Bournemouth, Christchurch, Poole, GB",beryl_bcp,https://www.beryl.cc,https://gbfs.beryl.cc/v2/BCP/gbfs.json
+GB,Beryl - Hereford,"Hereford, GB",beryl_hereford,https://www.beryl.cc,https://gbfs.beryl.cc/v2/Hereford/gbfs.json
+GB,Beryl - Isle of Wight,"Isle of Wight, GB",beryl_isle_of_wight,https://www.beryl.cc,https://gbfs.beryl.cc/v2/Isle_of_Wight/gbfs.json
+GB,Beryl - London,"London, GB",beryl_london,https://www.beryl.cc,https://gbfs.beryl.cc/v2/London/gbfs.json
+GB,Beryl - Norwich,"Norwich, GB",beryl_norwich,https://www.beryl.cc,https://gbfs.beryl.cc/v2/Norwich/gbfs.json
+GB,Beryl - Watford,"Watford, GB",beryl_watford,https://www.beryl.cc,https://gbfs.beryl.cc/v2/Watford/gbfs.json
 GB,Co-bikes,"Exeter, GB",nextbike_eu,https://www.co-bikes.co.uk/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_eu/gbfs.json
 GB,Donkey Republic Charlbury,"Charlbury, ",donkey_charlbury,https://www.donkey.bike/cities/bike-rental-charlbury/,https://stables.donkey.bike/api/public/gbfs/donkey_charlbury/gbfs.json
 GB,Donkey Republic Cheltenham Spa,Cheltenham Spa,donkey_cheltenham_spa,https://www.donkey.bike/cities/bike-rental-cheltenham-spa/,https://stables.donkey.bike/api/public/gbfs/donkey_cheltenham_spa/gbfs.json
