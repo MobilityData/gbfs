@@ -100,7 +100,7 @@ To preserve the original vision of GBFS, the following guiding principles should
 The spec is not intended for historical or archival data such as trip records.
 The spec is about public information intended for shared mobility users.
 
-* **GBFS is targeted at providing transit information to the micromobility end user.**
+* **GBFS is targeted at providing transit information to the shared mobility end user.**
  Its primary purpose is to power tools for riders that will make shared mobility more accessible to users.  GBFS is about public information. Producers and owners of GBFS data should take licensing and discoverability into account when publishing GBFS feeds.
 
 * **Changes to the spec should be backwards-compatible, when possible.**
