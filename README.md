@@ -98,16 +98,16 @@ To preserve the original vision of GBFS, the following guiding principles should
 
 * **GBFS is a specification for real-time or semi-real-time, read-only data.**
 The spec is not intended for historical or archival data such as trip records.
-The spec is about public information intended for micromobility users.
+The spec is about public information intended for shared mobility users.
 
 * **GBFS is targeted at providing transit information to the micromobility end user.**
- Its primary purpose is to power tools for riders that will make micromobility more accessible to users.  GBFS is about public information. Producers and owners of GBFS data should take licensing and discoverability into account when publishing GBFS feeds.
+ Its primary purpose is to power tools for riders that will make shared mobility more accessible to users.  GBFS is about public information. Producers and owners of GBFS data should take licensing and discoverability into account when publishing GBFS feeds.
 
 * **Changes to the spec should be backwards-compatible, when possible.**
 Caution should be taken to avoid making changes to the spec that would render existing feeds invalid.
 
 * **Speculative features are discouraged.**
-Each new addition to the spec adds complexity. We want to avoid additions to the spec that do not provide additional value to the micromobility end user.
+Each new addition to the spec adds complexity. We want to avoid additions to the spec that do not provide additional value to the shared mobility end user.
 
 ## Systems Implementing GBFS
 This list contains all known systems publishing GBFS feeds and is maintained by the GBFS community. If you have or are aware of a system that doesn’t appear on the list please add it.
@@ -116,7 +116,7 @@ This list contains all known systems publishing GBFS feeds and is maintained by 
 
 If you would like to add a system, please fork this repository and submit a pull request. Please keep this list alphabetized by country and system name.
 
-## GBFS and Other Shared Micromobility Resources
+## GBFS and Other Shared Mobility Resources
 Including APIs, datasets, validators, research, and software can be found [here](https://github.com/NABSA/micromobility-tools-and-resources).
 
 ## Copyright
