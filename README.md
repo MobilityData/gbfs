@@ -1,12 +1,12 @@
 # General Bikeshare Feed Specification
-Documentation for the General Bikeshare Feed Specification, a standardized data feed for bike share system availability.
+Documentation for the General Bikeshare Feed Specification, a standardized data feed for shared mobility system availability.
 
 ## What is GBFS?
-The General Bikeshare Feed Specification, known as GBFS, is the open data standard for micromobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.
+The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.
 
-Under the [North American Bikeshare Association’s](http://www.nabsa.net) leadership, GBFS has been developed by public, private sector and non-profit micromobility system owners and operators, application developers, and technology vendors.
+Under the [North American Bikeshare Association’s](http://www.nabsa.net) leadership, GBFS has been developed by public, private sector and non-profit shared mobility system owners and operators, application developers, and technology vendors.
 
- GBFS is intended as a specification for real-time, read-only data - any data being written back into individual micromobility systems are excluded from this spec.
+ GBFS is intended as a specification for real-time, read-only data - any data being written back into individual shared mobility systems are excluded from this spec.
 
 The specification has been designed with the following concepts in mind:
 *	Provide the status of the system at this moment
