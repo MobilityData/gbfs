@@ -150,7 +150,7 @@ Decimal places | Degrees | Distance at the Equator
 5|0.00001|1.11 m
 **6**|**0.000001**|**0.11 m**
 7|0.0000001|1.11 cm
-### Data Latentcy 
+### Data Latency 
 The data returned by the near-realtime endpoints `station_status.json` and `free_bike_status.json` should be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  Appropriate values should be set using the `ttl` property for each endpoint based on how often the data in feeds are refreshed or updated. For near-realtime endpoints where the data should always be refreshed the `ttl` value should be `0`. The`last_updated` timestamp represents the publisher's knowledge of the current state of the system at this point in time. The `last_reported` timestamp represents the last time a station or vehicle reported its status to the operator's backend.
 ## Licensing 
 It is recommended that all GBFS data sets be offered under an open data license. Open data licenses allow consumers to freely use, modify and share GBFS data for any purpose in perpetuity. Licensing of GBFS data provides certainty to GBFS consumers, allowing them to integrate GBFS data into their work. All GBFS data sets should specify a license using the `license_id` field with an [SPDX identifier](https://spdx.org/licenses/) or by using `license_url` field with a URL pointing to a custom license in `system_information.json`. See the GBFS repo for a [comparison of a subset of standard licenses](https://github.com/NABSA/gbfs/blob/master/data-licenses.md). 
