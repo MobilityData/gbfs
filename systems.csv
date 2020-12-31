@@ -38,6 +38,7 @@ CA,Roll Calgary,"Calgary, CA",roll_technologies_ca,https://rollscooters.com,http
 CA,Roll Kelowna,"Kelowna, CA",roll_technologies_ca,https://rollscooters.com,https://data.rollapi.com/v1/gbfs/kelowna/gbfs.json
 CA,Roll Ottawa,"Ottowa, CA",roll_technologies_ca,https://rollscooters.com,https://data.rollapi.com/v1/gbfs/ottawa/gbfs.json
 CA,Sobi Hamilton,Hamilton Ontario,sobi_hamilton,https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json
+CA,Accès Vélo,Saguenay,saguenay_bike,https://sts.saguenay.ca/infos-pratiques/acces-velo-1/acces-velo,https://saguenay.publicbikesystem.net/ube/gbfs/v1/
 CH,Donkey Republic Geneva,Geneva,donkey_ge,https://www.donkey.bike/cities/bike-rental-geneva/,https://stables.donkey.bike/api/public/gbfs/donkey_ge/gbfs.json
 CH,Donkey Republic Le Locle,Le Locle,donkey_le_locle,https://www.donkey.bike/cities/bike-rental-le-locle/,https://stables.donkey.bike/api/public/gbfs/donkey_le_locle/gbfs.json
 CH,Donkey Republic Neuchâtel,Neuchâtel,donkey_neuchatel,https://www.donkey.bike/cities/bike-rental-neuchatel/,https://stables.donkey.bike/api/public/gbfs/donkey_neuchatel/gbfs.json
@@ -136,6 +137,7 @@ ES,BiciMAD (unofficial),"Madrid, ES",bici_madrid,https://www.bicimad.com/,https:
 ES,Bicing,"Barcelona, ES",bike_barcelona,https://www.bicing.barcelona/,https://barcelona.publicbikesystem.net/ube/gbfs/v1/gbfs.json
 ES,Bilbaobizi (Bilbao),"Bilbao, ES",nextbike_bo,https://www.bilbaobizi.bilbao.eus/eu/bilbao/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bo/gbfs.json
 ES,Bird Madrid,"Madrid, ES",bird-madrid,https://www.bird.co,https://mds.bird.co/gbfs/madrid/gbfs.json
+ES,Dbizi,"Donostia, ES",sansebastian,https://www.dbizi.eus,https://sansebastian.publicbikesystem.net/ube/gbfs/v1/
 ES,Donkey Republic Barcelona,"Barcelona, ES",donkey_barcelona,https://www.donkey.bike/cities/bike-rental-barcelona/,https://stables.donkey.bike/api/public/gbfs/donkey_barcelona/gbfs.json
 ES,Ibizi,"Ibiza-City, ES",nextbike_ei,https://www.nextbike.es/es/ibiza/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ei/gbfs.json
 ES,Lovesharing (Canary Islands),"Lovesharing (Canary Islands), ES",nextbike_ls,https://www.lovesharing.com/bikesharing/es/lovesharing/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ls/gbfs.json
@@ -396,6 +398,7 @@ US,Relay Bike Share,"Atlanta, GA",relay_bike_share,http://relaybikeshare.com/,ht
 US,Revel Oakland,"Oakland, CA, US",revel_oakland,https://gorevel.com/oakland/,https://gbfs.gorevel.com/gbfs/v2/oakland/en/gbfs.json
 US,RTC Bike Share,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
 US,San Antonio B-cycle,"San Antonio, TX",bcycle_sanantonio,https://sanantonio.bcycle.com/,https://gbfs.bcycle.com/bcycle_sanantonio/gbfs.json
+US,SBU Wolf Ride Bike Share,"Stony Brook, NY",sbu,https://www.stonybrook.edu/commcms/sustainability/transportation/_Wolf_Ride_Bike_Share/,https://sbu.publicbikesystem.net/ube/gbfs/v1/
 US,Spartanburg BCycle,"Spartanburg, SC",bcycle_spartanburg,https://spartanburg.bcycle.com,https://gbfs.bcycle.com/bcycle_spartanburg/gbfs.json
 US,Spin Ann Arbor,"Ann Arbor, MI, US",spin ann_arbor,https://spin.pm,https://web.spin.pm/api/gbfs/v1/ann_arbor/gbfs
 US,Spin Atlanta,"Atlanta, GA, US",spin atlanta,https://spin.pm,https://web.spin.pm/api/gbfs/v1/atlanta/gbfs
