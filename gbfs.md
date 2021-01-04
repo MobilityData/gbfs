@@ -161,7 +161,7 @@ It is recommended that all GBFS data sets be offered under an open data license.
 * Boolean - One of two possible values, `true`or `false`. Boolean values must be JSON booleans, not strings (i.e. `true` or `false`, not `"true"` or `"false"`). *(as of v2.0)*
 * Date - Service day in the YYYY-MM-DD format. Example: `2019-09-13` for September 13th, 2019.
 * Email - An email address. Example: `example@example.com`
-* Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column.
+* Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column. Enum values should be lowercase.
 Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc...
 * Float *(added in v2.1-RC2)* - A 32-bit floating point number.
 * GeoJSON FeatureCollection - A FeatureCollection as described by the IETF RFC 7946 https://tools.ietf.org/html/rfc7946#section-3.3.
