@@ -161,8 +161,8 @@ It is recommended that all GBFS data sets be offered under an open data license.
 * Boolean - One of two possible values, `true`or `false`. Boolean values must be JSON booleans, not strings (i.e. `true` or `false`, not `"true"` or `"false"`). *(as of v2.0)*
 * Date - Service day in the YYYY-MM-DD format. Example: `2019-09-13` for September 13th, 2019.
 * Email - An email address. Example: `example@example.com`
-* Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column.
-Example: The `rental_methods` field contains values `CREDITCARD`, `PAYPASS`, etc...
+* Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column. Enum values should be lowercase.
+Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc...
 * Float *(added in v2.1-RC2)* - A 32-bit floating point number.
 * GeoJSON FeatureCollection - A FeatureCollection as described by the IETF RFC 7946 https://tools.ietf.org/html/rfc7946#section-3.3.
 * GeoJSON Multipolygon - A Geometry Object as described by the IETF RFC https://tools.ietf.org/html/rfc7946#section-3.1.7.
@@ -392,7 +392,7 @@ Field Name | Required | Type | Defines
 \-&nbsp;`cross_street` | Optional | String | Cross street or landmark where the station is located.
 \-&nbsp;`region_id` | Optional | ID | Identifier of the region where station is located. See [system_regions.json](#system_regionsjson).
 \-&nbsp;`post_code` | Optional | String | Postal code where station is located.
-\-&nbsp;`rental_methods` | Optional | Array | Payment methods accepted at this station. <br /> Current valid values are:<br /> <ul><li>`KEY` (e.g. operator issued vehicle key / fob / card)</li><li>`CREDITCARD`</li><li>`PAYPASS`</li><li>`APPLEPAY`</li><li>`ANDROIDPAY`</li><li>`TRANSITCARD`</li><li>`ACCOUNTNUMBER`</li><li>`PHONE`</li></ul>
+\-&nbsp;`rental_methods` | Optional | Array | Payment methods accepted at this station. <br /> Current valid values are:<br /> <ul><li>`key` (e.g. operator issued vehicle key / fob / card)</li><li>`creditcard`</li><li>`paypass`</li><li>`applepay`</li><li>`androidpay`</li><li>`transitcard`</li><li>`accountnumber`</li><li>`phone`</li></ul>
 \-&nbsp;`is_virtual_station` <br/>*(added in v2.1-RC)* | Optional | Boolean | Is this station a location with or without physical infrastructures (docks)? <br /><br /> `true` - The station is a location without physical infrastructure, defined by a point (lat/lon) and/or `station_area` (below). <br /> `false` - The station consists of physical infrastructure (docks). <br /><br /> If this field is empty, it means the station consists of physical infrastructure (docks).<br><br>This field should be published in systems that have station locations without standard, internet connected physical docking infrastructure. These may be racks or geofenced areas designated for rental and/or return of vehicles. Locations that fit within this description should have the `is_virtual_station` boolean set to `true`. 
 \-&nbsp;`station_area` <br/>*(added in v2.1-RC)* | Optional | GeoJSON Multipolygon | A GeoJSON multipolygon that describes the area of a virtual station. If `station_area` is supplied then the record describes a virtual station. <br /><br /> If lat/lon and `station_area` are both defined, the lat/lon is the significant coordinate of the station (e.g. dock facility or valet drop-off and pick up point). The `station_area` takes precedence over any `ride_allowed` rules in overlapping `geofencing_zones`.
 \-&nbsp;`capacity` | Optional | Non-negative integer | Number of total docking points installed at this station, both available and unavailable, regardless of what vehicle types are allowed at each dock. Empty indicates unlimited capacity.
@@ -820,7 +820,7 @@ Field Name | Required | Type | Defines
 ---|---|---|---
 `alerts` | Yes | Array | Array of objects each indicating a system alert as defined below.
 \-&nbsp;`alert_id` | Yes | ID | Identifier for this alert.
-\-&nbsp;`type` | Yes | Enum | Valid values are:<br /><br /><ul><li>`SYSTEM_CLOSURE`</li><li>`STATION_CLOSURE`</li><li>`STATION_MOVE`</li><li>`OTHER`</li></ul>
+\-&nbsp;`type` | Yes | Enum | Valid values are:<br /><br /><ul><li>`system_closure`</li><li>`station_closure`</li><li>`station_move`</li><li>`other`</li></ul>
 \-&nbsp;`times` | Optional | Array | Array of objects with the fields `start` and `end` indicating when the alert is in effect (e.g. when the system or station is actually closed, or when it is scheduled to be moved).
 &emsp;\-&nbsp;`start` | Yes | Timestamp | Start time of the alert.
 &emsp;\-&nbsp;`end` | Optional | Timestamp | End time of the alert. If there is currently no end time planned for the alert, this can be omitted.
@@ -840,7 +840,7 @@ Field Name | Required | Type | Defines
     "alerts":[
       {
         "alert_id":"21",
-        "type":"STATION_CLOSURE",
+        "type":"station_closure",
         "station_ids":[
           "123",
           "456",
