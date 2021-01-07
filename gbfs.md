@@ -3,7 +3,7 @@
 This document explains the types of files and data that comprise the General Bikeshare Feed Specification (GBFS) and defines the fields used in all of those files.
 
 # Reference version
-This documentation refers to **v3.0-RC (release candidate)**. For past and upcoming versions see the [README](README.md#read-the-spec--version-history).
+This documentation refers to **v3.0-RC (release candidate)**. For the current release see [**version 2.0**](https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md). For past and upcoming versions see the [README](README.md#read-the-spec--version-history).
 
 ## Table of Contents
 
@@ -80,7 +80,7 @@ system_alerts.json | Optional | Current system alerts.
 geofencing_zones.json <br/>*(added in v2.1-RC)* | Optional | Geofencing zones and their associated rules and attributes.    
 
 ## Accessibility 
-Datasets should be published at an easily accessible, public, permanent URL. (e.g., www.agency.org/gbfs/gbfs.json). Ideally, the URL should be directly available without requiring login to access the file to facilitate download by consuming software applications. While it is recommended (and the most common practice) to make a GBFS dataset openly downloadable, if a data provider does need to control access to GBFS for licensing or other reasons, it is recommended to control access to the GBFS dataset using API keys, which will facilitate automatic downloads.  
+Datasets should be published at an easily accessible, public, permanent URL. (e.g., www.agency.org/gbfs/v3/gbfs.json). The URL should be directly available without requiring login to access the file to facilitate download by consuming software applications.  
 
 To be compliant with GBFS, all systems must have an entry in the [systems.csv](https://github.com/NABSA/gbfs/blob/master/systems.csv) file.
 ### Feed Availability 
@@ -211,9 +211,9 @@ Field Name | Required | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1434054678,
+  "last_updated": 1609866247,
   "ttl": 3600,
-  "version": "2.0",
+  "version": "3.0",
   "data": {
     "name": "Citi Bike",
     "system_id": "citibike_com"
@@ -235,9 +235,9 @@ Field Name | Required | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1434054678,
+  "last_updated": 1609866247,
   "ttl": 0,
-  "version": "2.0",
+  "version": "3.0",
   "data": {
     "en": {
       "feeds": [
@@ -283,18 +283,18 @@ Field Name | Required | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1434054678,
+  "last_updated": 1609866247,
   "ttl": 0,
-  "version": "2.0",
+  "version": "3.0",
   "data": {
     "versions": [
       {
-        "version":"1.0",
-        "url":"https://www.example.com/gbfs/1/gbfs"
-      },
-      {
         "version":"2.0",
         "url":"https://www.example.com/gbfs/2/gbfs"
+      },
+      {
+        "version":"3.0",
+        "url":"https://www.example.com/gbfs/3/gbfs"
       }
     ]
   }
@@ -347,7 +347,7 @@ Field Name | Required | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1434054678,
+  "last_updated": 1609866247,
   "ttl": 0,
   "version": "3.0",
   "data": {
@@ -397,18 +397,18 @@ Field Name | Required | Type | Defines
 \-&nbsp;`station_area` <br/>*(added in v2.1-RC)* | Optional | GeoJSON Multipolygon | A GeoJSON multipolygon that describes the area of a virtual station. If `station_area` is supplied then the record describes a virtual station. <br /><br /> If lat/lon and `station_area` are both defined, the lat/lon is the significant coordinate of the station (e.g. dock facility or valet drop-off and pick up point). The `station_area` takes precedence over any `ride_allowed` rules in overlapping `geofencing_zones`.
 \-&nbsp;`capacity` | Optional | Non-negative integer | Number of total docking points installed at this station, both available and unavailable, regardless of what vehicle types are allowed at each dock. Empty indicates unlimited capacity.
 \-&nbsp;`vehicle_capacity` <br/>*(added in v2.1-RC)* | Optional | Object | An object where each key is a `vehicle_type_id` as described in [vehicle_types.json](#vehicle_typesjson) and the value is a number representing the total number of vehicles of this type that can park within the area defined in the `station_area` field. If the field `station_area` is defined and a particular vehicle type id is not defined in this object, then an unlimited virtual capacity is assumed for that vehicle type.
+\-&nbsp;`vehicle_type_capacity` <br/>*(added in v2.1-RC)* | Optional | Object | An object where each key is a `vehicle_type_id` as described in [vehicle_types.json](#vehicle_typesjson-added-in-v21-rc) and the value is a number representing the total docking points installed at this station, both available and unavailable for the specified vehicle type.
 \-&nbsp;`is_valet_station` <br/>*(added in v2.1-RC)* | Optional | Boolean | Are valet services provided at this station? <br /><br /> `true` - Valet services are provided at this station. <br /> `false` - Valet services are not provided at this station. <br /><br /> If this field is empty, it is assumed that valet services are not provided at this station. <br><br>This field’s boolean should be set to `true` during the hours which valet service is provided at the station. Valet service is defined as providing unlimited capacity at a station. 
 \-&nbsp;`rental_uris` <br/>*(added in v1.1)* | Optional | Object | Contains rental URIs for Android, iOS, and web in the android, ios, and web fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
 &emsp;\-&nbsp;`android` <br/>*(added in v1.1)* | Optional | URI | URI that can be passed to an Android app with an `android.intent.action.VIEW` Android intent to support Android Deep Links (https://developer.android.com/training/app-links/deep-linking). Please use Android App Links (https://developer.android.com/training/app-links) if possible so viewing apps don’t need to manually manage the redirect of the user to the app store if the user doesn’t have the application installed. <br><br>This URI should be a deep link specific to this station, and should not be a general rental page that includes information for more than one station. The deep link should take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported in the native Android rental app. <br><br>Note that URIs do not necessarily include the station_id for this station - other identifiers can be used by the rental app within the URI to uniquely identify this station. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Android App Links example value: `https://www.abc.com/app?sid=1234567890&platform=android` <br><br>Deep Link (without App Links) example value: `com.abcrental.android://open.abc.app/app?sid=1234567890`
 &emsp;\-&nbsp;`ios` <br/>*(added in v1.1)* | Optional | URI | URI that can be used on iOS to launch the rental app for this station. More information on this iOS feature can be found [here](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/communicating_with_other_apps_using_custom_urls?language=objc). Please use iOS Universal Links (https://developer.apple.com/ios/universal-links/) if possible so viewing apps don’t need to manually manage the redirect of the user to the app store if the user doesn’t have the application installed. <br><br>This URI should be a deep link specific to this station, and should not be a general rental page that includes information for more than one station.  The deep link should take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported in the native iOS rental app. <br><br>Note that the URI does not necessarily include the station_id - other identifiers can be used by the rental app within the URL to uniquely identify this station. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>iOS Universal Links example value: `https://www.abc.com/app?sid=1234567890&platform=ios` <br><br>Deep Link (without Universal Links) example value: `com.abcrental.ios://open.abc.app/app?sid=1234567890`
 &emsp;\-&nbsp;`web` <br/>*(added in v1.1)* | Optional | URL | URL that can be used by a web browser to show more information about renting a vehicle at this station. <br><br>This URL should be a deep link specific to this station, and should not be a general rental page that includes information for more than one station.  The deep link should take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported for web browsers. <br><br>Example value: `https://www.abc.com/app?sid=1234567890`
-\- `vehicle_type_capacity` <br/>*(added in v2.1-RC)* | Optional | Object | An object where each key is a `vehicle_type_id` as described in [vehicle_types.json](#vehicle_typesjson-added-in-v21-rc) and the value is a number representing the total docking points installed at this station, both available and unavailable for the specified vehicle type.
 
 ##### Example 1: Physical station
 
 ```jsonc
 {
-  "last_updated": 1434054678,
+  "last_updated": 1609866247,
   "ttl": 0,
   "version": "3.0",
   "data": {
@@ -432,49 +432,55 @@ Field Name | Required | Type | Defines
 
 ```jsonc
 {
-  "stations":[
-    {
-      "station_id":"station12",
-      "station_name":"SE Belmont & SE 10 th ",
-      "is_valet_station":false,
-      "is_virtual_station":true,
-      "station_area":{
-        "type":"MultiPolygon",
-        "coordinates":[
-          [
+  "last_updated":1609866247,
+  "ttl":0,
+  "version":"3.0",
+  "data":{
+    "stations":[
+      {
+        "station_id":"station12",
+        "station_name":"SE Belmont & SE 10 th ",
+        "is_valet_station":false,
+        "is_virtual_station":true,
+        "station_area":{
+          "type":"MultiPolygon",
+          "coordinates":[
             [
               [
-                -122.655775,
-                45.516445
-              ],
-              [
-                -122.655705,
-                45.516445
-              ],
-              [
-                -122.655705,
-                45.516495
-              ],
-              [
-                -122.655775,
-                45.516495
-              ],
-              [
-                -122.655775,
-                45.516445
+                [
+                  -122.655775,
+                  45.516445
+                ],
+                [
+                  -122.655705,
+                  45.516445
+                ],
+                [
+                  -122.655705,
+                  45.516495
+                ],
+                [
+                  -122.655775,
+                  45.516495
+                ],
+                [
+                  -122.655775,
+                  45.516445
+                ]
               ]
             ]
           ]
-        ]
-      },
-      "capacity":16,
-      "vehicle_capacity":{
-        "abc123":8,
-        "def456":8
+        },
+        "capacity":16,
+        "vehicle_capacity":{
+          "abc123":8,
+          "def456":8
+        }
       }
-    }
-  ]
-}        
+    ]
+  }
+}
+       
 ```
 ### station_status.json
 Describes the capacity and rental availability of a station. Data returned should be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  See [Data Latency](#data-latentcy). Data reflects the operators most recent knowledge of the station’s status. Any station that is represented in `station_status.json` must have a corresponding entry in `station_information.json`.
@@ -503,7 +509,7 @@ Field Name | Required | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1434054678,
+  "last_updated": 1609866247,
   "ttl": 0,
   "version": "3.0",
   "data": {
@@ -513,7 +519,7 @@ Field Name | Required | Type | Defines
         "is_installed": true,
         "is_renting": true,
         "is_returning": true,
-        "last_reported": 1434054678,
+        "last_reported": 1609866125,
         "num_docks_available": 3,
         "vehicle_docks_available": [{
           "vehicle_type_ids": ["abc123"],
@@ -535,7 +541,7 @@ Field Name | Required | Type | Defines
         "is_installed": true,
         "is_renting": true,
         "is_returning": true,
-        "last_reported": 1434054678,
+        "last_reported": 1609866106,
         "num_docks_available": 8,
         "vehicle_docks_available": [{
           "vehicle_type_ids": ["abc123"],
@@ -585,14 +591,14 @@ Field Name | Required | Type | Defines
 
 ```jsonc
 {
-  "last_updated":1434054678,
+  "last_updated":1609866247,
   "ttl":0,
   "version":"3.0",
   "data":{
     "bikes":[
       {
         "bike_id":"ghi789",
-        "last_reported":1434054678,
+        "last_reported":1609866109,
         "lat":12.34,
         "lon":56.78,
         "is_reserved":false,
@@ -601,7 +607,7 @@ Field Name | Required | Type | Defines
       },
       {
         "bike_id":"jkl012",
-        "last_reported":1434054687,
+        "last_reported":1609866204,
         "is_reserved":false,
         "is_disabled":false,
         "vehicle_type_id":"def456",
@@ -629,9 +635,9 @@ Field Name | Required | Type | Defines
 #### Example:
 ```jsonc
 {
-  "last_updated": 1434054678,
-  "ttl": 0,
-  "version": "2.0",
+  "last_updated": 1609866247,
+  "ttl": 86400,
+  "version": "3.0",
   "data": {
     "rental_hours": [
       {
@@ -674,7 +680,7 @@ Field Name | Required | Type | Defines
 ```jsonc
 {
   "last_updated":1604333830,
-  "ttl":3600,
+  "ttl":86400,
   "data":{
     "calendars":[
       {
@@ -759,31 +765,36 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 
 ```jsonc
 {
-  "plans": {
-    "plan_id": "plan2",
-    "name": "One-Way",
-    "currency": "USD",
-    "price": 2,
-    "is_taxable": false,
-    "description": "Includes 10km, overage fees apply after 10km.",
-    "per_km_pricing": [
-      {
-        "start": 10,
-        "rate": 1,
-        "interval": 1,
-        "end": 25
-      }, 
-      {
-        "start": 25,
-        "rate": 0.5,
-        "interval": 1
-      },
-      {
-        "start": 25,
-        "rate": 3,
-        "interval": 5
-      }
-    ]
+  "last_updated":1609866247,
+  "ttl":0,
+  "version":"3.0",
+  "data":{
+    "plans":{
+      "plan_id":"plan2",
+      "name":"One-Way",
+      "currency":"USD",
+      "price":2,
+      "is_taxable":false,
+      "description":"Includes 10km, overage fees apply after 10km.",
+      "per_km_pricing":[
+        {
+          "start":10,
+          "rate":1,
+          "interval":1,
+          "end":25
+        },
+        {
+          "start":25,
+          "rate":0.5,
+          "interval":1
+        },
+        {
+          "start":25,
+          "rate":3,
+          "interval":5
+        }
+      ]
+    }
   }
 }
 ```
@@ -792,23 +803,32 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 This example demonstrates a pricing scheme that has a rate both by minute and by km. The user is charged $0.25 per km as well as $0.50 per minute. Both of these rates happen concurrently and are not dependent on one another. 
 ```jsonc
 {
-  "plans": {
-    "plan_id": "plan3",
-    "name": "Simple Rate",
-    "currency": "CAD",
-    "price": 3,
-    "is_taxable": true,
-    "description": "$3 unlock fee, $0.25 per kilometer and 0.50 per minute.",
-    "per_km_pricing": [{
-      "start": 0,
-      "rate": 0.25,
-      "interval": 1
-    }],
-    "per_min_pricing": [{
-      "start": 0,
-      "rate": 0.50,
-      "interval": 1
-    }]
+  "last_updated":1609866247,
+  "ttl":0,
+  "version":"3.0",
+  "data":{
+    "plans":{
+      "plan_id":"plan3",
+      "name":"Simple Rate",
+      "currency":"CAD",
+      "price":3,
+      "is_taxable":true,
+      "description":"$3 unlock fee, $0.25 per kilometer and 0.50 per minute.",
+      "per_km_pricing":[
+        {
+          "start":0,
+          "rate":0.25,
+          "interval":1
+        }
+      ],
+      "per_min_pricing":[
+        {
+          "start":0,
+          "rate":0.50,
+          "interval":1
+        }
+      ]
+    }
   }
 }
 ```
@@ -835,7 +855,7 @@ Field Name | Required | Type | Defines
 ```jsonc
 {
   "last_updated":1604198100,
-  "ttl":10,
+  "ttl":60,
   "data":{
     "alerts":[
       {
@@ -854,7 +874,8 @@ Field Name | Required | Type | Defines
         ],
         "url":"https://example.com/more-info",
         "summary":"Disruption of Service",
-        "description":"The three stations on Broadway will be out of service from 12:00am Nov 3 to 3:00pm Nov 6th to accommodate road work",
+        "description":"The three stations on Broadway will be out of service
+         from 12:00am Nov 3 to 3:00pm Nov 6th to accommodate road work",
         "last_updated":1604519393
       }
     ]
