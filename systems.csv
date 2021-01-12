@@ -252,12 +252,13 @@ MX,Huizi,"Toluca, MX",huizi,huizitoluca.com.mx,https://tlc.publicbikesystem.net/
 MX,Mibici Guadalajara,"Guadalajara, MX",mibici_guadalajara,https://www.mibici.net/en/,https://guad.publicbikesystem.net/ube/gbfs/v1/
 MX,MOVO Guadalajara,"Guadalajara, MX",movo_gdl,https://movo.me/mx/,https://gbfs.movo.me/guadalajara
 MX,YOY - San Luis Potosi,"San Luis Potosi, MX",nextbike_yp,https://www.yoymobility.com/es/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_yp/gbfs.json
-NL,Bird Antwerp,"Antwerp, NL",bird-antwerp,https://www.bird.co,https://mds.bird.co/gbfs/antwerp/gbfs.json
+BE,Bird Antwerp,"Antwerp, BE",bird-antwerp,https://www.bird.co,https://mds.bird.co/gbfs/antwerp/gbfs.json
 NL,Cykl,"Wageningen, NL",CKL,https://www.cykl.nl/,https://www.cykl.nl/gbfs/gbfs.json
 NL,Donkey Republic Amsterdam,"Amsterdam, NL",donkey_am,https://www.donkey.bike/cities/bike-rental-amsterdam/,https://stables.donkey.bike/api/public/gbfs/donkey_am/gbfs.json
 NL,Donkey Republic Rotterdam,"Rotterdam, NL",donkey_rt,https://www.donkey.bike/nl/steden/deelfietsen-rotterdam/,https://stables.donkey.bike/api/public/gbfs/donkey_rt/gbfs.json
 NL,Donkey Republic Utrecht,"Utrecht, NL",donkey_ut,https://www.donkey.bike/cities/bike-rental-utrecht/,https://stables.donkey.bike/api/public/gbfs/donkey_ut/gbfs.json
 NL,Nextbike Dordrecht,"Dordrecht, NL",nextbike_nd,https://www.nextbike.nl/nl/dordrecht/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_nd/gbfs.json
+NL,NS OV Fiets,"Netherlands",ns_ov_fiets,https://www.ns.nl/en/door-to-door/ov-fiets,http://gbfs.openov.nl/ovfiets/gbfs.json
 NO,Bergen City Bike,"Bergen, NO",bergen-city-bike,https://bergenbysykkel.no/en,https://gbfs.urbansharing.com/bergenbysykkel.no/gbfs.json
 NO,Oslo City Bike,"Oslo, NO",oslobysykkel,https://oslobysykkel.no/en,https://gbfs.urbansharing.com/oslobysykkel.no/gbfs.json
 NO,Trondheim City Bike,"Trondheim, NO",trondheim,https://trondheimbysykkel.no/en,https://gbfs.urbansharing.com/trondheimbysykkel.no/gbfs.json
