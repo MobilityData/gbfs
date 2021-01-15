@@ -46,7 +46,6 @@ CH,Donkey Republic Sion,Sion,donkey_sion,https://www.donkey.bike/cities/bike-ren
 CH,Donkey Republic Thun,Thun,donkey_thun,https://www.donkey.bike/cities/bike-rental-thun/,https://stables.donkey.bike/api/public/gbfs/donkey_thun/gbfs.json
 CH,Donkey Republic Yverdon-les-Bains,Yverdon Les Bains,donkey_yverdon-les-bains,https://www.donkey.bike/cities/bike-rental-yverdon-les-bains/,https://stables.donkey.bike/api/public/gbfs/donkey_yverdon-les-bains/gbfs.json
 CH,Nextbike Switzerland,CH,nextbike_ch,https://www.nextbike.ch/de/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ch/gbfs.json
-CH,Nextbike Switzerland,CH,nextbike_ch,https://www.nextbike.ch/de/,https://nextbike.net/maps/gbfs/v1/nextbike_ch/gbfs.json
 CL,Bike Itaú - Santiago,"Santiago, CL",bike_santiago,https://www.bikesantiago.cl/,https://santiago.publicbikesystem.net/ube/gbfs/v1/
 CL,MOVO Vitacura,"Vitacura, CL",movo_scl,https://movo.me/cl/,https://gbfs.movo.me/vitacura
 CO,VOOM Bogotá,"Bogotá, CO",movo_bog,https://voom.com.co/,https://gbfs.movo.me/bogota
@@ -86,7 +85,7 @@ DE,Nextbike Erfurt,"Erfurt, DE",nextbike_ef,https://www.nextbike.de/de/erfurt/,h
 DE,Nextbike Fächerrad,"Karlsruhe, DE",nextbike_fg,https://www.kvv-nextbike.de/de/,https://nextbike.net/maps/gbfs/v1/nextbike_fg/gbfs.json
 DE,Nextbike Frankfurt,"Frankfurt, DE",nextbike_ff,https://www.nextbike.de/de/frankfurt/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ff/gbfs.json
 DE,Nextbike Gießen,"Gießen, DE",nextbike_ng,https://www.nextbike.de/de/giessen/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ng/gbfs.json
-DE,Nextbike Gütersloh,"Gütersloh, DE",nextbike_dj,https://www.nextbike.de/de/guetersloh/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_dj/gbfs.jso
+DE,Nextbike Gütersloh,"Gütersloh, DE",nextbike_dj,https://www.nextbike.de/de/guetersloh/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_dj/gbfs.json
 DE,Nextbike Hannover,"Hannover, DE",nextbike_dh,https://www.nextbike.de/de/hannover/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_dh/gbfs.json
 DE,Nextbike Kassel,"Kassel, DE",nextbike_dk,https://www.nextbike.de/de/kassel/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_dk/gbfs.json
 DE,Nextbike Lahr (Pedelecs),"Lahr, DE",nextbike_lr,https://www.nextbike.de/de/lahr/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_lr/gbfs.json
@@ -117,7 +116,7 @@ DE,Sprottenflotte,"KielRegion, DE",nextbike_sf,https://www.nextbike.de/de/kielre
 DE,SWA Rad,"Augsburg, DE",nextbike_ag,https://www.swa-rad.de/de/augsburg/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ag/gbfs.json
 DE,UsedomRad Germany,"Usedom, DE",nextbike_ur,http://usedomrad.de/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ur/gbfs.json
 DE,VAG_Rad,"Nürnberg, DE",nextbike_dv,https://www.vagrad.de/de/nuernberg/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_dv/gbfs.json
-DE,VRNnextbike,DE,nextbike_vn,https://www.vrnnextbike.de/de/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_vn/gbfs.json
+DE,VRNnextbike,"Rhine-Neckar, DE",nextbike_vn,https://www.vrnnextbike.de/de/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_vn/gbfs.json
 DE,WK-Bike (Bremen),"Bremen, DE",nextbike_wk,https://www.wk-bike.de/de/bremen/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_wk/gbfs.json
 DE,wupsiRad Leverkusen,"Leverkusen, DE",nextbike_dw,https://www.wupsirad.de/de/leverkusen/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_dw/gbfs.json
 DK,Donkey Republic Aalborg,"Aalborg, DK",donkey_aalborg,https://www.donkey.bike/cities/bike-rental-aalborg/,https://stables.donkey.bike/api/public/gbfs/donkey_aalborg/gbfs.json
@@ -267,8 +266,6 @@ NZ,Flamingo Christchurch,"Christchurch, NZ",flamingo_christchurch,https://flamin
 NZ,Flamingo Wellington,"Wellington, NZ",flamingo_wellington,https://flamingoscooters.com,https://api.flamingoscooters.com/gbfs/wellington/gbfs.json
 NZ,Nextbike New Zealand,NZ,nextbike_nz,https://www.nextbike.co.nz/en/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_nz/gbfs.json
 PL,Bike_S SRM Poland,"Szczecin, PL",nextbike_sp,https://bikes-srm.pl/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_sp/gbfs.json
-PL,GRM Grodzisk Poland,"Grodzisk Mazowiecki, PL",nextbike_gp,http://www.rowery.grodzisk.pl/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_gp/gbfs.json
-PL,Kaliski Rower Miejski Poland,"Kalisz, PL",nextbike_pk,https://www.kaliskirowermiejski.pl/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pk/gbfs.json
 PL,Oleski Rower Miejski Poland,"Olesno, PL",nextbike_pf,https://oleskirower.pl/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pf/gbfs.json
 PL,PRM Poznań Poland,"Poznań, PL",nextbike_pb,http://www.poznanskirower.pl/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pb/gbfs.json
 PL,Rowerowe Łódzkie Poland (RL),"Łódzkie, PL",nextbike_pw,https://www.rowerowelodzkie.pl/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pw/gbfs.json
@@ -302,24 +299,23 @@ US,BikeLNK,"Lincoln, NE",bcycle_bikelnk,https://bikelnk.bcycle.com,https://gbfs.
 US,Bikeshare Kona,"Kona, HI",bikeshare_kona,https://hawaiiislandbikeshare.org/,https://kona.publicbikesystem.net/ube/gbfs/v1/
 US,BIKETOWN,"Portland, OR",biketown_pdx,https://www.biketownpdx.com/,https://gbfs.biketownpdx.com/gbfs/gbfs.json
 US,Biki,"Honolulu, HI",go_biki,https://gobiki.org/,https://hon.publicbikesystem.net/ube/gbfs/v1/
-US,Bird Alexandria,"Alexandria, VA, USA",bird-alexandria,https://www.bird.co,https://mds.bird.co/gbfs/alexandria/gbfs.json
+US,Bird Alexandria,"Alexandria, VA, US",bird-alexandria,https://www.bird.co,https://mds.bird.co/gbfs/alexandria/gbfs.json
 US,Bird Chicago,"Chicago, IL",bird-chicago,https://www.bird.co,https://mds.bird.co/gbfs/chicago/gbfs.json
-US,Bird Cleveland,"Cleveland,OH, USA",bird-cleveland,https://www.bird.co,https://mds.bird.co/gbfs/cleveland/gbfs.json
-US,Bird Columbus,"Columbus, OH, USA",bird-columbus,https://www.bird.co,https://mds.bird.co/gbfs/columbus/gbfs.json
-US,Bird Culver City,"Culver City, CA, USA",bird-culver-city,https://www.bird.co,https://mds.bird.co/gbfs/culver-city/gbfs.json
-US,Bird Detriot,"Detroit, MI, USA",bird-detroit,https://www.bird.co,https://mds.bird.co/gbfs/detroit/gbfs.json
-US,Bird Fairfax,"Fairfax, VA, USA",bird-fairfax,https://www.bird.co,https://mds.bird.co/gbfs/fairfax/gbfs.json
-US,Bird Indianapolis,"Indianapolis,IN, USA",bird-indianapolis,https://www.bird.co,https://mds.bird.co/gbfs/indianapolis/gbfs.json
-US,Bird Kansas City,"Kansas City, MO, USA",bird-kansas-city,https://www.bird.co,https://mds.bird.co/gbfs/kansas-city/gbfs.json
-US,Bird Los Angeles,"Los Angeles, CA, USA",bird-los-angeles,https://www.bird.co,https://mds.bird.co/gbfs/los-angeles/gbfs.json
+US,Bird Cleveland,"Cleveland,OH, US",bird-cleveland,https://www.bird.co,https://mds.bird.co/gbfs/cleveland/gbfs.json
+US,Bird Columbus,"Columbus, OH, US",bird-columbus,https://www.bird.co,https://mds.bird.co/gbfs/columbus/gbfs.json
+US,Bird Culver City,"Culver City, CA, US",bird-culver-city,https://www.bird.co,https://mds.bird.co/gbfs/culver-city/gbfs.json
+US,Bird Detriot,"Detroit, MI, US",bird-detroit,https://www.bird.co,https://mds.bird.co/gbfs/detroit/gbfs.json
+US,Bird Fairfax,"Fairfax, VA, US",bird-fairfax,https://www.bird.co,https://mds.bird.co/gbfs/fairfax/gbfs.json
+US,Bird Indianapolis,"Indianapolis,IN, US",bird-indianapolis,https://www.bird.co,https://mds.bird.co/gbfs/indianapolis/gbfs.json
+US,Bird Kansas City,"Kansas City, MO, US",bird-kansas-city,https://www.bird.co,https://mds.bird.co/gbfs/kansas-city/gbfs.json
+US,Bird Los Angeles,"Los Angeles, CA, US",bird-los-angeles,https://www.bird.co,https://mds.bird.co/gbfs/los-angeles/gbfs.json
 US,Bird Louisville,"Louisville, KY",bird-louisville,https://www.bird.co,https://mds.bird.co/gbfs/louisville/gbfs.json
-US,Bird Portland,"Portland, OR, USA",bird-portland,https://www.bird.co,https://mds.bird.co/gbfs/portland/gbfs.json
-US,Bird San Francisco,"San Francisco, CA, USA",bird-san-francisco,https://www.bird.co,https://mds.bird.co/gbfs/san-francisco/gbfs.json
-US,Bird Tempe,"Tempe, AZ, USA",bird-tempe,https://www.bird.co,https://mds.bird.co/gbfs/tempe/gbfs.json
-US,Bird Washington DC,"Washington, DC, USA",bird-washington-dc,https://www.bird.co,https://mds.bird.co/gbfs/washington-dc/gbfs.json
+US,Bird Portland,"Portland, OR, US",bird-portland,https://www.bird.co,https://mds.bird.co/gbfs/portland/gbfs.json
+US,Bird San Francisco,"San Francisco, CA, US",bird-san-francisco,https://www.bird.co,https://mds.bird.co/gbfs/san-francisco/gbfs.json
+US,Bird Tempe,"Tempe, AZ, US",bird-tempe,https://www.bird.co,https://mds.bird.co/gbfs/tempe/gbfs.json
+US,Bird Washington DC,"Washington, DC, US",bird-washington-dc,https://www.bird.co,https://mds.bird.co/gbfs/washington-dc/gbfs.json
 US,Blue Bikes,"Boston, MA",bluebikes,https://www.bluebikes.com/,https://gbfs.bluebikes.com/gbfs/gbfs.json
-US,Boise Green Bike,"Boise, ID",boise_greenbike,http://boise.greenbike.com/,http://boise.greenbike.com/opendata/gbfs.json
-US,Bolt Baltimore,"Baltimore, MD",bolt_bal,https://www.micromobility.com,https://www.bolt.miami/bolt2/bal/gbfs/en/gbfs.json
+US,Bolt Durham,"Durham, NC, US",bolt_dur,https://micromobility.com,https://api-lb.micromobility.com/dur/gbfs/en/gbfs.json
 US,Bolt Washington DC,"Washington DC, US",bolt_dc,https://micromobility.com,https://api-lb.micromobility.com/dc/gbfs/en/gbfs.json
 US,Broward B-cycle,"Fort Lauderdale, FL",bcycle_broward,https://broward.bcycle.com,https://gbfs.bcycle.com/bcycle_broward/gbfs.json
 US,Bublr Bikes,"Milwaukee, WI",bcycle_bublr,http://bublrbikes.com,https://gbfs.bcycle.com/bcycle_bublr/gbfs.json
@@ -332,7 +328,6 @@ US,Clemson BikeShare,"Clemson, SC",bcycle_clemson,https://clemson.bcycle.com,htt
 US,CLEVR Mobility,"Oakland, CA",daecbe87-a9f2-4a5a-b5df-8e3e14180513,https://www.clevrmobility.com/,https://portal.clevrmobility.com/api/gbfs/oakland/en/discovery/
 US,Coast Bike Share,"St. Petersburg, FL",coast_bike_share,http://coastbikeshare.com/,http://coast.socialbicycles.com/opendata/gbfs.json
 US,CoGo,"Columbus, OH",cogo,http://www.cogobikeshare.com/,https://gbfs.cogobikeshare.com/gbfs/gbfs.json
-US,Columbia County B-cycle,"Evans, GA",bcycle_columbiacounty,https://columbiacounty.bcycle.com,https://gbfs.bcycle.com/bcycle_columbiacounty/gbfs.json
 US,Des Moines B-cycle,"Des Moines, IA",bcycle_desmoines,https://desmoines.bcycle.com,https://gbfs.bcycle.com/bcycle_desmoines/gbfs.json
 US,Divvy,"Chicago, IL",divvy,http://www.divvybikes.com/,https://gbfs.divvybikes.com/gbfs/gbfs.json
 US,El Paso B-cycle,"El Paso, TX",bcycle_elpaso,https://elpaso.bcycle.com,https://gbfs.bcycle.com/bcycle_elpaso/gbfs.json
@@ -362,7 +357,6 @@ US,Houston B-cycle,"Houston, TX",bcycle_houston,https://houston.bcycle.com,https
 US,Indego,"Philadelphia, PA",bcycle_indego,https://www.rideindego.com,https://gbfs.bcycle.com/bcycle_indego/gbfs.json
 US,Indy - Pacers Bikeshare,"Indianapolis, IN",bcycle_pacersbikeshare,https://www.pacersbikeshare.org,https://gbfs.bcycle.com/bcycle_pacersbikeshare/gbfs.json
 US,Jackson County,"Jackson, MI",bcycle_jacksoncounty,https://jacksoncounty.bcycle.com,https://gbfs.bcycle.com/bcycle_jacksoncounty/gbfs.json
-US,Kansas City B-cycle,"Kansas City, MO",bcycle_kc,https://kc.bcycle.com,https://gbfs.bcycle.com/bcycle_kc/gbfs.json
 US,Lime Arlington,"Arlington, VA",lime_arlington,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/arlington/gbfs.json
 US,Lime Baltimore,"Baltimore, MD",lime_baltimore,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/baltimore/gbfs.json
 US,Lime Chicago,"Chicago, IL",lime_chicago,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/chicago/gbfs.json
@@ -443,7 +437,7 @@ US,Spin West Sacramento,"West Sacramento, CA, US",spin west_sacramento,https://s
 US,START Bike,"Jackson, WY",bcycle_startbike,https://startbike.bcycle.com,https://gbfs.bcycle.com/bcycle_startbike/gbfs.json
 US,Tugo,"Tucson, AZ",tugo,https://tugobikeshare.com/,https://tuc.publicbikesystem.net/ube/gbfs/v1/
 US,Ubike,University of Virginia,university_of_virginia,http://ubike.virginia.edu/,http://ubike.virginia.edu/opendata/gbfs.json
-US,Valentine Bike Share,"Valentine, NE, USA",bcycle_valentine,https://heartlandbikeshare.org,https://gbfs.bcycle.com/bcycle_valentine/gbfs.json
+US,Valentine Bike Share,"Valentine, NE, US",bcycle_valentine,https://heartlandbikeshare.org,https://gbfs.bcycle.com/bcycle_valentine/gbfs.json
 US,We-cycle,"Aspen, CO",we_cycle,https://www.we-cycle.org/,https://asp.publicbikesystem.net/ube/gbfs/v1/
 US,Wheels Austin,"Austin, TX, US",9f74fa80-fb2f-48dc-b2d8-01a889ac008a,https://takewheels.com/,https://austin-gbfs.getwheelsapp.com/gbfs.json
 US,Wheels Dallas,"Dallas, TX, US",9f74fa80-fb2f-48dc-b2d8-01a889ac008a,https://takewheels.com/,https://dfw-gbfs.getwheelsapp.com/gbfs.json
