@@ -171,7 +171,7 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 	* MUST be unique within like fields (e.g. `station_id` MUST be unique among stations)
 	* does not have to be globally unique, unless otherwise specified
 	* MUST NOT contain spaces
-	* MUST be persistent for a given entity (station, plan, etc). An exception is floating bike `bike_id`, which SHOULD NOT be persistent for privacy reasons (see `free_bike_status.json`). *(as of v2.0)*
+	* MUST be persistent for a given entity (station, plan, etc). An exception is floating bike `bike_id`, which MUST NOT be persistent for privacy reasons (see `free_bike_status.json`). *(as of v2.0)*
 * Language - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to http://www.rfc-editor.org/rfc/bcp/bcp47.txt and http://www.w3.org/International/articles/language-tags/. Examples: `en` for English, `en-US` for American English, or `de` for German.
 * Latitude - WGS84 latitude in decimal degrees. The value MUST be greater than or equal to -90.0 and less than or equal to 90.0. Example: `41.890169` for the Colosseum in Rome.
 * Longitude - WGS84 longitude in decimal degrees. The value MUST be greater than or equal to -180.0 and less than or equal to 180.0. Example: `12.492269` for the Colosseum in Rome.
