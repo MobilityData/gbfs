@@ -317,6 +317,7 @@ US,Bird Tempe,"Tempe, AZ, US",bird-tempe,https://www.bird.co,https://mds.bird.co
 US,Bird Washington DC,"Washington, DC, US",bird-washington-dc,https://www.bird.co,https://mds.bird.co/gbfs/washington-dc/gbfs.json
 US,Blue Bikes,"Boston, MA",bluebikes,https://www.bluebikes.com/,https://gbfs.bluebikes.com/gbfs/gbfs.json
 US,Bolt Durham,"Durham, NC, US",bolt_dur,https://micromobility.com,https://api-lb.micromobility.com/dur/gbfs/en/gbfs.json
+US,Bolt Portland,"Portland OR, US",bolt_ptl,https://micromobility.com,https://bolt.miami/bolt2/ptl/gbfs/gbfs.json
 US,Bolt Washington DC,"Washington DC, US",bolt_dc,https://micromobility.com,https://api-lb.micromobility.com/dc/gbfs/en/gbfs.json
 US,Broward B-cycle,"Fort Lauderdale, FL",bcycle_broward,https://broward.bcycle.com,https://gbfs.bcycle.com/bcycle_broward/gbfs.json
 US,Bublr Bikes,"Milwaukee, WI",bcycle_bublr,http://bublrbikes.com,https://gbfs.bcycle.com/bcycle_bublr/gbfs.json
@@ -386,7 +387,8 @@ US,Nashville B-cycle,"Nashville, TN",bcycle_nashville,https://nashville.bcycle.c
 US,Nice Ride Minnesota,"Minneapolis, MN, US",niceridemn,https://www.niceridemn.com,https://gbfs.niceridemn.com/gbfs/gbfs.json
 US,Ojo ,"Austin, TX, US",ojo,https://ojoelectric.com/,https://api.ojoelectric.com/api/mds/gbfs.json
 US,Rad Sharing Fleet,"Seattle, WA, US",33,https://gohopr.com/,https://gbfs.hopr.city/api/gbfs/33/
-US,Razor scooters ,"Washington DC, US",razor,https://www.razor.com/share/,https://razorapi.net/api/v1/gbfs/Washington%20DC/gbfs.json
+US,Razor Portland,"Portland OR, US",razor,https://www.razor.com/share/,https://razorapi.net/api/v1/gbfs/Portland/gbfs.json
+US,Razor Washington DC,"Washington DC, US",razor,https://www.razor.com/share/,https://razorapi.net/api/v1/gbfs/Washington%20DC/gbfs.json
 US,Razor Tempe,"Tempe, AZ, US",razor,https://www.razor.com/share/,https://razorapi.net/api/v1/gbfs/Tempe/gbfs.json
 US,Reddy Bike Share,"Buffalo, NY",reddy_bikeshare,https://reddybikeshare.socialbicycles.com/,https://reddybikeshare.socialbicycles.com/opendata/gbfs.json
 US,Reddy Bikeshare,"Buffalo, NY, US",reddy_bikeshare,http://reddybikeshare.socialbicycles.com,https://reddybikeshare.socialbicycles.com/opendata/gbfs.json
