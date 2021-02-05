@@ -91,7 +91,7 @@ Automated tools for application performance monitoring SHOULD be used to ensure 
 Producers SHOULD provide a technical contact who can respond to feed outages in the `feed_contact_email` field in the `system_information.json` file.
  
 ### Seasonal Shutdowns, Disruptions of Service
-Feeds SHOULD continue to be published during seasonal or temporary shutdowns.  Feed URLs SHOULD not return a 404.  An empty bikes array SHOULD be returned by `free_bike_status.json`. Stations in `station_status.json` SHOULD be set to `is_renting:false`, `is_returning:false` and `is_installed:false` where applicable. Seasonal shutdown dates SHOULD be reflected in `system_calendar.json`.
+Feeds SHOULD continue to be published during seasonal or temporary shutdowns.  Feed URLs SHOULD NOT return a 404.  An empty bikes array SHOULD be returned by `free_bike_status.json`. Stations in `station_status.json` SHOULD be set to `is_renting:false`, `is_returning:false` and `is_installed:false` where applicable. Seasonal shutdown dates SHOULD be reflected in `system_calendar.json`.
 
 Announcements for disruptions of service, including disabled stations or temporary closures of stations or systems SHOULD be made in `system_alerts.json`.
 
@@ -156,7 +156,7 @@ Decimal places | Degrees | Distance at the Equator
 ### Data Latency 
 The data returned by the near-realtime endpoints `station_status.json` and `free_bike_status.json` SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  Appropriate values SHOULD be set using the `ttl` property for each endpoint based on how often the data in feeds are refreshed or updated. For near-realtime endpoints where the data should always be refreshed the `ttl` value SHOULD be `0`. The`last_updated` timestamp represents the publisher's knowledge of the current state of the system at this point in time. The `last_reported` timestamp represents the last time a station or vehicle reported its status to the operator's backend.
 ## Licensing 
-It is RECOMMENDED that all GBFS data sets be offered under an open data license. Open data licenses allow consumers to freely use, modify and share GBFS data for any purpose in perpetuity. Licensing of GBFS data provides certainty to GBFS consumers, allowing them to integrate GBFS data into their work. All GBFS data sets SHOULD specify a license using the `license_id` field with an [SPDX identifier](https://spdx.org/licenses/) or by using `license_url` field with a URL pointing to a custom license in `system_information.json`. See the GBFS repo for a [comparison of a subset of standard licenses](https://github.com/NABSA/gbfs/blob/master/data-licenses.md). 
+It is RECOMMENDED that all GBFS data sets be offered under an open data license. Open data licenses allow consumers to freely use, modify and share GBFS data for any purpose in perpetuity. Licensing of GBFS data provides certainty to GBFS consumers, allowing them to integrate GBFS data into their work. All GBFS data sets SHOULD specify a license using the `license_id` field with an [SPDX identifier](https://spdx.org/licenses/) or by using the `license_url` field with a URL pointing to a custom license in `system_information.json`. See the GBFS repo for a [comparison of a subset of standard licenses](https://github.com/NABSA/gbfs/blob/master/data-licenses.md). 
 
 ## Field Types
 
@@ -313,7 +313,7 @@ Field Name | REQUIRED | Type | Defines
 `language` | Yes | Language | The language that will be used throughout the rest of the files. It MUST match the value in the [gbfs.json](#gbfsjson) file.
 `name` | Yes | String | Name of the system to be displayed to customers.
 `short_name` | OPTIONAL | String | OPTIONAL abbreviation for a system.
-`operator` | OPTIONAL | String | Name of the operator.
+`operator` | OPTIONAL | String | Name of the system operator.
 `url` | OPTIONAL | URL | The URL of the vehicle share system.
 `purchase_url` | OPTIONAL | URL | URL where a customer can purchase a membership.
 `start_date` | OPTIONAL | Date | Date that the system began operations.
@@ -328,10 +328,10 @@ Field Name | REQUIRED | Type | Defines
 `rental_apps` <br/>*(added in v1.1)* | OPTIONAL | Object | Contains rental app information in the android and ios JSON objects.
 \-&nbsp;`android` <br/>*(added in v1.1)* | OPTIONAL | Object | Contains rental app download and app discovery information for the Android platform in the `store_uri` and `discovery_uri` fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
 &emsp;- `store_uri` <br/>*(added in v1.1)* | Conditionally REQUIRED | URI | URI where the rental Android app can be downloaded from. Typically this will be a URI to an app store such as Google Play. If the URI points to an app store such as Google Play, the URI SHOULD follow Android best practices so the viewing app can directly open the URI to the native app store app instead of a website. <br><br> If a `rental_uris`.`android` field is populated then this field is REQUIRED, otherwise it is OPTIONAL. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Example value: `https://play.google.com/store/apps/details?id=com.abcrental.android`
-&emsp;- `discovery_uri` <br/>*(added in v1.1)* | Conditionally REQUIRED | URI | URI that can be used to discover if the rental Android app is installed on the device (e.g., using [`PackageManager.queryIntentActivities()`](https://developer.android.com/reference/android/content/pm/PackageManager.html#queryIntentActivities)). This intent is used by viewing apps prioritize rental apps for a particular user based on whether they already have a particular rental app installed. <br><br>This field is REQUIRED if a `rental_uris`.`android` field is populated, otherwise it is OPTIONAL. <br><br>Example value: `com.abcrental.android://`
+&emsp;- `discovery_uri` <br/>*(added in v1.1)* | Conditionally REQUIRED | URI | URI that can be used to discover if the rental Android app is installed on the device (e.g., using [`PackageManager.queryIntentActivities()`](https://developer.android.com/reference/android/content/pm/PackageManager.html#queryIntentActivities)). This intent is used by viewing apps to prioritize rental apps for a particular user based on whether they already have a particular rental app installed. <br><br>This field is REQUIRED if a `rental_uris`.`android` field is populated, otherwise it is OPTIONAL. <br><br>Example value: `com.abcrental.android://`
 \-&nbsp;`ios` <br/>*(added in v1.1)* | OPTIONAL | Object | Contains rental information for the iOS platform in the `store_uri` and `discovery_uri` fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
 &emsp;- `store_uri` <br/>*(added in v1.1)* | Conditionally REQUIRED | URI | URI where the rental iOS app can be downloaded from. Typically this will be a URI to an app store such as the Apple App Store. If the URI points to an app store such as the Apple App Store, the URI SHOULD follow iOS best practices so the viewing app can directly open the URI to the native app store app instead of a website. <br><br>If a `rental_uris`.`ios` field is populated then this field is REQUIRED, otherwise it is OPTIONAL. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Example value: `https://apps.apple.com/app/apple-store/id123456789`
-&emsp;- `discovery_uri` <br/>*(added in v1.1)* | Conditionally REQUIRED | URI | URI that can be used to discover if the rental iOS app is installed on the device (e.g., using [`UIApplication canOpenURL:`](https://developer.apple.com/documentation/uikit/uiapplication/1622952-canopenurl?language=objc)). This intent is used by viewing apps prioritize rental apps for a particular user based on whether they already have a particular rental app installed. <br><br>This field is REQUIRED if a `rental_uris`.`ios` field is populated, otherwise it is OPTIONAL. <br><br>Example value: `com.abcrental.ios://`
+&emsp;- `discovery_uri` <br/>*(added in v1.1)* | Conditionally REQUIRED | URI | URI that can be used to discover if the rental iOS app is installed on the device (e.g., using [`UIApplication canOpenURL:`](https://developer.apple.com/documentation/uikit/uiapplication/1622952-canopenurl?language=objc)). This intent is used by viewing apps to prioritize rental apps for a particular user based on whether they already have a particular rental app installed. <br><br>This field is REQUIRED if a `rental_uris`.`ios` field is populated, otherwise it is OPTIONAL. <br><br>Example value: `com.abcrental.ios://`
 
 ##### Example:
 
@@ -501,7 +501,8 @@ Field Name | REQUIRED | Type | Defines
         "capacity":16,
         "vehicle_capacity":{
           "abc123":8,
-          "def456":8
+          "def456":8,
+          "ghi789":16
         }
       }
     ]
