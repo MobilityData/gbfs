@@ -160,6 +160,8 @@ FR,Donkey Republic Valenciennes,Valenciennes,donkey_valenciennes,https://www.don
 FR,LE vélo STAR,"Rennes, FR",le_velo_star,https://www.star.fr/le-velo/nos-offres/vls/,https://eu.ftp.opendatasoft.com/star/gbfs/gbfs.json
 FR,levélo,"Marseille, FR",marseille,http://www.levelo-mpm.fr/,https://transport.data.gouv.fr/gbfs/marseille/gbfs.json
 FR,Libélo,"Valence, FR",libelo,http://www.citea.info/presentation/?rub_code=92,https://valence.publicbikesystem.net/ube/gbfs/v1/
+FR,Optymo Belfort,"Belfort, FR",Optymo_FR_Belfort,https://www.optymo.fr/,https://www.optymo.fr/,https://belfort-gbfs.klervi.net/gbfs/gbfs.json
+FR,VCub Bordeaux,"Bordeaux, FR",vcub,https://www.vcub.fr/,https://transport.data.gouv.fr/gbfs/vcub/gbfs.json
 FR,Vélam,"Amiens, FR",amiens,http://www.velam.amiens.fr/,https://transport.data.gouv.fr/gbfs/amiens/gbfs.json
 FR,Vélhop,"Strasbourg, FR",strasbourg,https://velhop.strasbourg.eu/,https://transport.data.gouv.fr/gbfs/strasbourg/gbfs.json
 FR,Vélib' Metropole,"Paris, FR",Paris,https://www.velib-metropole.fr/,https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/gbfs.json
@@ -172,6 +174,7 @@ FR,Vélomagg',"Montpellier, FR",montpellier,https://www.tam-voyages.com/presenta
 FR,Vélopop,"Avignon, FR",Vélopop_FR_Avignon,https://www.velopop.fr/,https://avignon-gbfs.klervi.net/gbfs/gbfs.json
 FR,VélOstan'lib,"Nancy, FR",nancy,http://www.velostanlib.fr/,https://transport.data.gouv.fr/gbfs/nancy/gbfs.json
 FR,VélÔToulouse,"Toulouse, FR",toulouse,http://www.velo.toulouse.fr/,https://transport.data.gouv.fr/gbfs/toulouse/gbfs.json
+FR,V'lille,"Lille,FR",vlille,https://www.ilevia.fr/cms/vlille/,https://transport.data.gouv.fr/gbfs/vlille/gbfs.json
 GB,BelfastBikes,"Belfast, GB",nextbike_bu,https://www.belfastbikes.co.uk/en/belfast/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bu/gbfs.json
 GB,Beryl - BCP,"Bournemouth, Christchurch, Poole, GB",beryl_bcp,https://www.beryl.cc,https://gbfs.beryl.cc/v2/BCP/gbfs.json
 GB,Beryl - Hereford,"Hereford, GB",beryl_hereford,https://www.beryl.cc,https://gbfs.beryl.cc/v2/Hereford/gbfs.json
