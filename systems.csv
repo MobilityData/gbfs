@@ -160,7 +160,7 @@ FR,Donkey Republic Valenciennes,Valenciennes,donkey_valenciennes,https://www.don
 FR,LE vélo STAR,"Rennes, FR",le_velo_star,https://www.star.fr/le-velo/nos-offres/vls/,https://eu.ftp.opendatasoft.com/star/gbfs/gbfs.json
 FR,levélo,"Marseille, FR",marseille,http://www.levelo-mpm.fr/,https://transport.data.gouv.fr/gbfs/marseille/gbfs.json
 FR,Libélo,"Valence, FR",libelo,http://www.citea.info/presentation/?rub_code=92,https://valence.publicbikesystem.net/ube/gbfs/v1/
-FR,Optymo Belfort,"Belfort, FR",Optymo_FR_Belfort,https://www.optymo.fr/,https://www.optymo.fr/,https://belfort-gbfs.klervi.net/gbfs/gbfs.json
+FR,Optymo Belfort,"Belfort, FR",Optymo_FR_Belfort,https://www.optymo.fr/,https://belfort-gbfs.klervi.net/gbfs/gbfs.json
 FR,VCub Bordeaux,"Bordeaux, FR",vcub,https://www.vcub.fr/,https://transport.data.gouv.fr/gbfs/vcub/gbfs.json
 FR,Vélam,"Amiens, FR",amiens,http://www.velam.amiens.fr/,https://transport.data.gouv.fr/gbfs/amiens/gbfs.json
 FR,Vélhop,"Strasbourg, FR",strasbourg,https://velhop.strasbourg.eu/,https://transport.data.gouv.fr/gbfs/strasbourg/gbfs.json
