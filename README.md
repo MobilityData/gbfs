@@ -20,7 +20,7 @@ The data in the specification contained in this document is intended for consump
   * 2015 November 05 - GBFS V1.0 Adopted by NABSA board - [Original draft spec in a Google doc](https://docs.google.com/document/d/1BQPZCKpem4-n6lUQDD4Mi8E5hNZ0-lhY62IVtWuyhec/edit#heading=h.ic7i1m4gcev7) (reference only)
   * 2015 August - Latest changes incorporated and name change to GBFS (comments from Motivate, 8D, others)
   * 2015 June - Proposed refinements (prepared by Jesse Chan-Norris on behalf of Motivate)
-  * 2014 September 07 - Draft specification presented by Mitch Vars at 1st annual [NABSA](https://nabsa.net/) conference, Pittsburgh,PA 
+  * 2014 September 07 - Draft specification presented by Mitch Vars at 1st annual [NABSA](https://nabsa.net/) conference, Pittsburgh, PA 
 * [v1.1-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/v1.1-RC/gbfs.md)
   * [#25](https://github.com/NABSA/gbfs/pull/25) - Add deep links for iOS, Android, and web apps
   * [#181](https://github.com/NABSA/gbfs/pull/181) - Add `feed_contact_email` field to `system_information.json`
