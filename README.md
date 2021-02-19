@@ -20,7 +20,7 @@ The data in the specification contained in this document is intended for consump
   * 2015 November 05 - GBFS V1.0 Adopted by NABSA board - [Original draft spec in a Google doc](https://docs.google.com/document/d/1BQPZCKpem4-n6lUQDD4Mi8E5hNZ0-lhY62IVtWuyhec/edit#heading=h.ic7i1m4gcev7) (reference only)
   * 2015 August - Latest changes incorporated and name change to GBFS (comments from Motivate, 8D, others)
   * 2015 June - Proposed refinements (prepared by Jesse Chan-Norris on behalf of Motivate)
-  * 2015 January - NABSA Draft (prepared by Mitch Vars)
+  * 2014 September 07 - Draft specification presented by Mitch Vars at 1st annual [NABSA](https://nabsa.net/) conference, Pittsburgh,PA 
 * [v1.1-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/v1.1-RC/gbfs.md)
   * [#25](https://github.com/NABSA/gbfs/pull/25) - Add deep links for iOS, Android, and web apps
   * [#181](https://github.com/NABSA/gbfs/pull/181) - Add `feed_contact_email` field to `system_information.json`
@@ -67,16 +67,16 @@ To manage the change process, the following guidelines have been established.
 * Once a vote is called, a "Vote Open" label will be added to the PR. After the 2 day reminder, the label will be replaced with "Vote Closing Soon", once the vote is closed, the label will become either “Vote Passed” or “Voted Failed” depending on the vote outcome.
 * A vote passes if there is unanimous consensus with at least 3 votes in favor.
   * At least one of these votes MUST be from a producer and at least one  MUST be from a consumer.
-  * The producer and consumer votes MUST come from stakeholders other tne The Advocate.
+  * The producer and consumer votes MUST come from stakeholders other than The Advocate.
   * MobilityData serves as facilitator but does not vote on proposed changes.
 * Votes against a proposal can stop a proposal from passing if they provide a specific reason for voting against and contain actionable feedback.
 * The Advocate should cancel a vote and restart the process if significant changes are made to the proposal after stakeholders have voted.
 * Should the vote fail, The Advocate can choose to continue work on the proposal with the feedback received and restart the governance process, or abandon the proposal by closing the Pull Request. Another interested member of the community can take over the proposal if they feel the addition is valuable. 
 * When a vote passes, the change is placed into Release Candidate (RC) status. The change remains in RC status pending implementation.
   * Implementation requirements are that at least 1 producer and 1 consumer implement the changes. 
-  * The implmentors MUST be stakeholders other than The Advocate.
-  * Once implemented successfully, the change is merged into the official current release.
-* Editorial changes as well as items that are not found in gbfs.md do not need to be voted on. Extensions that include new capabilities and features MUST be voted on.
+  * The implementors MUST be stakeholders other than The Advocate.
+  * Once implemented successfully, the change is merged into an official current release.
+* Editorial changes as well as items that are not found in [gbfs.md](https://github.com/NABSA/gbfs/blob/master/gbfs.md) do not need to be voted on. Extensions that include new capabilities and features MUST be voted on.
 * Issues and pull requests will be considered stale after 120 days, at which point participants will be notified via comment. Should they wish to keep the discussion open, it is the responsibility of the participants to re-engage in the conversation. If there is no re-engagement, the issue or pull request will be closed 60 days after the stale date. 
  
 
