@@ -9,7 +9,7 @@ exemptLabels:
 staleLabel: stale
 # Comment to post when marking an issue as stale. Set to `false` to disable
 markComment: >
-  This disucssion has been automatically marked as stale because it has not had
+  This discussion has been automatically marked as stale because it has not had
   recent activity. It will be closed in 60 days if no further activity occurs. Thank you
   for your contributions.
 # Comment to post when closing a stale issue. Set to `false` to disable
