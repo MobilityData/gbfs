@@ -46,7 +46,7 @@ The data in the specification contained in this document is intended for consump
 * [v2.1-RC2 (Release Candidate)](https://github.com/NABSA/gbfs/blob/v2.1-RC2/gbfs.md)
   * [#261](https://github.com/NABSA/gbfs/pull/261) - Aggregate available vehicle_types at a station
   * [#252](https://github.com/NABSA/gbfs/pull/252) - Extend system_pricing_plans.json
-* ####**[v2.1: Current version](https://github.com/NABSA/gbfs/blob/v2.1/gbfs.md)**
+* #### **[v2.1: Current version](https://github.com/NABSA/gbfs/blob/v2.1/gbfs.md)**
   * [#136](https://github.com/NABSA/gbfs/pull/136) - Add vehicle type definitions
   * [#219](https://github.com/NABSA/gbfs/pull/219) - Add geofencing, virtual station, and dockless support
   * [#261](https://github.com/NABSA/gbfs/pull/261) - Aggregate available vehicle_types at a station
