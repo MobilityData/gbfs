@@ -3,8 +3,8 @@
 This document explains the types of files and data that comprise the General Bikeshare Feed Specification (GBFS) and defines the fields used in all of those files.
 
 # Reference version
-####This documentation refers to **v3.0-RC (release candidate)**. <br>
-**For the current version see [**version 2.1**](https://github.com/NABSA/gbfs/blob/v2.1/gbfs.md).** For past and upcoming versions see the [README](README.md#read-the-spec--version-history).
+####This documentation refers to **v2.0 Release**. <br>
+For past and upcoming versions see the [README](README.md#read-the-spec--version-history).
 
 ## Terminology
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC2119](https://tools.ietf.org/html/rfc2119), [BCP 14](https://tools.ietf.org/html/bcp14) and [RFC8174](https://tools.ietf.org/html/rfc8174) when, and only when, they appear in all capitals, as shown here.
@@ -83,7 +83,7 @@ system_alerts.json | OPTIONAL | Current system alerts.
 geofencing_zones.json <br/>*(added in v2.1)* | OPTIONAL | Geofencing zones and their associated rules and attributes.    
 
 ## Accessibility 
-Datasets SHOULD be published at an easily accessible, public, permanent URL. (e.g., www.agency.org/gbfs/v3/gbfs.json). The URL SHOULD be directly available without requiring login to access the file to facilitate download by consuming software applications.  
+Datasets SHOULD be published at an easily accessible, public, permanent URL. (e.g., www.agency.org/gbfs/v2/gbfs.json). The URL SHOULD be directly available without requiring login to access the file to facilitate download by consuming software applications.  
 
 To be compliant with GBFS, all systems MUST have an entry in the [systems.csv](https://github.com/NABSA/gbfs/blob/master/systems.csv) file.
 ### Feed Availability 
@@ -216,7 +216,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1609866247,
   "ttl": 3600,
-  "version": "3.0",
+  "version": "2.1",
   "data": {
     "name": "Citi Bike",
     "system_id": "citibike_com"
@@ -240,7 +240,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1609866247,
   "ttl": 0,
-  "version": "3.0",
+  "version": "2.1",
   "data": {
     "en": {
       "feeds": [
@@ -288,7 +288,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1609866247,
   "ttl": 0,
-  "version": "3.0",
+  "version": "2.1",
   "data": {
     "versions": [
       {
@@ -296,8 +296,8 @@ Field Name | REQUIRED | Type | Defines
         "url":"https://www.example.com/gbfs/2/gbfs"
       },
       {
-        "version":"3.0",
-        "url":"https://www.example.com/gbfs/3/gbfs"
+        "version":"2.1",
+        "url":"https://www.example.com/gbfs/2-1/gbfs"
       }
     ]
   }
@@ -321,10 +321,7 @@ Field Name | REQUIRED | Type | Defines
 `email` | OPTIONAL | Email | This OPTIONAL field SHOULD contain a single contact email address actively monitored by the operator’s customer service department. This email address SHOULD be a direct contact point where riders can reach a customer service representative.
 `feed_contact_email` <br/>*(added in v1.1)* | OPTIONAL | Email | This OPTIONAL field SHOULD contain a single contact email for feed consumers to report technical issues with the feed.
 `timezone` | Yes | Timezone | The time zone where the system is located.
-`license_id` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | String | REQUIRED if the dataset is provided under a standard license. An identifier for a standard license from the [SPDX License List](https://spdx.org/licenses/). Provide `license_id` rather than `license_url` if the license is included in the SPDX License List. See the GBFS wiki for a [comparison of a subset of standard licenses](data-licenses.md). If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
-`license_url` | Conditionally REQUIRED <br/>*(as of v3.0-RC)* | URL | REQUIRED if the dataset is provided under a customized license. A fully qualified URL of a page that defines the license terms for the GBFS data for this system. Do not specify a `license_url` if `license_id` is specified. If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode). *(as of v3.0-RC)*
-`attribution_organization_name` <br/>*(added in v3.0-RC)* | OPTIONAL | String | If the feed license requires attribution, name of the organization to which attribution should be provided.
-`attribution_url` <br/>*(added in v3.0-RC)* | OPTIONAL | URL | URL of the organization to which attribution should be provided.
+`license_url` | Optional | URL | A fully qualified URL of a page that defines the license terms for the GBFS data for this system, as well as any other license terms the system would like to define (including the use of corporate trademarks, etc)
 `rental_apps` <br/>*(added in v1.1)* | OPTIONAL | Object | Contains rental app information in the android and ios JSON objects.
 \-&nbsp;`android` <br/>*(added in v1.1)* | OPTIONAL | Object | Contains rental app download and app discovery information for the Android platform in the `store_uri` and `discovery_uri` fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
 &emsp;- `store_uri` <br/>*(added in v1.1)* | Conditionally REQUIRED | URI | URI where the rental Android app can be downloaded from. Typically this will be a URI to an app store such as Google Play. If the URI points to an app store such as Google Play, the URI SHOULD follow Android best practices so the viewing app can directly open the URI to the native app store app instead of a website. <br><br> If a `rental_uris`.`android` field is populated then this field is REQUIRED, otherwise it is OPTIONAL. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Example value: `https://play.google.com/store/apps/details?id=com.abcrental.android`
@@ -376,7 +373,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1609866247,
   "ttl": 0,
-  "version": "3.0",
+  "version": "2.1",
   "data": {
     "vehicle_types": [
       {
@@ -437,7 +434,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1609866247,
   "ttl": 0,
-  "version": "3.0",
+  "version": "2.1",
   "data": {
     "stations": [
       {
@@ -461,7 +458,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1609866247,
   "ttl":0,
-  "version":"3.0",
+  "version":"2.1",
   "data":{
     "stations":[
       {
@@ -539,7 +536,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1609866247,
   "ttl": 0,
-  "version": "3.0",
+  "version": "2.1",
   "data": {
     "stations": [
       {
@@ -600,7 +597,6 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `bikes` | Yes | Array | Array that contains one object per vehicle that is currently stopped as defined below.
 \-&nbsp;`bike_id` | Yes | ID | Identifier of a vehicle. The `bike_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `bike_id` identifier SHOULD only be rotated once per trip.
-\-&nbsp;`system_id` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | ID | Identifier referencing the `system_id` field in [system_information.json](#system_informationjson). REQUIRED in the case of feeds that specify free (undocked) bikes and define systems in [system_information.json](#system_informationjson).
 \-&nbsp;`lat` | Conditionally REQUIRED <br/>*(as of v2.1)* | Latitude | Latitude of the vehicle in decimal degrees. *(as of v2.1)* This field is REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 \-&nbsp;`lon` | Conditionally REQUIRED <br/>*(as of v2.1)* | Longitude | Longitude of the vehicle. *(as of v2.1)* This field is REQUIRED if `station_id` is not provided for this vehicle (free floating).
 \-&nbsp;`is_reserved` | Yes | Boolean | Is the vehicle currently reserved? <br /><br /> `true` - Vehicle is currently reserved. <br /> `false` - Vehicle is not currently reserved.
@@ -621,7 +617,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1609866247,
   "ttl":0,
-  "version":"3.0",
+  "version":"2.1",
   "data":{
     "bikes":[
       {
@@ -665,7 +661,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1609866247,
   "ttl": 86400,
-  "version": "3.0",
+  "version": "2.1",
   "data": {
     "rental_hours": [
       {
@@ -770,96 +766,11 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`url` | OPTIONAL | URL | URL where the customer can learn more about this pricing plan.
 \-&nbsp;`name` | Yes | String | Name of this pricing plan.
 \-&nbsp;`currency` | Yes | String | Currency used to pay the fare. <br /><br /> This pricing is in ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217 <br />(e.g. `CAD` for Canadian dollars, `EUR` for euros, or `JPY` for Japanese yen.)
-\-&nbsp;`price` | Yes | Non-Negative float OR String | Fare price, in the unit specified by currency. If string, MUST be in decimal monetary value. <br/>*(added in v2.2-RC)* Note: v3.0 may only allow non-negative float, therefore future implementations SHOULD be non-negative float.<br /><br />In case of non-rate price, this field is the total price. In case of rate price, this field is the base price that is charged only once per trip (e.g., price for unlocking) in addition to `per_km_pricing` and/or `per_min_pricing`.
+\-&nbsp;`price` | Yes | Non-Negative float OR String | Fare price, in the unit specified by currency. If string, MUST be in decimal monetary value. 
 \-&nbsp;`is_taxable` | Yes | Boolean | Will additional tax be added to the base price?<br /><br />`true` - Yes.<br />  `false` - No.  <br /><br />`false` MAY be used to indicate that tax is not charged or that tax is included in the base price.
 \-&nbsp;`description` | Yes | String | Customer-readable description of the pricing plan. This SHOULD include the duration, price, conditions, etc. that the publisher would like users to see.
-\-&nbsp;`per_km_pricing` <br/>*(added in v2.2-RC)* | OPTIONAL | Array | Array of segments when the price is a function of distance travelled, displayed in kilometers.<br /><br />Total price is the addition of `price` and all segments in `per_km_pricing` and `per_min_pricing`. If this array is not provided, there are no variable prices based on distance.
-&emsp;&emsp;\-&nbsp;`start` <br/>*(added in v2.2-RC)* | Yes | Non-Negative Integer | The kilometer at which this segment rate starts being charged *(inclusive)*.
-&emsp;&emsp;\-&nbsp;`rate` <br/>*(added in v2.2-RC)* | Yes | Float | Rate that is charged for each kilometer `interval` after the `start`. Can be a negative number, which indicates that the traveller will receive a discount.
-&emsp;&emsp;\-&nbsp;`interval` <br/>*(added in v2.2-RC)* | Yes | Non-Negative Integer | Interval in kilometers at which the `rate` of this segment is either reapplied indefinitely, or if defined, up until (but not including) `end` kilometer.<br /><br />An interval of 0 indicates the rate is only charged once.
-&emsp;&emsp;\-&nbsp; `end` <br/>*(added in v2.2-RC)* | OPTIONAL | Non-Negative Integer | The kilometer at which the rate will no longer apply *(exclusive)* e.g. if `end` is `20` the rate no longer applies at 20.00 km.<br /><br /> If this field is empty, the price issued for this segment is charged until the trip ends, in addition to following segments.
-\-&nbsp;`per_min_pricing` <br/>*(added in v2.2-RC)* | OPTIONAL | Array | Array of segments when the price is a function of time travelled, displayed in minutes.<br /><br />Total price is the addition of `price` and all segments in `per_km_pricing` and `per_min_pricing`. If this array is not provided, there are no variable prices based on time.
-&emsp;&emsp;\-&nbsp;`start` <br/>*(added in v2.2-RC)* | Yes | Non-Negative Integer | The minute at which this segment rate starts being charged *(inclusive)*.
-&emsp;&emsp;\-&nbsp;`rate` <br/>*(added in v2.2-RC)* | Yes | Float | Rate that is charged for each minute `interval` after the `start`. Can be a negative number, which indicates that the traveller will receive a discount.
-&emsp;&emsp;\-&nbsp;`interval` <br/>*(added in v2.2-RC)* | Yes | Non-Negative Integer | Interval in minutes at which the `rate` of this segment is either reapplied indefinitely, or if defined, up until (but not including) `end` minute.<br /><br />An interval of 0 indicates the rate is only charged once.
-&emsp;&emsp;\-&nbsp; `end` <br/>*(added in v2.2-RC)* | OPTIONAL | Non-Negative Integer | The minute at which the rate will no longer apply  *(exclusive)* e.g. if `end` is `20` the rate no longer applies after 19:59.<br /><br />If this field is empty, the price issued for this segment is charged until the trip ends, in addition to following segments. 
-\-&nbsp;`surge_pricing` <br/>*(added in v2.2-RC)* | OPTIONAL | Boolean | Is there currently an increase in price in response to increased demand in this pricing plan? If this field is empty, it means these is no surge pricing in effect.<br /><br />`true` - Surge pricing is in effect.<br />  `false` - Surge pricing is not in effect. 
 
-### Examples *(added in v2.2-RC)*
 
-##### Example 1: 
-
-The user does not pay more than the base price for the first 10 km. After 10 km the user pays $1 per km. After 25 km the user pays $0.50 per km and an additional $3 every 5 km, the extension price, in addition to $0.50 per km. 
-
-```jsonc
-{
-  "last_updated":1609866247,
-  "ttl":0,
-  "version":"3.0",
-  "data":{
-    "plans":{
-      "plan_id":"plan2",
-      "name":"One-Way",
-      "currency":"USD",
-      "price":2,
-      "is_taxable":false,
-      "description":"Includes 10km, overage fees apply after 10km.",
-      "per_km_pricing":[
-        {
-          "start":10,
-          "rate":1,
-          "interval":1,
-          "end":25
-        },
-        {
-          "start":25,
-          "rate":0.5,
-          "interval":1
-        },
-        {
-          "start":25,
-          "rate":3,
-          "interval":5
-        }
-      ]
-    }
-  }
-}
-```
-##### Example 2:
-
-This example demonstrates a pricing scheme that has a rate both by minute and by km. The user is charged $0.25 per km as well as $0.50 per minute. Both of these rates happen concurrently and are not dependent on one another. 
-```jsonc
-{
-  "last_updated":1609866247,
-  "ttl":0,
-  "version":"3.0",
-  "data":{
-    "plans":{
-      "plan_id":"plan3",
-      "name":"Simple Rate",
-      "currency":"CAD",
-      "price":3,
-      "is_taxable":true,
-      "description":"$3 unlock fee, $0.25 per kilometer and 0.50 per minute.",
-      "per_km_pricing":[
-        {
-          "start":0,
-          "rate":0.25,
-          "interval":1
-        }
-      ],
-      "per_min_pricing":[
-        {
-          "start":0,
-          "rate":0.50,
-          "interval":1
-        }
-      ]
-    }
-  }
-}
-```
 ### system_alerts.json
 This feed is intended to inform customers about changes to the system that do not fall within the normal system operations. For example, system closures due to weather would be listed here, but a system that only operated for part of the year would have that schedule listed in the system_calendar.json feed.<br />
 Obsolete alerts SHOULD be removed so the client application can safely present to the end user everything present in the feed.
