@@ -22,7 +22,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     * [gbfs.json](#gbfsjson)
     * [gbfs_versions.json](#gbfs_versionsjson-added-in-v11) *(added in v1.1)*
     * [system_information.json](#system_informationjson)
-    * [vehicle_types.json](#vehicle_typesjson-added-in-v21-rc) *(added in v2.1)*
+    * [vehicle_types.json](#vehicle_typesjson-added-in-v21) *(added in v2.1)*
     * [station_information.json](#station_informationjson)
     * [station_status.json](#station_statusjson)
     * [free_bike_status.json](#free_bike_statusjson)
@@ -31,7 +31,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     * [system_regions.json](#system_regionsjson)
     * [system_pricing_plans.json](#system_pricing_plansjson)
     * [system_alerts.json](#system_alertsjson)
-    * [geofencing_zones.json](#geofencing_zonesjson-added-in-v21-rc) *(added in v2.1)*
+    * [geofencing_zones.json](#geofencing_zonesjson-added-in-v21) *(added in v2.1)*
 * [Deep Links - Analytics and Examples](#deep-links-added-in-v11) *(added in v1.1)*
 
 ## Introduction
