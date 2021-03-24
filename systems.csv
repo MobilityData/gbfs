@@ -256,17 +256,17 @@ IN,Smartbike (Hyderabad - India),"Hyderabad, IN",nextbike_hi,https://www.smartbi
 IN,Smartbike (Vijayawada - India),"Vijayawada, IN",nextbike_vi,https://www.smartbikemobility.com/en/vijayawada/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_vi/gbfs.json
 IS,Donkey Republic Reykjavik,Reykjavik,donkey_reykjavik,https://www.donkey.bike/cities/bike-rental-reykjavik/,https://stables.donkey.bike/api/public/gbfs/donkey_reykjavik/gbfs.json
 IT,Bird Rome,"Rome, IT",bird-rome,https://www.bird.co,https://mds.bird.co/gbfs/rome/gbfs.json
-IT,Helbiz Bari,"Bari, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/bari/gbfs/gbfs.json
-IT,Helbiz Cesena,"Cesena, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/cesena/gbfs/gbfs.json
-IT,Helbiz H-Farm,"H-Farm, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/h-farm/gbfs/gbfs.json
-IT,Helbiz Latina,"Latina, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/latina/gbfs/gbfs.json
-IT,Helbiz Modena,"Modena, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/modena/gbfs/gbfs.json
-IT,Helbiz Napoli,"Napoli, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/napoli/gbfs/gbfs.json
-IT,Helbiz Parma,"Parma, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/parma/gbfs/gbfs.json
-IT,Helbiz Pescara,"Pescara, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/pescara/gbfs/gbfs.json
-IT,Helbiz Pisa,"Pisa,  IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/pisa/gbfs/gbfs.json
-IT,Helbiz Rome,"Rome, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/rome/gbfs/gbfs.json
-IT,Helbiz Varona,"Verona, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/verona/gbfs/gbfs.json
+IT,Helbiz Bari,"Bari, IT",helbiz bari,https://helbiz.com,https://api.helbiz.com/admin/reporting/bari/gbfs/gbfs.json
+IT,Helbiz Cesena,"Cesena, IT",helbiz cesena,https://helbiz.com,https://api.helbiz.com/admin/reporting/cesena/gbfs/gbfs.json
+IT,Helbiz H-Farm,"H-Farm, IT",helbiz h_farm,https://helbiz.com,https://api.helbiz.com/admin/reporting/h-farm/gbfs/gbfs.json
+IT,Helbiz Latina,"Latina, IT",helbiz latina,https://helbiz.com,https://api.helbiz.com/admin/reporting/latina/gbfs/gbfs.json
+IT,Helbiz Modena,"Modena, IT",helbiz modena,https://helbiz.com,https://api.helbiz.com/admin/reporting/modena/gbfs/gbfs.json
+IT,Helbiz Napoli,"Napoli, IT",helbiz napoli,https://helbiz.com,https://api.helbiz.com/admin/reporting/napoli/gbfs/gbfs.json
+IT,Helbiz Parma,"Parma, IT",helbiz parma,https://helbiz.com,https://api.helbiz.com/admin/reporting/parma/gbfs/gbfs.json
+IT,Helbiz Pescara,"Pescara, IT",helbiz pescara,https://helbiz.com,https://api.helbiz.com/admin/reporting/pescara/gbfs/gbfs.json
+IT,Helbiz Pisa,"Pisa,  IT",helbiz pisa,https://helbiz.com,https://api.helbiz.com/admin/reporting/pisa/gbfs/gbfs.json
+IT,Helbiz Rome,"Rome, IT",helbiz rome,https://helbiz.com,https://api.helbiz.com/admin/reporting/rome/gbfs/gbfs.json
+IT,Helbiz Varona,"Verona, IT",helbiz verona,https://helbiz.com,https://api.helbiz.com/admin/reporting/verona/gbfs/gbfs.json
 IT,Lime Rome,"Rome, IT",lime_rome,https://li.me,https://data.lime.bike/api/partners/v1/gbfs/rome/gbfs.json
 IT,Verona Bike,"Verona, IT",verona-bike,https://bikeverona.it/en,https://gbfs.urbansharing.com/bikeverona.it/gbfs.json
 LB,Bike4all,"Byblos, LB",nextbike_bl,https://www.bikeforall-lb.com/en/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bl/gbfs.json
