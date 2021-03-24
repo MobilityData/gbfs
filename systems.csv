@@ -515,11 +515,11 @@ US,START Bike,"Jackson, WY",bcycle_startbike,https://startbike.bcycle.com,https:
 US,Tugo,"Tucson, AZ",tugo,https://tugobikeshare.com/,https://tuc.publicbikesystem.net/ube/gbfs/v1/
 US,Valentine Bike Share,"Valentine, NE",bcycle_valentine,https://heartlandbikeshare.org,https://gbfs.bcycle.com/bcycle_valentine/gbfs.json
 US,We-cycle,"Aspen, CO",we_cycle,https://www.we-cycle.org/,https://asp.publicbikesystem.net/ube/gbfs/v1/
-US,Wheels Austin,"Austin, TX",9f74fa80-fb2f-48dc-b2d8-01a889ac008a,https://takewheels.com/,https://austin-gbfs.getwheelsapp.com/gbfs.json
-US,Wheels Dallas,"Dallas, TX",9f74fa80-fb2f-48dc-b2d8-01a889ac008a,https://takewheels.com/,https://dfw-gbfs.getwheelsapp.com/gbfs.json
-US,Wheels Los Angeles,"Los Angeles, CA",9f74fa80-fb2f-48dc-b2d8-01a889ac008a,https://takewheels.com/,https://la-gbfs.getwheelsapp.com/gbfs.json
-US,Wheels Miami,"Miami, FL",9f74fa80-fb2f-48dc-b2d8-01a889ac008a,https://takewheels.com/,https://mia-gbfs.getwheelsapp.com/gbfs.json
-US,Wheels Orlando,"Orlando, FL",9f74fa80-fb2f-48dc-b2d8-01a889ac008a,https://takewheels.com/,https://orlando-gbfs.getwheelsapp.com/gbfs.json
-US,Wheels San Diego,"San Diego, CA",9f74fa80-fb2f-48dc-b2d8-01a889ac008a,https://takewheels.com/,https://sandiego-gbfs.getwheelsapp.com/gbfs.json
-US,Wheels Tallahassee,"Tallahassee, FL",9f74fa80-fb2f-48dc-b2d8-01a889ac008a,https://takewheels.com/,https://tallahassee-gbfs.getwheelsapp.com/gbfs.json
-US,Wheels Tempe,"Tempe, AZ",9f74fa80-fb2f-48dc-b2d8-01a889ac008a,https://takewheels.com/,https://tempe-gbfs.getwheelsapp.com/gbfs.json
+US,Wheels Austin,"Austin, TX",wheels austin,https://takewheels.com/,https://austin-gbfs.getwheelsapp.com/gbfs.json
+US,Wheels Dallas,"Dallas, TX",wheels dallas,https://takewheels.com/,https://dfw-gbfs.getwheelsapp.com/gbfs.json
+US,Wheels Los Angeles,"Los Angeles, CA",wheels los_angeles,https://takewheels.com/,https://la-gbfs.getwheelsapp.com/gbfs.json
+US,Wheels Miami,"Miami, FL",wheels miami,https://takewheels.com/,https://mia-gbfs.getwheelsapp.com/gbfs.json
+US,Wheels Orlando,"Orlando, FL",wheels orlando,https://takewheels.com/,https://orlando-gbfs.getwheelsapp.com/gbfs.json
+US,Wheels San Diego,"San Diego, CA",wheels san_diego,https://takewheels.com/,https://sandiego-gbfs.getwheelsapp.com/gbfs.json
+US,Wheels Tallahassee,"Tallahassee, FL",wheels tallahassee,https://takewheels.com/,https://tallahassee-gbfs.getwheelsapp.com/gbfs.json
+US,Wheels Tempe,"Tempe, AZ",wheels tempe,https://takewheels.com/,https://tempe-gbfs.getwheelsapp.com/gbfs.json
