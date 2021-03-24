@@ -16,6 +16,8 @@ BA,BL bike,"Banja Luka, BA",nextbike_bj,https://www.nextbike.ba/sr/banjaluka/,ht
 BA,Sarajevo Bosnia and Herzegovina,"Sarajevo, BA",nextbike_ba,https://www.nextbike.ba/bs/sarajevo/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ba/gbfs.json
 BA,Zenica,"Zenica, BA",nextbike_bz,https://www.nextbike.ba/bs/zenica/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bz/gbfs.json
 BE,Donkey Republic Ghent,"Ghent, BE",donkey_gh,https://www.donkey.bike/cities/bike-rental-ghent/,https://stables.donkey.bike/api/public/gbfs/donkey_gh/gbfs.json
+BE,Pony Brussels,"Brussels, BE",pony_brussels,https://getapony.com,https://gbfs.getapony.com/v1/brussels/en/system_information.json
+BE,Pony Liège,"Liège, BE",pony_liège,https://getapony.com,https://gbfs.getapony.com/v1/liege/en/gbfs.json
 BG,Nextbike Bulgaria,"Dobrich, BG",nextbike_bg,https://www.nextbike.de,https://nextbike.net/maps/gbfs/v1/nextbike_bg/gbfs.json
 BR,Bike Itaú - Pernambuco,"Recife, BR",bike_pe,https://bikeitau.com.br/bikepe,https://rec.publicbikesystem.net/ube/gbfs/v1/
 BR,Bike Itaú - Poa,"Porto Alegre, BR",bike_poa,https://bikeitau.com.br/bikepoa,https://poa.publicbikesystem.net/ube/gbfs/v1/
@@ -25,10 +27,10 @@ BR,Bike Itaú - Salvador,"Salvador, BR",bike_salvador,https://bikeitau.com.br/bi
 BR,Bike Itaú - Sampa,"São Paulo, BR",bike_sampa,https://bikeitau.com.br/bikesampa,https://saopaulo.publicbikesystem.net/ube/gbfs/v1/
 BR,Bike VV,"Vila Velha, BR",bike_vv,https://www.bikevv.com.br/,https://vilavelha.publicbikesystem.net/ube/gbfs/v1/
 CA,Bike Share Toronto,"Toronto, ON",bike_share_toronto,https://www.bikesharetoronto.com/,https://tor.publicbikesystem.net/ube/gbfs/v1/
-CA,Bird Calgary,"Calgary, CA",bird-platform-partner-birdcanada-calgary,https://www.bird.co,https://mds.bird.co/gbfs/platform-partner/birdcanada/calgary/gbfs.json
-CA,Bird Edmonton,"Edmonton, CA",bird-platform-partner-birdcanada-edmonton,https://www.bird.co,https://mds.bird.co/gbfs/platform-partner/birdcanada/edmonton/gbfs.json
-CA,Bird Ottawa,"Ottawa, CA",bird-platform-partner-birdcanada-ottawa,https://www.bird.co,https://mds.bird.co/gbfs/platform-partner/birdcanada/ottawa/gbfs.json
-CA,BIXI-Montreal,"Montreal, QC",Bixi_MTL,https://www.bixi.com/,https://api-core.bixi.com/gbfs/gbfs.json
+CA,Bird Calgary,"Calgary, CA",bird-calgary,https://www.bird.co,https://mds.bird.co/gbfs/calgary/gbfs.json
+CA,Bird Edmonton,"Edmonton, CA",bird-edmonton,https://www.bird.co,https://mds.bird.co/gbfs/edmonton/gbfs.json
+CA,Bird Ottawa,"Ottawa, CA",bird-ottawa,https://www.bird.co,https://mds.bird.co/gbfs/ottawa/gbfs.json
+CA,BIXI-Montreal,"Montreal, QC",Bixi_MTL,https://www.bixi.com/,https://gbfs.velobixi.com/gbfs/gbfs.json
 CA,HOPR Vancouver,"Vancouver, BC, CA",22,https://gohopr.com/,https://gbfs.hopr.city/api/gbfs/22/
 CA,Lime Calgary,"Calgary, CA",lime_calgary,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/calgary/gbfs.json
 CA,Lime Edmonton,"Edmontan, CA",lime_edmonton,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/edmonton/gbfs.json
@@ -48,9 +50,9 @@ CH,Donkey Republic Yverdon-les-Bains,Yverdon Les Bains,donkey_yverdon-les-bains,
 CH,Nextbike Switzerland,CH,nextbike_ch,https://www.nextbike.ch/de/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ch/gbfs.json
 CH,sharedmobility.ch,Switzerland,sharedmobility.ch,https://www.sharedmobility.ch/info,https://www.sharedmobility.ch/gbfs.json
 CL,Bike Itaú - Santiago,"Santiago, CL",bike_santiago,https://www.bikesantiago.cl/,https://santiago.publicbikesystem.net/ube/gbfs/v1/
-CL,MOVO Vitacura,"Vitacura, CL",movo_scl,https://movo.me/cl/,https://gbfs.movo.me/vitacura
-CO,VOOM Bogotá,"Bogotá, CO",movo_bog,https://voom.com.co/,https://gbfs.movo.me/bogota
-CO,VOOM Medellín,"Medellín, CO",movo_mde,https://voom.com.co/,https://gbfs.movo.me/medellin
+CL,MOVO Vitacura,"Vitacura, CL",movo_scl,https://movo.me/cl/,https://gbfs.movo.me/v1/vitacura/gbfs.json
+CO,VOOM Bogotá,"Bogotá, CO",movo_bog,https://voom.com.co/,https://gbfs.movo.me/v1/bogota/gbfs.json
+CO,VOOM Medellín,"Medellín, CO",movo_mde,https://voom.com.co/,https://gbfs.movo.me/v1/medellin/gbfs.json
 CY,Nextbike Cyprus,CY,nextbike_cy,https://www.nextbike.com.cy/el/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_cy/gbfs.json
 CY,Velespeed,"Nicosia, CY",velespeed,https://en.velespeed.net/,https://nicosia.publicbikesystem.net/ube/gbfs/v1/
 CZ,Nextbike Berounsko,"Berounsko, CZ",nextbike_td,https://www.nextbikeczech.com/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_td/gbfs.json
@@ -77,6 +79,7 @@ DE,Frelo Freiburg,"Freiburg, DE",nextbike_df,https://www.frelo-freiburg.de/de/,h
 DE,Graben - ready4green,"Graben, DE",nextbike_da,https://www.nextbike.de/de/ready4green/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_da/gbfs.json
 DE,KVB Rad Germany,"Köln, DE",nextbike_kg,https://www.kvb-rad.de/de/koeln/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_kg/gbfs.json
 DE,KVV.nextbike,DE,nextbike_fg,https://www.kvv-nextbike.de/de/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_fg/gbfs.json
+DE,Lime Hamburg,"Hamburg, DE",lime_hamburg,https://li.me,https://data.lime.bike/api/partners/v1/gbfs/hamburg/gbfs.json
 DE,Metropolradruhr Bochum,"Bochum, DE",nextbike_ms,https://www.metropolradruhr.de/de/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ms/gbfs.json
 DE,Metropolradruhr Germany,DE,nextbike_mr,https://www.metropolradruhr.de/de/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_mr/gbfs.json
 DE,MOBIbike Dresden,"Dresden, DE",nextbike_dx,https://www.nextbike.de/de/dresden/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_dx/gbfs.json
@@ -106,13 +109,22 @@ DE,RSVG-Bike,"RSVG, DE",nextbike_rb,https://www.nextbike.de/de/rsvg/,https://gbf
 DE,RVK,"RVK-Gesamt, DE",nextbike_dr,https://www.nextbike.de/de/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_dr/gbfs.json
 DE,Santander nextbike Mönchengladbach,"Mönchengladbach, DE",nextbike_sn,https://www.nextbike.de/de/moenchengladbach/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_sn/gbfs.json
 DE,SAP Walldorf,"Walldorf, DE",nextbike_ds,https://www.nextbike.de/de/walldorf/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ds/gbfs.json
-DE,Spin Bonn,"Bonn, DE",spin Bonn,https://spin.pm,https://web.spin.pm/api/gbfs/v1/Bonn/gbfs
-DE,Spin Cologne,"Cologne, DE",spin cologne,https://spin.pm,https://web.spin.pm/api/gbfs/v1/cologne/gbfs
-DE,Spin Dortmund,"Dortmund, DE",spin dortmund,https://spin.pm,https://web.spin.pm/api/gbfs/v1/dortmund/gbfs
-DE,Spin Dulsburg,"Duisburg, DE",spin duisburg,https://spin.pm,https://web.spin.pm/api/gbfs/v1/duisburg/gbfs
-DE,Spin Essen,"Essen, DE",spin essen,https://spin.pm,https://web.spin.pm/api/gbfs/v1/essen/gbfs
-DE,Spin Herne,"Herne, DE",spin herne,https://spin.pm,https://web.spin.pm/api/gbfs/v1/herne/gbfs
-DE,Spin Recklinghausen,"Recklinghausen, DE",spin recklinghausen,https://spin.pm,https://web.spin.pm/api/gbfs/v1/recklinghausen/gbfs
+DE,Spin Bonn,"Bonn, DE",spin Bonn,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/Bonn/gbfs
+DE,Spin Brühl,"Brühl, DE",spin brühl,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/br%C3%BChl/gbfs
+DE,Spin Cologne,"Cologne, DE",spin cologne,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/cologne/gbfs
+DE,Spin Dortmund,"Dortmund, DE",spin dortmund,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/dortmund/gbfs
+DE,Spin Dulsburg,"Duisburg, DE",spin duisburg,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/duisburg/gbfs
+DE,Spin Essen,"Essen, DE",spin essen,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/essen/gbfs
+DE,Spin Frechen,"Frechen, DE",spin frechen,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/frechen/gbfs
+DE,Spin Gelsenkirchen,"Gelsenkirchen, DE",spin gelsenkirchen,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/gelsenkirchen/gbfs
+DE,Spin Hennef,"Hennef,DE",spin hennef,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/hennef/gbfs
+DE,Spin Herne,"Herne, DE",spin herne,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/herne/gbfs
+DE,Spin Lohmar,"Lohmar, DE",spin lohmar,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/lohmar/gbfs
+DE,Spin Mülheim,"Mülheim DE",spin mulheim,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/mulheim/gbfs
+DE,Spin Recklinghausen,"Recklinghausen, DE",spin recklinghausen,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/recklinghausen/gbfs
+DE,Spin Rheinland,"Rheinland, DE",spin rheinland,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/rheinland/gbfs
+DE,Spin Troisdorf,"Troisdord, DE",spin troisdorf,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/troisdorf/gbfs
+DE,Spin Wesseling,"Wesseling DE",spin wesseling,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/wesseling/gbfs
 DE,Sprottenflotte,"KielRegion, DE",nextbike_sf,https://www.nextbike.de/de/kielregion/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_sf/gbfs.json
 DE,SWA Rad,"Augsburg, DE",nextbike_ag,https://www.swa-rad.de/de/augsburg/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ag/gbfs.json
 DE,UsedomRad Germany,"Usedom, DE",nextbike_ur,http://usedomrad.de/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ur/gbfs.json
@@ -141,6 +153,7 @@ ES,Dbizi,"Donostia, ES",sansebastian,https://www.dbizi.eus,https://sansebastian.
 ES,Donkey Republic Barcelona,"Barcelona, ES",donkey_barcelona,https://www.donkey.bike/cities/bike-rental-barcelona/,https://stables.donkey.bike/api/public/gbfs/donkey_barcelona/gbfs.json
 ES,Ibizi,"Ibiza-City, ES",nextbike_ei,https://www.nextbike.es/es/ibiza/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ei/gbfs.json
 ES,Lovesharing (Canary Islands),"Lovesharing (Canary Islands), ES",nextbike_ls,https://www.lovesharing.com/bikesharing/es/lovesharing/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ls/gbfs.json
+ES,Spin Madrid,"Mardid, ES",spin madrid,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/Madrid/gbfs
 ES,Sitycleta (Las Palmas),"Las Palmas de Gran Canaria, ES",nextbike_el,https://www.sitycleta.com/es/laspalmas/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_el/gbfs.json
 FI,Donkey Republic Hämeenlinna,Hämeenlinna,donkey_haemeenlinna,https://www.donkey.bike/cities/bike-rental-hameenlinna/,https://stables.donkey.bike/api/public/gbfs/donkey_haemeenlinna/gbfs.json
 FI,Donkey Republic Hamina,Hamina,donkey_hamina,https://www.donkey.bike/cities/bike-rental-hamina/,https://stables.donkey.bike/api/public/gbfs/donkey_hamina/gbfs.json
@@ -161,7 +174,11 @@ FR,Donkey Republic Valenciennes,Valenciennes,donkey_valenciennes,https://www.don
 FR,LE vélo STAR,"Rennes, FR",le_velo_star,https://www.star.fr/le-velo/nos-offres/vls/,https://eu.ftp.opendatasoft.com/star/gbfs/gbfs.json
 FR,levélo,"Marseille, FR",marseille,http://www.levelo-mpm.fr/,https://transport.data.gouv.fr/gbfs/marseille/gbfs.json
 FR,Libélo,"Valence, FR",libelo,http://www.citea.info/presentation/?rub_code=92,https://valence.publicbikesystem.net/ube/gbfs/v1/
+FR,Lime Paris,"Paris, FR",lime_paris,https://li.me/,https://data.lime.bike/api/partners/v1/gbfs/paris/gbfs.json
 FR,Optymo Belfort,"Belfort, FR",Optymo_FR_Belfort,https://www.optymo.fr/,https://belfort-gbfs.klervi.net/gbfs/gbfs.json
+FR,Pony Angers,"Angers, FR",pony_bordeaux,https://getapony.com/,https://gbfs.getapony.com/v1/angers/en/gbfs.json
+FR,Pony Bordeaux,"Bordeaux, FR",pony_bordeaux,https://getapony.com/,https://gbfs.getapony.com/v1/bordeaux/en/gbfs.json
+FR,Pony Paris,"Paris, FR",pony_paris,https://getapony.com/,https://gbfs.getapony.com/v1/paris/en/gbfs.json
 FR,VCub Bordeaux,"Bordeaux, FR",vcub,https://www.vcub.fr/,https://transport.data.gouv.fr/gbfs/vcub/gbfs.json
 FR,Vélam,"Amiens, FR",amiens,http://www.velam.amiens.fr/,https://transport.data.gouv.fr/gbfs/amiens/gbfs.json
 FR,Vélhop,"Strasbourg, FR",strasbourg,https://velhop.strasbourg.eu/,https://transport.data.gouv.fr/gbfs/strasbourg/gbfs.json
@@ -199,15 +216,20 @@ GB,Donkey Republic Tetbury,Tetbury,donkey_tetbury,https://www.donkey.bike/cities
 GB,Donkey Republic The Cotswold Water Park,The Cotswold Water Park,donkey_the_cotswold_water_park,https://www.donkey.bike/cities/bike-rental-the-cotswold-water-park/,https://stables.donkey.bike/api/public/gbfs/donkey_the_cotswold_water_park/gbfs.json
 GB,Donkey Republic Whichford,Whichford,donkey_whichford,https://www.donkey.bike/cities/bike-rental-whichford/,https://stables.donkey.bike/api/public/gbfs/donkey_whichford/gbfs.json
 GB,Donkey Republic Worthing,Worthing,donkey_worthing,https://www.donkey.bike/cities/bike-rental-worthing/,https://stables.donkey.bike/api/public/gbfs/donkey_worthing/gbfs.json
-GB,nextbike Cardiff,"Cardiff, GB",nextbike_uc,https://www.nextbike.co.uk/en/cardiff/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_uc/gbfs.json
-GB,nextbike Glasgow,"Glasgow, GB",nextbike_gg,https://www.nextbike.co.uk/en/glasgow/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_gg/gbfs.json
-GB,nextbike UK,GB,nextbike_uk,https://www.nextbike.co.uk/en/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_uk/gbfs.json
+GB,Nextbike Cardiff,"Cardiff, GB",nextbike_uc,https://www.nextbike.co.uk/en/cardiff/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_uc/gbfs.json
+GB,Nextbike Glasgow,"Glasgow, GB",nextbike_gg,https://www.nextbike.co.uk/en/glasgow/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_gg/gbfs.json
+GB,Nextbike UK,GB,nextbike_uk,https://www.nextbike.co.uk/en/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_uk/gbfs.json
 GB,Nextbike University of Surrey,"University of Surrey, UK",nextbike_su,https://www.nextbike.co.uk/en/university-of-surrey/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_su/gbfs.json
 GB,Nextbike University of Warwick,"University of Warwick, UK",nextbike_up,https://www.nextbike.co.uk/en/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_up/gbfs.json
+GB,Pony Oxford,"Oxford, GB",pony_oxford,https://getapony.com,https://gbfs.getapony.com/v1/oxford/en/gbfs.json
 GB,Santander Cycles - Brunel,"Brunel University, GB",nextbike_ub,https://www.santandercycles.co.uk/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ub/gbfs.json
 GB,Santander Cycles - Milton Keynes,"Milton Keynes, GB",nextbike_ku,https://www.santandercycles.co.uk/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ku/gbfs.json
 GB,Santander Cycles - Swansea,"Swansea University, GB",nextbike_uu,https://www.santandercycles.co.uk/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_uu/gbfs.json
-GB,Spin Milton Keynes,"Milton Keynes, GB",spin milton_keynes,https://spin.pm,https://web.spin.pm/api/gbfs/v1/milton_keynes/gbfs
+GB,Spin Basildon,"Basildon, GB",spin basildon,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/basildon/gbfs
+GB,Spin Chelmsford,"Chelmsford, GB",spin chelmsford,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/chelmsford/gbfs
+GB,Spin Clacton,"Clacton-on-Sea, GB",spin clacton,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/clacton/gbfs
+GB,Spin Colchester,"Colchester, GB",spin colchester,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/colchester/gbfs
+GB,Spin Milton Keynes,"Milton Keynes, GB",spin milton_keynes,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/milton_keynes/gbfs
 HR,Grad Drniš (Croatia),"Drniš, HR",nextbike_gd,https://www.nextbike.hr/hr/drnis/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_gd/gbfs.json
 HR,Grad Gospić (Croatia),"Gospić, HR",nextbike_gs,https://www.nextbike.hr/hr/gospic/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_gs/gbfs.json
 HR,Grad Ivanić-Grad (Croatia),"Ivanic Grad, HR",nextbike_ig,https://www.nextbike.hr/hr/ivanicgrad/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ig/gbfs.json
@@ -226,13 +248,11 @@ HR,Općina Brinje (Croatia),"Brinje, HR",nextbike_br,https://www.nextbike.hr/hr/
 HR,Općina Dugopolje (Croatia),"Dugopolje, HR",nextbike_od,https://www.nextbike.hr/hr/dugopolje/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_od/gbfs.json
 HR,Općina Pitomača (Croatia),"Pitomača, HR",nextbike_se,https://www.nextbike.hr/hr/pitomaca/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_se/gbfs.json
 HU,Donkey Republic Budapest,"Budapest, HU",donkey_budapest,https://www.donkey.bike/cities/bike-rental-budapest/,https://stables.donkey.bike/api/public/gbfs/donkey_budapest/gbfs.json
-HU,MOL Bubi Hungary,"Budapest, HU",nextbike_mb,https://molbubi.bkk.hu/,https://nextbike.net/maps/gbfs/v1/nextbike_mb/gbfs.json
 IL,Bird Tel Aviv,"Tel Aviv, IL",bird-tel-aviv,https://www.bird.co,https://mds.bird.co/gbfs/tel-aviv/gbfs.json
+IL,Lime Tel Aviv,"Tel Aviv, IL",lime_tel_aviv,https://li.me/,https://data.lime.bike/api/partners/v1/gbfs/tel_aviv/gbfs.json
 IN,Chartered Bike (Bhopal - India),"Bhopal, IN",nextbike_bi,http://www.charteredbike.in/en/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bi/gbfs.json
 IN,Chartered Bike (Ranchi - India),"Ranchi, IN",nextbike_ir,http://www.charteredbike.in/en/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ir/gbfs.json
-IN,Smartbike (Chennai - India),"Chennai, IN",nextbike_ic,https://www.smartbikemobility.com/en/chennai/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ic/gbfs.json
 IN,Smartbike (Hyderabad - India),"Hyderabad, IN",nextbike_hi,https://www.smartbikemobility.com/en/hyderabad/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_hi/gbfs.json
-IN,Smartbike (New Delhi - India),"Delhi, IN",nextbike_in,https://www.smartbikemobility.com/en/delhi/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_in/gbfs.json
 IN,Smartbike (Vijayawada - India),"Vijayawada, IN",nextbike_vi,https://www.smartbikemobility.com/en/vijayawada/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_vi/gbfs.json
 IS,Donkey Republic Reykjavik,Reykjavik,donkey_reykjavik,https://www.donkey.bike/cities/bike-rental-reykjavik/,https://stables.donkey.bike/api/public/gbfs/donkey_reykjavik/gbfs.json
 IT,Bird Rome,"Rome, IT",bird-rome,https://www.bird.co,https://mds.bird.co/gbfs/rome/gbfs.json
@@ -247,6 +267,7 @@ IT,Helbiz Pescara,"Pescara, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.
 IT,Helbiz Pisa,"Pisa,  IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/pisa/gbfs/gbfs.json
 IT,Helbiz Rome,"Rome, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/rome/gbfs/gbfs.json
 IT,Helbiz Varona,"Verona, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/verona/gbfs/gbfs.json
+IT,Lime Rome,"Rome, IT",lime_rome,https://li.me,https://data.lime.bike/api/partners/v1/gbfs/rome/gbfs.json
 IT,Verona Bike,"Verona, IT",verona-bike,https://bikeverona.it/en,https://gbfs.urbansharing.com/bikeverona.it/gbfs.json
 LB,Bike4all,"Byblos, LB",nextbike_bl,https://www.bikeforall-lb.com/en/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bl/gbfs.json
 LI,Donkey Republic Liechtenstein,Liechtenstein,donkey_li,https://www.donkey.bike/cities/,https://stables.donkey.bike/api/public/gbfs/donkey_li/gbfs.json
@@ -255,7 +276,7 @@ MC,MonaBike,"Monaco, MC",mona_bike,https://monabike.mc/,https://monaco.publicbik
 MT,Nextbike Malta,"Malta, MT",nextbike_mt,https://www.nextbike.com.mt/en/malta/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_mt/gbfs.json
 MX,Huizi,"Toluca, MX",huizi,huizitoluca.com.mx,https://tlc.publicbikesystem.net/ube/gbfs/v1/
 MX,Mibici Guadalajara,"Guadalajara, MX",mibici_guadalajara,https://www.mibici.net/en/,https://guad.publicbikesystem.net/ube/gbfs/v1/
-MX,MOVO Guadalajara,"Guadalajara, MX",movo_gdl,https://movo.me/mx/,https://gbfs.movo.me/guadalajara
+MX,MOVO Guadalajara,"Guadalajara, MX",movo_gdl,https://movo.me/mx/,https://gbfs.movo.me/v1/guadalajara/gbfs.json
 MX,YOY - San Luis Potosi,"San Luis Potosi, MX",nextbike_yp,https://www.yoymobility.com/es/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_yp/gbfs.json
 BE,Bird Antwerp,"Antwerp, BE",bird-antwerp,https://www.bird.co,https://mds.bird.co/gbfs/antwerp/gbfs.json
 NL,Cykl,"Wageningen, NL",CKL,https://www.cykl.nl/,https://www.cykl.nl/gbfs/gbfs.json
@@ -264,6 +285,7 @@ NL,Donkey Republic Rotterdam,"Rotterdam, NL",donkey_rt,https://www.donkey.bike/n
 NL,Donkey Republic Utrecht,"Utrecht, NL",donkey_ut,https://www.donkey.bike/cities/bike-rental-utrecht/,https://stables.donkey.bike/api/public/gbfs/donkey_ut/gbfs.json
 NL,Nextbike Dordrecht,"Dordrecht, NL",nextbike_nd,https://www.nextbike.nl/nl/dordrecht/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_nd/gbfs.json
 NL,NS OV Fiets,"Netherlands",ns_ov_fiets,https://www.ns.nl/en/door-to-door/ov-fiets,http://gbfs.openov.nl/ovfiets/gbfs.json
+NL,Spin Rotterdam,"Rotterdam, NL",spin rotterdam,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/rotterdam/gbfs
 NO,Bergen City Bike,"Bergen, NO",bergen-city-bike,https://bergenbysykkel.no/en,https://gbfs.urbansharing.com/bergenbysykkel.no/gbfs.json
 NO,Oslo City Bike,"Oslo, NO",oslobysykkel,https://oslobysykkel.no/en,https://gbfs.urbansharing.com/oslobysykkel.no/gbfs.json
 NO,Trondheim City Bike,"Trondheim, NO",trondheim,https://trondheimbysykkel.no/en,https://gbfs.urbansharing.com/trondheimbysykkel.no/gbfs.json
@@ -279,6 +301,7 @@ PL,System Legnicki Rower Miejski (SLRM) Poland,"Legnica, PL",nextbike_mp,https:/
 PL,System Roweru Gminnego Poland,"Pielgrzymka, PL",nextbike_pg,https://rowery.pielgrzymka.biz/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pg/gbfs.json
 PL,WRM nextbike Poland,"Wrocław, PL",nextbike_pl,http://www.wroclawskirower.pl/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pl/gbfs.json
 PT,Bird Lisbon,"Lisbon, PT",bird-lisbon,https://www.bird.co,https://mds.bird.co/gbfs/lisbon/gbfs.json
+PT,Pony Lisbon,"Lisbon, PT",pony_lisbon,https://getapony.com,https://gbfs.getapony.com/v1/lisbon/en/gbfs.json
 RO,Drobeta Velopark,"Drobeta, RO",nextbike_rd,https://www.nextbike.ro/ro/drobeta/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_rd/gbfs.json
 RO,Nextbike Romania,"Sud, Focșani, Romania",nextbike_nw,https://nextbike.ro/en/foc%C8%99ani/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_nw/gbfs.json
 SA,iBike ( Saudi Arabia ),"King Abdullah Economic City, SA",nextbike_sa,http://ibike.kaec.net/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_sa/gbfs.json
@@ -298,7 +321,6 @@ UA,Nextbike (Ukraine),"Lviv, Kharkiv, Odesa, UA",nextbike_nu,https://www.nextbik
 UA,Nextbike Vinnitsa (Ukraine),"Vinnytsia, UA",nextbike_uv,https://www.nextbike.ua/uk/Vinnytsia/,https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_uv/gbfs.json
 US,Austin B-cycle,"Austin, TX",bcycle_austin,http://austinbcycle.com,https://gbfs.bcycle.com/bcycle_austin/gbfs.json
 US,Aventura BCycle,"Aventura, FL",bcycle_aventura,https://aventura.bcycle.com,https://gbfs.bcycle.com/bcycle_aventura/gbfs.json
-US,Battle Creek B-cycle,"Battle Creek, MI",bcycle_battlecreek,https://battlecreek.bcycle.com,https://gbfs.bcycle.com/bcycle_battlecreek/gbfs.json
 US,Bay Wheels,"San Francisco Bay Area, CA",BA,https://www.baywheels.com/,https://gbfs.baywheels.com/gbfs/gbfs.json
 US,Bike Chattanooga,"Chattanooga, TN",bike_chattanooga,http://www.bikechattanooga.com/,https://chat.publicbikesystem.net/ube/gbfs/v1/
 US,BikeLNK,"Lincoln, NE",bcycle_bikelnk,https://bikelnk.bcycle.com,https://gbfs.bcycle.com/bcycle_bikelnk/gbfs.json
@@ -368,15 +390,19 @@ US,Jackson County,"Jackson, MI",bcycle_jacksoncounty,https://jacksoncounty.bcycl
 US,Lime Arlington,"Arlington, VA",lime_arlington,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/arlington/gbfs.json
 US,Lime Baltimore,"Baltimore, MD",lime_baltimore,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/baltimore/gbfs.json
 US,Lime Chicago,"Chicago, IL",lime_chicago,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/chicago/gbfs.json
+US,Lime Cleveland,"Cleveland, OH",lime_cleveland,https://li.me/,https://data.lime.bike/api/partners/v1/gbfs/cleveland/gbfs.json
 US,Lime Detroit,"Detroit, MI",lime_detroit,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/detroit/gbfs.json
-US,Lime Los Angeles,"Los Angeles, CA",lime_los_angeles,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/los_angeles/gbfs.json
 US,Lime Louisville,"Louisville, KY",lime_louisville,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/louisville/gbfs.json
 US,Lime New York,"New York, NY",lime_new_york,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/new_york/gbfs.json
 US,Lime Oakland,"Oakland, CA",lime_oakland,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/oakland/gbfs.json
 US,Lime Portland,"Portland, OR",lime_portland,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/portland/gbfs.json
 US,Lime Providence,"Providence, RI",lime_providence,https://www.li.me,https://data.lime.bike/api/partners/v1/gbfs/providence/gbfs.json
+US,Lime San Francisco,"San Francisco, CA",lime_san_francisco,https://li.me,https://data.lime.bike/api/partners/v1/gbfs/san_francisco/gbfs.json
 US,Lime Seattle,"Seattle, WA",lime_seattle,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/seattle/gbfs.json
 US,Lime Washington DC,"Washington, DC",lime_washington_dc,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/washington_dc/gbfs.json
+US,LINK Alexandria,"Alexandria, VA",Link_Alexandria,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Alexandria/gbfs.json
+US,LINK Oakland,"Oakland, CA",Link_Oakland,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Oakland/gbfs.json
+US,LINK Seattle,"Seattle, WA",Link_Seattle,https://www.link.city,"https://wrangler-mds-production.herokuapp.com/gbfs/Seattle,%20WA/gbfs.json"
 US,Louvelo,"Louisville, KY",Louvelo,https://louvelo.com/,https://lou.publicbikesystem.net/ube/gbfs/v1/
 US,Lyft,"Washington, DC",lyft_dca,https://www.lyft.com/scooters/washington-dc,https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/dca/gbfs.json
 US,Lyft Scooters Chicago,"Chicago, IL",chicago,https://www.divvybikes.com,https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/chi/gbfs.json
@@ -389,7 +415,6 @@ US,Madison B-cycle,"Madison, WI",bcycle_madison,https://madison.bcycle.com,https
 US,McAllen B-cycle,"McAllen, TX",bcycle_mcallen,https://mcallen.bcycle.com,https://gbfs.bcycle.com/bcycle_mcallen/gbfs.json
 US,Metro Bike Share,"Los Angeles, CA",bcycle_lametro,https://bikeshare.metro.net,https://gbfs.bcycle.com/bcycle_lametro/gbfs.json
 US,Mogo Detroit,"Detroit, MI",mogo,https://mogodetroit.org/,https://det.publicbikesystem.net/ube/gbfs/v1/
-US,Nashville B-cycle,"Nashville, TN",bcycle_nashville,https://nashville.bcycle.com,https://gbfs.bcycle.com/bcycle_nashville/gbfs.json
 US,Nice Ride Minnesota,"Minneapolis, MN",niceridemn,https://www.niceridemn.com,https://gbfs.niceridemn.com/gbfs/gbfs.json
 US,Ojo ,"Austin, TX",ojo,https://ojoelectric.com/,https://api.ojoelectric.com/api/mds/gbfs.json
 US,Rad Sharing Fleet,"Seattle, WA",33,https://gohopr.com/,https://gbfs.hopr.city/api/gbfs/33/
@@ -402,50 +427,92 @@ US,Relay Bike Share,"Atlanta, GA",relay_bike_share,http://relaybikeshare.com/,ht
 US,Revel Oakland,"Oakland, CA",revel_oakland,https://gorevel.com/oakland/,https://gbfs.gorevel.com/gbfs/v2/oakland/en/gbfs.json
 US,RTC Bike Share,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
 US,San Antonio B-cycle,"San Antonio, TX",bcycle_sanantonio,https://sanantonio.bcycle.com/,https://gbfs.bcycle.com/bcycle_sanantonio/gbfs.json
+US,Santa Barbara BCycle,"Santa Barbara, CA",bcycle_santabarbara,https://santabarbara.bcycle.com,https://gbfs.bcycle.com/bcycle_santabarbara/gbfs.json
 US,SBU Wolf Ride Bike Share,"Stony Brook, NY",sbu,https://www.stonybrook.edu/commcms/sustainability/transportation/_Wolf_Ride_Bike_Share/,https://sbu.publicbikesystem.net/ube/gbfs/v1/
 US,Spartanburg BCycle,"Spartanburg, SC",bcycle_spartanburg,https://spartanburg.bcycle.com,https://gbfs.bcycle.com/bcycle_spartanburg/gbfs.json
-US,Spin Ann Arbor,"Ann Arbor, MI",spin ann_arbor,https://spin.pm,https://web.spin.pm/api/gbfs/v1/ann_arbor/gbfs
-US,Spin Atlanta,"Atlanta, GA",spin atlanta,https://spin.pm,https://web.spin.pm/api/gbfs/v1/atlanta/gbfs
-US,Spin Baltimore,"Baltimore, MD",spin baltimore,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/baltimore/gbfs.json
-US,Spin Boise,"Boise, ID",spin boise,https://spin.pm,https://web.spin.pm/api/gbfs/v1/boise/gbfs
-US,Spin Charlotte,"Charlotte, NC",spin charlotte,https://spin.pm,https://web.spin.pm/api/gbfs/v1/charlotte/gbfs
-US,Spin Chicago,"Chicago, IL",spin chicago,https://www.spin.pm/,https://gbfs.spin.pm/api/gbfs/v1/chicago_territory/gbfs
-US,Spin Cleveland,"Cleveland, OH",spin cleveland,https://spin.pm,https://web.spin.pm/api/gbfs/v1/cleveland/gbfs
-US,Spin Columbus,"Columbus, OH",spin columbus,https://spin.pm,https://web.spin.pm/api/gbfs/v1/columbus/gbfs
-US,Spin Coral Gables,"Coral Gables, FL",spin coral_gables,https://spin.pm,https://web.spin.pm/api/gbfs/v1/coral_gables/gbfs
-US,Spin Dayton,"Dayton, OH",spin dayton,https://spin.pm,https://web.spin.pm/api/gbfs/v1/dayton/gbfs
-US,Spin Detroit,"Detroit, MI",spin detroit,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/detroit/gbfs
-US,Spin Durham,"Durham, NC",spin durham,https://spin.pm,https://web.spin.pm/api/gbfs/v1/durham/gbfs
-US,Spin Fayetteville,"Fayetteville, AR",spin fayetteville,https://spin.pm,https://web.spin.pm/api/gbfs/v1/fayetteville/gbfs
-US,Spin Grand Rapids,"Grand Rapids, MI",spin grand_rapids,https://spin.pm,https://web.spin.pm/api/gbfs/v1/grand_rapids/gbfs
-US,Spin Kansas City,"Kansas City, MO",spin kansas_city,https://spin.pm,https://web.spin.pm/api/gbfs/v1/kansas_city/gbfs
-US,Spin Lexington,"Lexington, KY",spin lexington,https://spin.pm,https://web.spin.pm/api/gbfs/v1/lexington/gbfs
-US,Spin Lincoln,"Lincoln, NB",spin lincoln,https://spin.pm,https://web.spin.pm/api/gbfs/v1/lincoln/gbfs
-US,Spin Los Angeles,"Los Angeles, CA",spin los_angeles,https://spin.pm,https://web.spin.pm/api/gbfs/v1/los_angeles/gbfs
-US,Spin Louisville,"Louisville, KY",spin louisville,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/louisville/gbfs
-US,Spin Memphis,"Memphis, TN",spin memphis,https://spin.pm,https://web.spin.pm/api/gbfs/v1/memphis/gbfs
-US,Spin Mongomery County,"Mongomery County, MD",spin montgomery_county,https://spin.pm,https://web.spin.pm/api/gbfs/v1/montgomery_county/gbfs
-US,Spin Nashville,"Nashville, TN",spin nashville,https://spin.pm,https://web.spin.pm/api/gbfs/v1/nashville/gbfs
-US,Spin Omaha,"Omaha, NB",spin omaha,https://spin.pm,https://web.spin.pm/api/gbfs/v1/omaha/gbfs
-US,Spin Orlando,"Orlando, FL",spin orlando,https://spin.pm,https://web.spin.pm/api/gbfs/v1/orlando/gbfs
-US,Spin Portland,"Portland, OR",spin portland,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/portland/gbfs
-US,Spin Providence,"Providence, RI",spin providence,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/providence/gbfs
-US,Spin Sacramento,"Sacramento, CA",spin sacramento,https://spin.pm,https://web.spin.pm/api/gbfs/v1/sacramento/gbfs
-US,Spin Salt Lake City,"Salt Lake City, UT",spin salt_lake_city,https://spin.pm,https://web.spin.pm/api/gbfs/v1/salt_lake_city/gbfs
-US,Spin San Diego,"San Diego, CA",spin san_diego,https://spin.pm,https://web.spin.pm/api/gbfs/v1/san_diego/gbfs
-US,Spin San Francisco,"San Francisco, CA",spin san_francisco,https://spin.pm,https://web.spin.pm/api/gbfs/v1/san_francisco/gbfs
-US,Spin San Marcos,"San Marcos, TX",spin san_marcos,https://spin.pm,https://web.spin.pm/api/gbfs/v1/san_marcos/gbfs
-US,Spin St George,"St George, UT",spin st_george,https://spin.pm,https://web.spin.pm/api/gbfs/v1/st_george/gbfs
-US,Spin St Louis,"St Louis, MO",spin st_louis,https://spin.pm,https://web.spin.pm/api/gbfs/v1/st_louis/gbfs
-US,Spin Stillwater,"Stillwater, OK",spin stillwater,https://spin.pm,https://web.spin.pm/api/gbfs/v1/stillwater/gbfs
-US,Spin Tallahassee,"Tallahassee, FL",spin tallahassee,https://spin.pm,https://web.spin.pm/api/gbfs/v1/tallahassee/gbfs
-US,Spin Tampa,"Tampa, FL",spin tampa,https://spin.pm,https://web.spin.pm/api/gbfs/v1/tampa/gbfs
-US,Spin Tempe,"Tempe, AZ",spin tempe,https://spin.pm,https://web.spin.pm/api/gbfs/v1/tempe/gbfs
-US,Spin Washington DC,"Washington, DC",spin washington_dc,https://www.spin.pm/,https://web.spin.pm/api/gbfs/v1/washington_dc/gbfs
-US,Spin West Sacramento,"West Sacramento, CA",spin west_sacramento,https://spin.pm,https://web.spin.pm/api/gbfs/v1/west_sacramento/gbfs
+US,Spin Aiken,"Aiken, SC",spin aiken,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/aiken/gbfs
+US,Spin Albuquerque,"Albuquerque, NM",spin albuquerque,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/albuquerque/gbfs
+US,Spin Alexandria,"Alexandria, VA",spin alexandria,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/alexandria/gbfs
+US,Spin Ann Arbor,"Ann Arbor, MI",spin ann_arbor,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/ann_arbor/gbfs
+US,Spin Arkadelphia,"Arkadelphia, VA",spin arkadelphia,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/arkadelphia/gbfs
+US,Spin Arlington,"Arlington, VA",spin arlington,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/arlington/gbfs
+US,Spin Asbury Park,"Asbury Park, NY",spin asbury_park,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/asbury_park/gbfs
+US,Spin Austin,"Austin, TX",spin austin,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/austin/gbfs
+US,Spin Atlanta,"Atlanta, GA",spin atlanta,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/atlanta/gbfs
+US,Spin Baltimore,"Baltimore, MD",spin baltimore,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/baltimore/gbfs.json
+US,Spin Boise,"Boise, ID",spin boise,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/boise/gbfs
+US,Spin Brookline,"Brookline, MA",spin brookline,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/brookline/gbfs
+US,Spin Charlotte,"Charlotte,NC",spin charlotte,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/charlotte/gbfs
+US,Spin Chicago,"Chicago, IL",spin chicago,https://www.spin.pm,https://gbfs.spin.pm/api/gbfs/v1/chicago_territory/gbfs
+US,Spin Cleveland,"Cleveland, OH",spin cleveland,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/cleveland/gbfs
+US,Spin Columbus,"Columbus, OH",spin columbus,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/columbus/gbfs
+US,Spin Coral Gables,"Coral Gables, FL",spin coral_gables,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/coral_gables/gbfs
+US,Spin Denver,"Denver, CO",spin denver,https://www.spin.pm, https://web.spin.pm/api/gbfs/v1/denver/gbfs
+US,Spin Dayton,"Dayton, OH",spin dayton,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/dayton/gbfs
+US,Spin Detroit,"Detroit, MI",spin detroit,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/detroit/gbfs
+US,Spin Duke,"Durham NS",spin duke,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/duke/gbfs
+US,Spin Durham,"Durham, NC",spin durham,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/durham/gbfs
+US,Spin Edwards Air Force Base,"Edwards, CA",spin edwards_air_force_base,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/edwards_air_force_base/gbfs
+US,Spin Fayetteville,"Fayetteville, AR",spin fayetteville,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/fayetteville/gbfs
+US,Spin Fort Pierce,"Fort Pierce, FL",spin fort_pierce,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/fort_pierce/gbfs
+US,Spin Grand Rapids,"Grand Rapids, MI",spin grand_rapids,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/grand_rapids/gbfs
+US,Spin Greenville,"Greenville, SC",spin greenville,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/greenville/gbfs
+US,Spin Isla Vista,"Isla Vista, CA",spin isla_vista,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/isla_vista/gbfs
+US,Spin Jacksonville,"Jacksonville, FL", spin jacksonville, https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/jacksonville/gbfs
+US,Spin Jefferson City,"Jefferson City, MO",spin jefferson_city,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/jefferson_city/gbfs
+US,Spin Kansas City,"Kansas City, MO",spin kansas_city,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/kansas_city/gbfs
+US,Spin Knoxville,"Knoxville, TN",spin knoxville,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/knoxville/gbfs
+US,Spin Lexington,"Lexington, KY",spin lexington,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/lexington/gbfs
+US,Spin Lincoln,"Lincoln, NB",spin lincoln,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/lincoln/gbfs
+US,Spin Long Beach,"Long Beach, CA",spin long_beach,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/long_beach/gbfs
+US,Spin Los Angeles,"Los Angeles, CA",spin los_angeles,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/los_angeles/gbfs
+US,Spin Louisville,"Louisville, KY",spin louisville,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/louisville/gbfs
+US,Spin Memphis,"Memphis, TN",spin memphis,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/memphis/gbfs
+US,Spin Mesa,"Mesa, AZ",spin mesa,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/mesa/gbfs
+US,Spin Milwaukee,"Milwaukee, WI",spin milwaukee,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/milwaukee/gbfs
+US,Spin Minneapolis,"Minneapolis, MN",spin minneapolis,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/minneapolis/gbfs
+US,Spin Mongomery County,"Mongomery County, MD",spin montgomery_county,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/montgomery_county/gbfs
+US,Spin Nashville,"Nashville, TN",spin nashville,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/nashville/gbfs
+US,Spin Oakland,"Oakland, CA",spin oakland,https://www.spin.pm,https://web.spin.pm/api/gbfs/v2/oakland/gbfs
+US,Spin Oakland University,"Rochester, MI",spin oakland_university,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/oakland_university/gbfs
+US,Spin Ohio State,"Columbus, OH",spin ohio_state,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/ohio_state/gbfs
+US,Spin Omaha,"Omaha, NB",spin omaha,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/omaha/gbfs
+US,Spin Orem,"Orem, UT",spin orem,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/orem/gbfs
+US,Spin Orlando,"Orlando, FL",spin orlando,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/orlando/gbfs
+US,Spin Phoenix,"Phoenix, AZ",spin phoenix,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/phoenix/gbfs
+US,Spin Portland,"Portland, OR",spin portland,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/portland/gbfs
+US,Spin Providence,"Providence, RI",spin providence,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/providence/gbfs
+US,Spin Provo,"Provo, UT",spin provo,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/provo/gbfs
+US,Spin Purdue University,"West Lafayette, IN",spin purdue_university,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/purdue_university/gbfs
+US,Spin Sacramento,"Sacramento, CA",spin sacramento,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/sacramento/gbfs
+US,Spin Salem,"Salem, MA",spin salem,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/salem/gbfs
+US,Spin Salt Lake City,"Salt Lake City, UT",spin salt_lake_city,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/salt_lake_city/gbfs
+US,Spin San Antonio,"San Antonio, TX",spin san_antonio,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/san_antonio/gbfs
+US,Spin San Diego,"San Diego, CA",spin san_diego,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/san_diego/gbfs
+US,Spin San Francisco,"San Francisco, CA",spin san_francisco,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/san_francisco/gbfs
+US,Spin San Jose,"San Jose, CA",spin san_jose,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/san_jose/gbfs
+US,Spin San Marcos,"San Marcos, TX",spin san_marcos,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/san_marcos/gbfs
+US,Spin Scottsdale,"Scottsdale, AZ",spin scottsdale,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/scottsdale/gbfs
+US,Spin South Miami,"South Miami, FL",spin south_miami,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/south_miami/gbfs
+US,Spin St George,"St George, UT",spin st_george,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/st_george/gbfs
+US,Spin St Louis,"St Louis, MO",spin st_louis,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/st_louis/gbfs
+US,Spin Stillwater,"Stillwater, OK",spin stillwater,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/stillwater/gbfs
+US,Spin Tallahassee,"Tallahassee, FL",spin tallahassee,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/tallahassee/gbfs
+US,Spin Tampa,"Tampa, FL",spin tampa,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/tampa/gbfs
+US,Spin Tempe,"Tempe, AZ",spin tempe,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/tempe/gbfs
+US,Spin Towson,"Towson, MD",spin towson,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/towson/gbfs
+US,Spin Troy,"Troy, AL",spin troy,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/troy/gbfs
+US,Spin UC San Diego,"San Diego, CA",spin uc_san_diego,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/uc_san_diego/gbfs
+US,Spin University of Central Florida,"Orlando, FL",spin university_of_central_florida,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/university_of_central_florida/gbfs
+US,Spin University of Kentucky,"Lexington, KY",spin university_of_kentucky,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/university_of_kentucky/gbfs
+US,Spin Virginia Tech,"Blackburg, VA",spin virginia_tech,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/virginia_tech/gbfs
+US,Spin Washington DC,"Washington, DC",spin washington_dc,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/washington_dc/gbfs
+US,Spin West Sacramento,"West Sacramento, CA",spin west_sacramento,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/west_sacramento/gbfs
+US,Spin White Center,"White Center, WA",spin white_center,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/white_center/gbfs
+US,Spin Wichita,"Wichita, KS",spin wichita,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/wichita/gbfs
+US,Spin Winston Salem,"Winston Salem, NC",spin winston_salem,https://www.spin.pm,https://web.spin.pm/api/gbfs/v1/winston_salem/gbfs
 US,START Bike,"Jackson, WY",bcycle_startbike,https://startbike.bcycle.com,https://gbfs.bcycle.com/bcycle_startbike/gbfs.json
 US,Tugo,"Tucson, AZ",tugo,https://tugobikeshare.com/,https://tuc.publicbikesystem.net/ube/gbfs/v1/
-US,Ubike,University of Virginia,university_of_virginia,http://ubike.virginia.edu/,http://ubike.virginia.edu/opendata/gbfs.json
 US,Valentine Bike Share,"Valentine, NE",bcycle_valentine,https://heartlandbikeshare.org,https://gbfs.bcycle.com/bcycle_valentine/gbfs.json
 US,We-cycle,"Aspen, CO",we_cycle,https://www.we-cycle.org/,https://asp.publicbikesystem.net/ube/gbfs/v1/
 US,Wheels Austin,"Austin, TX",9f74fa80-fb2f-48dc-b2d8-01a889ac008a,https://takewheels.com/,https://austin-gbfs.getwheelsapp.com/gbfs.json
