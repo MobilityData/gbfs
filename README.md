@@ -11,6 +11,7 @@ Documentation for the General Bikeshare Feed Specification, a standardized data 
 * [Systems Catalog - Systems Implementing GBFS](#systems-catalog---systems-implementing-gbfs)
 * [GBFS JSON Schemas](#gbfs-json-schemas)
 * [GBFS and Other Shared Mobility Resources](#gbfs-and-other-shared-mobility-resources)
+* [Relationship Between GBFS and MDS](#relationship-between-gbfs-and-mds)
 
 ## What is GBFS?
 The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.
@@ -155,6 +156,7 @@ Auto-Discovery URL | Yes | URL for the system's `gbfs.json` auto-discovery file.
 Complete JSON schemas for each version of GBFS can be found [here](https://github.com/MobilityData/gbfs-json-schema).
 ## GBFS and Other Shared Mobility Resources
 Including APIs, datasets, validators, research, and software can be found [here](https://github.com/NABSA/micromobility-tools-and-resources).
-
+## Relationship Between GBFS and MDS
+There are many similarities between GBFS and [MDS](https://github.com/openmobilityfoundation/mobility-data-specification) (Mobility Data Specification), however, their intended use cases are different. GBFS is a real-time or near real-time specification for public data primarily intended to provide transit advice through consumer-facing applications. MDS is not public data and is intended for use only by mobility regulators. Publishing a public GBFS feed is a [requirement](https://github.com/openmobilityfoundation/mobility-data-specification/blob/main/provider/README.md#gbfs) of all MDS compatible *Provider* APIs.
 ## Copyright
 The copyright for GBFS is held by the [North American Bikeshare Association](https://nabsa.net/). 
