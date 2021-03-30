@@ -1,6 +1,17 @@
 # General Bikeshare Feed Specification
 Documentation for the General Bikeshare Feed Specification, a standardized data feed for shared mobility system availability.
 
+## Table of Contents
+* [What is GBFS?](#what-is-gbfs)
+* [Current Version](#current-version)
+* [Read the Spec & Version History](#read-the-spec--version-history)
+* [Governance & Overview of the Change Process](#governance--overview-of-the-change-process)
+* [Guiding Principles](#guiding-principles)
+* [Specification Versioning](#specification-versioning)
+* [Systems Catalog - Systems Implementing GBFS](#systems-catalog---systems-implementing-gbfs)
+* [GBFS JSON Schemas](#gbfs-json-schemas)
+* [GBFS and Other Shared Mobility Resources](#gbfs-and-other-shared-mobility-resources)
+
 ## What is GBFS?
 The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.
  
@@ -14,7 +25,11 @@ The specification has been designed with the following concepts in mind:
 
 The data in the specification contained in this document is intended for consumption by clients intending to provide real-time (or semi-real-time) transit advice and is designed as such.
 
-## Read the spec & version history
+## Current version
+**The current release is [v2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md)**
+
+## Read the Spec & Version History
+
 * [v1.0](https://github.com/NABSA/gbfs/blob/v1.0/gbfs.md)
   * 2019 December 20 - GBFS copyright [transfered to NABSA](https://github.com/NABSA/gbfs/commit/b1260b9c59eeff810a62e0aedc72ce1d4fb8f3ab)
   * 2015 November 05 - GBFS V1.0 Adopted by NABSA board - [Original draft spec in a Google doc](https://docs.google.com/document/d/1BQPZCKpem4-n6lUQDD4Mi8E5hNZ0-lhY62IVtWuyhec/edit#heading=h.ic7i1m4gcev7) (reference only)
@@ -85,6 +100,21 @@ To manage the change process, the following guidelines have been established.
 * Editorial changes as well as items that are not found in [gbfs.md](https://github.com/NABSA/gbfs/blob/master/gbfs.md) do not need to be voted on. Extensions that include new capabilities and features MUST be voted on.
 * Issues and pull requests will be considered stale after 120 days, at which point participants will be notified via comment. Should they wish to keep the discussion open, it is the responsibility of the participants to re-engage in the conversation. If there is no re-engagement, the issue or pull request will be closed 60 days after the stale date. 
  
+## Guiding Principles
+To preserve the original vision of GBFS, the following guiding principles should be taken into consideration when proposing extensions to the spec:
+
+* **GBFS is a specification for real-time or semi-real-time, read-only data.**
+The spec is not intended for historical or archival data such as trip records.
+The spec is about public information intended for shared mobility users.
+
+* **GBFS is targeted at providing transit information to the shared mobility end user.**
+ Its primary purpose is to power tools for riders that will make shared mobility more accessible to users.  GBFS is about public information. Producers and owners of GBFS data should take licensing and discoverability into account when publishing GBFS feeds.
+
+* **Changes to the spec should be backwards-compatible, when possible.**
+Caution should be taken to avoid making changes to the spec that would render existing feeds invalid.
+
+* **Speculative features are discouraged.**
+Each new addition to the spec adds complexity. We want to avoid additions to the spec that do not provide additional value to the shared mobility end user.
 
 ## Specification Versioning
 To enable the evolution of GBFS, including changes that would otherwise break backwards-compatibility with consuming applications, GBFS documentation is versioned. Semantic versions are established by a git tag in the form of `vX.Y` where `X.Y` is the version name. Multiple changes (commits) may be batched into a single new release.
@@ -102,35 +132,27 @@ Examples of non-breaking changes include:
 * Adding or removing enum values
 * Modifying documentation or spec language in a way that clarifies semantics or recommended practices
 
-### Version Release Cycles
+#### Version Release Cycles
 * There is no strict limitation on the frequency of MAJOR releases, but the GBFS community aims to limit the MAJOR releases to 2 or fewer every 12 months. To limit releases, breaking changes can be batched together.
 * MINOR changes may be applied at any time. There is no guideline to limit the number of MINOR changes. MINOR changes may be batched or released immediately, at the discretion of the pull request author and advocate.
 * GBFS documentation will include a designated long-term support (LTS) branch. The LTS branch would maintain its LTS status for at least 2 years, after which a new LTS release and branch would be designated. The LTS branch will be determined according to the GBFS voting process. Non-breaking changes (MINOR) will be applied to the LTS branch when relevant.
 
-
-## Guiding Principles
-To preserve the original vision of GBFS, the following guiding principles should be taken into consideration when proposing extensions to the spec:
-
-* **GBFS is a specification for real-time or semi-real-time, read-only data.**
-The spec is not intended for historical or archival data such as trip records.
-The spec is about public information intended for shared mobility users.
-
-* **GBFS is targeted at providing transit information to the shared mobility end user.**
- Its primary purpose is to power tools for riders that will make shared mobility more accessible to users.  GBFS is about public information. Producers and owners of GBFS data should take licensing and discoverability into account when publishing GBFS feeds.
-
-* **Changes to the spec should be backwards-compatible, when possible.**
-Caution should be taken to avoid making changes to the spec that would render existing feeds invalid.
-
-* **Speculative features are discouraged.**
-Each new addition to the spec adds complexity. We want to avoid additions to the spec that do not provide additional value to the shared mobility end user.
-
-## Systems Implementing GBFS
-This list contains all known systems publishing GBFS feeds and is maintained by the GBFS community. If you have or are aware of a system that doesn’t appear on the list please add it.
-
+## Systems Catalog - Systems Implementing GBFS
+There are now over 500 shared mobility systems publishing GBFS worldwide. This list contains all known systems publishing GBFS feeds and is maintained by the GBFS community. This is an incomplete list. If you have or are aware of a system that doesn’t appear on the list please add it.
+If you would like to add a system, please fork this repository and submit a pull request. Please keep this list alphabetized by country and system name.
 * [systems.csv](systems.csv)
 
-If you would like to add a system, please fork this repository and submit a pull request. Please keep this list alphabetized by country and system name.
+ Field Name | REQUIRED | Definition 
+ --- | :---: | ---- 
+|Country Code | Yes | ISO 3166-1 alpha-2 code designating the country where the system is located. For a list of valid codes [see here](https://en.wikipedia.org/wiki/ISO_3166-1).
+| Name | Yes| Name of the mobility system. This MUST match the `name` field in `system_information.json`
+Location | Yes| Primary city in which the system is located followed by country or state.
+System ID | Yes | ID for the system. This MUST match the `system_id` field in `system_information.json`.
+URL | Yes | URL for the system from the `url` field in `system_information.json`. If the `url` field is not included in `system_information.json` this SHOULD be the primary URL for the system operator.
+Auto-Discovery URL | Yes | URL for the system's `gbfs.json` auto-discovery file.
 
+## GBFS JSON Schemas
+Complete JSON schemas for each version of GBFS can be found [here](https://github.com/MobilityData/gbfs-json-schema).
 ## GBFS and Other Shared Mobility Resources
 Including APIs, datasets, validators, research, and software can be found [here](https://github.com/NABSA/micromobility-tools-and-resources).
 
