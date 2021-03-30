@@ -793,36 +793,38 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 
 ```jsonc
 {
-  "last_updated":1609866247,
-  "ttl":0,
-  "version":"3.0",
-  "data":{
-    "plans":{
-      "plan_id":"plan2",
-      "name":"One-Way",
-      "currency":"USD",
-      "price":2,
-      "is_taxable":false,
-      "description":"Includes 10km, overage fees apply after 10km.",
-      "per_km_pricing":[
-        {
-          "start":10,
-          "rate":1,
-          "interval":1,
-          "end":25
-        },
-        {
-          "start":25,
-          "rate":0.5,
-          "interval":1
-        },
-        {
-          "start":25,
-          "rate":3,
-          "interval":5
-        }
-      ]
-    }
+  "last_updated": 1609866247,
+  "ttl": 0,
+  "version": "3.0",
+  "data": {
+    "plans": [
+      {
+        "plan_id": "plan2",
+        "name": "One-Way",
+        "currency": "USD",
+        "price": 2,
+        "is_taxable": false,
+        "description": "Includes 10km, overage fees apply after 10km.",
+        "per_km_pricing": [
+          {
+            "start": 10,
+            "rate": 1,
+            "interval": 1,
+            "end": 25
+          },
+          {
+            "start": 25,
+            "rate": 0.5,
+            "interval": 1
+          },
+          {
+            "start": 25,
+            "rate": 3,
+            "interval": 5
+          }
+        ]
+      }
+    ]
   }
 }
 ```
@@ -831,32 +833,34 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 This example demonstrates a pricing scheme that has a rate both by minute and by km. The user is charged $0.25 per km as well as $0.50 per minute. Both of these rates happen concurrently and are not dependent on one another. 
 ```jsonc
 {
-  "last_updated":1609866247,
-  "ttl":0,
-  "version":"3.0",
-  "data":{
-    "plans":{
-      "plan_id":"plan3",
-      "name":"Simple Rate",
-      "currency":"CAD",
-      "price":3,
-      "is_taxable":true,
-      "description":"$3 unlock fee, $0.25 per kilometer and 0.50 per minute.",
-      "per_km_pricing":[
-        {
-          "start":0,
-          "rate":0.25,
-          "interval":1
-        }
-      ],
-      "per_min_pricing":[
-        {
-          "start":0,
-          "rate":0.50,
-          "interval":1
-        }
-      ]
-    }
+  "last_updated": 1609866247,
+  "ttl": 0,
+  "version": "3.0",
+  "data": {
+    "plans": [
+      {
+        "plan_id": "plan3",
+        "name": "Simple Rate",
+        "currency": "CAD",
+        "price": 3,
+        "is_taxable": true,
+        "description": "$3 unlock fee, $0.25 per kilometer and 0.50 per minute.",
+        "per_km_pricing": [
+          {
+            "start": 0,
+            "rate": 0.25,
+            "interval": 1
+          }
+        ],
+        "per_min_pricing": [
+          {
+            "start": 0,
+            "rate": 0.50,
+            "interval": 1
+          }
+        ]
+      }
+    ]
   }
 }
 ```
