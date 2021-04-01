@@ -165,7 +165,6 @@ FI,Donkey Republic Kouvola,Kouvola,donkey_kouvola,https://www.donkey.bike/cities
 FI,Donkey Republic Lappeenranta,Lappeenranta,donkey_lappeenranta,https://www.donkey.bike/cities/bike-rental-lappeenranta/,https://stables.donkey.bike/api/public/gbfs/donkey_lappeenranta/gbfs.json
 FI,Donkey Republic Mäntsälä,Mäntsälä,donkey_maentsaelae,https://www.donkey.bike/cities/bike-rental-mantsala/,https://stables.donkey.bike/api/public/gbfs/donkey_maentsaelae/gbfs.json
 FI,Donkey Republic Porvoo,Porvoo,donkey_porvoo,https://www.donkey.bike/cities/bike-rental-porvoo/,https://stables.donkey.bike/api/public/gbfs/donkey_porvoo/gbfs.json
-FI,Oulu Poland,"Oulu, FI",nextbike_fo,https://kaupunkipyorat.ouka.fi/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_fo/gbfs.json
 FR,Bicloo,"Nantes, FR",nantes,https://www.bicloo.nantesmetropole.fr/en/home,https://transport.data.gouv.fr/gbfs/nantes/gbfs.json
 FR,CristoLib,"Créteil, Paris, FR",creteil,https://www.cristolib.fr/,https://transport.data.gouv.fr/gbfs/creteil/gbfs.json
 FR,C-Vélo,"Clermont-Ferrand, FR",CVelo_FR_Clermont-Ferrand,https://www.c-velo.fr,https://clermont-gbfs.klervi.net/gbfs/gbfs.json
