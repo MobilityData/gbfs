@@ -3,8 +3,8 @@
 This document explains the types of files and data that comprise the General Bikeshare Feed Specification (GBFS) and defines the fields used in all of those files.
 
 # Reference version
-This documentation refers to **v3.0-RC (release candidate)**. <br>
-**For the current version see [**version 2.2**](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md).** For past and upcoming versions see the [README](README.md#read-the-spec--version-history).
+This documentation refers to **v2.2**. <br>
+For past and upcoming versions see the [README](README.md#read-the-spec--version-history).
 
 ## Terminology
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC2119](https://tools.ietf.org/html/rfc2119), [BCP 14](https://tools.ietf.org/html/bcp14) and [RFC8174](https://tools.ietf.org/html/rfc8174) when, and only when, they appear in all capitals, as shown here.
@@ -83,7 +83,7 @@ system_alerts.json | OPTIONAL | Current system alerts.
 geofencing_zones.json <br/>*(added in v2.1)* | OPTIONAL | Geofencing zones and their associated rules and attributes.    
 
 ## Accessibility 
-Datasets SHOULD be published at an easily accessible, public, permanent URL. (e.g., www.agency.org/gbfs/v3/gbfs.json). The URL SHOULD be directly available without requiring login to access the file to facilitate download by consuming software applications.  
+Datasets SHOULD be published at an easily accessible, public, permanent URL. (e.g., www.agency.org/gbfs/v2-2/gbfs.json). The URL SHOULD be directly available without requiring login to access the file to facilitate download by consuming software applications.  
 
 To be compliant with GBFS, all systems MUST have an entry in the [systems.csv](https://github.com/NABSA/gbfs/blob/master/systems.csv) file.
 ### Feed Availability 
@@ -216,7 +216,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1609866247,
   "ttl": 3600,
-  "version": "3.0",
+  "version": "2.2",
   "data": {
     "name": "Citi Bike",
     "system_id": "citibike_com"
@@ -240,7 +240,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1609866247,
   "ttl": 0,
-  "version": "3.0",
+  "version": "2.2",
   "data": {
     "en": {
       "feeds": [
@@ -288,7 +288,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1609866247,
   "ttl": 0,
-  "version": "3.0",
+  "version": "2.2",
   "data": {
     "versions": [
       {
@@ -296,8 +296,8 @@ Field Name | REQUIRED | Type | Defines
         "url":"https://www.example.com/gbfs/2/gbfs"
       },
       {
-        "version":"3.0",
-        "url":"https://www.example.com/gbfs/3/gbfs"
+        "version":"2.2",
+        "url":"https://www.example.com/gbfs/2-2/gbfs"
       }
     ]
   }
@@ -321,10 +321,7 @@ Field Name | REQUIRED | Type | Defines
 `email` | OPTIONAL | Email | This OPTIONAL field SHOULD contain a single contact email address actively monitored by the operator’s customer service department. This email address SHOULD be a direct contact point where riders can reach a customer service representative.
 `feed_contact_email` <br/>*(added in v1.1)* | OPTIONAL | Email | This OPTIONAL field SHOULD contain a single contact email for feed consumers to report technical issues with the feed.
 `timezone` | Yes | Timezone | The time zone where the system is located.
-`license_id` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | String | REQUIRED if the dataset is provided under a standard license. An identifier for a standard license from the [SPDX License List](https://spdx.org/licenses/). Provide `license_id` rather than `license_url` if the license is included in the SPDX License List. See the GBFS wiki for a [comparison of a subset of standard licenses](data-licenses.md). If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
 `license_url` | Conditionally REQUIRED <br/>*(as of v3.0-RC)* | URL | REQUIRED if the dataset is provided under a customized license. A fully qualified URL of a page that defines the license terms for the GBFS data for this system. Do not specify a `license_url` if `license_id` is specified. If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode). *(as of v3.0-RC)*
-`attribution_organization_name` <br/>*(added in v3.0-RC)* | OPTIONAL | String | If the feed license requires attribution, name of the organization to which attribution should be provided.
-`attribution_url` <br/>*(added in v3.0-RC)* | OPTIONAL | URL | URL of the organization to which attribution should be provided.
 `rental_apps` <br/>*(added in v1.1)* | OPTIONAL | Object | Contains rental app information in the android and ios JSON objects.
 \-&nbsp;`android` <br/>*(added in v1.1)* | OPTIONAL | Object | Contains rental app download and app discovery information for the Android platform in the `store_uri` and `discovery_uri` fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
 &emsp;- `store_uri` <br/>*(added in v1.1)* | Conditionally REQUIRED | URI | URI where the rental Android app can be downloaded from. Typically this will be a URI to an app store such as Google Play. If the URI points to an app store such as Google Play, the URI SHOULD follow Android best practices so the viewing app can directly open the URI to the native app store app instead of a website. <br><br> If a `rental_uris`.`android` field is populated then this field is REQUIRED, otherwise it is OPTIONAL. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Example value: `https://play.google.com/store/apps/details?id=com.abcrental.android`
@@ -376,7 +373,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1609866247,
   "ttl": 0,
-  "version": "3.0",
+  "version": "2.2",
   "data": {
     "vehicle_types": [
       {
@@ -437,7 +434,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1609866247,
   "ttl": 0,
-  "version": "3.0",
+  "version": "2.2",
   "data": {
     "stations": [
       {
@@ -461,7 +458,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1609866247,
   "ttl":0,
-  "version":"3.0",
+  "version":"2.2",
   "data":{
     "stations":[
       {
@@ -539,7 +536,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1609866247,
   "ttl": 0,
-  "version": "3.0",
+  "version": "2.2",
   "data": {
     "stations": [
       {
@@ -600,7 +597,6 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `bikes` | Yes | Array | Array that contains one object per vehicle that is currently stopped as defined below.
 \-&nbsp;`bike_id` | Yes | ID | Identifier of a vehicle. The `bike_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `bike_id` identifier SHOULD only be rotated once per trip.
-\-&nbsp;`system_id` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | ID | Identifier referencing the `system_id` field in [system_information.json](#system_informationjson). REQUIRED in the case of feeds that specify free (undocked) bikes and define systems in [system_information.json](#system_informationjson).
 \-&nbsp;`lat` | Conditionally REQUIRED <br/>*(as of v2.1)* | Latitude | Latitude of the vehicle in decimal degrees. *(as of v2.1)* This field is REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 \-&nbsp;`lon` | Conditionally REQUIRED <br/>*(as of v2.1)* | Longitude | Longitude of the vehicle. *(as of v2.1)* This field is REQUIRED if `station_id` is not provided for this vehicle (free floating).
 \-&nbsp;`is_reserved` | Yes | Boolean | Is the vehicle currently reserved? <br /><br /> `true` - Vehicle is currently reserved. <br /> `false` - Vehicle is not currently reserved.
@@ -621,7 +617,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1609866247,
   "ttl":0,
-  "version":"3.0",
+  "version":"2.2",
   "data":{
     "bikes":[
       {
@@ -665,7 +661,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1609866247,
   "ttl": 86400,
-  "version": "3.0",
+  "version": "2.2",
   "data": {
     "rental_hours": [
       {
@@ -931,16 +927,18 @@ Field Name | REQUIRED | Type | Defines
 &emsp;&emsp;\-&nbsp;`end` | OPTIONAL | Timestamp | End time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
 &emsp;&emsp;\-&nbsp;`rules` | OPTIONAL | Array | Array that contains one object per rule as defined below. <br /><br /> In the event of colliding rules within the same polygon, the earlier rule (in order of the JSON file) takes precedence. <br> In the case of overlapping polygons, the combined set of rules associated with the overlapping polygons applies to the union of the polygons. In the event of colliding rules in this set, the earlier rule (in order of the JSON file) also takes precedence.
 &emsp;&emsp;&emsp;\-&nbsp;`vehicle_type_id` | OPTIONAL | Array | Array of IDs of vehicle types for which any restrictions SHOULD be applied (see vehicle type definitions in [PR #136](https://github.com/NABSA/gbfs/pull/136)). If vehicle_type_ids are not specified, then restrictions apply to all vehicle types.
-&emsp;&emsp;&emsp;\-&nbsp;`ride_allowed` | REQUIRED | Boolean | Is the undocked (“free bike”) ride allowed to start and end in this zone? <br /><br /> `true` - Undocked (“free bike”) ride can start and end in this zone. <br /> `false` - Undocked (“free bike”) ride cannot start and end in this zone.
-&emsp;&emsp;&emsp;\-&nbsp;`ride_through_allowed` | REQUIRED | Boolean | Is the ride allowed to travel through this zone? <br /><br /> `true` - Ride can travel through this zone. <br /> `false` - Ride cannot travel through this zone.
+&emsp;&emsp;&emsp;\-&nbsp;`ride_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the undocked (“free bike”) ride allowed to start and end in this zone? <br /><br /> `true` - Undocked (“free bike”) ride can start and end in this zone. <br /> `false` - Undocked (“free bike”) ride cannot start and end in this zone.
+&emsp;&emsp;&emsp;\-&nbsp;`ride_through_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the ride allowed to travel through this zone? <br /><br /> `true` - Ride can travel through this zone. <br /> `false` - Ride cannot travel through this zone.
 &emsp;&emsp;&emsp;\-&nbsp;`maximum_speed_kph` | OPTIONAL | Non-negative Integer | What is the maximum speed allowed, in kilometers per hour? <br /><br /> If there is no maximum speed to observe, this can be omitted.
 
 
 ##### Example:
 ```jsonc
 {
-  "geofencing_zones":[
-    {
+  "last_updated":1604198100,
+  "ttl":60,
+  "data":{
+    "geofencing_zones":{
       "type":"FeatureCollection",
       "features":[
         {
@@ -1002,20 +1000,22 @@ Field Name | REQUIRED | Type | Defines
             "name":"NE 24th/NE Knott",
             "start":1593878400,
             "end":1593907260,
-            "rules":{
-              "vehicle_type_id":[
-                "moped1",
-                "car1"
-              ],
-              "ride_allowed":false,
-              "ride_through_allowed":true,
-              "maximum_speed_kph":10
-            }
+            "rules":[
+              {
+                "vehicle_type_id":[
+                  "moped1",
+                  "car1"
+                ],
+                "ride_allowed":false,
+                "ride_through_allowed":true,
+                "maximum_speed_kph":10
+              }
+            ]
           }
         }
       ]
     }
-  ]
+  }
 }
 ```
 ## Deep Links *(added in v1.1)*
