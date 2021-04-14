@@ -269,6 +269,7 @@ IT,Helbiz Rome,"Rome, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/ad
 IT,Helbiz Varona,"Verona, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/verona/gbfs/gbfs.json
 IT,Lime Rome,"Rome, IT",lime_rome,https://li.me,https://data.lime.bike/api/partners/v1/gbfs/rome/gbfs.json
 IT,Verona Bike,"Verona, IT",verona-bike,https://bikeverona.it/en,https://gbfs.urbansharing.com/bikeverona.it/gbfs.json
+IT,Milan Bikemi,"Milan, IT",milan-bikemi,https://bikemi.com/en,https://gbfs.urbansharing.com/bikemi.com/gbfs.json
 LB,bike4all,"Byblos, LB",nextbike_bl,https://www.bikeforall-lb.com/en/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bl/gbfs.json
 LI,Donkey Republic Liechtenstein,Liechtenstein,donkey_li,https://www.donkey.bike/cities/,https://stables.donkey.bike/api/public/gbfs/donkey_li/gbfs.json
 LV,nextbike LV,"LV",nextbike_lv,https://www.nextbike.lv/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_lv/gbfs.json
