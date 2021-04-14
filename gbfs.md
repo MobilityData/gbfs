@@ -931,16 +931,18 @@ Field Name | REQUIRED | Type | Defines
 &emsp;&emsp;\-&nbsp;`end` | OPTIONAL | Timestamp | End time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
 &emsp;&emsp;\-&nbsp;`rules` | OPTIONAL | Array | Array that contains one object per rule as defined below. <br /><br /> In the event of colliding rules within the same polygon, the earlier rule (in order of the JSON file) takes precedence. <br> In the case of overlapping polygons, the combined set of rules associated with the overlapping polygons applies to the union of the polygons. In the event of colliding rules in this set, the earlier rule (in order of the JSON file) also takes precedence.
 &emsp;&emsp;&emsp;\-&nbsp;`vehicle_type_id` | OPTIONAL | Array | Array of IDs of vehicle types for which any restrictions SHOULD be applied (see vehicle type definitions in [PR #136](https://github.com/NABSA/gbfs/pull/136)). If vehicle_type_ids are not specified, then restrictions apply to all vehicle types.
-&emsp;&emsp;&emsp;\-&nbsp;`ride_allowed` | REQUIRED | Boolean | Is the undocked (“free bike”) ride allowed to start and end in this zone? <br /><br /> `true` - Undocked (“free bike”) ride can start and end in this zone. <br /> `false` - Undocked (“free bike”) ride cannot start and end in this zone.
-&emsp;&emsp;&emsp;\-&nbsp;`ride_through_allowed` | REQUIRED | Boolean | Is the ride allowed to travel through this zone? <br /><br /> `true` - Ride can travel through this zone. <br /> `false` - Ride cannot travel through this zone.
+&emsp;&emsp;&emsp;\-&nbsp;`ride_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the undocked (“free bike”) ride allowed to start and end in this zone? <br /><br /> `true` - Undocked (“free bike”) ride can start and end in this zone. <br /> `false` - Undocked (“free bike”) ride cannot start and end in this zone.
+&emsp;&emsp;&emsp;\-&nbsp;`ride_through_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the ride allowed to travel through this zone? <br /><br /> `true` - Ride can travel through this zone. <br /> `false` - Ride cannot travel through this zone.
 &emsp;&emsp;&emsp;\-&nbsp;`maximum_speed_kph` | OPTIONAL | Non-negative Integer | What is the maximum speed allowed, in kilometers per hour? <br /><br /> If there is no maximum speed to observe, this can be omitted.
 
 
 ##### Example:
 ```jsonc
 {
-  "geofencing_zones":[
-    {
+  "last_updated":1604198100,
+  "ttl":60,
+  "data":{
+    "geofencing_zones":{
       "type":"FeatureCollection",
       "features":[
         {
@@ -1002,20 +1004,22 @@ Field Name | REQUIRED | Type | Defines
             "name":"NE 24th/NE Knott",
             "start":1593878400,
             "end":1593907260,
-            "rules":{
-              "vehicle_type_id":[
-                "moped1",
-                "car1"
-              ],
-              "ride_allowed":false,
-              "ride_through_allowed":true,
-              "maximum_speed_kph":10
-            }
+            "rules":[
+              {
+                "vehicle_type_id":[
+                  "moped1",
+                  "car1"
+                ],
+                "ride_allowed":false,
+                "ride_through_allowed":true,
+                "maximum_speed_kph":10
+              }
+            ]
           }
         }
       ]
     }
-  ]
+  }
 }
 ```
 ## Deep Links *(added in v1.1)*
