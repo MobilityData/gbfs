@@ -336,6 +336,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1611598155,
   "ttl":1800,
+  "version": "3.0",
   "data":{
     "phone_number":"1-800-555-1234",
     "name":"Example Ride",
@@ -705,6 +706,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1604333830,
   "ttl":86400,
+  "version": "3.0",
   "data":{
     "calendars":[
       {
@@ -734,6 +736,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1604332380,
   "ttl":86400,
+  "version": "3.0",
   "data":{
     "regions":[
       {
@@ -884,6 +887,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1604198100,
   "ttl":60,
+  "version": "3.0",
   "data":{
     "alerts":[
       {
@@ -937,6 +941,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1604198100,
   "ttl":60,
+  "version": "3.0",
   "data":{
     "geofencing_zones":{
       "type":"FeatureCollection",
@@ -1049,35 +1054,42 @@ Other supported parameters include:
 
 ```jsonc
 {
-  "last_updated": 1572447999,
-  "data": {
-  "system_id": "abc_cityname",
-  "short_name": "ABC Bike Rental",
-  "rental_apps": {
-    "android": {
-      "discovery_uri": "com.abcrental.android://"
-    },
-    "ios": {
-      "discovery_uri": "com.abcrental.ios://"
+  "last_updated":1572447999,
+  "ttl":60,
+  "version":"3.0",
+  "data":{
+    "system_id":"abc_cityname",
+    "short_name":"ABC Bike Rental",
+    "rental_apps":{
+      "android":{
+        "discovery_uri":"com.abcrental.android://"
+      },
+      "ios":{
+        "discovery_uri":"com.abcrental.ios://"
+      }
     }
-  }
   ...
 ```
 
 ##### *station_information.json*
 
 ```jsonc
-"stations": [
-  {
-    "station_id": "425",
-    "name": "Coppertail",
-    "lat": 27.9563335328521,
-    "lon": -82.430436084371,
-    "rental_uris": {
-      "android": "https://www.abc.com/app?sid=1234567890&platform=android",
-      "ios": "https://www.abc.com/app?sid=1234567890&platform=ios"
-    }
-  },
+{
+  "last_updated":1609866247,
+  "ttl":60,
+  "version":"3.0",
+  "data":{
+    "stations":[
+      {
+        "station_id":"425",
+        "name":"Coppertail",
+        "lat":27.9563335328521,
+        "lon":-82.430436084371,
+        "rental_uris":{
+          "android":"https://www.abc.com/app?sid=1234567890&platform=android",
+          "ios":"https://www.abc.com/app?sid=1234567890&platform=ios"
+        }
+      },
   ...
 ```
 
@@ -1092,6 +1104,8 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
 ```jsonc
 {
   "last_updated": 1572447999,
+  "ttl":60,
+  "version": "3.0",
   "data": {
     "system_id": "abc_cityname",
     "short_name": "ABC Bike Rental",
@@ -1111,17 +1125,22 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
 ##### *station_information.json*
 
 ```jsonc
-"stations": [
-  {
-    "station_id": "425",
-    "name": "Coppertail",
-    "lat": 27.9563335328521,
-    "lon": -82.430436084371,
-    "rental_uris": {
-      "android": "com.abcrental.android://open.abc.app/app?sid=1234567890",
-      "ios": "com.abcrental.ios://open.abc.app/app?sid=1234567890"
-    }
-  },
+{
+  "last_updated":1609866247,
+  "ttl":60,
+  "version":"3.0",
+  "data":{
+    "stations":[
+      {
+        "station_id":"425",
+        "name":"Coppertail",
+        "lat":27.9563335328521,
+        "lon":-82.430436084371,
+        "rental_uris":{
+          "android":"com.abcrental.android://open.abc.app/app?sid=1234567890",
+          "ios":"com.abcrental.ios://open.abc.app/app?sid=1234567890"
+        }
+      },
   ...
 ```
 
@@ -1130,16 +1149,21 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
 ##### *station_information.json*
 
 ```jsonc
-"stations": [
-  {
-    "station_id":"425",
-    "name":"Coppertail",
-    "lat":27.9563335328521,
-    "lon":-82.430436084371,
-    "rental_uris": {
-      "web":"https://www.abc.com/app?sid=1234567890",
-    }
-  },
+{
+  "last_updated":1609866247,
+  "ttl":60,
+  "version":"3.0",
+  "data":{
+    "stations":[
+      {
+        "station_id":"425",
+        "name":"Coppertail",
+        "lat":27.9563335328521,
+        "lon":-82.430436084371,
+        "rental_uris":{
+          "web":"https://www.abc.com/app?sid=1234567890"
+        }
+      },
   ...
 ```
 
