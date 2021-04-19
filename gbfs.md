@@ -336,7 +336,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1611598155,
   "ttl":1800,
-  "version": "3.0",
+  "version": "2.2",
   "data":{
     "phone_number":"1-800-555-1234",
     "name":"Example Ride",
@@ -706,7 +706,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1604333830,
   "ttl":86400,
-  "version": "3.0",
+  "version": "2.2",
   "data":{
     "calendars":[
       {
@@ -736,7 +736,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1604332380,
   "ttl":86400,
-  "version": "3.0",
+  "version": "2.2",
   "data":{
     "regions":[
       {
@@ -794,7 +794,7 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 {
   "last_updated": 1609866247,
   "ttl": 0,
-  "version": "3.0",
+  "version": "2.2",
   "data": {
     "plans": [
       {
@@ -834,7 +834,7 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
 {
   "last_updated": 1609866247,
   "ttl": 0,
-  "version": "3.0",
+  "version": "2.2",
   "data": {
     "plans": [
       {
@@ -887,7 +887,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1604198100,
   "ttl":60,
-  "version": "3.0",
+  "version": "2.2",
   "data":{
     "alerts":[
       {
@@ -941,7 +941,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1604198100,
   "ttl":60,
-  "version": "3.0",
+  "version": "2.2",
   "data":{
     "geofencing_zones":{
       "type":"FeatureCollection",
@@ -1056,7 +1056,7 @@ Other supported parameters include:
 {
   "last_updated":1572447999,
   "ttl":60,
-  "version":"3.0",
+  "version":"2.2",
   "data":{
     "system_id":"abc_cityname",
     "short_name":"ABC Bike Rental",
@@ -1077,7 +1077,7 @@ Other supported parameters include:
 {
   "last_updated":1609866247,
   "ttl":60,
-  "version":"3.0",
+  "version":"2.2",
   "data":{
     "stations":[
       {
@@ -1105,7 +1105,7 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
 {
   "last_updated": 1572447999,
   "ttl":60,
-  "version": "3.0",
+  "version": "2.2",
   "data": {
     "system_id": "abc_cityname",
     "short_name": "ABC Bike Rental",
@@ -1128,7 +1128,7 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
 {
   "last_updated":1609866247,
   "ttl":60,
-  "version":"3.0",
+  "version":"2.2",
   "data":{
     "stations":[
       {
@@ -1152,7 +1152,7 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
 {
   "last_updated":1609866247,
   "ttl":60,
-  "version":"3.0",
+  "version":"2.2",
   "data":{
     "stations":[
       {
