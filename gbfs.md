@@ -397,7 +397,7 @@ Field Name | REQUIRED | Type | Defines
         "vehicle_type_id": "car1",
         "form_factor": "car",
         "propulsion_type": "combustion",
-        "name": "Foor-door Sedan",
+        "name": "Four-door Sedan",
         "max_range_meters": 523992
       }
     ]
