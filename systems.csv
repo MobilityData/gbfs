@@ -436,6 +436,7 @@ US,Reddy Bike Share,"Buffalo, NY",reddy_bikeshare,https://reddybikeshare.socialb
 US,Reddy Bikeshare,"Buffalo, NY",reddy_bikeshare,http://reddybikeshare.socialbicycles.com,https://reddybikeshare.socialbicycles.com/opendata/gbfs.json
 US,Relay Bike Share,"Atlanta, GA",relay_bike_share,http://relaybikeshare.com/,https://relaybikeshare.socialbicycles.com/opendata/gbfs.json
 US,Revel Oakland,"Oakland, CA",revel_oakland,https://gorevel.com/oakland/,https://gbfs.gorevel.com/gbfs/v2/oakland/en/gbfs.json
+US,Revel Miami,"Miami, FL",revel_miami,https://gorevel.com/miami/,https://gbfs.gorevel.com/gbfs/v2/miami/en/gbfs.json
 US,RTC Bike Share,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
 US,San Antonio B-cycle,"San Antonio, TX",bcycle_sanantonio,https://sanantonio.bcycle.com/,https://gbfs.bcycle.com/bcycle_sanantonio/gbfs.json
 US,Santa Barbara BCycle,"Santa Barbara, CA",bcycle_santabarbara,https://santabarbara.bcycle.com,https://gbfs.bcycle.com/bcycle_santabarbara/gbfs.json
