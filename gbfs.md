@@ -572,7 +572,7 @@ Field Name | REQUIRED | Type | Defines
   "data": {
     "stations": [
       {
-        "station_id": "station 1",
+        "station_id": "station1",
         "is_installed": true,
         "is_renting": true,
         "is_returning": true,
@@ -601,7 +601,7 @@ Field Name | REQUIRED | Type | Defines
         ]
       },
       {
-        "station_id": "station 2",
+        "station_id": "station2",
         "is_installed": true,
         "is_renting": true,
         "is_returning": true,
