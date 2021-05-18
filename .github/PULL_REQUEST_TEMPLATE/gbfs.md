@@ -12,3 +12,5 @@
 - [ ] Unsure
 
 ### **Which files are affected by this change?**
+
+_Please ensure the beginning of your pull request title is [gbfs.md] followed by your title, then delete this text._ 
