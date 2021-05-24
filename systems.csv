@@ -457,9 +457,9 @@ US,Revel New York,"New York, NY"',revel_newyork,https://gorevel.com,https://gbfs
 US,Revel Oakland,"Oakland, CA",revel_oakland,https://gorevel.com/oakland/,https://gbfs.gorevel.com/gbfs/v2/oakland/en/gbfs.json
 US,Revel Miami,"Miami, FL",revel_miami,https://gorevel.com/miami/,https://gbfs.gorevel.com/gbfs/v2/miami/en/gbfs.json
 US,Revel San Francisco,"San Francisco, CA",revel_sanfrancisco,https://gorevel.com,https://gbfs.gorevel.com/gbfs/v2/sanfrancisco/en/gbfs.json
-US,Revel Washington, D.C.,"Washington, DC",revel_washingtondc,https://gorevel.com,https://gbfs.gorevel.com/gbfs/v2/washingtondc/en/gbfs.json
+US,Revel Washington D.C.,"Washington, DC",revel_washingtondc,https://gorevel.com,https://gbfs.gorevel.com/gbfs/v2/washingtondc/en/gbfs.json
 US,RTC Bike Share,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
-US,Salt Lake City,"Salt Lake City, UT"Link_Salt_Lake_City,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Salt%20Lake%20City/gbfs.json
+US,Salt Lake City,"Salt Lake City, UT",Link_Salt_Lake_City,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Salt%20Lake%20City/gbfs.json
 US,San Antonio B-cycle,"San Antonio, TX",bcycle_sanantonio,https://sanantonio.bcycle.com/,https://gbfs.bcycle.com/bcycle_sanantonio/gbfs.json
 US,San Diego,"San Diego, CA",Link_San_Diego,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/San%20Diego/gbfs.json
 US,San Jose,"San Jose, Ca",Link_San_Jose,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/San%20Jose/gbfs.json
