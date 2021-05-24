@@ -146,7 +146,7 @@ DK,Donkey Republic Middelfart,"Middelfart, DK",donkey_middelfart,https://www.don
 DK,Donkey Republic Odense,"Odense, DK",donkey_odense,https://www.donkey.bike/cities/bike-rental-odense/,https://stables.donkey.bike/api/public/gbfs/donkey_odense/gbfs.json
 DK,Donkey Republic Rødvig,"Rødvig, DK",donkey_roedvig,https://www.donkey.bike/cities/bike-rental-rodvig/,https://stables.donkey.bike/api/public/gbfs/donkey_roedvig/gbfs.json
 DK,Donkey Republic Store Heddinge,"Store Heddinge, DK",donkey_store_heddinge,https://www.donkey.bike/cities/bike-rental-store-heddinge/,https://stables.donkey.bike/api/public/gbfs/donkey_store_heddinge/gbfs.json
-ES,Alcala de Henares,"Alcalá de Henares, ES",Link_Alcala_de_Henares	https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Alcala%20de%20Henares/gbfs.json
+ES,Alcala de Henares,"Alcalá de Henares, ES",Link_Alcala_de_Henares,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Alcala%20de%20Henares/gbfs.json
 ES,BiciMAD (unofficial),"Madrid, ES",bici_madrid,https://www.bicimad.com/,https://gbfs.bici.madrid/gbfs.json
 ES,Bicing,"Barcelona, ES",bike_barcelona,https://www.bicing.barcelona/,https://barcelona.publicbikesystem.net/ube/gbfs/v1/
 ES,Bilbaobizi (Bilbao),"Bilbao, ES",nextbike_bo,https://www.bilbaobizi.bilbao.eus/eu/bilbao/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bo/gbfs.json
@@ -252,7 +252,7 @@ HR,Općina Brinje (Croatia),"Brinje, HR",nextbike_br,https://www.nextbike.hr/hr/
 HR,Općina Dugopolje (Croatia),"Dugopolje, HR",nextbike_od,https://www.nextbike.hr/hr/dugopolje/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_od/gbfs.json
 HR,Općina Pitomača (Croatia),"Pitomača, HR",nextbike_se,https://www.nextbike.hr/hr/pitomaca/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_se/gbfs.json
 HU,Donkey Republic Budapest,"Budapest, HU",donkey_budapest,https://www.donkey.bike/cities/bike-rental-budapest/,https://stables.donkey.bike/api/public/gbfs/donkey_budapest/gbfs.json
-IT,Aprillia,"Aprillia, IT",	Link_Aprilia,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Aprilia/gbfs.json
+IT,Aprillia,"Aprillia, IT",Link_Aprilia,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Aprilia/gbfs.json
 IL,Bird Tel Aviv,"Tel Aviv, IL",bird-tel-aviv,https://www.bird.co,https://mds.bird.co/gbfs/tel-aviv/gbfs.json
 IT,Helbiz USA,"Ferrara, IT",HELBIZ-US,https://helbiz.com/,https://api.helbiz.com/admin/reporting/ferrara/gbfs/gbfs.json
 IL,Lime Tel Aviv,"Tel Aviv, IL",lime_tel_aviv,https://li.me/,https://data.lime.bike/api/partners/v1/gbfs/tel_aviv/gbfs.json
@@ -457,7 +457,7 @@ US,Revel New York,"New York, NY"',revel_newyork,https://gorevel.com,https://gbfs
 US,Revel Oakland,"Oakland, CA",revel_oakland,https://gorevel.com/oakland/,https://gbfs.gorevel.com/gbfs/v2/oakland/en/gbfs.json
 US,Revel Miami,"Miami, FL",revel_miami,https://gorevel.com/miami/,https://gbfs.gorevel.com/gbfs/v2/miami/en/gbfs.json
 US,Revel San Francisco,"San Francisco, CA",revel_sanfrancisco,https://gorevel.com,https://gbfs.gorevel.com/gbfs/v2/sanfrancisco/en/gbfs.json
-US,Revel Washington, D.C.,"	Washington, DC",revel_washingtondc,https://gorevel.com,https://gbfs.gorevel.com/gbfs/v2/washingtondc/en/gbfs.json
+US,Revel Washington, D.C.,"Washington, DC",revel_washingtondc,https://gorevel.com,https://gbfs.gorevel.com/gbfs/v2/washingtondc/en/gbfs.json
 US,RTC Bike Share,"Las Vegas, NV",bcycle_rtcbikeshare,https://rtcbikeshare.bcycle.com,https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json
 US,Salt Lake City,"Salt Lake City, UT"Link_Salt_Lake_City,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Salt%20Lake%20City/gbfs.json
 US,San Antonio B-cycle,"San Antonio, TX",bcycle_sanantonio,https://sanantonio.bcycle.com/,https://gbfs.bcycle.com/bcycle_sanantonio/gbfs.json
