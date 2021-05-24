@@ -453,7 +453,7 @@ US,Razor Tempe,"Tempe, AZ",razor,https://www.razor.com/share/,https://razorapi.n
 US,Razor Washington DC,"Washington DC, DC",razor,https://www.razor.com/share/,https://razorapi.net/api/v1/gbfs/Washington%20DC/gbfs.json
 US,Reddy Bikeshare,"Buffalo, NY",reddy_bikeshare,http://reddybikeshare.socialbicycles.com,https://reddybikeshare.socialbicycles.com/opendata/gbfs.json
 US,Relay Bike Share,"Atlanta, GA",relay_bike_share,http://relaybikeshare.com/,https://relaybikeshare.socialbicycles.com/opendata/gbfs.json
-US,Revel New York,"New York, NY"',revel_newyork,https://gorevel.com,https://gbfs.gorevel.com/gbfs/v2/newyork/en/gbfs.json
+US,Revel New York,"New York, NY",revel_newyork,https://gorevel.com,https://gbfs.gorevel.com/gbfs/v2/newyork/en/gbfs.json
 US,Revel Oakland,"Oakland, CA",revel_oakland,https://gorevel.com/oakland/,https://gbfs.gorevel.com/gbfs/v2/oakland/en/gbfs.json
 US,Revel Miami,"Miami, FL",revel_miami,https://gorevel.com/miami/,https://gbfs.gorevel.com/gbfs/v2/miami/en/gbfs.json
 US,Revel San Francisco,"San Francisco, CA",revel_sanfrancisco,https://gorevel.com,https://gbfs.gorevel.com/gbfs/v2/sanfrancisco/en/gbfs.json
