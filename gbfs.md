@@ -411,7 +411,7 @@ Field Name | REQUIRED | Type | Defines
 \- `name` | OPTIONAL | String | The public name of this vehicle type.
 \- `icon_url` | OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
 \- `icon_url_dark` | OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type when in dark mode on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
-\- `icon_last_modified` | Conditionally REQUIRED | String | REQUIRED if `icon_url`  and/or `icon_url_dark` is defined. Date that indicates the last time any included vehicle icons were modified or updated. Must be in the format YYYY-MM-DD.
+\- `icon_last_modified` | Conditionally REQUIRED | String | REQUIRED if `icon_url`  and/or `icon_url_dark` is defined. Date that indicates the last time any included vehicle icon images were modified or updated. MUST be in the format YYYY-MM-DD.
 ##### Example:
 
 ```jsonc
@@ -426,7 +426,7 @@ Field Name | REQUIRED | Type | Defines
         "form_factor": "bicycle",
         "propulsion_type": "human",
         "name": "Example Basic Bike",
-        "icon_url": "https://www.example.com/assets/icon_bicycle_standard.svg",
+        "icon_url": "https://www.example.com/assets/icon_bicycle.svg",
         "icon_url_dark": "https://www.example.com/assets/icon_bicycle_dark.svg",
         "icon_last_modified": "2021-06-15"
       },
@@ -436,7 +436,7 @@ Field Name | REQUIRED | Type | Defines
         "propulsion_type": "electric",
         "name": "Example E-scooter V2",
         "max_range_meters": 12345,
-        "icon_url": "https://www.example.com/assets/icon_escooter_standard.svg",
+        "icon_url": "https://www.example.com/assets/icon_escooter.svg",
         "icon_url_dark": "https://www.example.com/assets/icon_escooter_dark.svg",
         "icon_last_modified": "2021-06-15"
       },
@@ -446,7 +446,7 @@ Field Name | REQUIRED | Type | Defines
         "propulsion_type": "combustion",
         "name": "Four-door Sedan",
         "max_range_meters": 12345,
-        "icon_url": "https://www.example.com/assets/icon_car_standard.svg",
+        "icon_url": "https://www.example.com/assets/icon_car.svg",
         "icon_url_dark": "https://www.example.com/assets/icon_car_dark.svg",
         "icon_last_modified": "2021-06-15"
       }
