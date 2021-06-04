@@ -350,6 +350,12 @@ Field Name | REQUIRED | Type | Defines
 `license_url` | Conditionally REQUIRED <br/>*(as of v3.0-RC)* | URL | REQUIRED if the dataset is provided under a customized license. A fully qualified URL of a page that defines the license terms for the GBFS data for this system. Do not specify a `license_url` if `license_id` is specified. If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode). *(as of v3.0-RC)*
 `attribution_organization_name` <br/>*(added in v3.0-RC)* | OPTIONAL | String | If the feed license requires attribution, name of the organization to which attribution should be provided.
 `attribution_url` <br/>*(added in v3.0-RC)* | OPTIONAL | URL | URL of the organization to which attribution should be provided.
+ `brand_assets` | Optional | Object | An object where each key defines on of the items listed below.
+ - `brand_last_modified` | Conditionally REQUIRED | String | REQUIRED if `brand_assets` object is defined. Date that indicates the last time any included brand assets were updated or modified. Must be in the format YYYY-MM-DD.
+ - `brand_image_url` | Conditionally REQUIRED |  URL |  REQUIRED if `brand_assets` object is defined. A fully qualified URL pointing to the location of a graphic file representing the brand for the service. File MUST be in SVG V1.1 format and MUST be either square or round.
+ - `brand_image_url_dark` | Optional |  URL | A fully qualified URL pointing to the location of a graphic file representing the brand for the service for use in dark mode applications.  File MUST be in SVG V1.1 format and MUST be either square or round.
+ - `color` | Optional |  String |  Color used to represent the brand for the service expressed as a 6 digit hexadecimal color code in the form #000000. 
+ - `terms_url`  | Optional |  URL |  A fully qualified URL pointing to the location of a page that defines the license terms of brand icons, colors or other trademark information.  This field MUST NOT take the place of `license_url` or `license_id`. 
 `rental_apps` <br/>*(added in v1.1)* | OPTIONAL | Object | Contains rental app information in the android and ios JSON objects.
 \-&nbsp;`android` <br/>*(added in v1.1)* | OPTIONAL | Object | Contains rental app download and app discovery information for the Android platform in the `store_uri` and `discovery_uri` fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
 &emsp;- `store_uri` <br/>*(added in v1.1)* | Conditionally REQUIRED | URI | URI where the rental Android app can be downloaded from. Typically this will be a URI to an app store such as Google Play. If the URI points to an app store such as Google Play, the URI SHOULD follow Android best practices so the viewing app can directly open the URI to the native app store app instead of a website. <br><br> If a `rental_uris`.`android` field is populated then this field is REQUIRED, otherwise it is OPTIONAL. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Example value: `https://play.google.com/store/apps/details?id=com.example.android`
@@ -366,19 +372,27 @@ Field Name | REQUIRED | Type | Defines
   "ttl": 1800,
   "version": "3.0",
   "data": {
-    "phone_number": "1-800-555-1234",
-    "name": "Example Bike Rental",
-    "operator": "Example Sharing, Inc",
-    "start_date": "2010-06-10",
-    "purchase_url": "https://www.example.com",
-    "timezone": "US/Central",
-    "license_url": "https://www.example.com/data-license.html",
-    "short_name": "Example Bike Rental",
-    "email": "customerservice@example.com",
-    "url": "https://www.example.com",
-    "feed_contact_email": "datafeed@example.com",
     "system_id": "example_cityname",
     "language": "en",
+    "name": "Example Bike Rental",
+    "short_name": "Example Bike",
+    "operator": "Example Sharing, Inc",
+    "url": "https://www.example.com",
+    "purchase_url": "https://www.example.com",
+    "start_date": "2010-06-10",
+    "phone_number": "1-800-555-1234",
+    "email": "customerservice@example.com",
+    "feed_contact_email": "datafeed@example.com",
+    "timezone": "US/Central",
+    "license_url": "https://www.example.com/data-license.html",
+    "brand_assets": {
+        "brand_last_modified": "2021-06-15",
+        "brand_image_url": "https://www.example.com/assets/brand_image.svg",
+        "brand_image_url_dark": "https://www.example.com/assets/brand_image_dark.svg",
+        "color": "#C2D32C",
+        "terms_url": "https://www.example.com/assets/brand.pdf"
+      }
+      
   }
 }
 ```
@@ -395,7 +409,9 @@ Field Name | REQUIRED | Type | Defines
 \- `propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides power only alongside human propulsion)_</li><li>`electric` _(Contains throttle mode with a battery-powered motor)_</li><li>`combustion` _(Contains throttle mode with a gas engine-powered motor)_</li></ul> This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/master/provider/README.md#propulsion-types).
 \- `max_range_meters` | Conditionally REQUIRED | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is REQUIRED. This represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example, a full battery or full tank of gas).
 \- `name` | OPTIONAL | String | The public name of this vehicle type.
-
+\- `icon_url` | OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
+\- `icon_url_dark` | OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type when in dark mode on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
+\- `icon_last_modified` | Conditionally REQUIRED | String | REQUIRED if `icon_url`  and/or `icon_url_dark` is defined. Date that indicates the last time any included vehicle icons were modified or updated. Must be in the format YYYY-MM-DD.
 ##### Example:
 
 ```jsonc
@@ -409,21 +425,30 @@ Field Name | REQUIRED | Type | Defines
         "vehicle_type_id": "abc123",
         "form_factor": "bicycle",
         "propulsion_type": "human",
-        "name": "Example Basic Bike"
+        "name": "Example Basic Bike",
+        "icon_url": "https://www.example.com/assets/icon_bicycle_standard.svg",
+        "icon_url_dark": "https://www.example.com/assets/icon_bicycle_dark.svg",
+        "icon_last_modified": "2021-06-15"
       },
       {
         "vehicle_type_id": "def456",
         "form_factor": "scooter",
         "propulsion_type": "electric",
         "name": "Example E-scooter V2",
-        "max_range_meters": 12345
+        "max_range_meters": 12345,
+        "icon_url": "https://www.example.com/assets/icon_escooter_standard.svg",
+        "icon_url_dark": "https://www.example.com/assets/icon_escooter_dark.svg",
+        "icon_last_modified": "2021-06-15"
       },
       {
         "vehicle_type_id": "car1",
         "form_factor": "car",
         "propulsion_type": "combustion",
         "name": "Four-door Sedan",
-        "max_range_meters": 523992
+        "max_range_meters": 12345,
+        "icon_url": "https://www.example.com/assets/icon_car_standard.svg",
+        "icon_url_dark": "https://www.example.com/assets/icon_car_dark.svg",
+        "icon_last_modified": "2021-06-15"
       }
     ]
   }
