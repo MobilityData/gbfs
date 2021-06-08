@@ -395,6 +395,7 @@ Field Name | REQUIRED | Type | Defines
 \- `propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides power only alongside human propulsion)_</li><li>`electric` _(Contains throttle mode with a battery-powered motor)_</li><li>`combustion` _(Contains throttle mode with a gas engine-powered motor)_</li></ul> This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/master/provider/README.md#propulsion-types).
 \- `max_range_meters` | Conditionally REQUIRED | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is REQUIRED. This represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example, a full battery or full tank of gas).
 \- `name` | OPTIONAL | String | The public name of this vehicle type.
+\- `reserve_time` | OPTIONAL | Non-negative Integer | Maximum time in minutes that a vehicle can be reserved before a rental begins. When a vehicle is reserved by a user the vehicle remains locked until the rental begins. During this time the vehicle is unavailable and cannot be be reserved or rented by other users. The vehicle status in `free_bike_status.json` MUST be set to `is_reserved = true`. If the value of `reserve_time` elapses without a rental beginning, the vehicle status MUST change to `is_reserved = false`. If `reserve_time` is set to `0` the vehicle type cannot be reserved. If the ability to reserve vehicles is dependant on the pricing plan, see `system_pricing_plans.json: reserve_time`.
 
 ##### Example:
 
@@ -409,21 +410,24 @@ Field Name | REQUIRED | Type | Defines
         "vehicle_type_id": "abc123",
         "form_factor": "bicycle",
         "propulsion_type": "human",
-        "name": "Example Basic Bike"
+        "name": "Example Basic Bike",
+        "reserve_time": 30
       },
       {
         "vehicle_type_id": "def456",
         "form_factor": "scooter",
         "propulsion_type": "electric",
         "name": "Example E-scooter V2",
-        "max_range_meters": 12345
+        "max_range_meters": 12345,
+        "reserve_time": 30
       },
       {
         "vehicle_type_id": "car1",
         "form_factor": "car",
         "propulsion_type": "combustion",
         "name": "Four-door Sedan",
-        "max_range_meters": 523992
+        "max_range_meters": 523992,
+        "reserve_time": 0
       }
     ]
   }
@@ -840,6 +844,7 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`price` | Yes | Non-Negative float OR String | Fare price, in the unit specified by currency. If string, MUST be in decimal monetary value. <br/>*(added in v2.2)* Note: v3.0 may only allow non-negative float, therefore future implementations SHOULD be non-negative float.<br /><br />In case of non-rate price, this field is the total price. In case of rate price, this field is the base price that is charged only once per trip (e.g., price for unlocking) in addition to `per_km_pricing` and/or `per_min_pricing`.
 \-&nbsp;`is_taxable` | Yes | Boolean | Will additional tax be added to the base price?<br /><br />`true` - Yes.<br />  `false` - No.  <br /><br />`false` MAY be used to indicate that tax is not charged or that tax is included in the base price.
 \-&nbsp;`description` | Yes | String | Customer-readable description of the pricing plan. This SHOULD include the duration, price, conditions, etc. that the publisher would like users to see.
+\-&nbsp; `reserve_time` | OPTIONAL | Non-negative Integer | Maximum time in minutes that a vehicle can be reserved before a rental begins. This field SHOULD be used in cases where the ability to reserve a vehicle is dependant on the pricing plan. Where this is not the case `vehicle_types: reserve_time` SHOULD be used. When a vehicle is reserved by a user the vehicle remains locked until the rental begins. During this time the vehicle is unavailable and cannot be be reserved or rented by other users. The vehicle status in `free_bike_status.json` MUST be set to `is_reserved = true`. If the value of `reserve_time` elapses without a rental beginning, the vehicle status MUST change to `is_reserved = false`. If `reserve_time` is set to `0` vehicles cannot be reserved using this pricing plan. 
 \-&nbsp;`per_km_pricing` <br/>*(added in v2.2)* | OPTIONAL | Array | Array of segments when the price is a function of distance travelled, displayed in kilometers.<br /><br />Total price is the addition of `price` and all segments in `per_km_pricing` and `per_min_pricing`. If this array is not provided, there are no variable prices based on distance.
 &emsp;&emsp;\-&nbsp;`start` <br/>*(added in v2.2)* | Yes | Non-Negative Integer | The kilometer at which this segment rate starts being charged *(inclusive)*.
 &emsp;&emsp;\-&nbsp;`rate` <br/>*(added in v2.2)* | Yes | Float | Rate that is charged for each kilometer `interval` after the `start`. Can be a negative number, which indicates that the traveller will receive a discount.
@@ -851,6 +856,7 @@ Field Name | REQUIRED | Type | Defines
 &emsp;&emsp;\-&nbsp;`interval` <br/>*(added in v2.2)* | Yes | Non-Negative Integer | Interval in minutes at which the `rate` of this segment is either reapplied indefinitely, or if defined, up until (but not including) `end` minute.<br /><br />An interval of 0 indicates the rate is only charged once.
 &emsp;&emsp;\-&nbsp; `end` <br/>*(added in v2.2)* | OPTIONAL | Non-Negative Integer | The minute at which the rate will no longer apply  *(exclusive)* e.g. if `end` is `20` the rate no longer applies after 19:59.<br /><br />If this field is empty, the price issued for this segment is charged until the trip ends, in addition to following segments.
 \-&nbsp;`surge_pricing` <br/>*(added in v2.2)* | OPTIONAL | Boolean | Is there currently an increase in price in response to increased demand in this pricing plan? If this field is empty, it means these is no surge pricing in effect.<br /><br />`true` - Surge pricing is in effect.<br />  `false` - Surge pricing is not in effect.
+
 
 ### Examples *(added in v2.2)*
 
@@ -872,6 +878,7 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
         "price": 2,
         "is_taxable": false,
         "description": "Includes 10km, overage fees apply after 10km.",
+        "reserve_time": 30,
         "per_km_pricing": [
           {
             "start": 10,
