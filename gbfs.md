@@ -81,8 +81,8 @@ vehicle_types.json <br/>*(added in v2.1)* | Conditionally REQUIRED | Describes t
 station_information.json | Conditionally REQUIRED | List of all stations, their capacities and locations. REQUIRED of systems utilizing docks.
 station_status.json | Conditionally REQUIRED | Number of available vehicles and docks at each station and station availability. REQUIRED of systems utilizing docks.
 free_bike_status.json | Conditionally REQUIRED | *(as of v2.1)* Describes all vehicles that are not currently in active rental. REQUIRED for free floating (dockless) vehicles. OPTIONAL for station based (docked) vehicles. Vehicles that are part of an active rental MUST NOT appear in this feed.
-system_hours.json | OPTIONAL | Hours of operation for the system.
-system_calendar.json | OPTIONAL | Dates of operation for the system.
+system_hours.json | - | This file is deprecated *(as of v3.0)*. See `system_information.opening_hours` for system hours of operation.
+system_calendar.json | - | This file is deprecated *(as of v3.0)*. See `system_information.opening_hours` for system dates of operation.
 system_regions.json | OPTIONAL | Regions the system is broken up into.
 system_pricing_plans.json | OPTIONAL | System pricing scheme.
 system_alerts.json | OPTIONAL | Current system alerts.
