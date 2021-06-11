@@ -351,7 +351,7 @@ Field Name | REQUIRED | Type | Defines
 `attribution_organization_name` <br/>*(added in v3.0-RC)* | OPTIONAL | String | If the feed license requires attribution, name of the organization to which attribution should be provided.
 `attribution_url` <br/>*(added in v3.0-RC)* | OPTIONAL | URL | URL of the organization to which attribution should be provided.
  `brand_assets` | Optional | Object | An object where each key defines on of the items listed below.
-\- `brand_last_modified` | Conditionally REQUIRED | String | REQUIRED if `brand_assets` object is defined. Date that indicates the last time any included brand assets were updated or modified. MUST be in the format YYYY-MM-DD.
+\- `brand_last_modified` | Conditionally REQUIRED | Date | REQUIRED if `brand_assets` object is defined. Date that indicates the last time any included brand assets were updated or modified. MUST be in the format YYYY-MM-DD.
 \- `brand_image_url` | Conditionally REQUIRED |  URL |  REQUIRED if `brand_assets` object is defined. A fully qualified URL pointing to the location of a graphic file representing the brand for the service. File MUST be in SVG V1.1 format and MUST be either square or round.
 \- `brand_image_url_dark` | Optional |  URL | A fully qualified URL pointing to the location of a graphic file representing the brand for the service for use in dark mode applications.  File MUST be in SVG V1.1 format and MUST be either square or round.
 \- `color` | Optional |  String |  Color used to represent the brand for the service expressed as a 6 digit hexadecimal color code in the form #000000. 
@@ -411,7 +411,7 @@ Field Name | REQUIRED | Type | Defines
 \- `name` | OPTIONAL | String | The public name of this vehicle type.
 \- `icon_url` | OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
 \- `icon_url_dark` | OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type when in dark mode on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
-\- `icon_last_modified` | Conditionally REQUIRED | String | REQUIRED if `icon_url`  and/or `icon_url_dark` is defined. Date that indicates the last time any included vehicle icon images were modified or updated. MUST be in the format YYYY-MM-DD.
+\- `icon_last_modified` | Conditionally REQUIRED | Date | REQUIRED if `icon_url`  and/or `icon_url_dark` is defined. Date that indicates the last time any included vehicle icon images were modified or updated. MUST be in the format YYYY-MM-DD.
 ##### Example:
 
 ```jsonc
