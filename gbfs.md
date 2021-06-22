@@ -411,7 +411,7 @@ Field Name | REQUIRED | Type | Defines
         "form_factor": "bicycle",
         "propulsion_type": "human",
         "name": "Example Basic Bike",
-        "return_type": ["station", "free_floating"]
+        "return_type": ["any_station", "free_floating"]
       },
       {
         "vehicle_type_id": "def456",
@@ -427,7 +427,7 @@ Field Name | REQUIRED | Type | Defines
         "propulsion_type": "combustion",
         "name": "Four-door Sedan",
         "max_range_meters": 523992,
-        "return_type": ["roundtrip"]
+        "return_type": ["roundtrip_station"]
       }
     ]
   }
