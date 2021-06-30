@@ -493,9 +493,9 @@ Field Name | REQUIRED | Type | Defines
     "stations": [
       {
         "station_id": "station12",
-        "name": "SE Belmont & SE 10 th ",
-        "lat": 12.345678,
-        "lon": 45.678901,
+        "name": "SE Belmont & SE 10 th",
+        "lat": -122.655775,
+        "lon": 45.516445,
         "is_valet_station": false,
         "is_virtual_station": true,
         "station_area": {
