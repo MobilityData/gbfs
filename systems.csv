@@ -180,7 +180,7 @@ FR,LE vélo STAR,"Rennes, FR",le_velo_star,https://www.star.fr/le-velo/nos-offre
 FR,Libélo,"Valence, FR",libelo,http://www.citea.info/presentation/?rub_code=92,https://valence.publicbikesystem.net/ube/gbfs/v1/
 FR,Lime Paris,"Paris, FR",lime_paris,https://li.me/,https://data.lime.bike/api/partners/v1/gbfs/paris/gbfs.json
 FR,Optymo Belfort,"Belfort, FR",Optymo_FR_Belfort,https://www.optymo.fr/,https://belfort-gbfs.klervi.net/gbfs/gbfs.json
-FR,Pony Angers,"Angers, FR",pony_bordeaux,https://getapony.com/,https://gbfs.getapony.com/v1/angers/en/gbfs.json
+FR,Pony Angers,"Angers, FR",pony_Angers,https://getapony.com/,https://gbfs.getapony.com/v1/angers/en/gbfs.json
 FR,Pony Bordeaux,"Bordeaux, FR",pony_bordeaux,https://getapony.com/,https://gbfs.getapony.com/v1/bordeaux/en/gbfs.json
 FR,Pony Paris,"Paris, FR",pony_paris,https://getapony.com/,https://gbfs.getapony.com/v1/paris/en/gbfs.json
 FR,VCub Bordeaux,"Bordeaux, FR",vcub,https://www.vcub.fr/,https://transport.data.gouv.fr/gbfs/vcub/gbfs.json
