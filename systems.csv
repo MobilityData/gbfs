@@ -37,6 +37,7 @@ CA,Lime Calgary,"Calgary, CA",lime_calgary,https://www.li.me/,https://data.lime.
 CA,Lime Edmonton,"Edmontan, CA",lime_edmonton,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/edmonton/gbfs.json
 CA,Lime Ottawa,"Ottowa, CA",lime_ottawa,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/ottawa/gbfs.json
 CA,Mobi Bike Share,"Vancouver, BC",mobi_bikes,https://www.mobibikes.ca/,https://vancouver-gbfs.smoove.pro/gbfs/gbfs.json
+CA,Red Deer,"Red Deer, CA",Link_Red_Deer,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Red%20Deer/gbfs.json
 CA,Roll Calgary,"Calgary, CA",roll_technologies_ca,https://rollscooters.com,https://data.rollapi.com/v1/gbfs/calgary/gbfs.json
 CA,Roll Kelowna,"Kelowna, CA",roll_technologies_ca,https://rollscooters.com,https://data.rollapi.com/v1/gbfs/kelowna/gbfs.json
 CA,Roll Ottawa,"Ottowa, CA",roll_technologies_ca,https://rollscooters.com,https://data.rollapi.com/v1/gbfs/ottawa/gbfs.json
@@ -261,8 +262,9 @@ IN,Chartered Bike (Bhopal - India),"Bhopal, IN",nextbike_bi,http://www.chartered
 IN,Chartered Bike (Ranchi - India),"Ranchi, IN",nextbike_ir,http://www.charteredbike.in/en/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ir/gbfs.json
 IN,Smartbike (Hyderabad - India),"Hyderabad, IN",nextbike_hi,https://www.smartbikemobility.com/en/hyderabad/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_hi/gbfs.json
 IN,Smartbike (Vijayawada - India),"Vijayawada, IN",nextbike_vi,https://www.smartbikemobility.com/en/vijayawada/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vi/gbfs.json
-IS,Donkey Republic Reykjavik,Reykjavik,donkey_reykjavik,https://www.donkey.bike/cities/bike-rental-reykjavik/,https://stables.donkey.bike/api/public/gbfs/donkey_reykjavik/gbfs.json
 IT,Bird Rome,"Rome, IT",bird-rome,https://www.bird.co,https://mds.bird.co/gbfs/rome/gbfs.json
+IS,Donkey Republic Reykjavik,Reykjavik,donkey_reykjavik,https://www.donkey.bike/cities/bike-rental-reykjavik/,https://stables.donkey.bike/api/public/gbfs/donkey_reykjavik/gbfs.json
+IT,Giulianova,"Giulianova, IT",Link_Giulianova,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Giulianova/gbfs.json
 IT,Helbiz Bari,"Bari, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/bari/gbfs/gbfs.json
 IT,Helbiz Cesena,"Cesena, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/cesena/gbfs/gbfs.json
 IT,Helbiz H-Farm,"H-Farm, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/h-farm/gbfs/gbfs.json
@@ -274,8 +276,12 @@ IT,Helbiz Pescara,"Pescara, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.
 IT,Helbiz Pisa,"Pisa,  IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/pisa/gbfs/gbfs.json
 IT,Helbiz Rome,"Rome, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/rome/gbfs/gbfs.json
 IT,Helbiz Varona,"Verona, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/verona/gbfs/gbfs.json
+IT,Isola delle Femmine,"Isola delle Femmine, IT",Link_Isola_delle_Femmine,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Isola%20delle%20Femmine/gbfs.json
 IT,Lime Rome,"Rome, IT",lime_rome,https://li.me,https://data.lime.bike/api/partners/v1/gbfs/rome/gbfs.json
 IT,Milan Bikemi,"Milan, IT",milan-bikemi,https://bikemi.com/en,https://gbfs.urbansharing.com/bikemi.com/gbfs.json
+IT,Moncalieri,"Moncalieri, IT",Link_Moncalieri,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Moncalieri/gbfs.json
+IT,Nettuno,"Nettuno, IT",Link_Nettuno,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Nettuno/gbfs.json
+IT,Vejer de la Frontera,"Vejer de la Frontera, IT",Link_Vejer_de_la_Frontera,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Vejer%20de%20la%20Frontera/gbfs.json
 IT,Verona Bike,"Verona, IT",verona-bike,https://bikeverona.it/en,https://gbfs.urbansharing.com/bikeverona.it/gbfs.json
 IT,Rome,"Rome, IT",Link_Rome,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Rome/gbfs.json
 LB,bike4all,"Byblos, LB",nextbike_bl,https://www.bikeforall-lb.com/en/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bl/gbfs.json
@@ -322,6 +328,7 @@ PL,WRM nextbike Poland,"Wrocław, PL",nextbike_pl,https://www.wroclawskirower.pl
 PL,Zielonogórski Rower Miejski Poland,"Zielona Góra, PL",nextbike_pm,https://zielonogorskirowermiejski.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_pm/gbfs.json
 PT,Bird Lisbon,"Lisbon, PT",bird-lisbon,https://www.bird.co,https://mds.bird.co/gbfs/lisbon/gbfs.json
 PT,Pony Lisbon,"Lisbon, PT",pony_lisbon,https://getapony.com,https://gbfs.getapony.com/v1/lisbon/en/gbfs.json
+PT,Lisbon,"Lisbon, PT",Link_Lisbon,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Lisbon/gbfs.json
 RO,Drobeta Velopark,"Drobeta, RO",nextbike_rd,https://www.nextbike.ro/ro/drobeta/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rd/gbfs.json
 RO,nextbike Romania,"Focșani, RO",nextbike_nw,https://nextbike.ro/en/foc%C8%99ani/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_nw/gbfs.json
 RO,Saturn,"Saturn, RO",nextbike_rs,https://www.nextbike.ro/ro/saturn/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rs/gbfs.json
@@ -331,6 +338,7 @@ SE,Donkey Republic Ängelholm,"Ängelholm, SE",donkey_aengelholm,https://www.don
 SE,Donkey Republic Båstad,"Båstad, SE",donkey_baastad,https://www.donkey.bike/cities/bike-rental-bastad/,https://stables.donkey.bike/api/public/gbfs/donkey_baastad/gbfs.json
 SE,Donkey Republic Malmö,"Malmö, SE",donkey_malmoe,https://www.donkey.bike/cities/bike-rental-malmo/,https://stables.donkey.bike/api/public/gbfs/donkey_malmoe/gbfs.json
 SE,Donkey Republic Ystad,"Ystad, SE",donkey_ystad,https://www.donkey.bike/cities/bike-rental-ystad/,https://stables.donkey.bike/api/public/gbfs/donkey_ystad/gbfs.json
+SE,Stockholm,"Stockholm, SE",Link_Stockholm,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Stockholm/gbfs.json
 SE,"Styr & Ställ (Sweden, Göteborg)","Göteborg, SE",nextbike_zg,https://styrochstall.se/sv/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_zg/gbfs.json
 SI,Nomago Bikes - GO2GO,"Nova Gorica, SI",nextbike_ce,https://bikes.nomago.si/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ce/gbfs.json
 SI,NomagoBikes (Slovenia),"Slovenia, SI",nextbike_cn,https://bikes.nomago.si/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cn/gbfs.json
@@ -342,6 +350,7 @@ US,Asbury Park,"Asbury Park, NJ",Link_Asbury_Park,https://www.link.city,https://
 US,Austin,"Austin, TX",Link_Austin,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Austin/gbfs.json
 US,Austin B-cycle,"Austin, TX",bcycle_austin,http://austinbcycle.com,https://gbfs.bcycle.com/bcycle_austin/gbfs.json
 US,Aventura BCycle,"Aventura, FL",bcycle_aventura,https://aventura.bcycle.com,https://gbfs.bcycle.com/bcycle_aventura/gbfs.json
+US,Baltimore,"Baltimore, MD",Link_Baltimore,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Baltimore/gbfs.json
 US,Bay Wheels,"San Francisco Bay Area, CA",BA,https://www.baywheels.com/,https://gbfs.baywheels.com/gbfs/gbfs.json
 US,Bike Chattanooga,"Chattanooga, TN",bike_chattanooga,http://www.bikechattanooga.com/,https://chat.publicbikesystem.net/ube/gbfs/v1/
 US,BikeLNK,"Lincoln, NE",bcycle_bikelnk,https://bikelnk.bcycle.com,https://gbfs.bcycle.com/bcycle_bikelnk/gbfs.json
@@ -376,6 +385,7 @@ US,Cincy Red Bike,"Cincinnati, OH",bcycle_cincyredbike,http://www.cincyredbike.o
 US,Citi Bike,"NYC, NY",NYC,https://www.citibikenyc.com,https://gbfs.citibikenyc.com/gbfs/gbfs.json
 US,Clarksville B-cycle,"Clarksville, TN",bcycle_clarksville,https://clarksville.bcycle.com,https://gbfs.bcycle.com/bcycle_clarksville/gbfs.json
 US,Clemson BikeShare,"Clemson, SC",bcycle_clemson,https://clemson.bcycle.com,https://gbfs.bcycle.com/bcycle_clemson/gbfs.json
+US,Cleveland,"Cleveland, OH",Link_Cleveland,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Cleveland/gbfs.json
 US,CLEVR Mobility,"Oakland, CA",daecbe87-a9f2-4a5a-b5df-8e3e14180513,https://www.clevrmobility.com/,https://portal.clevrmobility.com/api/gbfs/oakland/en/discovery/
 US,Coast Bike Share,"St. Petersburg, FL",coast_bike_share,http://coastbikeshare.com/,http://coast.socialbicycles.com/opendata/gbfs.json
 US,CoGo,"Columbus, OH",cogo,http://www.cogobikeshare.com/,https://gbfs.cogobikeshare.com/gbfs/gbfs.json
