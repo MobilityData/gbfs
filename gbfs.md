@@ -340,7 +340,7 @@ The following fields are all attributes within the main "data" object for this f
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`system_id` | Yes | ID | This is a globally unique identifier for the vehicle share system.  It is up to the publisher of the feed to guarantee uniqueness and MUST be checked against existing `system_id` fields in [systems.txt](https://github.com/NABSA/gbfs/blob/master/systems.csv) to ensure this. This value is intended to remain the same over the life of the system. <br><br>Each distinct system or geographic area in which vehicles are operated SHOULD have its own `system_id`. Systems IDs SHOULD be recognizable as belonging to a particular system as opposed to random strings - for example, `bcycle_austin` or `biketown_pdx`.
+`system_id` | Yes | ID | This is a globally unique identifier for the vehicle share system.  It is up to the publisher of the feed to guarantee uniqueness and MUST be checked against existing `system_id` fields in [systems.csv](https://github.com/NABSA/gbfs/blob/master/systems.csv) to ensure this. This value is intended to remain the same over the life of the system. <br><br>Each distinct system or geographic area in which vehicles are operated SHOULD have its own `system_id`. Systems IDs SHOULD be recognizable as belonging to a particular system as opposed to random strings - for example, `bcycle_austin` or `biketown_pdx`.
 `language` | Yes | Language | The language that will be used throughout the rest of the files. It MUST match the value in the [gbfs.json](#gbfsjson) file.
 `name` | Yes | String | Name of the system to be displayed to customers.
 `opening_hours` | Yes | String | Hours and dates of operation for the system in [OSM opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) format. *(added in v3.0)*
@@ -503,9 +503,9 @@ Field Name | REQUIRED | Type | Defines
     "stations": [
       {
         "station_id": "station12",
-        "name": "SE Belmont & SE 10th ",
-        "lat": 12.345678,
-        "lon": 45.678901,
+        "name": "SE Belmont & SE 10th",
+        "lat": -122.655775,
+        "lon": 45.516445,
         "is_valet_station": false,
         "is_virtual_station": true,
         "station_area": {
