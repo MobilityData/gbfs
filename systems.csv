@@ -26,22 +26,22 @@ BR,Bike Itaú - Riviera,"Riviera, BR",rivi_bike,https://www.rivieradesaolourenco
 BR,Bike Itaú - Salvador,"Salvador, BR",bike_salvador,https://bikeitau.com.br/bikesalvador/,https://salvador.publicbikesystem.net/ube/gbfs/v1/
 BR,Bike Itaú - Sampa,"São Paulo, BR",bike_sampa,https://bikeitau.com.br/bikesampa,https://saopaulo.publicbikesystem.net/ube/gbfs/v1/
 BR,Bike VV,"Vila Velha, BR",bike_vv,https://www.bikevv.com.br/,https://vilavelha.publicbikesystem.net/ube/gbfs/v1/
-CA,Accès Vélo,"Saguenay, QC",saguenay_bike,https://sts.saguenay.ca/infos-pratiques/acces-velo-1/acces-velo,https://saguenay.publicbikesystem.net/ube/gbfs/v1/
-CA,Bike Share Toronto,"Toronto, ON",bike_share_toronto,https://www.bikesharetoronto.com/,https://tor.publicbikesystem.net/ube/gbfs/v1/
+CA,Accès Vélo,"Saguenay, CA",saguenay_bike,https://sts.saguenay.ca/infos-pratiques/acces-velo-1/acces-velo,https://saguenay.publicbikesystem.net/ube/gbfs/v1/
+CA,Bike Share Toronto,"Toronto, CA",bike_share_toronto,https://www.bikesharetoronto.com/,https://tor.publicbikesystem.net/ube/gbfs/v1/
 CA,Bird Calgary,"Calgary, CA",bird-calgary,https://www.bird.co,https://mds.bird.co/gbfs/calgary/gbfs.json
 CA,Bird Edmonton,"Edmonton, CA",bird-edmonton,https://www.bird.co,https://mds.bird.co/gbfs/edmonton/gbfs.json
 CA,Bird Ottawa,"Ottawa, CA",bird-ottawa,https://www.bird.co,https://mds.bird.co/gbfs/ottawa/gbfs.json
-CA,BIXI-Montreal,"Montreal, QC",Bixi_MTL,https://www.bixi.com/,https://gbfs.velobixi.com/gbfs/gbfs.json
-CA,HOPR Vancouver,"Vancouver, BC, CA",22,https://gohopr.com/,https://gbfs.hopr.city/api/gbfs/22/
+CA,BIXI Montréal,"Montréal, CA",Bixi_MTL,https://www.bixi.com/,https://gbfs.velobixi.com/gbfs/gbfs.json
+CA,HOPR Vancouver,"Vancouver, CA",22,https://gohopr.com/,https://gbfs.hopr.city/api/gbfs/22/
 CA,Lime Calgary,"Calgary, CA",lime_calgary,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/calgary/gbfs.json
-CA,Lime Edmonton,"Edmontan, CA",lime_edmonton,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/edmonton/gbfs.json
-CA,Lime Ottawa,"Ottowa, CA",lime_ottawa,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/ottawa/gbfs.json
-CA,Mobi Bike Share,"Vancouver, BC",mobi_bikes,https://www.mobibikes.ca/,https://vancouver-gbfs.smoove.pro/gbfs/gbfs.json
+CA,Lime Edmonton,"Edmonton, CA",lime_edmonton,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/edmonton/gbfs.json
+CA,Lime Ottawa,"Ottawa, CA",lime_ottawa,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/ottawa/gbfs.json
+CA,Mobi Bike Share,"Vancouver, CA",mobi_bikes,https://www.mobibikes.ca/,https://vancouver-gbfs.smoove.pro/gbfs/gbfs.json
 CA,Red Deer,"Red Deer, CA",Link_Red_Deer,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Red%20Deer/gbfs.json
 CA,Roll Calgary,"Calgary, CA",roll_technologies_ca,https://rollscooters.com,https://data.rollapi.com/v1/gbfs/calgary/gbfs.json
 CA,Roll Kelowna,"Kelowna, CA",roll_technologies_ca,https://rollscooters.com,https://data.rollapi.com/v1/gbfs/kelowna/gbfs.json
-CA,Roll Ottawa,"Ottowa, CA",roll_technologies_ca,https://rollscooters.com,https://data.rollapi.com/v1/gbfs/ottawa/gbfs.json
-CA,Sobi Hamilton,"Hamilton Ontario, ON",sobi_hamilton,https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json
+CA,Roll Ottawa,"Ottawa, CA",roll_technologies_ca,https://rollscooters.com,https://data.rollapi.com/v1/gbfs/ottawa/gbfs.json
+CA,Sobi Hamilton,"Hamilton, CA",sobi_hamilton,https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json
 CH,Donkey Republic Geneva,"Geneva, CH",donkey_ge,https://www.donkey.bike/cities/bike-rental-geneva/,https://stables.donkey.bike/api/public/gbfs/donkey_ge/gbfs.json
 CH,Donkey Republic Le Locle,"Le Locle, CH",donkey_le_locle,https://www.donkey.bike/cities/bike-rental-le-locle/,https://stables.donkey.bike/api/public/gbfs/donkey_le_locle/gbfs.json
 CH,Donkey Republic Neuchâtel,"Neuchâtel, CH",donkey_neuchatel,https://www.donkey.bike/cities/bike-rental-neuchatel/,https://stables.donkey.bike/api/public/gbfs/donkey_neuchatel/gbfs.json
@@ -197,7 +197,7 @@ FR,Vélopop,"Avignon, FR",Vélopop_FR_Avignon,https://www.velopop.fr/,https://av
 FR,VélOstan'lib,"Nancy, FR",nancy,http://www.velostanlib.fr/,https://transport.data.gouv.fr/gbfs/nancy/gbfs.json
 FR,VélÔToulouse,"Toulouse, FR",toulouse,http://www.velo.toulouse.fr/,https://transport.data.gouv.fr/gbfs/toulouse/gbfs.json
 FR,Vélo'v,"Lyon, FR",lyon,https://velov.grandlyon.com/en/home,https://transport.data.gouv.fr/gbfs/lyon/gbfs.json
-FR,V'lille,"Lille,FR",vlille,https://www.ilevia.fr/cms/vlille/,https://transport.data.gouv.fr/gbfs/vlille/gbfs.json
+FR,V'lille,"Lille, FR",vlille,https://www.ilevia.fr/cms/vlille/,https://transport.data.gouv.fr/gbfs/vlille/gbfs.json
 GB,BelfastBikes,"Belfast, GB",nextbike_bu,https://www.belfastbikes.co.uk/en/belfast/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bu/gbfs.json
 GB,Beryl - BCP,"Bournemouth, Christchurch, Poole, GB",beryl_bcp,https://www.beryl.cc,https://gbfs.beryl.cc/v2/BCP/gbfs.json
 GB,Beryl - Hereford,"Hereford, GB",beryl_hereford,https://www.beryl.cc,https://gbfs.beryl.cc/v2/Hereford/gbfs.json
