@@ -2,8 +2,8 @@ Country Code,Name,Location,System ID,URL,Auto-Discovery URL
 AE,Careem BIKE,"Dubai, AE",careem_bike,https://www.careem.com/en-ae/careem-bike/,https://dubai.publicbikesystem.net/ube/gbfs/v1/
 AU,Neuron Mobility,"Brisbane, AU",11b14b88-3598-4d3c-821d-e6f2e37cd902,https://www.neuron.sg,https://mds-global-bne.neuron-mobility.com/gbfs/2/
 AU,Neuron Mobility,"Canberra, AU",11b14b88-3598-4d3c-821d-e6f2e37cd903,https://www.neuron.sg,https://mds-global-cbr.neuron-mobility.com/gbfs/2/
-AU,Neuron Mobility,"Darwin, AU",11b14b88-3598-4d3c-821d-e6f2e37cd904,https://www.neuron.sg	https://mds-global-drw.neuron-mobility.com/gbfs/2/
-AU,"Townsville, AU",11b14b88-3598-4d3c-821d-e6f2e37cd909,https://www.neuron.sg,https://mds-global-tsv.neuron-mobility.com/gbfs/2/
+AU,Neuron Mobility,"Darwin, AU",11b14b88-3598-4d3c-821d-e6f2e37cd904,https://www.neuron.sg,https://mds-global-drw.neuron-mobility.com/gbfs/2/
+AU,Neuron Mobility,"Townsville, AU",11b14b88-3598-4d3c-821d-e6f2e37cd909,https://www.neuron.sg,https://mds-global-tsv.neuron-mobility.com/gbfs/2/
 AR,Ecobici,"Buenos Aires, AR",bike_buenosaires,https://www.buenosaires.gob.ar/ecobici,https://buenosaires.publicbikesystem.net/ube/gbfs/v1/
 AR,MiBiciTuBici,"Rosario, Santa Fe, AR",biketobike,https://www.mibicitubici.gob.ar/,https://www.mibicitubici.gob.ar/opendata/gbfs.json
 AR,Movo Buenos Aires,"Buenos Aires, AR",movo_bue,https://movo.me/ar,https://gbfs.movo.me/v1/buenosaires/gbfs.json
