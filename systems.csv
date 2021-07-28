@@ -1,5 +1,9 @@
 Country Code,Name,Location,System ID,URL,Auto-Discovery URL
 AE,Careem BIKE,"Dubai, AE",careem_bike,https://www.careem.com/en-ae/careem-bike/,https://dubai.publicbikesystem.net/ube/gbfs/v1/
+AU,Neuron Mobility,"Brisbane, AU",11b14b88-3598-4d3c-821d-e6f2e37cd902,https://www.neuron.sg,https://mds-global-bne.neuron-mobility.com/gbfs/2/
+AU,Neuron Mobility,"Canberra, AU",11b14b88-3598-4d3c-821d-e6f2e37cd903,https://www.neuron.sg,https://mds-global-cbr.neuron-mobility.com/gbfs/2/
+AU,Neuron Mobility,"Darwin, AU",11b14b88-3598-4d3c-821d-e6f2e37cd904,https://www.neuron.sg,https://mds-global-drw.neuron-mobility.com/gbfs/2/
+AU,Neuron Mobility,"Townsville, AU",11b14b88-3598-4d3c-821d-e6f2e37cd909,https://www.neuron.sg,https://mds-global-tsv.neuron-mobility.com/gbfs/2/
 AR,Ecobici,"Buenos Aires, AR",bike_buenosaires,https://www.buenosaires.gob.ar/ecobici,https://buenosaires.publicbikesystem.net/ube/gbfs/v1/
 AR,MiBiciTuBici,"Rosario, Santa Fe, AR",biketobike,https://www.mibicitubici.gob.ar/,https://www.mibicitubici.gob.ar/opendata/gbfs.json
 AR,Movo Buenos Aires,"Buenos Aires, AR",movo_bue,https://movo.me/ar,https://gbfs.movo.me/v1/buenosaires/gbfs.json
@@ -37,6 +41,9 @@ CA,Lime Calgary,"Calgary, CA",lime_calgary,https://www.li.me/,https://data.lime.
 CA,Lime Edmonton,"Edmonton, CA",lime_edmonton,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/edmonton/gbfs.json
 CA,Lime Ottawa,"Ottawa, CA",lime_ottawa,https://www.li.me/,https://data.lime.bike/api/partners/v1/gbfs/ottawa/gbfs.json
 CA,Mobi Bike Share,"Vancouver, CA",mobi_bikes,https://www.mobibikes.ca/,https://vancouver-gbfs.smoove.pro/gbfs/gbfs.json
+CA,Neuron Mobility,"Calgary, CA",11b14b88-3598-4d3c-821d-e6f2e37cd901,https://www.neuron.sg,https://mds-global-yyc.neuron-mobility.com/gbfs/2/
+CA,Neuron Mobility,"Ottawa, CA",11b14b88-3598-4d3c-821d-e6f2e37cd901,https://www.neuron.sg,https://mds-global-yow.neuron-mobility.com/gbfs/2/
+CA,Neuron Mobility,"Red Deer, CA",11b14b88-3598-4d3c-821d-e6f2e37cd901,https://www.neuron.sg,https://mds-global-yqf.neuron-mobility.com/gbfs/2/
 CA,Red Deer,"Red Deer, CA",Link_Red_Deer,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Red%20Deer/gbfs.json
 CA,Roll Calgary,"Calgary, CA",roll_technologies_ca,https://rollscooters.com,https://data.rollapi.com/v1/gbfs/calgary/gbfs.json
 CA,Roll Kelowna,"Kelowna, CA",roll_technologies_ca,https://rollscooters.com,https://data.rollapi.com/v1/gbfs/kelowna/gbfs.json
@@ -221,6 +228,7 @@ GB,Donkey Republic Tetbury,Tetbury,donkey_tetbury,https://www.donkey.bike/cities
 GB,Donkey Republic The Cotswold Water Park,The Cotswold Water Park,donkey_the_cotswold_water_park,https://www.donkey.bike/cities/bike-rental-the-cotswold-water-park/,https://stables.donkey.bike/api/public/gbfs/donkey_the_cotswold_water_park/gbfs.json
 GB,Donkey Republic Whichford,Whichford,donkey_whichford,https://www.donkey.bike/cities/bike-rental-whichford/,https://stables.donkey.bike/api/public/gbfs/donkey_whichford/gbfs.json
 GB,Donkey Republic Worthing,Worthing,donkey_worthing,https://www.donkey.bike/cities/bike-rental-worthing/,https://stables.donkey.bike/api/public/gbfs/donkey_worthing/gbfs.json
+GB,Neuron Mobility,"Newcastle, GB",11b14b88-3598-4d3c-821d-e6f2e37cd905,https://www.neuron.sg,https://mds-global-ncl.neuron-mobility.com/gbfs/2/
 GB,nextbike Cardiff,"Cardiff, GB",nextbike_uc,https://www.nextbike.co.uk/en/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_uc/gbfs.json
 GB,nextbike Glasgow,"Glasgow, GB",nextbike_gg,https://www.nextbike.co.uk/en/glasgow/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gg/gbfs.json
 GB,nextbike UK,"Stirling, GB",nextbike_uk,https://www.nextbike.co.uk/en/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_uk/gbfs.json
@@ -296,7 +304,7 @@ NL,Cykl,"Wageningen, NL",CKL,https://www.cykl.nl/,https://www.cykl.nl/gbfs/gbfs.
 NL,Donkey Republic Amsterdam,"Amsterdam, NL",donkey_am,https://www.donkey.bike/cities/bike-rental-amsterdam/,https://stables.donkey.bike/api/public/gbfs/donkey_am/gbfs.json
 NL,Donkey Republic Rotterdam,"Rotterdam, NL",donkey_rt,https://www.donkey.bike/nl/steden/deelfietsen-rotterdam/,https://stables.donkey.bike/api/public/gbfs/donkey_rt/gbfs.json
 NL,Donkey Republic Utrecht,"Utrecht, NL",donkey_ut,https://www.donkey.bike/cities/bike-rental-utrecht/,https://stables.donkey.bike/api/public/gbfs/donkey_ut/gbfs.json
-NL,GoAbout,"Netherlands",goabout,https://goabout.com,https://gbfs.goabout.com/gbfs.json
+NL,GoAbout,"Netherlands",goabout,https://goabout.com,https://gbfs.goabout.com/2/gbfs.json
 NL,nextbike Dordrecht,"Dordrecht, NL",nextbike_nd,https://www.nextbike.nl/nl/dordrecht/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_nd/gbfs.json
 NL,NS OV Fiets,"Netherlands",ns_ov_fiets,https://www.ns.nl/en/door-to-door/ov-fiets,http://gbfs.openov.nl/ovfiets/gbfs.json
 NO,Bolt Bergen,"Bergen, NO",boltbergen,https://bolt.eu/en/cities/bergen/,https://api.entur.io/mobility/v2/gbfs/boltbergen/gbfs
@@ -315,6 +323,9 @@ NO,Voi Trondheim,"Trondheim, NO",voitrondheim,https://www.voiscooters.com/,https
 NZ,Flamingo Aukland,"Aukland, NZ",flamingo_auckland,https://flamingoscooters.com,https://api.flamingoscooters.com/gbfs/auckland/gbfs.json
 NZ,Flamingo Christchurch,"Christchurch, NZ",flamingo_christchurch,https://flamingoscooters.com,https://api.flamingoscooters.com/gbfs/christchurch/gbfs.json
 NZ,Flamingo Wellington,"Wellington, NZ",flamingo_wellington,https://flamingoscooters.com,https://api.flamingoscooters.com/gbfs/wellington/gbfs.json
+NZ,Neuron Mobility,"Aukland, NZ",11b14b88-3598-4d3c-821d-e6f2e37cd906,https://www.neuron.sg,https://mds-global-akl.neuron-mobility.com/gbfs/2/
+NZ,Neuron Mobility,"Dunedin, NZ",11b14b88-3598-4d3c-821d-e6f2e37cd908,https://www.neuron.sg,https://mds-global-dud.neuron-mobility.com/gbfs/2/
+NZ,Neuron Mobility,"Hamilton, NZ",11b14b88-3598-4d3c-821d-e6f2e37cd907,https://www.neuron.sg,https://mds-global-hlz.neuron-mobility.com/gbfs/2/
 NZ,nextbike New Zealand,"New Zealand, NZ",nextbike_nz,https://www.nextbike.co.nz/en/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_nz/gbfs.json
 PL,Bike_S SRM Poland,"Szczecin, PL",nextbike_sp,https://bikes-srm.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_sp/gbfs.json
 PL,GRM Grodzisk Poland,"Grodzisk Mazowiecki, PL",nextbike_gp,https://www.rowery.grodzisk.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gp/gbfs.json
