@@ -183,6 +183,7 @@ FR,C-Vélo,"Clermont-Ferrand, FR",CVelo_FR_Clermont-Ferrand,https://www.c-velo.f
 FR,Cy'clic,"Rouen, FR",rouen,http://cyclic.rouen.fr/,https://transport.data.gouv.fr/gbfs/rouen/gbfs.json
 FR,Cyclolib,"Carcassonne,FR",carcassonne,https://cyclolib.fr/en,https://gbfs.urbansharing.com/cyclolib.fr/gbfs.json
 FR,Donkey Republic Valenciennes,Valenciennes,donkey_valenciennes,https://www.donkey.bike/cities/bike-rental-valenciennes/,https://stables.donkey.bike/api/public/gbfs/donkey_valenciennes/gbfs.json
+FR,Libélo,"Valence, FR",libelo,https://www.vrd-mobilites.fr/velo/,https://valence.publicbikesystem.net/ube/gbfs/v1/gbfs.json
 FR,levélo,"Marseille, FR",marseille,http://www.levelo-mpm.fr/,https://transport.data.gouv.fr/gbfs/marseille/gbfs.json
 FR,LE vélo STAR,"Rennes, FR",le_velo_star,https://www.star.fr/le-velo/nos-offres/vls/,https://eu.ftp.opendatasoft.com/star/gbfs/gbfs.json
 FR,Libélo,"Valence, FR",libelo,http://www.citea.info/presentation/?rub_code=92,https://valence.publicbikesystem.net/ube/gbfs/v1/
@@ -275,15 +276,18 @@ IS,Donkey Republic Reykjavik,Reykjavik,donkey_reykjavik,https://www.donkey.bike/
 IT,Giulianova,"Giulianova, IT",Link_Giulianova,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Giulianova/gbfs.json
 IT,Helbiz Bari,"Bari, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/bari/gbfs/gbfs.json
 IT,Helbiz Cesena,"Cesena, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/cesena/gbfs/gbfs.json
+IT,Helbiz Fiumicino,"Fiumicino, IT",HELBIZ-US,https://helbiz.com/,https://api.helbiz.com/admin/reporting/fiumicino/gbfs/gbfs.json
 IT,Helbiz H-Farm,"H-Farm, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/h-farm/gbfs/gbfs.json
 IT,Helbiz Latina,"Latina, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/latina/gbfs/gbfs.json
 IT,Helbiz Modena,"Modena, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/modena/gbfs/gbfs.json
 IT,Helbiz Napoli,"Napoli, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/napoli/gbfs/gbfs.json
+IT,Helbiz Otranto,"Otranto, IT",HELBIZ-US,https://helbiz.com/,https://api.helbiz.com/admin/reporting/otranto/gbfs/gbfs.json
+IT,Helbiz Palermo,"Palermo, IT",HELBIZ-US,https://helbiz.com/,https://api.helbiz.com/admin/reporting/palermo/gbfs/gbfs.json
 IT,Helbiz Parma,"Parma, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/parma/gbfs/gbfs.json
 IT,Helbiz Pescara,"Pescara, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/pescara/gbfs/gbfs.json
 IT,Helbiz Pisa,"Pisa,  IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/pisa/gbfs/gbfs.json
 IT,Helbiz Rome,"Rome, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/rome/gbfs/gbfs.json
-IT,Helbiz Varona,"Verona, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/verona/gbfs/gbfs.json
+IT,Helbiz Santarcangelo di Romagna,"Santarcangelo di Romagna, IT",HELBIZ-US,https://helbiz.com/,https://api.helbiz.com/admin/reporting/santarcangelo/gbfs/gbfs.json
 IT,Isola delle Femmine,"Isola delle Femmine, IT",Link_Isola_delle_Femmine,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Isola%20delle%20Femmine/gbfs.json
 IT,Lime Rome,"Rome, IT",lime_rome,https://li.me,https://data.lime.bike/api/partners/v1/gbfs/rome/gbfs.json
 IT,Milan Bikemi,"Milan, IT",milan-bikemi,https://bikemi.com/en,https://gbfs.urbansharing.com/bikemi.com/gbfs.json
@@ -426,11 +430,13 @@ US,Heartland B-cycle,"Omaha, NE",bcycle_heartland,https://heartland.bcycle.com,h
 US,Helbiz Alexandria,"Alexandria, VA",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/alexandria/gbfs/gbfs.json
 US,Helbiz Arlington,"Arlington, VA",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/arlington/gbfs/gbfs.json
 US,Helbiz Atlanta,"Atlanta, GA",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/atlanta/gbfs/gbfs.json
+US,Helbiz Charlottesville,"Charlottesville, VA",HELBIZ-US,https://helbiz.com/,https://api.helbiz.com/admin/reporting/charlottesville/gbfs/gbfs.json
 US,Helbiz Jacksonville,"Jacksonville, FL",HELBIZ-US,https://helbiz.com/,https://api.helbiz.com/admin/reporting/jacksonville/gbfs/gbfs.json
 US,Helbiz Miami,"Miami, FL",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/miami/gbfs/gbfs.json
 US,Helbiz Oklahoma City,"Oklahoma City, OK",HELBIZ-US,https://helbiz.com/,https://api.helbiz.com/admin/reporting/oklahoma/gbfs/gbfs.json
 US,Helbiz Richmond,"Richmond, VA",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/richmond/gbfs/gbfs.json
 US,Helbiz Washington DC,"Washington DC, DC",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/washington/gbfs/gbfs.json
+US,Helbiz Waterloo,"Waterloo, IA",HELBIZ-US,https://helbiz.com/,https://api.helbiz.com/admin/reporting/waterloo/gbfs/gbfs.json
 US,HOPR Arizona,"Pheonix, AZ",17,https://gohopr.com/,https://gbfs.hopr.city/api/gbfs/17/
 US,HOPR Atlanta,"Atlanta, GA",20,https://gohopr.com/,https://gbfs.hopr.city/api/gbfs/20/
 US,HOPR Freemont,"Freemont, CA",16,https://gohopr.com/,https://gbfs.hopr.city/api/gbfs/16/
@@ -478,6 +484,7 @@ US,Metro Bike Share,"Los Angeles, CA",bcycle_lametro,https://bikeshare.metro.net
 US,Mogo Detroit,"Detroit, MI",mogo,https://mogodetroit.org/,https://det.publicbikesystem.net/ube/gbfs/v1/
 US,Nice Ride Minnesota,"Minneapolis, MN",niceridemn,https://www.niceridemn.com,https://gbfs.niceridemn.com/gbfs/gbfs.json
 US,Ojo,"Austin, TX",ojo,https://ojoelectric.com/,https://api.ojoelectric.com/api/mds/gbfs.json
+US,OKC Spokies,"Oklahoma City, OK",bcycle_spokies,https://spokies.bcycle.com,https://gbfs.bcycle.com/bcycle_spokies/gbfs.json
 US,PeaceHealth Rides,"Eugene, OR",peacehealth_rides,https://www.peacehealthrides.com/,https://peacehealthrides.com/opendata/gbfs.json
 US,Provo,"Provo, UT",Link_Provo,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Provo/gbfs.json
 US,Rad Sharing Fleet,"Seattle, WA",33,https://gohopr.com/,https://gbfs.hopr.city/api/gbfs/33/
