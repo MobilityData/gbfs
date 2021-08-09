@@ -5,7 +5,7 @@ This document explains the types of files and data that comprise the General Bik
 
 # Reference version
 
-This documentation refers to **v3.0-RC (release candidate)**.<br>
+This documentation refers to **vXXX**.<br>
 **For the current version see [**version 2.2**](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md).** For past and upcoming versions see the [README](README.md#read-the-spec--version-history).
 
 ## Terminology
@@ -205,6 +205,7 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 * Timestamp - Timestamp fields MUST be represented as integers in POSIX time. (e.g., the number of seconds since January 1st 1970 00:00:00 UTC)
 * Timezone - TZ timezone from the https://www.iana.org/time-zones. Timezone names never contain the space character but MAY contain an underscore. Refer to https://en.wikipedia.org/wiki/List_of_tz_zones for a list of valid values.
 Example: `Asia/Tokyo`, `America/Los_Angeles` or `Africa/Cairo`.
+* Country code - Country code following the [ISO 3166-1 alpha-2 notation](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
 * URI *(added in v1.1)* - A fully qualified URI that includes the scheme (e.g., `com.example.android://`), and any special characters in the URI MUST be correctly escaped. See the following https://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URI values. Note that URIs MAY be URLs.
 * URL - A fully qualified URL that includes `http://` or `https://`, and any special characters in the URL MUST be correctly escaped. See the following https://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values.
 
@@ -392,9 +393,22 @@ Field Name | REQUIRED | Type | Defines
 `vehicle_types` | Yes | Array | Array that contains one object per vehicle type in the system as defined below.
 \- `vehicle_type_id` | Yes | ID | Unique identifier of a vehicle type. See [Field Types](#field-types) above for ID field requirements.
 \- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`car`</li><li>`moped`</li><li>`scooter`</li><li>`other`</li></ul>
-\- `propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides power only alongside human propulsion)_</li><li>`electric` _(Contains throttle mode with a battery-powered motor)_</li><li>`combustion` _(Contains throttle mode with a gas engine-powered motor)_</li></ul> This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/master/provider/README.md#propulsion-types).
+\- `rider_capacity` | OPTIONAL | Non-negative integer | The number of riders (driver included) the vehicle can legally accommodate.
+\- `min_cargo_volume_ capacity` | OPTIONAL | Non-negative integer | Minimum cargo volume available in the vehicule, expressed in liters. For cars, it corresponds to the space between the boot floor, including the storage under the hatch, to the rear shelf in the trunk.
+\- `min_cargo_load_capacity` | OPTIONAL | Non-negative integer | Minimum loading capacity allowed in the space dedicated to the loading of materials of the vehicle (excluding passengers), expressed in kilograms.
+\- `propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides power only alongside human propulsion)_</li><li>`electric` _(Contains throttle mode with a battery-powered motor)_</li><li>`combustion` _(Contains throttle mode with a gas engine-powered motor)_</li><li>`combustion_diesel` _(Contains throttle mode with a diesel engine-powered motor)_</li><li>`hybrid` _(Contains throttle mode with a mixed gas engine-powered and battery-powered motor)_</li><li>`hydrogen` _(Contains throttle mode with a hydrogen fuel cell powered motor)_</li><li>`plug-in hybrid` _(Contains throttle mode with a mixed gas engine-powered and battery-powered motor with plug-in)_</li></ul> This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/master/provider/README.md#propulsion-types).
+\- `eco_label` | OPTIONAL | Array | Vehicle air quality certificate. Official anti-pollution certificate, based on the information on the vehicle's registration certificate, attesting to its level of pollutant emissions based on a defined standard. In Europe, for example, it is the European emission standard. The aim of this measure is to encourage the use of the least polluting vehicles by allowing them to drive during pollution peaks or in low emission zones.<br /><br />Each element in the array is an object with the keys below.
+&emsp;\-&nbsp; `country_code` | Yes| Country code | Country where the eco_sticker applies.
+&emsp;\-&nbsp; `eco_sticker` | Yes | String | Name of the eco label. The name must be written in lowercase, separated by an underscore.<br /><br />Example of eco_sticker in Europe :<ul><li>CritAirLabel (France) <ul><li>critair</li><li>critair_1</li><li>critair_2</li><li>critair_3</li><li>critair_4</li><li>critair_5</li></ul></li><li>UmweltPlakette (Germany)<ul><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li><li>euro_6</li><li>euro_6_temp</li><li>euro_E</li></ul></li><li>UmweltPickerl (Austrich)<ul><li>euro_1</li><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li></ul><li>Reg_certificates (Belgium)<ul><li>reg_certificates</li></ul><li>Distintivo_ambiental (Spain)<ul><li>0</li><li>eco</li><li>b</li><li>c</li></ul></li></ul>
 \- `max_range_meters` | Conditionally REQUIRED | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is REQUIRED. This represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example, a full battery or full tank of gas).
 \- `name` | OPTIONAL | String | The public name of this vehicle type.
+\- `return_type` | OPTIONAL | Array | The conditions for returning the vehicle at the end of the trip. For vehicles that have more than one return option, include all applicable methods in the array. <br /><br />Current valid values are:<br /><ul><li>`free_floating` _(The vehicle can be returned anywhere permitted within the service area - note that this field is subject to rules in `geofencing_zones.json` if defined.)_</li><li>`roundtrip_station` _(The vehicle must be returned to the initial rental station. Cannot be defined in combination with `free_floating`.)_</li><li>`any_station` _(The vehicle must be returned to any station within the service area - note that a specific station can be defined in [free_bike_status.json](#free_bike_status.json) using `home_station`. Cannot be defined in combination with `roundtrip_station`.)_
+\- `vehicle_type_accessories` | OPTIONAL | Array | Description of accessories available in the vehicle.  These accessories are part of the vehicule and are not supposed to change frequently. Current valid values are:<ul><li>`air_conditioning` _(Vehicle has air condition)_</li><li>`automatic` _(Automatic gear switch)_</li><li>`manual` _(Manual gear switch)_</li><li>`convertible` _(Vehicle is convertible)_</li><li>`cruise_control` _(Vehicle has a cruise control system ("Tempomat"))_</li><li>`doors_4` _(Vehicle has 4 or 5 doors (instead of 2 or 3))_</li><li>`navigation` _(Vehicle has a built-in navigation system)_</li></ul>
+\- `g_CO2_km` | OPTIONAL | Non-negative integer | Maximum quantity of CO2, in grams, emitted per kilometer, according to the [WLTP](https://en.wikipedia.org/wiki/Worldwide_Harmonised_Light_Vehicles_Test_Procedure).
+\- `vehicle_image` | OPTIONAL | URL | URL to an image that would assist the user in identifying the vehicle (e.g. logo, image of vehicle).<br /> Allowed formats: JPEG, JPG, PNG. Minimum resolution of 300 pixels per inch (ppi).
+
+
+
 
 ##### Example:
 
@@ -421,9 +435,29 @@ Field Name | REQUIRED | Type | Defines
       {
         "vehicle_type_id": "car1",
         "form_factor": "car",
-        "propulsion_type": "combustion",
-        "name": "Four-door Sedan",
-        "max_range_meters": 523992
+        "rider_capacity": 5,
+        "min_cargo_volume_capacity": 200,
+        "propulsion_type": "combustion_diesel",
+        "eco_label": [           
+          {
+            "country_code": "FR",
+            "eco_sticker": "critair_1"
+          },
+          {
+            "country_code": "DE",
+            "eco_sticker": "euro_2"
+          }
+        ],
+        "max_range_meters": 500000,
+        "name": "Four-door Sedan",           
+        "return_type" : ["roundtrip_station"],
+        "vehicle_type_accessories": [
+            "doors_4",
+            "automatic",
+            "cruise_control"
+        ],
+        "g_CO2_km": 120,
+        "vehicle_image": "https://mediarepository-wired-prod-1-euw1.wrd-aws.com/cri/vehicles/398ab08b-f1d6-8144-e026-b72dc668042c/outside_medium.jpg"
       }
     ]
   }
