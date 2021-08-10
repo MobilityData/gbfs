@@ -209,6 +209,7 @@ Example: `Asia/Tokyo`, `America/Los_Angeles` or `Africa/Cairo`.
 * URI *(added in v1.1)* - A fully qualified URI that includes the scheme (e.g., `com.example.android://`), and any special characters in the URI MUST be correctly escaped. See the following https://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URI values. Note that URIs MAY be URLs.
 * URL - A fully qualified URL that includes `http://` or `https://`, and any special characters in the URL MUST be correctly escaped. See the following https://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values.
 * Phone number - Phone number in international formatting (specification [E.164](https://en.wikipedia.org/wiki/E.164)). In particular, the phone number MUST start with a "+". The characters after the "+" MUST be numbers and MUST NOT contain any hyphen, space or parenthesis.
+* Datetime - Combination of a date and a time following [ISO 8601 notation](https://www.iso.org/iso-8601-date-and-time-format.html). Attributes : [year](https://docs.python.org/3/library/datetime.html#datetime.datetime.year), [month](https://docs.python.org/3/library/datetime.html#datetime.datetime.month), [day](https://docs.python.org/3/library/datetime.html#datetime.datetime.day), [hour](https://docs.python.org/3/library/datetime.html#datetime.datetime.hour), [minute](https://docs.python.org/3/library/datetime.html#datetime.datetime.minute), [second](https://docs.python.org/3/library/datetime.html#datetime.datetime.second), [microsecond](https://docs.python.org/3/library/datetime.html#datetime.datetime.microsecond) and timezone
 
 
 ### Extensions Outside of the Specification
@@ -692,9 +693,12 @@ Field Name | REQUIRED | Type | Defines
 &emsp;\-&nbsp;`web` <br/>*(added in v1.1)* | OPTIONAL | URL | URL that can be used by a web browser to show more information about renting a vehicle at this vehicle. <br><br>This URL SHOULD be a deep link specific to this vehicle, and SHOULD NOT be a general rental page that includes information for more than one vehicle.  The deep link SHOULD take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application. Note that as a best practice providers SHOULD rotate identifiers within deep links after each rental to avoid unintentionally exposing private vehicle trip origins and destinations.<br><br>If this field is empty, it means deep linking isn’t supported for web browsers. <br><br>Example value: `https://www.example.com/app?sid=1234567890`
 \- `vehicle_type_id` <br/>*(added in v2.1)* | Conditionally REQUIRED | ID | The `vehicle_type_id` of this vehicle as described in [vehicle_types.json](#vehicle_typesjson-added-in-v21). This field is REQUIRED if the [vehicle_types.json](#vehicle_typesjson-added-in-v21) is defined.
 \- `last_reported` <br/>*(added in v2.1)* | OPTIONAL | Timestamp | The last time this vehicle reported its status to the operator's backend.
-\- `current_range_meters` <br/>*(added in v2.1)* | Conditionally REQUIRED | Non-negative float | If the corresponding `vehicle_type` definition for this vehicle has a motor, then this field is REQUIRED. This value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
+\- `current_range_meters` <br/>*(added in v2.1)* | Conditionally REQUIRED | Non-negative float | If the corresponding `vehicle_type` definition for this vehicle has a motor, and current_range_percent is not defined, then this field is REQUIRED. This value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
+\- `current_range_percent` <br/>| Conditionally REQUIRED | Non-negative float | If the corresponding vehicle_type definition for this vehicle has a motor, and current_range_meters is not defined, then this field is required. This value represents the percentage, expressed from 0 to 1 of fuel or battery power remaining with the vehicle’s current charge or fuel level.
 \- `station_id` <br/>*(added in v2.1)* | Conditionally REQUIRED | ID | Identifier referencing the `station_id` field in [station_information.json](#station_informationjson). REQUIRED only if the vehicle is currently at a station and the [vehicle_types.json](#vehicle_typesjson) file has been defined.
 \- `pricing_plan_id` <br/>*(added in v2.1)* | OPTIONAL | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plans.json).
+\- `available_until` <br/>| Conditionally REQUIRED | Required when return_type is defined as roundtrip_station | Datetime with timezone | Only applies to round trips. Any trip currently started must be finished before the date and hour specified. The vehicule being already booked afterward.
+\- `home_station` <br/>| Optional | ID | The station this vehicle must be returned to as defined in station_information.json.
 
 ##### Example:
 
@@ -713,16 +717,26 @@ Field Name | REQUIRED | Type | Defines
         "is_reserved": false,
         "is_disabled": false,
         "vehicle_type_id": "abc123"
-      },
+        "current_range_meters": 400000,   
+       "available_until" : "2021-05-17T15:00:00Z",
+       "home_station" : "station1",
+       "vehicle_equipment": [
+        "child_seat_0",
+        "winter_tires"
+      ],
+    },
       {
         "bike_id": "jkl012",
         "last_reported": 1609866204,
         "is_reserved": false,
         "is_disabled": false,
         "vehicle_type_id": "def456",
-        "current_range_meters": 6543,
+        "current_range_percent": 0.7,  
         "station_id": "86",
-        "pricing_plan_id": "plan3"
+        "pricing_plan_id": "plan3",
+        "vehicle_accessories": [
+        "child_seat_0"
+      ],
       }
     ]
   }
