@@ -442,7 +442,7 @@ Field Name | REQUIRED | Type | Defines
         "rider_capacity": 5,
         "min_cargo_volume_capacity": 200,
         "propulsion_type": "combustion_diesel",
-        "eco_label": [           
+        "eco_label": [
           {
             "country_code": "FR",
             "eco_sticker": "critair_1"
@@ -453,7 +453,7 @@ Field Name | REQUIRED | Type | Defines
           }
         ],
         "max_range_meters": 500000,
-        "name": "Four-door Sedan",           
+        "name": "Four-door Sedan",
         "return_type" : ["roundtrip_station"],
         "vehicle_type_accessories": [
             "doors_4",
