@@ -409,10 +409,9 @@ Field Name | REQUIRED | Type | Defines
 \- `vehicle_type_accessories` | OPTIONAL | Array | Description of accessories available in the vehicle.  These accessories are part of the vehicule and are not supposed to change frequently. Current valid values are:<ul><li>`air_conditioning` _(Vehicle has air condition)_</li><li>`automatic` _(Automatic gear switch)_</li><li>`manual` _(Manual gear switch)_</li><li>`convertible` _(Vehicle is convertible)_</li><li>`cruise_control` _(Vehicle has a cruise control system ("Tempomat"))_</li><li>`doors_4` _(Vehicle has 4 or 5 doors (instead of 2 or 3))_</li><li>`navigation` _(Vehicle has a built-in navigation system)_</li></ul>
 \- `g_CO2_km` | OPTIONAL | Non-negative integer | Maximum quantity of CO2, in grams, emitted per kilometer, according to the [WLTP](https://en.wikipedia.org/wiki/Worldwide_Harmonised_Light_Vehicles_Test_Procedure).
 \- `vehicle_image` | OPTIONAL | URL | URL to an image that would assist the user in identifying the vehicle (e.g. logo, image of vehicle).<br /> Allowed formats: JPEG, JPG, PNG. Minimum resolution of 300 pixels per inch (ppi).
-\-`vehicle_description` | No | Object | Description of the vehicle.
-&emsp;\-&nbsp; `make` | OPTIONAL | String | The name of the vehicle manufacturer. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas or dot. There can be a space if it is a compound name. <br><br>Example <br><br>alfa romeo <br><br>audi <br><br>orbea <br><br>cube bikes.
-&emsp;\-&nbsp; `model` | OPTIONAL | String | The name of the vehicle model. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas or dot. There can be a space if it is a compound name. <br><br>Example <br><br>giulia <br><br>s8 <br><br>mx50 <br><br>stereo.
-&emsp;\-&nbsp; `color` | OPTIONAL | String | The color of the vehicle. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas or dot. There can be a space if it is a compound name. <br><br>Example <br><br>green <br><br>dark blue.
+| \- `make`| OPTIONAL| String| The name of the vehicle manufacturer. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas or dot. Spaces are allowed in case of a compound name. <br><br>Example: <ul><li>cube bikes</li><li>renault</li></ul>
+| \- `model`| OPTIONAL| String| The name of the vehicle model. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas or dot. Spaces are allowed in case of a compound name.<br><br>Example <ul><li>giulia</li><li>mx50</li></ul>
+| \- `color`| OPTIONAL| String| The color of the vehicle. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas or dot. Spaces are allowed in case of a compound name. <br><br>Example <ul><li>green</li><li>dark blue</li></ul> 
 
 
 ##### Example:
@@ -463,14 +462,11 @@ Field Name | REQUIRED | Type | Defines
         ],
         "g_CO2_km": 120,
         "vehicle_image": "https://mediarepository-wired-prod-1-euw1.wrd-aws.com/cri/vehicles/398ab08b-f1d6-8144-e026-b72dc668042c/outside_medium.jpg",
-         "vehicle_description”: [
-        {
-      “make” : renault,
-      “model” : clio,
-      “color” : white
-      }
-    ]
-  }
+        "make" : "renault",
+        "model" : "clio",
+        "color" : "white"
+    }
+  ]
 }
 ```
 
