@@ -405,7 +405,7 @@ Field Name | REQUIRED | Type | Defines
 &emsp;\-&nbsp; `eco_sticker`<br/>*(added in vXXX)* | Yes | String | Name of the eco label. The name must be written in lowercase, separated by an underscore.<br /><br />Example of eco_sticker in Europe :<ul><li>CritAirLabel (France) <ul><li>critair</li><li>critair_1</li><li>critair_2</li><li>critair_3</li><li>critair_4</li><li>critair_5</li></ul></li><li>UmweltPlakette (Germany)<ul><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li><li>euro_6</li><li>euro_6_temp</li><li>euro_E</li></ul></li><li>UmweltPickerl (Austrich)<ul><li>euro_1</li><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li></ul><li>Reg_certificates (Belgium)<ul><li>reg_certificates</li></ul><li>Distintivo_ambiental (Spain)<ul><li>0</li><li>eco</li><li>b</li><li>c</li></ul></li></ul>
 \- `max_range_meters` | Conditionally REQUIRED | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is REQUIRED. This represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example, a full battery or full tank of gas).
 \- `name` | OPTIONAL | String | The public name of this vehicle type.
-\- `return_type`| OPTIONAL | Array | The conditions for returning the vehicle at the end of the trip. For vehicles that have more than one return option, include all applicable methods in the array. <br /><br />Current valid values are:<br /><ul><li>`free_floating` _(The vehicle can be returned anywhere permitted within the service area - note that this field is subject to rules in `geofencing_zones.json` if defined.)_</li><li>`roundtrip_station` _(The vehicle must be returned to the initial rental station. Cannot be defined in combination with `free_floating`.)_</li><li>`any_station` _(The vehicle must be returned to any station within the service area - note that a specific station can be defined in [free_bike_status.json](#free_bike_status.json) using `home_station`. Cannot be defined in combination with `roundtrip_station`.)_
+\- `return_type`<br/>*(added in vXXX)*| OPTIONAL | Array | The conditions for returning the vehicle at the end of the trip. For vehicles that have more than one return option, include all applicable methods in the array. <br /><br />Current valid values are:<br /><ul><li>`free_floating` _(The vehicle can be returned anywhere permitted within the service area - note that this field is subject to rules in `geofencing_zones.json` if defined.)_</li><li>`roundtrip_station` _(The vehicle must be returned to the initial rental station. Cannot be defined in combination with `free_floating`.)_</li><li>`any_station` _(The vehicle must be returned to any station within the service area - note that a specific station can be defined in [free_bike_status.json](#free_bike_status.json) using `home_station`. Cannot be defined in combination with `roundtrip_station`.)_
 \- `vehicle_type_accessories`<br/>*(added in vXXX)* | OPTIONAL | Array | Description of accessories available in the vehicle.  These accessories are part of the vehicule and are not supposed to change frequently. Current valid values are:<ul><li>`air_conditioning` _(Vehicle has air condition)_</li><li>`automatic` _(Automatic gear switch)_</li><li>`manual` _(Manual gear switch)_</li><li>`convertible` _(Vehicle is convertible)_</li><li>`cruise_control` _(Vehicle has a cruise control system ("Tempomat"))_</li><li>`doors_4` _(Vehicle has 4 or 5 doors (instead of 2 or 3))_</li><li>`navigation` _(Vehicle has a built-in navigation system)_</li></ul>
 \- `g_CO2_km`<br/>*(added in vXXX)* | OPTIONAL | Non-negative integer | Maximum quantity of CO2, in grams, emitted per kilometer, according to the [WLTP](https://en.wikipedia.org/wiki/Worldwide_Harmonised_Light_Vehicles_Test_Procedure).
 \- `vehicle_image`<br/>*(added in vXXX)* | OPTIONAL | URL | URL to an image that would assist the user in identifying the vehicle (e.g. logo, image of vehicle).<br /> Allowed formats: JPEG, JPG, PNG. Minimum resolution of 300 pixels per inch (ppi).
@@ -465,8 +465,9 @@ Field Name | REQUIRED | Type | Defines
         "make" : "renault",
         "model" : "clio",
         "color" : "white"
-    }
-  ]
+      }
+    ]
+  }
 }
 ```
 
@@ -515,6 +516,9 @@ Field Name | REQUIRED | Type | Defines
         "name": "Parking garage A",
         "lat": 12.345678,
         "lon": 45.678901,
+        "parking_type" :"underground_parking",
+        "parking_hoop": false,
+        "contact_phone" : "+33109874321",
         "vehicle_type_capacity": {
           "abc123": 7,
           "def456": 9
@@ -700,9 +704,9 @@ Field Name | REQUIRED | Type | Defines
 \- `current_range_percent` <br/>*(added in vXXX)*| Conditionally REQUIRED | Non-negative float | If the corresponding vehicle_type definition for this vehicle has a motor, and current_range_meters is not defined, then this field is required. This value represents the percentage, expressed from 0 to 1 of fuel or battery power remaining with the vehicle’s current charge or fuel level.
 \- `station_id` <br/>*(added in v2.1)* | Conditionally REQUIRED | ID | Identifier referencing the `station_id` field in [station_information.json](#station_informationjson). REQUIRED only if the vehicle is currently at a station and the [vehicle_types.json](#vehicle_typesjson) file has been defined.
 \- `pricing_plan_id` <br/>*(added in v2.1)* | OPTIONAL | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plans.json).
-\- `vehicle_equipment`<br/>*(added in vXXX)* | OPTIONAL | Array | Description of vehicle equipment that can be provided by the operator in addition to the accessories already provided in the vehicle (field `vehicle_type_accessories` of vehicule_type.json) but subject to more frequent updates.<br/><br/>Current valid values are:<ul><li>air_conditioning _(Vehicle has air condition)_</li><li>automatic _(Automatic gear switch)_</li><li>convertible _(Vehicle is convertible)_</li><li>cruise_control _(Vehicle has a cruise control system - "Tempomat")_</li><li>doors_4 _(Vehicle has 4 or 5 doors (instead of 2 or 3))_</li><li>navigation _(Vehicle has a built-in navigation system)_</li></ul>
-\- `available_until`<br/>*(added in vXXX)* | Conditionally REQUIRED |  Datetime | This field is REQUIRED when the `return_type` defined in vehicule_type.json is set to `roundtrip_station`. Only applies to round trips. Any trip currently started must be finished before the specified Datetime. The vehicule being already booked afterward.
-\- `home_station` | OPTIONAL | ID | Identifier referencing the station_id field in station_information.json. The station this vehicle must be returned to.
+\- `vehicle_equipment`<br/>*(added in vXXX)* | OPTIONAL | Array | Description of vehicle equipment that can be provided by the operator in addition to the accessories already provided in the vehicle (field `vehicle_type_accessories` of vehicule_type.json) but subject to more frequent updates.<br/><br/>Current valid values are:<ul><li>`child_seat_0` _(Baby seat ("0-10kg"))_</li><li>`child_seat_1`	 _(Seat or seat extension for small children ("9-18 kg"))_</li><li>`child_seat_4`	_(Seat or seat extension for older children ("15-36 kg"))_</li><li>`winter_tires` 	_(Vehicle has tires for winter weather)_</li><li>`snow_chains`</li></ul>
+\- `available_until`<br/>*(added in vXXX)* | Conditionally REQUIRED |  Datetime | This field is REQUIRED when the `return_type` defined in [vehicule_type.json](#vehicule_type.json) is set to `roundtrip_station`. Only applies to round trips. Any trip currently started must be finished before the specified Datetime. The vehicule being already booked afterward.
+\- `home_station` | OPTIONAL | ID | Identifier referencing the `station_id` field in [station_information.json](#station_information.json). The station this vehicle must be returned to.
 
 ##### Example:
 
