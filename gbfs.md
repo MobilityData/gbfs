@@ -343,7 +343,7 @@ Field Name | REQUIRED | Type | Defines
 `url` | OPTIONAL | URL | The URL of the vehicle share system.
 `purchase_url` | OPTIONAL | URL | URL where a customer can purchase a membership.
 `start_date` | OPTIONAL | Date | Date that the system began operations.
-`phone_number` | OPTIONAL | Phone Number | This OPTIONAL field SHOULD contain a single voice telephone number for the specified system’s customer service department.
+`phone_number` | OPTIONAL | Phone Number | This OPTIONAL field SHOULD contain a single voice telephone number for the specified system’s customer service department. MUST be in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I/en) format as defined in [Field Types](#field-types). 
 `email` | OPTIONAL | Email | This OPTIONAL field SHOULD contain a single contact email address actively monitored by the operator’s customer service department. This email address SHOULD be a direct contact point where riders can reach a customer service representative.
 `feed_contact_email` <br/>*(added in v1.1)* | OPTIONAL | Email | This OPTIONAL field SHOULD contain a single contact email for feed consumers to report technical issues with the feed.
 `timezone` | Yes | Timezone | The time zone where the system is located.
