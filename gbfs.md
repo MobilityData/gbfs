@@ -29,7 +29,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     * [vehicle_types.json](#vehicle_typesjson-added-in-v21) *(added in v2.1)*
     * [station_information.json](#station_informationjson)
     * [station_status.json](#station_statusjson)
-    * [free_bike_status.json](#free_bike_statusjson)
+    * [vehicle_status.json](#vehicle_statusjson)
     * [system_hours.json](#system_hoursjson)
     * [system_calendar.json](#system_calendarjson)
     * [system_regions.json](#system_regionsjson)
@@ -80,7 +80,7 @@ system_information.json | Yes | Details including system operator, system locati
 vehicle_types.json <br/>*(added in v2.1)* | Conditionally REQUIRED | Describes the types of vehicles that System operator has available for rent. REQUIRED of systems that include information about vehicle types in the `free_bike_status` file. If this file is not included, then all vehicles in the feed are assumed to be non-motorized bicycles.
 station_information.json | Conditionally REQUIRED | List of all stations, their capacities and locations. REQUIRED of systems utilizing docks.
 station_status.json | Conditionally REQUIRED | Number of available vehicles and docks at each station and station availability. REQUIRED of systems utilizing docks.
-free_bike_status.json | Conditionally REQUIRED | *(as of v2.1)* Describes all vehicles that are not currently in active rental. REQUIRED for free floating (dockless) vehicles. OPTIONAL for station based (docked) vehicles. Vehicles that are part of an active rental MUST NOT appear in this feed.
+vehicle_status.json | Conditionally REQUIRED | *(as of v2.1)* Describes all vehicles that are not currently in active rental. REQUIRED for free floating (dockless) vehicles. OPTIONAL for station based (docked) vehicles. Vehicles that are part of an active rental MUST NOT appear in this feed.
 system_hours.json | OPTIONAL | Hours of operation for the system.
 system_calendar.json | OPTIONAL | Dates of operation for the system.
 system_regions.json | OPTIONAL | Regions the system is broken up into.
@@ -101,7 +101,7 @@ Producers SHOULD provide a technical contact who can respond to feed outages in 
 
 ### Seasonal Shutdowns, Disruptions of Service
 
-Feeds SHOULD continue to be published during seasonal or temporary shutdowns.  Feed URLs SHOULD NOT return a 404.  An empty bikes array SHOULD be returned by `free_bike_status.json`. Stations in `station_status.json` SHOULD be set to `is_renting:false`, `is_returning:false` and `is_installed:false` where applicable. Seasonal shutdown dates SHOULD be reflected in `system_calendar.json`.
+Feeds SHOULD continue to be published during seasonal or temporary shutdowns.  Feed URLs SHOULD NOT return a 404.  An empty vehicles array SHOULD be returned by `vehicle_status.json`. Stations in `station_status.json` SHOULD be set to `is_renting:false`, `is_returning:false` and `is_installed:false` where applicable. Seasonal shutdown dates SHOULD be reflected in `system_calendar.json`.
 
 Announcements for disruptions of service, including disabled stations or temporary closures of stations or systems SHOULD be made in `system_alerts.json`.
 
@@ -172,7 +172,7 @@ Decimal places | Degrees | Distance at the Equator
 
 ### Data Latency
 
-The data returned by the near-realtime endpoints `station_status.json` and `free_bike_status.json` SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  Appropriate values SHOULD be set using the `ttl` property for each endpoint based on how often the data in feeds are refreshed or updated. For near-realtime endpoints where the data should always be refreshed the `ttl` value SHOULD be `0`. The`last_updated` timestamp represents the publisher's knowledge of the current state of the system at this point in time. The `last_reported` timestamp represents the last time a station or vehicle reported its status to the operator's backend.
+The data returned by the near-realtime endpoints `station_status.json` and `vehicle_status.json` SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  Appropriate values SHOULD be set using the `ttl` property for each endpoint based on how often the data in feeds are refreshed or updated. For near-realtime endpoints where the data should always be refreshed the `ttl` value SHOULD be `0`. The`last_updated` timestamp represents the publisher's knowledge of the current state of the system at this point in time. The `last_reported` timestamp represents the last time a station or vehicle reported its status to the operator's backend.
 
 ## Licensing
 
@@ -193,7 +193,7 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
     * MUST be unique within like fields (e.g. `station_id` MUST be unique among stations)
     * does not have to be globally unique, unless otherwise specified
     * MUST NOT contain spaces
-    * MUST be persistent for a given entity (station, plan, etc). An exception is floating bike `bike_id`, which MUST NOT be persistent for privacy reasons (see `free_bike_status.json`). *(as of v2.0)*
+    * MUST be persistent for a given entity (station, plan, etc). An exception is `vehicle_id`, which MUST NOT be persistent for privacy reasons (see `vehicle_status.json`). *(as of v2.0)*
 * Language - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to https://www.rfc-editor.org/rfc/bcp/bcp47.txt and https://www.w3.org/International/articles/language-tags/. Examples: `en` for English, `en-US` for American English, or `de` for German.
 * Latitude - WGS84 latitude in decimal degrees. The value MUST be greater than or equal to -90.0 and less than or equal to 90.0. Example: `41.890169` for the Colosseum in Rome.
 * Longitude - WGS84 longitude in decimal degrees. The value MUST be greater than or equal to -180.0 and less than or equal to 180.0. Example: `12.492269` for the Colosseum in Rome.
@@ -385,7 +385,7 @@ Field Name | REQUIRED | Type | Defines
 
 ### vehicle_types.json *(added in v2.1)*
 
-REQUIRED of systems that include information about vehicle types in the `free_bike_status` file. If this file is not included, then all vehicles in the feed are assumed to be non-motorized bicycles. This file SHOULD be published by systems offering multiple vehicle types for rental, for example pedal bikes and ebikes. <br/>The following fields are all attributes within the main "data" object for this feed.
+REQUIRED of systems that include information about vehicle types in the `vehicle_status.json` file. If this file is not included, then all vehicles in the feed are assumed to be non-motorized bicycles. This file SHOULD be published by systems offering multiple vehicle types for rental, for example pedal bikes and ebikes. <br/>The following fields are all attributes within the main "data" object for this feed.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
@@ -547,11 +547,11 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `stations` | Yes | Array | Array that contains one object per station in the system as defined below.
 \-&nbsp;`station_id` | Yes | ID | Identifier of a station see [station_information.json](#station_informationjson).
-\-&nbsp;`num_bikes_available` | Yes | Non-negative integer | Number of functional vehicles physically at the station that may be offered for rental. To know if the vehicles are available for rental, see `is_renting`. <br/><br/>If `is_renting` = `true` this is the number of vehicles that are currently available for rent. If `is_renting` =`false` this is the number of vehicles that would be available for rent if the station were set to allow rentals.
-\- `vehicle_types_available` <br/>*(added in v2.1)* | Conditionally REQUIRED | Array | This field is REQUIRED if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field's value is an array of objects. Each of these objects is used to model the total number of each defined vehicle type available at a station. The total number of vehicles from each of these objects SHOULD add up to match the value specified in the `num_bikes_available`  field.
+\-&nbsp;`num_vehicles_available` | Yes | Non-negative integer | Number of functional vehicles physically at the station that may be offered for rental. To know if the vehicles are available for rental, see `is_renting`. <br/><br/>If `is_renting` = `true` this is the number of vehicles that are currently available for rent. If `is_renting` =`false` this is the number of vehicles that would be available for rent if the station were set to allow rentals.
+\- `vehicle_types_available` <br/>*(added in v2.1)* | Conditionally REQUIRED | Array | This field is REQUIRED if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field's value is an array of objects. Each of these objects is used to model the total number of each defined vehicle type available at a station. The total number of vehicles from each of these objects SHOULD add up to match the value specified in the `num_vehicles_available`  field.
 &emsp;\- `vehicle_type_id` <br/>*(added in v2.1)* | Yes | ID | The `vehicle_type_id` of each vehicle type at the station as described in [vehicle_types.json](#vehicle_typesjson). This field is REQUIRED if the [vehicle_types.json](#vehicle_typesjson) is defined.
 &emsp;\- `count` <br/>*(added in v2.1)* | Yes | Non-negative integer | A number representing the total number of available vehicles of the corresponding `vehicle_type_id` as defined in [vehicle_types.json](#vehicle_typesjson) at the station.
-\-&nbsp;`num_bikes_disabled` | OPTIONAL | Non-negative integer | Number of disabled vehicles of any type at the station. Vendors who do not want to publicize the number of disabled vehicles or docks in their system can opt to omit station `capacity` (in [station_information.json](#station_informationjson), `num_bikes_disabled`, and `num_docks_disabled` *(as of v2.0)*. If station `capacity` is published, then broken docks/vehicles can be inferred (though not specifically whether the decreased capacity is a broken vehicle or dock).
+\-&nbsp;`num_vehicles_disabled` | OPTIONAL | Non-negative integer | Number of disabled vehicles of any type at the station. Vendors who do not want to publicize the number of disabled vehicles or docks in their system can opt to omit station `capacity` (in [station_information.json](#station_informationjson), `num_vehicles_disabled`, and `num_docks_disabled` *(as of v2.0)*. If station `capacity` is published, then broken docks/vehicles can be inferred (though not specifically whether the decreased capacity is a broken vehicle or dock).
 \-&nbsp;`num_docks_available` | Conditionally REQUIRED <br/>*(as of v2.0)* | Non-negative integer | REQUIRED except for stations that have unlimited docking capacity (e.g. virtual stations) *(as of v2.0)*. Number of functional docks physically at the station that are able to accept vehicles for return. To know if the docks are accepting vehicle returns, see `is_returning`. <br /><br/> If `is_returning` = `true` this is the number of docks that are currently available to accept vehicle returns. If `is_returning` = `false` this is the number of docks that would be available if the station were set to allow returns.
 \- `vehicle_docks_available` <br/>*(added in v2.1)* | Conditionally REQUIRED | Array | This field is REQUIRED in feeds where the [vehicle_types.json](#vehicle_typesjson) is defined and where certain docks are only able to accept certain vehicle types. If every dock at the station is able to accept any vehicle type, then this field is not REQUIRED. This field's value is an array of objects. Each of these objects is used to model the number of docks available for certain vehicle types. The total number of docks from each of these objects SHOULD add up to match the value specified in the `num_docks_available` field.
 &emsp;\- `vehicle_type_ids` <br/>*(added in v2.1)* | Yes | Array | An array of strings where each string represents a `vehicle_type_id` that is able to use a particular type of dock at the station
@@ -588,7 +588,7 @@ Field Name | REQUIRED | Type | Defines
             "count": 1
           }
         ],
-        "num_bikes_available": 1,
+        "num_vehicles_available": 1,
         "vehicle_types_available": [
           {
             "vehicle_type_id": "abc123",
@@ -617,7 +617,7 @@ Field Name | REQUIRED | Type | Defines
             "count": 2
           }
         ],
-        "num_bikes_available": 6,
+        "num_vehicles_available": 6,
         "vehicle_types_available": [
           {
             "vehicle_type_id": "abc123",
@@ -634,22 +634,22 @@ Field Name | REQUIRED | Type | Defines
 }
 ```
 
-### free_bike_status.json
+### vehicle_status.json
 
 *(as of v2.1)* Describes all vehicles that are not currently in active rental. REQUIRED for free floating (dockless) vehicles. OPTIONAL for station based (docked) vehicles. Data returned SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  See [Data Latency](#data-latentcy). Vehicles that are part of an active rental MUST NOT appear in this feed. Vehicles listed as available for rental MUST be in the field and accessible to users. Vehicles that are not accessible (e.g. in a warehouse or in transit) MUST NOT appear as available for rental.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`bikes` | Yes | Array | Array that contains one object per vehicle that is currently stopped as defined below.
-\-&nbsp;`bike_id` | Yes | ID | Identifier of a vehicle. The `bike_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `bike_id` identifier SHOULD only be rotated once per trip.
-\-&nbsp;`system_id` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | ID | Identifier referencing the `system_id` field in [system_information.json](#system_informationjson). REQUIRED in the case of feeds that specify free (undocked) bikes and define systems in [system_information.json](#system_informationjson).
+`vehicles` | Yes | Array | Array that contains one object per vehicle that is currently stopped as defined below.
+\-&nbsp;`vehicle_id` | Yes | ID | Identifier of a vehicle. The `vehicle_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `vehicle_id` identifier SHOULD only be rotated once per trip.
+\-&nbsp;`system_id` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | ID | Identifier referencing the `system_id` field in [system_information.json](#system_informationjson). REQUIRED in the case of feeds that specify free floating (undocked) vehicles and define systems in [system_information.json](#system_informationjson).
 \-&nbsp;`lat` | Conditionally REQUIRED <br/>*(as of v2.1)* | Latitude | Latitude of the vehicle in decimal degrees. *(as of v2.1)* This field is REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 \-&nbsp;`lon` | Conditionally REQUIRED <br/>*(as of v2.1)* | Longitude | Longitude of the vehicle. *(as of v2.1)* This field is REQUIRED if `station_id` is not provided for this vehicle (free floating).
 \-&nbsp;`is_reserved` | Yes | Boolean | Is the vehicle currently reserved? <br /><br /> `true` - Vehicle is currently reserved. <br /> `false` - Vehicle is not currently reserved.
 \-&nbsp;`is_disabled` | Yes | Boolean | Is the vehicle currently disabled? <br /><br /> `true` - Vehicle is currently disabled. <br /> `false` - Vehicle is not currently disabled.<br><br>This field is used to indicate vehicles that are in the field but not available for rental.  This may be due to a mechanical issue, low battery etc. Publishing this data may prevent users from attempting to rent vehicles that are disabled and not available for rental.
 \-&nbsp;`rental_uris` <br/>*(added in v1.1)* | OPTIONAL | Object | JSON object that contains rental URIs for Android, iOS, and web in the android, ios, and web fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
-&emsp;\-&nbsp;`android` <br/>*(added in v1.1)* | OPTIONAL | URI | URI that can be passed to an Android app with an android.intent.action.VIEW Android intent to support Android Deep Links (https://developer.android.com/training/app-links/deep-linking). Please use Android App Links (https://developer.android.com/training/app-links) if possible, so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this vehicle, and SHOULD NOT be a general rental page that includes information for more than one vehicle. The deep link SHOULD take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application. Note that as a best practice providers SHOULD rotate identifiers within deep links after each rental to avoid unintentionally exposing private vehicle trip origins and destinations.<br><br>If this field is empty, it means deep linking is not supported in the native Android rental app.<br><br>Note that URIs do not necessarily include the bike_id for this vehicle - other identifiers can be used by the rental app within the URI to uniquely identify this vehicle. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Android App Links example value: `https://www.example.com/app?sid=1234567890&platform=android` <br><br>Deep Link (without App Links) example value: `com.example.android://open.example.app/app?sid=1234567890`
-&emsp;\-&nbsp;`ios` <br/>*(added in v1.1)* | OPTIONAL | URI | URI that can be used on iOS to launch the rental app for this vehicle. More information on this iOS feature can be found [here](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/communicating_with_other_apps_using_custom_urls?language=objc). Please use iOS Universal Links (https://developer.apple.com/ios/universal-links/) if possible, so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this vehicle, and SHOULD NOT be a general rental page that includes information for more than one vehicle.  The deep link SHOULD take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application. Note that as a best practice providers SHOULD rotate identifiers within deep links after each rental to avoid unintentionally exposing private vehicle trip origins and destinations. <br><br>If this field is empty, it means deep linking is not supported in the native iOS rental app.<br><br>Note that the URI does not necessarily include the bike_id - other identifiers can be used by the rental app within the URL to uniquely identify this vehicle. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>iOS Universal Links example value: `https://www.example.com/app?sid=1234567890&platform=ios` <br><br>Deep Link (without Universal Links) example value: `com.example.ios://open.example.app/app?sid=1234567890`
+&emsp;\-&nbsp;`android` <br/>*(added in v1.1)* | OPTIONAL | URI | URI that can be passed to an Android app with an android.intent.action.VIEW Android intent to support Android Deep Links (https://developer.android.com/training/app-links/deep-linking). Please use Android App Links (https://developer.android.com/training/app-links) if possible, so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this vehicle, and SHOULD NOT be a general rental page that includes information for more than one vehicle. The deep link SHOULD take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application. Note that as a best practice providers SHOULD rotate identifiers within deep links after each rental to avoid unintentionally exposing private vehicle trip origins and destinations.<br><br>If this field is empty, it means deep linking is not supported in the native Android rental app.<br><br>Note that URIs do not necessarily include the vehicle_id for this vehicle - other identifiers can be used by the rental app within the URI to uniquely identify this vehicle. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Android App Links example value: `https://www.example.com/app?sid=1234567890&platform=android` <br><br>Deep Link (without App Links) example value: `com.example.android://open.example.app/app?sid=1234567890`
+&emsp;\-&nbsp;`ios` <br/>*(added in v1.1)* | OPTIONAL | URI | URI that can be used on iOS to launch the rental app for this vehicle. More information on this iOS feature can be found [here](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/communicating_with_other_apps_using_custom_urls?language=objc). Please use iOS Universal Links (https://developer.apple.com/ios/universal-links/) if possible, so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this vehicle, and SHOULD NOT be a general rental page that includes information for more than one vehicle.  The deep link SHOULD take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application. Note that as a best practice providers SHOULD rotate identifiers within deep links after each rental to avoid unintentionally exposing private vehicle trip origins and destinations. <br><br>If this field is empty, it means deep linking is not supported in the native iOS rental app.<br><br>Note that the URI does not necessarily include the vehicle_id - other identifiers can be used by the rental app within the URL to uniquely identify this vehicle. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>iOS Universal Links example value: `https://www.example.com/app?sid=1234567890&platform=ios` <br><br>Deep Link (without Universal Links) example value: `com.example.ios://open.example.app/app?sid=1234567890`
 &emsp;\-&nbsp;`web` <br/>*(added in v1.1)* | OPTIONAL | URL | URL that can be used by a web browser to show more information about renting a vehicle at this vehicle. <br><br>This URL SHOULD be a deep link specific to this vehicle, and SHOULD NOT be a general rental page that includes information for more than one vehicle.  The deep link SHOULD take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application. Note that as a best practice providers SHOULD rotate identifiers within deep links after each rental to avoid unintentionally exposing private vehicle trip origins and destinations.<br><br>If this field is empty, it means deep linking isn’t supported for web browsers. <br><br>Example value: `https://www.example.com/app?sid=1234567890`
 \- `vehicle_type_id` <br/>*(added in v2.1)* | Conditionally REQUIRED | ID | The `vehicle_type_id` of this vehicle as described in [vehicle_types.json](#vehicle_typesjson-added-in-v21). This field is REQUIRED if the [vehicle_types.json](#vehicle_typesjson-added-in-v21) is defined.
 \- `last_reported` <br/>*(added in v2.1)* | OPTIONAL | Timestamp | The last time this vehicle reported its status to the operator's backend.
@@ -665,9 +665,9 @@ Field Name | REQUIRED | Type | Defines
   "ttl": 0,
   "version": "3.0",
   "data": {
-    "bikes": [
+    "vehicles": [
       {
-        "bike_id": "ghi789",
+        "vehicle_id": "ghi789",
         "last_reported": 1609866109,
         "lat": 12.345678,
         "lon": 56.789012,
@@ -676,7 +676,7 @@ Field Name | REQUIRED | Type | Defines
         "vehicle_type_id": "abc123"
       },
       {
-        "bike_id": "jkl012",
+        "vehicle_id": "jkl012",
         "last_reported": 1609866204,
         "is_reserved": false,
         "is_disabled": false,
@@ -1006,7 +1006,7 @@ Field Name | REQUIRED | Type | Defines
 &emsp;&emsp;\-&nbsp;`end` | OPTIONAL | Timestamp | End time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
 &emsp;&emsp;\-&nbsp;`rules` | OPTIONAL | Array | Array that contains one object per rule as defined below. <br /><br /> In the event of colliding rules within the same polygon, the earlier rule (in order of the JSON file) takes precedence. <br> In the case of overlapping polygons, the combined set of rules associated with the overlapping polygons applies to the union of the polygons. In the event of colliding rules in this set, the earlier rule (in order of the JSON file) also takes precedence.
 &emsp;&emsp;&emsp;\-&nbsp;`vehicle_type_id` | OPTIONAL | Array | Array of IDs of vehicle types for which any restrictions SHOULD be applied (see vehicle type definitions in [PR #136](https://github.com/NABSA/gbfs/pull/136)). If vehicle_type_ids are not specified, then restrictions apply to all vehicle types.
-&emsp;&emsp;&emsp;\-&nbsp;`ride_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the undocked (“free bike”) ride allowed to start and end in this zone? <br /><br /> `true` - Undocked (“free bike”) ride can start and end in this zone. <br /> `false` - Undocked (“free bike”) ride cannot start and end in this zone.
+&emsp;&emsp;&emsp;\-&nbsp;`ride_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the undocked (“free floating vehicle”) ride allowed to start and end in this zone? <br /><br /> `true` - Undocked (“free floating vehicle”) ride can start and end in this zone. <br /> `false` - Undocked (“free floating vehicle”) ride cannot start and end in this zone.
 &emsp;&emsp;&emsp;\-&nbsp;`ride_through_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the ride allowed to travel through this zone? <br /><br /> `true` - Ride can travel through this zone. <br /> `false` - Ride cannot travel through this zone.
 &emsp;&emsp;&emsp;\-&nbsp;`maximum_speed_kph` | OPTIONAL | Non-negative Integer | What is the maximum speed allowed, in kilometers per hour? <br /><br /> If there is no maximum speed to observe, this can be omitted.
 
@@ -1101,7 +1101,7 @@ Field Name | REQUIRED | Type | Defines
 
 ## Deep Links *(added in v1.1)*
 
-Deep links to iOS, Android, and web apps are supported via URIs in the `system_information.json`, `station_information.json`, and `free_bike_status.json` files. The following sections describe how analytics can be added to these URIs, as well as some examples. For further examples, see ["What's New in GBFS"](https://medium.com/@mobilitydata/whats-new-in-gbfs-v2-0-63eb46e6bdc4).
+Deep links to iOS, Android, and web apps are supported via URIs in the `system_information.json`, `station_information.json`, and `vehicle_status.json` files. The following sections describe how analytics can be added to these URIs, as well as some examples. For further examples, see ["What's New in GBFS"](https://medium.com/@mobilitydata/whats-new-in-gbfs-v2-0-63eb46e6bdc4).
 
 ### Analytics *(added in v1.1)*
 
