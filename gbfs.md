@@ -351,7 +351,7 @@ Field Name | REQUIRED | Type | Defines
 `attribution_organization_name` <br/>*(added in v3.0-RC)* | OPTIONAL | String | If the feed license requires attribution, name of the organization to which attribution should be provided.
 `attribution_url` <br/>*(added in v3.0-RC)* | OPTIONAL | URL | URL of the organization to which attribution should be provided.
 `terms_url` | OPTIONAL | URL | A fully qualified URL pointing to the terms of service ( also called terms of use or terms and conditions) for the service. 
-`terms_last_updated` |Conditionally REQUIRED | Date | REQUIRED if `terms_url` is defined. The date that the terms of service provided at `terms_url` were last updated. MUST be in the format YYYY/MM/DD.
+`terms_last_updated` |Conditionally REQUIRED | Date | REQUIRED if `terms_url` is defined. The date that the terms of service provided at `terms_url` were last updated. MUST be in the format YYYY-MM-DD.
 `privacy_url` | OPTIONAL | URL | A fully qualified URL pointing to the privacy policy for the service.
 `privacy_last_updated` |Conditionally REQUIRED | Date | REQUIRED if `privacy_url` is defined. The date that the privacy policy provided at `privacy_url` was last updated. MUST be in the format YYYY/MM/DD.
 `rental_apps` <br/>*(added in v1.1)* | OPTIONAL | Object | Contains rental app information in the android and ios JSON objects.
