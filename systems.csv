@@ -20,7 +20,8 @@ BA,BL bike,"Banja Luka, BA",nextbike_bj,https://www.nextbike.ba/sr/banjaluka/,ht
 BA,Sarajevo Bosnia and Herzegovina,"Sarajevo, BA",nextbike_ba,https://www.nextbike.ba/bs/sarajevo/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ba/gbfs.json
 BA,Zenica,"Zenica, BA",nextbike_bz,https://www.nextbike.ba/bs/zenica/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bz/gbfs.json
 BE,Bird Antwerp,"Antwerp, BE",bird-antwerp,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/antwerp/gbfs.json
-BE,Donkey Republic Ghent,"Ghent, BE",donkey_gh,https://www.donkey.bike/cities/bike-rental-ghent/,https://stables.donkey.bike/api/public/gbfs/donkey_gh/gbfs.json
+BE,Donkey Republic Ghent,"Ghent, BE",donkey_gh,https://www.donkey.bike/cities/bike-rental-ghent/,https://stables.donkey.bike/api/public/gbfs/2/donkey_gh/gbfs.json
+BE,Donkey Republic Kortrijk & Leiedal,"Kortrijk & Leiedal, BE",donkey_kortrijk_leiedal,https://www.donkey.bike/cities/bike-rental-kortrijk-zuid-west-vlaanderen/,https://stables.donkey.bike/api/public/gbfs/2/donkey_kortrijk_leiedal/gbfs
 BE,Pony Brussels,"Brussels, BE",pony_brussels,https://getapony.com,https://gbfs.getapony.com/v1/brussels/en/gbfs.json
 BE,Pony Liège,"Liège, BE",pony_liège,https://getapony.com,https://gbfs.getapony.com/v1/liege/en/gbfs.json
 BR,Bike Itaú - Pernambuco,"Recife, BR",bike_pe,https://bikeitau.com.br/bikepe,https://rec.publicbikesystem.net/ube/gbfs/v1/
@@ -50,12 +51,12 @@ CA,Roll Kelowna,"Kelowna, CA",roll_technologies_ca,https://rollscooters.com,http
 CA,Roll Ottawa,"Ottawa, CA",roll_technologies_ca,https://rollscooters.com,https://data.rollapi.com/v1/gbfs/ottawa/gbfs.json
 CA,Sobi Hamilton,"Hamilton, CA",sobi_hamilton,https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json
 CA,Spin Edmonton,"Edmonton, CA",spin edmonton,https://www.spin.pm,https://gbfs.spin.pm/api/gbfs/v2_2/edmonton/gbfs
-CH,Donkey Republic Geneva,"Geneva, CH",donkey_ge,https://www.donkey.bike/cities/bike-rental-geneva/,https://stables.donkey.bike/api/public/gbfs/donkey_ge/gbfs.json
-CH,Donkey Republic Le Locle,"Le Locle, CH",donkey_le_locle,https://www.donkey.bike/cities/bike-rental-le-locle/,https://stables.donkey.bike/api/public/gbfs/donkey_le_locle/gbfs.json
-CH,Donkey Republic Neuchâtel,"Neuchâtel, CH",donkey_neuchatel,https://www.donkey.bike/cities/bike-rental-neuchatel/,https://stables.donkey.bike/api/public/gbfs/donkey_neuchatel/gbfs.json
-CH,Donkey Republic Sion,"Sion, CH",donkey_sion,https://www.donkey.bike/cities/bike-rental-sion/,https://stables.donkey.bike/api/public/gbfs/donkey_sion/gbfs.json
-CH,Donkey Republic Thun,"Thun, CH",donkey_thun,https://www.donkey.bike/cities/bike-rental-thun/,https://stables.donkey.bike/api/public/gbfs/donkey_thun/gbfs.json
-CH,Donkey Republic Yverdon-les-Bains,"Yverdon Les Bains, CH",donkey_yverdon-les-bains,https://www.donkey.bike/cities/bike-rental-yverdon-les-bains/,https://stables.donkey.bike/api/public/gbfs/donkey_yverdon-les-bains/gbfs.json
+CH,Donkey Republic Geneva,"Geneva, CH",donkey_ge,https://www.donkey.bike/cities/bike-rental-geneva/,https://stables.donkey.bike/api/public/gbfs/2/donkey_ge/gbfs.json
+CH,Donkey Republic Le Locle,"Le Locle, CH",donkey_le_locle,https://www.donkey.bike/cities/bike-rental-le-locle/,https://stables.donkey.bike/api/public/gbfs/2/donkey_le_locle/gbfs.json
+CH,Donkey Republic Neuchâtel,"Neuchâtel, CH",donkey_neuchatel,https://www.donkey.bike/cities/bike-rental-neuchatel/,https://stables.donkey.bike/api/public/gbfs/2/donkey_neuchatel/gbfs.json
+CH,Donkey Republic Sion,"Sion, CH",donkey_sion,https://www.donkey.bike/cities/bike-rental-sion/,https://stables.donkey.bike/api/public/gbfs/2/donkey_sion/gbfs.json
+CH,Donkey Republic Thun,"Thun, CH",donkey_thun,https://www.donkey.bike/cities/bike-rental-thun/,https://stables.donkey.bike/api/public/gbfs/2/donkey_thun/gbfs.json
+CH,Donkey Republic Yverdon-les-Bains,"Yverdon Les Bains, CH",donkey_yverdon-les-bains,https://www.donkey.bike/cities/bike-rental-yverdon-les-bains/,https://stables.donkey.bike/api/public/gbfs/2/donkey_yverdon-les-bains/gbfs.json
 CH,nextbike Switzerland,"Switzerland, CH",nextbike_ch,https://www.nextbike.ch/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ch/gbfs.json
 CH,sharedmobility.ch,"Switzerland, CH",sharedmobility.ch,https://www.sharedmobility.ch/info,https://www.sharedmobility.ch/gbfs.json
 CL,Bike Itaú - Santiago,"Santiago, CL",bike_santiago,https://www.bikesantiago.cl/,https://santiago.publicbikesystem.net/ube/gbfs/v1/
@@ -82,9 +83,9 @@ DE,Airbus,"Hamburg Finkenwerder, DE",nextbike_ab,https://www.nextbike.de/de/,htt
 DE,Bergisches e-Bike,"Bergisches e-Bike, DE",nextbike_ac,https://www.nextbike.de/de/bergisches-ebike/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ac/gbfs.json
 DE,Berlin-Buch Campus,"Berlin-Buch, DE",nextbike_cb,https://www.nextbike.de/de/berlin-buch/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cb/gbfs.json
 DE,Bonn nextbike,"Bonn, DE",nextbike_bf,https://www.nextbike.de/de/bonn/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bf/gbfs.json
-DE,Donkey Republic Berlin,"Berlin, DE",donkey_berlin,https://www.donkey.bike/cities/bike-rental-berlin/,https://stables.donkey.bike/api/public/gbfs/donkey_berlin/gbfs.json
-DE,Donkey Republic Freiburg,"Freiburg, DE",donkey_freiburg,https://www.donkey.bike/cities/bike-rental-freiburg/,https://stables.donkey.bike/api/public/gbfs/donkey_freiburg/gbfs.json
-DE,Donkey Republic Munich,"Munich, DE",donkey_munich,https://www.donkey.bike/cities/bike-rental-munich/,https://stables.donkey.bike/api/public/gbfs/donkey_munich/gbfs.json
+DE,Donkey Republic Berlin,"Berlin, DE",donkey_berlin,https://www.donkey.bike/cities/bike-rental-berlin/,https://stables.donkey.bike/api/public/gbfs/2/donkey_berlin/gbfs.json
+DE,Donkey Republic Freiburg,"Freiburg, DE",donkey_freiburg,https://www.donkey.bike/cities/bike-rental-freiburg/,https://stables.donkey.bike/api/public/gbfs/2/donkey_freiburg/gbfs.json
+DE,Donkey Republic Munich,"Munich, DE",donkey_munich,https://www.donkey.bike/cities/bike-rental-munich/,https://stables.donkey.bike/api/public/gbfs/2/donkey_munich/gbfs.json
 DE,flowBie Siggi,"Bielefeld, DE",nextbike_dg,https://www.nextbike.de/de/bielefeld/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dg/gbfs.json
 DE,Frelo Freiburg,"Freiburg, DE",nextbike_df,https://www.frelo-freiburg.de/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_df/gbfs.json
 DE,Graben - ready4green,"Graben, DE",nextbike_da,https://www.nextbike.de/de/ready4green/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_da/gbfs.json
@@ -146,19 +147,19 @@ DE,VAG_Rad,"Nürnberg, DE",nextbike_dv,https://www.vagrad.de/de/nuernberg/,https
 DE,VRNnextbike,"Lampertheim, DE",nextbike_vn,https://www.vrnnextbike.de/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vn/gbfs.json
 DE,WK-Bike (Bremen),"Bremen, DE",nextbike_wk,https://www.wk-bike.de/de/bremen/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wk/gbfs.json
 DE,wupsiRad Leverkusen,"Leverkusen, DE",nextbike_dw,https://www.wupsirad.de/de/leverkusen/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dw/gbfs.json
-DK,Donkey Republic Aalborg,"Aalborg, DK",donkey_aalborg,https://www.donkey.bike/cities/bike-rental-aalborg/,https://stables.donkey.bike/api/public/gbfs/donkey_aalborg/gbfs.json
-DK,Donkey Republic Aarhus,"Aarhus, DK",donkey_aarhus,https://www.donkey.bike/cities/bike-rental-aarhus/,https://stables.donkey.bike/api/public/gbfs/donkey_aarhus/gbfs.json
-DK,Donkey Republic Bandholm,"Bandholm, DK",donkey_bandholm,https://www.donkey.bike/cities/bike-rental-bandholm/,https://stables.donkey.bike/api/public/gbfs/donkey_bandholm/gbfs.json
-DK,Donkey Republic Copenhagen,"Copenhagen, DK",donkey_copenhagen,https://www.donkey.bike/cities/bike-rental-copenhagen/,https://stables.donkey.bike/api/public/gbfs/donkey_copenhagen/gbfs.json
-DK,Donkey Republic Frederikshavn,"Frederikshavn, DK",donkey_frederikshavn,https://www.donkey.bike/cities/bike-rental-frederikshavn/,https://stables.donkey.bike/api/public/gbfs/donkey_frederikshavn/gbfs.json
-DK,Donkey Republic Glostrup,"Glostrup, DK",donkey_glostrup,https://www.donkey.bike/cities/bike-rental-glostrup/,https://stables.donkey.bike/api/public/gbfs/donkey_glostrup/gbfs.json
-DK,Donkey Republic Herning,"Herning, DK",donkey_herning,https://www.donkey.bike/cities/herning/,https://stables.donkey.bike/api/public/gbfs/donkey_herning/gbfs.json
-DK,Donkey Republic Klampenborg,"Klampenborg, DK",donkey_klampenborg,https://www.donkey.bike/cities/bike-rental-klampenborg/,https://stables.donkey.bike/api/public/gbfs/donkey_klampenborg/gbfs.json
-DK,Donkey Republic Lalandia (Rødby),"Lalandia (Rødby), DK",donkey_lalandia,https://www.donkey.bike/cities/bike-rental-lalandia-rodby/,https://stables.donkey.bike/api/public/gbfs/donkey_lalandia/gbfs.json
-DK,Donkey Republic Middelfart,"Middelfart, DK",donkey_middelfart,https://www.donkey.bike/cities/bike-rental-middelfart/,https://stables.donkey.bike/api/public/gbfs/donkey_middelfart/gbfs.json
-DK,Donkey Republic Odense,"Odense, DK",donkey_odense,https://www.donkey.bike/cities/bike-rental-odense/,https://stables.donkey.bike/api/public/gbfs/donkey_odense/gbfs.json
-DK,Donkey Republic Rødvig,"Rødvig, DK",donkey_roedvig,https://www.donkey.bike/cities/bike-rental-rodvig/,https://stables.donkey.bike/api/public/gbfs/donkey_roedvig/gbfs.json
-DK,Donkey Republic Store Heddinge,"Store Heddinge, DK",donkey_store_heddinge,https://www.donkey.bike/cities/bike-rental-store-heddinge/,https://stables.donkey.bike/api/public/gbfs/donkey_store_heddinge/gbfs.json
+DK,Donkey Republic Aalborg,"Aalborg, DK",donkey_aalborg,https://www.donkey.bike/cities/bike-rental-aalborg/,https://stables.donkey.bike/api/public/gbfs/2/donkey_aalborg/gbfs.json
+DK,Donkey Republic Aarhus,"Aarhus, DK",donkey_aarhus,https://www.donkey.bike/cities/bike-rental-aarhus/,https://stables.donkey.bike/api/public/gbfs/2/donkey_aarhus/gbfs.json
+DK,Donkey Republic Bandholm,"Bandholm, DK",donkey_bandholm,https://www.donkey.bike/cities/bike-rental-bandholm/,https://stables.donkey.bike/api/public/gbfs/2/donkey_bandholm/gbfs.json
+DK,Donkey Republic Copenhagen,"Copenhagen, DK",donkey_copenhagen,https://www.donkey.bike/cities/bike-rental-copenhagen/,https://stables.donkey.bike/api/public/gbfs/2/donkey_copenhagen/gbfs.json
+DK,Donkey Republic Frederikshavn,"Frederikshavn, DK",donkey_frederikshavn,https://www.donkey.bike/cities/bike-rental-frederikshavn/,https://stables.donkey.bike/api/public/gbfs/2/donkey_frederikshavn/gbfs.json
+DK,Donkey Republic Glostrup,"Glostrup, DK",donkey_glostrup,https://www.donkey.bike/cities/bike-rental-glostrup/,https://stables.donkey.bike/api/public/gbfs/2/donkey_glostrup/gbfs.json
+DK,Donkey Republic Herning,"Herning, DK",donkey_herning,https://www.donkey.bike/cities/herning/,https://stables.donkey.bike/api/public/gbfs/2/donkey_herning/gbfs.json
+DK,Donkey Republic Klampenborg,"Klampenborg, DK",donkey_klampenborg,https://www.donkey.bike/cities/bike-rental-klampenborg/,https://stables.donkey.bike/api/public/gbfs/2/donkey_klampenborg/gbfs.json
+DK,Donkey Republic Lalandia (Rødby),"Lalandia (Rødby), DK",donkey_lalandia,https://www.donkey.bike/cities/bike-rental-lalandia-rodby/,https://stables.donkey.bike/api/public/gbfs/2/donkey_lalandia/gbfs.json
+DK,Donkey Republic Middelfart,"Middelfart, DK",donkey_middelfart,https://www.donkey.bike/cities/bike-rental-middelfart/,https://stables.donkey.bike/api/public/gbfs/2/donkey_middelfart/gbfs.json
+DK,Donkey Republic Odense,"Odense, DK",donkey_odense,https://www.donkey.bike/cities/bike-rental-odense/,https://stables.donkey.bike/api/public/gbfs/2/donkey_odense/gbfs.json
+DK,Donkey Republic Rødvig,"Rødvig, DK",donkey_roedvig,https://www.donkey.bike/cities/bike-rental-rodvig/,https://stables.donkey.bike/api/public/gbfs/2/donkey_roedvig/gbfs.json
+DK,Donkey Republic Store Heddinge,"Store Heddinge, DK",donkey_store_heddinge,https://www.donkey.bike/cities/bike-rental-store-heddinge/,https://stables.donkey.bike/api/public/gbfs/2/donkey_store_heddinge/gbfs.json
 ES,Alcala de Henares,"Alcalá de Henares, ES",Link_Alcala_de_Henares,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Alcala%20de%20Henares/gbfs.json
 ES,BiciMAD (unofficial),"Madrid, ES",bici_madrid,https://www.bicimad.com/,https://gbfs.bici.madrid/gbfs.json
 ES,Bicing,"Barcelona, ES",bike_barcelona,https://www.bicing.barcelona/,https://barcelona.publicbikesystem.net/ube/gbfs/v1/
@@ -166,7 +167,7 @@ ES,Bilbaobizi (Bilbao),"Bilbao, ES",nextbike_bo,https://www.bilbaobizi.bilbao.eu
 ES,Bird Madrid,"Madrid, ES",bird-madrid,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/madrid/gbfs.json
 ES,Canary Islands,"Canary Islands, ES",Link_Canary_Islands,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Canary%20Islands/gbfs.json
 ES,Dbizi,"Donostia, ES",sansebastian,https://www.dbizi.eus,https://sansebastian.publicbikesystem.net/ube/gbfs/v1/
-ES,Donkey Republic Barcelona,"Barcelona, ES",donkey_barcelona,https://www.donkey.bike/cities/bike-rental-barcelona/,https://stables.donkey.bike/api/public/gbfs/donkey_barcelona/gbfs.json
+ES,Donkey Republic Barcelona,"Barcelona, ES",donkey_barcelona,https://www.donkey.bike/cities/bike-rental-barcelona/,https://stables.donkey.bike/api/public/gbfs/2/donkey_barcelona/gbfs.json
 ES,ibizi,"Ibiza-City, ES",nextbike_ei,https://www.nextbike.es/es/ibiza/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ei/gbfs.json
 ES,Lovesharing (Canary Islands),"Canary Island, ES",nextbike_ls,https://www.lovesharing.com/bikesharing/es/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ls/gbfs.json
 ES,Madrid,"Madrid, ES",Link_Madrid,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Madrid/gbfs.json
@@ -174,21 +175,25 @@ ES,Malaga,"Malaga, ES",Link_Malaga,https://www.link.city,https://wrangler-mds-pr
 ES,Sitycleta (Las Palmas),"Las Palmas de Gran Canaria, ES",nextbike_el,https://www.sitycleta.com/es/laspalmas/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_el/gbfs.json
 ES,Spin Madrid,"Mardid, ES",spin madrid,https://www.spin.pm,https://gbfs.spin.pm/api/gbfs/v2_2/Madrid/gbfs
 ES,Spin Tarragona,"Tarragona, ES",spin tarragona,https://www.spin.pm,https://gbfs.spin.pm/api/gbfs/v2_2/tarragona/gbfs
-FI,Donkey Republic Hämeenlinna,Hämeenlinna,donkey_haemeenlinna,https://www.donkey.bike/cities/bike-rental-hameenlinna/,https://stables.donkey.bike/api/public/gbfs/donkey_haemeenlinna/gbfs.json
-FI,Donkey Republic Hamina,Hamina,donkey_hamina,https://www.donkey.bike/cities/bike-rental-hamina/,https://stables.donkey.bike/api/public/gbfs/donkey_hamina/gbfs.json
-FI,Donkey Republic Iisalmi,Iisalmi,donkey_iisalmi,https://www.donkey.bike/cities/bike-rental-iisalmi/,https://stables.donkey.bike/api/public/gbfs/donkey_iisalmi/gbfs.json
-FI,Donkey Republic Imatra,Imatra,donkey_imatra,https://www.donkey.bike/cities/bike-rental-imatra/,https://stables.donkey.bike/api/public/gbfs/donkey_imatra/gbfs.json
-FI,Donkey Republic Kotka,Kotka,donkey_kotka,https://www.donkey.bike/cities/bike-rental-kotka/,https://stables.donkey.bike/api/public/gbfs/donkey_kotka/gbfs.json
-FI,Donkey Republic Kouvola,Kouvola,donkey_kouvola,https://www.donkey.bike/cities/bike-rental-kouvola/,https://stables.donkey.bike/api/public/gbfs/donkey_kouvola/gbfs.json
-FI,Donkey Republic Lappeenranta,Lappeenranta,donkey_lappeenranta,https://www.donkey.bike/cities/bike-rental-lappeenranta/,https://stables.donkey.bike/api/public/gbfs/donkey_lappeenranta/gbfs.json
-FI,Donkey Republic Mäntsälä,Mäntsälä,donkey_maentsaelae,https://www.donkey.bike/cities/bike-rental-mantsala/,https://stables.donkey.bike/api/public/gbfs/donkey_maentsaelae/gbfs.json
-FI,Donkey Republic Porvoo,Porvoo,donkey_porvoo,https://www.donkey.bike/cities/bike-rental-porvoo/,https://stables.donkey.bike/api/public/gbfs/donkey_porvoo/gbfs.json
+FI,Donkey Republic Hämeenlinna,"Hämeenlinna,FI",donkey_haemeenlinna,https://www.donkey.bike/cities/bike-rental-hameenlinna/,https://stables.donkey.bike/api/public/gbfs/2/donkey_haemeenlinna/gbfs.json
+FI,Donkey Republic Hamina,"Hamina, FI",donkey_hamina,https://www.donkey.bike/cities/bike-rental-hamina/,https://stables.donkey.bike/api/public/gbfs/2/donkey_hamina/gbfs.json
+FI,Donkey Republic Hyvinkää,"Hyvinkää,FI",donkey_hyvinkaa,https://www.donkey.bike/cities/bike-rental-hyvinkaa/,https://stables.donkey.bike/api/public/gbfs/2/donkey_hyvinkaa/gbfs
+FI,Donkey Republic Iisalmi,"Iisalmi, FI",donkey_iisalmi,https://www.donkey.bike/cities/bike-rental-iisalmi/,https://stables.donkey.bike/api/public/gbfs/2/donkey_iisalmi/gbfs.json
+FI,Donkey Republic Imatra,"Imatra, FI",donkey_imatra,https://www.donkey.bike/cities/bike-rental-imatra/,https://stables.donkey.bike/api/public/gbfs/2/donkey_imatra/gbfs.json
+FI,Donkey Republic Kotka,"Kotka, FI",donkey_kotka,https://www.donkey.bike/cities/bike-rental-kotka/,https://stables.donkey.bike/api/public/gbfs/2/donkey_kotka/gbfs.json
+FI,Donkey Republic Kouvola,"Kouvola, FI",donkey_kouvola,https://www.donkey.bike/cities/bike-rental-kouvola/,https://stables.donkey.bike/api/public/gbfs/2/donkey_kouvola/gbfs.json
+FI,Donkey Republic Lappeenranta,"Lappeenranta, FI",donkey_lappeenranta,https://www.donkey.bike/cities/bike-rental-lappeenranta/,https://stables.donkey.bike/api/public/gbfs/2/donkey_lappeenranta/gbfs.json
+FI,Donkey Republic Mäntsälä,"Mäntsälä, FI",donkey_maentsaelae,https://www.donkey.bike/cities/bike-rental-mantsala/,https://stables.donkey.bike/api/public/gbfs/2/donkey_maentsaelae/gbfs.json
+FI,Donkey Republic Mikkeli,"Mikkeli,FI",donkey_mikkeli,https://www.donkey.bike/cities/bike-rental-mikkeli/,https://stables.donkey.bike/api/public/gbfs/2/donkey_mikkeli/gbfs
+FI,Donkey Republic Porvoo,"Porvoo, FI",donkey_porvoo,https://www.donkey.bike/cities/bike-rental-porvoo/,https://stables.donkey.bike/api/public/gbfs/2/donkey_porvoo/gbfs.json
+FI,Donkey Republic Raasepori,"Raasepori, FI",donkey_raasepori,https://www.donkey.bike/cities/bike-rental-raasepori/,https://stables.donkey.bike/api/public/gbfs/2/donkey_raasepori/gbfs
+FI,Donkey Republic Riihimäki,"Riihimäki, FI",donkey_riihimaki,https://www.donkey.bike/cities/bike-rental-riihimaki/,https://stables.donkey.bike/api/public/gbfs/2/donkey_riihimaki/gbfs
 FR,Bicloo,"Nantes, FR",nantes,https://www.bicloo.nantesmetropole.fr/en/home,https://transport.data.gouv.fr/gbfs/nantes/gbfs.json
 FR,CristoLib,"Créteil, Paris, FR",creteil,https://www.cristolib.fr/,https://transport.data.gouv.fr/gbfs/creteil/gbfs.json
 FR,C-Vélo,"Clermont-Ferrand, FR",CVelo_FR_Clermont-Ferrand,https://www.c-velo.fr,https://clermont-gbfs.klervi.net/gbfs/gbfs.json
 FR,Cy'clic,"Rouen, FR",rouen,http://cyclic.rouen.fr/,https://transport.data.gouv.fr/gbfs/rouen/gbfs.json
 FR,Cyclolib,"Carcassonne,FR",carcassonne,https://cyclolib.fr/en,https://gbfs.urbansharing.com/cyclolib.fr/gbfs.json
-FR,Donkey Republic Valenciennes,Valenciennes,donkey_valenciennes,https://www.donkey.bike/cities/bike-rental-valenciennes/,https://stables.donkey.bike/api/public/gbfs/donkey_valenciennes/gbfs.json
+FR,Donkey Republic Valenciennes,"Valenciennes,FR",donkey_valenciennes,https://www.donkey.bike/cities/bike-rental-valenciennes/,https://stables.donkey.bike/api/public/gbfs/2/donkey_valenciennes/gbfs.json
 FR,Libélo,"Valence, FR",libelo,https://www.vrd-mobilites.fr/velo/,https://valence.publicbikesystem.net/ube/gbfs/v1/gbfs.json
 FR,levélo,"Marseille, FR",marseille,http://www.levelo-mpm.fr/,https://transport.data.gouv.fr/gbfs/marseille/gbfs.json
 FR,LE vélo STAR,"Rennes, FR",le_velo_star,https://www.star.fr/le-velo/nos-offres/vls/,https://eu.ftp.opendatasoft.com/star/gbfs/gbfs.json
@@ -221,20 +226,19 @@ GB,Beryl - Norwich,"Norwich, GB",beryl_norwich,https://www.beryl.cc,https://gbfs
 GB,Beryl - Watford,"Watford, GB",beryl_watford,https://www.beryl.cc,https://gbfs.beryl.cc/v2/Watford/gbfs.json
 GB,Beryl - West Midlands,"West Midlands, GB",beryl_west_midlands,https://www.beryl.cc,https://gbfs.beryl.cc/v2/West_Midlands/gbfs.json
 GB,Co-bikes,"Exeter, GB",nextbike_eu,https://www.co-bikes.co.uk/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_eu/gbfs.json
-GB,Donkey Republic Charlbury,"Charlbury, ",donkey_charlbury,https://www.donkey.bike/cities/bike-rental-charlbury/,https://stables.donkey.bike/api/public/gbfs/donkey_charlbury/gbfs.json
-GB,Donkey Republic Cheltenham Spa,Cheltenham Spa,donkey_cheltenham_spa,https://www.donkey.bike/cities/bike-rental-cheltenham-spa/,https://stables.donkey.bike/api/public/gbfs/donkey_cheltenham_spa/gbfs.json
-GB,Donkey Republic Cirencester,Cirencester,donkey_cirencester,https://www.donkey.bike/cities/bike-rental-cirencester/,https://stables.donkey.bike/api/public/gbfs/donkey_cirencester/gbfs.json
-GB,Donkey Republic Henley On Thames,Henley On Thames,donkey_henley_on_thames,https://www.donkey.bike/cities/bike-rental-henley-on-thames/,https://stables.donkey.bike/api/public/gbfs/donkey_henley_on_thames/gbfs.json
-GB,Donkey Republic Kingham,Kingham,donkey_kingham,https://www.donkey.bike/cities/bike-rental-kingham/,https://stables.donkey.bike/api/public/gbfs/donkey_kingham/gbfs.json
-GB,Donkey Republic Moreton In Marsh,Moreton In Marsh,donkey_moreton_in_marsh,https://www.donkey.bike/cities/bike-rental-moreton-in-marsh/,https://stables.donkey.bike/api/public/gbfs/donkey_moreton_in_marsh/gbfs.json
-GB,Donkey Republic Northleach,Northleach,donkey_northleach,https://www.donkey.bike/cities/bike-rental-northleach/,https://stables.donkey.bike/api/public/gbfs/donkey_northleach/gbfs.json
-GB,Donkey Republic Oxford,Oxford,donkey_oxford,https://www.donkey.bike/cities/bike-rental-oxford/,https://stables.donkey.bike/api/public/gbfs/donkey_oxford/gbfs.json
-GB,Donkey Republic Plymouth,Plymouth,donkey_plymouth,https://www.donkey.bike/cities/bike-rental-plymouth/,https://stables.donkey.bike/api/public/gbfs/donkey_plymouth/gbfs.json
-GB,Donkey Republic Stroud,Stroud,donkey_stroud,https://www.donkey.bike/cities/bike-rental-stroud/,https://stables.donkey.bike/api/public/gbfs/donkey_stroud/gbfs.json
-GB,Donkey Republic Tetbury,Tetbury,donkey_tetbury,https://www.donkey.bike/cities/bike-rental-tetbury/,https://stables.donkey.bike/api/public/gbfs/donkey_tetbury/gbfs.json
-GB,Donkey Republic The Cotswold Water Park,The Cotswold Water Park,donkey_the_cotswold_water_park,https://www.donkey.bike/cities/bike-rental-the-cotswold-water-park/,https://stables.donkey.bike/api/public/gbfs/donkey_the_cotswold_water_park/gbfs.json
-GB,Donkey Republic Whichford,Whichford,donkey_whichford,https://www.donkey.bike/cities/bike-rental-whichford/,https://stables.donkey.bike/api/public/gbfs/donkey_whichford/gbfs.json
-GB,Donkey Republic Worthing,Worthing,donkey_worthing,https://www.donkey.bike/cities/bike-rental-worthing/,https://stables.donkey.bike/api/public/gbfs/donkey_worthing/gbfs.json
+GB,Donkey Republic Charlbury,"Charlbury, GB",donkey_charlbury,https://www.donkey.bike/cities/bike-rental-charlbury/,https://stables.donkey.bike/api/public/gbfs/2/donkey_charlbury/gbfs.json
+GB,Donkey Republic Cirencester,"Cirencester, GB",donkey_cirencester,https://www.donkey.bike/cities/bike-rental-cirencester/,https://stables.donkey.bike/api/public/gbfs/2/donkey_cirencester/gbfs.json
+GB,Donkey Republic Henley On Thames,"Henley On Thames, GB",donkey_henley_on_thames,https://www.donkey.bike/cities/bike-rental-henley-on-thames/,https://stables.donkey.bike/api/public/gbfs/2/donkey_henley_on_thames/gbfs.json
+GB,Donkey Republic Kingham,"Kingham, GB",donkey_kingham,https://www.donkey.bike/cities/bike-rental-kingham/,https://stables.donkey.bike/api/public/gbfs/2/donkey_kingham/gbfs.json
+GB,Donkey Republic Moreton In Marsh,"Moreton In Marsh, GB",donkey_moreton_in_marsh,https://www.donkey.bike/cities/bike-rental-moreton-in-marsh/,https://stables.donkey.bike/api/public/gbfs/2/donkey_moreton_in_marsh/gbfs.json
+GB,Donkey Republic Northleach,"Northleach,donkey_northleach, GB",https://www.donkey.bike/cities/bike-rental-northleach/,https://stables.donkey.bike/api/public/gbfs/2/donkey_northleach/gbfs.json
+GB,Donkey Republic Oxford,"Oxford, GB",donkey_oxford,https://www.donkey.bike/cities/bike-rental-oxford/,https://stables.donkey.bike/api/public/gbfs/2/donkey_oxford/gbfs.json
+GB,Donkey Republic Plymouth,"Plymouth, GB",donkey_plymouth,https://www.donkey.bike/cities/bike-rental-plymouth/,https://stables.donkey.bike/api/public/gbfs/2/donkey_plymouth/gbfs.json
+GB,Donkey Republic Stroud,"Stroud, GB",donkey_stroud,https://www.donkey.bike/cities/bike-rental-stroud/,https://stables.donkey.bike/api/public/gbfs/2/donkey_stroud/gbfs.json
+GB,Donkey Republic Tetbury,"Tetbury, GB",donkey_tetbury,https://www.donkey.bike/cities/bike-rental-tetbury/,https://stables.donkey.bike/api/public/gbfs/2/donkey_tetbury/gbfs.json
+GB,Donkey Republic The Cotswold Water Park,"The Cotswold Water Park, GB",donkey_the_cotswold_water_park,https://www.donkey.bike/cities/bike-rental-the-cotswold-water-park/,https://stables.donkey.bike/api/public/gbfs/2/donkey_the_cotswold_water_park/gbfs.json
+GB,Donkey Republic Whichford,"Whichford, GB",donkey_whichford,https://www.donkey.bike/cities/bike-rental-whichford/,https://stables.donkey.bike/api/public/gbfs/2/donkey_whichford/gbfs.json
+GB,Donkey Republic Worthing,"Worthing, GB",donkey_worthing,https://www.donkey.bike/cities/bike-rental-worthing/,https://stables.donkey.bike/api/public/gbfs/2/donkey_worthing/gbfs.json
 GB,Neuron Mobility,"Newcastle, GB",11b14b88-3598-4d3c-821d-e6f2e37cd905,https://www.neuron.sg,https://mds-global-ncl.neuron-mobility.com/gbfs/2/
 GB,nextbike Cardiff,"Cardiff, GB",nextbike_uc,https://www.nextbike.co.uk/en/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_uc/gbfs.json
 GB,nextbike Glasgow,"Glasgow, GB",nextbike_gg,https://www.nextbike.co.uk/en/glasgow/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gg/gbfs.json
@@ -267,7 +271,7 @@ HR,nextbike Croatia,"Zagreb, HR",nextbike_hr,https://www.nextbike.hr/hr/,https:/
 HR,Općina Brinje (Croatia),"Brinje, HR",nextbike_br,https://www.nextbike.hr/hr/brinje/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_br/gbfs.json
 HR,Općina Dugopolje (Croatia),"Dugopolje, HR",nextbike_od,https://www.nextbike.hr/hr/dugopolje/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_od/gbfs.json
 HR,Općina Pitomača (Croatia),"Pitomača, HR",nextbike_se,https://www.nextbike.hr/hr/pitomaca/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_se/gbfs.json
-HU,Donkey Republic Budapest,"Budapest, HU",donkey_budapest,https://www.donkey.bike/cities/bike-rental-budapest/,https://stables.donkey.bike/api/public/gbfs/donkey_budapest/gbfs.json
+HU,Donkey Republic Budapest,"Budapest, HU",donkey_budapest,https://www.donkey.bike/cities/bike-rental-budapest/,https://stables.donkey.bike/api/public/gbfs/2/donkey_budapest/gbfs.json
 IT,Aprillia,"Aprillia, IT",Link_Aprilia,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Aprilia/gbfs.json
 IL,Bird Tel Aviv,"Tel Aviv, IL",bird-tel-aviv,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/tel-aviv/gbfs.json
 IT,Helbiz USA,"Ferrara, IT",HELBIZ-US,https://helbiz.com/,https://api.helbiz.com/admin/reporting/ferrara/gbfs/gbfs.json
@@ -278,7 +282,7 @@ IN,Chartered Bike (Ranchi - India),"Ranchi, IN",nextbike_ir,http://www.chartered
 IN,Smartbike (Hyderabad - India),"Hyderabad, IN",nextbike_hi,https://www.smartbikemobility.com/en/hyderabad/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_hi/gbfs.json
 IN,Smartbike (Vijayawada - India),"Vijayawada, IN",nextbike_vi,https://www.smartbikemobility.com/en/vijayawada/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vi/gbfs.json
 IT,Bird Rome,"Rome, IT",bird-rome,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/rome/gbfs.json
-IS,Donkey Republic Reykjavik,Reykjavik,donkey_reykjavik,https://www.donkey.bike/cities/bike-rental-reykjavik/,https://stables.donkey.bike/api/public/gbfs/donkey_reykjavik/gbfs.json
+IS,Donkey Republic Reykjavik,Reykjavik,donkey_reykjavik,https://www.donkey.bike/cities/bike-rental-reykjavik/,https://stables.donkey.bike/api/public/gbfs/2/donkey_reykjavik/gbfs.json
 IT,Giulianova,"Giulianova, IT",Link_Giulianova,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Giulianova/gbfs.json
 IT,Helbiz Bari,"Bari, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/bari/gbfs/gbfs.json
 IT,Helbiz Cesena,"Cesena, IT",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/cesena/gbfs/gbfs.json
@@ -303,7 +307,7 @@ IT,Vejer de la Frontera,"Vejer de la Frontera, IT",Link_Vejer_de_la_Frontera,htt
 IT,Verona Bike,"Verona, IT",verona-bike,https://bikeverona.it/en,https://gbfs.urbansharing.com/bikeverona.it/gbfs.json
 IT,Rome,"Rome, IT",Link_Rome,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Rome/gbfs.json
 LB,bike4all,"Byblos, LB",nextbike_bl,https://www.bikeforall-lb.com/en/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bl/gbfs.json
-LI,Donkey Republic Liechtenstein,Liechtenstein,donkey_li,https://www.donkey.bike/cities/,https://stables.donkey.bike/api/public/gbfs/donkey_li/gbfs.json
+LI,Donkey Republic Liechtenstein,Liechtenstein,donkey_li,https://www.donkey.bike/cities/,https://stables.donkey.bike/api/public/gbfs/2/donkey_li/gbfs.json
 LV,nextbike LV,"Latvia, LV",nextbike_lv,https://www.nextbike.lv/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_lv/gbfs.json
 MC,MonaBike,"Monaco, MC",mona_bike,https://monabike.mc/,https://monaco.publicbikesystem.net/ube/gbfs/v1/
 MT,nextbike Malta,"Malta, MT",nextbike_mt,https://www.nextbike.com.mt/en/malta/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_mt/gbfs.json
@@ -311,9 +315,10 @@ MX,Mibici Guadalajara,"Guadalajara, MX",mibici_guadalajara,https://www.mibici.ne
 MX,MOVO Guadalajara,"Guadalajara, MX",movo_gdl,https://movo.me/mx/,https://gbfs.movo.me/v1/guadalajara/gbfs.json
 MX,YOY - San Luis Potosi,"San Luis Potosi, MX",nextbike_yp,https://www.yoymobility.com/es/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_yp/gbfs.json
 NL,Cykl,"Wageningen, NL",CKL,https://www.cykl.nl/,https://www.cykl.nl/gbfs/gbfs.json
-NL,Donkey Republic Amsterdam,"Amsterdam, NL",donkey_am,https://www.donkey.bike/cities/bike-rental-amsterdam/,https://stables.donkey.bike/api/public/gbfs/donkey_am/gbfs.json
-NL,Donkey Republic Rotterdam,"Rotterdam, NL",donkey_rt,https://www.donkey.bike/nl/steden/deelfietsen-rotterdam/,https://stables.donkey.bike/api/public/gbfs/donkey_rt/gbfs.json
-NL,Donkey Republic Utrecht,"Utrecht, NL",donkey_ut,https://www.donkey.bike/cities/bike-rental-utrecht/,https://stables.donkey.bike/api/public/gbfs/donkey_ut/gbfs.json
+NL,Donkey Republic Amsterdam,"Amsterdam, NL",donkey_am,https://www.donkey.bike/cities/bike-rental-amsterdam/,https://stables.donkey.bike/api/public/gbfs/2/donkey_am/gbfs.json
+NL,Donkey Republic Den Haag,"Den Haag, NL",donkey_den_haag,https://www.donkey.bike/cities/bike-rental-den-haag/,https://stables.donkey.bike/api/public/gbfs/2/donkey_den_haag/gbfs.json
+NL,Donkey Republic Rotterdam,"Rotterdam, NL",donkey_rt,https://www.donkey.bike/nl/steden/deelfietsen-rotterdam/,https://stables.donkey.bike/api/public/gbfs/2/donkey_rt/gbfs.json
+NL,Donkey Republic Utrecht,"Utrecht, NL",donkey_ut,https://www.donkey.bike/cities/bike-rental-utrecht/,https://stables.donkey.bike/api/public/gbfs/2/donkey_ut/gbfs.json
 NL,GoAbout,"Netherlands",goabout,https://goabout.com,https://gbfs.goabout.com/2/gbfs.json
 NL,nextbike Dordrecht,"Dordrecht, NL",nextbike_nd,https://www.nextbike.nl/nl/dordrecht/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_nd/gbfs.json
 NL,NS OV Fiets,"Netherlands",ns_ov_fiets,https://www.ns.nl/en/door-to-door/ov-fiets,http://gbfs.openov.nl/ovfiets/gbfs.json
@@ -366,10 +371,10 @@ RO,nextbike Romania,"Focșani, RO",nextbike_nw,https://nextbike.ro/en/foc%C8%99a
 RO,Saturn,"Saturn, RO",nextbike_rs,https://www.nextbike.ro/ro/saturn/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rs/gbfs.json
 SA,iBike ( Saudi Arabia ),"King Abdullah Economic City, SA",nextbike_sa,https://ibike.kaec.net/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_sa/gbfs.json
 SC,Just Eat Cycles,"Edinburgh, SC",edinburgh-city-bikes,https://edinburghcyclehire.com/,https://gbfs.urbansharing.com/edinburghcyclehire.com/gbfs.json
-SE,Donkey Republic Ängelholm,"Ängelholm, SE",donkey_aengelholm,https://www.donkey.bike/cities/bike-rental-angelholm/,https://stables.donkey.bike/api/public/gbfs/donkey_aengelholm/gbfs.json
-SE,Donkey Republic Båstad,"Båstad, SE",donkey_baastad,https://www.donkey.bike/cities/bike-rental-bastad/,https://stables.donkey.bike/api/public/gbfs/donkey_baastad/gbfs.json
-SE,Donkey Republic Malmö,"Malmö, SE",donkey_malmoe,https://www.donkey.bike/cities/bike-rental-malmo/,https://stables.donkey.bike/api/public/gbfs/donkey_malmoe/gbfs.json
-SE,Donkey Republic Ystad,"Ystad, SE",donkey_ystad,https://www.donkey.bike/cities/bike-rental-ystad/,https://stables.donkey.bike/api/public/gbfs/donkey_ystad/gbfs.json
+SE,Donkey Republic Ängelholm,"Ängelholm, SE",donkey_aengelholm,https://www.donkey.bike/cities/bike-rental-angelholm/,https://stables.donkey.bike/api/public/gbfs/2/donkey_aengelholm/gbfs.json
+SE,Donkey Republic Båstad,"Båstad, SE",donkey_baastad,https://www.donkey.bike/cities/bike-rental-bastad/,https://stables.donkey.bike/api/public/gbfs/2/donkey_baastad/gbfs.json
+SE,Donkey Republic Malmö,"Malmö, SE",donkey_malmoe,https://www.donkey.bike/cities/bike-rental-malmo/,https://stables.donkey.bike/api/public/gbfs/2/donkey_malmoe/gbfs.json
+SE,Donkey Republic Ystad,"Ystad, SE",donkey_ystad,https://www.donkey.bike/cities/bike-rental-ystad/,https://stables.donkey.bike/api/public/gbfs/2/donkey_ystad/gbfs.json
 SE,Stockholm,"Stockholm, SE",Link_Stockholm,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Stockholm/gbfs.json
 SE,"Styr & Ställ (Sweden, Göteborg)","Göteborg, SE",nextbike_zg,https://styrochstall.se/sv/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_zg/gbfs.json
 SI,Nomago Bikes - GO2GO,"Nova Gorica, SI",nextbike_ce,https://bikes.nomago.si/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ce/gbfs.json
