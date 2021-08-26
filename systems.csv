@@ -323,18 +323,36 @@ NL,GoAbout,"Netherlands",goabout,https://goabout.com,https://gbfs.goabout.com/2/
 NL,nextbike Dordrecht,"Dordrecht, NL",nextbike_nd,https://www.nextbike.nl/nl/dordrecht/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_nd/gbfs.json
 NL,NS OV Fiets,"Netherlands",ns_ov_fiets,https://www.ns.nl/en/door-to-door/ov-fiets,http://gbfs.openov.nl/ovfiets/gbfs.json
 NO,Bolt Bergen,"Bergen, NO",boltbergen,https://bolt.eu/en/cities/bergen/,https://api.entur.io/mobility/v2/gbfs/boltbergen/gbfs
+NO,Bolt Drammen,"Drammen, NO", boltdrammen,https://bolt.eu/en/cities/drammen/,https://api.entur.io/mobility/v2/gbfs/boltdrammen/gbfs
 NO,Bergen City Bike,"Bergen, NO",bergen-city-bike,https://bergenbysykkel.no/en,https://gbfs.urbansharing.com/bergenbysykkel.no/gbfs.json
 NO,Bolt Fredrikstad,"Fredrikstad, NO",boltfredrikstad,https://bolt.eu/en/cities/fredrikstad/,https://api.entur.io/mobility/v2/gbfs/boltfredrikstad/gbfs
+NO,Bolt Gjovik,"Gjovik, NO",boltgjovik,https://bolt.eu/en/cities/gjovik/,https://api.entur.io/mobility/v2/gbfs/boltgjovik/gbfs
+NO,Bolt Hamar,"Hamar, NO",bolthamar,https://bolt.eu/en/cities/hamar/,https://api.entur.io/mobility/v2/gbfs/bolthamar/gbfs
+NO,Bolt Lillehammer,"Lillehammer, NO",boltlillehammer,https://bolt.eu/en/cities/lillehammer/,https://api.entur.io/mobility/v2/gbfs/boltlillehammer/gbfs
 NO,Bolt Lillestrom,"Lillestrom, NO",boltlillestrom,https://bolt.eu/en/cities/lillestrom/,https://api.entur.io/mobility/v2/gbfs/boltlillestrom/gbfs
 NO,Bolt Oslo,"Oslo, NO",boltoslo,https://bolt.eu/en/cities/oslo/,https://api.entur.io/mobility/v2/gbfs/boltoslo/gbfs
+NO,Bolt Sarpsborg,"Arpsborg, NO",boltsarpsborg,https://bolt.eu/en/cities/sarpsborg/,https://api.entur.io/mobility/v2/gbfs/boltsarpsborg/gbfs
 NO,Drammen Bysykkel,"Drammen, NO",drammenbysykkel,https://www.drammenbysykler.no/,https://api.entur.io/mobility/v2/gbfs/drammenbysykkel/gbfs
 NO,Kolumbus Bysykkel,"Kolumbus, NO",kolumbusbysykkel,https://www.kolumbus.no/reise/sykkel-oversikt/bysykkelen/,https://api.entur.io/mobility/v2/gbfs/kolumbusbysykkel/gbfs
 NO,Lillestrom Bysykkel,"Lillestrom, NO",lillestrombysykkel,http://www.bysykkel.org/,https://api.entur.io/mobility/v2/gbfs/lillestrombysykkel/gbfs
 NO,Lime Olso,"Oslo, NO",limeoslo,https://www.li.me/,https://api.entur.io/mobility/v2/gbfs/limeoslo/gbfs
 NO,Oslo City Bike,"Oslo, NO",oslobysykkel,https://oslobysykkel.no/en,https://gbfs.urbansharing.com/oslobysykkel.no/gbfs.json
+NO,Tier ASANE,"Asane, NO",tierasane,https://www.tier.app/,https://api.entur.io/mobility/v2/gbfs/tierasane/gbfs
+NO,Tier Asker,"Asker, NO",tierasker,https://www.tier.app/,https://api.entur.io/mobility/v2/gbfs/tierasker/gbfs
+NO,Tier Baerum,"Baerum, NO",tierbaerum,https://www.tier.app/,https://api.entur.io/mobility/v2/gbfs/tierbaerum/gbfs
+NO,Tier Bergen,"Bergen, NO",tierbergen,https://www.tier.app/,https://api.entur.io/mobility/v2/gbfs/tierbergen/gbfs
+NO,Tier Drammen,"Drammen, NO",tierdrammen,https://www.tier.app/,https://api.entur.io/mobility/v2/gbfs/tierdrammen/gbfs
+NO,Tier Lillestrom,"Lillestrom, NO",tierlillestrom,https://www.tier.app/,https://api.entur.io/mobility/v2/gbfs/tierlillestrom/gbfs
+NO,Tier Lorenskog,"Lorenskog, NO",tierlorenskog,https://www.tier.app/,https://api.entur.io/mobility/v2/gbfs/tierlorenskog/gbfs
+NO,Tier Namsos,"Namsos, NO",tiernamsos,https://www.tier.app/,https://api.entur.io/mobility/v2/gbfs/tiernamsos/gbfs
+NO,Tier Oslo,"Oslo, NO",tieroslo,https://www.tier.app/,https://api.entur.io/mobility/v2/gbfs/tieroslo/gbfs
+NO,Tier Ski,"Ski, NO",tierski,https://www.tier.app/,https://api.entur.io/mobility/v2/gbfs/tierski/gbfs
+NO,Tier Stavanger,"Stavanger, NO",tierstavanger,https://www.tier.app/,https://api.entur.io/mobility/v2/gbfs/tierstavanger/gbfs
+NO,Tier Trondheim,"Trondheim, NO",tiertrondheim,https://www.tier.app/,https://api.entur.io/mobility/v2/gbfs/tiertrondheim/gbfs
 NO,Trondheim City Bike,"Trondheim, NO",trondheim,https://trondheimbysykkel.no/en,https://gbfs.urbansharing.com/trondheimbysykkel.no/gbfs.json
 NO,Voi Olso,"Oslo, NO",voioslo,https://www.voiscooters.com/,https://api.entur.io/mobility/v2/gbfs/voioslo/gbfs
 NO,Voi Trondheim,"Trondheim, NO",voitrondheim,https://www.voiscooters.com/,https://api.entur.io/mobility/v2/gbfs/voitrondheim/gbfs
+NO,Zvipp,"Trondheim, NO",zvipptrondheim,https://www.zvipp.no/support,https://api.entur.io/mobility/v2/gbfs/zvipptrondheim/gbfs
 NZ,Flamingo Aukland,"Aukland, NZ",flamingo_auckland,https://flamingoscooters.com,https://api.flamingoscooters.com/gbfs/auckland/gbfs.json
 NZ,Flamingo Christchurch,"Christchurch, NZ",flamingo_christchurch,https://flamingoscooters.com,https://api.flamingoscooters.com/gbfs/christchurch/gbfs.json
 NZ,Flamingo Wellington,"Wellington, NZ",flamingo_wellington,https://flamingoscooters.com,https://api.flamingoscooters.com/gbfs/wellington/gbfs.json
