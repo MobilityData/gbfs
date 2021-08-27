@@ -434,7 +434,7 @@ Field Name | REQUIRED | Type | Defines
         "form_factor": "scooter",
         "propulsion_type": "electric",
         "name": "Example E-scooter V2",
-        "max_range_meters": 12345,
+        "max_range_meters": 12345
       },
       {
         "vehicle_type_id": "car1",
