@@ -182,7 +182,7 @@ It is RECOMMENDED that all GBFS data sets be offered under an open data license.
 
 * Array - A JSON element consisting of an ordered sequence of zero or more values.
 * Boolean - One of two possible values, `true`or `false`. Boolean values MUST be JSON booleans, not strings (i.e. `true` or `false`, not `"true"` or `"false"`). *(as of v2.0)*
-* Date - Service day in the YYYY-MM-DD format. Example: `2019-09-13` for September 13th, 2019.
+* Date - A date in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) Complete Date Extended Format: YYYY-MM-DD . Example: `2019-09-13` for September 13th, 2019.
 * Email - An email address. Example: `example@example.com`
 * Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column. Enum values SHOULD be lowercase.
 Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc...
@@ -353,7 +353,7 @@ Field Name | REQUIRED | Type | Defines
 `terms_url` | OPTIONAL | URL | A fully qualified URL pointing to the terms of service ( also called terms of use or terms and conditions) for the service. 
 `terms_last_updated` |Conditionally REQUIRED | Date | REQUIRED if `terms_url` is defined. The date that the terms of service provided at `terms_url` were last updated. MUST be in the format YYYY-MM-DD.
 `privacy_url` | OPTIONAL | URL | A fully qualified URL pointing to the privacy policy for the service.
-`privacy_last_updated` |Conditionally REQUIRED | Date | REQUIRED if `privacy_url` is defined. The date that the privacy policy provided at `privacy_url` was last updated. MUST be in the format YYYY/MM/DD.
+`privacy_last_updated` |Conditionally REQUIRED | Date | REQUIRED if `privacy_url` is defined. The date that the privacy policy provided at `privacy_url` was last updated. MUST be in the format YYYY-MM-DD.
 `rental_apps` <br/>*(added in v1.1)* | OPTIONAL | Object | Contains rental app information in the android and ios JSON objects.
 \-&nbsp;`android` <br/>*(added in v1.1)* | OPTIONAL | Object | Contains rental app download and app discovery information for the Android platform in the `store_uri` and `discovery_uri` fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
 &emsp;- `store_uri` <br/>*(added in v1.1)* | Conditionally REQUIRED | URI | URI where the rental Android app can be downloaded from. Typically this will be a URI to an app store such as Google Play. If the URI points to an app store such as Google Play, the URI SHOULD follow Android best practices so the viewing app can directly open the URI to the native app store app instead of a website. <br><br> If a `rental_uris`.`android` field is populated then this field is REQUIRED, otherwise it is OPTIONAL. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Example value: `https://play.google.com/store/apps/details?id=com.example.android`
