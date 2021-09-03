@@ -350,6 +350,12 @@ Field Name | REQUIRED | Type | Defines
 `license_url` | Conditionally REQUIRED <br/>*(as of v3.0-RC)* | URL | REQUIRED if the dataset is provided under a customized license. A fully qualified URL of a page that defines the license terms for the GBFS data for this system. Do not specify a `license_url` if `license_id` is specified. If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode). *(as of v3.0-RC)*
 `attribution_organization_name` <br/>*(added in v3.0-RC)* | OPTIONAL | String | If the feed license requires attribution, name of the organization to which attribution should be provided.
 `attribution_url` <br/>*(added in v3.0-RC)* | OPTIONAL | URL | URL of the organization to which attribution should be provided.
+`brand_assets`<br/>*(added in v2.3-RC)*  | OPTIONAL | Object | An object where each key defines one of the items listed below.
+\- `brand_last_modified`<br/>*(added in v2.3-RC)*  | Conditionally REQUIRED | Date | REQUIRED if `brand_assets` object is defined. Date that indicates the last time any included brand assets were updated or modified. MUST be in the format YYYY-MM-DD.
+\- `brand_terms_url`<br/>*(added in v2.3-RC)*   | OPTIONAL |  URL |  A fully qualified URL pointing to the location of a page that defines the license terms of brand icons, colors or other trademark information.  This field MUST NOT take the place of `license_url` or `license_id`.
+\- `brand_image_url`<br/>*(added in v2.3-RC)*  | Conditionally REQUIRED |  URL |  REQUIRED if `brand_assets` object is defined. A fully qualified URL pointing to the location of a graphic file representing the brand for the service. File MUST be in SVG V1.1 format and MUST be either square or round.
+\- `brand_image_url_dark`<br/>*(added in v2.3-RC)*  | OPTIONAL |  URL | A fully qualified URL pointing to the location of a graphic file representing the brand for the service for use in dark mode applications.  File MUST be in SVG V1.1 format and MUST be either square or round.
+\- `color`<br/>*(added in v2.3-RC)*  | OPTIONAL |  String |  Color used to represent the brand for the service expressed as a 6 digit hexadecimal color code in the form #000000.
 `terms_url`<br/>*(added in v2.3)* | OPTIONAL | URL | A fully qualified URL pointing to the terms of service ( also called terms of use or terms and conditions) for the service. 
 `terms_last_updated`<br/>*(added in v2.3)* |Conditionally REQUIRED | Date | REQUIRED if `terms_url` is defined. The date that the terms of service provided at `terms_url` were last updated. MUST be in the format YYYY-MM-DD.
 `privacy_url`<br/>*(added in v2.3)*| OPTIONAL | URL | A fully qualified URL pointing to the privacy policy for the service.
@@ -370,19 +376,27 @@ Field Name | REQUIRED | Type | Defines
   "ttl": 1800,
   "version": "3.0",
   "data": {
-    "phone_number": "1-800-555-1234",
-    "name": "Example Bike Rental",
-    "operator": "Example Sharing, Inc",
-    "start_date": "2010-06-10",
-    "purchase_url": "https://www.example.com",
-    "timezone": "US/Central",
-    "license_url": "https://www.example.com/data-license.html",
-    "short_name": "Example Bike Rental",
-    "email": "customerservice@example.com",
-    "url": "https://www.example.com",
-    "feed_contact_email": "datafeed@example.com",
     "system_id": "example_cityname",
     "language": "en",
+    "name": "Example Bike Rental",
+    "short_name": "Example Bike",
+    "operator": "Example Sharing, Inc",
+    "url": "https://www.example.com",
+    "purchase_url": "https://www.example.com",
+    "start_date": "2010-06-10",
+    "phone_number": "1-800-555-1234",
+    "email": "customerservice@example.com",
+    "feed_contact_email": "datafeed@example.com",
+    "timezone": "US/Central",
+    "license_url": "https://www.example.com/data-license.html",
+    "brand_assets": {
+        "brand_last_modified": "2021-06-15",
+        "brand_image_url": "https://www.example.com/assets/brand_image.svg",
+        "brand_image_url_dark": "https://www.example.com/assets/brand_image_dark.svg",
+        "color": "#C2D32C",
+        "terms_url": "https://www.example.com/assets/brand.pdf"
+      }
+      
   }
 }
 ```
@@ -399,8 +413,13 @@ Field Name | REQUIRED | Type | Defines
 \- `propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides power only alongside human propulsion)_</li><li>`electric` _(Contains throttle mode with a battery-powered motor)_</li><li>`combustion` _(Contains throttle mode with a gas engine-powered motor)_</li></ul> This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/master/provider/README.md#propulsion-types).
 \- `max_range_meters` | Conditionally REQUIRED | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is REQUIRED. This represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example, a full battery or full tank of gas).
 \- `name` | OPTIONAL | String | The public name of this vehicle type.
+\- `vehicle_assets`<br/>*(added in v2.3-RC)*| OPTIONAL | Object | An object where each key defines one of the items listed below.
+&emsp;&emsp;\- `icon_url`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | URL | REQUIRED if `vehicle_assets` is defined. A fully qualified URL pointing to the location of a graphic icon file that MAY be used to represent this vehicle type on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
+&emsp;&emsp;\- `icon_url_dark`<br/>*(added in v2.3-RC)*| OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type when in dark mode on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
+&emsp;&emsp;\- `icon_last_modified`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | Date | REQUIRED if `icon_url`  and/or `icon_url_dark` is defined. Date that indicates the last time any included vehicle icon images were modified or updated. MUST be in the format YYYY-MM-DD.
 \- `default_pricing_plan_id`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | ID | REQUIRED if both `system_pricing_plans` and `vehicle_types.json` are defined. A `plan_id` as defined in `system_pricing_plans.json` that identifies a default pricing plan for this vehicle to be used by trip planning applications for purposes of calculating the cost of a single trip using this vehicle type. This default pricing plan is superseded by `pricing_plan_id` when it is defined in `free_bike_status.json` Publishers SHOULD define `default_pricing_plan_id` first and then override it using `pricing_plan_id` in `free_bike_status.json` when necessary.
 \- `pricing_plans`<br/>*(added in v2.3-RC)* | OPTIONAL | Array | Array of all pricing plan IDs as defined in `system_pricing_plans.json` that are applied to this vehicle type. <br /><br />This array SHOULD be published when there are multiple pricing plans defined in `system_pricing_plans.json` that apply to a single vehicle type.
+
 ##### Example:
 
 ```jsonc
@@ -415,6 +434,11 @@ Field Name | REQUIRED | Type | Defines
         "form_factor": "bicycle",
         "propulsion_type": "human",
         "name": "Example Basic Bike",
+        "vehicle_assets": {
+          "icon_url": "https://www.example.com/assets/icon_bicycle.svg",
+          "icon_url_dark": "https://www.example.com/assets/icon_bicycle_dark.svg",
+          "icon_last_modified": "2021-06-15"
+        }
         "default_pricing_plan": "bike_plan_1",
         "pricing_plans": [
           "bike_plan_1",
@@ -428,6 +452,11 @@ Field Name | REQUIRED | Type | Defines
         "propulsion_type": "electric",
         "name": "Example E-scooter V2",
         "max_range_meters": 12345,
+        "vehicle_assets": {
+          "icon_url": "https://www.example.com/assets/icon_escooter.svg",
+          "icon_url_dark": "https://www.example.com/assets/icon_escooter_dark.svg",
+          "icon_last_modified": "2021-06-15"
+        }
         "default_pricing_plan": "scooter_plan_1"
       },
       {
@@ -435,6 +464,12 @@ Field Name | REQUIRED | Type | Defines
         "form_factor": "car",
         "propulsion_type": "combustion",
         "name": "Four-door Sedan",
+        "max_range_meters": 12345,
+        "vehicle_assets": {
+          "icon_url": "https://www.example.com/assets/icon_car.svg",
+          "icon_url_dark": "https://www.example.com/assets/icon_car_dark.svg",
+          "icon_last_modified": "2021-06-15"
+        }
         "max_range_meters": 523992,
         "default_pricing_plan": "car_plan_1"
       }
