@@ -411,7 +411,7 @@ Field Name | REQUIRED | Type | Defines
         "form_factor": "bicycle",
         "propulsion_type": "human",
         "name": "Example Basic Bike",
-        "reserve_time": 30
+        "vehicle_reserve_time": 30
       },
       {
         "vehicle_type_id": "def456",
@@ -419,7 +419,7 @@ Field Name | REQUIRED | Type | Defines
         "propulsion_type": "electric",
         "name": "Example E-scooter V2",
         "max_range_meters": 12345,
-        "reserve_time": 30
+        "vehicle_reserve_time": 30
       },
       {
         "vehicle_type_id": "car1",
@@ -427,7 +427,7 @@ Field Name | REQUIRED | Type | Defines
         "propulsion_type": "combustion",
         "name": "Four-door Sedan",
         "max_range_meters": 523992,
-        "reserve_time": 0
+        "vehicle_reserve_time": 0
       }
     ]
   }
@@ -877,7 +877,6 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
         "price": 2,
         "is_taxable": false,
         "description": "Includes 10km, overage fees apply after 10km.",
-        "reserve_time": 30,
         "per_km_pricing": [
           {
             "start": 10,
