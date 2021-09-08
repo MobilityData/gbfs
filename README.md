@@ -27,7 +27,7 @@ The specification has been designed with the following concepts in mind:
 
 The data in the specification contained in this document is intended for consumption by clients intending to provide real-time (or semi-real-time) transit advice and is designed as such.
 ## Get Involved
-GBFS is an open source project developed under a consensus-based governance model. Contributors come from across the shared mobility industry, public sector, civic technology and elsewhere. Proposals for changes or additions to the specification can be made through [pull requests](https://github.com/NABSA/gbfs/pulls). Comments or questions can be addressed to the community by [opening an issue](https://github.com/NABSA/gbfs/issues). Questions can also be addressed to the shared mobility staff at MobilityData: [sharedmobility@mobilitydata.org](mailto:sharedmobility@mobilitydata.org)
+GBFS is an open source project developed under a consensus-based governance model. Contributors come from across the shared mobility industry, public sector, civic technology and elsewhere. Comments or questions can be addressed to the community by [opening an issue](https://github.com/NABSA/gbfs/issues). Proposals for changes or additions to the specification can be made through [pull requests](https://github.com/NABSA/gbfs/pulls). Questions can also be addressed to the community via the [public GBFS Slack channel](https://bit.ly/mobilitydata-slack) or to the shared mobility staff at MobilityData: [sharedmobility@mobilitydata.org](mailto:sharedmobility@mobilitydata.org)
 ## Current Version
 **The current release is [v2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md)**
 
@@ -71,6 +71,13 @@ GBFS is an open source project developed under a consensus-based governance mode
   * [#261](https://github.com/NABSA/gbfs/pull/261) - Aggregate available vehicle_types at a station
 * **[v2.2 Current Version](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md)**
   * [#252](https://github.com/NABSA/gbfs/pull/252) - Extend system_pricing_plans.json
+* [v2.3-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/v2.3-RC/gbfs.md)
+  * [#329](https://github.com/NABSA/gbfs/pull/329) - Add vehicle drop off restrictions
+  * [#330](https://github.com/NABSA/gbfs/pull/330) - Adding vehicle icons & brand information
+  * [#331](https://github.com/NABSA/gbfs/pull/331) - Reserve time for vehicle types and pricing plans
+  * [#335](https://github.com/NABSA/gbfs/pull/335) - Add pricing plans to vehicle types
+  * [#336](https://github.com/NABSA/gbfs/pull/336) - Add fields for terms and privacy policy
+  * [#340](https://github.com/NABSA/gbfs/pull/340) - Add field to designate stations that support vehicle charging
 * [v3.0-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/master/gbfs.md)
   * [#182](https://github.com/NABSA/gbfs/pull/182) - Require `license_url`, add attribution fields 
 
