@@ -78,8 +78,7 @@ GBFS is an open source project developed under a consensus-based governance mode
   * [#335](https://github.com/NABSA/gbfs/pull/335) - Add pricing plans to vehicle types
   * [#336](https://github.com/NABSA/gbfs/pull/336) - Add fields for terms and privacy policy
   * [#340](https://github.com/NABSA/gbfs/pull/340) - Add field to designate stations that support vehicle charging
-* [v3.0-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/master/gbfs.md)
-  * [#182](https://github.com/NABSA/gbfs/pull/182) - Require `license_url`, add attribution fields 
+
 
 ## Governance & Overview of the Change Process
 GBFS is an open specification, developed and maintained by the community of producers and consumers of GBFS data.
