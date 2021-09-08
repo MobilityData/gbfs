@@ -409,10 +409,13 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `vehicle_types` | Yes | Array | Array that contains one object per vehicle type in the system as defined below.
 \- `vehicle_type_id` | Yes | ID | Unique identifier of a vehicle type. See [Field Types](#field-types) above for ID field requirements.
-\- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`car`</li><li>`moped`</li><li>`scooter`</li><li>`other`</li></ul>
+\- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`cargo_bicycle`</li><li>`car`</li><li>`moped`</li><li>`scooter_standing`</li><li>`scooted_seated` (not to be confused with moped)</li><li>`other`</li></ul>
 \- `propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides power only alongside human propulsion)_</li><li>`electric` _(Contains throttle mode with a battery-powered motor)_</li><li>`combustion` _(Contains throttle mode with a gas engine-powered motor)_</li></ul> This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/master/provider/README.md#propulsion-types).
 \- `max_range_meters` | Conditionally REQUIRED | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is REQUIRED. This represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example, a full battery or full tank of gas).
 \- `name` | OPTIONAL | String | The public name of this vehicle type.
+\- `wheel_count` | OPTIONAL | Non-negative Integer | Number of wheels this vehicle type has.
+\- `max_permitted_speed` | OPTIONAL | Non-negative Integer | The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations.
+\- `rated_power` | OPTIONAL | Non-negative Integer | The rated power of the motor for this vehicle type in watts.
 \- `vehicle_reserve_time` | OPTIONAL | Non-negative Integer | Maximum time in minutes that a vehicle can be reserved before a rental begins. When a vehicle is reserved by a user the vehicle remains locked until the rental begins. During this time the vehicle is unavailable and cannot be be reserved or rented by other users. The vehicle status in `free_bike_status.json` MUST be set to `is_reserved = true`. If the value of `vehicle_reserve_time` elapses without a rental beginning, the vehicle status MUST change to `is_reserved = false`. If `vehicle_reserve_time` is set to `0` the vehicle type cannot be reserved. 
 \- `return_type`<br/>*(added in v2.3-RC)*|| OPTIONAL | Array | The conditions for returning the vehicle at the end of the trip. For vehicles that have more than one return option, include all applicable methods in the array. <br /><br />Current valid values are:<br /><ul><li>`free_floating` _(The vehicle can be returned anywhere permitted within the service area - note that this field is subject to rules in `geofencing_zones.json` if defined.)_</li><li>`roundtrip_station` _(The vehicle must be returned to the initial rental station. Cannot be defined in combination with `free_floating`.)_</li><li>`any_station` _(The vehicle must be returned to any station within the service area - note that a specific station can be defined in [free_bike_status.json](#free_bike_status.json) using `home_station`. Cannot be defined in combination with `roundtrip_station`.)_
 \- `vehicle_assets`<br/>*(added in v2.3-RC)*| OPTIONAL | Object | An object where each key defines one of the items listed below.
@@ -421,7 +424,6 @@ Field Name | REQUIRED | Type | Defines
 &emsp;&emsp;\- `icon_last_modified`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | Date | REQUIRED if `icon_url`  and/or `icon_url_dark` is defined. Date that indicates the last time any included vehicle icon images were modified or updated. MUST be in the format YYYY-MM-DD.
 \- `default_pricing_plan_id`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | ID | REQUIRED if both `system_pricing_plans` and `vehicle_types.json` are defined. A `plan_id` as defined in `system_pricing_plans.json` that identifies a default pricing plan for this vehicle to be used by trip planning applications for purposes of calculating the cost of a single trip using this vehicle type. This default pricing plan is superseded by `pricing_plan_id` when it is defined in `free_bike_status.json` Publishers SHOULD define `default_pricing_plan_id` first and then override it using `pricing_plan_id` in `free_bike_status.json` when necessary.
 \- `pricing_plans`<br/>*(added in v2.3-RC)* | OPTIONAL | Array | Array of all pricing plan IDs as defined in `system_pricing_plans.json` that are applied to this vehicle type. <br /><br />This array SHOULD be published when there are multiple pricing plans defined in `system_pricing_plans.json` that apply to a single vehicle type.
-
 
 ##### Example:
 
@@ -437,6 +439,7 @@ Field Name | REQUIRED | Type | Defines
         "form_factor": "bicycle",
         "propulsion_type": "human",
         "name": "Example Basic Bike",
+        "wheel_count": 2,
         "vehicle_reserve_time": 30,
         "return_type": [
           "any_station",
@@ -455,10 +458,35 @@ Field Name | REQUIRED | Type | Defines
         ]
       },
       {
+        "vehicle_type_id": "cargo123",
+        "form_factor": "cargo_bicycle",
+        "propulsion_type": "human",
+        "name": "Example Cargo Bike",
+        "wheel_count": 3,
+        "vehicle_reserve_time": 30,
+        "return_type": [
+          "roundtrip_station"
+        ],
+        "vehicle_assets": {
+          "icon_url": "https://www.example.com/assets/icon_cargobicycle.svg",
+          "icon_url_dark": "https://www.example.com/assets/icon_cargobicycle_dark.svg",
+          "icon_last_modified": "2021-06-15"
+        },
+        "default_pricing_plan": "cargo_plan_1",
+        "pricing_plans": [
+          "cargo_plan_1",
+          "cargo_plan_2",
+          "cargo_plan_3"
+        ]
+      },
+      {
         "vehicle_type_id": "def456",
-        "form_factor": "scooter",
+        "form_factor": "scooter_standing",
         "propulsion_type": "electric",
         "name": "Example E-scooter V2",
+        "wheel_count": 2,
+        "max_permitted_speed": 25,
+        "rated_power": 350,
         "vehicle_reserve_time": 30,
         "max_range_meters": 12345,
         "return_type": [
@@ -476,6 +504,7 @@ Field Name | REQUIRED | Type | Defines
         "form_factor": "car",
         "propulsion_type": "combustion",
         "name": "Four-door Sedan",
+        "wheel_count": 4,
         "vehicle_reserve_time": 0,
         "max_range_meters": 523992,
         "return_type": [
