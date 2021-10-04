@@ -477,7 +477,7 @@ Field Name | REQUIRED | Type | Defines
         "propulsion_type": "combustion",
         "name": "Four-door Sedan",
         "default_reserve_time": 0,
-        "max_range_meters": 523992,
+        "max_range_meters": 523992.0,
         "return_type": [
           "roundtrip_station"
         ],
@@ -558,8 +558,8 @@ Field Name | REQUIRED | Type | Defines
       {
         "station_id": "station12",
         "name": "SE Belmont & SE 10 th",
-        "lat": -122.655775,
-        "lon": 45.516445,
+        "lat": 45.516445,
+        "lon": -122.655775,
         "is_valet_station": false,
         "is_virtual_station": true,
         "station_area": {
@@ -746,7 +746,7 @@ Field Name | REQUIRED | Type | Defines
         "is_reserved": false,
         "is_disabled": false,
         "vehicle_type_id": "def456",
-        "current_range_meters": 6543,
+        "current_range_meters": 6543.0,
         "station_id": "86",
         "pricing_plan_id": "plan3",
         "home_station_id": "146"
@@ -936,19 +936,19 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
         "plan_id": "plan2",
         "name": "One-Way",
         "currency": "USD",
-        "price": 2,
+        "price": 2.00,
         "is_taxable": false,
         "description": "Includes 10km, overage fees apply after 10km.",
         "per_km_pricing": [
           {
             "start": 10,
-            "rate": 1,
+            "rate": 1.00,
             "interval": 1,
             "end": 25
           },
           {
             "start": 25,
-            "rate": 0.5,
+            "rate": 0.50,
             "interval": 1
           },
           {
@@ -978,7 +978,7 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
         "plan_id": "plan3",
         "name": "Simple Rate",
         "currency": "CAD",
-        "price": 3,
+        "price": 3.00,
         "is_taxable": true,
         "description": "$3 unlock fee, $0.25 per kilometer and 0.50 per minute.",
         "per_km_pricing": [
@@ -1040,14 +1040,13 @@ Field Name | REQUIRED | Type | Defines
         ],
         "times": [
           {
-            "start": "1604448000",
-            "end": "1604674800"
+            "start": 1604448000,
+            "end": 1604674800
           }
         ],
         "url": "https://example.com/more-info",
         "summary": "Disruption of Service",
-        "description": "The three stations on Broadway will be out of service
-         from 12:00am Nov 3 to 3:00pm Nov 6th to accommodate road work",
+        "description": "The three stations on Broadway will be out of service from 12:00am Nov 3 to 3:00pm Nov 6th to accommodate road work",
         "last_updated": 1604519393
       }
     ]
@@ -1259,7 +1258,7 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
     "language": "en",
     "rental_apps": {
       "android": {
-        "discovery_uri": "com.example.android://"
+        "discovery_uri": "com.example.android://",
         "store_uri": "https://play.google.com/store/apps/details?id=com.example.android",
       },
       "ios": {
