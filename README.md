@@ -17,7 +17,7 @@ Documentation for the General Bikeshare Feed Specification, a standardized data 
 ## What is GBFS?
 The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.
  
-GBFS was created in 2014 by [Mitch Vars](https://github.com/mplsmitch) with collaboration from public, private sector and non-profit shared mobility system owners and operators, application developers, and technology vendors. [Michael Frumin](https://github.com/fruminator), [Jesse Chan-Norris](https://github.com/jcn) and others made significant contributions of time and expertise toward the development of v1.0 on behalf of Motivate International LLC (now Lyft). The [North American Bikeshare Association’s](http://www.nabsa.net) endorsement, support, and hosting was key to its success starting in 2015. In 2019, NABSA chose MobilityData to govern and facilitate the improvement of GBFS. MobilityData hosts a [GBFS Resource Center](https://gbfs.mobilitydata.org/) and a [public GBFS Slack channel](https://mobilitydata-io.herokuapp.com/) - you are welcome to contact us there or at <sharedmobility@mobilitydata.org> with questions.  
+GBFS was created in 2014 by [Mitch Vars](https://github.com/mplsmitch) with collaboration from public, private sector and non-profit shared mobility system owners and operators, application developers, and technology vendors. [Michael Frumin](https://github.com/fruminator), [Jesse Chan-Norris](https://github.com/jcn) and others made significant contributions of time and expertise toward the development of v1.0 on behalf of Motivate International LLC (now Lyft). The [North American Bikeshare Association’s](http://www.nabsa.net) endorsement, support, and hosting was key to its success starting in 2015. In 2019, NABSA chose MobilityData to govern and facilitate the improvement of GBFS. MobilityData hosts a [GBFS Resource Center](https://gbfs.mobilitydata.org/) and a [public GBFS Slack channel](https://bit.ly/mobilitydata-slack) - you are welcome to contact us there or at <sharedmobility@mobilitydata.org> with questions.  
 
 GBFS is intended as a specification for real-time, read-only data - any data being written back into individual shared mobility systems are excluded from this spec.
 
@@ -27,7 +27,7 @@ The specification has been designed with the following concepts in mind:
 
 The data in the specification contained in this document is intended for consumption by clients intending to provide real-time (or semi-real-time) transit advice and is designed as such.
 ## Get Involved
-GBFS is an open source project developed under a consensus-based governance model. Contributors come from across the shared mobility industry, public sector, civic technology and elsewhere. Proposals for changes or additions to the specification can be made through [pull requests](https://github.com/NABSA/gbfs/pulls). Comments or questions can be addressed to the community by [opening an issue](https://github.com/NABSA/gbfs/issues). Questions can also be addressed to the shared mobility staff at MobilityData: [sharedmobility@mobilitydata.org](mailto:sharedmobility@mobilitydata.org)
+GBFS is an open source project developed under a consensus-based governance model. Contributors come from across the shared mobility industry, public sector, civic technology and elsewhere. Comments or questions can be addressed to the community by [opening an issue](https://github.com/NABSA/gbfs/issues). Proposals for changes or additions to the specification can be made through [pull requests](https://github.com/NABSA/gbfs/pulls). Questions can also be addressed to the community via the [public GBFS Slack channel](https://bit.ly/mobilitydata-slack) or to the shared mobility staff at MobilityData: [sharedmobility@mobilitydata.org](mailto:sharedmobility@mobilitydata.org)
 ## Current Version
 **The current release is [v2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md)**
 
@@ -71,6 +71,13 @@ GBFS is an open source project developed under a consensus-based governance mode
   * [#261](https://github.com/NABSA/gbfs/pull/261) - Aggregate available vehicle_types at a station
 * **[v2.2 Current Version](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md)**
   * [#252](https://github.com/NABSA/gbfs/pull/252) - Extend system_pricing_plans.json
+* [v2.3-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/v2.3-RC/gbfs.md)
+  * [#329](https://github.com/NABSA/gbfs/pull/329) - Add vehicle drop off restrictions
+  * [#330](https://github.com/NABSA/gbfs/pull/330) - Adding vehicle icons & brand information
+  * [#331](https://github.com/NABSA/gbfs/pull/331) - Reserve time for vehicle types and pricing plans
+  * [#335](https://github.com/NABSA/gbfs/pull/335) - Add pricing plans to vehicle types
+  * [#336](https://github.com/NABSA/gbfs/pull/336) - Add fields for terms and privacy policy
+  * [#340](https://github.com/NABSA/gbfs/pull/340) - Add field to designate stations that support vehicle charging
 * [v3.0-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/master/gbfs.md)
   * [#182](https://github.com/NABSA/gbfs/pull/182) - Require `license_url`, add attribution fields 
 
@@ -84,7 +91,7 @@ To manage the change process, the following guidelines have been established.
 * A change is proposed by opening a Pull Request (PR) at the GBFS GitHub repository. The proposer becomes “The Advocate”. Comments and feedback from the GBFS community are received to iterate on the proposed change. Discussion lasts for as long as necessary to address questions and revisions, but must be at least 7 calendar days.
 * After 7 calendar days, The Advocate can call for a vote. Should The Advocate not call a vote or respond to comments from the community for a period of 30 full calendar days, anyone in the community can call for a vote. Vote lasts the minimum period sufficient to cover 10 full calendar days. Voting ends at 23:59:59 UTC. The vote announcement must conform to this template: 
   * *I hereby call a vote on this proposal. Voting will be open for 10 full calendar days until 11:59PM UTC on X.<br /> Please vote for or against the proposal, and include the organization for which you are voting in your comment. <br /> Please note if you can commit to implementing the proposal.*
-* The person calling for the vote should announce the vote in the [GBFS Slack channel](https://mobilittydata-io.slack.com) with a link to the PR. The message should conform to this template:
+* The person calling for the vote should announce the vote in the [GBFS Slack channel](https://mobilitydata-io.slack.com) with a link to the PR. The message should conform to this template:
   * *A vote has been called on PR # [title of PR] (link to PR). This vote will be open for 10 full calendar days, until 11:59PM UTC on X. Please vote for or against the proposal on GitHub.*
 * MobilityData will both comment on the PR on GitHub and send a reminder in the GBFS Slack channel when there are 2 calendar days remaining on the vote. The reminder should conform to this template: 
   * Slack: <br />*Voting on PR # [title of PR] (link to PR) closes in 2 calendar days. Please vote for or against the proposal on GitHub.* 

@@ -182,13 +182,13 @@ It is RECOMMENDED that all GBFS data sets be offered under an open data license.
 
 * Array - A JSON element consisting of an ordered sequence of zero or more values.
 * Boolean - One of two possible values, `true`or `false`. Boolean values MUST be JSON booleans, not strings (i.e. `true` or `false`, not `"true"` or `"false"`). *(as of v2.0)*
-* Date - Service day in the YYYY-MM-DD format. Example: `2019-09-13` for September 13th, 2019.
+* Date - A date in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) Complete Date Extended Format: YYYY-MM-DD . Example: `2019-09-13` for September 13th, 2019.
 * Email - An email address. Example: `example@example.com`
 * Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column. Enum values SHOULD be lowercase.
 Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc...
 * Float *(added in v2.1)* - A 32-bit floating point number.
 * GeoJSON FeatureCollection - A FeatureCollection as described by the IETF RFC 7946 https://tools.ietf.org/html/rfc7946#section-3.3.
-* GeoJSON Multipolygon - A Geometry Object as described by the IETF RFC https://tools.ietf.org/html/rfc7946#section-3.1.7.
+* GeoJSON MultiPolygon - A Geometry Object as described by the IETF RFC https://tools.ietf.org/html/rfc7946#section-3.1.7.
 * ID - Should be represented as a string that identifies that particular entity. An ID:
     * MUST be unique within like fields (e.g. `station_id` MUST be unique among stations)
     * does not have to be globally unique, unless otherwise specified
@@ -354,6 +354,16 @@ Field Name | REQUIRED | Type | Defines
 `license_url` | Conditionally REQUIRED <br/>*(as of v3.0-RC)* | URL | REQUIRED if the dataset is provided under a customized license. A fully qualified URL of a page that defines the license terms for the GBFS data for this system. Do not specify a `license_url` if `license_id` is specified. If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode). *(as of v3.0-RC)*
 `attribution_organization_name` <br/>*(added in v3.0-RC)* | OPTIONAL | String | If the feed license requires attribution, name of the organization to which attribution should be provided.
 `attribution_url` <br/>*(added in v3.0-RC)* | OPTIONAL | URL | URL of the organization to which attribution should be provided.
+`brand_assets`<br/>*(added in v2.3-RC)*  | OPTIONAL | Object | An object where each key defines one of the items listed below.
+\- `brand_last_modified`<br/>*(added in v2.3-RC)*  | Conditionally REQUIRED | Date | REQUIRED if `brand_assets` object is defined. Date that indicates the last time any included brand assets were updated or modified. MUST be in the format YYYY-MM-DD.
+\- `brand_terms_url`<br/>*(added in v2.3-RC)*   | OPTIONAL |  URL |  A fully qualified URL pointing to the location of a page that defines the license terms of brand icons, colors or other trademark information.  This field MUST NOT take the place of `license_url` or `license_id`.
+\- `brand_image_url`<br/>*(added in v2.3-RC)*  | Conditionally REQUIRED |  URL |  REQUIRED if `brand_assets` object is defined. A fully qualified URL pointing to the location of a graphic file representing the brand for the service. File MUST be in SVG V1.1 format and MUST be either square or round.
+\- `brand_image_url_dark`<br/>*(added in v2.3-RC)*  | OPTIONAL |  URL | A fully qualified URL pointing to the location of a graphic file representing the brand for the service for use in dark mode applications.  File MUST be in SVG V1.1 format and MUST be either square or round.
+\- `color`<br/>*(added in v2.3-RC)*  | OPTIONAL |  String |  Color used to represent the brand for the service expressed as a 6 digit hexadecimal color code in the form #000000.
+`terms_url`<br/>*(added in v2.3-RC)* | OPTIONAL | URL | A fully qualified URL pointing to the terms of service ( also called terms of use or terms and conditions) for the service. 
+`terms_last_updated`<br/>*(added in v2.3-RC)* |Conditionally REQUIRED | Date | REQUIRED if `terms_url` is defined. The date that the terms of service provided at `terms_url` were last updated. MUST be in the format YYYY-MM-DD.
+`privacy_url`<br/>*(added in v2.3-RC)*| OPTIONAL | URL | A fully qualified URL pointing to the privacy policy for the service.
+`privacy_last_updated`<br/>*(added in v2.3-RC)* |Conditionally REQUIRED | Date | REQUIRED if `privacy_url` is defined. The date that the privacy policy provided at `privacy_url` was last updated. MUST be in the format YYYY-MM-DD.
 `rental_apps` <br/>*(added in v1.1)* | OPTIONAL | Object | Contains rental app information in the android and ios JSON objects.
 \-&nbsp;`android` <br/>*(added in v1.1)* | OPTIONAL | Object | Contains rental app download and app discovery information for the Android platform in the `store_uri` and `discovery_uri` fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
 &emsp;- `store_uri` <br/>*(added in v1.1)* | Conditionally REQUIRED | URI | URI where the rental Android app can be downloaded from. Typically this will be a URI to an app store such as Google Play. If the URI points to an app store such as Google Play, the URI SHOULD follow Android best practices so the viewing app can directly open the URI to the native app store app instead of a website. <br><br> If a `rental_uris`.`android` field is populated then this field is REQUIRED, otherwise it is OPTIONAL. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Example value: `https://play.google.com/store/apps/details?id=com.example.android`
@@ -370,19 +380,27 @@ Field Name | REQUIRED | Type | Defines
   "ttl": 1800,
   "version": "3.0",
   "data": {
-    "phone_number": "1-800-555-1234",
-    "name": "Example Bike Rental",
-    "operator": "Example Sharing, Inc",
-    "start_date": "2010-06-10",
-    "purchase_url": "https://www.example.com",
-    "timezone": "US/Central",
-    "license_url": "https://www.example.com/data-license.html",
-    "short_name": "Example Bike Rental",
-    "email": "customerservice@example.com",
-    "url": "https://www.example.com",
-    "feed_contact_email": "datafeed@example.com",
     "system_id": "example_cityname",
     "language": "en",
+    "name": "Example Bike Rental",
+    "short_name": "Example Bike",
+    "operator": "Example Sharing, Inc",
+    "url": "https://www.example.com",
+    "purchase_url": "https://www.example.com",
+    "start_date": "2010-06-10",
+    "phone_number": "1-800-555-1234",
+    "email": "customerservice@example.com",
+    "feed_contact_email": "datafeed@example.com",
+    "timezone": "US/Central",
+    "license_url": "https://www.example.com/data-license.html",
+    "brand_assets": {
+        "brand_last_modified": "2021-06-15",
+        "brand_image_url": "https://www.example.com/assets/brand_image.svg",
+        "brand_image_url_dark": "https://www.example.com/assets/brand_image_dark.svg",
+        "color": "#C2D32C",
+        "terms_url": "https://www.example.com/assets/brand.pdf"
+      }
+      
   }
 }
 ```
@@ -405,13 +423,20 @@ Field Name | REQUIRED | Type | Defines
 &emsp;\-&nbsp; `eco_sticker`<br/>*(added in vXXX)* | Yes | String | Name of the eco label. The name must be written in lowercase, separated by an underscore.<br /><br />Example of eco_sticker in Europe :<ul><li>CritAirLabel (France) <ul><li>critair</li><li>critair_1</li><li>critair_2</li><li>critair_3</li><li>critair_4</li><li>critair_5</li></ul></li><li>UmweltPlakette (Germany)<ul><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li><li>euro_6</li><li>euro_6_temp</li><li>euro_E</li></ul></li><li>UmweltPickerl (Austrich)<ul><li>euro_1</li><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li></ul><li>Reg_certificates (Belgium)<ul><li>reg_certificates</li></ul><li>Distintivo_ambiental (Spain)<ul><li>0</li><li>eco</li><li>b</li><li>c</li></ul></li></ul>
 \- `max_range_meters` | Conditionally REQUIRED | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is REQUIRED. This represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example, a full battery or full tank of gas).
 \- `name` | OPTIONAL | String | The public name of this vehicle type.
-\- `return_type`<br/>*(added in vXXX)*| OPTIONAL | Array | The conditions for returning the vehicle at the end of the trip. For vehicles that have more than one return option, include all applicable methods in the array. <br /><br />Current valid values are:<br /><ul><li>`free_floating` _(The vehicle can be returned anywhere permitted within the service area - note that this field is subject to rules in `geofencing_zones.json` if defined.)_</li><li>`roundtrip_station` _(The vehicle must be returned to the initial rental station. Cannot be defined in combination with `free_floating`.)_</li><li>`any_station` _(The vehicle must be returned to any station within the service area - note that a specific station can be defined in [free_bike_status.json](#free_bike_status.json) using `home_station`. Cannot be defined in combination with `roundtrip_station`.)_
 \- `vehicle_type_accessories`<br/>*(added in vXXX)* | OPTIONAL | Array | Description of accessories available in the vehicle.  These accessories are part of the vehicule and are not supposed to change frequently. Current valid values are:<ul><li>`air_conditioning` _(Vehicle has air condition)_</li><li>`automatic` _(Automatic gear switch)_</li><li>`manual` _(Manual gear switch)_</li><li>`convertible` _(Vehicle is convertible)_</li><li>`cruise_control` _(Vehicle has a cruise control system ("Tempomat"))_</li><li>`doors_4` _(Vehicle has 4 or 5 doors (instead of 2 or 3))_</li><li>`navigation` _(Vehicle has a built-in navigation system)_</li></ul>
 \- `g_CO2_km`<br/>*(added in vXXX)* | OPTIONAL | Non-negative integer | Maximum quantity of CO2, in grams, emitted per kilometer, according to the [WLTP](https://en.wikipedia.org/wiki/Worldwide_Harmonised_Light_Vehicles_Test_Procedure).
 \- `vehicle_image`<br/>*(added in vXXX)* | OPTIONAL | URL | URL to an image that would assist the user in identifying the vehicle (e.g. logo, image of vehicle).<br /> Allowed formats: JPEG, JPG, PNG. Minimum resolution of 300 pixels per inch (ppi).
 | \- `make`<br/>*(added in vXXX)*| OPTIONAL| String| The name of the vehicle manufacturer. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas or dot. Spaces are allowed in case of a compound name. <br><br>Example: <ul><li>cube bikes</li><li>renault</li></ul>
 | \- `model`<br/>*(added in vXXX)*| OPTIONAL| String| The name of the vehicle model. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas or dot. Spaces are allowed in case of a compound name.<br><br>Example <ul><li>giulia</li><li>mx50</li></ul>
 | \- `color`<br/>*(added in vXXX)*| OPTIONAL| String| The color of the vehicle. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas or dot. Spaces are allowed in case of a compound name. <br><br>Example <ul><li>green</li><li>dark blue</li></ul> 
+\- `default_reserve_time` | OPTIONAL | Non-negative Integer | Maximum time in minutes that a vehicle can be reserved before a rental begins. When a vehicle is reserved by a user the vehicle remains locked until the rental begins. During this time the vehicle is unavailable and cannot be be reserved or rented by other users. The vehicle status in `free_bike_status.json` MUST be set to `is_reserved = true`. If the value of `default_reserve_time` elapses without a rental beginning, the vehicle status MUST change to `is_reserved = false`. If `default_reserve_time` is set to `0` the vehicle type cannot be reserved. 
+\- `return_type`<br/>*(added in v2.3-RC)*| OPTIONAL | Array | The conditions for returning the vehicle at the end of the trip. For vehicles that have more than one return option, include all applicable methods in the array. <br /><br />Current valid values are:<br /><ul><li>`free_floating` _(The vehicle can be returned anywhere permitted within the service area - note that this field is subject to rules in `geofencing_zones.json` if defined.)_</li><li>`roundtrip_station` _(The vehicle must be returned to the initial rental station. Cannot be defined in combination with `free_floating`.)_</li><li>`any_station` _(The vehicle must be returned to any station within the service area - note that a specific station can be defined in [free_bike_status.json](#free_bike_status.json) using `home_station_id`. Cannot be defined in combination with `roundtrip_station`.)_
+\- `vehicle_assets`<br/>*(added in v2.3-RC)*| OPTIONAL | Object | An object where each key defines one of the items listed below.
+&emsp;&emsp;\- `icon_url`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | URL | REQUIRED if `vehicle_assets` is defined. A fully qualified URL pointing to the location of a graphic icon file that MAY be used to represent this vehicle type on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
+&emsp;&emsp;\- `icon_url_dark`<br/>*(added in v2.3-RC)*| OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type when in dark mode on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
+&emsp;&emsp;\- `icon_last_modified`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | Date | REQUIRED if `icon_url`  and/or `icon_url_dark` is defined. Date that indicates the last time any included vehicle icon images were modified or updated. MUST be in the format YYYY-MM-DD.
+\- `default_pricing_plan_id`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | ID | REQUIRED if both `system_pricing_plans.json` and `vehicle_types.json` are defined. A `plan_id` as defined in `system_pricing_plans.json` that identifies a default pricing plan for this vehicle to be used by trip planning applications for purposes of calculating the cost of a single trip using this vehicle type. This default pricing plan is superseded by `pricing_plan_id` when it is defined in `free_bike_status.json` Publishers SHOULD define `default_pricing_plan_id` first and then override it using `pricing_plan_id` in `free_bike_status.json` when necessary.
+\- `pricing_plan_ids`<br/>*(added in v2.3-RC)* | OPTIONAL | Array | Array of all pricing plan IDs as defined in `system_pricing_plans.json` that are applied to this vehicle type. <br /><br />This array SHOULD be published when there are multiple pricing plans defined in `system_pricing_plans.json` that apply to a single vehicle type.
 
 
 ##### Example:
@@ -427,14 +452,40 @@ Field Name | REQUIRED | Type | Defines
         "vehicle_type_id": "abc123",
         "form_factor": "bicycle",
         "propulsion_type": "human",
-        "name": "Example Basic Bike"
+        "name": "Example Basic Bike",
+        "default_reserve_time": 30,
+        "return_type": [
+          "any_station",
+          "free_floating"
+        ],
+        "vehicle_assets": {
+          "icon_url": "https://www.example.com/assets/icon_bicycle.svg",
+          "icon_url_dark": "https://www.example.com/assets/icon_bicycle_dark.svg",
+          "icon_last_modified": "2021-06-15"
+        },
+        "default_pricing_plan_id": "bike_plan_1",
+        "pricing_plan_ids": [
+          "bike_plan_1",
+          "bike_plan_2",
+          "bike_plan_3"
+        ]
       },
       {
         "vehicle_type_id": "def456",
         "form_factor": "scooter",
         "propulsion_type": "electric",
         "name": "Example E-scooter V2",
-        "max_range_meters": 12345
+        "default_reserve_time": 30,
+        "max_range_meters": 12345,
+        "return_type": [
+          "free_floating"
+        ],
+        "vehicle_assets": {
+          "icon_url": "https://www.example.com/assets/icon_escooter.svg",
+          "icon_url_dark": "https://www.example.com/assets/icon_escooter_dark.svg",
+          "icon_last_modified": "2021-06-15"
+        },
+        "default_pricing_plan_id": "scooter_plan_1"
       },
       {
         "vehicle_type_id": "car1",
@@ -454,7 +505,11 @@ Field Name | REQUIRED | Type | Defines
         ],
         "max_range_meters": 500000,
         "name": "Four-door Sedan",
-        "return_type" : ["roundtrip_station"],
+        "default_reserve_time": 0,
+        "max_range_meters": 523992,
+        "return_type": [
+          "roundtrip_station"
+        ],
         "vehicle_type_accessories": [
             "doors_4",
             "automatic",
@@ -464,7 +519,13 @@ Field Name | REQUIRED | Type | Defines
         "vehicle_image": "https://mediarepository-wired-prod-1-euw1.wrd-aws.com/cri/vehicles/398ab08b-f1d6-8144-e026-b72dc668042c/outside_medium.jpg",
         "make" : "renault",
         "model" : "clio",
-        "color" : "white"
+        "color" : "white",
+        "vehicle_assets": {
+          "icon_url": "https://www.example.com/assets/icon_car.svg",
+          "icon_url_dark": "https://www.example.com/assets/icon_car_dark.svg",
+          "icon_last_modified": "2021-06-15"
+        },
+        "default_pricing_plan_id": "car_plan_1"
       }
     ]
   }
@@ -488,8 +549,8 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`region_id` | OPTIONAL | ID | Identifier of the region where station is located. See [system_regions.json](#system_regionsjson).
 \-&nbsp;`post_code` | OPTIONAL | String | Postal code where station is located.
 \-&nbsp;`rental_methods` | OPTIONAL | Array | Payment methods accepted at this station. <br /> Current valid values are:<br /> <ul><li>`key` (e.g. operator issued vehicle key / fob / card)</li><li>`creditcard`</li><li>`paypass`</li><li>`applepay`</li><li>`androidpay`</li><li>`transitcard`</li><li>`accountnumber`</li><li>`phone`</li></ul>
-\-&nbsp;`is_virtual_station` <br/>*(added in v2.1)* | OPTIONAL | Boolean | Is this station a location with or without physical infrastructures (docks)? <br /><br /> `true` - The station is a location without physical infrastructure, defined by a point (lat/lon) and/or `station_area` (below). <br /> `false` - The station consists of physical infrastructure (docks, charging stations, dropbox, operator branch, gate arm, parking hoop). <br /><br /> If this field is empty, it means the station consists of physical infrastructure (docks).<br><br>This field SHOULD be published in systems that have station locations without standard, internet connected physical docking infrastructure. These may be racks or geofenced areas designated for rental and/or return of vehicles. Locations that fit within this description SHOULD have the `is_virtual_station` boolean set to `true`.
-\-&nbsp;`station_area` <br/>*(added in v2.1)* | OPTIONAL | GeoJSON Multipolygon | A GeoJSON multipolygon that describes the area of a virtual station. If `station_area` is supplied then the record describes a virtual station. <br /><br /> If lat/lon and `station_area` are both defined, the lat/lon is the significant coordinate of the station (e.g. dock facility or valet drop-off and pick up point). The `station_area` takes precedence over any `ride_allowed` rules in overlapping `geofencing_zones`.
+\-&nbsp;`is_virtual_station` <br/>*(added in v2.1)* | OPTIONAL | Boolean | Is this station a location with or without physical infrastructures ? <br /><br /> `true` - The station is a location without physical infrastructure, defined by a point (lat/lon) and/or `station_area` (below). <br /> `false` - The station consists of physical infrastructure. <br /><br /> If this field is empty, it means the station consists of physical infrastructure.<br/><br/>Physical infrastructures can be docks, charging stations, dropbox, operator branch, gate arm or parking hoops.<br><br>This field SHOULD be published in systems that have station locations without standard, internet connected physical docking infrastructure. These may be racks or geofenced areas designated for rental and/or return of vehicles. Locations that fit within this description SHOULD have the `is_virtual_station` boolean set to `true`.
+\-&nbsp;`station_area` <br/>*(added in v2.1)* | OPTIONAL | GeoJSON MultiPolygon | A GeoJSON MultiPolygon that describes the area of a virtual station. If `station_area` is supplied then the record describes a virtual station. <br /><br /> If lat/lon and `station_area` are both defined, the lat/lon is the significant coordinate of the station (e.g. dock facility or valet drop-off and pick up point). The `station_area` takes precedence over any `ride_allowed` rules in overlapping `geofencing_zones`.
 \-&nbsp;`parking_type` <br/>*(added in vXXX)* | OPTIONAL | Enum | Type of parking station.<br /><br />Current valid values are:<ul><li>`parking_lot` _(Off-street parking lot)_</li><li>`street_parking` _(Curbside parking)_</li><li>`underground_parking` _(Parking that is below street level, station may be non-communicating)_</li><li>`sidewalk_parking` _(Park vehicle on sidewalk, out of the pedestrian right of way)_</li><li>`other`</li></ul>
 \-&nbsp; `parking_hoop`<br/>*(added in vXXX)* | OPTIONAL | Boolean | Are parking hoops present at this station?<br /><br />Parking hoops are facilities that secure a parking space by being lockable with keys. This limits the abusive parking of unauthorized vehicles.<br /><br />`true` - This station has parking hoops.<br />`false` - This station does not have parking hoops.
 \-&nbsp; `contact_phone`<br/>*(added in vXXX)* | OPTIONAL | Phone number | Contact phone of the station.
@@ -497,6 +558,7 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`vehicle_capacity` <br/>*(added in v2.1)* | OPTIONAL | Object | An object used to describe the parking capacity of virtual stations (defined using the `is_virtual_station` field), where each key is a `vehicle_type_id` as described in [vehicle_types.json](#vehicle_typesjson-added-in-v21) and the value is a number representing the total number of vehicles of this type that can park within the virtual station.<br/><br/>If the virtual station is defined by `station_area`, this is the number that can park within the station area. If `lat`/`lon` is defined, this is the number that can park at those coordinates.
 \-&nbsp;`vehicle_type_capacity` <br/>*(added in v2.1)* | OPTIONAL | Object | An object used to describe the docking capacity of a station where each key is a `vehicle_type_id` as described in [vehicle_types.json](#vehicle_typesjson-added-in-v21) and the value is a number representing the total docking points installed at this station, both available and unavailable for the specified vehicle type.
 \-&nbsp;`is_valet_station` <br/>*(added in v2.1)* | OPTIONAL | Boolean | Are valet services provided at this station? <br /><br /> `true` - Valet services are provided at this station. <br /> `false` - Valet services are not provided at this station. <br /><br /> If this field is empty, it is assumed that valet services are not provided at this station. <br><br>This field’s boolean SHOULD be set to `true` during the hours which valet service is provided at the station. Valet service is defined as providing unlimited capacity at a station.
+\-&nbsp;`is_charging_station` <br/>*(added in v2.3-RC)* | OPTIONAL | Boolean | Does the station support charging of electric vehicles? <br /><br /> `true` - Electric vehicle charging is available at this station. <br /> `false` -  Electric vehicle charging is not available at this station.
 \-&nbsp;`rental_uris` <br/>*(added in v1.1)* | OPTIONAL | Object | Contains rental URIs for Android, iOS, and web in the android, ios, and web fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
 &emsp;\-&nbsp;`android` <br/>*(added in v1.1)* | OPTIONAL | URI | URI that can be passed to an Android app with an `android.intent.action.VIEW` Android intent to support Android Deep Links (https://developer.android.com/training/app-links/deep-linking). Please use Android App Links (https://developer.android.com/training/app-links) if possible so viewing apps don’t need to manually manage the redirect of the user to the app store if the user doesn’t have the application installed. <br><br>This URI SHOULD be a deep link specific to this station, and SHOULD NOT be a general rental page that includes information for more than one station. The deep link SHOULD take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported in the native Android rental app. <br><br>Note that URIs do not necessarily include the station_id for this station - other identifiers can be used by the rental app within the URI to uniquely identify this station. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Android App Links example value: `https://www.example.com/app?sid=1234567890&platform=android` <br><br>Deep Link (without App Links) example value: `com.example.android://open.example.app/app?sid=1234567890`
 &emsp;\-&nbsp;`ios` <br/>*(added in v1.1)* | OPTIONAL | URI | URI that can be used on iOS to launch the rental app for this station. More information on this iOS feature can be found [here](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/communicating_with_other_apps_using_custom_urls?language=objc). Please use iOS Universal Links (https://developer.apple.com/ios/universal-links/) if possible so viewing apps don’t need to manually manage the redirect of the user to the app store if the user doesn’t have the application installed. <br><br>This URI SHOULD be a deep link specific to this station, and SHOULD NOT be a general rental page that includes information for more than one station.  The deep link SHOULD take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported in the native iOS rental app. <br><br>Note that the URI does not necessarily include the station_id - other identifiers can be used by the rental app within the URL to uniquely identify this station. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>iOS Universal Links example value: `https://www.example.com/app?sid=1234567890&platform=ios` <br><br>Deep Link (without Universal Links) example value: `com.example.ios://open.example.app/app?sid=1234567890`
@@ -703,10 +765,11 @@ Field Name | REQUIRED | Type | Defines
 \- `current_range_meters` <br/>*(added in v2.1)* | Conditionally REQUIRED | Non-negative float | If the corresponding `vehicle_type` definition for this vehicle has a motor, and current_range_percent is not defined, then this field is REQUIRED. This value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
 \- `current_range_percent` <br/>*(added in vXXX)*| Conditionally REQUIRED | Non-negative float | If the corresponding vehicle_type definition for this vehicle has a motor, and current_range_meters is not defined, then this field is required. This value represents the percentage, expressed from 0 to 1 of fuel or battery power remaining with the vehicle’s current charge or fuel level.
 \- `station_id` <br/>*(added in v2.1)* | Conditionally REQUIRED | ID | Identifier referencing the `station_id` field in [station_information.json](#station_informationjson). REQUIRED only if the vehicle is currently at a station and the [vehicle_types.json](#vehicle_typesjson) file has been defined.
-\- `pricing_plan_id` <br/>*(added in v2.2)* | OPTIONAL | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plans.json).
+\- `home_station_id` | OPTIONAL | ID | The `station_id` of the station this vehicle must be returned to as defined in [station_information.json](#station_ifnormation.json).
+\- `pricing_plan_id` <br/>*(added in v2.2)* | OPTIONAL | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plans.json). If this field is defined it supersedes `default_pricing_plan_id` in `vehicle_types.json`. This field SHOULD be used to override `default_pricing_plan_id` in `vehicle_types.json` to define pricing plans for individual vehicles when necessary.
 \- `vehicle_equipment`<br/>*(added in vXXX)* | OPTIONAL | Array | Description of vehicle equipment that can be provided by the operator in addition to the accessories already provided in the vehicle (field `vehicle_type_accessories` of vehicule_type.json) but subject to more frequent updates.<br/><br/>Current valid values are:<ul><li>`child_seat_0` _(Baby seat ("0-10kg"))_</li><li>`child_seat_1`	 _(Seat or seat extension for small children ("9-18 kg"))_</li><li>`child_seat_4`	_(Seat or seat extension for older children ("15-36 kg"))_</li><li>`winter_tires` 	_(Vehicle has tires for winter weather)_</li><li>`snow_chains`</li></ul>
 \- `available_until`<br/>*(added in vXXX)* | Conditionally REQUIRED |  Datetime | This field is REQUIRED when the `return_type` defined in [vehicule_type.json](#vehicule_type.json) is set to `roundtrip_station`. Only applies to round trips. Any trip currently started must be finished before the specified Datetime. The vehicule being already booked afterward.
-\- `home_station` | OPTIONAL | ID | Identifier referencing the `station_id` field in [station_information.json](#station_information.json). The station this vehicle must be returned to.
+
 
 ##### Example:
 
@@ -742,9 +805,10 @@ Field Name | REQUIRED | Type | Defines
         "current_range_percent": 0.7,  
         "station_id": "86",
         "pricing_plan_id": "plan3",
+        "home_station_id": "146",
         "vehicle_accessories": [
-        "child_seat_0"
-      ],
+          "child_seat_0"
+        ]
       }
     ]
   }
@@ -913,6 +977,7 @@ Field Name | REQUIRED | Type | Defines
 &emsp;&emsp;\-&nbsp; `end` <br/>*(added in v2.2)* | OPTIONAL | Non-Negative Integer | The minute at which the rate will no longer apply  *(exclusive)* e.g. if `end` is `20` the rate no longer applies after 19:59.<br /><br />If this field is empty, the price issued for this segment is charged until the trip ends, in addition to following segments.
 \-&nbsp;`surge_pricing` <br/>*(added in v2.2)* | OPTIONAL | Boolean | Is there currently an increase in price in response to increased demand in this pricing plan? If this field is empty, it means these is no surge pricing in effect.<br /><br />`true` - Surge pricing is in effect.<br />  `false` - Surge pricing is not in effect.
 
+
 ### Examples *(added in v2.2)*
 
 ##### Example 1:
@@ -1060,7 +1125,7 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`type` | Yes | String | “FeatureCollection” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
 \-&nbsp;`features` | Yes | Array | Array of objects as defined below.
 &emsp;\-&nbsp;`type` | Yes | String | “Feature” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
-&emsp;\-&nbsp;`geometry` | Yes | GeoJSON Multipolygon | A polygon that describes where rides might not be able to start, end, go through, or have other limitations. A clockwise arrangement of points defines the area enclosed by the polygon, while a counterclockwise order defines the area outside the polygon ([right-hand rule](https://tools.ietf.org/html/rfc7946#section-3.1.6)). All geofencing zones contained in this list are public (i.e., can be shown on a map for public use).
+&emsp;\-&nbsp;`geometry` | Yes | GeoJSON MultiPolygon | A polygon that describes where rides might not be able to start, end, go through, or have other limitations. A clockwise arrangement of points defines the area enclosed by the polygon, while a counterclockwise order defines the area outside the polygon ([right-hand rule](https://tools.ietf.org/html/rfc7946#section-3.1.6)). All geofencing zones contained in this list are public (i.e., can be shown on a map for public use).
 &emsp;\-&nbsp;`properties` | Yes | Object | Properties: As defined below, describing travel allowances and limitations.
 &emsp;&emsp;\-&nbsp;`name` | OPTIONAL | String | Public name of the geofencing zone.
 &emsp;&emsp;\-&nbsp;`start` | OPTIONAL | Timestamp | Start time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
