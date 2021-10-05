@@ -389,6 +389,10 @@ Field Name | REQUIRED | Type | Defines
     "feed_contact_email": "datafeed@example.com",
     "timezone": "US/Central",
     "license_url": "https://www.example.com/data-license.html",
+    "terms_url": "https://www.example.com/terms",
+    "terms_last_updated": "2021-06-21",
+    "privacy_url": "https://www.example.com/privacy-policy",
+    "privacy_last_updated": "2019-01-13",
     "brand_assets": {
         "brand_last_modified": "2021-06-15",
         "brand_image_url": "https://www.example.com/assets/brand_image.svg",
@@ -536,6 +540,7 @@ Field Name | REQUIRED | Type | Defines
         "name": "Parking garage A",
         "lat": 12.345678,
         "lon": 45.678901,
+        "is_charging_station": "true",
         "vehicle_type_capacity": {
           "abc123": 7,
           "def456": 9
@@ -562,6 +567,7 @@ Field Name | REQUIRED | Type | Defines
         "lon": -122.655775,
         "is_valet_station": false,
         "is_virtual_station": true,
+        "is_charging_station": "false",
         "station_area": {
           "type": "MultiPolygon",
           "coordinates": [
@@ -719,7 +725,7 @@ Field Name | REQUIRED | Type | Defines
 \- `last_reported` <br/>*(added in v2.1)* | OPTIONAL | Timestamp | The last time this vehicle reported its status to the operator's backend.
 \- `current_range_meters` <br/>*(added in v2.1)* | Conditionally REQUIRED | Non-negative float | If the corresponding `vehicle_type` definition for this vehicle has a motor, then this field is REQUIRED. This value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
 \- `station_id` <br/>*(added in v2.1)* | Conditionally REQUIRED | ID | Identifier referencing the `station_id` field in [station_information.json](#station_informationjson). REQUIRED only if the vehicle is currently at a station and the [vehicle_types.json](#vehicle_typesjson) file has been defined.
-\- `home_station_id` | OPTIONAL | ID | The `station_id` of the station this vehicle must be returned to as defined in [station_information.json](#station_information.json).
+\- `home_station_id` <br/>*(added in v2.3-RC)* | OPTIONAL | ID | The `station_id` of the station this vehicle must be returned to as defined in [station_information.json](#station_information.json).
 \- `pricing_plan_id` <br/>*(added in v2.2)* | OPTIONAL | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plans.json). If this field is defined it supersedes `default_pricing_plan_id` in `vehicle_types.json`. This field SHOULD be used to override `default_pricing_plan_id` in `vehicle_types.json` to define pricing plans for individual vehicles when necessary.
 
 ##### Example:
