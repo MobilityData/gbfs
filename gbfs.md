@@ -393,6 +393,10 @@ Field Name | REQUIRED | Type | Defines
     "feed_contact_email": "datafeed@example.com",
     "timezone": "US/Central",
     "license_url": "https://www.example.com/data-license.html",
+    "terms_url": "https://www.example.com/terms",
+    "terms_last_updated": "2021-06-21",
+    "privacy_url": "https://www.example.com/privacy-policy",
+    "privacy_last_updated": "2019-01-13",
     "brand_assets": {
         "brand_last_modified": "2021-06-15",
         "brand_image_url": "https://www.example.com/assets/brand_image.svg",
@@ -581,6 +585,7 @@ Field Name | REQUIRED | Type | Defines
         "parking_type" :"underground_parking",
         "parking_hoop": false,
         "contact_phone" : "+33109874321",
+        "is_charging_station": "true",
         "vehicle_type_capacity": {
           "abc123": 7,
           "def456": 9
@@ -607,6 +612,7 @@ Field Name | REQUIRED | Type | Defines
         "lon": 45.516445,
         "is_valet_station": false,
         "is_virtual_station": true,
+        "is_charging_station": "false",
         "station_area": {
           "type": "MultiPolygon",
           "coordinates": [
@@ -765,7 +771,7 @@ Field Name | REQUIRED | Type | Defines
 \- `current_range_meters` <br/>*(added in v2.1)* | Conditionally REQUIRED | Non-negative float | If the corresponding `vehicle_type` definition for this vehicle has a motor, and current_fuel_percent is not defined, then this field is REQUIRED. This value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel. Note that the given range is indicative and can be different from the one displayed on the vehicule's dashboard.
 \- `current_fuel_percent` <br/>*(added in vXXX)*| Conditionally REQUIRED | Non-negative float | If the corresponding vehicle_type definition for this vehicle has a motor, and current_range_meters is not defined, then this field is required. This value represents the percentage, expressed from 0 to 1 of fuel or battery power remaining with the vehicle’s current charge or fuel level.
 \- `station_id` <br/>*(added in v2.1)* | Conditionally REQUIRED | ID | Identifier referencing the `station_id` field in [station_information.json](#station_informationjson). REQUIRED only if the vehicle is currently at a station and the [vehicle_types.json](#vehicle_typesjson) file has been defined.
-\- `home_station_id` | OPTIONAL | ID | The `station_id` of the station this vehicle must be returned to as defined in [station_information.json](#station_ifnormation.json).
+\- `home_station_id` <br/>*(added in v2.3-RC)* | OPTIONAL | ID | The `station_id` of the station this vehicle must be returned to as defined in [station_information.json](#station_information.json).
 \- `pricing_plan_id` <br/>*(added in v2.2)* | OPTIONAL | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plans.json). If this field is defined it supersedes `default_pricing_plan_id` in `vehicle_types.json`. This field SHOULD be used to override `default_pricing_plan_id` in `vehicle_types.json` to define pricing plans for individual vehicles when necessary.
 \- `vehicle_equipment`<br/>*(added in vXXX)* | OPTIONAL | Array | Description of vehicle equipment that can be provided by the operator in addition to the accessories already provided in the vehicle (field `vehicle_type_accessories` of vehicule_type.json) but subject to more frequent updates.<br/><br/>Current valid values are:<ul><li>`child_seat_0` _(Baby seat ("0-10kg"))_</li><li>`child_seat_1`	 _(Seat or seat extension for small children ("9-18 kg"))_</li><li>`child_seat_4`	_(Seat or seat extension for older children ("15-36 kg"))_</li><li>`winter_tires` 	_(Vehicle has tires for winter weather)_</li><li>`snow_chains`</li></ul>
 \- `available_until`<br/>*(added in vXXX)* | Conditionally REQUIRED |  Datetime | This field is REQUIRED when the `return_type` defined in [vehicule_type.json](#vehicule_type.json) is set to `roundtrip_station`. Only applies to round trips. Any trip currently started must be finished before the specified Datetime. The vehicule being already booked afterward.
