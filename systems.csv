@@ -198,7 +198,6 @@ FR,Donkey Republic Valenciennes,"Valenciennes,FR",donkey_valenciennes,https://ww
 FR,Libélo,"Valence, FR",libelo,https://www.vrd-mobilites.fr/velo/,https://valence.publicbikesystem.net/ube/gbfs/v1/gbfs.json
 FR,levélo,"Marseille, FR",marseille,http://www.levelo-mpm.fr/,https://transport.data.gouv.fr/gbfs/marseille/gbfs.json
 FR,LE vélo STAR,"Rennes, FR",le_velo_star,https://www.star.fr/le-velo/nos-offres/vls/,https://eu.ftp.opendatasoft.com/star/gbfs/gbfs.json
-FR,Libélo,"Valence, FR",libelo,http://www.citea.info/presentation/?rub_code=92,https://valence.publicbikesystem.net/ube/gbfs/v1/
 FR,Lime Paris,"Paris, FR",lime_paris,https://li.me/,https://data.lime.bike/api/partners/v1/gbfs/paris/gbfs.json
 FR,Optymo Belfort,"Belfort, FR",Optymo_FR_Belfort,https://www.optymo.fr/,https://belfort-gbfs.klervi.net/gbfs/gbfs.json
 FR,Pony Angers,"Angers, FR",pony_Angers,https://getapony.com/,https://gbfs.getapony.com/v1/angers/en/gbfs.json
