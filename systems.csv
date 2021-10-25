@@ -353,12 +353,13 @@ NO,Trondheim City Bike,"Trondheim, NO",trondheim,https://trondheimbysykkel.no/en
 NO,Voi Olso,"Oslo, NO",voioslo,https://www.voiscooters.com/,https://api.entur.io/mobility/v2/gbfs/voioslo/gbfs
 NO,Voi Trondheim,"Trondheim, NO",voitrondheim,https://www.voiscooters.com/,https://api.entur.io/mobility/v2/gbfs/voitrondheim/gbfs
 NO,Zvipp,"Trondheim, NO",zvipptrondheim,https://www.zvipp.no/support,https://api.entur.io/mobility/v2/gbfs/zvipptrondheim/gbfs
-NZ,Flamingo Aukland,"Aukland, NZ",flamingo_auckland,https://flamingoscooters.com,https://api.flamingoscooters.com/gbfs/auckland/gbfs.json
+NZ,Flamingo Auckland,"Auckland, NZ",flamingo_auckland,https://flamingoscooters.com,https://api.flamingoscooters.com/gbfs/auckland/gbfs.json
 NZ,Flamingo Christchurch,"Christchurch, NZ",flamingo_christchurch,https://flamingoscooters.com,https://api.flamingoscooters.com/gbfs/christchurch/gbfs.json
 NZ,Flamingo Wellington,"Wellington, NZ",flamingo_wellington,https://flamingoscooters.com,https://api.flamingoscooters.com/gbfs/wellington/gbfs.json
-NZ,Neuron Mobility,"Aukland, NZ",11b14b88-3598-4d3c-821d-e6f2e37cd906,https://www.neuron.sg,https://mds-global-akl.neuron-mobility.com/gbfs/2/
-NZ,Neuron Mobility,"Dunedin, NZ",11b14b88-3598-4d3c-821d-e6f2e37cd908,https://www.neuron.sg,https://mds-global-dud.neuron-mobility.com/gbfs/2/
-NZ,Neuron Mobility,"Hamilton, NZ",11b14b88-3598-4d3c-821d-e6f2e37cd907,https://www.neuron.sg,https://mds-global-hlz.neuron-mobility.com/gbfs/2/
+NZ,Neuron Mobility Auckland,"Auckland, NZ",11b14b88-3598-4d3c-821d-e6f2e37cd906,https://www.neuron.sg,https://mds-global-akl.neuron-mobility.com/gbfs/2/
+NZ,Neuron Mobility Dunedin,"Dunedin, NZ",11b14b88-3598-4d3c-821d-e6f2e37cd908,https://www.neuron.sg,https://mds-global-dud.neuron-mobility.com/gbfs/2/
+NZ,Neuron Mobility Hamilton,"Hamilton, NZ",11b14b88-3598-4d3c-821d-e6f2e37cd907,https://www.neuron.sg,https://mds-global-hlz.neuron-mobility.com/gbfs/2/
+NZ,Neuron Mobility Christchurch,"Christchurch, NZ",11b14b88-3598-4d3c-821d-e6f2e37cd907,https://www.neuron.sg,https://mds-global-chc.neuron-mobility.com/gbfs/2/
 NZ,nextbike New Zealand,"New Zealand, NZ",nextbike_nz,https://www.nextbike.co.nz/en/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_nz/gbfs.json
 PL,Bike_S SRM Poland,"Szczecin, PL",nextbike_sp,https://bikes-srm.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_sp/gbfs.json
 PL,GRM Grodzisk Poland,"Grodzisk Mazowiecki, PL",nextbike_gp,https://www.rowery.grodzisk.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gp/gbfs.json
