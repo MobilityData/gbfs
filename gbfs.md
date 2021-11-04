@@ -427,7 +427,7 @@ Field Name | REQUIRED | Type | Defines
 &emsp;\-&nbsp; `eco_sticker`<br/>*(added in vXXX)* | Yes | String | Name of the eco label. The name must be written in lowercase, separated by an underscore.<br /><br />Example of eco_sticker in Europe :<ul><li>CritAirLabel (France) <ul><li>critair</li><li>critair_1</li><li>critair_2</li><li>critair_3</li><li>critair_4</li><li>critair_5</li></ul></li><li>UmweltPlakette (Germany)<ul><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li><li>euro_6</li><li>euro_6_temp</li><li>euro_E</li></ul></li><li>UmweltPickerl (Austrich)<ul><li>euro_1</li><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li></ul><li>Reg_certificates (Belgium)<ul><li>reg_certificates</li></ul><li>Distintivo_ambiental (Spain)<ul><li>0</li><li>eco</li><li>b</li><li>c</li></ul></li></ul>
 \- `max_range_meters` | Conditionally REQUIRED | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is REQUIRED. This represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example, a full battery or full tank of gas).
 \- `name` | OPTIONAL | String | The public name of this vehicle type.
-\- `vehicle_type_accessories`<br/>*(added in vXXX)* | OPTIONAL | Array | Description of accessories available in the vehicle.  These accessories are part of the vehicule and are not supposed to change frequently. Current valid values are:<ul><li>`air_conditioning` _(Vehicle has air condition)_</li><li>`automatic` _(Automatic gear switch)_</li><li>`manual` _(Manual gear switch)_</li><li>`convertible` _(Vehicle is convertible)_</li><li>`cruise_control` _(Vehicle has a cruise control system ("Tempomat"))_</li><li>`doors_4` _(Vehicle has 4 or 5 doors (instead of 2 or 3))_</li><li>`navigation` _(Vehicle has a built-in navigation system)_</li></ul>
+\- `vehicle_accessories`<br/>*(added in vXXX)* | OPTIONAL | Array | Description of accessories available in the vehicle.  These accessories are part of the vehicule and are not supposed to change frequently. Current valid values are:<ul><li>`air_conditioning` _(Vehicle has air condition)_</li><li>`automatic` _(Automatic gear switch)_</li><li>`manual` _(Manual gear switch)_</li><li>`convertible` _(Vehicle is convertible)_</li><li>`cruise_control` _(Vehicle has a cruise control system ("Tempomat"))_</li><li>`doors_4` _(Vehicle has 4 or 5 doors (instead of 2 or 3))_</li><li>`navigation` _(Vehicle has a built-in navigation system)_</li></ul>
 \- `g_CO2_km`<br/>*(added in vXXX)* | OPTIONAL | Non-negative integer | Maximum quantity of CO2, in grams, emitted per kilometer, according to the [WLTP](https://en.wikipedia.org/wiki/Worldwide_Harmonised_Light_Vehicles_Test_Procedure).
 \- `vehicle_image`<br/>*(added in vXXX)* | OPTIONAL | URL | URL to an image that would assist the user in identifying the vehicle (e.g. logo, image of vehicle).<br /> Allowed formats: JPEG, JPG, PNG. Minimum resolution of 300 pixels per inch (ppi).
 | \- `make`<br/>*(added in vXXX)*| OPTIONAL| String| The name of the vehicle manufacturer. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas or dot. Spaces are allowed in case of a compound name. <br><br>Example: <ul><li>cube bikes</li><li>renault</li></ul>
@@ -513,7 +513,7 @@ Field Name | REQUIRED | Type | Defines
         "return_type": [
           "roundtrip_station"
         ],
-        "vehicle_type_accessories": [
+        "vehicle_accessories": [
             "doors_4",
             "automatic",
             "cruise_control"
@@ -772,7 +772,7 @@ Field Name | REQUIRED | Type | Defines
 \- `station_id` <br/>*(added in v2.1)* | Conditionally REQUIRED | ID | Identifier referencing the `station_id` field in [station_information.json](#station_informationjson). REQUIRED only if the vehicle is currently at a station and the [vehicle_types.json](#vehicle_typesjson) file has been defined.
 \- `home_station_id` <br/>*(added in v2.3-RC)* | OPTIONAL | ID | The `station_id` of the station this vehicle must be returned to as defined in [station_information.json](#station_information.json).
 \- `pricing_plan_id` <br/>*(added in v2.2)* | OPTIONAL | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plans.json). If this field is defined it supersedes `default_pricing_plan_id` in `vehicle_types.json`. This field SHOULD be used to override `default_pricing_plan_id` in `vehicle_types.json` to define pricing plans for individual vehicles when necessary.
-\- `vehicle_equipment`<br/>*(added in vXXX)* | OPTIONAL | Array | Description of vehicle equipment that can be provided by the operator in addition to the accessories already provided in the vehicle (field `vehicle_type_accessories` of vehicule_type.json) but subject to more frequent updates.<br/><br/>Current valid values are:<ul><li>`child_seat_0` _(Baby seat ("0-10kg"))_</li><li>`child_seat_1`	 _(Seat or seat extension for small children ("9-18 kg"))_</li><li>`child_seat_4`	_(Seat or seat extension for older children ("15-36 kg"))_</li><li>`winter_tires` 	_(Vehicle has tires for winter weather)_</li><li>`snow_chains`</li></ul>
+\- `vehicle_equipment`<br/>*(added in vXXX)* | OPTIONAL | Array | Description of vehicle equipment that can be provided by the operator in addition to the accessories already provided in the vehicle (field `vehicle_accessories` of vehicule_type.json) but subject to more frequent updates.<br/><br/>Current valid values are:<ul><li>`child_seat_0` _(Baby seat ("0-10kg"))_</li><li>`child_seat_1`	 _(Seat or seat extension for small children ("9-18 kg"))_</li><li>`child_seat_4`	_(Seat or seat extension for older children ("15-36 kg"))_</li><li>`winter_tires` 	_(Vehicle has tires for winter weather)_</li><li>`snow_chains`</li></ul>
 \- `available_until`<br/>*(added in vXXX)* | Conditionally REQUIRED |  Datetime | This field is REQUIRED when the `return_type` defined in [vehicule_type.json](#vehicule_type.json) is set to `roundtrip_station`. Only applies to round trips. Any trip currently started must be finished before the specified Datetime. The vehicule being already booked afterward.
 
 
@@ -811,7 +811,7 @@ Field Name | REQUIRED | Type | Defines
         "station_id": "86",
         "pricing_plan_id": "plan3",
         "home_station_id": "146",
-        "vehicle_accessories": [
+        "vehicle_equipment": [
           "child_seat_0"
         ]
       }
