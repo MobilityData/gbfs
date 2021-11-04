@@ -1,5 +1,7 @@
-# General Bikeshare Feed Specification
-Documentation for the General Bikeshare Feed Specification, a standardized data feed for shared mobility system availability.
+# GBFS
+###### General Shared Mobility Feed Specification ######
+
+Documentation for the General Shared Mobility Feed Specification, a standardized data feed for shared mobility system availability.
 
 ## Table of Contents
 * [What is GBFS?](#what-is-gbfs)
