@@ -510,7 +510,6 @@ Field Name | REQUIRED | Type | Defines
         "max_range_meters": 500000,
         "name": "Four-door Sedan",
         "default_reserve_time": 0,
-        "max_range_meters": 523992,
         "return_type": [
           "roundtrip_station"
         ],
@@ -793,14 +792,14 @@ Field Name | REQUIRED | Type | Defines
         "lon": 56.789012,
         "is_reserved": false,
         "is_disabled": false,
-        "vehicle_type_id": "abc123"
+        "vehicle_type_id": "abc123",
         "current_range_meters": 400000,   
        "available_until" : "2021-05-17T15:00:00Z",
        "home_station" : "station1",
        "vehicle_equipment": [
         "child_seat_0",
         "winter_tires"
-      ],
+      ]
     },
       {
         "bike_id": "jkl012",
