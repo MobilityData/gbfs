@@ -1,5 +1,5 @@
 # GBFS
-### General Shared Mobility Feed Specification ###
+#### General Shared Mobility Feed Specification ####
 
 Documentation for the General Shared Mobility Feed Specification, a standardized data feed for shared mobility system availability.
 
