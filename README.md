@@ -28,25 +28,27 @@ The data in the specification contained in this document is intended for consump
 ## Get Involved
 GBFS is an open source project developed under a consensus-based governance model. Contributors come from across the shared mobility industry, public sector, civic technology and elsewhere. Comments or questions can be addressed to the community by [opening an issue](https://github.com/NABSA/gbfs/issues). Proposals for changes or additions to the specification can be made through [pull requests](https://github.com/NABSA/gbfs/pulls). Questions can also be addressed to the community via the [public GBFS Slack channel](https://bit.ly/mobilitydata-slack) or to the shared mobility staff at MobilityData: [sharedmobility@mobilitydata.org](mailto:sharedmobility@mobilitydata.org)
 
-## Current Version *(Recommended)* ##
+## Current Version *(Recommended)* 
 |   Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
 |:---:|:---:|---|---|---| ---|
 | [v2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md) | MINOR  | March 19, 2021 | :white_check_mark: &nbsp; *Current Version*  | [v2.2 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v2.2)| [v2.2 Article](https://mobilitydata.org/cities-gbfs-v2-2-is-here-for-you/) |
 
-### Upcoming MAJOR Version ###
+### Upcoming MAJOR Version 
 |   Version | Type  | Release Target |  Status |
 |---|:---:|---|---|
 | [v3.0-Draft](https://github.com/NABSA/gbfs/blob/master/gbfs.md) |  MAJOR |  Q2, 2021 | :construction: &nbsp;  *In Development* |
 
-### Release Candidate ###
+### Release Candidate 
 This Release Candidate will become the *Current Version* when it has been fully implemented in public feeds.
+
 |  Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
 |:---:|:---:|---|---|---|---|
 |  [v2.3-RC](https://github.com/NABSA/gbfs/blob/v2.3-RC/gbfs.md) | MINOR  | September 8th, 2021 | :white_check_mark: &nbsp; *Release Candidate<br /> (Recommended)*  | *coming soon* | [v2.3-RC Article](https://mobilitydata.org/gbfs-v2-3-rc-is-here-to-fix-some-of-your-problems/) |
 
-### Past Version Releases ###
-Past versions with *Supported* status may be patched to correct bugs or vulnerabilities but new features will not be introduced.<br />
-Past  versions with *Deprecated* status will not be patched and their use should be discontinued.
+### Past Version Releases 
+Past versions with *Supported* status MAY be patched to correct bugs or vulnerabilities but new features will not be introduced.<br />
+Past  versions with *Deprecated* status will not be patched and their use SHOULD be discontinued.
+
 |  Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
 |:---:|:---:|---|---|---|---|
 |  [v2.1](https://github.com/NABSA/gbfs/blob/v2.1/gbfs.md) | MINOR  | March 18, 2021 |:white_check_mark: &nbsp; *Supported*  | [v2.1 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v2.1)| [v2.1 Article](https://mobilitydata.org/gbfs-now-fully-supports-dockless-systems-%f0%9f%9b%b4%f0%9f%91%8f/)
@@ -54,7 +56,7 @@ Past  versions with *Deprecated* status will not be patched and their use should
 |  [v1.1](https://github.com/NABSA/gbfs/blob/v1.1/gbfs.md) | MINOR | March 16, 2020 |:white_check_mark: &nbsp; *Supported*  | [v1.1 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v1.1) | |
 |  [v1.0](https://github.com/NABSA/gbfs/blob/v1.0/gbfs.md) | MAJOR  | Prior to October 2019 | :x: &nbsp; *Deprecated*  | [v1.0 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v1.0)| |
  
-### Full Version History ###
+### Full Version History 
 The complete GBFS version history is available on the [wiki](https://github.com/NABSA/gbfs/wiki/Complete-Version-History).
 
 ## Specification Versioning
@@ -74,7 +76,7 @@ Examples of non-breaking changes include:
 * Modifying documentation or spec language in a way that clarifies semantics or recommended practices
 
 
-#### Version Release Cycles ####
+#### Version Release Cycles 
 - There is no strict limitation on the frequency of MAJOR releases, but the GBFS community aims to limit MAJOR releases to 2 or fewer in a 12 month period. To limit releases, multiple breaking changes SHOULD be batched together in a single release.
 -  There is no guideline to limit the number of MINOR releases. MINOR changes may be applied at any time. MINOR changes MAY be batched together in single release or released immediately, based on the needs of the community.
 - GBFS documentation will include a list of current and supported MAJOR and MINOR versions. Supported versions SHALL NOT span more than two MAJOR versions.
