@@ -959,7 +959,7 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
           },
           {
             "start": 25,
-            "rate": 3,
+            "rate": 3.00,
             "interval": 5
           }
         ]
