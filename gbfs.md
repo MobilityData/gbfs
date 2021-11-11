@@ -378,7 +378,7 @@ Field Name | REQUIRED | Type | Defines
     "phone_number": "1-800-555-1234",
     "name": "Example Bike Rental",
     "operator": "Example Sharing, Inc",
-    "opening_hours":"Apr 1 - Nov 3 00:00-24:00"
+    "opening_hours": "Apr 1 - Nov 3 00:00-24:00"
     "start_date": "2010-06-10",
     "purchase_url": "https://www.example.com",
     "timezone": "US/Central",
@@ -483,7 +483,7 @@ Field Name | REQUIRED | Type | Defines
         "name": "Parking garage A",
         "lat": 12.345678,
         "lon": 45.678901,
-        "station_opening_hours": Su-Th 05:00-22:00; Fr-Sa 05:00-01:00
+        "station_opening_hours": "Su-Th 05:00-22:00; Fr-Sa 05:00-01:00",
         "vehicle_type_capacity": {
           "abc123": 7,
           "def456": 9
