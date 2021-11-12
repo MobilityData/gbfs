@@ -378,7 +378,7 @@ Field Name | REQUIRED | Type | Defines
     "phone_number": "1-800-555-1234",
     "name": "Example Bike Rental",
     "operator": "Example Sharing, Inc",
-    "opening_hours": "Apr 1 - Nov 3 00:00-24:00"
+    "opening_hours": "Apr 1 - Nov 3 00:00-24:00",
     "start_date": "2010-06-10",
     "purchase_url": "https://www.example.com",
     "timezone": "US/Central",
