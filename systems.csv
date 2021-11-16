@@ -191,7 +191,7 @@ FI,Donkey Republic Raasepori,"Raasepori, FI",donkey_raasepori,https://www.donkey
 FI,Donkey Republic Riihimäki,"Riihimäki, FI",donkey_riihimaki,https://www.donkey.bike/cities/bike-rental-riihimaki/,https://stables.donkey.bike/api/public/gbfs/2/donkey_riihimaki/gbfs
 FR,Bicloo,"Nantes, FR",nantes,https://www.bicloo.nantesmetropole.fr/en/home,https://transport.data.gouv.fr/gbfs/nantes/gbfs.json
 FR,CristoLib,"Créteil, Paris, FR",creteil,https://www.cristolib.fr/,https://transport.data.gouv.fr/gbfs/creteil/gbfs.json
-FR,C-Vélo,"Clermont-Ferrand, FR",CVelo_FR_Clermont-Ferrand,https://www.c-velo.fr,https://clermont-gbfs.klervi.net/gbfs/gbfs.json
+FR,C-Vélo,"Clermont-Ferrand, FR",CVelo_FR_Clermont-Ferrand,https://www.c-velo.fr,https://clermontferrand.publicbikesystem.net/ube/gbfs/v1/gbfs.json
 FR,Cy'clic,"Rouen, FR",rouen,http://cyclic.rouen.fr/,https://transport.data.gouv.fr/gbfs/rouen/gbfs.json
 FR,Cyclolib,"Carcassonne,FR",carcassonne,https://cyclolib.fr/en,https://gbfs.urbansharing.com/cyclolib.fr/gbfs.json
 FR,Donkey Republic Valenciennes,"Valenciennes,FR",donkey_valenciennes,https://www.donkey.bike/cities/bike-rental-valenciennes/,https://stables.donkey.bike/api/public/gbfs/2/donkey_valenciennes/gbfs.json
