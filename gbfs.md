@@ -520,8 +520,8 @@ Field Name | REQUIRED | Type | Defines
         ],
         "g_CO2_km": 120,
         "vehicle_image": "https://mediarepository-wired-prod-1-euw1.wrd-aws.com/cri/vehicles/398ab08b-f1d6-8144-e026-b72dc668042c/outside_medium.jpg",
-        "make" : "renault",
-        "model" : "clio",
+        "make" : "Renault",
+        "model" : "Clio",
         "color" : "white",
         "vehicle_assets": {
           "icon_url": "https://www.example.com/assets/icon_car.svg",
