@@ -228,7 +228,7 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `last_updated` | Yes | Timestamp | Indicates the last time data in the feed was updated. This timestamp represents the publisher's knowledge of the current state of the system at this point in time.
 `ttl` | Yes | Non-negative integer | Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).
-`version` <br/>*(added in v1.1)* | Yes | String | GBFS version number to which the feed confirms, according to the versioning framework.
+`version` <br/>*(added in v1.1)* | Yes | String | GBFS version number to which the feed conforms, according to the versioning framework.
 `data` | Yes | Object | Response data in the form of name:value pairs.
 
 ##### Example:
