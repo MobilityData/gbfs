@@ -398,7 +398,7 @@ Field Name | REQUIRED | Type | Defines
         "brand_image_url": "https://www.example.com/assets/brand_image.svg",
         "brand_image_url_dark": "https://www.example.com/assets/brand_image_dark.svg",
         "color": "#C2D32C",
-        "terms_url": "https://www.example.com/assets/brand.pdf"
+        "brand_terms_url": "https://www.example.com/assets/brand.pdf"
       }
       
   }
