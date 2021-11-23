@@ -107,10 +107,10 @@ Announcements for disruptions of service, including disabled stations or tempora
 
 ## File Requirements
 
-* All files MUST be valid JSON
+* All files SHOULD be valid JSON
 * All files in the spec MAY be published at a URL path or with an alternate name (e.g., `station_info` instead of `station_information.json`) *(as of v2.0)*.
-* All data MUST be UTF-8 encoded
-* Line breaks MUST be represented by unix newline characters only (\n)
+* All data SHOULD be UTF-8 encoded
+* Line breaks SHOULD be represented by unix newline characters only (\n)
 * Pagination is not supported.
 
 ### File Distribution
