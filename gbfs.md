@@ -514,15 +514,15 @@ Field Name | REQUIRED | Type | Defines
           "roundtrip_station"
         ],
         "vehicle_accessories": [
-            "doors_4",
-            "automatic",
-            "cruise_control"
+          "doors_4",
+          "automatic",
+          "cruise_control"
         ],
         "g_CO2_km": 120,
         "vehicle_image": "https://mediarepository-wired-prod-1-euw1.wrd-aws.com/cri/vehicles/398ab08b-f1d6-8144-e026-b72dc668042c/outside_medium.jpg",
-        "make" : "Renault",
-        "model" : "Clio",
-        "color" : "white",
+        "make": "Renault",
+        "model": "Clio",
+        "color": "white",
         "vehicle_assets": {
           "icon_url": "https://www.example.com/assets/icon_car.svg",
           "icon_url_dark": "https://www.example.com/assets/icon_car_dark.svg",
@@ -581,9 +581,9 @@ Field Name | REQUIRED | Type | Defines
         "name": "Parking garage A",
         "lat": 12.345678,
         "lon": 45.678901,
-        "parking_type" :"underground_parking",
+        "parking_type": "underground_parking",
         "parking_hoop": false,
-        "contact_phone" : "+33109874321",
+        "contact_phone": "+33109874321",
         "is_charging_station": "true",
         "vehicle_type_capacity": {
           "abc123": 7,
@@ -793,21 +793,21 @@ Field Name | REQUIRED | Type | Defines
         "is_reserved": false,
         "is_disabled": false,
         "vehicle_type_id": "abc123",
-        "current_range_meters": 400000,   
-       "available_until" : "2021-05-17T15:00:00Z",
-       "home_station" : "station1",
-       "vehicle_equipment": [
-        "child_seat_0",
-        "winter_tires"
-      ]
-    },
+        "current_range_meters": 400000,
+        "available_until": "2021-05-17T15:00:00Z",
+        "home_station": "station1",
+        "vehicle_equipment": [
+          "child_seat_0",
+          "winter_tires"
+        ]
+      },
       {
         "bike_id": "jkl012",
         "last_reported": 1609866204,
         "is_reserved": false,
         "is_disabled": false,
         "vehicle_type_id": "def456",
-        "current_fuel_percent": 0.7,  
+        "current_fuel_percent": 0.7,
         "current_range_meters": 6543.0,
         "station_id": "86",
         "pricing_plan_id": "plan3",
@@ -819,7 +819,6 @@ Field Name | REQUIRED | Type | Defines
     ]
   }
 }
-
 ```
 
 ### system_hours.json
