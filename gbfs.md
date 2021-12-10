@@ -772,7 +772,7 @@ Field Name | REQUIRED | Type | Defines
 \- `station_id` <br/>*(added in v2.1)* | Conditionally REQUIRED | ID | Identifier referencing the `station_id` field in [station_information.json](#station_informationjson). REQUIRED only if the vehicle is currently at a station and the [vehicle_types.json](#vehicle_typesjson) file has been defined.
 \- `home_station_id` <br/>*(added in v2.3-RC)* | OPTIONAL | ID | The `station_id` of the station this vehicle must be returned to as defined in [station_information.json](#station_information.json).
 \- `pricing_plan_id` <br/>*(added in v2.2)* | OPTIONAL | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plans.json). If this field is defined it supersedes `default_pricing_plan_id` in `vehicle_types.json`. This field SHOULD be used to override `default_pricing_plan_id` in `vehicle_types.json` to define pricing plans for individual vehicles when necessary.
-\- `vehicle_equipment`<br/>*(added in vXXX)* | OPTIONAL | Array | Description of vehicle equipment that can be provided by the operator in addition to the accessories already provided in the vehicle (field `vehicle_accessories` of vehicle_type.json) but subject to more frequent updates.<br/><br/>Current valid values are:<ul><li>`child_seat_0` _(Baby seat ("0-10kg"))_</li><li>`child_seat_1`	 _(Seat or seat extension for small children ("9-18 kg"))_</li><li>`child_seat_4`	_(Seat or seat extension for older children ("15-36 kg"))_</li><li>`winter_tires` 	_(Vehicle has tires for winter weather)_</li><li>`snow_chains`</li></ul>
+\- `vehicle_equipment`<br/>*(added in vXXX)* | OPTIONAL | Array | Description of vehicle equipment that can be provided by the operator in addition to the accessories already provided in the vehicle (field `vehicle_accessories` of vehicle_type.json) but subject to more frequent updates.<br/><br/>Current valid values are:<ul><li>`child_seat_a` _(Baby seat ("0-10kg"))_</li><li>`child_seat_b`	 _(Seat or seat extension for small children ("9-18 kg"))_</li><li>`child_seat_c`	_(Seat or seat extension for older children ("15-36 kg"))_</li><li>`winter_tires` 	_(Vehicle has tires for winter weather)_</li><li>`snow_chains`</li></ul>
 \- `available_until`<br/>*(added in vXXX)* | Conditionally REQUIRED |  Datetime | This field is REQUIRED when the `return_type` defined in [vehicle_type.json](#vehicle_type.json) is set to `roundtrip_station`. Only applies to round trips. Any trip currently started must be finished before the specified Datetime. The vehicle being already booked afterward.
 
 
@@ -797,7 +797,7 @@ Field Name | REQUIRED | Type | Defines
         "available_until": "2021-05-17T15:00:00Z",
         "home_station": "station1",
         "vehicle_equipment": [
-          "child_seat_0",
+          "child_seat_a",
           "winter_tires"
         ]
       },
@@ -813,7 +813,7 @@ Field Name | REQUIRED | Type | Defines
         "pricing_plan_id": "plan3",
         "home_station_id": "146",
         "vehicle_equipment": [
-          "child_seat_0"
+          "child_seat_a"
         ]
       }
     ]
