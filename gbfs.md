@@ -15,7 +15,6 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 ## Table of Contents
 
 * [Introduction](#introduction)
-* [Version Endpoints](#version-endpoints)
 * [Term Definitions](#term-definitions)
 * [Files](#files)
 * [Accessibility](#accessibility)
@@ -46,18 +45,6 @@ This specification has been designed with the following concepts in mind:
 * Do not provide information whose primary purpose is historical
 
 The specification supports real-time travel advice in GBFS-consuming applications.
-
-## Version Endpoints
-
-The version of the GBFS specification to which a feed conforms is declared in the `version` field in all files. See [Output Format](#output-format).<br />
-
-GBFS Best Practice defines that:<br />
-
-_GBFS producers_ SHOULD provide endpoints that conform to both the current specification long term support (LTS) branch as well as the latest release branch within at least 3 months of a new spec _MAJOR_ or _MINOR_ version release. It is not necessary to support more than one _MINOR_ release of the same _MAJOR_ release group because _MINOR_ releases are backwards-compatible. See [specification versioning](https://github.com/NABSA/gbfs/blob/master/README.md#specification-versioning)<br />
-
-_GBFS consumers_ SHOULD, at a minimum, support the current LTS branch. It is highly RECOMMENDED that GBFS consumers support later releases.<br />
-
-Default GBFS feed URLs, e.g. `https://www.example.com/data/gbfs.json` or `https://www.example.com/data/fr/system_information.json` MUST direct consumers to the feed that conforms to the current LTS documentation branch.
 
 ## Term Definitions
 
@@ -119,11 +106,19 @@ Announcements for disruptions of service, including disabled stations or tempora
     * REQUIRED files MUST NOT 404. They MUST return a properly formatted JSON file as defined in [Output Format](#output-format).
     * OPTIONAL files MAY 404. A 404 of an OPTIONAL file SHOULD NOT be considered an error.
 
+### Version Endpoints
+
+The version of the GBFS specification to which a feed conforms is declared in the `version` field in all files. See [Output Format](#output-format).<br />
+
+GBFS documentation will include a list of current and past supported MAJOR and MINOR versions. Supported versions SHALL NOT span more than two MAJOR versions. Past versions with _Supported_ status MAY be patched to correct bugs or vulnerabilities but new features will not be introduced. Past versions with _Deprecated_ status will not be patched and their use SHOULD be discontinued. Producers SHOULD continue to maintain existing feeds while they have _Supported_ status.
+
+GBFS producers SHOULD provide endpoints that conform to the current MAJOR version release within 180 days of a new MAJOR version release. It is not necessary to support more than one MINOR release of the same MAJOR release group because MINOR releases are backwards-compatible. See [specification versioning](https://github.com/NABSA/gbfs/blob/master/README.md#specification-versioning).
+
 ### Auto-Discovery
 
 Publishers SHOULD implement auto-discovery of GBFS feeds by linking to the location of the `gbfs.json` auto-discovery endpoint.
 
-* The location of the auto-discovery file SHOULD be provided in the HTML area of the shared mobility landing page hosted at the URL specified in the URL field of the `system_infomation.json` file.
+* The location of the auto-discovery file SHOULD be provided in the HTML area of the shared mobility landing page hosted at the URL specified in the `url` field of the `system_infomation.json` file.
 * This is referenced via a _link_ tag with the following format:
     * `<link rel="gbfs" type="application/json" href="https://www.example.com/data/gbfs.json" />`
     * References:
