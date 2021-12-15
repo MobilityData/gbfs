@@ -108,7 +108,7 @@ Announcements for disruptions of service, including disabled stations or tempora
 
 ### Version Endpoints
 
-The version of the GBFS specification to which a feed conforms is declared in the `version` field in all files. See [Output Format](#output-format).<br />
+The version of the GBFS specification to which a feed conforms is declared in the `version` field in all files. See [Output Format](#output-format). All endpoints within a data set SHOULD conform to the same MAJOR or MINOR version. Mixing of versions within data sets is NOT RECOMMENDED.<br />
 
 GBFS documentation will include a list of current and past supported MAJOR and MINOR versions. Supported versions SHALL NOT span more than two MAJOR versions. Past versions with _Supported_ status MAY be patched to correct bugs or vulnerabilities but new features will not be introduced. Past versions with _Deprecated_ status will not be patched and their use SHOULD be discontinued. Producers SHOULD continue to maintain existing feeds while they have _Supported_ status.
 
