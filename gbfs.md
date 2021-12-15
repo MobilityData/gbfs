@@ -1081,7 +1081,7 @@ Field Name | REQUIRED | Type | Defines
 &emsp;&emsp;&emsp;\-&nbsp;`ride_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the undocked (“free floating”) ride allowed to start and end in this zone? <br /><br /> `true` - Undocked (“free floating”) ride can start and end in this zone. <br /> `false` - Undocked (“free floating”) ride cannot start and end in this zone.
 &emsp;&emsp;&emsp;\-&nbsp;`ride_through_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the ride allowed to travel through this zone? <br /><br /> `true` - Ride can travel through this zone. <br /> `false` - Ride cannot travel through this zone.
 &emsp;&emsp;&emsp;\-&nbsp;`maximum_speed_kph` | OPTIONAL | Non-negative Integer | What is the maximum speed allowed, in kilometers per hour? <br /><br /> If there is no maximum speed to observe, this can be omitted.
-&emsp;&emsp;&emsp;\-&nbsp;`station_parking` | OPTIONAL | Boolean | Vehicle MUST be parked at stations defined in station_information.json within this geofence zone? <br /><br />`true` - MUST only be parked at stations.  <br /> `false` - MAY be parked outside of stations.
+&emsp;&emsp;&emsp;\-&nbsp;`station_parking` | OPTIONAL | Boolean | Can the vehicle only be parked at stations defined in station_information.json within this geofence zone? <br /><br />`true` - Can only be parked at stations.  <br /> `false` - May be parked outside of stations.
 
 ##### Example:
 
