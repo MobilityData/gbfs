@@ -5,7 +5,7 @@ This document explains the types of files and data that comprise the General Bik
 
 # Reference version
 
-This documentation refers to **v3.0-RC (release candidate)**.<br>
+This documentation refers to **v3.0-Draft (future version)**.<br>
 **For the current version see [**version 2.2**](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md).** For past and upcoming versions see the [README](README.md#read-the-spec--version-history).
 
 ## Terminology
@@ -188,7 +188,7 @@ It is RECOMMENDED that all GBFS data sets be offered under an open data license.
 Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc...
 * Float *(added in v2.1)* - A 32-bit floating point number.
 * GeoJSON FeatureCollection - A FeatureCollection as described by the IETF RFC 7946 https://tools.ietf.org/html/rfc7946#section-3.3.
-* GeoJSON Multipolygon - A Geometry Object as described by the IETF RFC https://tools.ietf.org/html/rfc7946#section-3.1.7.
+* GeoJSON MultiPolygon - A Geometry Object as described by the IETF RFC https://tools.ietf.org/html/rfc7946#section-3.1.7.
 * ID - Should be represented as a string that identifies that particular entity. An ID:
     * MUST be unique within like fields (e.g. `station_id` MUST be unique among stations)
     * does not have to be globally unique, unless otherwise specified
@@ -228,7 +228,7 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `last_updated` | Yes | Timestamp | Indicates the last time data in the feed was updated. This timestamp represents the publisher's knowledge of the current state of the system at this point in time.
 `ttl` | Yes | Non-negative integer | Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).
-`version` <br/>*(added in v1.1)* | Yes | String | GBFS version number to which the feed confirms, according to the versioning framework.
+`version` <br/>*(added in v1.1)* | Yes | String | GBFS version number to which the feed conforms, according to the versioning framework.
 `data` | Yes | Object | Response data in the form of name:value pairs.
 
 ##### Example:
@@ -389,12 +389,16 @@ Field Name | REQUIRED | Type | Defines
     "feed_contact_email": "datafeed@example.com",
     "timezone": "US/Central",
     "license_url": "https://www.example.com/data-license.html",
+    "terms_url": "https://www.example.com/terms",
+    "terms_last_updated": "2021-06-21",
+    "privacy_url": "https://www.example.com/privacy-policy",
+    "privacy_last_updated": "2019-01-13",
     "brand_assets": {
         "brand_last_modified": "2021-06-15",
         "brand_image_url": "https://www.example.com/assets/brand_image.svg",
         "brand_image_url_dark": "https://www.example.com/assets/brand_image_dark.svg",
         "color": "#C2D32C",
-        "terms_url": "https://www.example.com/assets/brand.pdf"
+        "brand_terms_url": "https://www.example.com/assets/brand.pdf"
       }
       
   }
@@ -416,14 +420,14 @@ Field Name | REQUIRED | Type | Defines
 \- `wheel_count` | OPTIONAL | Non-negative Integer | Number of wheels this vehicle type has.
 \- `max_permitted_speed` | OPTIONAL | Non-negative Integer | The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations.
 \- `rated_power` | OPTIONAL | Non-negative Integer | The rated power of the motor for this vehicle type in watts.
-\- `vehicle_reserve_time` | OPTIONAL | Non-negative Integer | Maximum time in minutes that a vehicle can be reserved before a rental begins. When a vehicle is reserved by a user the vehicle remains locked until the rental begins. During this time the vehicle is unavailable and cannot be be reserved or rented by other users. The vehicle status in `free_bike_status.json` MUST be set to `is_reserved = true`. If the value of `vehicle_reserve_time` elapses without a rental beginning, the vehicle status MUST change to `is_reserved = false`. If `vehicle_reserve_time` is set to `0` the vehicle type cannot be reserved. 
-\- `return_type`<br/>*(added in v2.3-RC)*|| OPTIONAL | Array | The conditions for returning the vehicle at the end of the trip. For vehicles that have more than one return option, include all applicable methods in the array. <br /><br />Current valid values are:<br /><ul><li>`free_floating` _(The vehicle can be returned anywhere permitted within the service area - note that this field is subject to rules in `geofencing_zones.json` if defined.)_</li><li>`roundtrip_station` _(The vehicle must be returned to the initial rental station. Cannot be defined in combination with `free_floating`.)_</li><li>`any_station` _(The vehicle must be returned to any station within the service area - note that a specific station can be defined in [free_bike_status.json](#free_bike_status.json) using `home_station_id`. Cannot be defined in combination with `roundtrip_station`.)_
+\- `default_reserve_time`<br/>*(added in v2.3-RC)* | OPTIONAL | Non-negative Integer | Maximum time in minutes that a vehicle can be reserved before a rental begins. When a vehicle is reserved by a user the vehicle remains locked until the rental begins. During this time the vehicle is unavailable and cannot be be reserved or rented by other users. The vehicle status in `free_bike_status.json` MUST be set to `is_reserved = true`. If the value of `default_reserve_time` elapses without a rental beginning, the vehicle status MUST change to `is_reserved = false`. If `default_reserve_time` is set to `0` the vehicle type cannot be reserved. 
+\- `return_type`<br/>*(added in v2.3-RC)*| OPTIONAL | Array | The conditions for returning the vehicle at the end of the trip. For vehicles that have more than one return option, include all applicable methods in the array. <br /><br />Current valid values are:<br /><ul><li>`free_floating` _(The vehicle can be returned anywhere permitted within the service area - note that this field is subject to rules in `geofencing_zones.json` if defined.)_</li><li>`roundtrip_station` _(The vehicle must be returned to the initial rental station. Cannot be defined in combination with `free_floating`.)_</li><li>`any_station` _(The vehicle must be returned to any station within the service area - note that a specific station can be defined in [free_bike_status.json](#free_bike_status.json) using `home_station`. Cannot be defined in combination with `roundtrip_station`.)_
 \- `vehicle_assets`<br/>*(added in v2.3-RC)*| OPTIONAL | Object | An object where each key defines one of the items listed below.
 &emsp;&emsp;\- `icon_url`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | URL | REQUIRED if `vehicle_assets` is defined. A fully qualified URL pointing to the location of a graphic icon file that MAY be used to represent this vehicle type on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
 &emsp;&emsp;\- `icon_url_dark`<br/>*(added in v2.3-RC)*| OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type when in dark mode on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
 &emsp;&emsp;\- `icon_last_modified`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | Date | REQUIRED if `icon_url`  and/or `icon_url_dark` is defined. Date that indicates the last time any included vehicle icon images were modified or updated. MUST be in the format YYYY-MM-DD.
-\- `default_pricing_plan_id`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | ID | REQUIRED if both `system_pricing_plans` and `vehicle_types.json` are defined. A `plan_id` as defined in `system_pricing_plans.json` that identifies a default pricing plan for this vehicle to be used by trip planning applications for purposes of calculating the cost of a single trip using this vehicle type. This default pricing plan is superseded by `pricing_plan_id` when it is defined in `free_bike_status.json` Publishers SHOULD define `default_pricing_plan_id` first and then override it using `pricing_plan_id` in `free_bike_status.json` when necessary.
-\- `pricing_plans`<br/>*(added in v2.3-RC)* | OPTIONAL | Array | Array of all pricing plan IDs as defined in `system_pricing_plans.json` that are applied to this vehicle type. <br /><br />This array SHOULD be published when there are multiple pricing plans defined in `system_pricing_plans.json` that apply to a single vehicle type.
+\- `default_pricing_plan_id`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | ID | REQUIRED if both `system_pricing_plans.json` and `vehicle_types.json` are defined. A `plan_id` as defined in `system_pricing_plans.json` that identifies a default pricing plan for this vehicle to be used by trip planning applications for purposes of calculating the cost of a single trip using this vehicle type. This default pricing plan is superseded by `pricing_plan_id` when it is defined in `free_bike_status.json` Publishers SHOULD define `default_pricing_plan_id` first and then override it using `pricing_plan_id` in `free_bike_status.json` when necessary.
+\- `pricing_plan_ids`<br/>*(added in v2.3-RC)* | OPTIONAL | Array | Array of all pricing plan IDs as defined in `system_pricing_plans.json` that are applied to this vehicle type. <br /><br />This array SHOULD be published when there are multiple pricing plans defined in `system_pricing_plans.json` that apply to a single vehicle type.
 
 ##### Example:
 
@@ -440,7 +444,7 @@ Field Name | REQUIRED | Type | Defines
         "propulsion_type": "human",
         "name": "Example Basic Bike",
         "wheel_count": 2,
-        "vehicle_reserve_time": 30,
+        "default_reserve_time": 30,
         "return_type": [
           "any_station",
           "free_floating"
@@ -450,8 +454,8 @@ Field Name | REQUIRED | Type | Defines
           "icon_url_dark": "https://www.example.com/assets/icon_bicycle_dark.svg",
           "icon_last_modified": "2021-06-15"
         },
-        "default_pricing_plan": "bike_plan_1",
-        "pricing_plans": [
+        "default_pricing_plan_id": "bike_plan_1",
+        "pricing_plan_ids": [
           "bike_plan_1",
           "bike_plan_2",
           "bike_plan_3"
@@ -463,7 +467,7 @@ Field Name | REQUIRED | Type | Defines
         "propulsion_type": "human",
         "name": "Example Cargo Bike",
         "wheel_count": 3,
-        "vehicle_reserve_time": 30,
+        "default_reserve_time": 30,
         "return_type": [
           "roundtrip_station"
         ],
@@ -487,7 +491,7 @@ Field Name | REQUIRED | Type | Defines
         "wheel_count": 2,
         "max_permitted_speed": 25,
         "rated_power": 350,
-        "vehicle_reserve_time": 30,
+        "default_reserve_time": 30,
         "max_range_meters": 12345,
         "return_type": [
           "free_floating"
@@ -497,7 +501,7 @@ Field Name | REQUIRED | Type | Defines
           "icon_url_dark": "https://www.example.com/assets/icon_escooter_dark.svg",
           "icon_last_modified": "2021-06-15"
         },
-        "default_pricing_plan": "scooter_plan_1"
+        "default_pricing_plan_id": "scooter_plan_1"
       },
       {
         "vehicle_type_id": "car1",
@@ -505,7 +509,7 @@ Field Name | REQUIRED | Type | Defines
         "propulsion_type": "combustion",
         "name": "Four-door Sedan",
         "wheel_count": 4,
-        "vehicle_reserve_time": 0,
+        "default_reserve_time": 0,
         "max_range_meters": 523992,
         "return_type": [
           "roundtrip_station"
@@ -515,7 +519,7 @@ Field Name | REQUIRED | Type | Defines
           "icon_url_dark": "https://www.example.com/assets/icon_car_dark.svg",
           "icon_last_modified": "2021-06-15"
         },
-        "default_pricing_plan": "car_plan_1"
+        "default_pricing_plan_id": "car_plan_1"
       }
     ]
   }
@@ -540,7 +544,7 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`post_code` | OPTIONAL | String | Postal code where station is located.
 \-&nbsp;`rental_methods` | OPTIONAL | Array | Payment methods accepted at this station. <br /> Current valid values are:<br /> <ul><li>`key` (e.g. operator issued vehicle key / fob / card)</li><li>`creditcard`</li><li>`paypass`</li><li>`applepay`</li><li>`androidpay`</li><li>`transitcard`</li><li>`accountnumber`</li><li>`phone`</li></ul>
 \-&nbsp;`is_virtual_station` <br/>*(added in v2.1)* | OPTIONAL | Boolean | Is this station a location with or without physical infrastructures (docks)? <br /><br /> `true` - The station is a location without physical infrastructure, defined by a point (lat/lon) and/or `station_area` (below). <br /> `false` - The station consists of physical infrastructure (docks). <br /><br /> If this field is empty, it means the station consists of physical infrastructure (docks).<br><br>This field SHOULD be published in systems that have station locations without standard, internet connected physical docking infrastructure. These may be racks or geofenced areas designated for rental and/or return of vehicles. Locations that fit within this description SHOULD have the `is_virtual_station` boolean set to `true`.
-\-&nbsp;`station_area` <br/>*(added in v2.1)* | OPTIONAL | GeoJSON Multipolygon | A GeoJSON multipolygon that describes the area of a virtual station. If `station_area` is supplied then the record describes a virtual station. <br /><br /> If lat/lon and `station_area` are both defined, the lat/lon is the significant coordinate of the station (e.g. dock facility or valet drop-off and pick up point). The `station_area` takes precedence over any `ride_allowed` rules in overlapping `geofencing_zones`.
+\-&nbsp;`station_area` <br/>*(added in v2.1)* | OPTIONAL | GeoJSON MultiPolygon | A GeoJSON MultiPolygon that describes the area of a virtual station. If `station_area` is supplied then the record describes a virtual station. <br /><br /> If lat/lon and `station_area` are both defined, the lat/lon is the significant coordinate of the station (e.g. dock facility or valet drop-off and pick up point). The `station_area` takes precedence over any `ride_allowed` rules in overlapping `geofencing_zones`.
 \-&nbsp;`capacity` | OPTIONAL | Non-negative integer | Number of total docking points installed at this station, both available and unavailable, regardless of what vehicle types are allowed at each dock. <br/><br/>If this is a virtual station defined using the `is_virtual_station` field, this number represents the total number of vehicles of all types that can be parked at the virtual station.<br/><br/>If the virtual station is defined by `station_area`, this is the number that can park within the station area. If `lat`/`lon` are defined, this is the number that can park at those coordinates.
 \-&nbsp;`vehicle_capacity` <br/>*(added in v2.1)* | OPTIONAL | Object | An object used to describe the parking capacity of virtual stations (defined using the `is_virtual_station` field), where each key is a `vehicle_type_id` as described in [vehicle_types.json](#vehicle_typesjson-added-in-v21) and the value is a number representing the total number of vehicles of this type that can park within the virtual station.<br/><br/>If the virtual station is defined by `station_area`, this is the number that can park within the station area. If `lat`/`lon` is defined, this is the number that can park at those coordinates.
 \-&nbsp;`vehicle_type_capacity` <br/>*(added in v2.1)* | OPTIONAL | Object | An object used to describe the docking capacity of a station where each key is a `vehicle_type_id` as described in [vehicle_types.json](#vehicle_typesjson-added-in-v21) and the value is a number representing the total docking points installed at this station, both available and unavailable for the specified vehicle type.
@@ -565,6 +569,7 @@ Field Name | REQUIRED | Type | Defines
         "name": "Parking garage A",
         "lat": 12.345678,
         "lon": 45.678901,
+        "is_charging_station": "true",
         "vehicle_type_capacity": {
           "abc123": 7,
           "def456": 9
@@ -587,10 +592,11 @@ Field Name | REQUIRED | Type | Defines
       {
         "station_id": "station12",
         "name": "SE Belmont & SE 10 th",
-        "lat": -122.655775,
-        "lon": 45.516445,
+        "lat": 45.516445,
+        "lon": -122.655775,
         "is_valet_station": false,
         "is_virtual_station": true,
+        "is_charging_station": "false",
         "station_area": {
           "type": "MultiPolygon",
           "coordinates": [
@@ -735,7 +741,7 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `bikes` | Yes | Array | Array that contains one object per vehicle that is currently stopped as defined below.
 \-&nbsp;`bike_id` | Yes | ID | Identifier of a vehicle. The `bike_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `bike_id` identifier SHOULD only be rotated once per trip.
-\-&nbsp;`system_id` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | ID | Identifier referencing the `system_id` field in [system_information.json](#system_informationjson). REQUIRED in the case of feeds that specify free (undocked) bikes and define systems in [system_information.json](#system_informationjson).
+\-&nbsp;`system_id` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | ID | Identifier referencing the `system_id` field in [system_information.json](#system_informationjson). REQUIRED in the case of feeds that specify free floating (undocked) vehicles and define systems in [system_information.json](#system_informationjson).
 \-&nbsp;`lat` | Conditionally REQUIRED <br/>*(as of v2.1)* | Latitude | Latitude of the vehicle in decimal degrees. *(as of v2.1)* This field is REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 \-&nbsp;`lon` | Conditionally REQUIRED <br/>*(as of v2.1)* | Longitude | Longitude of the vehicle. *(as of v2.1)* This field is REQUIRED if `station_id` is not provided for this vehicle (free floating).
 \-&nbsp;`is_reserved` | Yes | Boolean | Is the vehicle currently reserved? <br /><br /> `true` - Vehicle is currently reserved. <br /> `false` - Vehicle is not currently reserved.
@@ -748,8 +754,8 @@ Field Name | REQUIRED | Type | Defines
 \- `last_reported` <br/>*(added in v2.1)* | OPTIONAL | Timestamp | The last time this vehicle reported its status to the operator's backend.
 \- `current_range_meters` <br/>*(added in v2.1)* | Conditionally REQUIRED | Non-negative float | If the corresponding `vehicle_type` definition for this vehicle has a motor, then this field is REQUIRED. This value represents the furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel.
 \- `station_id` <br/>*(added in v2.1)* | Conditionally REQUIRED | ID | Identifier referencing the `station_id` field in [station_information.json](#station_informationjson). REQUIRED only if the vehicle is currently at a station and the [vehicle_types.json](#vehicle_typesjson) file has been defined.
-\- `home_station` | OPTIONAL | ID | The `station_id` of the station this vehicle must be returned to as defined in [station_information.json](#station_ifnormation.json).
-\- `pricing_plan_id` <br/>*(added in v2.2)* | OPTIONAL | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plans.json). If this field is defined it supersedes `default_pricing_plan` in `vehicle_types.json`. This field SHOULD be used to override `default_pricing_plan_id` in `vehicle_types.json` to define pricing plans for individual vehicles when necessary.
+\- `home_station_id` <br/>*(added in v2.3-RC)* | OPTIONAL | ID | The `station_id` of the station this vehicle must be returned to as defined in [station_information.json](#station_information.json).
+\- `pricing_plan_id` <br/>*(added in v2.2)* | OPTIONAL | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plans.json). If this field is defined it supersedes `default_pricing_plan_id` in `vehicle_types.json`. This field SHOULD be used to override `default_pricing_plan_id` in `vehicle_types.json` to define pricing plans for individual vehicles when necessary.
 
 ##### Example:
 
@@ -775,10 +781,10 @@ Field Name | REQUIRED | Type | Defines
         "is_reserved": false,
         "is_disabled": false,
         "vehicle_type_id": "def456",
-        "current_range_meters": 6543,
+        "current_range_meters": 6543.0,
         "station_id": "86",
         "pricing_plan_id": "plan3",
-        "home_station": "146"
+        "home_station_id": "146"
       }
     ]
   }
@@ -965,24 +971,24 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
         "plan_id": "plan2",
         "name": "One-Way",
         "currency": "USD",
-        "price": 2,
+        "price": 2.00,
         "is_taxable": false,
         "description": "Includes 10km, overage fees apply after 10km.",
         "per_km_pricing": [
           {
             "start": 10,
-            "rate": 1,
+            "rate": 1.00,
             "interval": 1,
             "end": 25
           },
           {
             "start": 25,
-            "rate": 0.5,
+            "rate": 0.50,
             "interval": 1
           },
           {
             "start": 25,
-            "rate": 3,
+            "rate": 3.00,
             "interval": 5
           }
         ]
@@ -1007,7 +1013,7 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
         "plan_id": "plan3",
         "name": "Simple Rate",
         "currency": "CAD",
-        "price": 3,
+        "price": 3.00,
         "is_taxable": true,
         "description": "$3 unlock fee, $0.25 per kilometer and 0.50 per minute.",
         "per_km_pricing": [
@@ -1069,14 +1075,13 @@ Field Name | REQUIRED | Type | Defines
         ],
         "times": [
           {
-            "start": "1604448000",
-            "end": "1604674800"
+            "start": 1604448000,
+            "end": 1604674800
           }
         ],
         "url": "https://example.com/more-info",
         "summary": "Disruption of Service",
-        "description": "The three stations on Broadway will be out of service
-         from 12:00am Nov 3 to 3:00pm Nov 6th to accommodate road work",
+        "description": "The three stations on Broadway will be out of service from 12:00am Nov 3 to 3:00pm Nov 6th to accommodate road work",
         "last_updated": 1604519393
       }
     ]
@@ -1095,16 +1100,17 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`type` | Yes | String | “FeatureCollection” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
 \-&nbsp;`features` | Yes | Array | Array of objects as defined below.
 &emsp;\-&nbsp;`type` | Yes | String | “Feature” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
-&emsp;\-&nbsp;`geometry` | Yes | GeoJSON Multipolygon | A polygon that describes where rides might not be able to start, end, go through, or have other limitations. A clockwise arrangement of points defines the area enclosed by the polygon, while a counterclockwise order defines the area outside the polygon ([right-hand rule](https://tools.ietf.org/html/rfc7946#section-3.1.6)). All geofencing zones contained in this list are public (i.e., can be shown on a map for public use).
+&emsp;\-&nbsp;`geometry` | Yes | GeoJSON MultiPolygon | A polygon that describes where rides might not be able to start, end, go through, or have other limitations. A clockwise arrangement of points defines the area enclosed by the polygon, while a counterclockwise order defines the area outside the polygon ([right-hand rule](https://tools.ietf.org/html/rfc7946#section-3.1.6)). All geofencing zones contained in this list are public (i.e., can be shown on a map for public use).
 &emsp;\-&nbsp;`properties` | Yes | Object | Properties: As defined below, describing travel allowances and limitations.
 &emsp;&emsp;\-&nbsp;`name` | OPTIONAL | String | Public name of the geofencing zone.
 &emsp;&emsp;\-&nbsp;`start` | OPTIONAL | Timestamp | Start time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
 &emsp;&emsp;\-&nbsp;`end` | OPTIONAL | Timestamp | End time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
 &emsp;&emsp;\-&nbsp;`rules` | OPTIONAL | Array | Array that contains one object per rule as defined below. <br /><br /> In the event of colliding rules within the same polygon, the earlier rule (in order of the JSON file) takes precedence. <br> In the case of overlapping polygons, the combined set of rules associated with the overlapping polygons applies to the union of the polygons. In the event of colliding rules in this set, the earlier rule (in order of the JSON file) also takes precedence.
 &emsp;&emsp;&emsp;\-&nbsp;`vehicle_type_id` | OPTIONAL | Array | Array of IDs of vehicle types for which any restrictions SHOULD be applied (see vehicle type definitions in [PR #136](https://github.com/NABSA/gbfs/pull/136)). If vehicle_type_ids are not specified, then restrictions apply to all vehicle types.
-&emsp;&emsp;&emsp;\-&nbsp;`ride_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the undocked (“free bike”) ride allowed to start and end in this zone? <br /><br /> `true` - Undocked (“free bike”) ride can start and end in this zone. <br /> `false` - Undocked (“free bike”) ride cannot start and end in this zone.
+&emsp;&emsp;&emsp;\-&nbsp;`ride_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the undocked (“free floating”) ride allowed to start and end in this zone? <br /><br /> `true` - Undocked (“free floating”) ride can start and end in this zone. <br /> `false` - Undocked (“free floating”) ride cannot start and end in this zone.
 &emsp;&emsp;&emsp;\-&nbsp;`ride_through_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the ride allowed to travel through this zone? <br /><br /> `true` - Ride can travel through this zone. <br /> `false` - Ride cannot travel through this zone.
 &emsp;&emsp;&emsp;\-&nbsp;`maximum_speed_kph` | OPTIONAL | Non-negative Integer | What is the maximum speed allowed, in kilometers per hour? <br /><br /> If there is no maximum speed to observe, this can be omitted.
+&emsp;&emsp;&emsp;\-&nbsp;`station_parking`<br/>*(added in v2.3-RC2)* | OPTIONAL | Boolean | Can vehicles only be parked at stations defined in `station_information.json` within this geofence zone? <br /><br />`true` - Vehicles can only be parked at stations.  <br /> `false` - Vehicles may be parked outside of stations.
 
 ##### Example:
 
@@ -1184,7 +1190,8 @@ Field Name | REQUIRED | Type | Defines
                 ],
                 "ride_allowed": false,
                 "ride_through_allowed": true,
-                "maximum_speed_kph": 10
+                "maximum_speed_kph": 10,
+                "station_parking": true
               }
             ]
           }
@@ -1288,7 +1295,7 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
     "language": "en",
     "rental_apps": {
       "android": {
-        "discovery_uri": "com.example.android://"
+        "discovery_uri": "com.example.android://",
         "store_uri": "https://play.google.com/store/apps/details?id=com.example.android",
       },
       "ios": {
