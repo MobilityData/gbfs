@@ -15,7 +15,6 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 ## Table of Contents
 
 * [Introduction](#introduction)
-* [Version Endpoints](#version-endpoints)
 * [Term Definitions](#term-definitions)
 * [Files](#files)
 * [Accessibility](#accessibility)
@@ -46,18 +45,6 @@ This specification has been designed with the following concepts in mind:
 * Do not provide information whose primary purpose is historical
 
 The specification supports real-time travel advice in GBFS-consuming applications.
-
-## Version Endpoints
-
-The version of the GBFS specification to which a feed conforms is declared in the `version` field in all files. See [Output Format](#output-format).<br />
-
-GBFS Best Practice defines that:<br />
-
-_GBFS producers_ SHOULD provide endpoints that conform to both the current specification long term support (LTS) branch as well as the latest release branch within at least 3 months of a new spec _MAJOR_ or _MINOR_ version release. It is not necessary to support more than one _MINOR_ release of the same _MAJOR_ release group because _MINOR_ releases are backwards-compatible. See [specification versioning](https://github.com/NABSA/gbfs/blob/master/README.md#specification-versioning)<br />
-
-_GBFS consumers_ SHOULD, at a minimum, support the current LTS branch. It is highly RECOMMENDED that GBFS consumers support later releases.<br />
-
-Default GBFS feed URLs, e.g. `https://www.example.com/data/gbfs.json` or `https://www.example.com/data/fr/system_information.json` MUST direct consumers to the feed that conforms to the current LTS documentation branch.
 
 ## Term Definitions
 
@@ -119,11 +106,19 @@ Announcements for disruptions of service, including disabled stations or tempora
     * REQUIRED files MUST NOT 404. They MUST return a properly formatted JSON file as defined in [Output Format](#output-format).
     * OPTIONAL files MAY 404. A 404 of an OPTIONAL file SHOULD NOT be considered an error.
 
+### Version Endpoints
+
+The version of the GBFS specification to which a feed conforms is declared in the `version` field in all files. See [Output Format](#output-format). All endpoints within a data set SHOULD conform to the same MAJOR or MINOR version. Mixing of versions within data sets is NOT RECOMMENDED.<br />
+
+GBFS documentation will include a list of current and past supported MAJOR and MINOR versions. Supported versions SHALL NOT span more than two MAJOR versions. Past versions with _Supported_ status MAY be patched to correct bugs or vulnerabilities but new features will not be introduced. Past versions with _Deprecated_ status will not be patched and their use SHOULD be discontinued. Producers SHOULD continue to maintain existing feeds while they have _Supported_ status.
+
+GBFS producers SHOULD provide endpoints that conform to the current MAJOR version release within 180 days of a new MAJOR version release. It is not necessary to support more than one MINOR release of the same MAJOR release group because MINOR releases are backwards-compatible. See [specification versioning](https://github.com/NABSA/gbfs/blob/master/README.md#specification-versioning).
+
 ### Auto-Discovery
 
 Publishers SHOULD implement auto-discovery of GBFS feeds by linking to the location of the `gbfs.json` auto-discovery endpoint.
 
-* The location of the auto-discovery file SHOULD be provided in the HTML area of the shared mobility landing page hosted at the URL specified in the URL field of the `system_infomation.json` file.
+* The location of the auto-discovery file SHOULD be provided in the HTML area of the shared mobility landing page hosted at the URL specified in the `url` field of the `system_infomation.json` file.
 * This is referenced via a _link_ tag with the following format:
     * `<link rel="gbfs" type="application/json" href="https://www.example.com/data/gbfs.json" />`
     * References:
@@ -417,7 +412,7 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `vehicle_types` | Yes | Array | Array that contains one object per vehicle type in the system as defined below.
 \- `vehicle_type_id` | Yes | ID | Unique identifier of a vehicle type. See [Field Types](#field-types) above for ID field requirements.
-\- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`car`</li><li>`moped`</li><li>`scooter`</li><li>`other`</li></ul>
+\- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`cargo_bicycle`</li><li>`car`</li><li>`moped`</li><li>`scooter` (will be deprecated in  v3.0)</li><li>`scooter_standing` (standing kick scooter)</li><li>`scooted_seated` (this is a kick scooter with a seat, not to be confused with `moped`)</li><li>`other`</li></ul>
 \- `rider_capacity`<br/>*(added in vXXX)* | OPTIONAL | Non-negative integer | The number of riders (driver included) the vehicle can legally accommodate.
 \- `cargo_volume_capacity`<br/>*(added in vXXX)* | OPTIONAL | Non-negative integer | Cargo volume available in the vehicle, expressed in liters. For cars, it corresponds to the space between the boot floor, including the storage under the hatch, to the rear shelf in the trunk.
 \- `cargo_load_capacity`<br/>*(added in vXXX)* | OPTIONAL | Non-negative integer | Loading capacity allowed in the space dedicated to the loading of materials of the vehicle (excluding passengers), expressed in kilograms.
@@ -433,15 +428,17 @@ Field Name | REQUIRED | Type | Defines
 | \- `make`<br/>*(added in vXXX)*| OPTIONAL| String| The name of the vehicle manufacturer. <br><br>Example: <ul><li>CUBE Bikes</li><li>Renault</li></ul>
 | \- `model`<br/>*(added in vXXX)*| OPTIONAL| String| The name of the vehicle model. <br><br>Example <ul><li>Giulia</li><li>MX50</li></ul>
 | \- `color`<br/>*(added in vXXX)*| OPTIONAL| String| The color of the vehicle. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas or dot. Spaces are allowed in case of a compound name. <br><br>Example <ul><li>green</li><li>dark blue</li></ul> 
+\- `wheel_count` | OPTIONAL | Non-negative Integer | Number of wheels this vehicle type has.
+\- `max_permitted_speed` | OPTIONAL | Non-negative Integer | The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations.
+\- `rated_power` | OPTIONAL | Non-negative Integer | The rated power of the motor for this vehicle type in watts.
 \- `default_reserve_time`<br/>*(added in v2.3-RC)* | OPTIONAL | Non-negative Integer | Maximum time in minutes that a vehicle can be reserved before a rental begins. When a vehicle is reserved by a user the vehicle remains locked until the rental begins. During this time the vehicle is unavailable and cannot be be reserved or rented by other users. The vehicle status in `free_bike_status.json` MUST be set to `is_reserved = true`. If the value of `default_reserve_time` elapses without a rental beginning, the vehicle status MUST change to `is_reserved = false`. If `default_reserve_time` is set to `0` the vehicle type cannot be reserved. 
-\- `return_type`<br/>*(added in v2.3-RC)*| OPTIONAL | Array | The conditions for returning the vehicle at the end of the trip. For vehicles that have more than one return option, include all applicable methods in the array. <br /><br />Current valid values are:<br /><ul><li>`free_floating` _(The vehicle can be returned anywhere permitted within the service area - note that this field is subject to rules in `geofencing_zones.json` if defined.)_</li><li>`roundtrip_station` _(The vehicle must be returned to the initial rental station. Cannot be defined in combination with `free_floating`.)_</li><li>`any_station` _(The vehicle must be returned to any station within the service area - note that a specific station can be defined in [free_bike_status.json](#free_bike_status.json) using `home_station_id`. Cannot be defined in combination with `roundtrip_station`.)_
+\- `return_type`<br/>*(added in v2.3-RC)*| OPTIONAL | Array | The conditions for returning the vehicle at the end of the trip. For vehicles that have more than one return option, include all applicable methods in the array. <br /><br />Current valid values are:<br /><ul><li>`free_floating` _(The vehicle can be returned anywhere permitted within the service area - note that this field is subject to rules in `geofencing_zones.json` if defined.)_</li><li>`roundtrip_station` _(The vehicle must be returned to the initial rental station. Cannot be defined in combination with `free_floating`.)_</li><li>`any_station` _(The vehicle must be returned to any station within the service area - note that a specific station can be defined in [free_bike_status.json](#free_bike_status.json) using `home_station`. Cannot be defined in combination with `roundtrip_station`.)_
 \- `vehicle_assets`<br/>*(added in v2.3-RC)*| OPTIONAL | Object | An object where each key defines one of the items listed below.
 &emsp;&emsp;\- `icon_url`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | URL | REQUIRED if `vehicle_assets` is defined. A fully qualified URL pointing to the location of a graphic icon file that MAY be used to represent this vehicle type on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
 &emsp;&emsp;\- `icon_url_dark`<br/>*(added in v2.3-RC)*| OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type when in dark mode on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
 &emsp;&emsp;\- `icon_last_modified`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | Date | REQUIRED if `icon_url`  and/or `icon_url_dark` is defined. Date that indicates the last time any included vehicle icon images were modified or updated. MUST be in the format YYYY-MM-DD.
 \- `default_pricing_plan_id`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | ID | REQUIRED if both `system_pricing_plans.json` and `vehicle_types.json` are defined. A `plan_id` as defined in `system_pricing_plans.json` that identifies a default pricing plan for this vehicle to be used by trip planning applications for purposes of calculating the cost of a single trip using this vehicle type. This default pricing plan is superseded by `pricing_plan_id` when it is defined in `free_bike_status.json` Publishers SHOULD define `default_pricing_plan_id` first and then override it using `pricing_plan_id` in `free_bike_status.json` when necessary.
 \- `pricing_plan_ids`<br/>*(added in v2.3-RC)* | OPTIONAL | Array | Array of all pricing plan IDs as defined in `system_pricing_plans.json` that are applied to this vehicle type. <br /><br />This array SHOULD be published when there are multiple pricing plans defined in `system_pricing_plans.json` that apply to a single vehicle type.
-
 
 ##### Example:
 
@@ -457,6 +454,7 @@ Field Name | REQUIRED | Type | Defines
         "form_factor": "bicycle",
         "propulsion_type": "human",
         "name": "Example Basic Bike",
+        "wheel_count": 2,
         "default_reserve_time": 30,
         "return_type": [
           "any_station",
@@ -475,10 +473,35 @@ Field Name | REQUIRED | Type | Defines
         ]
       },
       {
+        "vehicle_type_id": "cargo123",
+        "form_factor": "cargo_bicycle",
+        "propulsion_type": "human",
+        "name": "Example Cargo Bike",
+        "wheel_count": 3,
+        "default_reserve_time": 30,
+        "return_type": [
+          "roundtrip_station"
+        ],
+        "vehicle_assets": {
+          "icon_url": "https://www.example.com/assets/icon_cargobicycle.svg",
+          "icon_url_dark": "https://www.example.com/assets/icon_cargobicycle_dark.svg",
+          "icon_last_modified": "2021-06-15"
+        },
+        "default_pricing_plan": "cargo_plan_1",
+        "pricing_plans": [
+          "cargo_plan_1",
+          "cargo_plan_2",
+          "cargo_plan_3"
+        ]
+      },
+      {
         "vehicle_type_id": "def456",
-        "form_factor": "scooter",
+        "form_factor": "scooter_standing",
         "propulsion_type": "electric",
         "name": "Example E-scooter V2",
+        "wheel_count": 2,
+        "max_permitted_speed": 25,
+        "rated_power": 350,
         "default_reserve_time": 30,
         "max_range_meters": 12345,
         "return_type": [
@@ -507,9 +530,10 @@ Field Name | REQUIRED | Type | Defines
             "eco_sticker": "euro_2"
           }
         ],
-        "max_range_meters": 500000,
         "name": "Four-door Sedan",
+        "wheel_count": 4,
         "default_reserve_time": 0,
+        "max_range_meters": 523992,
         "return_type": [
           "roundtrip_station"
         ],
@@ -1139,6 +1163,7 @@ Field Name | REQUIRED | Type | Defines
 &emsp;&emsp;&emsp;\-&nbsp;`ride_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the undocked (“free floating”) ride allowed to start and end in this zone? <br /><br /> `true` - Undocked (“free floating”) ride can start and end in this zone. <br /> `false` - Undocked (“free floating”) ride cannot start and end in this zone.
 &emsp;&emsp;&emsp;\-&nbsp;`ride_through_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the ride allowed to travel through this zone? <br /><br /> `true` - Ride can travel through this zone. <br /> `false` - Ride cannot travel through this zone.
 &emsp;&emsp;&emsp;\-&nbsp;`maximum_speed_kph` | OPTIONAL | Non-negative Integer | What is the maximum speed allowed, in kilometers per hour? <br /><br /> If there is no maximum speed to observe, this can be omitted.
+&emsp;&emsp;&emsp;\-&nbsp;`station_parking`<br/>*(added in v2.3-RC2)* | OPTIONAL | Boolean | Can vehicles only be parked at stations defined in `station_information.json` within this geofence zone? <br /><br />`true` - Vehicles can only be parked at stations.  <br /> `false` - Vehicles may be parked outside of stations.
 
 ##### Example:
 
@@ -1218,7 +1243,8 @@ Field Name | REQUIRED | Type | Defines
                 ],
                 "ride_allowed": false,
                 "ride_through_allowed": true,
-                "maximum_speed_kph": 10
+                "maximum_speed_kph": 10,
+                "station_parking": true
               }
             ]
           }
