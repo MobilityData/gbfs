@@ -4,8 +4,7 @@ Documentation for the General Bikeshare Feed Specification, a standardized data 
 ## Table of Contents
 * [What is GBFS?](#what-is-gbfs)
 * [Get Involved](#get-involved)
-* [Current Version](#current-version)
-* [Read the Spec & Version History](#read-the-spec--version-history)
+* [Current Version](#current-version-recommended)
 * [Governance & Overview of the Change Process](#governance--overview-of-the-change-process)
 * [Guiding Principles](#guiding-principles)
 * [Specification Versioning](#specification-versioning)
@@ -17,7 +16,7 @@ Documentation for the General Bikeshare Feed Specification, a standardized data 
 ## What is GBFS?
 The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.
  
-GBFS was created in 2014 by [Mitch Vars](https://github.com/mplsmitch) with collaboration from public, private sector and non-profit shared mobility system owners and operators, application developers, and technology vendors. [Michael Frumin](https://github.com/fruminator), [Jesse Chan-Norris](https://github.com/jcn) and others made significant contributions of time and expertise toward the development of v1.0 on behalf of Motivate International LLC (now Lyft). The [North American Bikeshare Association’s](http://www.nabsa.net) endorsement, support, and hosting was key to its success starting in 2015. In 2019, NABSA chose MobilityData to govern and facilitate the improvement of GBFS. MobilityData hosts a [GBFS Resource Center](https://gbfs.mobilitydata.org/) and a [public GBFS Slack channel](https://mobilitydata-io.herokuapp.com/) - you are welcome to contact us there or at <sharedmobility@mobilitydata.org> with questions.  
+GBFS was created in 2014 by [Mitch Vars](https://github.com/mplsmitch) with collaboration from public, private sector and non-profit shared mobility system owners and operators, application developers, and technology vendors. [Michael Frumin](https://github.com/fruminator), [Jesse Chan-Norris](https://github.com/jcn) and others made significant contributions of time and expertise toward the development of v1.0 on behalf of Motivate International LLC (now Lyft). The [North American Bikeshare Association’s](http://www.nabsa.net) endorsement, support, and hosting was key to its success starting in 2015. In 2019, NABSA chose MobilityData to govern and facilitate the improvement of GBFS. MobilityData hosts a [GBFS Resource Center](https://gbfs.mobilitydata.org/) and a [public GBFS Slack channel](https://bit.ly/mobilitydata-slack) - you are welcome to contact us there or at <sharedmobility@mobilitydata.org> with questions.  
 
 GBFS is intended as a specification for real-time, read-only data - any data being written back into individual shared mobility systems are excluded from this spec.
 
@@ -27,53 +26,60 @@ The specification has been designed with the following concepts in mind:
 
 The data in the specification contained in this document is intended for consumption by clients intending to provide real-time (or semi-real-time) transit advice and is designed as such.
 ## Get Involved
-GBFS is an open source project developed under a consensus-based governance model. Contributors come from across the shared mobility industry, public sector, civic technology and elsewhere. Proposals for changes or additions to the specification can be made through [pull requests](https://github.com/NABSA/gbfs/pulls). Comments or questions can be addressed to the community by [opening an issue](https://github.com/NABSA/gbfs/issues). Questions can also be addressed to the shared mobility staff at MobilityData: [sharedmobility@mobilitydata.org](mailto:sharedmobility@mobilitydata.org)
-## Current Version
-**The current release is [v2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md)**
+GBFS is an open source project developed under a consensus-based governance model. Contributors come from across the shared mobility industry, public sector, civic technology and elsewhere. Comments or questions can be addressed to the community by [opening an issue](https://github.com/NABSA/gbfs/issues). Proposals for changes or additions to the specification can be made through [pull requests](https://github.com/NABSA/gbfs/pulls). Questions can also be addressed to the community via the [public GBFS Slack channel](https://bit.ly/mobilitydata-slack) or to the shared mobility staff at MobilityData: [sharedmobility@mobilitydata.org](mailto:sharedmobility@mobilitydata.org)
+
+## Current Version *(Recommended)* 
+|   Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
+|:---:|:---:|---|---|---| ---|
+| [v2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md) | MINOR  | March 19, 2021 | :white_check_mark: &nbsp; *Current Version*  | [v2.2 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v2.2)| [v2.2 Article](https://mobilitydata.org/cities-gbfs-v2-2-is-here-for-you/) |
+
+### Upcoming MAJOR Version 
+|   Version | Type  | Release Target |  Status |
+|---|:---:|---|---|
+| [v3.0-Draft](https://github.com/NABSA/gbfs/blob/master/gbfs.md) |  MAJOR |  Q1, 2022 | :construction: &nbsp;  *In Development* |
+
+### Release Candidate 
+This Release Candidate will become the *Current Version* when it has been fully implemented in public feeds.
+
+|  Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
+|:---:|:---:|---|---|---|---|
+|  [v2.3-RC](https://github.com/NABSA/gbfs/blob/v2.3-RC/gbfs.md) | MINOR  | September 8th, 2021 | :white_check_mark: &nbsp; *Release Candidate<br /> (Recommended)*  | *coming soon* | [v2.3-RC Article](https://mobilitydata.org/gbfs-v2-3-rc-is-here-to-fix-some-of-your-problems/) |
+
+### Past Version Releases 
+Past versions with *Supported* status MAY be patched to correct bugs or vulnerabilities but new features will not be introduced.<br />
+Past  versions with *Deprecated* status will not be patched and their use SHOULD be discontinued.
+
+|  Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
+|:---:|:---:|---|---|---|---|
+|  [v2.1](https://github.com/NABSA/gbfs/blob/v2.1/gbfs.md) | MINOR  | March 18, 2021 |:white_check_mark: &nbsp; *Supported*  | [v2.1 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v2.1)| [v2.1 Article](https://mobilitydata.org/gbfs-now-fully-supports-dockless-systems-%f0%9f%9b%b4%f0%9f%91%8f/)
+|  [v2.0](https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md) | MAJOR  | March 16, 2020 | :white_check_mark: &nbsp;  *Supported*  | [v2.0 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v2.0) | [v2.0 Article](https://mobilitydata.org/whats-new-in-gbfs-v2-0-%f0%9f%9a%b2%f0%9f%9b%b4/) |
+|  [v1.1](https://github.com/NABSA/gbfs/blob/v1.1/gbfs.md) | MINOR | March 16, 2020 |:white_check_mark: &nbsp; *Supported*  | [v1.1 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v1.1) | |
+|  [v1.0](https://github.com/NABSA/gbfs/blob/v1.0/gbfs.md) | MAJOR  | Prior to October 2019 | :x: &nbsp; *Deprecated*  | [v1.0 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v1.0)| |
+ 
+### Full Version History 
+The complete GBFS version history is available on the [wiki](https://github.com/NABSA/gbfs/wiki/Complete-Version-History).
+
+## Specification Versioning
+To enable the evolution of GBFS, including changes that would otherwise break backwards-compatibility with consuming applications, GBFS documentation is versioned. Semantic versions are established by a git tag in the form of `vX.Y` where `X.Y` is the version name. Multiple changes (commits) may be batched into a single new release.
+
+A whole integer increase is used for breaking changes (MAJOR changes). A decimal increase is used for non-breaking changes (MINOR changes or patches).
+
+Examples of breaking changes include:
+
+* Adding or removing a required endpoint or field
+* Changing the data type or semantics of an existing field
+
+Examples of non-breaking changes include:
+
+* Adding or removing an optional endpoint or field
+* Adding or removing enum values
+* Modifying documentation or spec language in a way that clarifies semantics or recommended practices
 
 
-## Read the Spec & Version History
-
-* [v1.0](https://github.com/NABSA/gbfs/blob/v1.0/gbfs.md)
-  * 2019 December 20 - GBFS copyright [transfered to NABSA](https://github.com/NABSA/gbfs/commit/b1260b9c59eeff810a62e0aedc72ce1d4fb8f3ab)
-  * 2015 November 05 - GBFS V1.0 Adopted by NABSA board - [Original draft spec in a Google doc](https://docs.google.com/document/d/1BQPZCKpem4-n6lUQDD4Mi8E5hNZ0-lhY62IVtWuyhec/edit#heading=h.ic7i1m4gcev7) (reference only)
-  * 2015 August - Latest changes incorporated and name change to GBFS (comments from Motivate, 8D, others)
-  * 2015 June - Proposed refinements (prepared by Jesse Chan-Norris on behalf of Motivate)
-  * 2014 September 07 - Draft specification presented by Mitch Vars at 1st annual [NABSA](https://nabsa.net/) conference, Pittsburgh, PA 
-* [v1.1-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/v1.1-RC/gbfs.md)
-  * [#25](https://github.com/NABSA/gbfs/pull/25) - Add deep links for iOS, Android, and web apps
-  * [#181](https://github.com/NABSA/gbfs/pull/181) - Add `feed_contact_email` field to `system_information.json`
-  * [#188](https://github.com/NABSA/gbfs/pull/188) - GBFS documentation versioning and and feed conformance (adds `gbfs_versions.json`)
-* [v1.1](https://github.com/NABSA/gbfs/blob/v1.1/gbfs.md)
-  * [#25](https://github.com/NABSA/gbfs/pull/25) - Add deep links for iOS, Android, and web apps
-  * [#181](https://github.com/NABSA/gbfs/pull/181) - Add `feed_contact_email` field to `system_information.json`
-  * [#188](https://github.com/NABSA/gbfs/pull/188) - GBFS documentation versioning and and feed conformance (adds `gbfs_versions.json`)
-* [v2.0-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/v2.0-RC/gbfs.md)
-  * [#182](https://github.com/NABSA/gbfs/pull/182) - Require `license_url`, add attribution fields 
-  * [#189](https://github.com/NABSA/gbfs/pull/189) - Require autodiscovery gbfs.json file, define feed names
-  * [#195](https://github.com/NABSA/gbfs/pull/195) - Clarify `num_bikes_available` and `num_docks_available`
-  * [#196](https://github.com/NABSA/gbfs/pull/196) - Change boolean from 1/0 to true/false
-  * [#147](https://github.com/NABSA/gbfs/pull/147) - Rotate `bike_id` on `free_bike_status`
-* [v2.0](https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md)
-  * [#189](https://github.com/NABSA/gbfs/pull/189) - Require autodiscovery gbfs.json file, define feed names
-  * [#195](https://github.com/NABSA/gbfs/pull/195) - Clarify `num_bikes_available` and `num_docks_available`
-  * [#196](https://github.com/NABSA/gbfs/pull/196) - Change boolean from 1/0 to true/false
-  * [#147](https://github.com/NABSA/gbfs/pull/147) - Rotate `bike_id` on `free_bike_status`
-* [v2.1-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/v2.1-RC/gbfs.md)
-  * [#136](https://github.com/NABSA/gbfs/pull/136) - Add vehicle type definitions
-  * [#219](https://github.com/NABSA/gbfs/pull/219) - Add geofencing, virtual station, and dockless support
-* [v2.1-RC2 (Release Candidate)](https://github.com/NABSA/gbfs/blob/v2.1-RC2/gbfs.md)
-  * [#261](https://github.com/NABSA/gbfs/pull/261) - Aggregate available vehicle_types at a station
-  * [#252](https://github.com/NABSA/gbfs/pull/252) - Extend system_pricing_plans.json
-* [v2.1](https://github.com/NABSA/gbfs/blob/v2.1/gbfs.md)
-  * [#136](https://github.com/NABSA/gbfs/pull/136) - Add vehicle type definitions
-  * [#219](https://github.com/NABSA/gbfs/pull/219) - Add geofencing, virtual station, and dockless support
-  * [#261](https://github.com/NABSA/gbfs/pull/261) - Aggregate available vehicle_types at a station
-* **[v2.2 Current Version](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md)**
-  * [#252](https://github.com/NABSA/gbfs/pull/252) - Extend system_pricing_plans.json
-* [v3.0-RC (Release Candidate)](https://github.com/NABSA/gbfs/blob/master/gbfs.md)
-  * [#182](https://github.com/NABSA/gbfs/pull/182) - Require `license_url`, add attribution fields 
-
+#### Version Release Cycles - Release Deprecation
+- There is no strict limitation on the frequency of MAJOR releases, but the GBFS community aims to limit MAJOR releases to 2 or fewer in a 12 month period. To limit releases, multiple breaking changes SHOULD be batched together in a single release.
+-  There is no guideline to limit the number of MINOR releases. MINOR changes may be applied at any time. MINOR changes MAY be batched together in single release or released immediately, based on the needs of the community.
+- GBFS documentation will include a list of current and supported MAJOR and MINOR versions. Supported versions SHALL NOT span more than two MAJOR versions. Past versions that are beyond the two most recent MAJOR versions will be deprecated 180 days after the latest MAJOR version becomes official.
 ## Governance & Overview of the Change Process
 GBFS is an open specification, developed and maintained by the community of producers and consumers of GBFS data.
 The specification is not fixed or unchangeable. As the shared mobility industry evolves, it is expected that the specification will be extended by the GBFS community to include new features and capabilities over time. If you are new to engaging with the community on this repository, firstly welcome! Please identify which organization you represent when posting. 
@@ -84,7 +90,7 @@ To manage the change process, the following guidelines have been established.
 * A change is proposed by opening a Pull Request (PR) at the GBFS GitHub repository. The proposer becomes “The Advocate”. Comments and feedback from the GBFS community are received to iterate on the proposed change. Discussion lasts for as long as necessary to address questions and revisions, but must be at least 7 calendar days.
 * After 7 calendar days, The Advocate can call for a vote. Should The Advocate not call a vote or respond to comments from the community for a period of 30 full calendar days, anyone in the community can call for a vote. Vote lasts the minimum period sufficient to cover 10 full calendar days. Voting ends at 23:59:59 UTC. The vote announcement must conform to this template: 
   * *I hereby call a vote on this proposal. Voting will be open for 10 full calendar days until 11:59PM UTC on X.<br /> Please vote for or against the proposal, and include the organization for which you are voting in your comment. <br /> Please note if you can commit to implementing the proposal.*
-* The person calling for the vote should announce the vote in the [GBFS Slack channel](https://mobilittydata-io.slack.com) with a link to the PR. The message should conform to this template:
+* The person calling for the vote should announce the vote in the [GBFS Slack channel](https://mobilitydata-io.slack.com) with a link to the PR. The message should conform to this template:
   * *A vote has been called on PR # [title of PR] (link to PR). This vote will be open for 10 full calendar days, until 11:59PM UTC on X. Please vote for or against the proposal on GitHub.*
 * MobilityData will both comment on the PR on GitHub and send a reminder in the GBFS Slack channel when there are 2 calendar days remaining on the vote. The reminder should conform to this template: 
   * Slack: <br />*Voting on PR # [title of PR] (link to PR) closes in 2 calendar days. Please vote for or against the proposal on GitHub.* 
@@ -119,27 +125,6 @@ Caution should be taken to avoid making changes to the spec that would render ex
 
 * **Speculative features are discouraged.**
 Each new addition to the spec adds complexity. We want to avoid additions to the spec that do not provide additional value to the shared mobility end user.
-
-## Specification Versioning
-To enable the evolution of GBFS, including changes that would otherwise break backwards-compatibility with consuming applications, GBFS documentation is versioned. Semantic versions are established by a git tag in the form of `vX.Y` where `X.Y` is the version name. Multiple changes (commits) may be batched into a single new release.
-
-A whole integer increase is used for breaking changes (MAJOR changes). A decimal increase is used for non-breaking changes (MINOR changes or patches).
-
-Examples of breaking changes include:
-
-* Adding or removing a required endpoint or field
-* Changing the data type or semantics of an existing field
-
-Examples of non-breaking changes include:
- 
-* Adding or removing an optional endpoint or field
-* Adding or removing enum values
-* Modifying documentation or spec language in a way that clarifies semantics or recommended practices
-
-#### Version Release Cycles
-* There is no strict limitation on the frequency of MAJOR releases, but the GBFS community aims to limit the MAJOR releases to 2 or fewer every 12 months. To limit releases, breaking changes can be batched together.
-* MINOR changes may be applied at any time. There is no guideline to limit the number of MINOR changes. MINOR changes may be batched or released immediately, at the discretion of the pull request author and advocate.
-* GBFS documentation will include a designated long-term support (LTS) branch. The LTS branch would maintain its LTS status for at least 2 years, after which a new LTS release and branch would be designated. The LTS branch will be determined according to the GBFS voting process. Non-breaking changes (MINOR) will be applied to the LTS branch when relevant.
 
 ## Systems Catalog - Systems Implementing GBFS
 There are now over 500 shared mobility systems publishing GBFS worldwide. This list contains all known systems publishing GBFS feeds and is maintained by the GBFS community. This is an incomplete list. If you have or are aware of a system that doesn’t appear on the list please add it.
