@@ -96,15 +96,15 @@ Announcements for disruptions of service, including disabled stations or tempora
 
 * All files MUST be valid JSON
 * All files in the spec MAY be published at a URL path or with an alternate name (e.g., `station_info` instead of `station_information.json`) *(as of v2.0)*.
-* All files MUST use HTTPS
+* All data MUST be UTF-8 encoded    
 * All deep links MUST use HTTPS
-* All data MUST be UTF-8 encoded
 * Line breaks MUST be represented by unix newline characters only (\n)
 * Pagination is not supported.
 
 ### File Distribution
 
 * Files are distributed as individual HTTP endpoints.
+    * All endpoints MUST use HTTPS
     * REQUIRED files MUST NOT 404. They MUST return a properly formatted JSON file as defined in [Output Format](#output-format).
     * OPTIONAL files MAY 404. A 404 of an OPTIONAL file SHOULD NOT be considered an error.
 
