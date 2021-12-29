@@ -77,7 +77,7 @@ geofencing_zones.json <br/>*(added in v2.1)* | OPTIONAL | Geofencing zones and t
 
 ## Accessibility
 
-Datasets SHOULD be published at an easily accessible, public, permanent URL. (e.g., https://www.example.com/gbfs/v3/gbfs.json). The URL SHOULD be directly available without requiring login to access the file to facilitate download by consuming software applications.
+Datasets SHOULD be published at an easily accessible, public, permanent URL. (for example, https://www.example.com/gbfs/v3/gbfs.json). The URL SHOULD be directly available without requiring login to access the file to facilitate download by consuming software applications.
 
 To be compliant with GBFS, all systems MUST have an entry in the [systems.csv](https://github.com/NABSA/gbfs/blob/master/systems.csv) file.
 
@@ -95,7 +95,7 @@ Announcements for disruptions of service, including disabled stations or tempora
 ## File Requirements
 
 * All files SHOULD be valid JSON.
-* All files in the spec MAY be published at a URL path or with an alternate name (e.g., `station_info` instead of `station_information.json`) *(as of v2.0)*.
+* All files in the spec MAY be published at a URL path or with an alternate name (for example, `station_info` instead of `station_information.json`) *(as of v2.0)*.
 * All data SHOULD be UTF-8 encoded.
 * Line breaks SHOULD be represented by unix newline characters only (\n).
 * Pagination is not supported.
@@ -144,9 +144,9 @@ All customer-facing text strings (including station names) SHOULD use Mixed Case
      * Villiers-sur-Marne
      * Market Street
 
-Abbreviations SHOULD NOT be used for names and other text (e.g. St. for Street), unless a location is called by its abbreviated name (e.g. “JFK Airport”). Abbreviations may be problematic for accessibility by screen reader software and voice user interfaces. Consuming software can be engineered to reliably convert full words to abbreviations for display, but converting from abbreviations to full words is prone to more risk of error.
+Abbreviations SHOULD NOT be used for names and other text (for example, St. for Street), unless a location is called by its abbreviated name (for example, “JFK Airport”). Abbreviations may be problematic for accessibility by screen reader software and voice user interfaces. Consuming software can be engineered to reliably convert full words to abbreviations for display, but converting from abbreviations to full words is prone to more risk of error.
 
-Names used for stations, virtual stations, and geofenced areas SHOULD be human readable. Naming conventions used for locations SHOULD consider a variety of use cases including both text and maps.
+Names used for stations, virtual stations, and geofenced areas SHOULD be human-readable. Naming conventions used for locations SHOULD consider a variety of use cases including both text and maps.
 
 Descriptions SHOULD NOT include information so specific that it could be used in tracking of vehicles or trips.
 
@@ -176,7 +176,7 @@ It is RECOMMENDED that all GBFS data sets be offered under an open data license.
 ## Field Types
 
 * Array - A JSON element consisting of an ordered sequence of zero or more values.
-* Boolean - One of two possible values, `true`or `false`. Boolean values MUST be JSON booleans, not strings (i.e. `true` or `false`, not `"true"` or `"false"`). *(as of v2.0)*
+* Boolean - One of two possible values, `true`or `false`. Boolean values MUST be JSON booleans, not strings (meaning `true` or `false`, not `"true"` or `"false"`). *(as of v2.0)*
 * Date - A date in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) Complete Date Extended Format: YYYY-MM-DD . Example: `2019-09-13` for September 13th, 2019.
 * Datetime *(added in v2.3-RC2)*- Combination of a date and a time following [ISO 8601 notation](https://www.iso.org/iso-8601-date-and-time-format.html). Attributes : [year](https://docs.python.org/3/library/datetime.html#datetime.datetime.year), [month](https://docs.python.org/3/library/datetime.html#datetime.datetime.month), [day](https://docs.python.org/3/library/datetime.html#datetime.datetime.day), [hour](https://docs.python.org/3/library/datetime.html#datetime.datetime.hour), [minute](https://docs.python.org/3/library/datetime.html#datetime.datetime.minute), [second](https://docs.python.org/3/library/datetime.html#datetime.datetime.second), and timezone.
 * Email - An email address. Example: `example@example.com`
@@ -186,7 +186,7 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 * GeoJSON FeatureCollection - A FeatureCollection as described by the IETF RFC 7946 https://tools.ietf.org/html/rfc7946#section-3.3.
 * GeoJSON MultiPolygon - A Geometry Object as described by the IETF RFC https://tools.ietf.org/html/rfc7946#section-3.1.7.
 * ID - Should be represented as a string that identifies that particular entity. An ID:
-    * MUST be unique within like fields (e.g. `station_id` MUST be unique among stations)
+    * MUST be unique within like fields (for example, `station_id` MUST be unique among stations)
     * Does not have to be globally unique, unless otherwise specified
     * MUST NOT contain spaces
     * MUST be persistent for a given entity (station, plan, etc). An exception is floating bike `bike_id`, which MUST NOT be persistent for privacy reasons (see `free_bike_status.json`). *(as of v2.0)*
@@ -197,12 +197,12 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 * Non-negative Integer - An integer greater than or equal to 0.
 * Object - A JSON element consisting of key-value pairs (fields).
 * String - Can only contain text. Strings MUST NOT contain any formatting codes (including HTML) other than newlines.
-* Time - Service time in the HH:MM:SS format for the time zone indicated in `system_information.json` (00:00:00 - 47:59:59). Time can stretch up to one additional day in the future to accommodate situations where, for example, a system was open from 11:30pm - 11pm the next day (i.e. 23:30:00-47:00:00).
-* Timestamp - Timestamp fields MUST be represented as integers in POSIX time (e.g., the number of seconds since January 1st 1970 00:00:00 UTC).
+* Time - Service time in the HH:MM:SS format for the time zone indicated in `system_information.json` (00:00:00 - 47:59:59). Time can stretch up to one additional day in the future to accommodate situations where, for example, a system was open from 11:30pm - 11pm the next day (23:30:00-47:00:00).
+* Timestamp - Timestamp fields MUST be represented as integers in POSIX time (representing the number of seconds since January 1st 1970 00:00:00 UTC).
 * Timezone - TZ timezone from the https://www.iana.org/time-zones. Timezone names never contain the space character but MAY contain an underscore. Refer to https://en.wikipedia.org/wiki/List_of_tz_zones for a list of valid values.
 Example: `Asia/Tokyo`, `America/Los_Angeles` or `Africa/Cairo`.
 * Country code - Country code following the [ISO 3166-1 alpha-2 notation](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-* URI *(added in v1.1)* - A fully qualified URI that includes the scheme (e.g., `com.example.android://`). Any special characters in the URI MUST be correctly escaped. See the following https://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URI values. Note that URIs MAY be URLs.
+* URI *(added in v1.1)* - A fully qualified URI that includes the scheme (for example, `com.example.android://`). Any special characters in the URI MUST be correctly escaped. See the following https://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URI values. Note that URIs MAY be URLs.
 * URL - A fully qualified URL that includes `http://` or `https://`. Any special characters in the URL MUST be correctly escaped. See the following https://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values.
 
 
@@ -423,7 +423,7 @@ Field Name | REQUIRED | Type | Defines
 \- `name` | OPTIONAL | String | The public name of this vehicle type.
 \- `vehicle_accessories`<br/>*(added in v2.3-RC2)* | OPTIONAL | Array | Description of accessories available in the vehicle.  These accessories are part of the vehicle and are not supposed to change frequently. Current valid values are:<ul><li>`air_conditioning` _(Vehicle has air conditioning)_</li><li>`automatic` _(Automatic gear switch)_</li><li>`manual` _(Manual gear switch)_</li><li>`convertible` _(Vehicle is convertible)_</li><li>`cruise_control` _(Vehicle has a cruise control system ("Tempomat"))_</li><li>`doors_2` _(Vehicle has 2 doors)_</li><li>`doors_3` _(Vehicle has 3 doors)_</li><li>`doors_4` _(Vehicle has 4 doors)_</li><li>`doors_5` _(Vehicle has 5 doors)_</li><li>`navigation` _(Vehicle has a built-in navigation system)_</li></ul>
 \- `g_CO2_km`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative integer | Maximum quantity of CO2, in grams, emitted per kilometer, according to the [WLTP](https://en.wikipedia.org/wiki/Worldwide_Harmonised_Light_Vehicles_Test_Procedure).
-\- `vehicle_image`<br/>*(added in v2.3-RC2)* | OPTIONAL | URL | URL to an image that would assist the user in identifying the vehicle (e.g. logo, image of vehicle).<br /> Allowed formats: JPEG, PNG.
+\- `vehicle_image`<br/>*(added in v2.3-RC2)* | OPTIONAL | URL | URL to an image that would assist the user in identifying the vehicle (for example, an image of the vehicle or a logo).<br /> Allowed formats: JPEG, PNG.
 | \- `make`<br/>*(added in v2.3-RC2)*| OPTIONAL| String| The name of the vehicle manufacturer. <br><br>Example: <ul><li>CUBE Bikes</li><li>Renault</li></ul>
 | \- `model`<br/>*(added in v2.3-RC2)*| OPTIONAL| String| The name of the vehicle model. <br><br>Example <ul><li>Giulia</li><li>MX50</li></ul>
 | \- `color`<br/>*(added in v2.3-RC2)*| OPTIONAL| String| The color of the vehicle. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas or dot. Spaces are allowed in case of a compound name. <br><br>Example <ul><li>green</li><li>dark blue</li></ul> 
@@ -574,7 +574,7 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`cross_street` | OPTIONAL | String | Cross street or landmark where the station is located.
 \-&nbsp;`region_id` | OPTIONAL | ID | Identifier of the region where station is located. See [system_regions.json](#system_regionsjson).
 \-&nbsp;`post_code` | OPTIONAL | String | Postal code where station is located.
-\-&nbsp;`rental_methods` | OPTIONAL | Array | Payment methods accepted at this station. <br /> Current valid values are:<br /> <ul><li>`key` (e.g. operator issued vehicle key / fob / card)</li><li>`creditcard`</li><li>`paypass`</li><li>`applepay`</li><li>`androidpay`</li><li>`transitcard`</li><li>`accountnumber`</li><li>`phone`</li></ul>
+\-&nbsp;`rental_methods` | OPTIONAL | Array | Payment methods accepted at this station. <br /> Current valid values are:<br /> <ul><li>`key` (operator issued vehicle key / fob / card)</li><li>`creditcard`</li><li>`paypass`</li><li>`applepay`</li><li>`androidpay`</li><li>`transitcard`</li><li>`accountnumber`</li><li>`phone`</li></ul>
 \-&nbsp;`is_virtual_station` <br/>*(added in v2.1)* | OPTIONAL | Boolean | Is this station a location with or without smart dock technology? <br /><br /> `true` - The station is a location without smart docking infrastructure.  the station may be defined by a point (lat/lon) and/or `station_area` (below). <br /><br /> `false` - The station consists of smart docking infrastructure (docks). <br /><br /> This field SHOULD be published by micromobility systems that have station locations without standard, internet connected physical docking infrastructure. These may be racks or geofenced areas designated for rental and/or return of vehicles. Locations that fit within this description SHOULD have the `is_virtual_station` boolean set to `true`.
 \-&nbsp;`station_area` <br/>*(added in v2.1)* | OPTIONAL | GeoJSON MultiPolygon | A GeoJSON MultiPolygon that describes the area of a virtual station. If `station_area` is supplied, then the record describes a virtual station. <br /><br /> If lat/lon and `station_area` are both defined, the lat/lon is the significant coordinate of the station (for example, parking facility or valet drop-off and pick up point). The `station_area` takes precedence over any `ride_allowed` rules in overlapping `geofencing_zones`.
 \-&nbsp;`parking_type` <br/>*(added in v2.3-RC2)* | OPTIONAL | Enum | Type of parking station.<br /><br />Current valid values are:<ul><li>`parking_lot` _(Off-street parking lot)_</li><li>`street_parking` _(Curbside parking)_</li><li>`underground_parking` _(Parking that is below street level, station may be non-communicating)_</li><li>`sidewalk_parking` _(Park vehicle on sidewalk, out of the pedestrian right of way)_</li><li>`other`</li></ul>
@@ -689,7 +689,7 @@ Field Name | REQUIRED | Type | Defines
 &emsp;\- `vehicle_type_id` <br/>*(added in v2.1)* | Yes | ID | The `vehicle_type_id` of each vehicle type at the station as described in [vehicle_types.json](#vehicle_typesjson). This field is REQUIRED if the [vehicle_types.json](#vehicle_typesjson) is defined.
 &emsp;\- `count` <br/>*(added in v2.1)* | Yes | Non-negative integer | The total number of available vehicles of the corresponding `vehicle_type_id`, as defined in [vehicle_types.json](#vehicle_typesjson), at the station.
 \-&nbsp;`num_bikes_disabled` | OPTIONAL | Non-negative integer | Number of disabled vehicles of any type at the station. Vendors who do not want to publicize the number of disabled vehicles or docks in their system can opt to omit station `capacity` (in [station_information.json](#station_informationjson), `num_bikes_disabled`, and `num_docks_disabled` *(as of v2.0)*. If station `capacity` is published, then broken docks/vehicles can be inferred (though not specifically whether the decreased capacity is a broken vehicle or dock).
-\-&nbsp;`num_docks_available` | Conditionally REQUIRED <br/>*(as of v2.0)* | Non-negative integer | REQUIRED except for stations that have unlimited docking capacity (e.g. virtual stations) *(as of v2.0)*. Number of functional docks physically at the station that are able to accept vehicles for return. To know if the docks are accepting vehicle returns, see `is_returning`. <br /><br/> If `is_returning` = `true`, this is the number of docks that are currently available to accept vehicle returns. If `is_returning` = `false`, this is the number of docks that would be available if the station were set to allow returns.
+\-&nbsp;`num_docks_available` | Conditionally REQUIRED <br/>*(as of v2.0)* | Non-negative integer | REQUIRED except for stations that have unlimited docking capacity (for example, valet stations) *(as of v2.0)*. Number of functional docks physically at the station that are able to accept vehicles for return. To know if the docks are accepting vehicle returns, see `is_returning`. <br /><br/> If `is_returning` = `true`, this is the number of docks that are currently available to accept vehicle returns. If `is_returning` = `false`, this is the number of docks that would be available if the station were set to allow returns.
 \- `vehicle_docks_available` <br/>*(added in v2.1)* | Conditionally REQUIRED | Array | This field is REQUIRED in feeds where the [vehicle_types.json](#vehicle_typesjson) is defined and where certain docks are only able to accept certain vehicle types. If every dock at the station is able to accept any vehicle type, then this field is not REQUIRED. This field's value is an array of objects. Each of these objects is used to model the number of docks available for certain vehicle types. The total number of docks from each of these objects SHOULD add up to match the value specified in the `num_docks_available` field.
 &emsp;\- `vehicle_type_ids` <br/>*(added in v2.1)* | Yes | Array | An array of strings where each string represents a `vehicle_type_id` that is able to use a particular type of dock at the station
 &emsp;\- `count` <br/>*(added in v2.1)* | Yes | Non-negative integer | The total number of available docks at the station, that can accept vehicles of the corresponding `vehicle_type_id`, in the `vehicle_type_ids` array.
@@ -773,7 +773,7 @@ Field Name | REQUIRED | Type | Defines
 
 ### free_bike_status.json
 
-*(as of v2.1)* Describes all vehicles that are not currently in active rental. REQUIRED for free floating (dockless) vehicles. OPTIONAL for station based (docked) vehicles. Data returned SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  See [Data Latency](#data-latentcy). Vehicles that are part of an active rental MUST NOT appear in this feed. Vehicles listed as available for rental MUST be in the field and accessible to users. Vehicles that are not accessible (e.g. in a warehouse or in transit) MUST NOT appear as available for rental.<br/>The following fields are all attributes within the main 'data' object for this feed.
+*(as of v2.1)* Describes all vehicles that are not currently in active rental. REQUIRED for free floating (dockless) vehicles. OPTIONAL for station based (docked) vehicles. Data returned SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  See [Data Latency](#data-latentcy). Vehicles that are part of an active rental MUST NOT appear in this feed. Vehicles listed as available for rental MUST be in the field and accessible to users. Vehicles that are not accessible (for example, in a warehouse or in transit) MUST NOT appear as available for rental.<br/>The following fields are all attributes within the main 'data' object for this feed.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
@@ -796,7 +796,7 @@ Field Name | REQUIRED | Type | Defines
 \- `home_station_id` <br/>*(added in v2.3-RC)* | OPTIONAL | ID | The `station_id` of the station this vehicle must be returned to as defined in [station_information.json](#station_information.json).
 \- `pricing_plan_id` <br/>*(added in v2.2)* | OPTIONAL | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plans.json). If this field is defined it supersedes `default_pricing_plan_id` in `vehicle_types.json`. This field SHOULD be used to override `default_pricing_plan_id` in `vehicle_types.json` to define pricing plans for individual vehicles when necessary.
 \- `vehicle_equipment`<br/>*(added in v2.3-RC2)* | OPTIONAL | Array | List of vehicle equipment provided by the operator in addition to the accessories already provided in the vehicle (field `vehicle_accessories` of `vehicle_types.json`) but subject to more frequent updates.<br/><br/>Current valid values are:<ul><li>`child_seat_a` _(Baby seat ("0-10kg"))_</li><li>`child_seat_b`	 _(Seat or seat extension for small children ("9-18 kg"))_</li><li>`child_seat_c`	_(Seat or seat extension for older children ("15-36 kg"))_</li><li>`winter_tires` 	_(Vehicle has tires for winter weather)_</li><li>`snow_chains`</li></ul>
-\- `available_until`<br/>*(added in v2.3-RC2)* | Conditionally REQUIRED |  Datetime | This field is REQUIRED when the `return_type` defined in [vehicle_types.json](#vehicle_types.json) is set to `roundtrip_station`. Only applies to round trips. Any trip currently started must be finished before the specified Datetime. The vehicle being already booked afterward.
+\- `available_until`<br/>*(added in v2.3-RC2)* | OPTIONAL |  Datetime | The date and time when any rental of the vehicle must be completed. The vehicle must be returned and made available for the next user by this time. If this field is empty, it indicates that the vehicle is available indefinitely.<br /><br /> This field SHOULD be published by carsharing or other mobility systems where vehicles can be booked in advance for future travel.
 
 
 ##### Example 1: Micromobility
@@ -885,7 +885,7 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `rental_hours` | Yes | Array | Array of objects as defined below. The array MUST contain a minimum of one object identifying hours for every day of the week or a maximum of two for each day of the week  objects ( one for each user type).
 \-&nbsp;`user_types` | Yes | Array | An array of `member` and/or `nonmember` value(s). This indicates that this set of rental hours applies to either members or non-members only.
-\-&nbsp;`days` | Yes | Array | An array of abbreviations (first 3 letters) of English names of the days of the week for which this object applies (e.g. `["mon", "tue", "wed", "thu", "fri", "sat, "sun"]`). Rental hours MUST NOT be defined more than once for each day and user type.
+\-&nbsp;`days` | Yes | Array | An array of abbreviations (first 3 letters) of English names of the days of the week for which this object applies (for example, `["mon", "tue", "wed", "thu", "fri", "sat, "sun"]`). Rental hours MUST NOT be defined more than once for each day and user type.
 \-&nbsp;`start_time` | Yes | Time | Start time for the hours of operation of the system in the time zone indicated in [system_information.json](#system_informationjson).
 \-&nbsp;`end_time` | Yes | Time | End time for the hours of operation of the system in the time zone indicated in [system_information.json](#system_informationjson).
 
@@ -1022,20 +1022,20 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`plan_id` | Yes | ID | Identifier for a pricing plan in the system.
 \-&nbsp;`url` | OPTIONAL | URL | URL where the customer can learn more about this pricing plan.
 \-&nbsp;`name` | Yes | String | Name of this pricing plan.
-\-&nbsp;`currency` | Yes | String | Currency used to pay the fare. <br /><br /> This pricing is in ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217 <br />(e.g. `CAD` for Canadian dollars, `EUR` for euros, or `JPY` for Japanese yen.)
-\-&nbsp;`price` | Yes | Non-Negative float OR String | Fare price, in the unit specified by currency. If string, MUST be in decimal monetary value. <br/>*(added in v2.2)* Note: v3.0 will only allow non-negative float, therefore new implementations SHOULD be non-negative float.<br /><br />In case of non-rate price, this field is the total price. In case of rate price, this field is the base price that is charged only once per trip (e.g., price for unlocking) in addition to `per_km_pricing` and/or `per_min_pricing`.
+\-&nbsp;`currency` | Yes | String | Currency used to pay the fare. <br /><br /> This pricing is in ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217 <br />(for example, `CAD` for Canadian dollars, `EUR` for euros, or `JPY` for Japanese yen.)
+\-&nbsp;`price` | Yes | Non-Negative float OR String | Fare price, in the unit specified by currency. If string, MUST be in decimal monetary value. <br/>*(added in v2.2)* Note: v3.0 will only allow non-negative float, therefore new implementations SHOULD be non-negative float.<br /><br />In case of non-rate price, this field is the total price. In case of rate price, this field is the base price that is charged only once per trip (typically the price for unlocking) in addition to `per_km_pricing` and/or `per_min_pricing`.
 \-&nbsp;`is_taxable` | Yes | Boolean | Will additional tax be added to the base price?<br /><br />`true` - Yes.<br />  `false` - No.  <br /><br />`false` MAY be used to indicate that tax is not charged or that tax is included in the base price.
 \-&nbsp;`description` | Yes | String | Customer-readable description of the pricing plan. This SHOULD include the duration, price, conditions, etc. that the publisher would like users to see.
-\-&nbsp;`per_km_pricing` <br/>*(added in v2.2)* | OPTIONAL | Array | Array of segments when the price is a function of distance traveled, displayed in kilometers.<br /><br />Total price is the addition of `price` and all segments in `per_km_pricing` and `per_min_pricing`. If this array is not provided, there are no variable prices based on distance.
+\-&nbsp;`per_km_pricing` <br/>*(added in v2.2)* | OPTIONAL | Array | Array of segments when the price is a function of distance traveled, displayed in kilometers.<br /><br />Total cost is the addition of `price` and all segments in `per_km_pricing` and `per_min_pricing`. If this array is not provided, there are no variable costs based on distance.
 &emsp;&emsp;\-&nbsp;`start` <br/>*(added in v2.2)* | Yes | Non-Negative Integer | The kilometer at which this segment rate starts being charged *(inclusive)*.
 &emsp;&emsp;\-&nbsp;`rate` <br/>*(added in v2.2)* | Yes | Float | Rate that is charged for each kilometer `interval` after the `start`. Can be a negative number, which indicates that the traveler will receive a discount.
 &emsp;&emsp;\-&nbsp;`interval` <br/>*(added in v2.2)* | Yes | Non-Negative Integer | Interval in kilometers at which the `rate` of this segment is either reapplied indefinitely, or if defined, up until (but not including) `end` kilometer.<br /><br />An interval of 0 indicates the rate is only charged once.
-&emsp;&emsp;\-&nbsp; `end` <br/>*(added in v2.2)* | OPTIONAL | Non-Negative Integer | The kilometer at which the rate will no longer apply *(exclusive)* e.g. if `end` is `20` the rate no longer applies at 20.00 km.<br /><br /> If this field is empty, the price issued for this segment is charged until the trip ends, in addition to following segments.
-\-&nbsp;`per_min_pricing` <br/>*(added in v2.2)* | OPTIONAL | Array | Array of segments when the price is a function of time traveled, displayed in minutes.<br /><br />Total price is the addition of `price` and all segments in `per_km_pricing` and `per_min_pricing`. If this array is not provided, there are no variable prices based on time.
+&emsp;&emsp;\-&nbsp; `end` <br/>*(added in v2.2)* | OPTIONAL | Non-Negative Integer | The kilometer at which the rate will no longer apply *(exclusive)* for example, if `end` is `20` the rate no longer applies at 20.00 km.<br /><br /> If this field is empty, the price issued for this segment is charged until the trip ends, in addition to the cost of any subsequent segments.
+\-&nbsp;`per_min_pricing` <br/>*(added in v2.2)* | OPTIONAL | Array | Array of segments when the price is a function of time traveled, displayed in minutes.<br /><br />Total cost is the addition of `price` and all segments in `per_km_pricing` and `per_min_pricing`. If this array is not provided, there are no variable costs based on time.
 &emsp;&emsp;\-&nbsp;`start` <br/>*(added in v2.2)* | Yes | Non-Negative Integer | The minute at which this segment rate starts being charged *(inclusive)*.
 &emsp;&emsp;\-&nbsp;`rate` <br/>*(added in v2.2)* | Yes | Float | Rate that is charged for each minute `interval` after the `start`. Can be a negative number, which indicates that the traveler will receive a discount.
 &emsp;&emsp;\-&nbsp;`interval` <br/>*(added in v2.2)* | Yes | Non-Negative Integer | Interval in minutes at which the `rate` of this segment is either reapplied indefinitely, or up until (but not including) the `end` minute, if `end` is defined.<br /><br />An interval of 0 indicates the rate is only charged once.
-&emsp;&emsp;\-&nbsp; `end` <br/>*(added in v2.2)* | OPTIONAL | Non-Negative Integer | The minute at which the rate will no longer apply  *(exclusive)* e.g. if `end` is `20` the rate no longer applies after 19:59.<br /><br />If this field is empty, the price issued for this segment is charged until the trip ends, in addition to following segments.
+&emsp;&emsp;\-&nbsp; `end` <br/>*(added in v2.2)* | OPTIONAL | Non-Negative Integer | The minute at which the rate will no longer apply  *(exclusive)* for example, if `end` is `20` the rate no longer applies after 19:59.<br /><br />If this field is empty, the price issued for this segment is charged until the trip ends, in addition to the cost of any subsequent segments.
 \-&nbsp;`surge_pricing` <br/>*(added in v2.2)* | OPTIONAL | Boolean | Is there currently an increase in price in response to increased demand in this pricing plan? If this field is empty, it means there is no surge pricing in effect.<br /><br />`true` - Surge pricing is in effect.<br />  `false` - Surge pricing is not in effect.
 
 
@@ -1184,7 +1184,7 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`type` | Yes | String | “FeatureCollection” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
 \-&nbsp;`features` | Yes | Array | Array of objects as defined below.
 &emsp;\-&nbsp;`type` | Yes | String | “Feature” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
-&emsp;\-&nbsp;`geometry` | Yes | GeoJSON MultiPolygon | A polygon that describes where rides might not be able to start, end, go through, or have other limitations. A clockwise arrangement of points defines the area enclosed by the polygon, while a counterclockwise order defines the area outside the polygon ([right-hand rule](https://tools.ietf.org/html/rfc7946#section-3.1.6)). All geofencing zones contained in this list are public (i.e., can be shown on a map for public use).
+&emsp;\-&nbsp;`geometry` | Yes | GeoJSON MultiPolygon | A polygon that describes where rides might not be able to start, end, go through, or have other limitations. A clockwise arrangement of points defines the area enclosed by the polygon, while a counterclockwise order defines the area outside the polygon ([right-hand rule](https://tools.ietf.org/html/rfc7946#section-3.1.6)). All geofencing zones contained in this list are public (meaning they can be displayed on a map for public use).
 &emsp;\-&nbsp;`properties` | Yes | Object | Properties: As defined below, describing travel allowances and limitations.
 &emsp;&emsp;\-&nbsp;`name` | OPTIONAL | String | Public name of the geofencing zone.
 &emsp;&emsp;\-&nbsp;`start` | OPTIONAL | Timestamp | Start time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
@@ -1306,7 +1306,7 @@ For example, if Google is the viewing app, it can append:
 
 Other supported parameters include:
 
-1. `ad_id` *(added in v1.1)* - Advertising ID issued to the viewing app (e.g., IFDA on iOS)
+1. `ad_id` *(added in v1.1)* - Advertising ID issued to the viewing app (for example, IFDA on iOS)
 2. `token` *(added in v1.1)* - A token identifier that was issued by the rental app to the viewing app.
 
 #### Examples 
