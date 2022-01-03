@@ -64,7 +64,7 @@ File Name | REQUIRED | Defines
 gbfs.json | Yes <br/>*(as of v2.0)* | Auto-discovery file that links to all of the other files published by the system.
 gbfs_versions.json <br/>*(added in v1.1)* | OPTIONAL | Lists all feed endpoints published according to versions of the GBFS documentation.
 system_information.json | Yes | Details including system operator, system location, year implemented, URL, contact info, time zone.
-vehicle_types.json <br/>*(added in v2.1)* | Conditionally REQUIRED | Describes the types of vehicles that system operator has available for rent. REQUIRED of systems that include information about vehicle types in the `free_bike_status` file. If this file is not included, then all vehicles in the feed are assumed to be non-motorized bicycles.
+vehicle_types.json <br/>*(added in v2.1)* | Conditionally REQUIRED | Describes the types of vehicles that system operator has available for rent. REQUIRED of systems that include information about vehicle types in the `free_bike_status.json` file. If this file is not included, then all vehicles in the feed are assumed to be non-motorized bicycles.
 station_information.json | Conditionally REQUIRED | List of all stations, their capacities and locations. REQUIRED of systems utilizing docks.
 station_status.json | Conditionally REQUIRED | Number of available vehicles and docks at each station and station availability. REQUIRED of systems utilizing docks.
 free_bike_status.json | Conditionally REQUIRED | *(as of v2.1)* Describes all vehicles that are not currently in active rental. REQUIRED for free floating (dockless) vehicles. OPTIONAL for station based (docked) vehicles. Vehicles that are part of an active rental MUST NOT appear in this feed.
@@ -112,7 +112,7 @@ The version of the GBFS specification to which a feed conforms is declared in th
 
 GBFS documentation will include a list of current and past supported MAJOR and MINOR versions. Supported versions SHALL NOT span more than two MAJOR versions. Past versions with _Supported_ status MAY be patched to correct bugs or vulnerabilities, but new features will not be introduced. Past versions with _Deprecated_ status will not be patched, and their use SHOULD be discontinued. Producers SHOULD continue to maintain existing feeds while they have _Supported_ status.
 
-GBFS producers SHOULD provide endpoints that conform to the current MAJOR version release within 180 days of a new MAJOR version release. It is not necessary to support more than one MINOR release of the same MAJOR release group, because MINOR releases are backwards-compatible. See [specification versioning](https://github.com/NABSA/gbfs/blob/master/README.md#specification-versioning).
+GBFS producers SHOULD provide endpoints that conform to the current MAJOR version release within 180 days of a new MAJOR version release. It is not necessary to support more than one MINOR release of the same MAJOR release group, because MINOR releases are backwards-compatible. See [Specification Versioning](https://github.com/NABSA/gbfs/blob/master/README.md#specification-versioning).
 
 ### Auto-Discovery
 
@@ -167,7 +167,7 @@ Decimal places | Degrees | Distance at the Equator
 
 ### Data Latency
 
-The data returned by the near-realtime endpoints `station_status.json` and `free_bike_status.json` SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  Appropriate values SHOULD be set using the `ttl` property for each endpoint based on how often the data in feeds are refreshed or updated. For near-realtime endpoints where the data should always be refreshed, the `ttl` value SHOULD be `0`. The`last_updated` timestamp represents the publisher's knowledge of the current state of the system at this point in time. The `last_reported` timestamp represents the last time a station or vehicle reported its status to the operator's backend.
+The data returned by the near-realtime endpoints `station_status.json` and `free_bike_status.json` SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  Appropriate values SHOULD be set using the `ttl` property for each endpoint based on how often the data in feeds are refreshed or updated. For near-realtime endpoints where the data should always be refreshed, the `ttl` value SHOULD be `0`. The`last_updated` timestamp represents the publisher's knowledge of the current state of the system at that point in time. The `last_reported` timestamp represents the last time a station or vehicle reported its status to the operator's backend.
 
 ## Licensing
 
@@ -177,6 +177,7 @@ It is RECOMMENDED that all GBFS data sets be offered under an open data license.
 
 * Array - A JSON element consisting of an ordered sequence of zero or more values.
 * Boolean - One of two possible values, `true`or `false`. Boolean values MUST be JSON booleans, not strings (meaning `true` or `false`, not `"true"` or `"false"`). *(as of v2.0)*
+* Country code - Country code following the [ISO 3166-1 alpha-2 notation](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
 * Date - A date in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) Complete Date Extended Format: YYYY-MM-DD . Example: `2019-09-13` for September 13th, 2019.
 * Datetime *(added in v2.3-RC2)*- Combination of a date and a time following [ISO 8601 notation](https://www.iso.org/iso-8601-date-and-time-format.html). Attributes : [year](https://docs.python.org/3/library/datetime.html#datetime.datetime.year), [month](https://docs.python.org/3/library/datetime.html#datetime.datetime.month), [day](https://docs.python.org/3/library/datetime.html#datetime.datetime.day), [hour](https://docs.python.org/3/library/datetime.html#datetime.datetime.hour), [minute](https://docs.python.org/3/library/datetime.html#datetime.datetime.minute), [second](https://docs.python.org/3/library/datetime.html#datetime.datetime.second), and timezone.
 * Email - An email address. Example: `example@example.com`
@@ -186,9 +187,9 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 * GeoJSON FeatureCollection - A FeatureCollection as described by the IETF RFC 7946 https://tools.ietf.org/html/rfc7946#section-3.3.
 * GeoJSON MultiPolygon - A Geometry Object as described by the IETF RFC https://tools.ietf.org/html/rfc7946#section-3.1.7.
 * ID - Should be represented as a string that identifies that particular entity. An ID:
-    * MUST be unique within like fields (for example, `station_id` MUST be unique among stations)
-    * Does not have to be globally unique, unless otherwise specified
-    * MUST NOT contain spaces
+    * MUST be unique within like fields (for example, `station_id` MUST be unique among stations).
+    * Does not have to be globally unique, unless otherwise specified.
+    * MUST NOT contain spaces.
     * MUST be persistent for a given entity (station, plan, etc). An exception is floating bike `bike_id`, which MUST NOT be persistent for privacy reasons (see `free_bike_status.json`). *(as of v2.0)*
 * Language - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to https://www.rfc-editor.org/rfc/bcp/bcp47.txt and https://www.w3.org/International/articles/language-tags/. Examples: `en` for English, `en-US` for American English, or `de` for German.
 * Latitude - WGS84 latitude in decimal degrees. The value MUST be greater than or equal to -90.0 and less than or equal to 90.0. Example: `41.890169` for the Colosseum in Rome.
@@ -201,7 +202,6 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 * Timestamp - Timestamp fields MUST be represented as integers in POSIX time (representing the number of seconds since January 1st 1970 00:00:00 UTC).
 * Timezone - TZ timezone from the https://www.iana.org/time-zones. Timezone names never contain the space character but MAY contain an underscore. Refer to https://en.wikipedia.org/wiki/List_of_tz_zones for a list of valid values.
 Example: `Asia/Tokyo`, `America/Los_Angeles` or `Africa/Cairo`.
-* Country code - Country code following the [ISO 3166-1 alpha-2 notation](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
 * URI *(added in v1.1)* - A fully qualified URI that includes the scheme (for example, `com.example.android://`). Any special characters in the URI MUST be correctly escaped. See the following https://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URI values. Note that URIs MAY be URLs.
 * URL - A fully qualified URL that includes `http://` or `https://`. Any special characters in the URL MUST be correctly escaped. See the following https://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values.
 
@@ -239,7 +239,7 @@ Field Name | REQUIRED | Type | Defines
   "data": {
     "name": "Example Bike Rental",
     "system_id": "example_cityname",
-    "timezone": "US/Central",
+    "timezone": "America/Chicago",
     "language": "en"
   }
 }
@@ -247,7 +247,7 @@ Field Name | REQUIRED | Type | Defines
 
 ### gbfs.json
 
-The `gbfs.json` discovery file SHOULD represent a single system or geographic area in which vehicles are operated. The location (URL) of the `gbfs.json` file SHOULD be made available to the public using the specification’s [auto-discovery](#auto-discovery) function.
+The `gbfs.json` discovery file SHOULD represent a single system or geographic area in which vehicles are operated. The location (URL) of the `gbfs.json` file SHOULD be made available to the public using the specification’s [auto-discovery](#auto-discovery) function.<br />The following fields are all attributes within the main `data` object for this feed.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
@@ -385,12 +385,22 @@ Field Name | REQUIRED | Type | Defines
     "phone_number": "1-800-555-1234",
     "email": "customerservice@example.com",
     "feed_contact_email": "datafeed@example.com",
-    "timezone": "US/Central",
+    "timezone": "America/Chicago",
     "license_url": "https://www.example.com/data-license.html",
     "terms_url": "https://www.example.com/terms",
     "terms_last_updated": "2021-06-21",
     "privacy_url": "https://www.example.com/privacy-policy",
     "privacy_last_updated": "2019-01-13",
+    "rental_apps": {
+      "android": {
+        "discovery_uri": "com.example.android://",
+        "store_uri": "https://play.google.com/store/apps/details?id=com.example.android",
+      },
+      "ios": {
+        "store_uri": "https://apps.apple.com/app/apple-store/id123456789",
+        "discovery_uri": "com.example.ios://"
+      }
+    },
     "brand_assets": {
         "brand_last_modified": "2021-06-15",
         "brand_image_url": "https://www.example.com/assets/brand_image.svg",
@@ -405,7 +415,7 @@ Field Name | REQUIRED | Type | Defines
 
 ### vehicle_types.json *(added in v2.1)*
 
-REQUIRED of systems that include information about vehicle types in the `free_bike_status` file. If this file is not included, then all vehicles in the feed are assumed to be non-motorized bicycles. This file SHOULD be published by systems offering multiple vehicle types for rental, for example pedal bikes and ebikes. <br/>The following fields are all attributes within the main 'data' object for this feed.
+REQUIRED of systems that include information about vehicle types in the `free_bike_status.json` file. If this file is not included, then all vehicles in the feed are assumed to be non-motorized bicycles. This file SHOULD be published by systems offering multiple vehicle types for rental, for example pedal bikes and ebikes. <br/>The following fields are all attributes within the main `data` object for this feed.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
@@ -426,7 +436,7 @@ Field Name | REQUIRED | Type | Defines
 \- `vehicle_image`<br/>*(added in v2.3-RC2)* | OPTIONAL | URL | URL to an image that would assist the user in identifying the vehicle (for example, an image of the vehicle or a logo).<br /> Allowed formats: JPEG, PNG.
 | \- `make`<br/>*(added in v2.3-RC2)*| OPTIONAL| String| The name of the vehicle manufacturer. <br><br>Example: <ul><li>CUBE Bikes</li><li>Renault</li></ul>
 | \- `model`<br/>*(added in v2.3-RC2)*| OPTIONAL| String| The name of the vehicle model. <br><br>Example <ul><li>Giulia</li><li>MX50</li></ul>
-| \- `color`<br/>*(added in v2.3-RC2)*| OPTIONAL| String| The color of the vehicle. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas or dot. Spaces are allowed in case of a compound name. <br><br>Example <ul><li>green</li><li>dark blue</li></ul> 
+| \- `color`<br/>*(added in v2.3-RC2)*| OPTIONAL| String| The color of the vehicle. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas, or dots. Spaces are allowed in case of a compound name. <br><br>Example <ul><li>green</li><li>dark blue</li></ul> 
 \- `wheel_count`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative Integer | Number of wheels this vehicle type has.
 \- `max_permitted_speed`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative Integer | The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations.
 \- `rated_power`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative Integer | The rated power of the motor for this vehicle type in watts.
@@ -560,7 +570,7 @@ Field Name | REQUIRED | Type | Defines
 
 ### station_information.json
 
-All stations included in `station_information.json` are considered public (meaning they can be shown on a map for public use). If there are private stations (such as Capital Bikeshare’s White House station), these SHOULD NOT be included here. Any station that is represented in `station_information.json` MUST have a corresponding entry in `station_status.json`.<br/>The following fields are all attributes within the main 'data' object for this feed.
+All stations included in `station_information.json` are considered public (meaning they can be shown on a map for public use). If there are private stations (such as Capital Bikeshare’s White House station), these SHOULD NOT be included here. Any station that is represented in `station_information.json` MUST have a corresponding entry in `station_status.json`.<br/>The following fields are all attributes within the main `data` object for this feed.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
@@ -586,7 +596,7 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`is_valet_station` <br/>*(added in v2.1)* | OPTIONAL | Boolean | Are valet services provided at this station? <br /><br /> `true` - Valet services are provided at this station. <br /> `false` - Valet services are not provided at this station. <br /><br /> If this field is empty, it is assumed that valet services are not provided at this station. <br><br>This field’s boolean SHOULD be set to `true` during the hours which valet service is provided at the station. Valet service is defined as providing unlimited capacity at a station.
 \-&nbsp;`is_charging_station` <br/>*(added in v2.3-RC)* | OPTIONAL | Boolean | Does the station support charging of electric vehicles? <br /><br /> `true` - Electric vehicle charging is available at this station. <br /> `false` -  Electric vehicle charging is not available at this station.
 \-&nbsp;`rental_uris` <br/>*(added in v1.1)* | OPTIONAL | Object | Contains rental URIs for Android, iOS, and web in the `android`, `ios`, and `web` fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
-&emsp;\-&nbsp;`android` <br/>*(added in v1.1)* | OPTIONAL | URI | URI that can be passed to an Android app with an `android.intent.action.VIEW` Android intent to support Android Deep Links (https://developer.android.com/training/app-links/deep-linking). Please use Android App Links (https://developer.android.com/training/app-links) if possible so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this station, and SHOULD NOT be a general rental page that includes information for more than one station. The deep link SHOULD take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking is not supported in the native Android rental app. <br><br>Note that URIs do not necessarily include the station_id for this station - other identifiers can be used by the rental app within the URI to uniquely identify this station. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Android App Links example value: `https://www.example.com/app?sid=1234567890&platform=android` <br><br>Deep Link (without App Links) example value: `com.example.android://open.example.app/app?sid=1234567890`
+&emsp;\-&nbsp;`android` <br/>*(added in v1.1)* | OPTIONAL | URI | URI that can be passed to an Android app with an `android.intent.action.VIEW` Android intent to support Android Deep Links (https://developer.android.com/training/app-links/deep-linking). Please use Android App Links (https://developer.android.com/training/app-links) if possible so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this station, and SHOULD NOT be a general rental page that includes information for more than one station. The deep link SHOULD take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking is not supported in the native Android rental app. <br><br>Note that the URI does not necessarily include the `station_id` for this station - other identifiers can be used by the rental app within the URI to uniquely identify this station. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Android App Links example value: `https://www.example.com/app?sid=1234567890&platform=android` <br><br>Deep Link (without App Links) example value: `com.example.android://open.example.app/app?sid=1234567890`
 &emsp;\-&nbsp;`ios` <br/>*(added in v1.1)* | OPTIONAL | URI | URI that can be used on iOS to launch the rental app for this station. More information on this iOS feature can be found [here](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/communicating_with_other_apps_using_custom_urls?language=objc). Please use iOS Universal Links (https://developer.apple.com/ios/universal-links/) if possible so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this station, and SHOULD NOT be a general rental page that includes information for more than one station.  The deep link SHOULD take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking is not supported in the native iOS rental app. <br><br>Note that the URI does not necessarily include the 'station_id' for this station - other identifiers can be used by the rental app within the URI to uniquely identify this station. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>iOS Universal Links example value: `https://www.example.com/app?sid=1234567890&platform=ios` <br><br>Deep Link (without Universal Links) example value: `com.example.ios://open.example.app/app?sid=1234567890`
 &emsp;\-&nbsp;`web` <br/>*(added in v1.1)* | OPTIONAL | URL | URL that can be used by a web browser to show more information about renting a vehicle at this station. <br><br>This URL SHOULD be a deep link specific to this station, and SHOULD NOT be a general rental page that includes information for more than one station.  The deep link SHOULD take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking is not supported for web browsers. <br><br>Example value: `https://www.example.com/app?sid=1234567890`
 
@@ -678,7 +688,7 @@ Field Name | REQUIRED | Type | Defines
 
 ### station_status.json
 
-Describes the capacity and rental availability of a station. Data returned SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  See [Data Latency](#data-latentcy). Data reflects the operator's most recent knowledge of the station’s status. Any station that is represented in `station_status.json` MUST have a corresponding entry in `station_information.json`.<br/>The following fields are all attributes within the main 'data' object for this feed.
+Describes the capacity and rental availability of a station. Data returned SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  See [Data Latency](#data-latentcy). Data reflects the operator's most recent knowledge of the station’s status. Any station that is represented in `station_status.json` MUST have a corresponding entry in `station_information.json`.<br/>The following fields are all attributes within the main `data` object for this feed.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
@@ -715,6 +725,7 @@ Field Name | REQUIRED | Type | Defines
         "is_returning": true,
         "last_reported": 1609866125,
         "num_docks_available": 3,
+        "num_docks_disabled" : 1,
         "vehicle_docks_available": [
           {
             "vehicle_type_ids": [ "abc123", "def456" ],
@@ -726,6 +737,7 @@ Field Name | REQUIRED | Type | Defines
           }
         ],
         "num_bikes_available": 1,
+        "num_bikes_disabled": 2,
         "vehicle_types_available": [
           {
             "vehicle_type_id": "abc123",
@@ -744,6 +756,7 @@ Field Name | REQUIRED | Type | Defines
         "is_returning": true,
         "last_reported": 1609866106,
         "num_docks_available": 8,
+        "num_docks_disabled" : 1,
         "vehicle_docks_available": [
           {
             "vehicle_type_ids": [ "abc123" ],
@@ -755,6 +768,7 @@ Field Name | REQUIRED | Type | Defines
           }
         ],
         "num_bikes_available": 6,
+        "num_bikes_disabled": 1, 
         "vehicle_types_available": [
           {
             "vehicle_type_id": "abc123",
@@ -773,7 +787,7 @@ Field Name | REQUIRED | Type | Defines
 
 ### free_bike_status.json
 
-*(as of v2.1)* Describes all vehicles that are not currently in active rental. REQUIRED for free floating (dockless) vehicles. OPTIONAL for station based (docked) vehicles. Data returned SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  See [Data Latency](#data-latentcy). Vehicles that are part of an active rental MUST NOT appear in this feed. Vehicles listed as available for rental MUST be in the field and accessible to users. Vehicles that are not accessible (for example, in a warehouse or in transit) MUST NOT appear as available for rental.<br/>The following fields are all attributes within the main 'data' object for this feed.
+*(as of v2.1)* Describes all vehicles that are not currently in active rental. REQUIRED for free floating (dockless) vehicles. OPTIONAL for station based (docked) vehicles. Data returned SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date.  See [Data Latency](#data-latentcy). Vehicles that are part of an active rental MUST NOT appear in this feed. Vehicles listed as available for rental MUST be in the field and accessible to users. Vehicles that are not accessible (for example, in a warehouse or in transit) MUST NOT appear as available for rental.<br/>The following fields are all attributes within the main `data` object for this feed.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
@@ -781,12 +795,12 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`bike_id` | Yes | ID | Identifier of a vehicle. The `bike_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `bike_id` identifier SHOULD only be rotated once per trip.
 \-&nbsp;`system_id` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | ID | Identifier referencing the `system_id` field in [system_information.json](#system_informationjson). REQUIRED in the case of feeds that specify free floating (undocked) vehicles and define systems in [system_information.json](#system_informationjson).
 \-&nbsp;`lat` | Conditionally REQUIRED <br/>*(as of v2.1)* | Latitude | Latitude of the vehicle in decimal degrees. *(as of v2.1)* This field is REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
-\-&nbsp;`lon` | Conditionally REQUIRED <br/>*(as of v2.1)* | Longitude | Longitude of the vehicle. *(as of v2.1)* This field is REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
+\-&nbsp;`lon` | Conditionally REQUIRED <br/>*(as of v2.1)* | Longitude | Longitude of the vehicle in decimal degrees. *(as of v2.1)* This field is REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 \-&nbsp;`is_reserved` | Yes | Boolean | Is the vehicle currently reserved? <br /><br /> `true` - Vehicle is currently reserved. <br /> `false` - Vehicle is not currently reserved.
-\-&nbsp;`is_disabled` | Yes | Boolean | Is the vehicle currently disabled? <br /><br /> `true` - Vehicle is currently disabled. <br /> `false` - Vehicle is not currently disabled.<br><br>This field is used to indicate vehicles that are in the field but not available for rental.  This may be due to a mechanical issue, low battery etc. Publishing this data may prevent users from attempting to rent vehicles that are disabled and not available for rental.
+\-&nbsp;`is_disabled` | Yes | Boolean | Is the vehicle currently disabled? <br /><br /> `true` - Vehicle is currently disabled. <br /> `false` - Vehicle is not currently disabled.<br><br>This field is used to indicate vehicles that are in the field but not available for rental.  This may be due to a mechanical issue, low battery, etc. Publishing this data may prevent users from attempting to rent vehicles that are disabled and not available for rental.
 \-&nbsp;`rental_uris` <br/>*(added in v1.1)* | OPTIONAL | Object | JSON object that contains rental URIs for Android, iOS, and web in the `android`, `ios`, and `web` fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
-&emsp;\-&nbsp;`android` <br/>*(added in v1.1)* | OPTIONAL | URI | URI that can be passed to an Android app with an android.intent.action.VIEW Android intent to support Android Deep Links (https://developer.android.com/training/app-links/deep-linking). Please use Android App Links (https://developer.android.com/training/app-links) if possible, so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this vehicle, and SHOULD NOT be a general rental page that includes information for more than one vehicle. The deep link SHOULD take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application. Note that as a best practice providers SHOULD rotate identifiers within deep links after each rental to avoid unintentionally exposing private vehicle trip origins and destinations.<br><br>If this field is empty, it means deep linking is not supported in the native Android rental app.<br><br>Note that URIs do not necessarily include the bike_id for this vehicle - other identifiers can be used by the rental app within the URI to uniquely identify this vehicle. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Android App Links example value: `https://www.example.com/app?sid=1234567890&platform=android` <br><br>Deep Link (without App Links) example value: `com.example.android://open.example.app/app?sid=1234567890`
-&emsp;\-&nbsp;`ios` <br/>*(added in v1.1)* | OPTIONAL | URI | URI that can be used on iOS to launch the rental app for this vehicle. More information on this iOS feature can be found [here](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/communicating_with_other_apps_using_custom_urls?language=objc). Please use iOS Universal Links (https://developer.apple.com/ios/universal-links/) if possible, so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this vehicle, and SHOULD NOT be a general rental page that includes information for more than one vehicle.  The deep link SHOULD take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application. Note that as a best practice providers SHOULD rotate identifiers within deep links after each rental to avoid unintentionally exposing private vehicle trip origins and destinations. <br><br>If this field is empty, it means deep linking is not supported in the native iOS rental app.<br><br>Note that the URI does not necessarily include the bike_id - other identifiers can be used by the rental app within the URL to uniquely identify this vehicle. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>iOS Universal Links example value: `https://www.example.com/app?sid=1234567890&platform=ios` <br><br>Deep Link (without Universal Links) example value: `com.example.ios://open.example.app/app?sid=1234567890`
+&emsp;\-&nbsp;`android` <br/>*(added in v1.1)* | OPTIONAL | URI | URI that can be passed to an Android app with an android.intent.action.VIEW Android intent to support Android Deep Links (https://developer.android.com/training/app-links/deep-linking). Please use Android App Links (https://developer.android.com/training/app-links) if possible, so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this vehicle, and SHOULD NOT be a general rental page that includes information for more than one vehicle. The deep link SHOULD take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application. Note that as a best practice providers SHOULD rotate identifiers within deep links after each rental to avoid unintentionally exposing private vehicle trip origins and destinations.<br><br>If this field is empty, it means deep linking is not supported in the native Android rental app.<br><br>Note that the URI does not necessarily include the `bike_id` for this vehicle - other identifiers can be used by the rental app within the URI to uniquely identify this vehicle. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Android App Links example value: `https://www.example.com/app?sid=1234567890&platform=android` <br><br>Deep Link (without App Links) example value: `com.example.android://open.example.app/app?sid=1234567890`
+&emsp;\-&nbsp;`ios` <br/>*(added in v1.1)* | OPTIONAL | URI | URI that can be used on iOS to launch the rental app for this vehicle. More information on this iOS feature can be found [here](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/communicating_with_other_apps_using_custom_urls?language=objc). Please use iOS Universal Links (https://developer.apple.com/ios/universal-links/) if possible, so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this vehicle, and SHOULD NOT be a general rental page that includes information for more than one vehicle.  The deep link SHOULD take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application. Note that as a best practice providers SHOULD rotate identifiers within deep links after each rental to avoid unintentionally exposing private vehicle trip origins and destinations. <br><br>If this field is empty, it means deep linking is not supported in the native iOS rental app.<br><br>Note that the URI does not necessarily include the `bike_id` - other identifiers can be used by the rental app within the URL to uniquely identify this vehicle. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>iOS Universal Links example value: `https://www.example.com/app?sid=1234567890&platform=ios` <br><br>Deep Link (without Universal Links) example value: `com.example.ios://open.example.app/app?sid=1234567890`
 &emsp;\-&nbsp;`web` <br/>*(added in v1.1)* | OPTIONAL | URL | URL that can be used by a web browser to show more information about renting a vehicle at this vehicle. <br><br>This URL SHOULD be a deep link specific to this vehicle, and SHOULD NOT be a general rental page that includes information for more than one vehicle.  The deep link SHOULD take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application. Note that as a best practice providers SHOULD rotate identifiers within deep links after each rental to avoid unintentionally exposing private vehicle trip origins and destinations.<br><br>If this field is empty, it means deep linking is not supported for web browsers. <br><br>Example value: `https://www.example.com/app?sid=1234567890`
 \- `vehicle_type_id` <br/>*(added in v2.1)* | Conditionally REQUIRED | ID | The `vehicle_type_id` of this vehicle, as described in [vehicle_types.json](#vehicle_typesjson-added-in-v21). This field is REQUIRED if the [vehicle_types.json](#vehicle_typesjson-added-in-v21) is defined.
 \- `last_reported` <br/>*(added in v2.1)* | OPTIONAL | Timestamp | The last time this vehicle reported its status to the operator's backend.
@@ -809,16 +823,20 @@ Field Name | REQUIRED | Type | Defines
   "data":{
     "bikes":[
       {
-        "bike_id":"ghi789",
+        "bike_id":"973a5c94-c288-4a2b-afa6-de8aeb6ae2e5",
         "last_reported":1609866109,
         "lat":12.34,
         "lon":56.78,
         "is_reserved":false,
         "is_disabled":false,
-        "vehicle_type_id":"abc123"
+        "vehicle_type_id":"abc123",
+        "rental_uris": {
+          "android": "https://www.example.com/app?bike_id=973a5c94-c288-4a2b-afa6-de8aeb6ae2e5&platform=android&",
+          "ios": "https://www.example.com/app?bike_id=973a5c94-c288-4a2b-afa6-de8aeb6ae2e5&platform=ios"
+        }
       },
       {
-        "bike_id":"jkl012",
+        "bike_id":"987fd100-b822-4347-86a4-b3eef8ca8b53",
         "last_reported":1609866204,
         "is_reserved":false,
         "is_disabled":false,
@@ -842,7 +860,7 @@ Field Name | REQUIRED | Type | Defines
   "data":{
     "bikes":[
       {
-        "bike_id":"def456",
+        "bike_id":"45bd3fb7-a2d5-4def-9de1-c645844ba962",
         "last_reported":1609866109,
         "lat":12.345678,
         "lon":56.789012,
@@ -879,7 +897,7 @@ Field Name | REQUIRED | Type | Defines
 
 ### system_hours.json
 
-This OPTIONAL file is used to describe hours and days of operation when vehicles are available for rental. If `system_hours.json` is not published, it indicates that vehicles are available for rental 24 hours a day, 7 days a week.<br/>The following fields are all attributes within the main 'data' object for this feed.
+This OPTIONAL file is used to describe hours and days of operation when vehicles are available for rental. If `system_hours.json` is not published, it indicates that vehicles are available for rental 24 hours a day, 7 days a week.<br/>The following fields are all attributes within the main `data` object for this feed.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
@@ -938,7 +956,7 @@ Field Name | REQUIRED | Type | Defines
 
 ### system_calendar.json
 
-Describes the operating calendar for a system. This OPTIONAL file SHOULD be published by systems that operate seasonally or do not offer continuous year-round service.<br/>The following fields are all attributes within the main 'data' object for this feed.
+Describes the operating calendar for a system. This OPTIONAL file SHOULD be published by systems that operate seasonally or do not offer continuous year-round service.<br/>The following fields are all attributes within the main `data` object for this feed.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
@@ -974,7 +992,7 @@ Field Name | REQUIRED | Type | Defines
 
 ### system_regions.json
 
-Describes regions for a system. Regions are a subset of a shared mobility system as defined by `system_id` in `system_information.json`. Regions may be defined for any purpose, for example political jurisdictions, neighborhoods or economic zones.<br/>The following fields are all attributes within the main 'data' object for this feed.
+Describes regions for a system. Regions are a subset of a shared mobility system as defined by `system_id` in `system_information.json`. Regions may be defined for any purpose, for example political jurisdictions, neighborhoods or economic zones.<br/>The following fields are all attributes within the main `data` object for this feed.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
@@ -1014,7 +1032,7 @@ Field Name | REQUIRED | Type | Defines
 
 ### system_pricing_plans.json
 
-Describes pricing for the system. <br/>The following fields are all attributes within the main 'data' object for this feed.
+Describes pricing for the system. <br/>The following fields are all attributes within the main `data` object for this feed.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
@@ -1122,8 +1140,8 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
 
 ### system_alerts.json
 
-This feed is intended to inform customers about changes to the system that do not fall within the normal system operations. For example, system closures due to weather would be listed here, but a system that only operated for part of the year would have that schedule listed in the system_calendar.json feed.<br />
-Obsolete alerts SHOULD be removed so the client application can safely present to the end user everything present in the feed. <br/>The following fields are all attributes within the main 'data' object for this feed.
+This feed is intended to inform customers about changes to the system that do not fall within the normal system operations. For example, system closures due to weather would be listed here, but a system that only operated for part of the year would have that schedule listed in the `system_calendar.json` feed.<br />
+Obsolete alerts SHOULD be removed so the client application can safely present to the end user everything present in the feed. <br/>The following fields are all attributes within the main `data` object for this feed.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
@@ -1176,7 +1194,7 @@ Field Name | REQUIRED | Type | Defines
 ### geofencing_zones.json *(added in v2.1)*
 
 Describes geofencing zones and their associated rules and attributes.<br />
-Geofenced areas are delineated using GeoJSON in accordance with [RFC 7946](https://tools.ietf.org/html/rfc7946). By default, no restrictions apply everywhere. Geofencing zones SHOULD be modeled according to restrictions rather than allowance. An operational area (outside of which vehicles cannot be used) SHOULD be defined with a counterclockwise polygon, and a limitation area (in which vehicles can be used under certain restrictions) SHOULD be defined with a clockwise polygon.<br><br>Geofences and GPS operate in two dimensions. Restrictions placed on an overpass or bridge will also  be applied to the roadway or path beneath.<br><br>Care SHOULD be taken when developing geofence based policies that rely on location data.  Location data from GPS, cellular and Wi-Fi signals are subject to interference resulting in accuracy levels in the tens of meters or greater.  This may result in vehicles being placed within a geofenced zone when they are actually outside or adjacent to the zone. Transit time between server and client can also impact when a user is notified of a geofence based policy. A vehicle traveling at 15kph can be well inside of a restricted zone before a notification is received.<br/>The following fields are all attributes within the main 'data' object for this feed.
+Geofenced areas are delineated using GeoJSON in accordance with [RFC 7946](https://tools.ietf.org/html/rfc7946). By default, no restrictions apply everywhere. Geofencing zones SHOULD be modeled according to restrictions rather than allowance. An operational area (outside of which vehicles cannot be used) SHOULD be defined with a counterclockwise polygon, and a limitation area (in which vehicles can be used under certain restrictions) SHOULD be defined with a clockwise polygon.<br><br>Geofences and GPS operate in two dimensions. Restrictions placed on an overpass or bridge will also  be applied to the roadway or path beneath.<br><br>Care SHOULD be taken when developing geofence based policies that rely on location data.  Location data from GPS, cellular and Wi-Fi signals are subject to interference resulting in accuracy levels in the tens of meters or greater.  This may result in vehicles being placed within a geofenced zone when they are actually outside or adjacent to the zone. Transit time between server and client can also impact when a user is notified of a geofence based policy. A vehicle traveling at 15kph can be well inside of a restricted zone before a notification is received.<br/>The following fields are all attributes within the main `data` object for this feed.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
@@ -1323,7 +1341,7 @@ Other supported parameters include:
   "data": {
     "name": "Example Bike Rental",
     "system_id": "example_cityname",
-    "timezone": "US/Central",
+    "timezone": "America/Chicago",
     "language": "en",
     "rental_apps": {
       "android": {
