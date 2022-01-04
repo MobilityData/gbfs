@@ -233,7 +233,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1609866247,
+  "last_updated": 1640887163,
   "ttl": 3600,
   "version": "3.0",
   "data": {
@@ -260,7 +260,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1609866247,
+  "last_updated": 1640887163,
   "ttl": 0,
   "version": "3.0",
   "data": {
@@ -308,7 +308,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1609866247,
+  "last_updated": 1640887163,
   "ttl": 0,
   "version": "3.0",
   "data": {
@@ -370,7 +370,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1611598155,
+  "last_updated": 1640887163,
   "ttl": 1800,
   "version": "3.0",
   "data": {
@@ -453,7 +453,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1609866247,
+  "last_updated": 1640887163,
   "ttl": 0,
   "version": "3.0",
   "data": {
@@ -604,7 +604,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1609866247,
+  "last_updated": 1640887163,
   "ttl": 0,
   "version": "3.0",
   "data": {
@@ -632,7 +632,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1609866247,
+  "last_updated": 1640887163,
   "ttl": 0,
   "version": "3.0",
   "data": {
@@ -713,7 +713,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1609866247,
+  "last_updated": 1640887163,
   "ttl": 0,
   "version": "3.0",
   "data": {
@@ -817,7 +817,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```jsonc
 {
-  "last_updated":1609866247,
+  "last_updated":1640887163,
   "ttl":0,
   "version":"3.0",
   "data":{
@@ -854,7 +854,7 @@ Field Name | REQUIRED | Type | Defines
 ```jsonc
 
  {
-  "last_updated":1609866247,
+  "last_updated": 1640887163,
   "ttl":0,
   "version":"3.0",
   "data":{
@@ -876,7 +876,7 @@ Field Name | REQUIRED | Type | Defines
         ]
       },
       {
-        "bike_id":"abc123",
+        "bike_id":"d4521def-7922-4e46-8e1d-8ac397239bd0",
         "last_reported":1609866204,
         "is_reserved":false,
         "is_disabled":false,
@@ -911,7 +911,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1609866247,
+  "last_updated": 1640887163,
   "ttl": 86400,
   "version": "3.0",
   "data": {
@@ -972,7 +972,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1604333830,
+  "last_updated": 1640887163,
   "ttl": 86400,
   "version": "3.0",
   "data": {
@@ -1004,7 +1004,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1604332380,
+  "last_updated": 1640887163,
   "ttl": 86400,
   "version": "3.0",
   "data": {
@@ -1064,7 +1064,7 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 
 ```jsonc
 {
-  "last_updated": 1609866247,
+  "last_updated": 1640887163,
   "ttl": 0,
   "version": "3.0",
   "data": {
@@ -1106,7 +1106,7 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
 
 ```jsonc
 {
-  "last_updated": 1609866247,
+  "last_updated": 1640887163,
   "ttl": 0,
   "version": "3.0",
   "data": {
@@ -1162,7 +1162,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1604198100,
+  "last_updated": 1604519393,
   "ttl": 60,
   "version": "3.0",
   "data": {
@@ -1184,7 +1184,7 @@ Field Name | REQUIRED | Type | Defines
         "url": "https://example.com/more-info",
         "summary": "Disruption of Service",
         "description": "The three stations on Broadway will be out of service from 12:00am Nov 3 to 3:00pm Nov 6th to accommodate road work",
-        "last_updated": 1604519393
+        "last_updated": 1604198100
       }
     ]
   }
@@ -1218,7 +1218,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```jsonc
 {
-  "last_updated": 1604198100,
+  "last_updated": 1640887163,
   "ttl": 60,
   "version": "3.0",
   "data": {
@@ -1335,7 +1335,7 @@ Other supported parameters include:
 
 ```jsonc
 {
-  "last_updated": 1572447999,
+  "last_updated": 1640887163,
   "ttl": 60,
   "version": "3.0",
   "data": {
@@ -1359,7 +1359,7 @@ Other supported parameters include:
 
 ```jsonc
 {
-  "last_updated": 1609866247,
+  "last_updated": 1640887163,
   "ttl": 60,
   "version": "3.0",
   "data": {
@@ -1393,7 +1393,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
   "data": {
     "name": "Example Bike Rental",
     "system_id": "example_cityname",
-    "timezone": "US/Central",
+    "timezone": "America/Chicago",
     "language": "en",
     "rental_apps": {
       "android": {
