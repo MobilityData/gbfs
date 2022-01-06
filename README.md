@@ -105,8 +105,7 @@ To manage the change process, the following guidelines have been established.
 * The Advocate should cancel a vote and restart the process if significant changes are made to the proposal after stakeholders have voted.
 * Should the vote fail, The Advocate can choose to continue work on the proposal with the feedback received and restart the governance process, or abandon the proposal by closing the Pull Request. Another interested member of the community can take over the proposal if they feel the addition is valuable. 
 * When a vote passes, the change is placed into Release Candidate (RC) status. The change remains in RC status pending implementation.
-  * Implementation requirements are that at least 1 producer and 1 consumer implement the changes. 
-  * The implementors MUST be stakeholders other than The Advocate.
+  * Implementation requirements are that at least 1 producer and 1 consumer implement the changes.
   * Once implemented successfully, the change is merged into an official current release.
 * Editorial changes as well as items that are not found in [gbfs.md](https://github.com/NABSA/gbfs/blob/master/gbfs.md) do not need to be voted on. Extensions that include new capabilities and features MUST be voted on.
 * Issues and pull requests will be considered stale after 120 days, at which point participants will be notified via comment. Should they wish to keep the discussion open, it is the responsibility of the participants to re-engage in the conversation. If there is no re-engagement, the issue or pull request will be closed 60 days after the stale date. 
@@ -128,7 +127,7 @@ Caution should be taken to avoid making changes to the spec that would render ex
 Each new addition to the spec adds complexity. We want to avoid additions to the spec that do not provide additional value to the shared mobility end user.
 
 ## Systems Catalog - Systems Implementing GBFS
-There are now over 500 shared mobility systems publishing GBFS worldwide. This list contains all known systems publishing GBFS feeds and is maintained by the GBFS community. This is an incomplete list. If you have or are aware of a system that doesn’t appear on the list please add it.
+There are now over 600 shared mobility systems publishing GBFS worldwide. This list contains all known systems publishing GBFS feeds and is maintained by the GBFS community. This is an incomplete list. If you have or are aware of a system that does not appear on the list please add it.
 If you would like to add a system, please fork this repository and submit a pull request. Please keep this list alphabetized by country and system name.
 * [systems.csv](systems.csv)
 
