@@ -43,7 +43,7 @@ Release Candidates will receive *Current Version* status when they have been ful
 
 |  Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
 |:---:|:---:|---|---|---|---|
-|  [v2.3-RC2](https://github.com/NABSA/gbfs/blob/v2.3-RC2/gbfs.md) | MINOR  | January XX, 2022 | :white_check_mark: &nbsp; *Release Candidate<br /> (Ready for implementation)*  | *coming soon* |  *coming soon* |
+|  [v2.3-RC2](https://github.com/NABSA/gbfs/blob/v2.3-RC2/gbfs.md) | MINOR  | January 8th, 2022 | :white_check_mark: &nbsp; *Release Candidate<br /> (Ready for implementation)*  | *coming soon* |  *coming soon* |
 |  [v2.3-RC](https://github.com/NABSA/gbfs/blob/v2.3-RC/gbfs.md) | MINOR  | September 8th, 2021 | *Superseded by V2.3-RC2* | [v2.3-RC Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.3-RC) | [v2.3-RC Article](https://mobilitydata.org/gbfs-v2-3-rc-is-here-to-fix-some-of-your-problems/) |
 
 ### Past Version Releases 
