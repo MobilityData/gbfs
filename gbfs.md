@@ -465,10 +465,7 @@ Field Name | REQUIRED | Type | Defines
         "name": "Example Basic Bike",
         "wheel_count": 2,
         "default_reserve_time": 30,
-        "return_type": [
-          "any_station",
-          "free_floating"
-        ],
+        "return_constraint": "any_station",
         "vehicle_assets": {
           "icon_url": "https://www.example.com/assets/icon_bicycle.svg",
           "icon_url_dark": "https://www.example.com/assets/icon_bicycle_dark.svg",
@@ -488,9 +485,7 @@ Field Name | REQUIRED | Type | Defines
         "name": "Example Cargo Bike",
         "wheel_count": 3,
         "default_reserve_time": 30,
-        "return_type": [
-          "roundtrip_station"
-        ],
+        "return_constraint": "roundtrip_station",
         "vehicle_assets": {
           "icon_url": "https://www.example.com/assets/icon_cargobicycle.svg",
           "icon_url_dark": "https://www.example.com/assets/icon_cargobicycle_dark.svg",
@@ -513,9 +508,7 @@ Field Name | REQUIRED | Type | Defines
         "rated_power": 350,
         "default_reserve_time": 30,
         "max_range_meters": 12345,
-        "return_type": [
-          "free_floating"
-        ],
+        "return_constraint": "free_floating",
         "vehicle_assets": {
           "icon_url": "https://www.example.com/assets/icon_escooter.svg",
           "icon_url_dark": "https://www.example.com/assets/icon_escooter_dark.svg",
@@ -543,9 +536,7 @@ Field Name | REQUIRED | Type | Defines
         "wheel_count": 4,
         "default_reserve_time": 0,
         "max_range_meters": 523992,
-        "return_type": [
-          "roundtrip_station"
-        ],
+        "return_constraint": "roundtrip_station",
         "vehicle_accessories": [
           "doors_4",
           "automatic",
