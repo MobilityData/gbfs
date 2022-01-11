@@ -38,12 +38,13 @@ GBFS is an open source project developed under a consensus-based governance mode
 |---|:---:|---|---|
 | [v3.0-Draft](https://github.com/NABSA/gbfs/blob/master/gbfs.md) |  MAJOR |  Q1, 2022 | :construction: &nbsp;  *In Development* |
 
-### Release Candidate 
-This Release Candidate will become the *Current Version* when it has been fully implemented in public feeds.
+### Release Candidates
+Release Candidates will receive *Current Version* status when they have been fully implemented in public feeds.
 
 |  Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
 |:---:|:---:|---|---|---|---|
-|  [v2.3-RC](https://github.com/NABSA/gbfs/blob/v2.3-RC/gbfs.md) | MINOR  | September 8th, 2021 | :white_check_mark: &nbsp; *Release Candidate<br /> (Recommended)*  | *coming soon* | [v2.3-RC Article](https://mobilitydata.org/gbfs-v2-3-rc-is-here-to-fix-some-of-your-problems/) |
+|  [v2.3-RC2](https://github.com/NABSA/gbfs/blob/v2.3-RC2/gbfs.md) | MINOR  | January 8th, 2022 | :white_check_mark: &nbsp; *Release Candidate<br /> (Ready for implementation)*  | *coming soon* |  *coming soon* |
+|  [v2.3-RC](https://github.com/NABSA/gbfs/blob/v2.3-RC/gbfs.md) | MINOR  | September 8th, 2021 | *Superseded by V2.3-RC2* | [v2.3-RC Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.3-RC) | [v2.3-RC Article](https://mobilitydata.org/gbfs-v2-3-rc-is-here-to-fix-some-of-your-problems/) |
 
 ### Past Version Releases 
 Past versions with *Supported* status MAY be patched to correct bugs or vulnerabilities but new features will not be introduced.<br />
@@ -127,7 +128,7 @@ Caution should be taken to avoid making changes to the spec that would render ex
 Each new addition to the spec adds complexity. We want to avoid additions to the spec that do not provide additional value to the shared mobility end user.
 
 ## Systems Catalog - Systems Implementing GBFS
-There are now over 500 shared mobility systems publishing GBFS worldwide. This list contains all known systems publishing GBFS feeds and is maintained by the GBFS community. This is an incomplete list. If you have or are aware of a system that doesn’t appear on the list please add it.
+There are now over 600 shared mobility systems publishing GBFS worldwide. This list contains all known systems publishing GBFS feeds and is maintained by the GBFS community. This is an incomplete list. If you have or are aware of a system that doesn’t appear on the list please add it.
 If you would like to add a system, please fork this repository and submit a pull request. Please keep this list alphabetized by country and system name.
 * [systems.csv](systems.csv)
 
