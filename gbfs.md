@@ -29,8 +29,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     * [station_information.json](#station_informationjson)
     * [station_status.json](#station_statusjson)
     * [free_bike_status.json](#free_bike_statusjson)
-    * [system_hours.json](#system_hoursjson)
-    * [system_calendar.json](#system_calendarjson)
+    * [system_hours.json](#system_hoursjson) *(deprecated in v3.0)*
+    * [system_calendar.json](#system_calendarjson) *(deprecated in v3.0)*
     * [system_regions.json](#system_regionsjson)
     * [system_pricing_plans.json](#system_pricing_plansjson)
     * [system_alerts.json](#system_alertsjson)
@@ -68,8 +68,8 @@ vehicle_types.json <br/>*(added in v2.1)* | Conditionally REQUIRED | Describes t
 station_information.json | Conditionally REQUIRED | List of all stations, their capacities and locations. REQUIRED of systems utilizing docks.
 station_status.json | Conditionally REQUIRED | Number of available vehicles and docks at each station and station availability. REQUIRED of systems utilizing docks.
 free_bike_status.json | Conditionally REQUIRED | *(as of v2.1)* Describes all vehicles that are not currently in active rental. REQUIRED for free floating (dockless) vehicles. OPTIONAL for station based (docked) vehicles. Vehicles that are part of an active rental MUST NOT appear in this feed.
-system_hours.json | OPTIONAL | Hours of operation for the system.
-system_calendar.json | OPTIONAL | Dates of operation for the system.
+system_hours.json | - | This file is deprecated *(as of v3.0)*. See `system_information.opening_hours` for system hours of operation.
+system_calendar.json | - | This file is deprecated *(as of v3.0)*. See `system_information.opening_hours` for system dates of operation.
 system_regions.json | OPTIONAL | Regions the system is broken up into.
 system_pricing_plans.json | OPTIONAL | System pricing scheme.
 system_alerts.json | OPTIONAL | Current system alerts.
@@ -88,9 +88,19 @@ Producers SHOULD provide a technical contact who can respond to feed outages in 
 
 ### Seasonal Shutdowns, Disruptions of Service
 
-Feeds SHOULD continue to be published during seasonal or temporary shutdowns.  Feed URLs SHOULD NOT return a 404.  An empty bikes array SHOULD be returned by `free_bike_status.json`. Stations in `station_status.json` SHOULD be set to `is_renting:false`, `is_returning:false` and `is_installed:false` where applicable. Seasonal shutdown dates SHOULD be reflected in `system_calendar.json`.
+Feeds SHOULD continue to be published during seasonal or temporary shutdowns.  Feed URLs SHOULD NOT return a 404.  An empty `bikes` array SHOULD be returned by `free_bike_status.json`. Stations in `station_status.json` SHOULD be set to `is_renting:false`, `is_returning:false` and `is_installed:false` where applicable. Seasonal shutdown dates SHOULD be reflected using `opening_hours` in `system_information.json`.
 
-Announcements for disruptions of service, including disabled stations or temporary closures of stations or systems, SHOULD be made in `system_alerts.json`.
+
+Announcements for disruptions of service, including disabled stations or temporary closures of stations or systems SHOULD be made in `system_alerts.json`.
+###  Hours and Dates of Operation
+Beginning with v3.0, hours and dates of operation are described using the Open Street Map [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) format. The OSM opening_hours syntax is quite complex, therefore it is RECOMMENDED that publishers validate their opening_hours data to ensure its accuaracy.
+* [OSM opening_hours examples](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+* [OSM opening_hours syntax guide](https://wiki.openstreetmap.org/wiki/Key:opening_hours/specification)
+* [OSM opening_hours validation tool](https://openingh.openstreetmap.de/evaluation_tool/)
+* [OSM opening_hours project and code libraries](https://github.com/opening-hours)
+
+Hours and dates of operation SHOULD be published even in cases where services are continuously available 24/7. During periods when a system or station is outside of opening hours, stations SHOULD be set to `is_renting = false`. During these periods, `station_status.json.num_bikes_available` and `station_status.json.num_docks_available` SHOULD reflect the number of vehicles and docks that would be available if the system or station were open. The `bikes` array in `free_bike_status` SHOULD reflect those vehicles that are in the field and accessible to users that would be available for rental if the system were open.
+
 
 ## File Requirements
 
@@ -335,6 +345,7 @@ Field Name | REQUIRED | Type | Defines
 `system_id` | Yes | ID | This is a globally unique identifier for the vehicle share system.  It is up to the publisher of the feed to guarantee uniqueness and MUST be checked against existing `system_id` fields in [systems.csv](https://github.com/NABSA/gbfs/blob/master/systems.csv) to ensure this. This value is intended to remain the same over the life of the system. <br><br>Each distinct system or geographic area in which vehicles are operated SHOULD have its own `system_id`. System IDs SHOULD be recognizable as belonging to a particular system - for example, `bcycle_austin` or `biketown_pdx` - as opposed to random strings.
 `language` | Yes | Language | The language that will be used throughout the rest of the files. It MUST match the value in the [gbfs.json](#gbfsjson) file.
 `name` | Yes | String | Name of the system to be displayed to customers.
+`opening_hours` | Yes | String | Hours and dates of operation for the system in [OSM opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) format. *(added in v3.0)*
 `short_name` | OPTIONAL | String | OPTIONAL abbreviation for a system.
 `operator` | OPTIONAL | String | Name of the system operator.
 `url` | OPTIONAL | URL | The URL of the vehicle share system.
@@ -379,6 +390,8 @@ Field Name | REQUIRED | Type | Defines
     "name": "Example Bike Rental",
     "short_name": "Example Bike",
     "operator": "Example Sharing, Inc",
+    "opening_hours": "Apr 1 - Nov 3 00:00-24:00",
+    "start_date": "2010-06-10",
     "url": "https://www.example.com",
     "purchase_url": "https://www.example.com",
     "start_date": "2010-06-10",
@@ -584,6 +597,7 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`cross_street` | OPTIONAL | String | Cross street or landmark where the station is located.
 \-&nbsp;`region_id` | OPTIONAL | ID | Identifier of the region where station is located. See [system_regions.json](#system_regionsjson).
 \-&nbsp;`post_code` | OPTIONAL | String | Postal code where station is located.
+\-&nbsp;`station_opening_hours` | OPTIONAL | String | Hours of operation for the station in [OSM opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) format. If `station_opening_hours` is defined it overrides any `opening_hours` defined in `system_information.json` for the station for which it is defined.
 \-&nbsp;`rental_methods` | OPTIONAL | Array | Payment methods accepted at this station. <br /> Current valid values are:<br /> <ul><li>`key` (operator issued vehicle key / fob / card)</li><li>`creditcard`</li><li>`paypass`</li><li>`applepay`</li><li>`androidpay`</li><li>`transitcard`</li><li>`accountnumber`</li><li>`phone`</li></ul>
 \-&nbsp;`is_virtual_station` <br/>*(added in v2.1)* | OPTIONAL | Boolean | Is this station a location with or without smart dock technology? <br /><br /> `true` - The station is a location without smart docking infrastructure.  the station may be defined by a point (lat/lon) and/or `station_area` (below). <br /><br /> `false` - The station consists of smart docking infrastructure (docks). <br /><br /> This field SHOULD be published by mobility systems that have station locations without standard, internet connected physical docking infrastructure. These may be racks or geofenced areas designated for rental and/or return of vehicles. Locations that fit within this description SHOULD have the `is_virtual_station` boolean set to `true`.
 \-&nbsp;`station_area` <br/>*(added in v2.1)* | OPTIONAL | GeoJSON MultiPolygon | A GeoJSON MultiPolygon that describes the area of a virtual station. If `station_area` is supplied, then the record describes a virtual station. <br /><br /> If lat/lon and `station_area` are both defined, the lat/lon is the significant coordinate of the station (for example, parking facility or valet drop-off and pick up point). The `station_area` takes precedence over any `ride_allowed` rules in overlapping `geofencing_zones`.
@@ -600,7 +614,7 @@ Field Name | REQUIRED | Type | Defines
 &emsp;\-&nbsp;`ios` <br/>*(added in v1.1)* | OPTIONAL | URI | URI that can be used on iOS to launch the rental app for this station. More information on this iOS feature can be found [here](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/communicating_with_other_apps_using_custom_urls?language=objc). Please use iOS Universal Links (https://developer.apple.com/ios/universal-links/) if possible so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this station, and SHOULD NOT be a general rental page that includes information for more than one station.  The deep link SHOULD take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking is not supported in the native iOS rental app. <br><br>Note that the URI does not necessarily include the `station_id` for this station - other identifiers can be used by the rental app within the URI to uniquely identify this station. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>iOS Universal Links example value: `https://www.example.com/app?sid=1234567890&platform=ios` <br><br>Deep Link (without Universal Links) example value: `com.example.ios://open.example.app/app?sid=1234567890`
 &emsp;\-&nbsp;`web` <br/>*(added in v1.1)* | OPTIONAL | URL | URL that can be used by a web browser to show more information about renting a vehicle at this station. <br><br>This URL SHOULD be a deep link specific to this station, and SHOULD NOT be a general rental page that includes information for more than one station.  The deep link SHOULD take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking is not supported for web browsers. <br><br>Example value: `https://www.example.com/app?sid=1234567890`
 
-##### Example 1: Physical station
+##### Example 1: Physical station with limited hours of operation
 
 ```jsonc
 {
@@ -614,9 +628,11 @@ Field Name | REQUIRED | Type | Defines
         "name": "Parking garage A",
         "lat": 12.345678,
         "lon": 45.678901,
+        "station_opening_hours": "Su-Th 05:00-22:00; Fr-Sa 05:00-01:00",
         "parking_type": "underground_parking",
         "parking_hoop": false,
         "contact_phone": "+33109874321",
+
         "is_charging_station": "true",
         "vehicle_type_capacity": {
           "abc123": 7,
@@ -639,7 +655,7 @@ Field Name | REQUIRED | Type | Defines
     "stations": [
       {
         "station_id": "station12",
-        "name": "SE Belmont & SE 10 th",
+        "name": "SE Belmont & SE 10th",
         "lat": 45.516445,
         "lon": -122.655775,
         "is_valet_station": false,
@@ -797,7 +813,7 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`lat` | Conditionally REQUIRED <br/>*(as of v2.1)* | Latitude | Latitude of the vehicle in decimal degrees. *(as of v2.1)* REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 \-&nbsp;`lon` | Conditionally REQUIRED <br/>*(as of v2.1)* | Longitude | Longitude of the vehicle in decimal degrees. *(as of v2.1)* REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 \-&nbsp;`is_reserved` | Yes | Boolean | Is the vehicle currently reserved? <br /><br /> `true` - Vehicle is currently reserved. <br /> `false` - Vehicle is not currently reserved.
-\-&nbsp;`is_disabled` | Yes | Boolean | Is the vehicle currently disabled? <br /><br /> `true` - Vehicle is currently disabled. <br /> `false` - Vehicle is not currently disabled.<br><br>This field is used to indicate vehicles that are in the field but not available for rental.  This may be due to a mechanical issue, low battery, etc. Publishing this data may prevent users from attempting to rent vehicles that are disabled and not available for rental.
+\-&nbsp;`is_disabled` | Yes | Boolean | Is the vehicle currently disabled? <br /><br /> `true` - Vehicle is currently disabled. <br /> `false` - Vehicle is not currently disabled.<br><br>This field is used to indicate vehicles that are in the field but not available for rental due to a mechanical issue or low battery etc. Publishing this data may prevent users from attempting to rent vehicles that are disabled and not available for rental. This field SHOULD NOT be set to `true` when the system is closed for vehicles that would otherwise be rentable. 
 \-&nbsp;`rental_uris` <br/>*(added in v1.1)* | OPTIONAL | Object | JSON object that contains rental URIs for Android, iOS, and web in the `android`, `ios`, and `web` fields. See [examples](#examples-added-in-v11) of how to use these fields and [supported analytics](#analytics-added-in-v11).
 &emsp;\-&nbsp;`android` <br/>*(added in v1.1)* | OPTIONAL | URI | URI that can be passed to an Android app with an android.intent.action.VIEW Android intent to support Android Deep Links (https://developer.android.com/training/app-links/deep-linking). Please use Android App Links (https://developer.android.com/training/app-links) if possible, so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this vehicle, and SHOULD NOT be a general rental page that includes information for more than one vehicle. The deep link SHOULD take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application. Note that providers MUST rotate identifiers within deep links after each rental to avoid unintentionally exposing private vehicle trip origins and destinations.<br><br>If this field is empty, it means deep linking is not supported in the native Android rental app.<br><br>Note that the URI does not necessarily include the `bike_id` for this vehicle - other identifiers can be used by the rental app within the URI to uniquely identify this vehicle. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Android App Links example value: `https://www.example.com/app?sid=1234567890&platform=android` <br><br>Deep Link (without App Links) example value: `com.example.android://open.example.app/app?sid=1234567890`
 &emsp;\-&nbsp;`ios` <br/>*(added in v1.1)* | OPTIONAL | URI | URI that can be used on iOS to launch the rental app for this vehicle. More information on this iOS feature can be found [here](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/communicating_with_other_apps_using_custom_urls?language=objc). Please use iOS Universal Links (https://developer.apple.com/ios/universal-links/) if possible, so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this vehicle, and SHOULD NOT be a general rental page that includes information for more than one vehicle.  The deep link SHOULD take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application. Note that providers MUST rotate identifiers within deep links after each rental to avoid unintentionally exposing private vehicle trip origins and destinations. <br><br>If this field is empty, it means deep linking is not supported in the native iOS rental app.<br><br>Note that the URI does not necessarily include the `bike_id` - other identifiers can be used by the rental app within the URL to uniquely identify this vehicle. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>iOS Universal Links example value: `https://www.example.com/app?sid=1234567890&platform=ios` <br><br>Deep Link (without Universal Links) example value: `com.example.ios://open.example.app/app?sid=1234567890`
@@ -898,98 +914,11 @@ Field Name | REQUIRED | Type | Defines
 
 ### system_hours.json
 
-This OPTIONAL file is used to describe hours and days of operation when vehicles are available for rental. If `system_hours.json` is not published, it indicates that vehicles are available for rental 24 hours a day, 7 days a week.<br/>The following fields are all attributes within the main `data` object for this feed.
-
-Field Name | REQUIRED | Type | Defines
----|---|---|---
-`rental_hours` | Yes | Array | Array of objects as defined below. The array MUST contain a minimum of one object identifying hours for every day of the week or a maximum of two for each day of the week  objects (one for each user type).
-\-&nbsp;`user_types` | Yes | Array | An array of `member` and/or `nonmember` value(s). This indicates that this set of rental hours applies to either members or non-members only.
-\-&nbsp;`days` | Yes | Array | An array of abbreviations (first 3 letters) of English names of the days of the week for which this object applies (for example, `["mon", "tue", "wed", "thu", "fri", "sat, "sun"]`). Rental hours MUST NOT be defined more than once for each day and user type.
-\-&nbsp;`start_time` | Yes | Time | Start time for the hours of operation of the system in the time zone indicated in [system_information.json](#system_informationjson).
-\-&nbsp;`end_time` | Yes | Time | End time for the hours of operation of the system in the time zone indicated in [system_information.json](#system_informationjson).
-
-##### Example:
-
-```jsonc
-{
-  "last_updated": 1640887163,
-  "ttl": 86400,
-  "version": "3.0",
-  "data": {
-    "rental_hours": [
-      {
-        "user_types": [ "member" ],
-        "days": [
-          "sat",
-          "sun"
-        ],
-        "start_time": "00:00:00",
-        "end_time": "23:59:59"
-      },
-      {
-        "user_types": [ "nonmember" ],
-        "days": [
-          "sat",
-          "sun"
-        ],
-        "start_time": "05:00:00",
-        "end_time": "23:59:59"
-      },
-      {
-        "user_types": [
-          "member",
-          "nonmember"
-        ],
-        "days": [
-          "mon",
-          "tue",
-          "wed",
-          "thu",
-          "fri"
-        ],
-        "start_time": "00:00:00",
-        "end_time": "23:59:59"
-      }
-    ]
-  }
-}
-```
+This file has been deprecated in v3.0. For earlier versions see the [version history](https://github.com/NABSA/gbfs/wiki/Complete-Version-History). 
 
 ### system_calendar.json
 
-Describes the operating calendar for a system. This OPTIONAL file SHOULD be published by systems that operate seasonally or do not offer continuous year-round service.<br/>The following fields are all attributes within the main `data` object for this feed.
-
-Field Name | REQUIRED | Type | Defines
----|---|---|---
-`calendars` | Yes | Array | Array of objects describing the system operational calendar. A minimum of one calendar object is REQUIRED. If start and end dates are the same every year, then start_year and end_year SHOULD be omitted.
-\-&nbsp;`start_month` | Yes | Non-negative Integer | Starting month for the system operations (`1`-`12`).
-\-&nbsp;`start_day` | Yes | Non-negative Integer | Starting date for the system operations (`1`-`31`).
-\-&nbsp;`start_year` | OPTIONAL | Non-negative Integer | Starting year for the system operations.
-\-&nbsp;`end_month` | Yes | Non-negative Integer | Ending month for the system operations (`1`-`12`).
-\-&nbsp;`end_day` | Yes | Non-negative Integer | Ending date for the system operations (`1`-`31`).
-\-&nbsp;`end_year` | OPTIONAL | Non-negative Integer | Ending year for the system operations.
-
-##### Example:
-
-```jsonc
-{
-  "last_updated": 1640887163,
-  "ttl": 86400,
-  "version": "3.0",
-  "data": {
-    "calendars": [
-      {
-        "start_month": 4,
-        "start_day": 1,
-        "start_year": 2020,
-        "end_month": 11,
-        "end_day": 5,
-        "end_year": 2020
-      }
-    ]
-  }
-}
-```
+This file has been deprecated in v3.0. For earlier versions see the [version history](https://github.com/NABSA/gbfs/wiki/Complete-Version-History). 
 
 ### system_regions.json
 
