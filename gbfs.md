@@ -28,7 +28,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     * [vehicle_types.json](#vehicle_typesjson-added-in-v21) *(added in v2.1)*
     * [station_information.json](#station_informationjson)
     * [station_status.json](#station_statusjson)
-    * [vehicle_status.json](#vehicle_statusjson)*(formerly free_bike_status.json)*
+    * [vehicle_status.json](#vehicle_statusjson) *(formerly free_bike_status.json)*
     * [system_hours.json](#system_hoursjson) *(deprecated in v3.0)*
     * [system_calendar.json](#system_calendarjson) *(deprecated in v3.0)*
     * [system_regions.json](#system_regionsjson)
