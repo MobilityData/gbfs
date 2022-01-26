@@ -636,7 +636,6 @@ Field Name | REQUIRED | Type | Defines
         "parking_type": "underground_parking",
         "parking_hoop": false,
         "contact_phone": "+33109874321",
-
         "is_charging_station": "true",
         "vehicle_type_dock_capacity": {
           "abc123": 7,
