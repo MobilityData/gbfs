@@ -38,12 +38,12 @@ GBFS is an open source project developed under a consensus-based governance mode
 |---|:---:|---|---|
 | [v3.0-Draft](https://github.com/NABSA/gbfs/blob/master/gbfs.md) |  MAJOR |  Q1, 2022 | :construction: &nbsp;  *In Development* |
 
-### Release Candidate 
-This Release Candidate will become the *Current Version* when it has been fully implemented in public feeds.
+### Release Candidates
+Release Candidates will receive *Current Version* status when they have been fully implemented in public feeds.
 
 |  Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
 |:---:|:---:|---|---|---|---|
-|  [v2.3-RC](https://github.com/NABSA/gbfs/blob/v2.3-RC/gbfs.md) | MINOR  | September 8th, 2021 | :white_check_mark: &nbsp; *Release Candidate<br /> (Recommended)*  | *coming soon* | [v2.3-RC Article](https://mobilitydata.org/gbfs-v2-3-rc-is-here-to-fix-some-of-your-problems/) |
+|  [v2.3-RC](https://github.com/NABSA/gbfs/blob/v2.3-RC/gbfs.md) | MINOR  | September 8th, 2021 | :white_check_mark: &nbsp; *Release Candidate<br /> (Ready for implementation)*  | [v2.3-RC Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.3-RC) | [v2.3-RC Article](https://mobilitydata.org/gbfs-v2-3-rc-is-here-to-fix-some-of-your-problems/) |
 
 ### Past Version Releases 
 Past versions with *Supported* status MAY be patched to correct bugs or vulnerabilities but new features will not be introduced.<br />
