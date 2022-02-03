@@ -25,6 +25,7 @@ BE,Donkey Republic Ghent,"Ghent, BE",donkey_gh,https://www.donkey.bike/cities/bi
 BE,Donkey Republic Kortrijk & Leiedal,"Kortrijk & Leiedal, BE",donkey_kortrijk_leiedal,https://www.donkey.bike/cities/bike-rental-kortrijk-zuid-west-vlaanderen/,https://stables.donkey.bike/api/public/gbfs/2/donkey_kortrijk_leiedal/gbfs
 BE,Pony Brussels,"Bruxelles, BE",pony_brussels,https://getapony.com,https://gbfs.getapony.com/v1/brussels/en/gbfs.json
 BE,Pony Liège,"Liège, BE",pony_liège,https://getapony.com,https://gbfs.getapony.com/v1/liege/en/gbfs.json
+BE,Velo Antwerpen,"Antwerpen, BE",cc_smartbike_antwerp,https://www.velo-antwerpen.be/nl,https://gbfs.smartbike.com/antwerp/1.0/gbfs.json
 BR,Bike Itaú - Pernambuco,"Recife, BR",bike_pe,https://bikeitau.com.br/bikepe,https://rec.publicbikesystem.net/ube/gbfs/v1/
 BR,Bike Itaú - Poa,"Porto Alegre, BR",bike_poa,https://bikeitau.com.br/bikepoa,https://poa.publicbikesystem.net/ube/gbfs/v1/
 BR,Bike Itaú - Rio,"Rio de Janeiro, BR",bike_rio,https://bikeitau.com.br/bikerio/,https://riodejaneiro.publicbikesystem.net/ube/gbfs/v1/
