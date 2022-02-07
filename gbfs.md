@@ -617,29 +617,29 @@ Field Name | REQUIRED | Type | Defines
 
 ```jsonc
 {
-  "last_updated":1640887163,
-  "ttl":0,
-  "version":"3.0",
-  "data":{
-    "stations":[
+  "last_updated": 1640887163,
+  "ttl": 0,
+  "version": "3.0",
+  "data": {
+    "stations": [
       {
-        "station_id":"pga",
-        "name":"Parking garage A",
-        "lat":12.345678,
-        "lon":45.678901,
-        "station_opening_hours":"Su-Th 05:00-22:00; Fr-Sa 05:00-01:00",
-        "parking_type":"underground_parking",
-        "parking_hoop":false,
-        "contact_phone":"+33109874321",
-        "is_charging_station":"true",
-        "vehicle_type_dock_capacity":[
+        "station_id": "pga",
+        "name": "Parking garage A",
+        "lat": 12.345678,
+        "lon": 45.678901,
+        "station_opening_hours": "Su-Th 05:00-22:00; Fr-Sa 05:00-01:00",
+        "parking_type": "underground_parking",
+        "parking_hoop": false,
+        "contact_phone": "+33109874321",
+        "is_charging_station": "true",
+        "vehicle_type_dock_capacity": [
           {
-            "vehicle_type_id":"abc123",
-            "count":7
+            "vehicle_type_id": "abc123",
+            "count": 7
           },
           {
-            "vehicle_type_id":"def456",
-            "count":0
+            "vehicle_type_id": "def456",
+            "count": 0
           }
         ]
       }
@@ -652,22 +652,22 @@ Field Name | REQUIRED | Type | Defines
 
 ```jsonc
 {
-  "last_updated":1640887163,
-  "ttl":0,
-  "version":"3.0",
-  "data":{
-    "stations":[
+  "last_updated": 1640887163,
+  "ttl": 0,
+  "version": "3.0",
+  "data": {
+    "stations": [
       {
-        "station_id":"station12",
-        "name":"SE Belmont & SE 10th",
-        "lat":45.516445,
-        "lon":-122.655775,
-        "is_valet_station":false,
-        "is_virtual_station":true,
-        "is_charging_station":"false",
-        "station_area":{
-          "type":"MultiPolygon",
-          "coordinates":[
+        "station_id": "station12",
+        "name": "SE Belmont & SE 10th",
+        "lat": 45.516445,
+        "lon": -122.655775,
+        "is_valet_station": false,
+        "is_virtual_station": true,
+        "is_charging_station": "false",
+        "station_area": {
+          "type": "MultiPolygon",
+          "coordinates": [
             [
               [
                 [
@@ -694,15 +694,15 @@ Field Name | REQUIRED | Type | Defines
             ]
           ]
         },
-        "capacity":16,
-        "vehicle_type_area_capacity":[
+        "capacity": 16,
+        "vehicle_type_area_capacity": [
           {
-            "vehicle_type_id":"abc123",
-            "count":7
+            "vehicle_type_id": "abc123",
+            "count": 7
           },
           {
-            "vehicle_type_id":"def456",
-            "count":8
+            "vehicle_type_id": "def456",
+            "count": 8
           }
         ]
       }
