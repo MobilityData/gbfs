@@ -77,7 +77,7 @@ CZ,nextbike Krnov,"Krnov, CZ",nextbike_tw,https://www.nextbikeczech.com/,https:/
 CZ,nextbike Mladoboleslavsko,"CZ",nextbike_tq,https://www.nextbikeczech.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_tq/gbfs.json
 CZ,nextbike Olomouc,"Olomouc, CZ",nextbike_ti,https://www.nextbikeczech.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ti/gbfs.json
 CZ,nextbike Opava,"Opava, CZ",nextbike_tj,https://www.nextbikeczech.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_tj/gbfs.json
-CZ,nextbike Ostrava,"Ostrava, CZ",nextbike_to,https://www.nextbikeczech.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_to/gbfs.json
+CZ,nextbike Ostrava,"CZ",nextbike_to,https://www.nextbikeczech.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_to/gbfs.json
 CZ,nextbike Pardubice,"Pardubice, CZ",nextbike_tm,https://www.nextbikeczech.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_tm/gbfs.json
 CZ,nextbike Praha,"CZ",nextbike_tg,https://www.nextbikeczech.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_tg/gbfs.json
 CZ,nextbike Prostejov,"Prostejov, CZ",nextbike_cz,https://www.nextbikeczech.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cz/gbfs.json
@@ -145,7 +145,6 @@ DE,Spin Rheinland,"Rheinland, DE",spin rheinland,https://www.spin.pm,https://gbf
 DE,Spin Sieburg,"Sieburg, DE",spin siegburg,https://www.spin.pm,https://gbfs.spin.pm/api/gbfs/v2_2/siegburg/gbfs
 DE,Spin Troisdorf,"Troisdord, DE",spin troisdorf,https://www.spin.pm,https://gbfs.spin.pm/api/gbfs/v2_2/troisdorf/gbfs
 DE,Spin Wesseling,"Wesseling DE",spin wesseling,https://www.spin.pm,https://gbfs.spin.pm/api/gbfs/v2_2/wesseling/gbfs
-DE,sprintRAD,"Hannover, DE",nextbike_dh,https://www.nextbike.de/de/hannover/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dh/gbfs.json
 DE,Sprottenflotte,"DE",nextbike_sf,https://www.nextbike.de/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_sf/gbfs.json
 DE,SWA Rad,"Augsburg, DE",nextbike_ag,https://www.swa-rad.de/de/augsburg/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ag/gbfs.json
 DE,UsedomRad Germany,"Usedom, DE",nextbike_ur,https://usedomrad.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ur/gbfs.json
@@ -245,7 +244,7 @@ GB,Donkey Republic The Cotswold Water Park,"The Cotswold Water Park, GB",donkey_
 GB,Donkey Republic Whichford,"Whichford, GB",donkey_whichford,https://www.donkey.bike/cities/bike-rental-whichford/,https://stables.donkey.bike/api/public/gbfs/2/donkey_whichford/gbfs.json
 GB,Donkey Republic Worthing,"Worthing, GB",donkey_worthing,https://www.donkey.bike/cities/bike-rental-worthing/,https://stables.donkey.bike/api/public/gbfs/2/donkey_worthing/gbfs.json
 GB,Neuron Mobility,"Newcastle, GB",11b14b88-3598-4d3c-821d-e6f2e37cd905,https://www.neuron.sg,https://mds-global-ncl.neuron-mobility.com/gbfs/2/
-GB,nextbike UK,"Stirling, GB",nextbike_uk,https://www.nextbike.co.uk/en/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_uk/gbfs.json
+GB,nextbike Stirling,"Stirling, GB",nextbike_uk,https://www.nextbike.co.uk/en/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_uk/gbfs.json
 GB,OVO Bikes Cardiff & Vale of Glamorgan,"GB",nextbike_uc,https://www.nextbike.co.uk/en/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_uc/gbfs.json
 GB,OVO Bikes Glasgow,"Glasgow, GB",nextbike_gg,https://www.nextbike.co.uk/en/glasgow/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gg/gbfs.json
 GB,Pony Oxford,"Oxford, GB",pony_oxford,https://getapony.com,https://gbfs.getapony.com/v1/oxford/en/gbfs.json
@@ -260,14 +259,13 @@ GB,Spin Milton Keynes,"Milton Keynes, GB",spin milton_keynes,https://www.spin.pm
 GB,University of Surrey,"University of Surrey, GB",nextbike_su,https://www.nextbike.co.uk/en/university-of-surrey/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_su/gbfs.json
 HR,eMobi (Croatia),"Osijek, HR",nextbike_em,https://www.nextbike.hr/hr/osijek/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_em/gbfs.json
 HR,Grad Drniš (Croatia),"Drniš, HR",nextbike_gd,https://www.nextbike.hr/hr/drnis/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gd/gbfs.json
-HR,Grad Gospić (Croatia),"Gospić, HR",nextbike_gs,https://www.nextbike.hr/hr/gospic/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gs/gbfs.json
 HR,Grad Ivanić-Grad (Croatia),"Ivanic Grad, HR",nextbike_ig,https://www.nextbike.hr/hr/ivanicgrad/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ig/gbfs.json
 HR,Grad Karlovac (Croatia),"Karlovac, HR",nextbike_kc,https://www.nextbike.hr/hr/karlovac/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_kc/gbfs.json
 HR,Grad Makarska (Croatia),"Makarska, HR",nextbike_ma,https://www.nextbike.hr/hr/makarska/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ma/gbfs.json
 HR,Grad Metković (Croatia),"Metković, HR",nextbike_cm,https://www.nextbike.hr/hr/metkovic/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cm/gbfs.json
 HR,Grad Sisak (Croatia),"Sisak, HR",nextbike_cs,https://www.nextbike.hr/hr/sisak/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cs/gbfs.json
 HR,Grad Slavonski Brod (Croatia),"Slavonski Brod, HR",nextbike_sb,https://www.nextbike.hr/hr/slavonskibrod/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_sb/gbfs.json
-HR,Grad Split (Croatia),"Split , HR",nextbike_gt,https://www.nextbike.hr/hr/split/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gt/gbfs.json
+HR,Grad Split (Croatia),"Split , HR",nextbike_gt,https://www.nextbike.hr/hr/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gt/gbfs.json
 HR,Grad Velika Gorica (Croatia),"Velika Gorica, HR",nextbike_cg,https://www.nextbike.hr/hr/velikagorica/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cg/gbfs.json
 HR,Grad Vukovar (Croatia),"Vukovar, HR",nextbike_vu,https://www.nextbike.hr/hr/vukovar/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vu/gbfs.json
 HR,Grad Zadar (Croatia),"Zadar, HR",nextbike_zd,https://www.nextbike.hr/hr/zadar/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_zd/gbfs.json
@@ -308,6 +306,7 @@ IT,Lime Rome,"Rome, IT",lime_rome,https://li.me,https://data.lime.bike/api/partn
 IT,Milan Bikemi,"Milan, IT",milan-bikemi,https://bikemi.com/en,https://gbfs.urbansharing.com/bikemi.com/gbfs.json
 IT,Moncalieri,"Moncalieri, IT",Link_Moncalieri,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Moncalieri/gbfs.json
 IT,Nettuno,"Nettuno, IT",Link_Nettuno,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Nettuno/gbfs.json
+IT,nextbike Bergamo,"Bergamo, IT",nextbike_ib,https://www.nextbike.it/it/bergamo/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ib/gbfs.json
 IT,Palermo,"Palermo, IT",Link_Palermo,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Palermo/gbfs.json
 IT,Rome,"Rome, IT",Link_Rome,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Rome/gbfs.json
 IT,Vejer de la Frontera,"Vejer de la Frontera, IT",Link_Vejer_de_la_Frontera,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Vejer%20de%20la%20Frontera/gbfs.json
