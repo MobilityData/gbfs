@@ -858,18 +858,6 @@ Field Name | REQUIRED | Type | Defines
 }
 ```
 
-### system_hours.json
-
-This OPTIONAL file is used to describe hours and days of operation when vehicles are available for rental. If `system_hours.json` is not published, it indicates that vehicles are available for rental 24 hours a day, 7 days a week.
-
-Field Name | REQUIRED | Type | Defines
----|---|---|---
-`rental_hours` | Yes | Array | Array of objects as defined below. The array MUST contain a minimum of one object identifying hours for every day of the week or a maximum of two for each day of the week  objects ( one for each user type).
-\-&nbsp;`user_types` | Yes | Array | An array of `member` and/or `nonmember` value(s). This indicates that this set of rental hours applies to either members or non-members only.
-\-&nbsp;`days` | Yes | Array | An array of abbreviations (first 3 letters) of English names of the days of the week for which this object applies (e.g. `["mon", "tue", "wed", "thu", "fri", "sat, "sun"]`). Rental hours MUST NOT be defined more than once for each day and user type.
-\-&nbsp;`start_time` | Yes | Time | Start time for the hours of operation of the system in the time zone indicated in [system_information.json](#system_informationjson).
-\-&nbsp;`end_time` | Yes | Time | End time for the hours of operation of the system in the time zone indicated in [system_information.json](#system_informationjson).
-
 **Example 2: Carsharing**
 
 ```json
