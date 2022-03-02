@@ -1,11 +1,11 @@
-
 # General Bikeshare Feed Specification (GBFS)
 
 This document explains the types of files and data that comprise the General Bikeshare Feed Specification (GBFS) and defines the fields used in all of those files.
 
-# Reference version
+## Reference version
 
-This documentation refers to **v3.0-Draft (future version)**.<br>
+This documentation refers to **v3.0-Draft (future version)**.
+
 **For the current version see [**version 2.2**](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md).** For past and upcoming versions see the [README](README.md#read-the-spec--version-history).
 
 ## Terminology
@@ -231,9 +231,9 @@ Field Name | REQUIRED | Type | Defines
 `version` <br/>*(added in v1.1)* | Yes | String | GBFS version number to which the feed conforms, according to the versioning framework.
 `data` | Yes | Object | Response data in the form of name:value pairs.
 
-##### Example:
+**Example**:
 
-```jsonc
+```json
 {
   "last_updated": 1609866247,
   "ttl": 3600,
@@ -258,9 +258,9 @@ Field Name | REQUIRED | Type | Defines
 &emsp;\-&nbsp;`name` | Yes | String | Key identifying the type of feed this is. The key MUST be the base file name defined in the spec for the corresponding feed type (`system_information` for `system_information.json` file, `station_information` for `station_information.json` file).
 &emsp;\-&nbsp;`url` | Yes | URL | URL for the feed. Note that the actual feed endpoints (urls) MAY NOT be defined in the `file_name.json` format. For example, a valid feed endpoint could end with `station_info` instead of `station_information.json`.
 
-##### Example:
+**Example**:
 
-```jsonc
+```json
 {
   "last_updated": 1609866247,
   "ttl": 0,
@@ -306,9 +306,9 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`version` | Yes | String | The semantic version of the feed in the form `X.Y`.
 \-&nbsp;`url` | Yes | URL | URL of the corresponding gbfs.json endpoint.
 
-##### Example:
+**Example**:
 
-```jsonc
+```json
 {
   "last_updated": 1609866247,
   "ttl": 0,
@@ -368,9 +368,9 @@ Field Name | REQUIRED | Type | Defines
 &emsp;- `store_uri` <br/>*(added in v1.1)* | Conditionally REQUIRED | URI | URI where the rental iOS app can be downloaded from. Typically this will be a URI to an app store such as the Apple App Store. If the URI points to an app store such as the Apple App Store, the URI SHOULD follow iOS best practices so the viewing app can directly open the URI to the native app store app instead of a website. <br><br>If a `rental_uris`.`ios` field is populated then this field is REQUIRED, otherwise it is OPTIONAL. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Example value: `https://apps.apple.com/app/apple-store/id123456789`
 &emsp;- `discovery_uri` <br/>*(added in v1.1)* | Conditionally REQUIRED | URI | URI that can be used to discover if the rental iOS app is installed on the device (e.g., using [`UIApplication canOpenURL:`](https://developer.apple.com/documentation/uikit/uiapplication/1622952-canopenurl?language=objc)). This intent is used by viewing apps to prioritize rental apps for a particular user based on whether they already have a particular rental app installed. <br><br>This field is REQUIRED if a `rental_uris`.`ios` field is populated, otherwise it is OPTIONAL. <br><br>Example value: `com.example.ios://`
 
-##### Example:
+**Example**:
 
-```jsonc
+```json
 {
   "last_updated": 1611598155,
   "ttl": 1800,
@@ -427,9 +427,9 @@ Field Name | REQUIRED | Type | Defines
 \- `pricing_plan_ids`<br/>*(added in v2.3-RC)* | OPTIONAL | Array | Array of all pricing plan IDs as defined in `system_pricing_plans.json` that are applied to this vehicle type. <br /><br />This array SHOULD be published when there are multiple pricing plans defined in `system_pricing_plans.json` that apply to a single vehicle type.
 
 
-##### Example:
+**Example**:
 
-```jsonc
+```json
 {
   "last_updated": 1609866247,
   "ttl": 0,
@@ -526,9 +526,9 @@ Field Name | REQUIRED | Type | Defines
 &emsp;\-&nbsp;`ios` <br/>*(added in v1.1)* | OPTIONAL | URI | URI that can be used on iOS to launch the rental app for this station. More information on this iOS feature can be found [here](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/communicating_with_other_apps_using_custom_urls?language=objc). Please use iOS Universal Links (https://developer.apple.com/ios/universal-links/) if possible so viewing apps don’t need to manually manage the redirect of the user to the app store if the user doesn’t have the application installed. <br><br>This URI SHOULD be a deep link specific to this station, and SHOULD NOT be a general rental page that includes information for more than one station.  The deep link SHOULD take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported in the native iOS rental app. <br><br>Note that the URI does not necessarily include the station_id - other identifiers can be used by the rental app within the URL to uniquely identify this station. <br><br>See the [Analytics](#analytics-added-in-v11) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>iOS Universal Links example value: `https://www.example.com/app?sid=1234567890&platform=ios` <br><br>Deep Link (without Universal Links) example value: `com.example.ios://open.example.app/app?sid=1234567890`
 &emsp;\-&nbsp;`web` <br/>*(added in v1.1)* | OPTIONAL | URL | URL that can be used by a web browser to show more information about renting a vehicle at this station. <br><br>This URL SHOULD be a deep link specific to this station, and SHOULD NOT be a general rental page that includes information for more than one station.  The deep link SHOULD take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking isn’t supported for web browsers. <br><br>Example value: `https://www.example.com/app?sid=1234567890`
 
-##### Example 1: Physical station
+**Example** 1: Physical station
 
-```jsonc
+```json
 {
   "last_updated": 1609866247,
   "ttl": 0,
@@ -551,9 +551,9 @@ Field Name | REQUIRED | Type | Defines
 }
 ```
 
-##### Example 2: Virtual station
+**Example** 2: Virtual station
 
-```jsonc
+```json
 {
   "last_updated": 1609866247,
   "ttl": 0,
@@ -632,9 +632,9 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`is_returning` | Yes | Boolean | Is the station accepting vehicle returns? <br /><br />`true` - Station is accepting vehicle returns. Even if the station is full, if it would otherwise allow vehicle returns, this value MUST be `true`.<br /> `false` - Station is not accepting vehicle returns.<br/><br/>If the station is temporarily taken out of service and not allowing vehicle returns, this field MUST be set to `false`.<br/><br/>If a station becomes inaccessible to users due to road construction or other factors, this field SHOULD be set to `false`.
 \-&nbsp;`last_reported` | Yes | Timestamp | The last time this station reported its status to the operator's backend.
 
-##### Example:
+**Example**:
 
-```jsonc
+```json
 {
   "last_updated": 1609866247,
   "ttl": 0,
@@ -728,9 +728,9 @@ Field Name | REQUIRED | Type | Defines
 \- `home_station_id` <br/>*(added in v2.3-RC)* | OPTIONAL | ID | The `station_id` of the station this vehicle must be returned to as defined in [station_information.json](#station_information.json).
 \- `pricing_plan_id` <br/>*(added in v2.2)* | OPTIONAL | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plans.json). If this field is defined it supersedes `default_pricing_plan_id` in `vehicle_types.json`. This field SHOULD be used to override `default_pricing_plan_id` in `vehicle_types.json` to define pricing plans for individual vehicles when necessary.
 
-##### Example:
+**Example**:
 
-```jsonc
+```json
 {
   "last_updated": 1609866247,
   "ttl": 0,
@@ -775,9 +775,9 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`start_time` | Yes | Time | Start time for the hours of operation of the system in the time zone indicated in [system_information.json](#system_informationjson).
 \-&nbsp;`end_time` | Yes | Time | End time for the hours of operation of the system in the time zone indicated in [system_information.json](#system_informationjson).
 
-##### Example:
+**Example**:
 
-```jsonc
+```json
 {
   "last_updated": 1609866247,
   "ttl": 86400,
@@ -836,9 +836,9 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`end_day` | Yes | Non-negative Integer | Ending date for the system operations (`1`-`31`).
 \-&nbsp;`end_year` | OPTIONAL | Non-negative Integer | Ending year for the system operations.
 
-##### Example:
+**Example**:
 
-```jsonc
+```json
 {
   "last_updated": 1604333830,
   "ttl": 86400,
@@ -868,9 +868,9 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`region_id` | Yes | ID | Identifier for the region.
 \-&nbsp;`name` | Yes | String | Public name for this region.
 
-##### Example:
+**Example**:
 
-```jsonc
+```json
 {
   "last_updated": 1604332380,
   "ttl": 86400,
@@ -927,11 +927,11 @@ Field Name | REQUIRED | Type | Defines
 
 ### Examples *(added in v2.2)*
 
-##### Example 1:
+**Example** 1:
 
 The user does not pay more than the base price for the first 10 km. After 10 km the user pays $1 per km. After 25 km the user pays $0.50 per km and an additional $3 every 5 km, the extension price, in addition to $0.50 per km.
 
-```jsonc
+```json
 {
   "last_updated": 1609866247,
   "ttl": 0,
@@ -969,11 +969,11 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 }
 ```
 
-##### Example 2:
+**Example** 2:
 
 This example demonstrates a pricing scheme that has a rate both by minute and by km. The user is charged $0.25 per km as well as $0.50 per minute. Both of these rates happen concurrently and are not dependent on one another.
 
-```jsonc
+```json
 {
   "last_updated": 1609866247,
   "ttl": 0,
@@ -1027,9 +1027,9 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`description` | OPTIONAL | String | Detailed description of the alert.
 \-&nbsp;`last_updated` | OPTIONAL | Timestamp | Indicates the last time the info for the alert was updated.
 
-##### Example:
+**Example**:
 
-```jsonc
+```json
 {
   "last_updated": 1604198100,
   "ttl": 60,
@@ -1082,9 +1082,9 @@ Field Name | REQUIRED | Type | Defines
 &emsp;&emsp;&emsp;\-&nbsp;`ride_through_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the ride allowed to travel through this zone? <br /><br /> `true` - Ride can travel through this zone. <br /> `false` - Ride cannot travel through this zone.
 &emsp;&emsp;&emsp;\-&nbsp;`maximum_speed_kph` | OPTIONAL | Non-negative Integer | What is the maximum speed allowed, in kilometers per hour? <br /><br /> If there is no maximum speed to observe, this can be omitted.
 
-##### Example:
+**Example**:
 
-```jsonc
+```json
 {
   "last_updated": 1604198100,
   "ttl": 60,
@@ -1175,7 +1175,7 @@ Field Name | REQUIRED | Type | Defines
 
 Deep links to iOS, Android, and web apps are supported via URIs in the `system_information.json`, `station_information.json`, and `free_bike_status.json` files. The following sections describe how analytics can be added to these URIs, as well as some examples. For further examples, see ["What's New in GBFS"](https://medium.com/@mobilitydata/whats-new-in-gbfs-v2-0-63eb46e6bdc4).
 
-### Analytics *(added in v1.1)*
+## Analytics *(added in v1.1)*
 
 In all of the rental URI fields, a viewing app can report the origin of a deep link to request to a rental app by appending the `client_id` *(added in v1.1)* parameter to the URI along with the domain name for the viewing app.
 
@@ -1194,13 +1194,13 @@ Other supported parameters include:
 1. `ad_id` *(added in v1.1)* - Advertising ID issued to the viewing app (e.g., IFDA on iOS)
 2. `token` *(added in v1.1)* - A token identifier that was issued by the rental app to the viewing app.
 
-#### Examples *(added in v1.1)*
+## Examples *(added in v1.1)*
 
-##### Example 1 - App Links on Android and Universal Links on iOS are supported:
+**Example** 1 - App Links on Android and Universal Links on iOS are supported:
 
-##### *system_information.json*
+***system_information.json***
 
-```jsonc
+```json
 {
   "last_updated": 1572447999,
   "ttl": 60,
@@ -1222,9 +1222,9 @@ Other supported parameters include:
 }
 ```
 
-##### *station_information.json*
+***station_information.json***
 
-```jsonc
+```json
 {
   "last_updated": 1609866247,
   "ttl": 60,
@@ -1248,11 +1248,11 @@ Other supported parameters include:
 
 Note that the Android URI and iOS Universal Link URLs don’t necessarily use the same identifier as the station_id.
 
-##### Example 2 - App Links are not supported on Android and Universal Links are not supported on iOS, but deep links are still supported on Android and iOS:
+**Example** 2 - App Links are not supported on Android and Universal Links are not supported on iOS, but deep links are still supported on Android and iOS:
 
-##### *system_information.json*
+***system_information.json***
 
-```jsonc
+```json
 {
   "last_updated": 1572447999,
   "ttl": 60,
@@ -1276,9 +1276,9 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
 }
 ```
 
-##### *station_information.json*
+***station_information.json***
 
-```jsonc
+```json
 {
   "last_updated": 1609866247,
   "ttl": 60,
@@ -1300,11 +1300,11 @@ Note that the Android URI and iOS Universal Link URLs don’t necessarily use th
 }
 ```
 
-##### Example 3 - Deep link web URLs are supported, but not Android or iOS native apps:
+**Example** 3 - Deep link web URLs are supported, but not Android or iOS native apps:
 
-##### *station_information.json*
+***station_information.json***
 
-```jsonc
+```json
 {
   "last_updated": 1609866247,
   "ttl": 60,
