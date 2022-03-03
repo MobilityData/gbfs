@@ -36,7 +36,7 @@ GBFS is an open source project developed under a consensus-based governance mode
 ### Upcoming MAJOR Version 
 |   Version | Type  | Release Target |  Status |
 |---|:---:|---|---|
-| [v3.0-Draft](https://github.com/NABSA/gbfs/blob/master/gbfs.md) |  MAJOR |  Q1, 2022 | :construction: &nbsp;  *In Development* |
+| [v3.0-Draft](https://github.com/NABSA/gbfs/blob/master/gbfs.md) |  MAJOR |  Q1/Q2, 2022 | :construction: &nbsp;  *In Development* |
 
 ### Release Candidates
 Release Candidates will receive *Current Version* status when they have been fully implemented in public feeds.
