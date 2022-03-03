@@ -509,7 +509,7 @@ US,LINK Alexandria,"Alexandria, VA",Link_Alexandria,https://www.link.city,https:
 US,LINK Lost Angeles,"Los Angeles, CA",Link_Los_Angeles,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Los%20Angeles/gbfs.json
 US,LINK Manhattan,"Manhattan, KS",Link_Manhattan,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Manhattan/gbfs.json
 US,LINK Oakland,"Oakland, CA",Link_Oakland,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Oakland/gbfs.json
-US,LINK Seattle,"Seattle, WA",Link_Seattle,https://www.link.city,"https://wrangler-mds-production.herokuapp.com/gbfs/Seattle,%20WA/gbfs.json"
+US,LINK Seattle,"Seattle, WA",Link_Seattle,https://www.link.city,"https://wrangler-mds-production.herokuapp.com/gbfs/Seattle%2C%20WA/gbfs.json"
 US,Louvelo,"Louisville, KY",Louvelo,https://louvelo.com/,https://lou.publicbikesystem.net/ube/gbfs/v1/
 US,Lyft,"Washington, DC",lyft_dca,https://www.lyft.com/scooters/washington-dc,https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/dca/gbfs.json
 US,Lyft Scooters Chicago,"Chicago, IL",chicago,https://www.divvybikes.com,https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/chi/gbfs.json
