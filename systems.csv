@@ -178,6 +178,7 @@ FI,Donkey Republic Mäntsälä,"Mäntsälä, FI",donkey_maentsaelae,https://www.
 FI,Donkey Republic Porvoo,"Porvoo, FI",donkey_porvoo,https://www.donkey.bike/cities/bike-rental-porvoo/,https://stables.donkey.bike/api/public/gbfs/2/donkey_porvoo/gbfs.json
 FI,Donkey Republic Raasepori,"Raasepori, FI",donkey_raasepori,https://www.donkey.bike/cities/bike-rental-raasepori/,https://stables.donkey.bike/api/public/gbfs/2/donkey_raasepori/gbfs
 FI,Donkey Republic Riihimäki,"Riihimäki, FI",donkey_riihimaki,https://www.donkey.bike/cities/bike-rental-riihimaki/,https://stables.donkey.bike/api/public/gbfs/2/donkey_riihimaki/gbfs
+FR,Besançon,"Besançon, FR",besançon,https://transport.data.gouv.fr/gbfs/besancon/gbfs.json
 FR,Bicloo,"Nantes, FR",nantes,https://www.bicloo.nantesmetropole.fr/en/home,https://transport.data.gouv.fr/gbfs/nantes/gbfs.json
 FR,Bird Bordeaux,"Bordeaux, FR",bird-bordeaux,https://bird.co,https://mds.bird.co/gbfs/v2/public/bordeaux/gbfs.json
 FR,Bird Castres,"Castres, FR",bird-castres,https://bird.co,https://mds.bird.co/gbfs/v2/public/castres/gbfs.json
