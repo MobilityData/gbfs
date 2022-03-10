@@ -626,7 +626,7 @@ Field Name | REQUIRED | Type | Defines
         "parking_type": "underground_parking",
         "parking_hoop": false,
         "contact_phone": "+33109874321",
-        "is_charging_station": "true",
+        "is_charging_station": true,
         "vehicle_type_dock_capacity": {
           "abc123": 7,
           "def456": 9
@@ -850,7 +850,7 @@ Field Name | REQUIRED | Type | Defines
         "is_disabled":false,
         "vehicle_type_id":"def456",
         "current_range_meters":6543.0,
-        "station_id":86,
+        "station_id":"86",
         "pricing_plan_id":"plan3"
       }
     ]
