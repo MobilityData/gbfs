@@ -38,9 +38,9 @@ BR,Bike Itaú - Riviera,"Riviera, BR",rivi_bike,https://www.rivieradesaolourenco
 BR,Bike Itaú - Salvador,"Salvador, BR",bike_salvador,https://bikeitau.com.br/bikesalvador/,https://salvador.publicbikesystem.net/ube/gbfs/v1/
 BR,Bike Itaú - Sampa,"São Paulo, BR",bike_sampa,https://bikeitau.com.br/bikesampa,https://saopaulo.publicbikesystem.net/ube/gbfs/v1/
 BR,Bike VV,"Vila Velha, BR",bike_vv,https://www.bikevv.com.br/,https://vilavelha.publicbikesystem.net/ube/gbfs/v1/
-CA,Accès Vélo,"Saguenay, CA",saguenay_bike,https://sts.saguenay.ca/infos-pratiques/acces-velo-1/acces-velo,https://saguenay.publicbikesystem.net/ube/gbfs/v1/
-CA,àVélo,"Ville de Québec, CA",quebec_bike,https://www.rtcquebec.ca/informations-pratiques/services-complementaires/avelo,https://quebec.publicbikesystem.net/customer/gbfs/v2/gbfs.json
-CA,Bike Share Toronto,"Toronto, CA",bike_share_toronto,https://www.bikesharetoronto.com/,https://tor.publicbikesystem.net/ube/gbfs/v1/
+CA,Accès Vélo,"Saguenay, CA",saguenay_bike,https://sts.saguenay.ca/infos-pratiques/acces-velo-1/acces-velo,https://saguenay.publicbikesystem.net/customer/gbfs/v2/gbfs.json
+CA,àVélo,"Ville de Québec, CA",avelo_quebec,https://www.rtcquebec.ca/informations-pratiques/services-complementaires/avelo,https://quebec.publicbikesystem.net/customer/gbfs/v2/gbfs.json
+CA,Bike Share Toronto,"Toronto, CA",bike_share_toronto,https://www.bikesharetoronto.com/,https://tor.publicbikesystem.net/customer/gbfs/v2/gbfs.json
 CA,Bird Calgary,"Calgary, CA",bird-calgary,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/calgary/gbfs.json
 CA,Bird Edmonton,"Edmonton, CA",bird-edmonton,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/edmonton/gbfs.json
 CA,Bird Ottawa,"Ottawa, CA",bird-ottawa,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/ottawa/gbfs.json
