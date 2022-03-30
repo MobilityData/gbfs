@@ -6,7 +6,7 @@ This document explains the types of files and data that comprise the General Bik
 
 This documentation refers to **v3.0-Draft (future version)**.
 
-**For the current version see [**version 2.2**](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md).** For past and upcoming versions see the [README](README.md#read-the-spec--version-history).
+**For the current version see [**version 2.2**](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md).** For past and upcoming versions see the [README](README.md#current-version-recommended).
 
 ## Terminology
 
@@ -396,7 +396,6 @@ Field Name | REQUIRED | Type | Defines
     "start_date": "2010-06-10",
     "url": "https://www.example.com",
     "purchase_url": "https://www.example.com",
-    "start_date": "2010-06-10",
     "phone_number": "+18005551234",
     "email": "customerservice@example.com",
     "feed_contact_email": "datafeed@example.com",
