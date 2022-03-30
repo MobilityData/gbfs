@@ -275,7 +275,7 @@ HR,Grad Makarska (Croatia),"Makarska, HR",nextbike_ma,https://www.nextbike.hr/hr
 HR,Grad Metković (Croatia),"Metković, HR",nextbike_cm,https://www.nextbike.hr/hr/metkovic/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cm/gbfs.json
 HR,Grad Sisak (Croatia),"Sisak, HR",nextbike_cs,https://www.nextbike.hr/hr/sisak/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cs/gbfs.json
 HR,Grad Slavonski Brod (Croatia),"Slavonski Brod, HR",nextbike_sb,https://www.nextbike.hr/hr/slavonskibrod/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_sb/gbfs.json
-HR,Grad Split (Croatia),"Split , HR",nextbike_gt,https://www.nextbike.hr/hr/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gt/gbfs.json
+HR,Grad Split (Croatia),"Split, HR",nextbike_gt,https://www.nextbike.hr/hr/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gt/gbfs.json
 HR,Grad Velika Gorica (Croatia),"Velika Gorica, HR",nextbike_cg,https://www.nextbike.hr/hr/velikagorica/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cg/gbfs.json
 HR,Grad Vukovar (Croatia),"Vukovar, HR",nextbike_vu,https://www.nextbike.hr/hr/vukovar/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vu/gbfs.json
 HR,Grad Zadar (Croatia),"Zadar, HR",nextbike_zd,https://www.nextbike.hr/hr/zadar/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_zd/gbfs.json
@@ -355,9 +355,9 @@ NO,Bolt Oslo,"Oslo, NO",boltoslo,https://bolt.eu/en/cities/oslo/,https://api.ent
 NO,Brakar Bysykkel,"Kongsberg, NO",brakarbysykkel,https://www.brakar.no,https://api.entur.io/mobility/v2/gbfs/brakarbysykkel/gbfs
 NO,Kolumbus Bysykkel,"Kolumbus, NO",kolumbusbysykkel,https://www.kolumbus.no/reise/sykkel-oversikt/bysykkelen/,https://api.entur.io/mobility/v2/gbfs/kolumbusbysykkel/gbfs
 NO,Lillestrom Bysykkel,"Lillestrom, NO",lillestrombysykkel,http://www.bysykkel.org/,https://api.entur.io/mobility/v2/gbfs/lillestrombysykkel/gbfs
-NO,Lime Olso,"Oslo, NO",limeoslo,https://www.li.me/,https://api.entur.io/mobility/v2/gbfs/limeoslo/gbfs
+NO,Lime Oslo,"Oslo, NO",limeoslo,https://www.li.me/,https://api.entur.io/mobility/v2/gbfs/limeoslo/gbfs
 NO,Move About,"Multiple cities, NO",moveaboutno,https://www.moveabout.no/,https://api.entur.io/mobility/v2/gbfs/moveaboutno/gbfs
-NO,Oslo Bysykkel,"Olso, NO",olsobysykkel,https://oslobysykkel.no/,https://api.entur.io/mobility/v2/gbfs/oslobysykkel/gbfs
+NO,Oslo Bysykkel,"Oslo, NO",oslobysykkel,https://oslobysykkel.no/,https://api.entur.io/mobility/v2/gbfs/oslobysykkel/gbfs
 NO,Tier ASANE,"Asane, NO",tierasane,https://www.tier.app/,https://api.entur.io/mobility/v2/gbfs/tierasane/gbfs
 NO,Tier Asker,"Asker, NO",tierasker,https://www.tier.app/,https://api.entur.io/mobility/v2/gbfs/tierasker/gbfs
 NO,Tier Baerum,"Baerum, NO",tierbaerum,https://www.tier.app/,https://api.entur.io/mobility/v2/gbfs/tierbaerum/gbfs
@@ -383,12 +383,12 @@ NZ,Neuron Mobility Hamilton,"Hamilton, NZ",11b14b88-3598-4d3c-821d-e6f2e37cd907,
 NZ,nextbike New Zealand,"NZ",nextbike_nz,https://www.nextbike.co.nz/en/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_nz/gbfs.json
 PL,Bike_S SRM Poland,"Szczecin, PL",nextbike_sp,https://bikes-srm.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_sp/gbfs.json
 PL,Ciechanowski Rower Miejski Poland,"Ciechanów, PL",nextbike_pd,https://www.ciechanowskirower.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_pd/gbfs.json
-PL,LRM Lublin Poland,"PL",nextbike_ln,https://www.lubelskirower.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ln/gbfs.json
+PL,LRM Lublin Poland,"Lublin, PL",nextbike_ln,https://www.lubelskirower.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ln/gbfs.json
 PL,Oleski Rower Miejski Poland,"Olesno, PL",nextbike_pf,https://oleskirower.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_pf/gbfs.json
 PL,Pobiedziski Rower Gminny Poland,"Pobiedziska, PL",nextbike_pu,https://rowery.pobiedziska.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_pu/gbfs.json
-PL,Rowerowe Łódzkie Poland (RL),"PL",nextbike_pw,https://www.rowerowelodzkie.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_pw/gbfs.json
+PL,Rowerowe Łódzkie Poland (RL),"łódzkie, PL",nextbike_pw,https://www.rowerowelodzkie.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_pw/gbfs.json
 PL,System Roweru Gminnego Poland,"Pielgrzymka, PL",nextbike_pg,https://rowery.pielgrzymka.biz/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_pg/gbfs.json
-PL,VETURILO Poland,"Warszawa-testy, PL",nextbike_vp,https://www.veturilo.waw.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vp/gbfs.json
+PL,VETURILO Poland,"Warszawa, PL",nextbike_vp,https://www.veturilo.waw.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vp/gbfs.json
 PL,WRM nextbike Poland,"Wrocław, PL",nextbike_pl,https://www.wroclawskirower.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_pl/gbfs.json
 PT,Bird Lisbon,"Lisbon, PT",bird-lisbon,https://www.bird.co,https://mds.bird.co/gbfs/lisbon/gbfs.json
 PT,Cascais,"Cascais, PT",Link_Cascais,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Cascais/gbfs.json
@@ -405,13 +405,13 @@ SE,Donkey Republic Ystad,"Ystad, SE",donkey_ystad,https://www.donkey.bike/cities
 SE,Donkey Republic Ängelholm,"Ängelholm, SE",donkey_aengelholm,https://www.donkey.bike/cities/bike-rental-angelholm/,https://stables.donkey.bike/api/public/gbfs/2/donkey_aengelholm/gbfs.json
 SE,Stockholm,"Stockholm, SE",Link_Stockholm,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Stockholm/gbfs.json
 SI,Nomago Bikes - GO2GO,"Nova Gorica, SI",nextbike_ce,https://bikes.nomago.si/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ce/gbfs.json
-SI,Nomago Bikes - KOLESCE,"SI",nextbike_cn,https://bikes.nomago.si/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cn/gbfs.json
+SI,Nomago Bikes - KOLESCE,"Kolesce, SI",nextbike_cn,https://bikes.nomago.si/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cn/gbfs.json
 SI,Nomago Bikes - ZANAPREJ,"Zagorje ob Savi, SI",nextbike_cf,https://bikes.nomago.si/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cf/gbfs.json
 SK,Arriva Nitra Slovakia,"Nitra, SK",nextbike_as,https://arriva.bike/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_as/gbfs.json
 SK,BikeKIA,"Žilina, SK",nextbike_ak,https://bikekia.sk/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ak/gbfs.json
 UA,nextbike (Ukraine),"UA",nextbike_nu,https://www.nextbike.ua/uk/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_nu/gbfs.json
 UA,nextbike Vinnitsa (Ukraine),"Vinnytsia, UA",nextbike_uv,https://www.nextbike.ua/uk/Vinnytsia/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_uv/gbfs.json
-US, Bird New York,"New York, NY",bird-new-york,https://bird.co,https://mds.bird.co/gbfs/v2/public/new-york/gbfs.json
+US,Bird New York,"New York, NY",bird-new-york,https://bird.co,https://mds.bird.co/gbfs/v2/public/new-york/gbfs.json
 US,Asbury Park,"Asbury Park, NJ",Link_Asbury_Park,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Asbury%20Park/gbfs.json
 US,Austin,"Austin, TX",Link_Austin,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Austin/gbfs.json
 US,Austin B-cycle,"Austin, TX",bcycle_austin,http://austinbcycle.com,https://gbfs.bcycle.com/bcycle_austin/gbfs.json
@@ -468,7 +468,7 @@ US,Fort Worth Bike Sharing,"Fort Worth, TX",bcycle_fortworth,https://fortworth.b
 US,GREENbike,"Salt Lake City, UT",bcycle_greenbikeslc,https://greenbikeslc.org,https://gbfs.bcycle.com/bcycle_greenbikeslc/gbfs.json
 US,Greenville B-cycle,"Greenville, SC",bcycle_greenville,https://greenville.bcycle.com,https://gbfs.bcycle.com/bcycle_greenville/gbfs.json
 US,Hartford,"Hartford, CT",Link_Hartford,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Hartford/gbfs.json
-US,Healthy Ride Pittsburgh,"Pittsburgh, US",nextbike_pp,https://healthyridepgh.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_pp/gbfs.json
+US,Healthy Ride Pittsburgh,"Pittsburgh, PA",nextbike_pp,https://healthyridepgh.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_pp/gbfs.json
 US,Heartland B-cycle,"Omaha, NE",bcycle_heartland,https://heartland.bcycle.com,https://gbfs.bcycle.com/bcycle_heartland/gbfs.json
 US,Helbiz Alexandria,"Alexandria, VA",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/alexandria/gbfs/gbfs.json
 US,Helbiz Arlington,"Arlington, VA",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/arlington/gbfs/gbfs.json
