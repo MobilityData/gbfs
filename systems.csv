@@ -224,7 +224,7 @@ FR,Vélo'v,"Lyon, FR",lyon,https://velov.grandlyon.com/en/home,https://transport
 FR,VélO2,"Cergy-Pontoise, FR",cergy-pontoise,http://www.velo2.cergypontoise.fr/,https://transport.data.gouv.fr/gbfs/cergy-pontoise/gbfs.json
 FR,VéloCité,"Mulhouse, FR",mulhouse,https://www.compte-mobilite.fr/services/velos-en-libre-service/,https://transport.data.gouv.fr/gbfs/mulhouse/gbfs.json
 FR,Vélocéo,"Vannes, FR",Veloceo_FR_Vannes,https://veloceo.kiceo.fr/,https://vannes-gbfs.klervi.net/gbfs/gbfs.json
-FR,Vélomagg',"Montpellier, FR",montpellier,https://www.tam-voyages.com/presentation/?rub_code=1&thm_id=6,https://transport.data.gouv.fr/gbfs/montpellier/gbfs.json
+FR,Vélomagg',"Montpellier, FR",montpellier,https://www.tam-voyages.com/presentation/?rub_code=1&thm_id=6,https://montpellier-fr-smoove.klervi.net/gbfs/gbfs.json
 FR,Vélopop,"Avignon, FR",Vélopop_FR_Avignon,https://www.velopop.fr/,https://avignon-gbfs.klervi.net/gbfs/gbfs.json
 FR,VélOstan'lib,"Nancy, FR",nancy,http://www.velostanlib.fr/,https://transport.data.gouv.fr/gbfs/nancy/gbfs.json
 FR,VélÔToulouse,"Toulouse, FR",toulouse,http://www.velo.toulouse.fr/,https://transport.data.gouv.fr/gbfs/toulouse/gbfs.json
