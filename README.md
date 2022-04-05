@@ -31,7 +31,7 @@ GBFS is an open source project developed under a consensus-based governance mode
 ## Current Version *(Recommended)* 
 |   Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
 |:---:|:---:|---|---|---| ---|
-| [v2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md) | MINOR  | March 19, 2021 | :white_check_mark: &nbsp; *Current Version*  | [v2.2 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v2.2)| [v2.2 Article](https://mobilitydata.org/cities-gbfs-v2-2-is-here-for-you/) |
+| [v2.3](https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md) | MINOR  | April 5, 2022 | :white_check_mark: &nbsp; *Current Version*  | *coming soon* |  |
 
 ### Upcoming MAJOR Version 
 |   Version | Type  | Release Target |  Status |
@@ -43,15 +43,14 @@ Release Candidates will receive *Current Version* status when they have been ful
 
 |  Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
 |:---:|:---:|---|---|---|---|
-|  [v2.3-RC2](https://github.com/NABSA/gbfs/blob/v2.3-RC2/gbfs.md) | MINOR  | January 31, 2022 | :white_check_mark: &nbsp; *Release Candidate<br /> (Ready for implementation)*  | *coming soon* |  *coming soon* |
-|  [v2.3-RC](https://github.com/NABSA/gbfs/blob/v2.3-RC/gbfs.md) | MINOR  | September 8, 2021 | *Superseded by V2.3-RC2* | [v2.3-RC Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.3-RC) | [v2.3-RC Article](https://mobilitydata.org/gbfs-v2-3-rc-is-here-to-fix-some-of-your-problems/) |
-
+|*No current release candidates* | | | | | |
 ### Past Version Releases 
 Past versions with *Supported* status MAY be patched to correct bugs or vulnerabilities but new features will not be introduced.<br />
 Past  versions with *Deprecated* status will not be patched and their use SHOULD be discontinued.
 
 |  Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
 |:---:|:---:|---|---|---|---|
+|  [v2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md) | MINOR  | March 19, 2021 |:white_check_mark: &nbsp; *Supported*  | [v2.2 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v2.2)| [v2.2 Article](https://mobilitydata.org/cities-gbfs-v2-2-is-here-for-you/)
 |  [v2.1](https://github.com/NABSA/gbfs/blob/v2.1/gbfs.md) | MINOR  | March 18, 2021 |:white_check_mark: &nbsp; *Supported*  | [v2.1 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v2.1)| [v2.1 Article](https://mobilitydata.org/gbfs-now-fully-supports-dockless-systems-%f0%9f%9b%b4%f0%9f%91%8f/)
 |  [v2.0](https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md) | MAJOR  | March 16, 2020 | :white_check_mark: &nbsp;  *Supported*  | [v2.0 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v2.0) | [v2.0 Article](https://mobilitydata.org/whats-new-in-gbfs-v2-0-%f0%9f%9a%b2%f0%9f%9b%b4/) |
 |  [v1.1](https://github.com/NABSA/gbfs/blob/v1.1/gbfs.md) | MINOR | March 16, 2020 |:white_check_mark: &nbsp; *Supported*  | [v1.1 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v1.1) | |
