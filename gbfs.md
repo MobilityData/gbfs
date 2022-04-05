@@ -6,7 +6,7 @@ This document explains the types of files and data that comprise the General Bik
 
 This documentation refers to **v3.0-Draft (future version)**.
 
-**For the current version see [**version 2.2**](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md).** For past and upcoming versions see the [README](README.md#current-version-recommended).
+**For the current version see [**version 2.3**](https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md).** For past and upcoming versions see the [README](README.md#current-version-recommended).
 
 ## Terminology
 
