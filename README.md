@@ -35,7 +35,8 @@ MobiltyData has compiled a [project roadmap](https://github.com/NABSA/gbfs/wiki/
 ## Current Version *(Recommended)* 
 |   Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
 |:---:|:---:|---|---|---| ---|
-| [v2.3](https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md) | MINOR  | April 5, 2022 | :white_check_mark: &nbsp; *Current Version*  | [v2.3 schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.3) |  |
+| [v2.3](https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md) | MINOR  | April 5, 2022 | :white_check_mark: &nbsp; *Current Version*  | [v2.3 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.3) |  |
+
 
 ### Upcoming MAJOR Version 
 |   Version | Type  | Release Target |  Status |
@@ -65,26 +66,25 @@ Past  versions with *Deprecated* status will not be patched and their use SHOULD
 The complete GBFS version history is available on the [wiki](https://github.com/NABSA/gbfs/wiki/Complete-Version-History).
 
 ## Specification Versioning
-To enable the evolution of GBFS, including changes that would otherwise break backwards-compatibility with consuming applications, GBFS documentation is versioned. Semantic versions are established by a git tag in the form of `vX.Y` where `X.Y` is the version name. Multiple changes (commits) may be batched into a single new release.
-
-A whole integer increase is used for breaking changes (MAJOR changes). A decimal increase is used for non-breaking changes (MINOR changes or patches).
+To enable the evolution of GBFS, including changes that would otherwise break backwards-compatibility with consuming applications, GBFS uses [semantic versioning](https://semver.org/).
+Semantic versions are established by a git tag in the form of `vX.Y` where `X.Y` is the version name. A whole integer increase is used for breaking changes (MAJOR changes). A decimal increase is used for non-breaking changes (MINOR changes or patches). MINOR versions may introduce new features as long as those changes are OPTIONAL and do not break backwards compatibility.
 
 Examples of breaking changes include:
 
-* Adding or removing a required endpoint or field
-* Changing the data type or semantics of an existing field
+* Changes to requirements, like adding or removing a REQUIRED endpoint or field, or changing an OPTIONAL endpoint or field to REQUIRED.
+* Changing the data type or semantics of an existing field.
 
 Examples of non-breaking changes include:
 
-* Adding or removing an optional endpoint or field
-* Adding or removing enum values
-* Modifying documentation or spec language in a way that clarifies semantics or recommended practices
+* Adding an OPTIONAL endpoint or field
+* Adding new enum values
+* Modifying documentation or specification language in a way that clarifies semantics or recommended practices
 
 
 #### Version Release Cycles - Release Deprecation
-- There is no strict limitation on the frequency of MAJOR releases, but the GBFS community aims to limit MAJOR releases to 2 or fewer in a 12 month period. To limit releases, multiple breaking changes SHOULD be batched together in a single release.
--  There is no guideline to limit the number of MINOR releases. MINOR changes may be applied at any time. MINOR changes MAY be batched together in single release or released immediately, based on the needs of the community.
-- GBFS documentation will include a list of current and supported MAJOR and MINOR versions. Supported versions SHALL NOT span more than two MAJOR versions. Past versions that are beyond the two most recent MAJOR versions will be deprecated 180 days after the latest MAJOR version becomes official.
+* There is no strict limitation on the frequency of MAJOR releases, but the GBFS community aims to limit MAJOR releases to no more than one a 12 month period. To limit releases, multiple breaking changes SHOULD be batched together in a single release.
+* There is no guideline to limit the number of MINOR releases. MINOR changes may be applied at any time. MINOR changes MAY be batched together in single release or released immediately, based on the needs of the community.
+* GBFS documentation will include a list of current and supported MAJOR and MINOR versions. Supported versions SHALL NOT span more than two MAJOR versions. Past versions that are beyond the two most recent MAJOR versions will be deprecated 180 days after the latest MAJOR version becomes official.
 ## Governance & Overview of the Change Process
 GBFS is an open specification, developed and maintained by the community of producers and consumers of GBFS data.
 The specification is not fixed or unchangeable. As the shared mobility industry evolves, it is expected that the specification will be extended by the GBFS community to include new features and capabilities over time. If you are new to engaging with the community on this repository, firstly welcome! Please identify which organization you represent when posting. 
