@@ -192,11 +192,11 @@ _versions_              | Yes         | Array that contains one object, as defin
   "data": {
     "versions": [
       {
-        "version":"1",
+        "version":"1.0",
         "url":"https://www.example.com/gbfs/1/gbfs"
       },
       {
-        "version":"2",
+        "version":"1.1",
         "url":"https://www.example.com/gbfs/2/gbfs"
       }
     ]
