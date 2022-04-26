@@ -3,7 +3,7 @@
 This document explains the types of files and data that comprise the General Bikeshare Feed Specification (GBFS) and defines the fields used in all of those files.
 
 # Reference version
-####This documentation refers to **v2.0 Release**. <br>
+####This documentation refers to **v2.1 Release**. <br>
 For past and upcoming versions see the [README](README.md#read-the-spec--version-history).
 
 ## Terminology
@@ -336,6 +336,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1611598155,
   "ttl":1800,
+  "version": "2.1",
   "data":{
     "phone_number":"1-800-555-1234",
     "name":"Example Ride",
@@ -636,7 +637,7 @@ Field Name | REQUIRED | Type | Defines
         "is_disabled":false,
         "vehicle_type_id":"def456",
         "current_range_meters":6543,
-        "station_id":86,
+        "station_id":"86",
         "pricing_plan_id":"plan3"
       }
     ]
@@ -705,6 +706,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1604333830,
   "ttl":86400,
+  "version": "2.1",
   "data":{
     "calendars":[
       {
@@ -734,6 +736,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1604332380,
   "ttl":86400,
+  "version": "2.1",
   "data":{
     "regions":[
       {
@@ -795,6 +798,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1604198100,
   "ttl":60,
+  "version": "2.1",
   "data":{
     "alerts":[
       {
@@ -807,8 +811,8 @@ Field Name | REQUIRED | Type | Defines
         ],
         "times":[
           {
-            "start":"1604448000",
-            "end":"1604674800"
+            "start":1604448000,
+            "end":1604674800
           }
         ],
         "url":"https://example.com/more-info",
@@ -846,83 +850,88 @@ Field Name | REQUIRED | Type | Defines
 ##### Example:
 ```jsonc
 {
-  "geofencing_zones":[
-    {
-      "type":"FeatureCollection",
-      "features":[
-        {
-          "type":"Feature",
-          "geometry":{
-            "type":"MultiPolygon",
-            "coordinates":[
-              [
+  "last_updated":1604198100,
+  "ttl":60,
+  "version":"2.1",
+  "data":{
+    "geofencing_zones":[
+      {
+        "type":"FeatureCollection",
+        "features":[
+          {
+            "type":"Feature",
+            "geometry":{
+              "type":"MultiPolygon",
+              "coordinates":[
                 [
                   [
-                    -122.578067,
-                    45.562982
-                  ],
-                  [
-                    -122.661838,
-                    45.562741
-                  ],
-                  [
-                    -122.661151,
-                    45.504542
-                  ],
-                  [
-                    -122.578926,
-                    45.5046625
-                  ],
-                  [
-                    -122.578067,
-                    45.562982
+                    [
+                      -122.578067,
+                      45.562982
+                    ],
+                    [
+                      -122.661838,
+                      45.562741
+                    ],
+                    [
+                      -122.661151,
+                      45.504542
+                    ],
+                    [
+                      -122.578926,
+                      45.5046625
+                    ],
+                    [
+                      -122.578067,
+                      45.562982
+                    ]
                   ]
-                ]
-              ],
-              [
+                ],
                 [
                   [
-                    -122.650680,
-                    45.548197
-                  ],
-                  [
-                    -122.650852,
-                    45.534731
-                  ],
-                  [
-                    -122.630939,
-                    45.535212
-                  ],
-                  [
-                    -122.630424,
-                    45.548197
-                  ],
-                  [
-                    -122.650680,
-                    45.548197
+                    [
+                      -122.650680,
+                      45.548197
+                    ],
+                    [
+                      -122.650852,
+                      45.534731
+                    ],
+                    [
+                      -122.630939,
+                      45.535212
+                    ],
+                    [
+                      -122.630424,
+                      45.548197
+                    ],
+                    [
+                      -122.650680,
+                      45.548197
+                    ]
                   ]
                 ]
               ]
-            ]
-          },
-          "properties":{
-            "name":"NE 24th/NE Knott",
-            "start":1593878400,
-            "end":1593907260,
-            "rules":{
-              "vehicle_type_id":[
-                "moped1",
-                "car1"
-              ],
-              "ride_allowed":false,
-              "ride_through_allowed":true,
-              "maximum_speed_kph":10
+            },
+            "properties":{
+              "name":"NE 24th/NE Knott",
+              "start":1593878400,
+              "end":1593907260,
+              "rules":{
+                "vehicle_type_id":[
+                  "moped1",
+                  "car1"
+                ],
+                "ride_allowed":false,
+                "ride_through_allowed":true,
+                "maximum_speed_kph":10
+              }
             }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
 }
 ```
 ## Deep Links *(added in v1.1)*
