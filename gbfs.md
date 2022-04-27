@@ -348,7 +348,7 @@ Field Name | REQUIRED | Type | Defines
     "short_name":"Example Ride",
     "email":"customerservice@exampleride.org",
     "url":"http://www.exampleride.org",
-    "feed_contact_email": datafeed@exampleride.org,
+    "feed_contact_email": "datafeed@exampleride.org",
     "system_id":"exampleride",
     "language":"en",
   }
@@ -637,7 +637,7 @@ Field Name | REQUIRED | Type | Defines
         "is_disabled":false,
         "vehicle_type_id":"def456",
         "current_range_meters":6543,
-        "station_id":86,
+        "station_id":"86",
         "pricing_plan_id":"plan3"
       }
     ]
@@ -900,8 +900,8 @@ Field Name | REQUIRED | Type | Defines
         ],
         "times":[
           {
-            "start":"1604448000",
-            "end":"1604674800"
+            "start":1604448000,
+            "end":1604674800
           }
         ],
         "url":"https://example.com/more-info",
