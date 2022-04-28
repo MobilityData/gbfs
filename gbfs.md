@@ -831,7 +831,7 @@ Field Name | REQUIRED | Type | Defines
         "is_disabled": false,
         "vehicle_type_id": "def456",
         "current_range_meters": 6543.0,
-        "station_id": 86,
+        "station_id": "86",
         "pricing_plan_id": "plan3"
       }
     ]
