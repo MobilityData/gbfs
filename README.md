@@ -148,7 +148,7 @@ Auto-Discovery URL | Yes | URL for the system's `gbfs.json` auto-discovery file.
 ## GBFS JSON Schemas
 Complete JSON schemas for each version of GBFS can be found [here](https://github.com/MobilityData/gbfs-json-schema).
 ## GBFS and Other Shared Mobility Resources
-Including APIs, datasets, validators, research, and software can be found [here](https://github.com/NABSA/micromobility-tools-and-resources).
+Including APIs, datasets, validators, research, and software can be found [here](https://gbfs.mobilitydata.org/toolbox/resources/).
 ## Relationship Between GBFS and MDS
 There are many similarities between GBFS and [MDS](https://github.com/openmobilityfoundation/mobility-data-specification) (Mobility Data Specification), however, their intended use cases are different. GBFS is a real-time or near real-time specification for public data primarily intended to provide transit advice through consumer-facing applications. MDS is not public data and is intended for use only by mobility regulators. Publishing a public GBFS feed is a [requirement](https://github.com/openmobilityfoundation/mobility-data-specification#gbfs-requirement) of all MDS compatible *Provider* APIs.
 ## Copyright
