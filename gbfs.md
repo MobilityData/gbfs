@@ -235,7 +235,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 3600,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "name": "Example Bike Rental",
     "system_id": "example_cityname",
@@ -262,7 +262,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "en": {
       "feeds": [
@@ -311,7 +311,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "versions": [
       {
@@ -319,7 +319,7 @@ Field Name | REQUIRED | Type | Defines
         "url": "https://www.example.com/gbfs/2/gbfs"
       },
       {
-        "version": "2.3-RC2",
+        "version": "2.3",
         "url": "https://www.example.com/gbfs/3/gbfs"
       }
     ]
@@ -370,7 +370,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 1800,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "system_id": "example_cityname",
     "language": "en",
@@ -454,7 +454,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "vehicle_types": [
       {
@@ -596,7 +596,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "stations": [
       {
@@ -607,7 +607,7 @@ Field Name | REQUIRED | Type | Defines
         "parking_type": "underground_parking",
         "parking_hoop": false,
         "contact_phone": "+33109874321",
-        "is_charging_station": "true",
+        "is_charging_station": true,
         "vehicle_type_capacity": {
           "abc123": 7,
           "def456": 9
@@ -624,7 +624,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "stations": [
       {
@@ -634,7 +634,7 @@ Field Name | REQUIRED | Type | Defines
         "lon": -122.655775,
         "is_valet_station": false,
         "is_virtual_station": true,
-        "is_charging_station": "false",
+        "is_charging_station": false,
         "station_area": {
           "type": "MultiPolygon",
           "coordinates": [
@@ -705,7 +705,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "stations": [
       {
@@ -806,33 +806,33 @@ Field Name | REQUIRED | Type | Defines
 
 ```json
 {
-  "last_updated":1640887163,
-  "ttl":0,
-  "version":"2.3-RC2",
-  "data":{
-    "bikes":[
+  "last_updated": 1640887163,
+  "ttl": 0,
+  "version": "2.3",
+  "data": {
+    "bikes": [
       {
-        "bike_id":"973a5c94-c288-4a2b-afa6-de8aeb6ae2e5",
-        "last_reported":1609866109,
-        "lat":12.34,
-        "lon":56.78,
-        "is_reserved":false,
-        "is_disabled":false,
-        "vehicle_type_id":"abc123",
+        "bike_id": "973a5c94-c288-4a2b-afa6-de8aeb6ae2e5",
+        "last_reported": 1609866109,
+        "lat": 12.34,
+        "lon": 56.78,
+        "is_reserved": false,
+        "is_disabled": false,
+        "vehicle_type_id": "abc123",
         "rental_uris": {
           "android": "https://www.example.com/app?bike_id=973a5c94-c288-4a2b-afa6-de8aeb6ae2e5&platform=android&",
           "ios": "https://www.example.com/app?bike_id=973a5c94-c288-4a2b-afa6-de8aeb6ae2e5&platform=ios"
         }
       },
       {
-        "bike_id":"987fd100-b822-4347-86a4-b3eef8ca8b53",
-        "last_reported":1609866204,
-        "is_reserved":false,
-        "is_disabled":false,
-        "vehicle_type_id":"def456",
-        "current_range_meters":6543.0,
-        "station_id":86,
-        "pricing_plan_id":"plan3"
+        "bike_id": "987fd100-b822-4347-86a4-b3eef8ca8b53",
+        "last_reported": 1609866204,
+        "is_reserved": false,
+        "is_disabled": false,
+        "vehicle_type_id": "def456",
+        "current_range_meters": 6543.0,
+        "station_id": 86,
+        "pricing_plan_id": "plan3"
       }
     ]
   }
@@ -844,38 +844,38 @@ Field Name | REQUIRED | Type | Defines
 
  {
   "last_updated": 1640887163,
-  "ttl":0,
-  "version":"2.3-RC2",
-  "data":{
-    "bikes":[
+  "ttl": 0,
+  "version": "2.3",
+  "data": {
+    "bikes": [
       {
-        "bike_id":"45bd3fb7-a2d5-4def-9de1-c645844ba962",
-        "last_reported":1609866109,
-        "lat":12.345678,
-        "lon":56.789012,
-        "is_reserved":false,
-        "is_disabled":false,
-        "vehicle_type_id":"abc123",
-        "current_range_meters":400000.0,
-        "available_until":"2021-05-17T15:00:00Z",
-        "home_station":"station1",
-        "vehicle_equipment":[
+        "bike_id": "45bd3fb7-a2d5-4def-9de1-c645844ba962",
+        "last_reported": 1609866109,
+        "lat": 12.345678,
+        "lon": 56.789012,
+        "is_reserved": false,
+        "is_disabled": false,
+        "vehicle_type_id": "abc123",
+        "current_range_meters": 400000.0,
+        "available_until": "2021-05-17T15:00:00Z",
+        "home_station": "station1",
+        "vehicle_equipment": [
           "child_seat_a",
           "winter_tires"
         ]
       },
       {
-        "bike_id":"d4521def-7922-4e46-8e1d-8ac397239bd0",
-        "last_reported":1609866204,
-        "is_reserved":false,
-        "is_disabled":false,
-        "vehicle_type_id":"def456",
-        "current_fuel_percent":0.7,
-        "current_range_meters":6543.0,
-        "station_id":"86",
-        "pricing_plan_id":"plan3",
-        "home_station_id":"146",
-        "vehicle_equipment":[
+        "bike_id": "d4521def-7922-4e46-8e1d-8ac397239bd0",
+        "last_reported": 1609866204,
+        "is_reserved": false,
+        "is_disabled": false,
+        "vehicle_type_id": "def456",
+        "current_fuel_percent": 0.7,
+        "current_range_meters": 6543.0,
+        "station_id": "86",
+        "pricing_plan_id": "plan3",
+        "home_station_id": "146",
+        "vehicle_equipment": [
           "child_seat_a"
         ]
       }
@@ -902,7 +902,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 86400,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "rental_hours": [
       {
@@ -963,7 +963,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 86400,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "calendars": [
       {
@@ -995,7 +995,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 86400,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "regions": [
       {
@@ -1055,7 +1055,7 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "plans": [
       {
@@ -1097,7 +1097,7 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "plans": [
       {
@@ -1153,7 +1153,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1604519393,
   "ttl": 60,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "alerts": [
       {
@@ -1206,11 +1206,11 @@ Field Name | REQUIRED | Type | Defines
 
 **Example:**
 
-```jsonc
+```json
 {
   "last_updated": 1640887163,
   "ttl": 60,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "geofencing_zones": {
       "type": "FeatureCollection",
@@ -1329,7 +1329,7 @@ Other supported parameters include:
 {
   "last_updated": 1640887163,
   "ttl": 60,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "name": "Example Bike Rental",
     "system_id": "example_cityname",
@@ -1353,7 +1353,7 @@ Other supported parameters include:
 {
   "last_updated": 1640887163,
   "ttl": 60,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "stations": [
       {
@@ -1381,7 +1381,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": 1572447999,
   "ttl": 60,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "name": "Example Bike Rental",
     "system_id": "example_cityname",
@@ -1407,7 +1407,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": 1609866247,
   "ttl": 60,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "stations": [
       {
@@ -1433,7 +1433,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": 1609866247,
   "ttl": 60,
-  "version": "2.3-RC2",
+  "version": "2.3",
   "data": {
     "stations": [
       {
