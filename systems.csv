@@ -508,6 +508,7 @@ US,Lime San Jose,"San Jose,CA",lime_san_jose,https://www.li.me,https://data.lime
 US,Lime Seattle,"Seattle, WA",lime_seattle,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/seattle/gbfs.json
 US,Lime Washington DC,"Washington, DC",lime_washington_dc,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/washington_dc/gbfs.json
 US,LINK Alexandria,"Alexandria, VA",Link_Alexandria,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Alexandria/gbfs.json
+US,LINK Berkeley,"Berkeley, CA",Link_Berkeley,https://www.link.city,https://mds.linkyour.city/gbfs/us_ca_berkeley/gbfs.json
 US,LINK Lost Angeles,"Los Angeles, CA",Link_Los_Angeles,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Los%20Angeles/gbfs.json
 US,LINK Manhattan,"Manhattan, KS",Link_Manhattan,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Manhattan/gbfs.json
 US,LINK Oakland,"Oakland, CA",Link_Oakland,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Oakland/gbfs.json
