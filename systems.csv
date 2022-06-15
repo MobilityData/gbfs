@@ -468,7 +468,6 @@ US,Fort Worth Bike Sharing,"Fort Worth, TX",bcycle_fortworth,https://fortworth.b
 US,GREENbike,"Salt Lake City, UT",bcycle_greenbikeslc,https://greenbikeslc.org,https://gbfs.bcycle.com/bcycle_greenbikeslc/gbfs.json
 US,Greenville B-cycle,"Greenville, SC",bcycle_greenville,https://greenville.bcycle.com,https://gbfs.bcycle.com/bcycle_greenville/gbfs.json
 US,Hartford,"Hartford, CT",Link_Hartford,https://www.link.city,https://mds.linkyour.city/gbfs/us_ct_hartford/gbfs.json
-US,Healthy Ride Pittsburgh,"Pittsburgh, PA",nextbike_pp,https://healthyridepgh.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_pp/gbfs.json
 US,Heartland B-cycle,"Omaha, NE",bcycle_heartland,https://heartland.bcycle.com,https://gbfs.bcycle.com/bcycle_heartland/gbfs.json
 US,Helbiz Alexandria,"Alexandria, VA",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/alexandria/gbfs/gbfs.json
 US,Helbiz Arlington,"Arlington, VA",HELBIZ-US,https://helbiz.com,https://api.helbiz.com/admin/reporting/arlington/gbfs/gbfs.json
