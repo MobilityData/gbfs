@@ -506,8 +506,8 @@ Field Name | REQUIRED | Type | Defines
           "icon_url_dark": "https://www.example.com/assets/icon_cargobicycle_dark.svg",
           "icon_last_modified": "2021-06-15"
         },
-        "default_pricing_plan": "cargo_plan_1",
-        "pricing_plans": [
+        "default_pricing_plan_id": "cargo_plan_1",
+        "pricing_plans_ids": [
           "cargo_plan_1",
           "cargo_plan_2",
           "cargo_plan_3"
@@ -535,7 +535,7 @@ Field Name | REQUIRED | Type | Defines
         "vehicle_type_id": "car1",
         "form_factor": "car",
         "rider_capacity": 5,
-        "min_cargo_volume_capacity": 200,
+        "cargo_volume_capacity": 200,
         "propulsion_type": "combustion_diesel",
         "eco_label": [
           {
@@ -845,6 +845,8 @@ Field Name | REQUIRED | Type | Defines
       {
         "vehicle_id":"987fd100-b822-4347-86a4-b3eef8ca8b53",
         "last_reported":1609866204,
+        "lat":23.45,
+        "lon":67.89,
         "is_reserved":false,
         "is_disabled":false,
         "vehicle_type_id":"def456",
@@ -877,7 +879,7 @@ Field Name | REQUIRED | Type | Defines
         "vehicle_type_id":"abc123",
         "current_range_meters":400000.0,
         "available_until":"2021-05-17T15:00:00Z",
-        "home_station":"station1",
+        "home_station_id":"station1",
         "vehicle_equipment":[
           "child_seat_a",
           "winter_tires"
