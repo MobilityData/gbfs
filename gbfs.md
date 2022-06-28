@@ -392,7 +392,7 @@ Field Name | REQUIRED | Type | Defines
     "name": "Example Bike Rental",
     "short_name": "Example Bike",
     "operator": "Example Sharing, Inc",
-    "opening_hours": "Apr 1 - Nov 3 00:00-24:00",
+    "opening_hours": "Apr 1-Nov 3 00:00-24:00",
     "start_date": "2010-06-10",
     "url": "https://www.example.com",
     "purchase_url": "https://www.example.com",
@@ -832,8 +832,8 @@ Field Name | REQUIRED | Type | Defines
       {
         "vehicle_id":"973a5c94-c288-4a2b-afa6-de8aeb6ae2e5",
         "last_reported":1609866109,
-        "lat":12.34,
-        "lon":56.78,
+        "lat":12.345678,
+        "lon":56.789012,
         "is_reserved":false,
         "is_disabled":false,
         "vehicle_type_id":"abc123",
@@ -845,8 +845,6 @@ Field Name | REQUIRED | Type | Defines
       {
         "vehicle_id":"987fd100-b822-4347-86a4-b3eef8ca8b53",
         "last_reported":1609866204,
-        "lat":23.45,
-        "lon":67.89,
         "is_reserved":false,
         "is_disabled":false,
         "vehicle_type_id":"def456",
