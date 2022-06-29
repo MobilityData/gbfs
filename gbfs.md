@@ -1,13 +1,12 @@
-
 # General Bikeshare Feed Specification (GBFS)
 
 This document explains the types of files and data that comprise the General Bikeshare Feed Specification (GBFS) and defines the fields used in all of those files.
 
-# Reference version
+## Reference version
 
-This documentation refers to **v3.0-Draft (future version)**.<br>
-*Note:* This draft documentation contains significant changes from previous versions, including the deprecation and renaming of endpoints and fields. 
-**For the current version see [**version 2.2**](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md).** For past versions and upcoming version release candidates, see the [README](README.md#current-version-recommended).
+This documentation refers to **v3.0-Draft (future version)**.
+
+**For the current version see [**version 2.3**](https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md).** For past and upcoming versions see the [README](README.md#current-version-recommended).
 
 ## Terminology
 
@@ -242,9 +241,9 @@ Field Name | REQUIRED | Type | Defines
 `version` | Yes | String | GBFS version number to which the feed conforms, according to the versioning framework.
 `data` | Yes | Object | Response data in the form of name:value pairs.
 
-##### Example:
+**Example:**
 
-```jsonc
+```json
 {
   "last_updated": 1640887163,
   "ttl": 3600,
@@ -269,9 +268,9 @@ Field Name | REQUIRED | Type | Defines
 &emsp;\-&nbsp;`name` | Yes | String | Key identifying the type of feed this is. The key MUST be the base file name defined in the spec for the corresponding feed type (`system_information` for `system_information.json` file, `station_information` for `station_information.json` file).
 &emsp;\-&nbsp;`url` | Yes | URL | URL for the feed. Note that the actual feed endpoints (urls) may not be defined in the `file_name.json` format. For example, a valid feed endpoint could end with `station_info` instead of `station_information.json`.
 
-##### Example:
+**Example:**
 
-```jsonc
+```json
 {
   "last_updated": 1640887163,
   "ttl": 0,
@@ -317,9 +316,9 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`version` | Yes | String | The semantic version of the feed in the form `X.Y`.
 \-&nbsp;`url` | Yes | URL | URL of the corresponding gbfs.json endpoint.
 
-##### Example:
+**Example:**
 
-```jsonc
+```json
 {
   "last_updated": 1640887163,
   "ttl": 0,
@@ -380,9 +379,9 @@ Field Name | REQUIRED | Type | Defines
 &emsp;- `store_uri`  | Conditionally REQUIRED | URI | URI where the rental iOS app can be downloaded from. Typically this will be a URI to an app store, such as the Apple App Store. If the URI points to an app store, the URI SHOULD follow iOS best practices so the viewing app can directly open the URI to the native app store app instead of a website. <br><br>If a `rental_uris`.`ios` field is populated, then this field is REQUIRED.<br><br>See the [Analytics](#analytics) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Example value: `https://apps.apple.com/app/apple-store/id123456789`
 &emsp;- `discovery_uri`  | Conditionally REQUIRED | URI | URI that can be used to discover if the rental iOS app is installed on the device (for example, using [`UIApplication canOpenURL:`](https://developer.apple.com/documentation/uikit/uiapplication/1622952-canopenurl?language=objc)). This intent is used by viewing apps to prioritize rental apps for a particular user based on whether they already have a particular rental app installed. <br><br>REQUIRED if a `rental_uris`.`ios` field is populated.<br><br>Example value: `com.example.ios://`
 
-##### Example:
+**Example:**
 
-```jsonc
+```json
 {
   "last_updated": 1640887163,
   "ttl": 1800,
@@ -397,7 +396,6 @@ Field Name | REQUIRED | Type | Defines
     "start_date": "2010-06-10",
     "url": "https://www.example.com",
     "purchase_url": "https://www.example.com",
-    "start_date": "2010-06-10",
     "phone_number": "+18005551234",
     "email": "customerservice@example.com",
     "feed_contact_email": "datafeed@example.com",
@@ -410,7 +408,7 @@ Field Name | REQUIRED | Type | Defines
     "rental_apps": {
       "android": {
         "discovery_uri": "com.example.android://",
-        "store_uri": "https://play.google.com/store/apps/details?id=com.example.android",
+        "store_uri": "https://play.google.com/store/apps/details?id=com.example.android"
       },
       "ios": {
         "store_uri": "https://apps.apple.com/app/apple-store/id123456789",
@@ -438,11 +436,11 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `vehicle_types` | Yes | Array | Array that contains one object per vehicle type in the system as defined below.
 \- `vehicle_type_id` | Yes | ID | Unique identifier of a vehicle type. See [Field Types](#field-types) above for ID field requirements.
-\- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`cargo_bicycle`</li><li>`car`</li><li>`moped`</li><li>`scooter_standing` (standing kick scooter)</li><li>`scooted_seated` (this is a kick scooter with a seat, not to be confused with `moped`)</li><li>`other`</li></ul>
+\- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`cargo_bicycle` *(added in v2.3-RC2)*</li><li>`car`</li><li>`moped`</li><li>`scooter_standing` *(standing kick scooter, added in v2.3-RC2)*</li><li>`scooted_seated` *(this is a kick scooter with a seat, not to be confused with `moped`, added in v2.3-RC2)*</li><li>`other`</li></ul>
 \- `rider_capacity`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative integer | The number of riders (driver included) the vehicle can legally accommodate.
 \- `cargo_volume_capacity`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative integer | Cargo volume available in the vehicle, expressed in liters. For cars, it corresponds to the space between the boot floor, including the storage under the hatch, to the rear shelf in the trunk.
 \- `cargo_load_capacity`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative integer | The capacity of the vehicle cargo space (excluding passengers), expressed in kilograms.
-\- `propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides electric motor assist only in combination with human propulsion - no throttle mode)_</li><li>`electric` _(Powered by battery-powered electric motor with throttle mode)_</li><li>`combustion` _(Powered by gasoline combustion engine)_</li><li>`combustion_diesel` _(Powered by diesel combustion engine)_</li><li>`hybrid` _(Powered by combined combustion engine and battery-powered motor)_</li><li>`plug_in_hybrid` _(Powered by combined combustion engine and battery-powered motor with plug-in charging)_</li><li>`hydrogen_fuel_cell` _(Powered by hydrogen fuel cell powered electric motor)_</li></ul> This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/main/general-information.md#propulsion-types).
+\- `propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides electric motor assist only in combination with human propulsion - no throttle mode)_</li><li>`electric` _(Powered by battery-powered electric motor with throttle mode)_</li><li>`combustion` _(Powered by gasoline combustion engine)_</li><li>`combustion_diesel` _(Powered by diesel combustion engine, added in v2.3-RC2)_</li><li>`hybrid` _(Powered by combined combustion engine and battery-powered motor, added in v2.3-RC2)_</li><li>`plug_in_hybrid` _(Powered by combined combustion engine and battery-powered motor with plug-in charging, added in v2.3-RC2)_</li><li>`hydrogen_fuel_cell` _(Powered by hydrogen fuel cell powered electric motor, added in v2.3-RC2)_</li></ul> This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/main/general-information.md#propulsion-types).
 \- `eco_label`<br/>*(added in v2.3-RC2)* | OPTIONAL | Array | Vehicle air quality certificate. Official anti-pollution certificate, based on the information on the vehicle's registration certificate, attesting to its level of pollutant emissions based on a defined standard. In Europe, for example, it is the European emission standard. The aim of this measure is to encourage the use of the least polluting vehicles by allowing them to drive during pollution peaks or in low emission zones.<br /><br />Each element in the array is an object with the keys below.
 &emsp;\-&nbsp; `country_code`<br/>*(added in v2.3-RC2)*| Conditionally REQUIRED | Country code | REQUIRED if `eco_label` is defined. Country where the `eco_sticker` applies.
 &emsp;\-&nbsp; `eco_sticker`<br/>*(added in v2.3-RC2)* | Conditionally REQUIRED | String | REQUIRED if `eco_label` is defined. Name of the eco label. The name must be written in lowercase, separated by an underscore.<br /><br />Example of `eco_sticker` in Europe :<ul><li>CritAirLabel (France) <ul><li>critair</li><li>critair_1</li><li>critair_2</li><li>critair_3</li><li>critair_4</li><li>critair_5</li></ul></li><li>UmweltPlakette (Germany)<ul><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li><li>euro_6</li><li>euro_6_temp</li><li>euro_E</li></ul></li><li>UmweltPickerl (Austrich)<ul><li>euro_1</li><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li></ul><li>Reg_certificates (Belgium)<ul><li>reg_certificates</li></ul><li>Distintivo_ambiental (Spain)<ul><li>0</li><li>eco</li><li>b</li><li>c</li></ul></li></ul>
@@ -462,13 +460,13 @@ Field Name | REQUIRED | Type | Defines
 \- `vehicle_assets`<br/>*(added in v2.3-RC)*| OPTIONAL | Object | An object where each key defines one of the items listed below.
 &emsp;&emsp;\- `icon_url`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | URL | REQUIRED if `vehicle_assets` is defined. A fully qualified URL pointing to the location of a graphic icon file that MAY be used to represent this vehicle type on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
 &emsp;&emsp;\- `icon_url_dark`<br/>*(added in v2.3-RC)*| OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type when in dark mode on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
-&emsp;&emsp;\- `icon_last_modified`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | Date | REQUIRED if `icon_url`  and/or `icon_url_dark` is defined. Date that indicates the last time any included vehicle icon images were modified or updated. 
-\- `default_pricing_plan_id`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | ID | REQUIRED if both `system_pricing_plans.json` and `vehicle_types.json` are defined. A `plan_id`, as defined in `system_pricing_plans.json`, that identifies a default pricing plan for this vehicle to be used by trip planning applications for purposes of calculating the cost of a single trip using this vehicle type. This default pricing plan is superseded by `pricing_plan_id` when `pricing_plan_id` is defined in `vehicle_status.json` Publishers SHOULD define `default_pricing_plan_id` first and then override it using `pricing_plan_id` in `vehicle_status.json` when necessary.
+&emsp;&emsp;\- `icon_last_modified`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | Date | REQUIRED if `vehicle_assets` is defined. Date that indicates the last time any included vehicle icon images were modified or updated. 
+\- `default_pricing_plan_id`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | ID | REQUIRED if `system_pricing_plans.json` is defined. A `plan_id`, as defined in `system_pricing_plans.json`, that identifies a default pricing plan for this vehicle to be used by trip planning applications for purposes of calculating the cost of a single trip using this vehicle type. This default pricing plan is superseded by `pricing_plan_id` when `pricing_plan_id` is defined in `vehicle_status.json` Publishers SHOULD define `default_pricing_plan_id` first and then override it using `pricing_plan_id` in `vehicle_status.json` when necessary.
 \- `pricing_plan_ids`<br/>*(added in v2.3-RC)* | OPTIONAL | Array | Array of all pricing plan IDs, as defined in `system_pricing_plans.json`, that are applied to this vehicle type. <br /><br />This array SHOULD be published when there are multiple pricing plans defined in `system_pricing_plans.json` that apply to a single vehicle type.
 
-##### Example:
+**Example:**
 
-```jsonc
+```json
 {
   "last_updated": 1640887163,
   "ttl": 0,
@@ -613,9 +611,9 @@ Field Name | REQUIRED | Type | Defines
 &emsp;\-&nbsp;`ios` | OPTIONAL | URI | URI that can be used on iOS to launch the rental app for this station. More information on this iOS feature can be found [here](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/communicating_with_other_apps_using_custom_urls?language=objc). Please use iOS Universal Links (https://developer.apple.com/ios/universal-links/) if possible so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this station, and SHOULD NOT be a general rental page that includes information for more than one station.  The deep link SHOULD take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking is not supported in the native iOS rental app. <br><br>Note that the URI does not necessarily include the `station_id` for this station - other identifiers can be used by the rental app within the URI to uniquely identify this station. <br><br>See the [Analytics](#analytics) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>iOS Universal Links example value: `https://www.example.com/app?sid=1234567890&platform=ios` <br><br>Deep Link (without Universal Links) example value: `com.example.ios://open.example.app/app?sid=1234567890`
 &emsp;\-&nbsp;`web` | OPTIONAL | URL | URL that can be used by a web browser to show more information about renting a vehicle at this station. <br><br>This URL SHOULD be a deep link specific to this station, and SHOULD NOT be a general rental page that includes information for more than one station.  The deep link SHOULD take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking is not supported for web browsers. <br><br>Example value: `https://www.example.com/app?sid=1234567890`
 
-##### Example 1: Physical station with limited hours of operation
+**Example 1: Physical station with limited hours of operation**
 
-```jsonc
+```json
 {
   "last_updated": 1640887163,
   "ttl": 0,
@@ -648,9 +646,9 @@ Field Name | REQUIRED | Type | Defines
 }
 ```
 
-##### Example 2: Virtual station
+**Example 2: Virtual station**
 
-```jsonc
+```json
 {
   "last_updated": 1640887163,
   "ttl": 0,
@@ -734,9 +732,9 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`is_returning` | Yes | Boolean | Is the station accepting vehicle returns? <br /><br />`true` - Station is accepting vehicle returns. Even if the station is full, if it would otherwise allow vehicle returns, this value MUST be `true`.<br /> `false` - Station is not accepting vehicle returns.<br/><br/>If the station is temporarily taken out of service and not allowing vehicle returns, this field MUST be set to `false`.<br/><br/>If a station becomes inaccessible to users due to road construction or other factors, this field SHOULD be set to `false`.
 \-&nbsp;`last_reported` | Yes | Timestamp | The last time this station reported its status to the operator's backend.
 
-##### Example:
+**Example:**
 
-```jsonc
+```json
 {
   "last_updated": 1640887163,
   "ttl": 0,
@@ -837,10 +835,9 @@ Field Name | REQUIRED | Type | Defines
 \- `available_until`<br/>*(added in v2.3-RC2)* | OPTIONAL |  Datetime | The date and time when any rental of the vehicle must be completed. The vehicle must be returned and made available for the next user by this time. If this field is empty, it indicates that the vehicle is available indefinitely.<br /><br /> This field SHOULD be published by carsharing or other mobility systems where vehicles can be booked in advance for future travel.
 
 
-##### Example 1: Micromobility
+**Example 1: Micromobility**
 
-
-```jsonc
+```json
 {
   "last_updated":1640887163,
   "ttl":0,
@@ -867,16 +864,17 @@ Field Name | REQUIRED | Type | Defines
         "is_disabled":false,
         "vehicle_type_id":"def456",
         "current_range_meters":6543.0,
-        "station_id":86,
+        "station_id":"86",
         "pricing_plan_id":"plan3"
       }
     ]
   }
 }
 ```
-##### Example 2: Carsharing
 
-```jsonc
+**Example 2: Carsharing**
+
+```json
 
  {
   "last_updated": 1640887163,
@@ -938,9 +936,9 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`region_id` | Yes | ID | Identifier for the region.
 \-&nbsp;`name` | Yes | String | Public name for this region.
 
-##### Example:
+**Example:**
 
-```jsonc
+```json
 {
   "last_updated": 1640887163,
   "ttl": 86400,
@@ -995,11 +993,11 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`surge_pricing` <br/>*(added in v2.2)* | OPTIONAL | Boolean | Is there currently an increase in price in response to increased demand in this pricing plan? If this field is empty, it means there is no surge pricing in effect.<br /><br />`true` - Surge pricing is in effect.<br />  `false` - Surge pricing is not in effect.
 
 
-##### Example 1:
+**Example 1:**
 
 The user does not pay more than the base price for the first 10 km. After 10 km the user pays $1 per km. After 25 km the user pays $0.50 per km and an additional $3 every 5 km, the extension price, in addition to $0.50 per km.
 
-```jsonc
+```json
 {
   "last_updated": 1640887163,
   "ttl": 0,
@@ -1037,11 +1035,11 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 }
 ```
 
-##### Example 2:
+**Example 2:**
 
 This example demonstrates a pricing scheme that has a rate both by minute and by km. The user is charged $0.25 per km as well as $0.50 per minute. Both of these rates happen concurrently and are not dependent on one another.
 
-```jsonc
+```json
 {
   "last_updated": 1640887163,
   "ttl": 0,
@@ -1095,9 +1093,9 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`description` | OPTIONAL | String | Detailed description of the alert.
 \-&nbsp;`last_updated` | OPTIONAL | Timestamp | Indicates the last time the info for the alert was updated.
 
-##### Example:
+**Example:**
 
-```jsonc
+```json
 {
   "last_updated": 1604519393,
   "ttl": 60,
@@ -1152,9 +1150,9 @@ Field Name | REQUIRED | Type | Defines
 &emsp;&emsp;&emsp;\-&nbsp;`maximum_speed_kph` | OPTIONAL | Non-negative Integer | What is the maximum speed allowed, in kilometers per hour? <br /><br /> If there is no maximum speed to observe, this can be omitted.
 &emsp;&emsp;&emsp;\-&nbsp;`station_parking`<br/>*(added in v2.3-RC2)* | OPTIONAL | Boolean | Can vehicles only be parked at stations defined in `station_information.json` within this geofence zone? <br /><br />`true` - Vehicles can only be parked at stations.  <br /> `false` - Vehicles may be parked outside of stations.
 
-##### Example:
+**Example:**
 
-```jsonc
+```json
 {
   "last_updated": 1640887163,
   "ttl": 60,
@@ -1267,11 +1265,11 @@ Other supported parameters include:
 
 #### Deep links Examples 
 
-##### Example 1 - App Links on Android and Universal Links on iOS are supported:
+**Example 1 - App Links on Android and Universal Links on iOS are supported:**
 
-##### *system_information.json*
+***system_information.json***
 
-```jsonc
+```json
 {
   "last_updated": 1640887163,
   "ttl": 60,
@@ -1293,9 +1291,9 @@ Other supported parameters include:
 }
 ```
 
-##### *station_information.json*
+***station_information.json***
 
-```jsonc
+```json
 {
   "last_updated": 1640887163,
   "ttl": 60,
@@ -1319,11 +1317,11 @@ Other supported parameters include:
 
 Note that the Android URI and iOS Universal Link URLs do not necessarily use the same identifier as the `station_id`.
 
-##### Example 2 - App Links are not supported on Android and Universal Links are not supported on iOS, but deep links are still supported on Android and iOS:
+**Example 2 - App Links are not supported on Android and Universal Links are not supported on iOS, but deep links are still supported on Android and iOS:**
 
-##### *system_information.json*
+***system_information.json***
 
-```jsonc
+```json
 {
   "last_updated": 1572447999,
   "ttl": 60,
@@ -1336,7 +1334,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
     "rental_apps": {
       "android": {
         "discovery_uri": "com.example.android://",
-        "store_uri": "https://play.google.com/store/apps/details?id=com.example.android",
+        "store_uri": "https://play.google.com/store/apps/details?id=com.example.android"
       },
       "ios": {
         "store_uri": "https://apps.apple.com/app/apple-store/id123456789",
@@ -1347,9 +1345,9 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 }
 ```
 
-##### *station_information.json*
+***station_information.json***
 
-```jsonc
+```json
 {
   "last_updated": 1609866247,
   "ttl": 60,
@@ -1371,11 +1369,11 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 }
 ```
 
-##### Example 3 - Deep link web URLs are supported, but not Android or iOS native apps:
+**Example 3 - Deep link web URLs are supported, but not Android or iOS native apps:**
 
-##### *station_information.json*
+***station_information.json***
 
-```jsonc
+```json
 {
   "last_updated": 1609866247,
   "ttl": 60,
