@@ -392,7 +392,7 @@ Field Name | REQUIRED | Type | Defines
     "name": "Example Bike Rental",
     "short_name": "Example Bike",
     "operator": "Example Sharing, Inc",
-    "opening_hours": "Apr 1 - Nov 3 00:00-24:00",
+    "opening_hours": "Apr 1-Nov 3 00:00-24:00",
     "start_date": "2010-06-10",
     "url": "https://www.example.com",
     "purchase_url": "https://www.example.com",
@@ -506,8 +506,8 @@ Field Name | REQUIRED | Type | Defines
           "icon_url_dark": "https://www.example.com/assets/icon_cargobicycle_dark.svg",
           "icon_last_modified": "2021-06-15"
         },
-        "default_pricing_plan": "cargo_plan_1",
-        "pricing_plans": [
+        "default_pricing_plan_id": "cargo_plan_1",
+        "pricing_plans_ids": [
           "cargo_plan_1",
           "cargo_plan_2",
           "cargo_plan_3"
@@ -535,7 +535,7 @@ Field Name | REQUIRED | Type | Defines
         "vehicle_type_id": "car1",
         "form_factor": "car",
         "rider_capacity": 5,
-        "min_cargo_volume_capacity": 200,
+        "cargo_volume_capacity": 200,
         "propulsion_type": "combustion_diesel",
         "eco_label": [
           {
@@ -832,8 +832,8 @@ Field Name | REQUIRED | Type | Defines
       {
         "vehicle_id":"973a5c94-c288-4a2b-afa6-de8aeb6ae2e5",
         "last_reported":1609866109,
-        "lat":12.34,
-        "lon":56.78,
+        "lat":12.345678,
+        "lon":56.789012,
         "is_reserved":false,
         "is_disabled":false,
         "vehicle_type_id":"abc123",
@@ -877,7 +877,7 @@ Field Name | REQUIRED | Type | Defines
         "vehicle_type_id":"abc123",
         "current_range_meters":400000.0,
         "available_until":"2021-05-17T15:00:00Z",
-        "home_station":"station1",
+        "home_station_id":"station1",
         "vehicle_equipment":[
           "child_seat_a",
           "winter_tires"
