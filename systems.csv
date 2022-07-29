@@ -166,6 +166,7 @@ DK,Donkey Republic Rødvig,"Rødvig, DK",donkey_roedvig,https://www.donkey.bike/
 DK,Donkey Republic Store Heddinge,"Store Heddinge, DK",donkey_store_heddinge,https://www.donkey.bike/cities/bike-rental-store-heddinge/,https://stables.donkey.bike/api/public/gbfs/2/donkey_store_heddinge/gbfs.json
 ES,Alcala de Henares,"Alcalá de Henares, ES",Link_Alcala_de_Henares,https://www.link.city,https://mds.linkyour.city/gbfs/es_alcala_de_henares/gbfs.json
 ES,BBK Klimabizi,"Urdaibai, ES",nextbike_ey,https://www.nextbike.es/es/bbkklima/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ey/gbfs.json
+ES,bicicoruna,"A Coruna, ES",acoruna,https://www.bicicoruna.es,https://acoruna.publicbikesystem.net/customer/gbfs/v2/gbfs.json
 ES,BiciMAD (unofficial),"Madrid, ES",bici_madrid,https://www.bicimad.com/,https://gbfs.bici.madrid/gbfs.json
 ES,Bicing,"Barcelona, ES",bike_barcelona,https://www.bicing.barcelona/,https://barcelona.publicbikesystem.net/ube/gbfs/v1/
 ES,Bilbaobizi (Bilbao),"Bilbao, ES",nextbike_bo,https://www.bilbaobizi.bilbao.eus/eu/bilbao/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bo/gbfs.json
