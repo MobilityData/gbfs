@@ -370,6 +370,8 @@ IT,Rome,"Rome, IT",Link_Rome,https://www.link.city,https://mds.linkyour.city/gbf
 IT,Teramo,"Teramo, IT",Link_Teramo,https://www.link.city,https://mds.linkyour.city/gbfs/it_teramo/gbfs.json
 IT,Turin,"Turin, IT",Link_Turin,https://www.link.city,https://mds.linkyour.city/gbfs/it_turin/gbfs.json
 IT,Verona Bike,"Verona, IT",verona-bike,https://bikeverona.it/en,https://gbfs.urbansharing.com/bikeverona.it/gbfs.json
+JP,docomo bike share service,"Tokyo, JP",docomo-cycle-tokyo,https://docomo-cycle.jp/,https://api-public.odpt.org/api/v4/gbfs/docomo-cycle-tokyo/gbfs.json
+JP,HELLO CYCLING　-どこでも借りられて好きな場所で返せる自転車シェア,"Tokyo, JP",hellocycling,https://www.hellocycling.jp,https://api-public.odpt.org/api/v4/gbfs/hellocycling/gbfs.json
 LI,Donkey Republic Liechtenstein,Liechtenstein,donkey_li,https://www.donkey.bike/cities/,https://stables.donkey.bike/api/public/gbfs/2/donkey_li/gbfs.json
 LV,nextbike LV,"Rīga, LV",nextbike_lv,https://www.nextbike.lv/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_lv/gbfs.json
 MC,MonaBike,"Monaco, MC",mona_bike,https://monabike.mc/,https://monaco.publicbikesystem.net/ube/gbfs/v1/
