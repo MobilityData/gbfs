@@ -35,20 +35,20 @@ MobiltyData has compiled a [project roadmap](https://github.com/NABSA/gbfs/wiki/
 ## Current Version *(Recommended)* 
 |   Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
 |:---:|:---:|---|---|---| ---|
-| [v2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md) | MINOR  | March 19, 2021 | :white_check_mark: &nbsp; *Current Version*  | [v2.2 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v2.2)| [v2.2 Article](https://mobilitydata.org/cities-gbfs-v2-2-is-here-for-you/) |
+| [v2.3](https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md) | MINOR  | April 5, 2022 | :white_check_mark: &nbsp; *Current Version*  | [v2.3 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.3) |  |
+
 
 ### Upcoming MAJOR Version 
 |   Version | Type  | Release Target |  Status |
 |---|:---:|---|---|
-| [v3.0-Draft](https://github.com/NABSA/gbfs/blob/master/gbfs.md) |  MAJOR |  Q1/Q2, 2022 | :construction: &nbsp;  *In Development* |
+| [v3.0-Draft](https://github.com/NABSA/gbfs/blob/master/gbfs.md) |  MAJOR |  Q2/Q3, 2022 | :construction: &nbsp;  *In Development* |
 
-### Release Candidates
+### Release Candidates 
 Release Candidates will receive *Current Version* status when they have been fully implemented in public feeds.
 
 |  Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
 |:---:|:---:|---|---|---|---|
-|  [v2.3-RC2](https://github.com/NABSA/gbfs/blob/v2.3-RC2/gbfs.md) | MINOR  | January 31, 2021 | :white_check_mark: &nbsp; *Release Candidate<br /> (Ready for implementation)*  | [v2.3-RC2 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.3-RC2) | *coming soon* |
-|  [v2.3-RC](https://github.com/NABSA/gbfs/blob/v2.3-RC/gbfs.md) | MINOR  | September 8, 2021 |  *superseded by v2.3-RC2*  | [v2.3-RC Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v3.0.1/v2.3-RC) | [v2.3-RC Article](https://mobilitydata.org/gbfs-v2-3-rc-is-here-to-fix-some-of-your-problems/) |
+|*No current release candidates* | | | | | |
 
 ### Past Version Releases 
 Past versions with *Supported* status MAY be patched to correct bugs or vulnerabilities but new features will not be introduced.<br />
@@ -56,35 +56,35 @@ Past  versions with *Deprecated* status will not be patched and their use SHOULD
 
 |  Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
 |:---:|:---:|---|---|---|---|
-|  [v2.1](https://github.com/NABSA/gbfs/blob/v2.1/gbfs.md) | MINOR  | March 18, 2021 |:white_check_mark: &nbsp; *Supported*  | [v2.1 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v2.1)| [v2.1 Article](https://mobilitydata.org/gbfs-now-fully-supports-dockless-systems-%f0%9f%9b%b4%f0%9f%91%8f/)
-|  [v2.0](https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md) | MAJOR  | March 16, 2020 | :white_check_mark: &nbsp;  *Supported*  | [v2.0 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v2.0) | [v2.0 Article](https://mobilitydata.org/whats-new-in-gbfs-v2-0-%f0%9f%9a%b2%f0%9f%9b%b4/) |
-|  [v1.1](https://github.com/NABSA/gbfs/blob/v1.1/gbfs.md) | MINOR | March 16, 2020 |:white_check_mark: &nbsp; *Supported*  | [v1.1 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v1.1) | |
-|  [v1.0](https://github.com/NABSA/gbfs/blob/v1.0/gbfs.md) | MAJOR  | Prior to October 2019 | :x: &nbsp; *Deprecated*  | [v1.0 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/v1.0)| |
+|  [v2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md) | MINOR  | March 19, 2021 |:white_check_mark: &nbsp; *Supported*  | [v2.2 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.2)| [v2.2 Article](https://mobilitydata.org/cities-gbfs-v2-2-is-here-for-you/)
+|  [v2.1](https://github.com/NABSA/gbfs/blob/v2.1/gbfs.md) | MINOR  | March 18, 2021 |:white_check_mark: &nbsp; *Supported*  | [v2.1 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.1)| [v2.1 Article](https://mobilitydata.org/gbfs-now-fully-supports-dockless-systems-%f0%9f%9b%b4%f0%9f%91%8f/)
+|  [v2.0](https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md) | MAJOR  | March 16, 2020 | :white_check_mark: &nbsp;  *Supported*  | [v2.0 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.0) | [v2.0 Article](https://mobilitydata.org/whats-new-in-gbfs-v2-0-%f0%9f%9a%b2%f0%9f%9b%b4/) |
+|  [v1.1](https://github.com/NABSA/gbfs/blob/v1.1/gbfs.md) | MINOR | March 16, 2020 |:white_check_mark: &nbsp; *Supported*  | [v1.1 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v1.1) | |
+|  [v1.0](https://github.com/NABSA/gbfs/blob/v1.0/gbfs.md) | MAJOR  | Prior to October 2019 | :x: &nbsp; *Deprecated*  | [v1.0 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v1.0)| |
  
 ### Full Version History 
 The complete GBFS version history is available on the [wiki](https://github.com/NABSA/gbfs/wiki/Complete-Version-History).
 
 ## Specification Versioning
-To enable the evolution of GBFS, including changes that would otherwise break backwards-compatibility with consuming applications, GBFS documentation is versioned. Semantic versions are established by a git tag in the form of `vX.Y` where `X.Y` is the version name. Multiple changes (commits) may be batched into a single new release.
-
-A whole integer increase is used for breaking changes (MAJOR changes). A decimal increase is used for non-breaking changes (MINOR changes or patches).
+To enable the evolution of GBFS, including changes that would otherwise break backwards-compatibility with consuming applications, GBFS uses [semantic versioning](https://semver.org/).
+Semantic versions are established by a git tag in the form of `vX.Y` where `X.Y` is the version name. A whole integer increase is used for breaking changes (MAJOR changes). A decimal increase is used for non-breaking changes (MINOR changes or patches). MINOR versions may introduce new features as long as those changes are OPTIONAL and do not break backwards compatibility.
 
 Examples of breaking changes include:
 
-* Adding or removing a required endpoint or field
-* Changing the data type or semantics of an existing field
+* Changes to requirements, like adding or removing a REQUIRED endpoint or field, or changing an OPTIONAL endpoint or field to REQUIRED.
+* Changing the data type or semantics of an existing field.
 
 Examples of non-breaking changes include:
 
-* Adding or removing an optional endpoint or field
-* Adding or removing enum values
-* Modifying documentation or spec language in a way that clarifies semantics or recommended practices
+* Adding an OPTIONAL endpoint or field
+* Adding new enum values
+* Modifying documentation or specification language in a way that clarifies semantics or recommended practices
 
 
 #### Version Release Cycles - Release Deprecation
-- There is no strict limitation on the frequency of MAJOR releases, but the GBFS community aims to limit MAJOR releases to 2 or fewer in a 12 month period. To limit releases, multiple breaking changes SHOULD be batched together in a single release.
--  There is no guideline to limit the number of MINOR releases. MINOR changes may be applied at any time. MINOR changes MAY be batched together in single release or released immediately, based on the needs of the community.
-- GBFS documentation will include a list of current and supported MAJOR and MINOR versions. Supported versions SHALL NOT span more than two MAJOR versions. Past versions that are beyond the two most recent MAJOR versions will be deprecated 180 days after the latest MAJOR version becomes official.
+* There is no strict limitation on the frequency of MAJOR releases, but the GBFS community aims to limit MAJOR releases to no more than one a 12 month period. To limit releases, multiple breaking changes SHOULD be batched together in a single release.
+* There is no guideline to limit the number of MINOR releases. MINOR changes may be applied at any time. MINOR changes MAY be batched together in single release or released immediately, based on the needs of the community.
+* GBFS documentation will include a list of current and supported MAJOR and MINOR versions. Supported versions SHALL NOT span more than two MAJOR versions. Past versions that are beyond the two most recent MAJOR versions will be deprecated 180 days after the latest MAJOR version becomes official.
 ## Governance & Overview of the Change Process
 GBFS is an open specification, developed and maintained by the community of producers and consumers of GBFS data.
 The specification is not fixed or unchangeable. As the shared mobility industry evolves, it is expected that the specification will be extended by the GBFS community to include new features and capabilities over time. If you are new to engaging with the community on this repository, firstly welcome! Please identify which organization you represent when posting. 
@@ -148,7 +148,7 @@ Auto-Discovery URL | Yes | URL for the system's `gbfs.json` auto-discovery file.
 ## GBFS JSON Schemas
 Complete JSON schemas for each version of GBFS can be found [here](https://github.com/MobilityData/gbfs-json-schema).
 ## GBFS and Other Shared Mobility Resources
-Including APIs, datasets, validators, research, and software can be found [here](https://github.com/NABSA/micromobility-tools-and-resources).
+Including APIs, datasets, validators, research, and software can be found [here](https://gbfs.mobilitydata.org/toolbox/resources/).
 ## Relationship Between GBFS and MDS
 There are many similarities between GBFS and [MDS](https://github.com/openmobilityfoundation/mobility-data-specification) (Mobility Data Specification), however, their intended use cases are different. GBFS is a real-time or near real-time specification for public data primarily intended to provide transit advice through consumer-facing applications. MDS is not public data and is intended for use only by mobility regulators. Publishing a public GBFS feed is a [requirement](https://github.com/openmobilityfoundation/mobility-data-specification#gbfs-requirement) of all MDS compatible *Provider* APIs.
 ## Copyright

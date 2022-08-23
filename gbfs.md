@@ -6,7 +6,7 @@ This document explains the types of files and data that comprise the General Bik
 
 This documentation refers to **v3.0-Draft (future version)**.
 
-**For the current version see [**version 2.2**](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md).** For past and upcoming versions see the [README](README.md#read-the-spec--version-history).
+**For the current version see [**version 2.3**](https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md).** For past and upcoming versions see the [README](README.md#current-version-recommended).
 
 ## Terminology
 
@@ -392,11 +392,10 @@ Field Name | REQUIRED | Type | Defines
     "name": "Example Bike Rental",
     "short_name": "Example Bike",
     "operator": "Example Sharing, Inc",
-    "opening_hours": "Apr 1 - Nov 3 00:00-24:00",
+    "opening_hours": "Apr 1-Nov 3 00:00-24:00",
     "start_date": "2010-06-10",
     "url": "https://www.example.com",
     "purchase_url": "https://www.example.com",
-    "start_date": "2010-06-10",
     "phone_number": "+18005551234",
     "email": "customerservice@example.com",
     "feed_contact_email": "datafeed@example.com",
@@ -409,7 +408,7 @@ Field Name | REQUIRED | Type | Defines
     "rental_apps": {
       "android": {
         "discovery_uri": "com.example.android://",
-        "store_uri": "https://play.google.com/store/apps/details?id=com.example.android",
+        "store_uri": "https://play.google.com/store/apps/details?id=com.example.android"
       },
       "ios": {
         "store_uri": "https://apps.apple.com/app/apple-store/id123456789",
@@ -437,14 +436,14 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `vehicle_types` | Yes | Array | Array that contains one object per vehicle type in the system as defined below.
 \- `vehicle_type_id` | Yes | ID | Unique identifier of a vehicle type. See [Field Types](#field-types) above for ID field requirements.
-\- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`cargo_bicycle`</li><li>`car`</li><li>`moped`</li><li>`scooter_standing` (standing kick scooter)</li><li>`scooted_seated` (this is a kick scooter with a seat, not to be confused with `moped`)</li><li>`other`</li></ul>
+\- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`cargo_bicycle` *(added in v2.3-RC2)*</li><li>`car`</li><li>`moped`</li><li>`scooter_standing` *(standing kick scooter, added in v2.3-RC2)*</li><li>`scooted_seated` *(this is a kick scooter with a seat, not to be confused with `moped`, added in v2.3-RC2)*</li><li>`other`</li></ul>
 \- `rider_capacity`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative integer | The number of riders (driver included) the vehicle can legally accommodate.
 \- `cargo_volume_capacity`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative integer | Cargo volume available in the vehicle, expressed in liters. For cars, it corresponds to the space between the boot floor, including the storage under the hatch, to the rear shelf in the trunk.
 \- `cargo_load_capacity`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative integer | The capacity of the vehicle cargo space (excluding passengers), expressed in kilograms.
-\- `propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides electric motor assist only in combination with human propulsion - no throttle mode)_</li><li>`electric` _(Powered by battery-powered electric motor with throttle mode)_</li><li>`combustion` _(Powered by gasoline combustion engine)_</li><li>`combustion_diesel` _(Powered by diesel combustion engine)_</li><li>`hybrid` _(Powered by combined combustion engine and battery-powered motor)_</li><li>`plug_in_hybrid` _(Powered by combined combustion engine and battery-powered motor with plug-in charging)_</li><li>`hydrogen_fuel_cell` _(Powered by hydrogen fuel cell powered electric motor)_</li></ul> This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/main/general-information.md#propulsion-types).
+\- `propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides electric motor assist only in combination with human propulsion - no throttle mode)_</li><li>`electric` _(Powered by battery-powered electric motor with throttle mode)_</li><li>`combustion` _(Powered by gasoline combustion engine)_</li><li>`combustion_diesel` _(Powered by diesel combustion engine, added in v2.3-RC2)_</li><li>`hybrid` _(Powered by combined combustion engine and battery-powered motor, added in v2.3-RC2)_</li><li>`plug_in_hybrid` _(Powered by combined combustion engine and battery-powered motor with plug-in charging, added in v2.3-RC2)_</li><li>`hydrogen_fuel_cell` _(Powered by hydrogen fuel cell powered electric motor, added in v2.3-RC2)_</li></ul> This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/main/general-information.md#propulsion-types).
 \- `eco_label`<br/>*(added in v2.3-RC2)* | OPTIONAL | Array | Vehicle air quality certificate. Official anti-pollution certificate, based on the information on the vehicle's registration certificate, attesting to its level of pollutant emissions based on a defined standard. In Europe, for example, it is the European emission standard. The aim of this measure is to encourage the use of the least polluting vehicles by allowing them to drive during pollution peaks or in low emission zones.<br /><br />Each element in the array is an object with the keys below.
 &emsp;\-&nbsp; `country_code`<br/>*(added in v2.3-RC2)*| Conditionally REQUIRED | Country code | REQUIRED if `eco_label` is defined. Country where the `eco_sticker` applies.
-&emsp;\-&nbsp; `eco_sticker`<br/>*(added in v2.3-RC2)* | Conditionally REQUIRED | String | REQUIRED if `eco_label` is defined. Name of the eco label. The name must be written in lowercase, separated by an underscore.<br /><br />Example of `eco_sticker` in Europe :<ul><li>CritAirLabel (France) <ul><li>critair</li><li>critair_1</li><li>critair_2</li><li>critair_3</li><li>critair_4</li><li>critair_5</li></ul></li><li>UmweltPlakette (Germany)<ul><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li><li>euro_6</li><li>euro_6_temp</li><li>euro_E</li></ul></li><li>UmweltPickerl (Austrich)<ul><li>euro_1</li><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li></ul><li>Reg_certificates (Belgium)<ul><li>reg_certificates</li></ul><li>Distintivo_ambiental (Spain)<ul><li>0</li><li>eco</li><li>b</li><li>c</li></ul></li></ul>
+&emsp;\-&nbsp; `eco_sticker`<br/>*(added in v2.3-RC2)* | Conditionally REQUIRED | String | REQUIRED if `eco_label` is defined. Name of the eco label. The name must be written in lowercase, separated by an underscore.<br /><br />Example of `eco_sticker` in Europe :<ul><li>CritAirLabel (France) <ul><li>critair</li><li>critair_1</li><li>critair_2</li><li>critair_3</li><li>critair_4</li><li>critair_5</li></ul></li><li>UmweltPlakette (Germany)<ul><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li><li>euro_6</li><li>euro_6_temp</li><li>euro_E</li></ul></li><li>UmweltPickerl (Austria)<ul><li>euro_1</li><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li></ul><li>Reg_certificates (Belgium)<ul><li>reg_certificates</li></ul><li>Distintivo_ambiental (Spain)<ul><li>0</li><li>eco</li><li>b</li><li>c</li></ul></li></ul>
 \- `max_range_meters` | Conditionally REQUIRED | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is REQUIRED. This represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example, a full battery or full tank of gas).
 \- `name` | OPTIONAL | String | The public name of this vehicle type.
 \- `vehicle_accessories`<br/>*(added in v2.3-RC2)* | OPTIONAL | Array | Description of accessories available in the vehicle.  These accessories are part of the vehicle and are not supposed to change frequently. Current valid values are:<ul><li>`air_conditioning` _(Vehicle has air conditioning)_</li><li>`automatic` _(Automatic gear switch)_</li><li>`manual` _(Manual gear switch)_</li><li>`convertible` _(Vehicle is convertible)_</li><li>`cruise_control` _(Vehicle has a cruise control system ("Tempomat"))_</li><li>`doors_2` _(Vehicle has 2 doors)_</li><li>`doors_3` _(Vehicle has 3 doors)_</li><li>`doors_4` _(Vehicle has 4 doors)_</li><li>`doors_5` _(Vehicle has 5 doors)_</li><li>`navigation` _(Vehicle has a built-in navigation system)_</li></ul>
@@ -461,7 +460,7 @@ Field Name | REQUIRED | Type | Defines
 \- `vehicle_assets`<br/>*(added in v2.3-RC)*| OPTIONAL | Object | An object where each key defines one of the items listed below.
 &emsp;&emsp;\- `icon_url`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | URL | REQUIRED if `vehicle_assets` is defined. A fully qualified URL pointing to the location of a graphic icon file that MAY be used to represent this vehicle type on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
 &emsp;&emsp;\- `icon_url_dark`<br/>*(added in v2.3-RC)*| OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type when in dark mode on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
-&emsp;&emsp;\- `icon_last_modified`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | Date | REQUIRED if `icon_url`  and/or `icon_url_dark` is defined. Date that indicates the last time any included vehicle icon images were modified or updated. 
+&emsp;&emsp;\- `icon_last_modified`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | Date | REQUIRED if `vehicle_assets` is defined. Date that indicates the last time any included vehicle icon images were modified or updated. 
 \- `default_pricing_plan_id`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | ID | REQUIRED if `system_pricing_plans.json` is defined. A `plan_id`, as defined in `system_pricing_plans.json`, that identifies a default pricing plan for this vehicle to be used by trip planning applications for purposes of calculating the cost of a single trip using this vehicle type. This default pricing plan is superseded by `pricing_plan_id` when `pricing_plan_id` is defined in `vehicle_status.json` Publishers SHOULD define `default_pricing_plan_id` first and then override it using `pricing_plan_id` in `vehicle_status.json` when necessary.
 \- `pricing_plan_ids`<br/>*(added in v2.3-RC)* | OPTIONAL | Array | Array of all pricing plan IDs, as defined in `system_pricing_plans.json`, that are applied to this vehicle type. <br /><br />This array SHOULD be published when there are multiple pricing plans defined in `system_pricing_plans.json` that apply to a single vehicle type.
 
@@ -507,8 +506,8 @@ Field Name | REQUIRED | Type | Defines
           "icon_url_dark": "https://www.example.com/assets/icon_cargobicycle_dark.svg",
           "icon_last_modified": "2021-06-15"
         },
-        "default_pricing_plan": "cargo_plan_1",
-        "pricing_plans": [
+        "default_pricing_plan_id": "cargo_plan_1",
+        "pricing_plans_ids": [
           "cargo_plan_1",
           "cargo_plan_2",
           "cargo_plan_3"
@@ -536,7 +535,7 @@ Field Name | REQUIRED | Type | Defines
         "vehicle_type_id": "car1",
         "form_factor": "car",
         "rider_capacity": 5,
-        "min_cargo_volume_capacity": 200,
+        "cargo_volume_capacity": 200,
         "propulsion_type": "combustion_diesel",
         "eco_label": [
           {
@@ -833,8 +832,8 @@ Field Name | REQUIRED | Type | Defines
       {
         "vehicle_id":"973a5c94-c288-4a2b-afa6-de8aeb6ae2e5",
         "last_reported":1609866109,
-        "lat":12.34,
-        "lon":56.78,
+        "lat":12.345678,
+        "lon":56.789012,
         "is_reserved":false,
         "is_disabled":false,
         "vehicle_type_id":"abc123",
@@ -878,7 +877,7 @@ Field Name | REQUIRED | Type | Defines
         "vehicle_type_id":"abc123",
         "current_range_meters":400000.0,
         "available_until":"2021-05-17T15:00:00Z",
-        "home_station":"station1",
+        "home_station_id":"station1",
         "vehicle_equipment":[
           "child_seat_a",
           "winter_tires"
@@ -1320,7 +1319,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
     "rental_apps": {
       "android": {
         "discovery_uri": "com.example.android://",
-        "store_uri": "https://play.google.com/store/apps/details?id=com.example.android",
+        "store_uri": "https://play.google.com/store/apps/details?id=com.example.android"
       },
       "ios": {
         "store_uri": "https://apps.apple.com/app/apple-store/id123456789",
