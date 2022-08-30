@@ -1,5 +1,5 @@
 Country Code,Name,Location,System ID,URL,Auto-Discovery URL,Validation Report
-AE,Careem BIKE,"Dubai, AE",careem_bike,https://www.careem.com/en-ae/careem-bike/,https://dubai.publicbikesystem.net/customer/gbfs/v2/gbfs.json,https://gbfs-validator.netlify.app/?url=https%3A%2F%2Fdubai.publicbikesystem.net%2Fube%2Fgbfs%2Fv1%2F
+AE,Careem BIKE,"Dubai, AE",careem_bike,https://www.careem.com/en-ae/careem-bike/,https://dubai.publicbikesystem.net/customer/gbfs/v2/gbfs.json,https://gbfs-validator.netlify.app/?url=https%3A%2F%2Fdubai.publicbikesystem.net%2Fcustomer%2Fgbfs%2Fv2%2Fgbfs.json
 AR,Bike Nordelta,"Buenos Aires, AR",bike_nordelta,https://bikeitau.com.br/nordelta/,https://nordelta.publicbikesystem.net/ube/gbfs/v1/,https://gbfs-validator.netlify.app/?url=https%3A%2F%2Fnordelta.publicbikesystem.net%2Fube%2Fgbfs%2Fv1%2F
 AR,Ecobici,"Buenos Aires, AR",bike_buenosaires,https://www.buenosaires.gob.ar/ecobici,https://buenosaires.publicbikesystem.net/ube/gbfs/v1/,https://gbfs-validator.netlify.app/?url=https%3A%2F%2Fbuenosaires.publicbikesystem.net%2Fube%2Fgbfs%2Fv1%2F
 AR,MiBiciTuBici,"Rosario, Santa Fe, AR",biketobike,https://www.mibicitubici.gob.ar/,https://www.mibicitubici.gob.ar/opendata/gbfs.json,https://gbfs-validator.netlify.app/?url=https%3A%2F%2Fwww.mibicitubici.gob.ar%2Fopendata%2Fgbfs.json
