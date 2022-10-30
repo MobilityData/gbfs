@@ -23,6 +23,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 * [Field Types](#field-types)
 * [Files](#files)
     * [gbfs.json](#gbfsjson)
+    * [manifest.json](#manifestjson)
     * [gbfs_versions.json](#gbfs_versionsjson)
     * [system_information.json](#system_informationjson)
     * [vehicle_types.json](#vehicle_typesjson) *(added in v2.1)*
@@ -61,7 +62,8 @@ This section defines terms that are used throughout this document.
 
 File Name | REQUIRED | Defines
 ---|---|---
-gbfs.json | Yes <br/>*(as of v2.0)* | Auto-discovery file that links to all of the other files published by the system.
+gbfs.json | Yes <br/>*(as of v2.0)* | Auto-discovery file that links to the other files published for the system. To avoid circular references this file SHOULD NOT contain links to `manifest.json`.
+manifest.json | Conditionally REQUIRED | Required of any GBFS dataset provider that publishes more than one GBFS dataset. For example, if you publish one set of files for Berlin and a different set for Paris, this file is REQUIRED. A discovery file containing a comprehensive list of `gbfs.json` URLs for all GBFS datasets published by the provider.
 gbfs_versions.json | OPTIONAL | Lists all feed endpoints published according to versions of the GBFS documentation.
 system_information.json | Yes | Details including system operator, system location, year implemented, URL, contact info, time zone.
 vehicle_types.json <br/>*(added in v2.1)* | Conditionally REQUIRED | Describes the types of vehicles that System operator has available for rent. REQUIRED of systems that include information about vehicle types in the `vehicle_status` file. If this file is not included, then all vehicles in the feed are assumed to be non-motorized bicycles.
@@ -259,7 +261,7 @@ Field Name | REQUIRED | Type | Defines
 
 ### gbfs.json
 
-The `gbfs.json` discovery file SHOULD represent a single system or geographic area in which vehicles are operated. The location (URL) of the `gbfs.json` file SHOULD be made available to the public using the specification’s [auto-discovery](#auto-discovery) function.<br />The following fields are all attributes within the main `data` object for this feed.
+The `gbfs.json` discovery file SHOULD represent a single system or geographic area in which vehicles are operated. The location (URL) of the `gbfs.json` file SHOULD be made available to the public using the specification’s [auto-discovery](#auto-discovery) function. To avoild circular references, this file MUST NOT contain links to `manifest.json` files.<br />The following fields are all attributes within the main `data` object for this feed.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
@@ -303,7 +305,56 @@ Field Name | REQUIRED | Type | Defines
   }
 }
 ```
+### manifest.json
+An index of `gbfs.json` URLs for each GBFS data set produced by a publisher. A single instance of this file should be published at a single stable URL, for example: `https://example.com/gbfs/manifest.json`
 
+The following fields are all attributes within the main `data` object for this feed.
+
+Field Name | REQUIRED | Type | Defines
+---|---|---|---
+`datasets` | Yes | Array | An array containing
+\-&nbsp;`system_id` | Yes | ID | The `system_id` from `system_information.json` for the corresponding data set(s)                                                                                | 
+\-&nbsp;`versions` | Yes | Array | Contains one object, as defined below, for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number. 
+&emsp;&emsp;\-`version` | Yes | String | The semantic version of the feed in the form `X.Y`.                                                                                                         
+&emsp;&emsp;\-`url` | Yes  | URL | URL of the corresponding `gbfs.json` endpoint.
+
+```json
+{
+  "last_updated":1667004473,
+  "ttl":0,
+  "version":"3.0",
+  "data":{
+    "datasets":[
+      {
+        "system_id":"example_berlin",
+        "versions":[
+          {
+            "version":"2.0",
+            "url":"https://berlin.example.com/gbfs/2/gbfs"
+          },
+          {
+            "version":"3.0",
+            "url":"https://berlin.example.com/gbfs/3/gbfs"
+          }
+        ]
+      },
+      {
+        "system_id":"example_paris",
+        "versions":[
+          {
+            "version":"2.0",
+            "url":"https://paris.example.com/gbfs/2/gbfs"
+          },
+          {
+            "version":"3.0",
+            "url":"https://paris.example.com/gbfs/3/gbfs"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
 ### gbfs_versions.json
 
 Each expression of a GBFS feed describes all of the versions that are available.
@@ -356,6 +407,7 @@ Field Name | REQUIRED | Type | Defines
 `phone_number` <br/>*(as of v3.0-RC)* | OPTIONAL | Phone Number | This OPTIONAL field SHOULD contain a single voice telephone number for the specified system’s customer service department. MUST be in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I/en) format as defined in [Field Types](#field-types). 
 `email` | OPTIONAL | Email | This OPTIONAL field SHOULD contain a single contact email address actively monitored by the operator’s customer service department. This email address SHOULD be a direct contact point where riders can reach a customer service representative.
 `feed_contact_email` | OPTIONAL | Email | This OPTIONAL field SHOULD contain a single contact email for feed consumers to report technical issues with the feed.
+`manifest_url` | Conditionally REQUIRED | URL | REQUIRED if the producer publishes datasets for more than one system geography, for example Berlin and Paris. A fully qualified URL pointing to the [manifest.json](#manifestjson) file for the publisher.
 `timezone` | Yes | Timezone | The time zone where the system is located.
 `license_id` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | String | REQUIRED if the dataset is provided under a standard license. An identifier for a standard license from the [SPDX License List](https://spdx.org/licenses/). Provide `license_id` rather than `license_url` if the license is included in the SPDX License List. See the GBFS wiki for a [comparison of a subset of standard licenses](data-licenses.md). If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
 `license_url` | Conditionally REQUIRED <br/>*(as of v3.0-RC)* | URL | REQUIRED if the dataset is provided under a customized license. A fully qualified URL of a page that defines the license terms for the GBFS data for this system. Do not specify a `license_url` if `license_id` is specified. If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode). *(as of v3.0-RC)*
