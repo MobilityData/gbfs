@@ -62,7 +62,7 @@ This section defines terms that are used throughout this document.
 
 File Name | REQUIRED | Defines
 ---|---|---
-gbfs.json | Yes <br/>*(as of v2.0)* | Auto-discovery file that links to the other files published for the system. To avoid circular references this file SHOULD NOT contain links to `manifest.json`.
+gbfs.json | Yes <br/>*(as of v2.0)* | Auto-discovery file that links to the other files published for the system. To avoid circular references this file MUST NOT contain links to `manifest.json`.
 manifest.json | Conditionally REQUIRED | Required of any GBFS dataset provider that publishes more than one GBFS dataset. For example, if you publish one set of files for Berlin and a different set for Paris, this file is REQUIRED. A discovery file containing a comprehensive list of `gbfs.json` URLs for all GBFS datasets published by the provider.
 gbfs_versions.json | OPTIONAL | Lists all feed endpoints published according to versions of the GBFS documentation.
 system_information.json | Yes | Details including system operator, system location, year implemented, URL, contact info, time zone.
