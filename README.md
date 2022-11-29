@@ -1,7 +1,7 @@
 # General Bikeshare Feed Specification
 Documentation for the General Bikeshare Feed Specification, a standardized data feed for shared mobility system availability.
 
-**Please note that GBFS is now hosted at [github.com/MobilityData/gbfs](github.com/MobilityData/gbfs).**
+**Please note that GBFS is now hosted at [github.com/MobilityData/gbfs](https://github.com/MobilityData/gbfs).**
 
 ## Table of Contents
 * [What is GBFS?](#what-is-gbfs)
