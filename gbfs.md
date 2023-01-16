@@ -192,7 +192,7 @@ It is RECOMMENDED that all GBFS data sets be offered under an open data license.
 * Date - A date in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) Complete Date Extended Format: YYYY-MM-DD . Example: `2019-09-13` for September 13th, 2019.
 * Datetime *(added in v2.3-RC2)*- Combination of a date and a time following [ISO 8601 notation](https://www.iso.org/iso-8601-date-and-time-format.html). Attributes : [year](https://docs.python.org/3/library/datetime.html#datetime.datetime.year), [month](https://docs.python.org/3/library/datetime.html#datetime.datetime.month), [day](https://docs.python.org/3/library/datetime.html#datetime.datetime.day), [hour](https://docs.python.org/3/library/datetime.html#datetime.datetime.hour), [minute](https://docs.python.org/3/library/datetime.html#datetime.datetime.minute), [second](https://docs.python.org/3/library/datetime.html#datetime.datetime.second), and timezone.
 * Email - An email address. Example: `example@example.com`
-* Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column. Enum values SHOULD be lowercase.
+* Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column. Enum values MUST be lowercase.
 Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc...
 * Float *(added in v2.1)* - A 32-bit floating point number.
 * GeoJSON FeatureCollection - A FeatureCollection as described by the IETF RFC 7946 https://tools.ietf.org/html/rfc7946#section-3.3.
