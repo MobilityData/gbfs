@@ -599,11 +599,11 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`contact_phone`<br/>*(added in v2.3-RC2)* | OPTIONAL | Phone number | Contact phone of the station.
 \-&nbsp;`capacity` | OPTIONAL | Non-negative integer | Number of total docking points installed at this station, both available and unavailable, regardless of what vehicle types are allowed at each dock. <br/><br/>If this is a virtual station defined using the `is_virtual_station` field, this number represents the total number of vehicles of all types that can be parked at the virtual station.<br/><br/>If the virtual station is defined by `station_area`, this is the number that can park within the station area. If `lat`/`lon` are defined, this is the number that can park at those coordinates.
 \-&nbsp;`vehicle_type_area_capacity` <br/>*(as of v3.0)* | OPTIONAL | Array| This field's value is an array of objects containing the keys `vehicle_type_id` and `count` defined below.  These objects are used to model the parking capacity of virtual stations (defined using the `is_virtual_station` field) for each vehicle type defined in `vehicle_types.json`.
-&emsp;&emsp;\-&nbsp;`vehicle_type_id`| Conditionally REQUIRED | ID | A `vehicle_type_id`, as defined in `vehicle_types.json`, that may park at the virtual station.
-&emsp;&emsp;\-&nbsp;`count`| Conditionally REQUIRED | Non-negative integer | A number representing the total number of vehicles of the corresponding `vehicle_type_id` type that can park within the virtual station.<br /><br />If the virtual station is defined by `station_area`, this is the number that can park within the station area. If `lat`/`lon` is defined, this is the number that can park at those coordinates.
+&emsp;&emsp;\-&nbsp;`vehicle_type_id`| Yes | ID | REQUIRED if `vehicle_type_area_capacity` is defined. A `vehicle_type_id`, as defined in `vehicle_types.json`, that may park at the virtual station.
+&emsp;&emsp;\-&nbsp;`count`| Yes | Non-negative integer | REQUIRED if `vehicle_type_area_capacity` is defined. A number representing the total number of vehicles of the corresponding `vehicle_type_id` type that can park within the virtual station.<br /><br />If the virtual station is defined by `station_area`, this is the number that can park within the station area. If `lat`/`lon` is defined, this is the number that can park at those coordinates.
 \-&nbsp;`vehicle_type_dock_capacity` <br/>*(as of v3.0)* | OPTIONAL | Array | This field's value is an array of objects containing the keys `vehicle_type_id` and `count` defined below. These objects are used to model the total docking capacity of a station, both available and unavailable, for each type of vehicle defined in `vehicle_types.json`.
-&emsp;&emsp;\-&nbsp;`vehicle_type_id`| Conditionally REQUIRED | ID | A `vehicle_type_id`, as defined in `vehicle_types.json`, that may dock at the station.
-&emsp;&emsp;\-&nbsp;`count`| Conditionally REQUIRED | Non-negative integer | The total number of docks at the station, both available and unavailable, that may accept the corresponding vehicle type as defined by its `vehicle_type_id`.
+&emsp;&emsp;\-&nbsp;`vehicle_type_id`| Yes | ID | REQUIRED if `vehicle_type_id` is defined. A `vehicle_type_id`, as defined in `vehicle_types.json`, that may dock at the station.
+&emsp;&emsp;\-&nbsp;`count`| Yes | Non-negative integer | REQUIRED if `vehicle_type_id` is defined. The total number of docks at the station, both available and unavailable, that may accept the corresponding vehicle type as defined by its `vehicle_type_id`.
 \-&nbsp;`is_valet_station` <br/>*(added in v2.1)* | OPTIONAL | Boolean | Are valet services provided at this station? <br /><br /> `true` - Valet services are provided at this station. <br /> `false` - Valet services are not provided at this station. <br /><br /> If this field is empty, it is assumed that valet services are not provided at this station. <br><br>This field’s boolean SHOULD be set to `true` during the hours which valet service is provided at the station. Valet service is defined as providing unlimited capacity at a station.
 \-&nbsp;`is_charging_station` <br/>*(added in v2.3-RC)* | OPTIONAL | Boolean | Does the station support charging of electric vehicles? <br /><br /> `true` - Electric vehicle charging is available at this station. <br /> `false` -  Electric vehicle charging is not available at this station.
 \-&nbsp;`rental_uris` | OPTIONAL | Object | Contains rental URIs for Android, iOS, and web in the `android`, `ios`, and `web` fields. See [examples](#deep-links-examples) of how to use these fields and [supported analytics](#analytics).
@@ -629,7 +629,7 @@ Field Name | REQUIRED | Type | Defines
         "parking_type": "underground_parking",
         "parking_hoop": false,
         "contact_phone": "+33109874321",
-        "is_charging_station": "true",
+        "is_charging_station": true,
         "vehicle_type_dock_capacity": [
           {
             "vehicle_type_id": "abc123",
