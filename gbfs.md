@@ -312,12 +312,13 @@ The following fields are all attributes within the main `data` object for this f
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`datasets` | Yes | Array | An array containing
+`datasets` | Yes | Array | An array of objects, each containing the keys below.
 \-&nbsp;`system_id` | Yes | ID | The `system_id` from `system_information.json` for the corresponding data set(s)                                                                                | 
 \-&nbsp;`versions` | Yes | Array | Contains one object, as defined below, for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number. 
 &emsp;&emsp;\-`version` | Yes | String | The semantic version of the feed in the form `X.Y`.                                                                                                         
 &emsp;&emsp;\-`url` | Yes  | URL | URL of the corresponding `gbfs.json` endpoint.
-
+ 
+**Example:**
 ```json
 {
   "last_updated":1667004473,
