@@ -187,6 +187,7 @@ It is RECOMMENDED that all GBFS data sets be offered under an open data license.
 ## Field Types
 
 * Array - A JSON element consisting of an ordered sequence of zero or more values.
+* Array&lt;Type&gt; - A JSON element consisting of an ordered sequence of zero or more values of the specified sub-type.
 * Boolean - One of two possible values, `true`or `false`. Boolean values MUST be JSON booleans, not strings (meaning `true` or `false`, not `"true"` or `"false"`). *(as of v2.0)*
 * Country code - Country code following the [ISO 3166-1 alpha-2 notation](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
 * Date - A date in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) Complete Date Extended Format: YYYY-MM-DD . Example: `2019-09-13` for September 13th, 2019.
@@ -205,6 +206,11 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 * Language - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to https://www.rfc-editor.org/rfc/bcp/bcp47.txt and https://www.w3.org/International/articles/language-tags/. Examples: `en` for English, `en-US` for American English, or `de` for German.
 * Latitude - WGS84 latitude in decimal degrees. The value MUST be greater than or equal to -90.0 and less than or equal to 90.0. Example: `41.890169` for the Colosseum in Rome.
 * Longitude - WGS84 longitude in decimal degrees. The value MUST be greater than or equal to -180.0 and less than or equal to 180.0. Example: `12.492269` for the Colosseum in Rome.
+* Localized String - A JSON element representing a String value that has been translated into a specific language.  The element consists of the following name-value pairs:
+  Field Name | REQUIRED | Type | Defines
+  ---|---|---|---
+  `text` | Yes | String | The translated text.
+  `language` | Yes | Language | IETF BCP 47 language code.  Must match one of the values specified by the `languages` field in `system_information.json`.
 * Non-negative Float - A 32-bit floating point number greater than or equal to 0.
 * Non-negative Integer - An integer greater than or equal to 0.
 * Object - A JSON element consisting of key-value pairs (fields).
