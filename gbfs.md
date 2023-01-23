@@ -1364,7 +1364,13 @@ Field Name | REQUIRED | Type | Defines
 }
 ```
 
+##### Polygon Overlap Examples
+
+The following polygon diagram will be used in a number of examples below of geofencing rule resolution.
+
 ![Geofencing Example Diagram with two overlapping polygons A and B, and areas a, b, and ab.](geofencing_example.png)
+
+In the examples below, only a minimal set of fields are specified for clarity.
 
 ##### Partially Overlapping Polygons with Same Vehicle Types
 
@@ -1372,22 +1378,19 @@ Field Name | REQUIRED | Type | Defines
 [
   "#": "data -> geofencing_zones -> features",
   {
-    "Geometry": { "#": "... Polygon A ..." },
+    "geometry": { "#": "... Polygon A ..." },
     "properties": {
-      "name": "A",
       "rules": [
         {
           "vehicle_type_id": ["bike"],
           "ride_through_allowed": true,
-          "#": "..."
         }
       ]
     }
   },
   {
-    "Geometry": { ... Polygon B ... },
+    "geometry": { "#": "... Polygon B ..." },
     "properties": {
-      "name": "B",
       "rules": [
         {
           "vehicle_type_id": ["bike"],
@@ -1414,12 +1417,11 @@ b  | bike | false | 10
 ##### Partially Overlapping Polygons with Different Vehicle Types
 
 ```json
-# data -> geofencing_zones -> features
 [
+  "#": "data -> geofencing_zones -> features",
   {
-    "Geometry": { ... Polygon A ... },
+    "geometry": { "#": "... Polygon A ..." },
     "properties": {
-      "name": "A",
       "rules": [
         {
           "vehicle_type_id": ["bike"],
@@ -1430,9 +1432,8 @@ b  | bike | false | 10
     }
   },
   {
-    "Geometry": { ... Polygon B ... },
+    "geometry": { "#": "... Polygon B ..." },
     "properties": {
-      "name": "B",
       "rules": [
         {
           "vehicle_type_id": ["scooter"],
@@ -1458,12 +1459,11 @@ b  | scooter | false
 ##### Partially Overlapping Polygons with Some Overlapping Vehicle Types
 
 ```json
-# data -> geofencing_zones -> features
 [
+  "#": "data -> geofencing_zones -> features",
   {
-    "Geometry": { ... Polygon A ... },
+    "geometry": { "#": "... Polygon A ..." },
     "properties": {
-      "name": "A",
       "rules": [
         {
           "vehicle_type_id": ["bike", “scooter”],
@@ -1474,9 +1474,8 @@ b  | scooter | false
     }
   },
   {
-    "Geometry": { ... Polygon B ... },
+    "geometry": { "#": "... Polygon B ..." },
     "properties": {
-      "name": "B",
       "rules": [
         {
           "vehicle_type_id": ["scooter"],
