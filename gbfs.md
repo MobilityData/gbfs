@@ -288,7 +288,10 @@ Field Name | REQUIRED | Type | Defines
   }
 }
 ```
-### manifest.json *(added in v3.0-RC)*
+### manifest.json 
+
+*(added in v3.0-RC)*
+
 An index of `gbfs.json` URLs for each GBFS data set produced by a publisher. A single instance of this file should be published at a single stable URL, for example: `https://example.com/gbfs/manifest.json`
 
 The following fields are all attributes within the main `data` object for this feed.
@@ -927,7 +930,7 @@ Field Name | REQUIRED | Type | Defines
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`vehicles`<br />*(as of v3.0-RC)*  | Yes | Array | Array that contains one object per vehicle that is currently stopped as defined below.
+`vehicles`<br />*(as of v3.0-RC)*  | Yes | Array | Array that contains one object per vehicle that is currently deployed in the field and not part of an active rental as defined below.
 \-&nbsp;`vehicle_id`<br />*(as of v3.0-RC)*  | Yes | ID | Identifier of a vehicle. The `vehicle_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `vehicle_id` identifier SHOULD only be rotated once per trip.
 \-&nbsp;`lat` | Conditionally REQUIRED <br/>*(as of v2.1)* | Latitude | Latitude of the vehicle in decimal degrees. *(as of v2.1)* REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 \-&nbsp;`lon` | Conditionally REQUIRED <br/>*(as of v2.1)* | Longitude | Longitude of the vehicle in decimal degrees. *(as of v2.1)* REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
