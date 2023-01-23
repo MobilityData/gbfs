@@ -522,6 +522,9 @@ Field Name | REQUIRED | Type | Defines
 &emsp; \-&nbsp; `text` | Yes | String | The translated string
 &emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
 | \- `color`<br/>*(added in v2.3-RC2)*| OPTIONAL| String| The color of the vehicle. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas, or dots. Spaces are allowed in case of a compound name. <br><br>Example <ul><li>green</li><li>dark blue</li></ul> 
+| \- `description`<br/>*(added in v3.0-Draft)*| OPTIONAL| Array| Customer-readable description of the vehicle type outlining special features or how-tos. An array with one object per supported language with the following keys:
+&emsp;\-&nbsp; `text` | Yes | String | The translated text.
+&emsp;\-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
 \- `wheel_count`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative Integer | Number of wheels this vehicle type has.
 \- `max_permitted_speed`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative Integer | The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations.
 \- `rated_power`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative Integer | The rated power of the motor for this vehicle type in watts.
@@ -578,6 +581,12 @@ Field Name | REQUIRED | Type | Defines
             "language": "en"
           }
         ],
+        "description": [
+          {
+            "text": "Extra comfortable seat with additional suspension.\n\nPlease be aware of the cargo box lock: you need to press it down before pulling it up again!",
+            "language": "en"
+          }
+        ],            
         "wheel_count": 3,
         "default_reserve_time": 30,
         "return_constraint": "roundtrip_station",
