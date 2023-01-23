@@ -593,7 +593,7 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`station_opening_hours` <br/>*(added in v3.0-RC)* | OPTIONAL | String | Hours of operation for the station in [OSM opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) format. If `station_opening_hours` is defined it overrides any `opening_hours` defined in `system_information.json` for the station for which it is defined.
 \-&nbsp;`rental_methods` | OPTIONAL | Array | Payment methods accepted at this station. <br /> Current valid values are:<br /> <ul><li>`key` (operator issued vehicle key / fob / card)</li><li>`creditcard`</li><li>`paypass`</li><li>`applepay`</li><li>`androidpay`</li><li>`transitcard`</li><li>`accountnumber`</li><li>`phone`</li></ul>
 \-&nbsp;`is_virtual_station` <br/>*(added in v2.1)* | OPTIONAL | Boolean | Is this station a location with or without smart dock technology? <br /><br /> `true` - The station is a location without smart docking infrastructure.  the station may be defined by a point (lat/lon) and/or `station_area` (below). <br /><br /> `false` - The station consists of smart docking infrastructure (docks). <br /><br /> This field SHOULD be published by mobility systems that have station locations without standard, internet connected physical docking infrastructure. These may be racks or geofenced areas designated for rental and/or return of vehicles. Locations that fit within this description SHOULD have the `is_virtual_station` boolean set to `true`.
-\-&nbsp;`station_area` <br/>*(added in v2.1)* | OPTIONAL | GeoJSON MultiPolygon | A GeoJSON MultiPolygon that describes the area of a virtual station. If `station_area` is supplied, then the record describes a virtual station. <br /><br /> If lat/lon and `station_area` are both defined, the lat/lon is the significant coordinate of the station (for example, parking facility or valet drop-off and pick up point). The `station_area` takes precedence over any `ride_allowed` rules in overlapping `geofencing_zones`.
+\-&nbsp;`station_area` <br/>*(added in v2.1)* | OPTIONAL | GeoJSON MultiPolygon | A GeoJSON MultiPolygon that describes the area of a virtual station. If `station_area` is supplied, then the record describes a virtual station. <br /><br /> If lat/lon and `station_area` are both defined, the lat/lon is the significant coordinate of the station (for example, parking facility or valet drop-off and pick up point). The `station_area` takes precedence over any `start_end_allowed` rules in overlapping `geofencing_zones`.
 \-&nbsp;`parking_type` <br/>*(added in v2.3-RC2)* | OPTIONAL | Enum | Type of parking station.<br /><br />Current valid values are:<ul><li>`parking_lot` _(Off-street parking lot)_</li><li>`street_parking` _(Curbside parking)_</li><li>`underground_parking` _(Parking that is below street level, station may be non-communicating)_</li><li>`sidewalk_parking` _(Park vehicle on sidewalk, out of the pedestrian right of way)_</li><li>`other`</li></ul>
 \-&nbsp; `parking_hoop`<br/>*(added in v2.3-RC2)* | OPTIONAL | Boolean | Are parking hoops present at this station?<br /><br />`true` - Parking hoops are present at this station.<br />`false` - Parking hoops are not present at this station.<br /><br />Parking hoops are lockable devices that are used to secure a parking space to prevent parking of unauthorized vehicles.
 \-&nbsp; `contact_phone`<br/>*(added in v2.3-RC2)* | OPTIONAL | Phone number | Contact phone of the station.
@@ -1115,7 +1115,11 @@ Field Name | REQUIRED | Type | Defines
 *(added in v2.1)*
 
 Describes geofencing zones and their associated rules and attributes.<br />
-Geofenced areas are delineated using GeoJSON in accordance with [RFC 7946](https://tools.ietf.org/html/rfc7946). By default, no restrictions apply everywhere. Geofencing zones SHOULD be modeled according to restrictions rather than allowance. An operational area (outside of which vehicles cannot be used) SHOULD be defined with a counterclockwise polygon, and a limitation area (in which vehicles can be used under certain restrictions) SHOULD be defined with a clockwise polygon.<br><br>Geofences and GPS operate in two dimensions. Restrictions placed on an overpass or bridge will also  be applied to the roadway or path beneath.<br><br>Care SHOULD be taken when developing geofence based policies that rely on location data.  Location data from GPS, cellular and Wi-Fi signals are subject to interference resulting in accuracy levels in the tens of meters or greater.  This may result in vehicles being placed within a geofenced zone when they are actually outside or adjacent to the zone. Transit time between server and client can also impact when a user is notified of a geofence based policy. A vehicle traveling at 15kph can be well inside of a restricted zone before a notification is received.<br/>The following fields are all attributes within the main `data` object for this feed.
+Geofenced areas are delineated using GeoJSON in accordance with [RFC 7946](https://tools.ietf.org/html/rfc7946). By default, no restrictions apply everywhere, but if geofencing is present, restrictions apply by default.
+
+Geofences and GPS operate in two dimensions. Restrictions placed on an overpass or bridge will also  be applied to the roadway or path beneath.<br><br>Care SHOULD be taken when developing geofence based policies that rely on location data.  Location data from GPS, cellular and Wi-Fi signals are subject to interference resulting in accuracy levels in the tens of meters or greater.  This may result in vehicles being placed within a geofenced zone when they are actually outside or adjacent to the zone. Transit time between server and client can also impact when a user is notified of a geofence based policy. A vehicle traveling at 15kph can be well inside of a restricted zone before a notification is received.
+
+The following fields are all attributes within the main `data` object for this feed.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
@@ -1123,19 +1127,20 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`type` | Yes | String | “FeatureCollection” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
 \-&nbsp;`features` | Yes | Array | Array of objects as defined below.
 &emsp;\-&nbsp;`type` | Yes | String | “Feature” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
-&emsp;\-&nbsp;`geometry` | Yes | GeoJSON MultiPolygon | A polygon that describes where rides might not be able to start, end, go through, or have other limitations. A clockwise arrangement of points defines the area enclosed by the polygon, while a counterclockwise order defines the area outside the polygon ([right-hand rule](https://tools.ietf.org/html/rfc7946#section-3.1.6)). All geofencing zones contained in this list are public (meaning they can be displayed on a map for public use).
+&emsp;\-&nbsp;`geometry` | Yes | GeoJSON MultiPolygon | A polygon that describes where rides might not be able to start, end, go through, or have other limitations. Rules may only apply to the interior of a polygon. All geofencing zones contained in this list are public (meaning they can be displayed on a map for public use).
 &emsp;\-&nbsp;`properties` | Yes | Object | Properties: As defined below, describing travel allowances and limitations.
 &emsp;&emsp;\-&nbsp;`name` | OPTIONAL | String | Public name of the geofencing zone.
 &emsp;&emsp;\-&nbsp;`start` | OPTIONAL | Timestamp | Start time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
 &emsp;&emsp;\-&nbsp;`end` | OPTIONAL | Timestamp | End time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
-&emsp;&emsp;\-&nbsp;`rules` | OPTIONAL | Array | Array that contains one object per rule as defined below. <br /><br /> In the event of colliding rules within the same polygon, the earlier rule (in order of the JSON file) takes precedence. <br> In the case of overlapping polygons, the combined set of rules associated with the overlapping polygons applies to the intersection of the polygons. In the event of colliding rules in this set, the earlier rule (in order of the JSON file) also takes precedence.
+&emsp;&emsp;\-&nbsp;`rules` | OPTIONAL | Array | Array that contains one object per rule as defined below. <br /><br />Array that contains one object per rule, as defined below, allowing for different restrictions for different vehicle types.<br/<br/>When multiple rules in the same polygon apply to a particular vehicle type, per the semantics of the `vehicle_type_id` field defined below, then the earlier rule (in order of the JSON file) takes precedence for that vehicle type.<br/><br/>When multiple overlapping polygons define rules that apply to a particular vehicle type, then in the overlapping area the earlier polygon (in order of the JSON file) takes precedence for that vehicle type.  Polygons with inactive time ranges should be excluded from consideration when considering precedence.<br/><br/>See examples below.
 &emsp;&emsp;&emsp;\-&nbsp;`vehicle_type_id` | OPTIONAL | Array | Array of IDs of vehicle types for which any restrictions SHOULD be applied (see vehicle type definitions in `vehicle_types.json`). If vehicle type IDs are not specified, then restrictions apply to all vehicle types.
-&emsp;&emsp;&emsp;\-&nbsp;`ride_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the undocked (“free floating vehicle”) ride allowed to start and end in this zone? <br /><br /> `true` - Undocked (“free floating”) ride can start and end in this zone. <br /> `false` - Undocked (“free floating vehicle”) ride cannot start and end in this zone.
+&emsp;&emsp;&emsp;\-&nbsp;`ride_start_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the undocked (“free floating vehicle”) ride allowed to start in this zone? <br /><br /> `true` - Undocked (“free floating”) ride can start in this zone. <br /> `false` - Undocked (“free floating vehicle”) ride cannot start in this zone.
+&emsp;&emsp;&emsp;\-&nbsp;`ride_end_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the undocked (“free floating vehicle”) ride allowed to end in this zone? <br /><br /> `true` - Undocked (“free floating”) ride can end in this zone. <br /> `false` - Undocked (“free floating vehicle”) ride cannot end in this zone.
 &emsp;&emsp;&emsp;\-&nbsp;`ride_through_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the ride allowed to travel through this zone? <br /><br /> `true` - Ride can travel through this zone. <br /> `false` - Ride cannot travel through this zone.
 &emsp;&emsp;&emsp;\-&nbsp;`maximum_speed_kph` | OPTIONAL | Non-negative Integer | What is the maximum speed allowed, in kilometers per hour? <br /><br /> If there is no maximum speed to observe, this can be omitted.
 &emsp;&emsp;&emsp;\-&nbsp;`station_parking`<br/>*(added in v2.3-RC2)* | OPTIONAL | Boolean | Can vehicles only be parked at stations defined in `station_information.json` within this geofence zone? <br /><br />`true` - Vehicles can only be parked at stations.  <br /> `false` - Vehicles may be parked outside of stations.
 
-**Example:**
+#### Geofencing Examples
 
 ```json
 {
@@ -1211,7 +1216,8 @@ Field Name | REQUIRED | Type | Defines
                   "moped1",
                   "car1"
                 ],
-                "ride_allowed": false,
+                "ride_start_allowed": false,
+                "ride_end_allowed": false,
                 "ride_through_allowed": true,
                 "maximum_speed_kph": 10,
                 "station_parking": true
@@ -1224,6 +1230,140 @@ Field Name | REQUIRED | Type | Defines
   }
 }
 ```
+
+![Geofencing Example Diagram with two overlapping polygons A and B, and areas a, b, and ab.](geofencing_example.png)
+
+##### Partially Overlapping Polygons with Same Vehicle Types
+
+```json
+# data -> geofencing_zones -> features
+[
+  {
+    "Geometry": { ... Polygon A ... },
+    "properties": {
+      "name": "A",
+      "rules": [
+        {
+          "vehicle_type_id": ["bike"],
+          "ride_through_allowed": true,
+           ...
+        }
+      ]
+    }
+  },
+  {
+    "Geometry": { ... Polygon B ... },
+    "properties": {
+      "name": "B",
+      "rules": [
+        {
+          "vehicle_type_id": ["bike"],
+          "ride_through_allowed": false,
+          "maximum_speed_kph": 10
+           ...
+        }
+      ]
+    }
+  }
+]
+```
+ 
+Both polygons specify rules for vehicle type `bike`.  For `ride_through_allowed`, which is defined in both polygons, polygon A takes precedence over polygon B in area `ab` because it appears earlier in the JSON.  For `maximum_speed_kph`, only polygon B specifies a rule for this restriction, the it is used for area `ab`, despite the presence of polygon A.
+
+
+Area | Vehicle Type | ride_through_allowed | maximum_speed_kph
+---|------|-------|----------
+a  | bike | true  | undefined
+ab | bike | true  | 10
+b  | bike | false | 10
+
+
+##### Partially Overlapping Polygons with Different Vehicle Types
+
+```json
+# data -> geofencing_zones -> features
+[
+  {
+    "Geometry": { ... Polygon A ... },
+    "properties": {
+      "name": "A",
+      "rules": [
+        {
+          "vehicle_type_id": ["bike"],
+          "ride_through_allowed": true,
+           ...
+        }
+      ]
+    }
+  },
+  {
+    "Geometry": { ... Polygon B ... },
+    "properties": {
+      "name": "B",
+      "rules": [
+        {
+          "vehicle_type_id": ["scooter"],
+          "ride_through_allowed": false,
+           ...
+        }
+      ]
+    }
+  }
+]
+``` 
+
+Though polygon A appears earlier in the file than polygon B, polygon A does not mention vehicle type `scooter`, so it is not considered when determining applicable rules for area `ab`.
+
+Area | Vehicle Type | ride_through_allowed
+---|---------|-------
+a  | bike    | true
+ab | bike    | true
+ab | scooter | false
+b  | scooter | false
+
+
+##### Partially Overlapping Polygons with Some Overlapping Vehicle Types
+
+```json
+# data -> geofencing_zones -> features
+[
+  {
+    "Geometry": { ... Polygon A ... },
+    "properties": {
+      "name": "A",
+      "rules": [
+        {
+          "vehicle_type_id": ["bike", “scooter”],
+          "ride_through_allowed": true,
+           ...
+        }
+      ]
+    }
+  },
+  {
+    "Geometry": { ... Polygon B ... },
+    "properties": {
+      "name": "B",
+      "rules": [
+        {
+          "vehicle_type_id": ["scooter"],
+          "ride_through_allowed": false,
+           ...
+        }
+      ]
+    }
+  }
+]
+``` 
+
+For vehicle type `scooter`, polygon A takes precedence over Polygon B in area `ab` because it appears earlier in the JSON.
+
+Area | Vehicle Type | ride_through_allowed
+---|---------|-------
+a  | bike    | true
+ab | bike    | true
+ab | scooter | true
+b  | scooter | false
 
 ## Deep Links
 
