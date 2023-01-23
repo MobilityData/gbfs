@@ -23,7 +23,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 * [Field Types](#field-types)
 * [Files](#files)
     * [gbfs.json](#gbfsjson)
-    * [manifest.json](#manifestjson)
+    * [manifest.json](#manifestjson) *(added in v3.0-RC)*
     * [gbfs_versions.json](#gbfs_versionsjson)
     * [system_information.json](#system_informationjson)
     * [vehicle_types.json](#vehicle_typesjson) *(added in v2.1)*
@@ -63,7 +63,7 @@ This section defines terms that are used throughout this document.
 File Name | REQUIRED | Defines
 ---|---|---
 gbfs.json | Yes <br/>*(as of v2.0)* | Auto-discovery file that links to the other files published for the system. To avoid circular references this file MUST NOT contain links to `manifest.json`.
-manifest.json | Conditionally REQUIRED | Required of any GBFS dataset provider that publishes more than one GBFS dataset. For example, if you publish one set of files for Berlin and a different set for Paris, this file is REQUIRED. A discovery file containing a comprehensive list of `gbfs.json` URLs for all GBFS datasets published by the provider.
+manifest.json *(added in v3.0-RC)* | Conditionally REQUIRED | Required of any GBFS dataset provider that publishes more than one GBFS dataset. For example, if you publish one set of files for Berlin and a different set for Paris, this file is REQUIRED. A discovery file containing a comprehensive list of `gbfs.json` URLs for all GBFS datasets published by the provider.
 gbfs_versions.json | OPTIONAL | Lists all feed endpoints published according to versions of the GBFS documentation.
 system_information.json | Yes | Details including system operator, system location, year implemented, URL, contact info, time zone.
 vehicle_types.json <br/>*(added in v2.1)* | Conditionally REQUIRED | Describes the types of vehicles that System operator has available for rent. REQUIRED of systems that include information about vehicle types in the `vehicle_status` file. If this file is not included, then all vehicles in the feed are assumed to be non-motorized bicycles.
@@ -141,9 +141,9 @@ Publishers SHOULD implement auto-discovery of GBFS feeds by linking to the locat
 
 ### Localization
 
-* Each supported language MUST be listed in the `languages` field in `system_information.json`.
-* Translations MUST be provided for each supported language for all translateable fields.
-* URLs pointing to text intended for consumption by end-users MUST be provided for each supported language.
+* Each supported language MUST be listed in the `languages` field in `system_information.json`. *(as of v3.0-RC)*
+* Translations MUST be provided for each supported language for all translateable fields. *(as of v3.0-RC)*
+* URLs pointing to text intended for consumption by end-users MUST be provided for each supported language. *(as of v3.0-RC)*
 
 ### Text Fields and Naming
 
@@ -259,7 +259,7 @@ Field Name | REQUIRED | Type | Defines
 
 ### gbfs.json
 
-The `gbfs.json` discovery file SHOULD represent a single system or geographic area in which vehicles are operated. The location (URL) of the `gbfs.json` file SHOULD be made available to the public using the specification’s [auto-discovery](#auto-discovery) function. To avoild circular references, this file MUST NOT contain links to `manifest.json` files.<br />The following fields are all attributes within the main `data` object for this feed.
+The `gbfs.json` discovery file SHOULD represent a single system or geographic area in which vehicles are operated. The location (URL) of the `gbfs.json` file SHOULD be made available to the public using the specification’s [auto-discovery](#auto-discovery) function. To avoild circular references, this file MUST NOT contain links to `manifest.json` files.*(as of v3.0-RC)* <br />The following fields are all attributes within the main `data` object for this feed.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
@@ -288,7 +288,7 @@ Field Name | REQUIRED | Type | Defines
   }
 }
 ```
-### manifest.json
+### manifest.json *(added in v3.0-RC)*
 An index of `gbfs.json` URLs for each GBFS data set produced by a publisher. A single instance of this file should be published at a single stable URL, for example: `https://example.com/gbfs/manifest.json`
 
 The following fields are all attributes within the main `data` object for this feed.
@@ -296,9 +296,9 @@ The following fields are all attributes within the main `data` object for this f
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `datasets` | Yes | Array | An array of objects, each containing the keys below.
-\-&nbsp;`system_id` | Yes | ID | The `system_id` from `system_information.json` for the corresponding data set(s)                                                                                | 
+\-&nbsp;`system_id` | Yes | ID | The `system_id` from `system_information.json` for the corresponding data set(s).
 \-&nbsp;`versions` | Yes | Array | Contains one object, as defined below, for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number. 
-&emsp;&emsp;\-`version` | Yes | String | The semantic version of the feed in the form `X.Y`.                                                                                                         
+&emsp;&emsp;\-`version` | Yes | String | The semantic version of the feed in the form `X.Y`.                               
 &emsp;&emsp;\-`url` | Yes  | URL | URL of the corresponding `gbfs.json` endpoint.
  
 **Example:**
@@ -380,15 +380,15 @@ The following fields are all attributes within the main `data` object for this f
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `system_id` | Yes | ID | This is a globally unique identifier for the vehicle share system. Each distinct system or geographic area in which vehicles are operated MUST have its own unique `system_id`. It is up to the publisher of the feed to guarantee uniqueness and MUST be checked against existing `system_id` fields in  [systems.csv](https://github.com/NABSA/gbfs/blob/master/systems.csv) to ensure this. This value is intended to remain the same over the life of the system. <br><br> System IDs SHOULD be recognizable as belonging to a particular system as opposed to random strings - for example, `bcycle_austin` or `biketown_pdx`.
-`languages` | Yes | Array | List of languages used in translated strings. Each element in the list must be of type Language.
-`name` | Yes | Array | Name of the system to be displayed to customers. An array with one object per supported language with the following keys:
-\-&nbsp; `text` | Yes | String | The translated text
-\-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
-`opening_hours` <br/>*(added in v3.0-RC)*| Yes | String | Hours and dates of operation for the system in [OSM opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) format. *(added in v3.0-RC)*
-`short_name` | OPTIONAL | Array | Abbreviation for a system. An array with one object per supported language with the following keys:
-\-&nbsp; `text` | Yes | String | The translated text
+`languages` <br/>*(added of v3.0-RC)* | Yes | Array | List of languages used in translated strings. Each element in the list must be of type Language.
+`name` <br/>*(as of v3.0-RC)* | Yes | Array | Name of the system to be displayed to customers. An array with one object per supported language with the following keys:
+\-&nbsp; `text` | Yes | String | The translated text.
 \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
-`operator` | OPTIONAL | Array | Name of the system operator. An array with one object per supported language with the following keys:
+`opening_hours` <br/>*(added in v3.0-RC)*| Yes | String | Hours and dates of operation for the system in [OSM opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) format. *(added in v3.0-RC)*
+`short_name` *(as of v3.0-RC)* | OPTIONAL | Array | Abbreviation for a system. An array with one object per supported language with the following keys:
+\-&nbsp; `text`| Yes | String | The translated text.
+\-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
+`operator` <br/>*(as of v3.0-RC)* | OPTIONAL | Array | Name of the system operator. An array with one object per supported language with the following keys:
 \-&nbsp; `text` | Yes | String | The translated text
 \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
 `url` | OPTIONAL | URL | The URL of the vehicle share system.
@@ -396,8 +396,8 @@ Field Name | REQUIRED | Type | Defines
 `start_date` | OPTIONAL | Date | Date that the system began operations.
 `phone_number` <br/>*(as of v3.0-RC)* | OPTIONAL | Phone Number | This OPTIONAL field SHOULD contain a single voice telephone number for the specified system’s customer service department. MUST be in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I/en) format as defined in [Field Types](#field-types). 
 `email` | OPTIONAL | Email | This OPTIONAL field SHOULD contain a single contact email address actively monitored by the operator’s customer service department. This email address SHOULD be a direct contact point where riders can reach a customer service representative.
-`feed_contact_email` | Yes | Email | This field MUST contain a single contact email for feed consumers to report issues with the feed. This email address SHOULD point to a stable email address, that does not correspond to an individual but rather the team or company that manages GBFS feeds.
-`manifest_url` | Conditionally REQUIRED | URL | REQUIRED if the producer publishes datasets for more than one system geography, for example Berlin and Paris. A fully qualified URL pointing to the [manifest.json](#manifestjson) file for the publisher.
+`feed_contact_email` | Yes <br/>*(as of v3.0-RC)* | Email | This field MUST contain a single contact email for feed consumers to report issues with the feed. This email address SHOULD point to a stable email address, that does not correspond to an individual but rather the team or company that manages GBFS feeds.
+`manifest_url` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | URL | REQUIRED if the producer publishes datasets for more than one system geography, for example Berlin and Paris. A fully qualified URL pointing to the [manifest.json](#manifestjson) file for the publisher.
 `timezone` | Yes | Timezone | The time zone where the system is located.
 `license_id` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | String | REQUIRED if the dataset is provided under a standard license. An identifier for a standard license from the [SPDX License List](https://spdx.org/licenses/). Provide `license_id` rather than `license_url` if the license is included in the SPDX License List. See the GBFS wiki for a [comparison of a subset of standard licenses](data-licenses.md). If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
 `license_url` | Conditionally REQUIRED <br/>*(as of v3.0-RC)* | URL | REQUIRED if the dataset is provided under a customized license. A fully qualified URL of a page that defines the license terms for the GBFS data for this system. Do not specify a `license_url` if `license_id` is specified. If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode). *(as of v3.0-RC)*
@@ -405,19 +405,19 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp; `text` | Yes | String | The translated text
 \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
 `attribution_url` <br/>*(added in v3.0-RC)* | OPTIONAL | URL | URL of the organization to which attribution should be provided.
-`brand_assets` <br/>*(added in v2.3-RC)*  | OPTIONAL | Object | An object where each key defines one of the items listed below.
-\- `brand_last_modified` <br/>*(added in v2.3-RC)*  | Conditionally REQUIRED | Date | REQUIRED if `brand_assets` object is defined. Date that indicates the last time any included brand assets were updated or modified.
-\- `brand_terms_url` <br/>*(added in v2.3-RC)*   | OPTIONAL |  URL |  A fully qualified URL pointing to the location of a page that defines the license terms of brand icons, colors, or other trademark information.  This field MUST NOT take the place of `license_url` or `license_id`.
-\- `brand_image_url` <br/>*(added in v2.3-RC)*  | Conditionally REQUIRED |  URL |  REQUIRED if `brand_assets` object is defined. A fully qualified URL pointing to the location of a graphic file representing the brand for the service. File MUST be in SVG V1.1 format and MUST be either square or round.
-\- `brand_image_url_dark` <br/>*(added in v2.3-RC)*  | OPTIONAL |  URL | A fully qualified URL pointing to the location of a graphic file representing the brand for the service for use in dark mode applications.  File MUST be in SVG V1.1 format and MUST be either square or round.
-\- `color` <br/>*(added in v2.3-RC)*  | OPTIONAL |  String |  Color used to represent the brand for the service expressed as a 6 digit hexadecimal color code in the form #000000.
-`terms_url` <br/>*(added in v2.3-RC)* | OPTIONAL | Array | A fully qualified URL pointing to the terms of service (also often called "terms of use" or "terms and conditions") for the service. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | URL | URL pointing to the terms in the given language
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
-`terms_last_updated` <br/>*(added in v2.3-RC)* |Conditionally REQUIRED | Date | REQUIRED if `terms_url` is defined. The date that the terms of service provided at `terms_url` were last updated. 
-`privacy_url` <br/>*(added in v2.3-RC)*| OPTIONAL | Array | A fully qualified URL pointing to the privacy policy for the service. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | URL | URL pointing to the privacy policy in the given language
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
+`brand_assets` <br/>*(added in v2.3)*  | OPTIONAL | Object | An object where each key defines one of the items listed below.
+\- `brand_last_modified` <br/>*(added in v2.3)*  | Conditionally REQUIRED | Date | REQUIRED if `brand_assets` object is defined. Date that indicates the last time any included brand assets were updated or modified.
+\- `brand_terms_url` <br/>*(added in v2.3)*   | OPTIONAL |  URL |  A fully qualified URL pointing to the location of a page that defines the license terms of brand icons, colors, or other trademark information.  This field MUST NOT take the place of `license_url` or `license_id`.
+\- `brand_image_url` <br/>*(added in v2.3)*  | Conditionally REQUIRED |  URL |  REQUIRED if `brand_assets` object is defined. A fully qualified URL pointing to the location of a graphic file representing the brand for the service. File MUST be in SVG V1.1 format and MUST be either square or round.
+\- `brand_image_url_dark` <br/>*(added in v2.3)*  | OPTIONAL |  URL | A fully qualified URL pointing to the location of a graphic file representing the brand for the service for use in dark mode applications.  File MUST be in SVG V1.1 format and MUST be either square or round.
+\- `color` <br/>*(added in v2.3)*  | OPTIONAL |  String |  Color used to represent the brand for the service expressed as a 6 digit hexadecimal color code in the form #000000.
+`terms_url` <br/>*(as of v3.0-RC)* | OPTIONAL | Array | A fully qualified URL pointing to the terms of service (also often called "terms of use" or "terms and conditions") for the service. An array with one object per supported language with the following keys:
+&emsp; \-&nbsp; `text` | Yes | URL | URL pointing to the terms in the given language.
+&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
+`terms_last_updated` <br/>*(added in v2.3)* |Conditionally REQUIRED | Date | REQUIRED if `terms_url` is defined. The date that the terms of service provided at `terms_url` were last updated. 
+`privacy_url` <br/>*(as of v3.0-RC)*| OPTIONAL | Array | A fully qualified URL pointing to the privacy policy for the service. An array with one object per supported language with the following keys:
+&emsp; \-&nbsp; `text` | Yes | URL | URL pointing to the privacy policy in the given language.
+&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
 `privacy_last_updated` <br/>*(added in v2.3-RC)* |Conditionally REQUIRED | Date | REQUIRED if `privacy_url` is defined. The date that the privacy policy provided at `privacy_url` was last updated. 
 `rental_apps` | OPTIONAL | Object | Contains rental app information in the `android` and `ios` JSON objects.
 \-&nbsp;`android` | OPTIONAL | Object | Contains rental app download and app discovery information for the Android platform in the `store_uri` and `discovery_uri` fields. See [examples](#deep-links-examples) of how to use these fields and [supported analytics](#analytics).
@@ -500,42 +500,42 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `vehicle_types` | Yes | Array | Array that contains one object per vehicle type in the system as defined below.
 \- `vehicle_type_id` | Yes | ID | Unique identifier of a vehicle type. See [Field Types](#field-types) above for ID field requirements.
-\- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`cargo_bicycle` *(added in v2.3-RC2)*</li><li>`car`</li><li>`moped`</li><li>`scooter_standing` *(standing kick scooter, added in v2.3-RC2)*</li><li>`scooter_seated` *(this is a kick scooter with a seat, not to be confused with `moped`, added in v2.3-RC2)*</li><li>`other`</li></ul>
-\- `rider_capacity`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative integer | The number of riders (driver included) the vehicle can legally accommodate.
-\- `cargo_volume_capacity`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative integer | Cargo volume available in the vehicle, expressed in liters. For cars, it corresponds to the space between the boot floor, including the storage under the hatch, to the rear shelf in the trunk.
-\- `cargo_load_capacity`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative integer | The capacity of the vehicle cargo space (excluding passengers), expressed in kilograms.
-\- `propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides electric motor assist only in combination with human propulsion - no throttle mode)_</li><li>`electric` _(Powered by battery-powered electric motor with throttle mode)_</li><li>`combustion` _(Powered by gasoline combustion engine)_</li><li>`combustion_diesel` _(Powered by diesel combustion engine, added in v2.3-RC2)_</li><li>`hybrid` _(Powered by combined combustion engine and battery-powered motor, added in v2.3-RC2)_</li><li>`plug_in_hybrid` _(Powered by combined combustion engine and battery-powered motor with plug-in charging, added in v2.3-RC2)_</li><li>`hydrogen_fuel_cell` _(Powered by hydrogen fuel cell powered electric motor, added in v2.3-RC2)_</li></ul> This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/main/general-information.md#propulsion-types).
-\- `eco_label`<br/>*(added in v2.3-RC2)* | OPTIONAL | Array | Vehicle air quality certificate. Official anti-pollution certificate, based on the information on the vehicle's registration certificate, attesting to its level of pollutant emissions based on a defined standard. In Europe, for example, it is the European emission standard. The aim of this measure is to encourage the use of the least polluting vehicles by allowing them to drive during pollution peaks or in low emission zones.<br /><br />Each element in the array is an object with the keys below.
-&emsp;\-&nbsp; `country_code`<br/>*(added in v2.3-RC2)*| Conditionally REQUIRED | Country code | REQUIRED if `eco_label` is defined. Country where the `eco_sticker` applies.
-&emsp;\-&nbsp; `eco_sticker`<br/>*(added in v2.3-RC2)* | Conditionally REQUIRED | String | REQUIRED if `eco_label` is defined. Name of the eco label. The name must be written in lowercase, separated by an underscore.<br /><br />Example of `eco_sticker` in Europe :<ul><li>CritAirLabel (France) <ul><li>critair</li><li>critair_1</li><li>critair_2</li><li>critair_3</li><li>critair_4</li><li>critair_5</li></ul></li><li>UmweltPlakette (Germany)<ul><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li><li>euro_6</li><li>euro_6_temp</li><li>euro_E</li></ul></li><li>UmweltPickerl (Austria)<ul><li>euro_1</li><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li></ul><li>Reg_certificates (Belgium)<ul><li>reg_certificates</li></ul><li>Distintivo_ambiental (Spain)<ul><li>0</li><li>eco</li><li>b</li><li>c</li></ul></li></ul>
+\- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`cargo_bicycle` *(added in v2.3)*</li><li>`car`</li><li>`moped`</li><li>`scooter_standing` *(standing kick scooter, added in v2.3)*</li><li>`scooter_seated` *(this is a kick scooter with a seat, not to be confused with `moped`, added in v2.3)*</li><li>`other`</li></ul>
+\- `rider_capacity`<br/>*(added in v2.3)* | OPTIONAL | Non-negative integer | The number of riders (driver included) the vehicle can legally accommodate.
+\- `cargo_volume_capacity`<br/>*(added in v2.3)* | OPTIONAL | Non-negative integer | Cargo volume available in the vehicle, expressed in liters. For cars, it corresponds to the space between the boot floor, including the storage under the hatch, to the rear shelf in the trunk.
+\- `cargo_load_capacity`<br/>*(added in v2.3)* | OPTIONAL | Non-negative integer | The capacity of the vehicle cargo space (excluding passengers), expressed in kilograms.
+\- `propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides electric motor assist only in combination with human propulsion - no throttle mode)_</li><li>`electric` _(Powered by battery-powered electric motor with throttle mode)_</li><li>`combustion` _(Powered by gasoline combustion engine)_</li><li>`combustion_diesel` _(Powered by diesel combustion engine, added in v2.3)_</li><li>`hybrid` _(Powered by combined combustion engine and battery-powered motor, added in v2.3)_</li><li>`plug_in_hybrid` _(Powered by combined combustion engine and battery-powered motor with plug-in charging, added in v2.3)_</li><li>`hydrogen_fuel_cell` _(Powered by hydrogen fuel cell powered electric motor, added in v2.3)_</li></ul> This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/main/general-information.md#propulsion-types).
+\- `eco_label`<br/>*(added in v2.3)* | OPTIONAL | Array | Vehicle air quality certificate. Official anti-pollution certificate, based on the information on the vehicle's registration certificate, attesting to its level of pollutant emissions based on a defined standard. In Europe, for example, it is the European emission standard. The aim of this measure is to encourage the use of the least polluting vehicles by allowing them to drive during pollution peaks or in low emission zones.<br /><br />Each element in the array is an object with the keys below.
+&emsp;\-&nbsp; `country_code`<br/>*(added in v2.3)*| Conditionally REQUIRED | Country code | REQUIRED if `eco_label` is defined. Country where the `eco_sticker` applies.
+&emsp;\-&nbsp; `eco_sticker`<br/>*(added in v2.3)* | Conditionally REQUIRED | String | REQUIRED if `eco_label` is defined. Name of the eco label. The name must be written in lowercase, separated by an underscore.<br /><br />Example of `eco_sticker` in Europe :<ul><li>CritAirLabel (France) <ul><li>critair</li><li>critair_1</li><li>critair_2</li><li>critair_3</li><li>critair_4</li><li>critair_5</li></ul></li><li>UmweltPlakette (Germany)<ul><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li><li>euro_6</li><li>euro_6_temp</li><li>euro_E</li></ul></li><li>UmweltPickerl (Austria)<ul><li>euro_1</li><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li></ul><li>Reg_certificates (Belgium)<ul><li>reg_certificates</li></ul><li>Distintivo_ambiental (Spain)<ul><li>0</li><li>eco</li><li>b</li><li>c</li></ul></li></ul>
 \- `max_range_meters` | Conditionally REQUIRED | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is REQUIRED. This represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example, a full battery or full tank of gas).
-\- `name` | OPTIONAL | Array | The public name of this vehicle type. An array with one object per supported language with the following keys:
+\- `name` <br/>*(as of v3.0-RC)* | OPTIONAL | Array | The public name of this vehicle type. An array with one object per supported language with the following keys:
+&emsp; \-&nbsp; `text` | Yes | String | The translated string.
+&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
+\- `vehicle_accessories`<br/>*(added in v2.3)* | OPTIONAL | Array | Description of accessories available in the vehicle.  These accessories are part of the vehicle and are not supposed to change frequently. Current valid values are:<ul><li>`air_conditioning` _(Vehicle has air conditioning)_</li><li>`automatic` _(Automatic gear switch)_</li><li>`manual` _(Manual gear switch)_</li><li>`convertible` _(Vehicle is convertible)_</li><li>`cruise_control` _(Vehicle has a cruise control system ("Tempomat"))_</li><li>`doors_2` _(Vehicle has 2 doors)_</li><li>`doors_3` _(Vehicle has 3 doors)_</li><li>`doors_4` _(Vehicle has 4 doors)_</li><li>`doors_5` _(Vehicle has 5 doors)_</li><li>`navigation` _(Vehicle has a built-in navigation system)_</li></ul>
+\- `g_CO2_km`<br/>*(added in v2.3)* | OPTIONAL | Non-negative integer | Maximum quantity of CO2, in grams, emitted per kilometer, according to the [WLTP](https://en.wikipedia.org/wiki/Worldwide_Harmonised_Light_Vehicles_Test_Procedure).
+\- `vehicle_image`<br/>*(added in v2.3)* | OPTIONAL | URL | URL to an image that would assist the user in identifying the vehicle (for example, an image of the vehicle or a logo).<br /> Allowed formats: JPEG, PNG.
+| \- `make<br/>*(as of v3.0-RC)* | OPTIONAL| Array | The name of the vehicle manufacturer. <br><br>Example: <ul><li>CUBE Bikes</li><li>Renault</li></ul> An array with one object per supported language with the following keys:
 &emsp; \-&nbsp; `text` | Yes | String | The translated string
 &emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
-\- `vehicle_accessories`<br/>*(added in v2.3-RC2)* | OPTIONAL | Array | Description of accessories available in the vehicle.  These accessories are part of the vehicle and are not supposed to change frequently. Current valid values are:<ul><li>`air_conditioning` _(Vehicle has air conditioning)_</li><li>`automatic` _(Automatic gear switch)_</li><li>`manual` _(Manual gear switch)_</li><li>`convertible` _(Vehicle is convertible)_</li><li>`cruise_control` _(Vehicle has a cruise control system ("Tempomat"))_</li><li>`doors_2` _(Vehicle has 2 doors)_</li><li>`doors_3` _(Vehicle has 3 doors)_</li><li>`doors_4` _(Vehicle has 4 doors)_</li><li>`doors_5` _(Vehicle has 5 doors)_</li><li>`navigation` _(Vehicle has a built-in navigation system)_</li></ul>
-\- `g_CO2_km`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative integer | Maximum quantity of CO2, in grams, emitted per kilometer, according to the [WLTP](https://en.wikipedia.org/wiki/Worldwide_Harmonised_Light_Vehicles_Test_Procedure).
-\- `vehicle_image`<br/>*(added in v2.3-RC2)* | OPTIONAL | URL | URL to an image that would assist the user in identifying the vehicle (for example, an image of the vehicle or a logo).<br /> Allowed formats: JPEG, PNG.
-| \- `make`<br/>*(added in v2.3-RC2)*| OPTIONAL| Array | The name of the vehicle manufacturer. <br><br>Example: <ul><li>CUBE Bikes</li><li>Renault</li></ul> An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
-| \- `model`<br/>*(added in v2.3-RC2)*| OPTIONAL| Array | The name of the vehicle model. <br><br>Example <ul><li>Giulia</li><li>MX50</li></ul> An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
-| \- `color`<br/>*(added in v2.3-RC2)*| OPTIONAL| String| The color of the vehicle. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas, or dots. Spaces are allowed in case of a compound name. <br><br>Example <ul><li>green</li><li>dark blue</li></ul> 
-| \- `description`<br/>*(added in v3.0-Draft)*| OPTIONAL| Array| Customer-readable description of the vehicle type outlining special features or how-tos. An array with one object per supported language with the following keys:
+| \- `model`<br/>*(as of v3.0-RC)* | OPTIONAL| Array | The name of the vehicle model. <br><br>Example <ul><li>Giulia</li><li>MX50</li></ul> An array with one object per supported language with the following keys:
+&emsp; \-&nbsp; `text` | Yes | String | The translated string.
+&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
+| \- `color`<br/>*(added in v2.3)*| OPTIONAL| String| The color of the vehicle. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas, or dots. Spaces are allowed in case of a compound name. <br><br>Example <ul><li>green</li><li>dark blue</li></ul> 
+| \- `description`<br/>*(added in v3.0-RC)*| OPTIONAL | Array | Customer-readable description of the vehicle type outlining special features or how-tos. An array with one object per supported language with the following keys:
 &emsp;\-&nbsp; `text` | Yes | String | The translated text.
 &emsp;\-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
-\- `wheel_count`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative Integer | Number of wheels this vehicle type has.
-\- `max_permitted_speed`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative Integer | The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations.
-\- `rated_power`<br/>*(added in v2.3-RC2)* | OPTIONAL | Non-negative Integer | The rated power of the motor for this vehicle type in watts.
-\- `default_reserve_time`<br/>*(added in v2.3-RC)* | Conditionally REQUIRED | Non-negative Integer | REQUIRED if `reservation_price_per_min` or `reservation_price_flat_rate` are defined. Maximum time in minutes that a vehicle can be reserved before a rental begins. When a vehicle is reserved by a user, the vehicle remains locked until the rental begins. During this time the vehicle is unavailable and cannot be reserved or rented by other users. The vehicle status in `vehicle_status.json` MUST be set to `is_reserved = true`. If the value of `default_reserve_time` elapses without a rental beginning, the vehicle status MUST change to `is_reserved = false`. If `default_reserve_time` is set to `0`, the vehicle type cannot be reserved. 
-\- `return_constraint`<br/>*(as of v2.3-RC2)*| OPTIONAL | Enum | The conditions for returning the vehicle at the end of the rental. <br /><br />Current valid values are:<br /><ul><li>`free_floating` _(The vehicle can be returned anywhere permitted within the service area. Note that the vehicle is subject to rules in `geofencing_zones.json` if defined.)_</li><li>`roundtrip_station` _(The vehicle has to be returned to the same station from which it was initially rented. Note that a specific station can be assigned to the vehicle in `free_bike_status.json` using `home_station`.)_</li><li>`any_station` _(The vehicle has to be returned to any station within the service area.)_</li><li>`hybrid` (The vehicle can be returned to any station, or anywhere else permitted within the service area. Note that the vehicle is subject to rules in `geofencing_zones.json` if defined.)</li>
-\- `vehicle_assets`<br/>*(added in v2.3-RC)*| OPTIONAL | Object | An object where each key defines one of the items listed below.
-&emsp;&emsp;\- `icon_url`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | URL | REQUIRED if `vehicle_assets` is defined. A fully qualified URL pointing to the location of a graphic icon file that MAY be used to represent this vehicle type on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
-&emsp;&emsp;\- `icon_url_dark`<br/>*(added in v2.3-RC)*| OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type when in dark mode on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
+\- `wheel_count`<br/>*(added in v2.3)* | OPTIONAL | Non-negative Integer | Number of wheels this vehicle type has.
+\- `max_permitted_speed`<br/>*(added in v2.3)* | OPTIONAL | Non-negative Integer | The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations.
+\- `rated_power`<br/>*(added in v2.3)* | OPTIONAL | Non-negative Integer | The rated power of the motor for this vehicle type in watts.
+\- `default_reserve_time`<br/>*(added in v2.3)* | Conditionally REQUIRED <br/>*(as of v3.0-RC)* | Non-negative Integer | REQUIRED if `reservation_price_per_min` or `reservation_price_flat_rate` are defined. Maximum time in minutes that a vehicle can be reserved before a rental begins. When a vehicle is reserved by a user, the vehicle remains locked until the rental begins. During this time the vehicle is unavailable and cannot be reserved or rented by other users. The vehicle status in `vehicle_status.json` MUST be set to `is_reserved = true`. If the value of `default_reserve_time` elapses without a rental beginning, the vehicle status MUST change to `is_reserved = false`. If `default_reserve_time` is set to `0`, the vehicle type cannot be reserved. 
+\- `return_constraint`<br/>*(as of v2.3)*| OPTIONAL | Enum | The conditions for returning the vehicle at the end of the rental. <br /><br />Current valid values are:<br /><ul><li>`free_floating` _(The vehicle can be returned anywhere permitted within the service area. Note that the vehicle is subject to rules in `geofencing_zones.json` if defined.)_</li><li>`roundtrip_station` _(The vehicle has to be returned to the same station from which it was initially rented. Note that a specific station can be assigned to the vehicle in `free_bike_status.json` using `home_station`.)_</li><li>`any_station` _(The vehicle has to be returned to any station within the service area.)_</li><li>`hybrid` (The vehicle can be returned to any station, or anywhere else permitted within the service area. Note that the vehicle is subject to rules in `geofencing_zones.json` if defined.)</li>
+\- `vehicle_assets`<br/>*(added in v2.3)*| OPTIONAL | Object | An object where each key defines one of the items listed below.
+&emsp;&emsp;\- `icon_url`<br/>*(added in v2.3)*| Conditionally REQUIRED | URL | REQUIRED if `vehicle_assets` is defined. A fully qualified URL pointing to the location of a graphic icon file that MAY be used to represent this vehicle type on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
+&emsp;&emsp;\- `icon_url_dark`<br/>*(added in v2.3)*| OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type when in dark mode on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
 &emsp;&emsp;\- `icon_last_modified`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | Date | REQUIRED if `vehicle_assets` is defined. Date that indicates the last time any included vehicle icon images were modified or updated. 
-\- `default_pricing_plan_id`<br/>*(added in v2.3-RC)*| Conditionally REQUIRED | ID | REQUIRED if `system_pricing_plans.json` is defined. A `plan_id`, as defined in `system_pricing_plans.json`, that identifies a default pricing plan for this vehicle to be used by trip planning applications for purposes of calculating the cost of a single trip using this vehicle type. This default pricing plan is superseded by `pricing_plan_id` when `pricing_plan_id` is defined in `vehicle_status.json` Publishers SHOULD define `default_pricing_plan_id` first and then override it using `pricing_plan_id` in `vehicle_status.json` when necessary.
-\- `pricing_plan_ids`<br/>*(added in v2.3-RC)* | OPTIONAL | Array | Array of all pricing plan IDs, as defined in `system_pricing_plans.json`, that are applied to this vehicle type. <br /><br />This array SHOULD be published when there are multiple pricing plans defined in `system_pricing_plans.json` that apply to a single vehicle type.
+\- `default_pricing_plan_id`<br/>*(added in v2.3)*| Conditionally REQUIRED | ID | REQUIRED if `system_pricing_plans.json` is defined. A `plan_id`, as defined in `system_pricing_plans.json`, that identifies a default pricing plan for this vehicle to be used by trip planning applications for purposes of calculating the cost of a single trip using this vehicle type. This default pricing plan is superseded by `pricing_plan_id` when `pricing_plan_id` is defined in `vehicle_status.json` Publishers SHOULD define `default_pricing_plan_id` first and then override it using `pricing_plan_id` in `vehicle_status.json` when necessary.
+\- `pricing_plan_ids`<br/>*(added in v2.3)* | OPTIONAL | Array | Array of all pricing plan IDs, as defined in `system_pricing_plans.json`, that are applied to this vehicle type. <br /><br />This array SHOULD be published when there are multiple pricing plans defined in `system_pricing_plans.json` that apply to a single vehicle type.
 
 **Example:**
 
@@ -681,12 +681,12 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `stations` | Yes | Array | Array that contains one object per station as defined below.
 \-&nbsp; `station_id` | Yes | ID | Identifier of a station.
-\-&nbsp; `name` | Yes | Array | The public name of the station for display in maps, digital signage, and other text applications. Names SHOULD reflect the station location through the use of a cross street or local landmark. Abbreviations SHOULD NOT be used for names and other text (for example, "St." for "Street") unless a location is called by its abbreviated name (for example, “JFK Airport”). See [Text Fields and Naming](#text-fields-and-naming). <br>Examples: <ul><li>Broadway and East 22nd Street</li><li>Convention Center</li><li>Central Park South</li></ul>. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
-\-&nbsp; `short_name` | OPTIONAL | Array | Short name or other type of identifier. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
+\-&nbsp; `name` <br/>*(as of v3.0-RC)* | Yes | Array | The public name of the station for display in maps, digital signage, and other text applications. Names SHOULD reflect the station location through the use of a cross street or local landmark. Abbreviations SHOULD NOT be used for names and other text (for example, "St." for "Street") unless a location is called by its abbreviated name (for example, “JFK Airport”). See [Text Fields and Naming](#text-fields-and-naming). <br>Examples: <ul><li>Broadway and East 22nd Street</li><li>Convention Center</li><li>Central Park South</li></ul>. An array with one object per supported language with the following keys:
+&emsp; \-&nbsp; `text` | Yes | String | The translated string.
+&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
+\-&nbsp; `short_name` <br/>*(as of v3.0-RC)*  | OPTIONAL | Array | Short name or other type of identifier. An array with one object per supported language with the following keys:
+&emsp; \-&nbsp; `text` | Yes | String | The translated string.
+&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
 \-&nbsp;`lat` | Yes | Latitude | Latitude of the station in decimal degrees. This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 \-&nbsp;`lon` | Yes | Longitude | Longitude of the station in decimal degrees. This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 \-&nbsp;`address` | OPTIONAL | String | Address (street number and name) where station is located. This MUST be a valid address, not a free-form text description. Example: 1234 Main Street
@@ -697,9 +697,9 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`rental_methods` | OPTIONAL | Array | Payment methods accepted at this station. <br /> Current valid values are:<br /> <ul><li>`key` (operator issued vehicle key / fob / card)</li><li>`creditcard`</li><li>`paypass`</li><li>`applepay`</li><li>`androidpay`</li><li>`transitcard`</li><li>`accountnumber`</li><li>`phone`</li></ul>
 \-&nbsp;`is_virtual_station` <br/>*(added in v2.1)* | OPTIONAL | Boolean | Is this station a location with or without smart dock technology? <br /><br /> `true` - The station is a location without smart docking infrastructure.  the station may be defined by a point (lat/lon) and/or `station_area` (below). <br /><br /> `false` - The station consists of smart docking infrastructure (docks). <br /><br /> This field SHOULD be published by mobility systems that have station locations without standard, internet connected physical docking infrastructure. These may be racks or geofenced areas designated for rental and/or return of vehicles. Locations that fit within this description SHOULD have the `is_virtual_station` boolean set to `true`.
 \-&nbsp;`station_area` <br/>*(added in v2.1)* | OPTIONAL | GeoJSON MultiPolygon | A GeoJSON MultiPolygon that describes the area of a virtual station. If `station_area` is supplied, then the record describes a virtual station. <br /><br /> If lat/lon and `station_area` are both defined, the lat/lon is the significant coordinate of the station (for example, parking facility or valet drop-off and pick up point). The `station_area` takes precedence over any `ride_allowed` rules in overlapping `geofencing_zones`.
-\-&nbsp;`parking_type` <br/>*(added in v2.3-RC2)* | OPTIONAL | Enum | Type of parking station.<br /><br />Current valid values are:<ul><li>`parking_lot` _(Off-street parking lot)_</li><li>`street_parking` _(Curbside parking)_</li><li>`underground_parking` _(Parking that is below street level, station may be non-communicating)_</li><li>`sidewalk_parking` _(Park vehicle on sidewalk, out of the pedestrian right of way)_</li><li>`other`</li></ul>
-\-&nbsp;`parking_hoop`<br/>*(added in v2.3-RC2)* | OPTIONAL | Boolean | Are parking hoops present at this station?<br /><br />`true` - Parking hoops are present at this station.<br />`false` - Parking hoops are not present at this station.<br /><br />Parking hoops are lockable devices that are used to secure a parking space to prevent parking of unauthorized vehicles.
-\-&nbsp;`contact_phone`<br/>*(added in v2.3-RC2)* | OPTIONAL | Phone number | Contact phone of the station.
+\-&nbsp;`parking_type` <br/>*(added in v2.3)* | OPTIONAL | Enum | Type of parking station.<br /><br />Current valid values are:<ul><li>`parking_lot` _(Off-street parking lot)_</li><li>`street_parking` _(Curbside parking)_</li><li>`underground_parking` _(Parking that is below street level, station may be non-communicating)_</li><li>`sidewalk_parking` _(Park vehicle on sidewalk, out of the pedestrian right of way)_</li><li>`other`</li></ul>
+\-&nbsp;`parking_hoop`<br/>*(added in v2.3)* | OPTIONAL | Boolean | Are parking hoops present at this station?<br /><br />`true` - Parking hoops are present at this station.<br />`false` - Parking hoops are not present at this station.<br /><br />Parking hoops are lockable devices that are used to secure a parking space to prevent parking of unauthorized vehicles.
+\-&nbsp;`contact_phone`<br/>*(added in v2.3)* | OPTIONAL | Phone number | Contact phone of the station.
 \-&nbsp;`capacity` | OPTIONAL | Non-negative integer | Number of total docking points installed at this station, both available and unavailable, regardless of what vehicle types are allowed at each dock. <br/><br/>If this is a virtual station defined using the `is_virtual_station` field, this number represents the total number of vehicles of all types that can be parked at the virtual station.<br/><br/>If the virtual station is defined by `station_area`, this is the number that can park within the station area. If `lat`/`lon` are defined, this is the number that can park at those coordinates.
 \-&nbsp;`vehicle_type_area_capacity` <br/>*(as of v3.0)* | OPTIONAL | Array| This field's value is an array of objects containing the keys `vehicle_type_id` and `count` defined below.  These objects are used to model the parking capacity of virtual stations (defined using the `is_virtual_station` field) for each vehicle type defined in `vehicle_types.json`.
 &emsp;&emsp;\-&nbsp;`vehicle_type_id`| Yes | ID | REQUIRED if `vehicle_type_area_capacity` is defined. A `vehicle_type_id`, as defined in `vehicle_types.json`, that may park at the virtual station.
@@ -708,7 +708,7 @@ Field Name | REQUIRED | Type | Defines
 &emsp;&emsp;\-&nbsp;`vehicle_type_id`| Yes | ID | REQUIRED if `vehicle_type_dock_capacity` is defined. A `vehicle_type_id`, as defined in `vehicle_types.json`, that may dock at the station.
 &emsp;&emsp;\-&nbsp;`count`| Yes | Non-negative integer | REQUIRED if `vehicle_type_dock_capacity` is defined. The total number of docks at the station, both available and unavailable, that may accept the corresponding vehicle type as defined by its `vehicle_type_id`.
 \-&nbsp;`is_valet_station` <br/>*(added in v2.1)* | OPTIONAL | Boolean | Are valet services provided at this station? <br /><br /> `true` - Valet services are provided at this station. <br /> `false` - Valet services are not provided at this station. <br /><br /> If this field is empty, it is assumed that valet services are not provided at this station. <br><br>This field’s boolean SHOULD be set to `true` during the hours which valet service is provided at the station. Valet service is defined as providing unlimited capacity at a station.
-\-&nbsp;`is_charging_station` <br/>*(added in v2.3-RC)* | OPTIONAL | Boolean | Does the station support charging of electric vehicles? <br /><br /> `true` - Electric vehicle charging is available at this station. <br /> `false` -  Electric vehicle charging is not available at this station.
+\-&nbsp;`is_charging_station` <br/>*(added in v2.3)* | OPTIONAL | Boolean | Does the station support charging of electric vehicles? <br /><br /> `true` - Electric vehicle charging is available at this station. <br /> `false` -  Electric vehicle charging is not available at this station.
 \-&nbsp;`rental_uris` | OPTIONAL | Object | Contains rental URIs for Android, iOS, and web in the `android`, `ios`, and `web` fields. See [examples](#deep-links-examples) of how to use these fields and [supported analytics](#analytics).
 &emsp;\-&nbsp;`android` | OPTIONAL | URI | URI that can be passed to an Android app with an `android.intent.action.VIEW` Android intent to support Android Deep Links (https://developer.android.com/training/app-links/deep-linking). Please use Android App Links (https://developer.android.com/training/app-links) if possible so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this station, and SHOULD NOT be a general rental page that includes information for more than one station. The deep link SHOULD take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking is not supported in the native Android rental app. <br><br>Note that the URI does not necessarily include the `station_id` for this station - other identifiers can be used by the rental app within the URI to uniquely identify this station. <br><br>See the [Analytics](#analytics) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Android App Links example value: `https://www.example.com/app?sid=1234567890&platform=android` <br><br>Deep Link (without App Links) example value: `com.example.android://open.example.app/app?sid=1234567890`
 &emsp;\-&nbsp;`ios` | OPTIONAL | URI | URI that can be used on iOS to launch the rental app for this station. More information on this iOS feature can be found [here](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/communicating_with_other_apps_using_custom_urls?language=objc). Please use iOS Universal Links (https://developer.apple.com/ios/universal-links/) if possible so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this station, and SHOULD NOT be a general rental page that includes information for more than one station.  The deep link SHOULD take users directly to this station, without any prompts, interstitial pages, or logins. Make sure that users can see this station even if they never previously opened the application.  <br><br>If this field is empty, it means deep linking is not supported in the native iOS rental app. <br><br>Note that the URI does not necessarily include the `station_id` for this station - other identifiers can be used by the rental app within the URI to uniquely identify this station. <br><br>See the [Analytics](#analytics) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>iOS Universal Links example value: `https://www.example.com/app?sid=1234567890&platform=ios` <br><br>Deep Link (without Universal Links) example value: `com.example.ios://open.example.app/app?sid=1234567890`
@@ -940,12 +940,12 @@ Field Name | REQUIRED | Type | Defines
 \- `vehicle_type_id` <br/>*(added in v2.1)* | Conditionally REQUIRED | ID | The `vehicle_type_id` of this vehicle, as described in [vehicle_types.json](#vehicle_typesjson). REQUIRED if the [vehicle_types.json](#vehicle_typesjson) file is defined. The `vehicle_type_id` of this vehicle, as described in `vehicle_types.json`.
 \- `last_reported` <br/>*(added in v2.1)* | OPTIONAL | Timestamp | The last time this vehicle reported its status to the operator's backend.
 \- `current_range_meters` <br/>*(added in v2.1)* | Conditionally REQUIRED | Non-negative float | REQUIRED if the corresponding `vehicle_type` definition for this vehicle has a motor. This value represents the furthest distance in meters that the vehicle can travel with the vehicle's current charge or fuel (without recharging or refueling). Note that in the case of carsharing, the given range is indicative and can be different from the one displayed on the vehicle's dashboard.
-\- `current_fuel_percent` <br/>*(added in v2.3-RC2)*| OPTIONAL | Non-negative float | This value represents the current percentage, expressed from 0 to 1, of fuel or battery power remaining in the vehicle.
+\- `current_fuel_percent` <br/>*(added in v2.3)*| OPTIONAL | Non-negative float | This value represents the current percentage, expressed from 0 to 1, of fuel or battery power remaining in the vehicle.
 \- `station_id` <br/>*(added in v2.1)* | Conditionally REQUIRED | ID | REQUIRED if the vehicle is currently at a station and the [vehicle_types.json](#vehicle_typesjson) file has been defined. Identifier referencing the `station_id` field in [station_information.json](#station_informationjson). 
-\- `home_station_id` <br/>*(added in v2.3-RC)* | OPTIONAL | ID | The `station_id` of the station this vehicle must be returned to as defined in [station_information.json](#station_informationjson).
+\- `home_station_id` <br/>*(added in v2.3)* | OPTIONAL | ID | The `station_id` of the station this vehicle must be returned to as defined in [station_information.json](#station_informationjson).
 \- `pricing_plan_id` <br/>*(added in v2.2)* | OPTIONAL | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plansjson). If this field is defined it supersedes `default_pricing_plan_id` in `vehicle_types.json`. This field SHOULD be used to override `default_pricing_plan_id` in `vehicle_types.json` to define pricing plans for individual vehicles when necessary.
-\- `vehicle_equipment`<br/>*(added in v2.3-RC2)* | OPTIONAL | Array | List of vehicle equipment provided by the operator in addition to the accessories already provided in the vehicle (field `vehicle_accessories` of `vehicle_types.json`) but subject to more frequent updates.<br/><br/>Current valid values are:<ul><li>`child_seat_a` _(Baby seat ("0-10kg"))_</li><li>`child_seat_b`	 _(Seat or seat extension for small children ("9-18 kg"))_</li><li>`child_seat_c`	_(Seat or seat extension for older children ("15-36 kg"))_</li><li>`winter_tires` 	_(Vehicle has tires for winter weather)_</li><li>`snow_chains`</li></ul>
-\- `available_until`<br/>*(added in v2.3-RC2)* | OPTIONAL |  Datetime | The date and time when any rental of the vehicle must be completed. The vehicle must be returned and made available for the next user by this time. If this field is empty, it indicates that the vehicle is available indefinitely.<br /><br /> This field SHOULD be published by carsharing or other mobility systems where vehicles can be booked in advance for future travel.
+\- `vehicle_equipment`<br/>*(added in v2.3)* | OPTIONAL | Array | List of vehicle equipment provided by the operator in addition to the accessories already provided in the vehicle (field `vehicle_accessories` of `vehicle_types.json`) but subject to more frequent updates.<br/><br/>Current valid values are:<ul><li>`child_seat_a` _(Baby seat ("0-10kg"))_</li><li>`child_seat_b`	 _(Seat or seat extension for small children ("9-18 kg"))_</li><li>`child_seat_c`	_(Seat or seat extension for older children ("15-36 kg"))_</li><li>`winter_tires` 	_(Vehicle has tires for winter weather)_</li><li>`snow_chains`</li></ul>
+\- `available_until`<br/>*(added in v2.3)* | OPTIONAL |  Datetime | The date and time when any rental of the vehicle must be completed. The vehicle must be returned and made available for the next user by this time. If this field is empty, it indicates that the vehicle is available indefinitely.<br /><br /> This field SHOULD be published by carsharing or other mobility systems where vehicles can be booked in advance for future travel.
 
 
 **Example 1: Micromobility**
@@ -1047,9 +1047,9 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `regions` | Yes | Array | Array of objects as defined below.
 \-&nbsp; `region_id` | Yes | ID | Identifier for the region.
-\-&nbsp; `name` | Yes | Array | Public name for this region. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
+\-&nbsp; `name` <br/>*(as of v3.0-RC)* | Yes | Array | Public name for this region. An array with one object per supported language with the following keys:
+&emsp; \-&nbsp; `text` | Yes | String | The translated string.
+&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
 
 **Example:**
 
@@ -1110,17 +1110,17 @@ Field Name | REQUIRED | Type | Defines
 `plans` | Yes | Array | Array of objects as defined below.
 \-&nbsp; `plan_id` | Yes | ID | Identifier for a pricing plan in the system.
 \-&nbsp; `url` | OPTIONAL | URL | URL where the customer can learn more about this pricing plan.
-\-&nbsp; `name` | Yes | Array | Name of this pricing plan. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
+\-&nbsp; `name` <br/>*(as of v3.0-RC)* | Yes | Array | Name of this pricing plan. An array with one object per supported language with the following keys:
+&emsp; \-&nbsp; `text` | Yes | String | The translated string.
+&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
 \-&nbsp;`currency` | Yes | String | Currency used to pay the fare. <br /><br /> This pricing is in ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217 <br />(for example, `CAD` for Canadian dollars, `EUR` for euros, or `JPY` for Japanese yen.)
 \-&nbsp;`price` | Yes | Non-Negative Float | Fare price, in the unit specified by `currency`. <br/>*(added in v2.2)* In case of non-rate price, this field is the total price. In case of rate price, this field is the base price that is charged only once per trip (typically the price for unlocking) in addition to `per_km_pricing` and/or `per_min_pricing`.
-\-&nbsp;`reservation_price_per_min` | OPTIONAL | Non-Negative Float | The cost, described as per minute rate, to reserve the vehicle prior to beginning a rental. This amount is charged for each minute of the vehicle reservation until the rental is initiated, or until the number of minutes defined in `vehicle_types.json#default_reserve_time` elapses, whichever comes first. When using this field, you MUST declare a value in `vehicle_types.json#default_reserve_time`. This field MUST NOT be combined in a single pricing plan with `reservation_price_flat_rate`.
-\-&nbsp;`reservation_price_flat_rate` | OPTIONAL | Non-Negative Float | The cost, described as a flat rate, to reserve the vehicle prior to beginning a rental. This amount is charged once to reserve the vehicle for the duration of the time defined by `vehicle_types.json#default_reserve_time`. When using this field, you MUST declare a value in `vehicle_types.json#default_reserve_time`. This field MUST NOT be combined in a single pricing plan with `reservation_price_per_min`.
+\-&nbsp;`reservation_price_per_min` <br/>*(added in v3.0-RC)*  | OPTIONAL | Non-Negative Float | The cost, described as per minute rate, to reserve the vehicle prior to beginning a rental. This amount is charged for each minute of the vehicle reservation until the rental is initiated, or until the number of minutes defined in `vehicle_types.json#default_reserve_time` elapses, whichever comes first. When using this field, you MUST declare a value in `vehicle_types.json#default_reserve_time`. This field MUST NOT be combined in a single pricing plan with `reservation_price_flat_rate`.
+\-&nbsp;`reservation_price_flat_rate` <br/>*(added in v3.0-RC)* | OPTIONAL | Non-Negative Float | The cost, described as a flat rate, to reserve the vehicle prior to beginning a rental. This amount is charged once to reserve the vehicle for the duration of the time defined by `vehicle_types.json#default_reserve_time`. When using this field, you MUST declare a value in `vehicle_types.json#default_reserve_time`. This field MUST NOT be combined in a single pricing plan with `reservation_price_per_min`.
 \-&nbsp;`is_taxable` | Yes | Boolean | Will additional tax be added to the base price?<br /><br />`true` - Yes.<br />  `false` - No.  <br /><br />`false` MAY be used to indicate that tax is not charged or that tax is included in the base price.
-\-&nbsp; `description` | Yes | Array | Customer-readable description of the pricing plan. This SHOULD include the duration, price, conditions, etc. that the publisher would like users to see. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
+\-&nbsp; `description` <br/>*(as of v3.0-RC)* | Yes | Array | Customer-readable description of the pricing plan. This SHOULD include the duration, price, conditions, etc. that the publisher would like users to see. An array with one object per supported language with the following keys:
+&emsp; \-&nbsp; `text` | Yes | String | The translated string.
+&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
 \-&nbsp;`per_km_pricing` <br/>*(added in v2.2)* | OPTIONAL | Array | Array of segments when the price is a function of distance traveled, displayed in kilometers.<br /><br />Total cost is the addition of `price` and all segments in `per_km_pricing` and `per_min_pricing`. If this array is not provided, there are no variable costs based on distance.
 &emsp;&emsp;\-&nbsp;`start` <br/>*(added in v2.2)* | Conditionally REQUIRED | Non-Negative Integer | REQUIRED if `per_km_pricing` is defined. The kilometer at which this segment rate starts being charged *(inclusive)*.
 &emsp;&emsp;\-&nbsp;`rate` <br/>*(added in v2.2)* | Conditionally REQUIRED | Float | REQUIRED if `per_km_pricing` is defined. Rate that is charged for each kilometer `interval` after the `start`. Can be a negative number, which indicates that the traveler will receive a discount.
@@ -1249,15 +1249,15 @@ Field Name | REQUIRED | Type | Defines
 &emsp;\-&nbsp;`end` | OPTIONAL | Timestamp | End time of the alert. If there is currently no end time planned for the alert, this can be omitted.
 \-&nbsp;`station_ids` | OPTIONAL | Array | If this is an alert that affects one or more stations, include their ID(s). Otherwise omit this field. If both `station_id` and `region_id` are omitted, this alert affects the entire system.
 \-&nbsp;`region_ids` | OPTIONAL | Array | If this system has regions, and if this alert only affects certain regions, include their ID(s). Otherwise, omit this field. If both `station_id`s and `region_id`s are omitted, this alert affects the entire system.
-\-&nbsp; `url` | OPTIONAL | Array | URL where the customer can learn more information about this alert. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | URL | URL pointing to the alert in the given language
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
-\-&nbsp; `summary` | Yes | Array | A short summary of this alert to be displayed to the customer. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string
-&emsp; \-&nbsp; `language` | Yes | Array | IETF BCP 47 language code
-\-&nbsp; `description` | OPTIONAL | Array | Detailed description of the alert. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string
-&emsp; \-&nbsp; `language` | Yes | Array | IETF BCP 47 language code
+\-&nbsp; `url` <br/>*(as of v3.0-RC)* | OPTIONAL | Array | URL where the customer can learn more information about this alert. An array with one object per supported language with the following keys:
+&emsp; \-&nbsp; `text` | Yes | URL | URL pointing to the alert in the given language.
+&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
+\-&nbsp; `summary` <br/>*(as of v3.0-RC)*  | Yes | Array | A short summary of this alert to be displayed to the customer. An array with one object per supported language with the following keys:
+&emsp; \-&nbsp; `text` | Yes | String | The translated string.
+&emsp; \-&nbsp; `language` | Yes | Array | IETF BCP 47 language code.
+\-&nbsp; `description` <br/>*(as of v3.0-RC)*  | OPTIONAL | Array | Detailed description of the alert. An array with one object per supported language with the following keys:
+&emsp; \-&nbsp; `text` | Yes | String | The translated string.
+&emsp; \-&nbsp; `language` | Yes | Array | IETF BCP 47 language code.
 \-&nbsp;`last_updated` | OPTIONAL | Timestamp | Indicates the last time the info for the alert was updated.
 
 **Example:**
@@ -1318,9 +1318,9 @@ Field Name | REQUIRED | Type | Defines
 &emsp;\-&nbsp;`type` | Yes | String | “Feature” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
 &emsp;\-&nbsp;`geometry` | Yes | GeoJSON MultiPolygon | A polygon that describes where rides might not be able to start, end, go through, or have other limitations. A clockwise arrangement of points defines the area enclosed by the polygon, while a counterclockwise order defines the area outside the polygon ([right-hand rule](https://tools.ietf.org/html/rfc7946#section-3.1.6)). All geofencing zones contained in this list are public (meaning they can be displayed on a map for public use).
 &emsp;\-&nbsp;`properties` | Yes | Object | Properties: As defined below, describing travel allowances and limitations.
-&emsp; &emsp; \-&nbsp; `name` | OPTIONAL | Array | Public name of the geofencing zone. An array with one object per supported language with the following keys:
-&emsp; &emsp; &emsp; \-&nbsp; `text` | Yes | String | The translated string
-&emsp; &emsp; &emsp; \-&nbsp; `language` | Yes | String | IETF BCP 47 language code
+&emsp; &emsp; \-&nbsp; `name` <br/>*(as of v3.0-RC)*  | OPTIONAL | Array | Public name of the geofencing zone. An array with one object per supported language with the following keys:
+&emsp; &emsp; &emsp; \-&nbsp; `text` | Yes | String | The translated string.
+&emsp; &emsp; &emsp; \-&nbsp; `language` | Yes | String | IETF BCP 47 language code.
 &emsp;&emsp;\-&nbsp;`start` | OPTIONAL | Timestamp | Start time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
 &emsp;&emsp;\-&nbsp;`end` | OPTIONAL | Timestamp | End time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
 &emsp;&emsp;\-&nbsp;`rules` | OPTIONAL | Array | Array that contains one object per rule as defined below. <br /><br /> In the event of colliding rules within the same polygon, the earlier rule (in order of the JSON file) takes precedence. <br> In the case of overlapping polygons, the combined set of rules associated with the overlapping polygons applies to the intersection of the polygons. In the event of colliding rules in this set, the earlier rule (in order of the JSON file) also takes precedence.
@@ -1397,7 +1397,12 @@ Field Name | REQUIRED | Type | Defines
             ]
           },
           "properties": {
-            "name": "NE 24th/NE Knott",
+            "name": [
+              {
+                "text: "NE 24th/NE Knott",
+                "language": "en"
+              }
+            ]
             "start": 1593878400,
             "end": 1593907260,
             "rules": [
