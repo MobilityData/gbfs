@@ -1245,8 +1245,9 @@ Field Name | REQUIRED | Type | Defines
 
 *(added in v2.1)*
 
-Describes geofencing zones and their associated rules and attributes.<br />
-Geofenced areas are delineated using GeoJSON in accordance with [RFC 7946](https://tools.ietf.org/html/rfc7946). By default, no restrictions apply everywhere, but if geofencing is present, restrictions apply by default.
+Describes geofencing zones and their associated rules and attributes. Geofenced areas are delineated using GeoJSON in accordance with [RFC 7946](https://tools.ietf.org/html/rfc7946).
+
+When `geofencing_zones.json` is defined, rides may not start, end, or travel through any area of the system unless explicitly enabled by a geofence zone and its associated rules. When `geofencing_zones.json` is not defined, then no such ride restrictions apply.
 
 Geofences and GPS operate in two dimensions. Restrictions placed on an overpass or bridge will also  be applied to the roadway or path beneath.<br><br>Care SHOULD be taken when developing geofence based policies that rely on location data.  Location data from GPS, cellular and Wi-Fi signals are subject to interference resulting in accuracy levels in the tens of meters or greater.  This may result in vehicles being placed within a geofenced zone when they are actually outside or adjacent to the zone. Transit time between server and client can also impact when a user is notified of a geofence based policy. A vehicle traveling at 15kph can be well inside of a restricted zone before a notification is received.
 
