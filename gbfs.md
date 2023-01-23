@@ -595,11 +595,15 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`is_virtual_station` <br/>*(added in v2.1)* | OPTIONAL | Boolean | Is this station a location with or without smart dock technology? <br /><br /> `true` - The station is a location without smart docking infrastructure.  the station may be defined by a point (lat/lon) and/or `station_area` (below). <br /><br /> `false` - The station consists of smart docking infrastructure (docks). <br /><br /> This field SHOULD be published by mobility systems that have station locations without standard, internet connected physical docking infrastructure. These may be racks or geofenced areas designated for rental and/or return of vehicles. Locations that fit within this description SHOULD have the `is_virtual_station` boolean set to `true`.
 \-&nbsp;`station_area` <br/>*(added in v2.1)* | OPTIONAL | GeoJSON MultiPolygon | A GeoJSON MultiPolygon that describes the area of a virtual station. If `station_area` is supplied, then the record describes a virtual station. <br /><br /> If lat/lon and `station_area` are both defined, the lat/lon is the significant coordinate of the station (for example, parking facility or valet drop-off and pick up point). The `station_area` takes precedence over any `ride_allowed` rules in overlapping `geofencing_zones`.
 \-&nbsp;`parking_type` <br/>*(added in v2.3-RC2)* | OPTIONAL | Enum | Type of parking station.<br /><br />Current valid values are:<ul><li>`parking_lot` _(Off-street parking lot)_</li><li>`street_parking` _(Curbside parking)_</li><li>`underground_parking` _(Parking that is below street level, station may be non-communicating)_</li><li>`sidewalk_parking` _(Park vehicle on sidewalk, out of the pedestrian right of way)_</li><li>`other`</li></ul>
-\-&nbsp; `parking_hoop`<br/>*(added in v2.3-RC2)* | OPTIONAL | Boolean | Are parking hoops present at this station?<br /><br />`true` - Parking hoops are present at this station.<br />`false` - Parking hoops are not present at this station.<br /><br />Parking hoops are lockable devices that are used to secure a parking space to prevent parking of unauthorized vehicles.
-\-&nbsp; `contact_phone`<br/>*(added in v2.3-RC2)* | OPTIONAL | Phone number | Contact phone of the station.
+\-&nbsp;`parking_hoop`<br/>*(added in v2.3-RC2)* | OPTIONAL | Boolean | Are parking hoops present at this station?<br /><br />`true` - Parking hoops are present at this station.<br />`false` - Parking hoops are not present at this station.<br /><br />Parking hoops are lockable devices that are used to secure a parking space to prevent parking of unauthorized vehicles.
+\-&nbsp;`contact_phone`<br/>*(added in v2.3-RC2)* | OPTIONAL | Phone number | Contact phone of the station.
 \-&nbsp;`capacity` | OPTIONAL | Non-negative integer | Number of total docking points installed at this station, both available and unavailable, regardless of what vehicle types are allowed at each dock. <br/><br/>If this is a virtual station defined using the `is_virtual_station` field, this number represents the total number of vehicles of all types that can be parked at the virtual station.<br/><br/>If the virtual station is defined by `station_area`, this is the number that can park within the station area. If `lat`/`lon` are defined, this is the number that can park at those coordinates.
-\-&nbsp;`vehicle_type_area_capacity` <br/>*(added in v2.1)* | OPTIONAL | Object | An object used to describe the parking capacity of virtual stations (defined using the `is_virtual_station` field), where each key is a `vehicle_type_id` as described in [vehicle_types.json](#vehicle_typesjson) and the value is a number representing the total number of vehicles of this type that can park within the virtual station.<br/><br/>If the virtual station is defined by `station_area`, this is the number that can park within the station area. If `lat`/`lon` is defined, this is the number that can park at those coordinates.
-\-&nbsp;`vehicle_type_dock_capacity` <br/>*(added in v2.1)* | OPTIONAL | Object | An object used to describe the docking capacity of a station where each key is a `vehicle_type_id` as described in [vehicle_types.json](#vehicle_typesjson) and the value is a number representing the total docking points installed at this station, both available and unavailable for the specified vehicle type.
+\-&nbsp;`vehicle_type_area_capacity` <br/>*(as of v3.0)* | OPTIONAL | Array| This field's value is an array of objects containing the keys `vehicle_type_id` and `count` defined below.  These objects are used to model the parking capacity of virtual stations (defined using the `is_virtual_station` field) for each vehicle type defined in `vehicle_types.json`.
+&emsp;&emsp;\-&nbsp;`vehicle_type_id`| Yes | ID | REQUIRED if `vehicle_type_area_capacity` is defined. A `vehicle_type_id`, as defined in `vehicle_types.json`, that may park at the virtual station.
+&emsp;&emsp;\-&nbsp;`count`| Yes | Non-negative integer | REQUIRED if `vehicle_type_area_capacity` is defined. A number representing the total number of vehicles of the corresponding `vehicle_type_id` type that can park within the virtual station.<br /><br />If the virtual station is defined by `station_area`, this is the number that can park within the station area. If `lat`/`lon` is defined, this is the number that can park at those coordinates.
+\-&nbsp;`vehicle_type_dock_capacity` <br/>*(as of v3.0)* | OPTIONAL | Array | This field's value is an array of objects containing the keys `vehicle_type_id` and `count` defined below. These objects are used to model the total docking capacity of a station, both available and unavailable, for each type of vehicle defined in `vehicle_types.json`.
+&emsp;&emsp;\-&nbsp;`vehicle_type_id`| Yes | ID | REQUIRED if `vehicle_type_dock_capacity` is defined. A `vehicle_type_id`, as defined in `vehicle_types.json`, that may dock at the station.
+&emsp;&emsp;\-&nbsp;`count`| Yes | Non-negative integer | REQUIRED if `vehicle_type_dock_capacity` is defined. The total number of docks at the station, both available and unavailable, that may accept the corresponding vehicle type as defined by its `vehicle_type_id`.
 \-&nbsp;`is_valet_station` <br/>*(added in v2.1)* | OPTIONAL | Boolean | Are valet services provided at this station? <br /><br /> `true` - Valet services are provided at this station. <br /> `false` - Valet services are not provided at this station. <br /><br /> If this field is empty, it is assumed that valet services are not provided at this station. <br><br>This field’s boolean SHOULD be set to `true` during the hours which valet service is provided at the station. Valet service is defined as providing unlimited capacity at a station.
 \-&nbsp;`is_charging_station` <br/>*(added in v2.3-RC)* | OPTIONAL | Boolean | Does the station support charging of electric vehicles? <br /><br /> `true` - Electric vehicle charging is available at this station. <br /> `false` -  Electric vehicle charging is not available at this station.
 \-&nbsp;`rental_uris` | OPTIONAL | Object | Contains rental URIs for Android, iOS, and web in the `android`, `ios`, and `web` fields. See [examples](#deep-links-examples) of how to use these fields and [supported analytics](#analytics).
@@ -626,10 +630,16 @@ Field Name | REQUIRED | Type | Defines
         "parking_hoop": false,
         "contact_phone": "+33109874321",
         "is_charging_station": true,
-        "vehicle_type_dock_capacity": {
-          "abc123": 7,
-          "def456": 9
-        }
+        "vehicle_type_dock_capacity": [
+          {
+            "vehicle_type_id": "abc123",
+            "count": 7
+          },
+          {
+            "vehicle_type_id": "def456",
+            "count": 0
+          }
+        ]
       }
     ]
   }
@@ -683,11 +693,16 @@ Field Name | REQUIRED | Type | Defines
           ]
         },
         "capacity": 16,
-        "vehicle_type_area_capacity": {
-          "abc123": 8,
-          "def456": 8,
-          "ghi789": 16
-        }
+        "vehicle_type_area_capacity": [
+          {
+            "vehicle_type_id": "abc123",
+            "count": 7
+          },
+          {
+            "vehicle_type_id": "def456",
+            "count": 8
+          }
+        ]
       }
     ]
   }
