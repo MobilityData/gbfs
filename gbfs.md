@@ -1397,7 +1397,6 @@ In the examples below, only a minimal set of fields are specified for clarity.
           "vehicle_type_id": ["bike"],
           "ride_through_allowed": false,
           "maximum_speed_kph": 10,
-          "#": "..."
         }
       ]
     }
@@ -1427,7 +1426,6 @@ b  | bike | false | 10
         {
           "vehicle_type_id": ["bike"],
           "ride_through_allowed": true,
-           ...
         }
       ]
     }
@@ -1439,7 +1437,6 @@ b  | bike | false | 10
         {
           "vehicle_type_id": ["scooter"],
           "ride_through_allowed": false,
-           ...
         }
       ]
     }
@@ -1467,9 +1464,8 @@ b  | scooter | false
     "properties": {
       "rules": [
         {
-          "vehicle_type_id": ["bike", “scooter”],
+          "vehicle_type_id": ["bike", "scooter"],
           "ride_through_allowed": true,
-           ...
         }
       ]
     }
@@ -1481,7 +1477,6 @@ b  | scooter | false
         {
           "vehicle_type_id": ["scooter"],
           "ride_through_allowed": false,
-           ...
         }
       ]
     }
