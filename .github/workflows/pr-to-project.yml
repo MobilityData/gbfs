@@ -15,4 +15,4 @@ jobs:
           # You can target a repository in a different organization
           # to the issue
           project-url: https://github.com/orgs/MobilityData/projects/58
-          github-token: ${{ secrets.GBFS_REPOS_CURRENT_STATUS }}
+          github-token: ${{secrets.GBFS_REPOS_CURRENT_STATUS}}
