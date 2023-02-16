@@ -1312,7 +1312,7 @@ Field Name | REQUIRED | Type | Defines
 
 Describes geofencing zones and their associated rules and attributes. Geofenced areas are delineated using GeoJSON in accordance with [RFC 7946](https://tools.ietf.org/html/rfc7946).
 
-When `geofencing_zones.json` is defined, rides may not start, end, or travel through any area of the system unless explicitly enabled by a geofence zone and its associated rules. When `geofencing_zones.json` is not defined, then no such ride restrictions apply.
+When `geofencing_zones.json` is defined, the `global_rules` field determines the default ride restrictions for all areas not explicitly covered by a geofence zones and its associated rules.  See [Geofencing Rule Precedence](#geofencing-rule-precedence) for more details.  When `geofencing_zones.json` is not defined, then no such ride restrictions apply.
 
 Geofences and GPS operate in two dimensions. Restrictions placed on an overpass or bridge will also  be applied to the roadway or path beneath.<br><br>Care SHOULD be taken when developing geofence based policies that rely on location data.  Location data from GPS, cellular and Wi-Fi signals are subject to interference resulting in accuracy levels in the tens of meters or greater.  This may result in vehicles being placed within a geofenced zone when they are actually outside or adjacent to the zone. Transit time between server and client can also impact when a user is notified of a geofence based policy. A vehicle traveling at 15kph can be well inside of a restricted zone before a notification is received.
 
@@ -1332,7 +1332,7 @@ Field Name | REQUIRED | Type | Defines
 &emsp;&emsp;\-&nbsp;`start` | OPTIONAL | Timestamp | Start time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
 &emsp;&emsp;\-&nbsp;`end` | OPTIONAL | Timestamp | End time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
 &emsp;&emsp;\-&nbsp;`rules` | OPTIONAL | Array<Rule> | Array that contains a list of [Rule](#geofencing-rule-object) objects defining restrictions that apply within the area of the polygon.  See [Geofencing Rule Precedence](#geofencing-rule-precedence) for details on semantics of overlapping polygons, vehicle types, and other precedence rules.
-`global_rules` | Yes | Array<Rule> | Array that contains a list of [Rule](#geofencing-rule-object) objects defining restrictions that apply globally in all areas as the default restrictions, except where overridden with an explicit geofencing zone.  See [Geofencing Rule Precedence](#geofencing-rule-precedence) for more details.<br/<br/>A rule or list of rules, as appropriate, should be specified in the global rules list covering all vehicle types in the feed.
+`global_rules` | Yes | Array<Rule> | Array that contains a list of [Rule](#geofencing-rule-object) objects defining restrictions that apply globally in all areas as the default restrictions, except where overridden with an explicit geofencing zone.  See [Geofencing Rule Precedence](#geofencing-rule-precedence) for more details.<br/<br/>A rule or list of rules, as appropriate, must be specified in the global rules list covering all vehicle types in the feed.
 
 #### Geofencing Rule Object
 
