@@ -1331,8 +1331,8 @@ Field Name | REQUIRED | Type | Defines
 &emsp; &emsp; &emsp; \-&nbsp; `language` | Yes | String | IETF BCP 47 language code.
 &emsp;&emsp;\-&nbsp;`start` | OPTIONAL | Timestamp | Start time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
 &emsp;&emsp;\-&nbsp;`end` | OPTIONAL | Timestamp | End time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
-&emsp;&emsp;\-&nbsp;`rules` | OPTIONAL | Array&lt;[Rule](#geofencing-rule-object)&gt; | Array that contains a list of [Rule](#geofencing-rule-object) objects defining restrictions that apply within the area of the polygon.  See [Geofencing Rule Precedence](#geofencing-rule-precedence) for details on semantics of overlapping polygons, vehicle types, and other precedence rules.
-`global_rules` | Yes | Array&lt;[Rule](#geofencing-rule-object)&gt; | Array that contains a list of [Rule](#geofencing-rule-object) objects defining restrictions that apply globally in all areas as the default restrictions, except where overridden with an explicit geofencing zone.  See [Geofencing Rule Precedence](#geofencing-rule-precedence) for more details.<br/<br/>A rule or list of rules, as appropriate, must be specified in the global rules list covering all vehicle types in the feed.
+&emsp;&emsp;\-&nbsp;`rules` | OPTIONAL | Array&lt;[Rule](#geofencing-rule-object)&gt; | Array of [Rule](#geofencing-rule-object) objects defining restrictions that apply within the area of the polygon.  See [Geofencing Rule Precedence](#geofencing-rule-precedence) for details on semantics of overlapping polygons, vehicle types, and other precedence rules.
+`global_rules` | Yes | Array&lt;[Rule](#geofencing-rule-object)&gt; | Array of [Rule](#geofencing-rule-object) objects defining restrictions that apply globally in all areas as the default restrictions, except where overridden with an explicit geofencing zone.  See [Geofencing Rule Precedence](#geofencing-rule-precedence) for more details.<br/<br/>A rule or list of rules, as appropriate, must be specified in the global rules list covering all vehicle types in the feed.
 
 #### Geofencing Rule Object
 
