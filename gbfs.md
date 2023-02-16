@@ -1331,13 +1331,31 @@ Field Name | REQUIRED | Type | Defines
 &emsp; &emsp; &emsp; \-&nbsp; `language` | Yes | String | IETF BCP 47 language code.
 &emsp;&emsp;\-&nbsp;`start` | OPTIONAL | Timestamp | Start time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
 &emsp;&emsp;\-&nbsp;`end` | OPTIONAL | Timestamp | End time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
-&emsp;&emsp;\-&nbsp;`rules` | OPTIONAL | Array | Array that contains one object per rule, as defined below, allowing for different restrictions for different vehicle types.<br/><br/>When multiple rules in the same polygon apply to a particular vehicle type, per the semantics of the `vehicle_type_id` field defined below, then the earlier rule (in order of the JSON file) takes precedence for that vehicle type.<br/><br/>When multiple overlapping polygons define rules that apply to a particular vehicle type, then in the overlapping area the earlier polygon (in order of the JSON file) takes precedence for that vehicle type.  Polygons with inactive time ranges should be excluded from consideration when considering precedence.<br/><br/>See examples below.
-&emsp;&emsp;&emsp;\-&nbsp;`vehicle_type_id` | OPTIONAL | Array | Array of IDs of vehicle types for which any restrictions SHOULD be applied (see vehicle type definitions in `vehicle_types.json`). If vehicle type IDs are not specified, then restrictions apply to all vehicle types.
-&emsp;&emsp;&emsp;\-&nbsp;`ride_start_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the ride allowed to start in this zone? <br /><br /> `true` - Ride can start in this zone. <br /> `false` - Ride cannot start in this zone.
-&emsp;&emsp;&emsp;\-&nbsp;`ride_end_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the ride allowed to end in this zone? <br /><br /> `true` - Ride can end in this zone. <br /> `false` - Ride cannot end in this zone.
-&emsp;&emsp;&emsp;\-&nbsp;`ride_through_allowed` | Conditionally REQUIRED | Boolean | REQUIRED if `rules` array is defined. Is the ride allowed to travel through this zone? <br /><br /> `true` - Ride can travel through this zone. <br /> `false` - Ride cannot travel through this zone.
-&emsp;&emsp;&emsp;\-&nbsp;`maximum_speed_kph` | OPTIONAL | Non-negative Integer | What is the maximum speed allowed, in kilometers per hour? <br /><br /> If there is no maximum speed to observe, this can be omitted.
-&emsp;&emsp;&emsp;\-&nbsp;`station_parking`<br/>*(added in v2.3)* | OPTIONAL | Boolean | Can vehicles only be parked at stations defined in `station_information.json` within this geofence zone? <br /><br />`true` - Vehicles can only be parked at stations.  <br /> `false` - Vehicles may be parked outside of stations.
+&emsp;&emsp;\-&nbsp;`rules` | OPTIONAL | Array<Rule> | Array that contains a list of [Rule](#geofencing-rule-object) objects defining restrictions that apply within the area of the polygon.  See [Geofencing Rule Precedence](#geofencing-rule-precedence) for details on semantics of overlapping polygons, vehicle types, and other precedence rules.
+`global_rules` | Yes | Array<Rule> | Array that contains a list of [Rule](#geofencing-rule-object) objects defining restrictions that apply globally in all areas as the default restrictions, except where overridden with an explicit geofencing zone.  See [Geofencing Rule Precedence](#geofencing-rule-precedence) for more details.<br/<br/>A rule or list of rules, as appropriate, should be specified in the global rules list covering all vehicle types in the feed.
+
+#### Geofencing Rule Object
+
+A `Rule` object defines the set of restriction in place for a particular zone.  `Rule` objects are used as a value type in multiple places in `geofencing_zones.json`.  A `Rule` object has the following fields:
+
+Field Name | REQUIRED | Type | Defines
+---|---|---|---
+`vehicle_type_id` | OPTIONAL | Array | Array of IDs of vehicle types for which any restrictions SHOULD be applied (see vehicle type definitions in `vehicle_types.json`). If vehicle type IDs are not specified, then restrictions apply to all vehicle types.
+`ride_start_allowed` | REQUIRED | Boolean | Is the ride allowed to start in this zone? <br /><br /> `true` - Ride can start in this zone. <br /> `false` - Ride cannot start in this zone.
+`ride_end_allowed` | REQUIRED | Boolean | Is the ride allowed to end in this zone? <br /><br /> `true` - Ride can end in this zone. <br /> `false` - Ride cannot end in this zone.
+`ride_through_allowed` | REQUIRED | Boolean | Is the ride allowed to travel through this zone? <br /><br /> `true` - Ride can travel through this zone. <br /> `false` - Ride cannot travel through this zone.
+`maximum_speed_kph` | OPTIONAL | Non-negative Integer | What is the maximum speed allowed, in kilometers per hour? <br /><br /> If there is no maximum speed to observe, this can be omitted.
+`station_parking`<br/>*(added in v2.3)* | OPTIONAL | Boolean | Can vehicles only be parked at stations defined in `station_information.json` within this geofence zone? <br /><br />`true` - Vehicles can only be parked at stations.  <br /> `false` - Vehicles may be parked outside of stations.
+
+#### Geofencing Rule Precedence
+
+Geofencing [Rule](#geofencing-rule-object) objects are specified within arrays for the `rules` and `global_rules` fields of `geofencing_zones.json` to allow for different restrictions for different vehicle types.  When multiple rules in the same array apply to a particular vehicle type, per the semantics of the `vehicle_type_id` field, then the earlier rule (in order of the JSON file) takes precedence for that vehicle type.
+
+When multiple overlapping polygons define rules that apply to a particular vehicle type, then the rules from the earlier polygon (in order of the JSON file) takes precedence for that vehicle type in the overlapping area.  Polygons with inactive time ranges should be excluded from consideration when considering precedence.
+
+When a polygon and the `global_rules` field define rules that apply to a particular vehicle type, then the rules from the polygon take precedence for that vehicle type in the area of the polygon.
+
+See examples below.
 
 #### Geofencing Examples
 
@@ -1408,7 +1426,7 @@ Field Name | REQUIRED | Type | Defines
           "properties": {
             "name": [
               {
-                "text: "NE 24th/NE Knott",
+                "text": "NE 24th/NE Knott",
                 "language": "en"
               }
             ]
@@ -1430,7 +1448,14 @@ Field Name | REQUIRED | Type | Defines
           }
         }
       ]
-    }
+    },
+    "global_rules": [
+      {
+        "ride_start_allowed": false,
+        "ride_end_allowed": false,
+        "ride_through_allowed": true
+      }
+    ]
   }
 }
 ```
@@ -1439,15 +1464,14 @@ Field Name | REQUIRED | Type | Defines
 
 The following polygon diagram will be used in a number of examples below of geofencing rule resolution.
 
-![Geofencing Example Diagram with two overlapping polygons A and B, and areas a, b, and ab.](geofencing_example.png)
+![Geofencing Example Diagram with two overlapping polygons A and B, and areas a, b, and ab.](geofencing_example.svg)
 
 In the examples below, only a minimal set of fields are specified for clarity.
 
 ##### Partially Overlapping Polygons with Same Vehicle Types
 
 ```json
-[
-  "#": "data -> geofencing_zones -> features",
+"geofencing_zones.features": [
   {
     "geometry": { "#": "... Polygon A ..." },
     "properties": {
@@ -1466,29 +1490,36 @@ In the examples below, only a minimal set of fields are specified for clarity.
         {
           "vehicle_type_id": ["bike"],
           "ride_through_allowed": false,
-          "maximum_speed_kph": 10,
+          "maximum_speed_kph": 20,
         }
       ]
     }
   }
+],
+"global_rules": [
+  {
+    "vehicle_type_id": ["bike"],
+    "ride_through_allowed": false
+    "maximum_speed_kph": 10,
+  }
 ]
 ```
  
-Both polygons specify rules for vehicle type `bike`.  For `ride_through_allowed`, which is defined in both polygons, polygon A takes precedence over polygon B in area `ab` because it appears earlier in the JSON.  For `maximum_speed_kph`, only polygon B specifies a rule for this restriction, the it is used for area `ab`, despite the presence of polygon A.
+Both polygons specify rules for vehicle type `bike`.  In addition, there is a global rule for `bike` as well.  For `ride_through_allowed`, which is defined in both polygons, polygon A takes precedence over polygon B in area `ab` because it appears earlier in the JSON.  For `maximum_speed_kph`, only polygon B specifies a rule for this restriction, so it is used for area `ab`, despite the presence of polygon A.  For the remainder of polygon A in area `a`, the speed defaults to the global rule.
 
 
 Area | Vehicle Type | ride_through_allowed | maximum_speed_kph
 ---|------|-------|----------
-a  | bike | true  | undefined
-ab | bike | true  | 10
-b  | bike | false | 10
+a  | bike | true  | 10
+ab | bike | true  | 20 
+b  | bike | false | 20
+g  | bike | false | 10
 
 
 ##### Partially Overlapping Polygons with Different Vehicle Types
 
 ```json
-[
-  "#": "data -> geofencing_zones -> features",
+"geofencing_zones.features": [
   {
     "geometry": { "#": "... Polygon A ..." },
     "properties": {
@@ -1511,24 +1542,38 @@ b  | bike | false | 10
       ]
     }
   }
+],
+"global_rules": [
+  {
+    "vehicle_type_id": ["bike"],
+    "ride_through_allowed": false
+  },
+  {
+    "vehicle_type_id": ["scooter"],
+    "ride_through_allowed": true
+  }
 ]
 ``` 
 
-Though polygon A appears earlier in the file than polygon B, polygon A does not mention vehicle type `scooter`, so it is not considered when determining applicable rules for area `ab`.
+Though polygon A appears earlier in the file than polygon B, polygon A does not mention vehicle type `scooter`, so it is not considered when determining applicable rules for area `ab` for scooters.
 
 Area | Vehicle Type | ride_through_allowed
 ---|---------|-------
 a  | bike    | true
 ab | bike    | true
+b  | bike    | false
+g  | bike    | false
+a  | scooter | true
 ab | scooter | false
 b  | scooter | false
+g  | scooter | true
 
 
 ##### Partially Overlapping Polygons with Some Overlapping Vehicle Types
 
 ```json
+"geofencing_zones.features": [
 [
-  "#": "data -> geofencing_zones -> features",
   {
     "geometry": { "#": "... Polygon A ..." },
     "properties": {
@@ -1551,6 +1596,11 @@ b  | scooter | false
       ]
     }
   }
+],
+"global_rules": [
+  {
+    "ride_through_allowed": false
+  }
 ]
 ``` 
 
@@ -1560,8 +1610,12 @@ Area | Vehicle Type | ride_through_allowed
 ---|---------|-------
 a  | bike    | true
 ab | bike    | true
+b  | bike    | false
+g  | bike    | false
+a  | scooter | fales
 ab | scooter | true
 b  | scooter | false
+g  | scooter | false
 
 ## Deep Links
 
