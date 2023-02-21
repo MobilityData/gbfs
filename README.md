@@ -135,7 +135,7 @@ Each new addition to the spec adds complexity. We want to avoid additions to the
 
 ## Systems Catalog - Systems Implementing GBFS
 There are now over 600 shared mobility systems publishing GBFS worldwide. This list contains all known systems publishing GBFS feeds and is maintained by the GBFS community. This is an incomplete list. If you have or are aware of a system that doesn’t appear on the list please add it.
-If you would like to add a system, please fork this repository and submit a pull request. Please keep this list alphabetized by country and system name.
+If you would like to add a system, please fork this repository and submit a pull request. Please keep this list alphabetized by country and system name. Alternatively, fill out [this contribution form](https://forms.gle/WSXFuXx9k4PSTfbC9) for a Github-less contribution. 
 * [systems.csv](systems.csv)
 
  Field Name | REQUIRED | Definition 
