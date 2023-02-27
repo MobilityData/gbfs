@@ -1573,7 +1573,6 @@ g  | scooter | true
 
 ```json
 "geofencing_zones.features": [
-[
   {
     "geometry": { "#": "... Polygon A ..." },
     "properties": {
