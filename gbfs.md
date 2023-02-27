@@ -1464,7 +1464,7 @@ See examples below.
 
 The following polygon diagram will be used in a number of examples below of geofencing rule resolution.
 
-![Geofencing Example Diagram with two overlapping polygons A and B, and areas a, b, and ab.](geofencing_example.svg)
+![Geofencing Example Diagram with two overlapping polygons A and B, and areas a, b, and ab.](images/geofencing_example.svg)
 
 In the examples below, only a minimal set of fields are specified for clarity.
 

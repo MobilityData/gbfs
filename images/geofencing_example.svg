@@ -7,7 +7,7 @@
    stroke-linecap="square"
    stroke-miterlimit="10"
    id="svg51"
-   sodipodi:docname="[+Google] Geofencing PR.svg"
+   sodipodi:docname="geofencing_example.svg"
    width="320"
    height="280"
    inkscape:version="1.2.2 (b0a8486, 2022-12-01)"
@@ -15,6 +15,35 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs25" />
+  <sodipodi:namedview
+     id="namedview23"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.84285714"
+     inkscape:cx="-24.915254"
+     inkscape:cy="145.9322"
+     inkscape:window-width="1331"
+     inkscape:window-height="806"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg51" />
+  <rect
+     style="fill:#ffffff;fill-rule:evenodd"
+     id="rect914"
+     width="319.15256"
+     height="280"
+     x="1.1864408"
+     y="1.1864407"
+     inkscape:label="White Background" />
   <path
      fill="#c9daf8"
      fill-opacity="0.5"
