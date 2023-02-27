@@ -1336,7 +1336,7 @@ Field Name | REQUIRED | Type | Defines
 
 #### Geofencing Rule Object
 
-A `Rule` object defines the set of restriction in place for a particular zone.  `Rule` objects are used as a value type in multiple places in `geofencing_zones.json`.  A `Rule` object has the following fields:
+A `Rule` object defines the set of restrictions in place for a particular zone.  `Rule` objects are used as a value type in multiple places in `geofencing_zones.json`.  A `Rule` object has the following fields:
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
@@ -1478,7 +1478,7 @@ In the examples below, only a minimal set of fields are specified for clarity.
       "rules": [
         {
           "vehicle_type_id": ["bike"],
-          "ride_through_allowed": true,
+          "ride_through_allowed": true
         }
       ]
     }
@@ -1490,7 +1490,7 @@ In the examples below, only a minimal set of fields are specified for clarity.
         {
           "vehicle_type_id": ["bike"],
           "ride_through_allowed": false,
-          "maximum_speed_kph": 20,
+          "maximum_speed_kph": 20
         }
       ]
     }
@@ -1499,8 +1499,8 @@ In the examples below, only a minimal set of fields are specified for clarity.
 "global_rules": [
   {
     "vehicle_type_id": ["bike"],
-    "ride_through_allowed": false
-    "maximum_speed_kph": 10,
+    "ride_through_allowed": false,
+    "maximum_speed_kph": 10
   }
 ]
 ```
@@ -1526,7 +1526,7 @@ g  | bike | false | 10
       "rules": [
         {
           "vehicle_type_id": ["bike"],
-          "ride_through_allowed": true,
+          "ride_through_allowed": true
         }
       ]
     }
@@ -1537,7 +1537,7 @@ g  | bike | false | 10
       "rules": [
         {
           "vehicle_type_id": ["scooter"],
-          "ride_through_allowed": false,
+          "ride_through_allowed": false
         }
       ]
     }
@@ -1580,7 +1580,7 @@ g  | scooter | true
       "rules": [
         {
           "vehicle_type_id": ["bike", "scooter"],
-          "ride_through_allowed": true,
+          "ride_through_allowed": true
         }
       ]
     }
@@ -1591,7 +1591,7 @@ g  | scooter | true
       "rules": [
         {
           "vehicle_type_id": ["scooter"],
-          "ride_through_allowed": false,
+          "ride_through_allowed": false
         }
       ]
     }
@@ -1602,7 +1602,7 @@ g  | scooter | true
     "ride_through_allowed": false
   }
 ]
-``` 
+```
 
 For vehicle type `scooter`, polygon A takes precedence over Polygon B in area `ab` because it appears earlier in the JSON.
 
