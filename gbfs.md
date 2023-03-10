@@ -467,9 +467,19 @@ Field Name | REQUIRED | Type | Defines
     "feed_contact_email": "datafeed@example.com",
     "timezone": "America/Chicago",
     "license_url": "https://www.example.com/data-license.html",
-    "terms_url": "https://www.example.com/terms",
+    "terms_url": [
+      {
+         "text": "https://www.example.com/en/terms",
+         "language": "en"
+      }
+    ],
     "terms_last_updated": "2021-06-21",
-    "privacy_url": "https://www.example.com/privacy-policy",
+    "privacy_url": [
+      {
+         "text": "https://www.example.com/en/privacy-policy",
+         "language": "en"
+      }
+    ],
     "privacy_last_updated": "2019-01-13",
     "rental_apps": {
       "android": {
@@ -518,7 +528,7 @@ Field Name | REQUIRED | Type | Defines
 \- `vehicle_accessories`<br/>*(added in v2.3)* | OPTIONAL | Array | Description of accessories available in the vehicle.  These accessories are part of the vehicle and are not supposed to change frequently. Current valid values are:<ul><li>`air_conditioning` _(Vehicle has air conditioning)_</li><li>`automatic` _(Automatic gear switch)_</li><li>`manual` _(Manual gear switch)_</li><li>`convertible` _(Vehicle is convertible)_</li><li>`cruise_control` _(Vehicle has a cruise control system ("Tempomat"))_</li><li>`doors_2` _(Vehicle has 2 doors)_</li><li>`doors_3` _(Vehicle has 3 doors)_</li><li>`doors_4` _(Vehicle has 4 doors)_</li><li>`doors_5` _(Vehicle has 5 doors)_</li><li>`navigation` _(Vehicle has a built-in navigation system)_</li></ul>
 \- `g_CO2_km`<br/>*(added in v2.3)* | OPTIONAL | Non-negative integer | Maximum quantity of CO2, in grams, emitted per kilometer, according to the [WLTP](https://en.wikipedia.org/wiki/Worldwide_Harmonised_Light_Vehicles_Test_Procedure).
 \- `vehicle_image`<br/>*(added in v2.3)* | OPTIONAL | URL | URL to an image that would assist the user in identifying the vehicle (for example, an image of the vehicle or a logo).<br /> Allowed formats: JPEG, PNG.
-| \- `make<br/>*(as of v3.0-RC)* | OPTIONAL| Array | The name of the vehicle manufacturer. <br><br>Example: <ul><li>CUBE Bikes</li><li>Renault</li></ul> An array with one object per supported language with the following keys:
+| \- `make`<br/>*(as of v3.0-RC)* | OPTIONAL| Array | The name of the vehicle manufacturer. <br><br>Example: <ul><li>CUBE Bikes</li><li>Renault</li></ul> An array with one object per supported language with the following keys:
 &emsp; \-&nbsp; `text` | Yes | String | The translated string
 &emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
 | \- `model`<br/>*(as of v3.0-RC)* | OPTIONAL| Array | The name of the vehicle model. <br><br>Example <ul><li>Giulia</li><li>MX50</li></ul> An array with one object per supported language with the following keys:
@@ -661,8 +671,18 @@ Field Name | REQUIRED | Type | Defines
         ],
         "g_CO2_km": 120,
         "vehicle_image": "https://www.example.com/assets/renault-clio.jpg",
-        "make": "Renault",
-        "model": "Clio",
+        "make": [
+          {
+            "text": "Renault",
+            "language": "en"
+          }
+        ],
+        "model": [
+          {
+            "text": "Clio",
+            "language": "en",
+          }
+        ],
         "color": "white",
         "vehicle_assets": {
           "icon_url": "https://www.example.com/assets/icon_car.svg",
@@ -778,7 +798,7 @@ Field Name | REQUIRED | Type | Defines
         "lon": -122.655775,
         "is_valet_station": false,
         "is_virtual_station": true,
-        "is_charging_station": "false",
+        "is_charging_station": false,
         "station_area": {
           "type": "MultiPolygon",
           "coordinates": [
@@ -1286,7 +1306,12 @@ Field Name | REQUIRED | Type | Defines
             "end": 1604674800
           }
         ],
-        "url": "https://example.com/more-info",
+        "url": [
+          {
+            "text": "https://example.com/more-info",
+            "language": "en"
+          }
+        ], 
         "summary": [
           {
             "text": "Disruption of Service",
@@ -1429,7 +1454,7 @@ See examples below.
                 "text": "NE 24th/NE Knott",
                 "language": "en"
               }
-            ]
+            ],
             "start": 1593878400,
             "end": 1593907260,
             "rules": [
