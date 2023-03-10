@@ -142,7 +142,7 @@ Publishers SHOULD implement auto-discovery of GBFS feeds by linking to the locat
 ### Localization
 
 * Each supported language MUST be listed in the `languages` field in `system_information.json`. *(as of v3.0-RC)*
-* Translations MUST be provided for each supported language for all translateable fields of type Array&lt;Localized String&gt;. *(as of v3.0-RC)*
+* Translations MUST be provided for each supported language for all translateable fields of type Array&lt;[Localized String](#localized-string)&gt;. *(as of v3.0-RC)*
 * URLs pointing to text intended for consumption by end-users MUST be provided for each supported language. *(as of v3.0-RC)*
 
 ### Text Fields and Naming
@@ -207,12 +207,14 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 * Language - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to https://www.rfc-editor.org/rfc/bcp/bcp47.txt and https://www.w3.org/International/articles/language-tags/. Examples: `en` for English, `en-US` for American English, or `de` for German.
 * Latitude - WGS84 latitude in decimal degrees. The value MUST be greater than or equal to -90.0 and less than or equal to 90.0. Example: `41.890169` for the Colosseum in Rome.
 * Longitude - WGS84 longitude in decimal degrees. The value MUST be greater than or equal to -180.0 and less than or equal to 180.0. Example: `12.492269` for the Colosseum in Rome.
-* Localized String - A JSON element representing a String value that has been translated into a specific language.  The element consists of the following name-value pairs:
+* <a name="localized-string"></a> Localized String - A JSON element representing a String value that has been translated into a specific language.  The element consists of the following name-value pairs:
+
   Field Name | REQUIRED | Type | Defines
   ---|---|---|---
   `text` | Yes | String | The translated text.
   `language` | Yes | Language | IETF BCP 47 language code.  Must match one of the values specified by the `languages` field in `system_information.json`.
-  Most common specified as Array&lt;Localized String&gt; when specifying translations in multiple languages.  See [Localization](#Localization) for more details.
+
+  Most commonly specified as `Array&lt;Localized String&gt;` when specifying translations in multiple languages.  See [Localization](#localization) for more details.
 * Non-negative Float - A 32-bit floating point number greater than or equal to 0.
 * Non-negative Integer - An integer greater than or equal to 0.
 * Object - A JSON element consisting of key-value pairs (fields).
