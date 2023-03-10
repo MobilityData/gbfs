@@ -41,16 +41,16 @@ MobiltyData has compiled a [project roadmap](https://github.com/NABSA/gbfs/wiki/
 
 
 ### Upcoming MAJOR Version 
-|   Version | Type  | Release Target |  Status |
-|---|:---:|---|---|
-| [v3.0-Draft](https://github.com/NABSA/gbfs/blob/master/gbfs.md) |  MAJOR |  Q2/Q3, 2022 | :construction: &nbsp;  *In Development* |
+| Version                            | Type  | Release Target |  Status |
+|------------------------------------|:---:|---|---|
+| No current upcoming major versions |   |   |  |
 
 ### Release Candidates 
 Release Candidates will receive *Current Version* status when they have been fully implemented in public feeds.
 
-|  Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
-|:---:|:---:|---|---|---|---|
-|*No current release candidates* | | | | | |
+|  Version | Type  | Release Date   | Status                     | JSON Schema                                                                            | Release Notes       |
+|:---:|:-----:|----------------|----------------------------|----------------------------------------------------------------------------------------|---------------------|
+|[v3.0-RC](https://github.com/NABSA/gbfs/blob/master/gbfs.md) | MAJOR | March 10, 2023 | ✅ Ready for implementation | [v3.0-RC Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v3.0-RC) | Article coming soon |
 
 ### Past Version Releases 
 Past versions with *Supported* status MAY be patched to correct bugs or vulnerabilities but new features will not be introduced.<br />
