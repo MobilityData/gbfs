@@ -4,7 +4,7 @@ This document explains the types of files and data that comprise the General Bik
 
 ## Reference version
 
-This documentation refers to **v3.0-Draft (future version)**.
+This documentation refers to **v3.0-RC**.
 
 **For the current version see [**version 2.3**](https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md).** For past and upcoming versions see the [README](README.md#current-version-recommended).
 
@@ -194,7 +194,7 @@ It is RECOMMENDED that all GBFS data sets be offered under an open data license.
 * Date - A date in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) Complete Date Extended Format: YYYY-MM-DD. Example: `2019-09-13` for September 13th, 2019.
 * Datetime *(added in v2.3)*- Combination of a date and a time following [ISO 8601 notation](https://www.iso.org/iso-8601-date-and-time-format.html). Attributes : [year](https://docs.python.org/3/library/datetime.html#datetime.datetime.year), [month](https://docs.python.org/3/library/datetime.html#datetime.datetime.month), [day](https://docs.python.org/3/library/datetime.html#datetime.datetime.day), [hour](https://docs.python.org/3/library/datetime.html#datetime.datetime.hour), [minute](https://docs.python.org/3/library/datetime.html#datetime.datetime.minute), [second](https://docs.python.org/3/library/datetime.html#datetime.datetime.second), and timezone.
 * Email - An email address. Example: `example@example.com`
-* Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column. Enum values SHOULD be lowercase.
+* Enum (Enumerable values) - An option from a set of predefined constants in the "Defines" column. Enum values MUST (as of v3.0-RC) be lowercase.
 Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc...
 * Float *(added in v2.1)* - A 32-bit floating point number.
 * GeoJSON FeatureCollection - A FeatureCollection as described by the IETF RFC 7946 https://tools.ietf.org/html/rfc7946#section-3.3.
@@ -464,9 +464,19 @@ Field Name | REQUIRED | Type | Defines
     "feed_contact_email": "datafeed@example.com",
     "timezone": "America/Chicago",
     "license_url": "https://www.example.com/data-license.html",
-    "terms_url": "https://www.example.com/terms",
+    "terms_url": [
+      {
+         "text": "https://www.example.com/en/terms",
+         "language": "en"
+      }
+    ],
     "terms_last_updated": "2021-06-21",
-    "privacy_url": "https://www.example.com/privacy-policy",
+    "privacy_url": [
+      {
+         "text": "https://www.example.com/en/privacy-policy",
+         "language": "en"
+      }
+    ],
     "privacy_last_updated": "2019-01-13",
     "rental_apps": {
       "android": {
@@ -513,7 +523,7 @@ Field Name | REQUIRED | Type | Defines
 \- `vehicle_accessories`<br/>*(added in v2.3)* | OPTIONAL | Array | Description of accessories available in the vehicle.  These accessories are part of the vehicle and are not supposed to change frequently. Current valid values are:<ul><li>`air_conditioning` _(Vehicle has air conditioning)_</li><li>`automatic` _(Automatic gear switch)_</li><li>`manual` _(Manual gear switch)_</li><li>`convertible` _(Vehicle is convertible)_</li><li>`cruise_control` _(Vehicle has a cruise control system ("Tempomat"))_</li><li>`doors_2` _(Vehicle has 2 doors)_</li><li>`doors_3` _(Vehicle has 3 doors)_</li><li>`doors_4` _(Vehicle has 4 doors)_</li><li>`doors_5` _(Vehicle has 5 doors)_</li><li>`navigation` _(Vehicle has a built-in navigation system)_</li></ul>
 \- `g_CO2_km`<br/>*(added in v2.3)* | OPTIONAL | Non-negative integer | Maximum quantity of CO2, in grams, emitted per kilometer, according to the [WLTP](https://en.wikipedia.org/wiki/Worldwide_Harmonised_Light_Vehicles_Test_Procedure).
 \- `vehicle_image`<br/>*(added in v2.3)* | OPTIONAL | URL | URL to an image that would assist the user in identifying the vehicle (for example, an image of the vehicle or a logo).<br /> Allowed formats: JPEG, PNG.
-| \- `make<br/>*(as of v3.0-RC)* | OPTIONAL| Array&lt;Localized String&gt; | The name of the vehicle manufacturer. <br><br>Example: <ul><li>CUBE Bikes</li><li>Renault</li></ul>
+| \- `make`<br/>*(as of v3.0-RC)* | OPTIONAL| Array&lt;Localized String&gt; | The name of the vehicle manufacturer. <br><br>Example: <ul><li>CUBE Bikes</li><li>Renault</li></ul>
 | \- `model`<br/>*(as of v3.0-RC)* | OPTIONAL| Array&lt;Localized String&gt; | The name of the vehicle model. <br><br>Example <ul><li>Giulia</li><li>MX50</li></ul>
 | \- `color`<br/>*(added in v2.3)*| OPTIONAL| String| The color of the vehicle. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas, or dots. Spaces are allowed in case of a compound name. <br><br>Example <ul><li>green</li><li>dark blue</li></ul> 
 | \- `description`<br/>*(added in v3.0-RC)*| OPTIONAL | Array&lt;Localized String&gt; | Customer-readable description of the vehicle type outlining special features or how-tos.
@@ -650,8 +660,18 @@ Field Name | REQUIRED | Type | Defines
         ],
         "g_CO2_km": 120,
         "vehicle_image": "https://www.example.com/assets/renault-clio.jpg",
-        "make": "Renault",
-        "model": "Clio",
+        "make": [
+          {
+            "text": "Renault",
+            "language": "en"
+          }
+        ],
+        "model": [
+          {
+            "text": "Clio",
+            "language": "en",
+          }
+        ],
         "color": "white",
         "vehicle_assets": {
           "icon_url": "https://www.example.com/assets/icon_car.svg",
@@ -763,7 +783,7 @@ Field Name | REQUIRED | Type | Defines
         "lon": -122.655775,
         "is_valet_station": false,
         "is_virtual_station": true,
-        "is_charging_station": "false",
+        "is_charging_station": false,
         "station_area": {
           "type": "MultiPolygon",
           "coordinates": [
@@ -1259,7 +1279,12 @@ Field Name | REQUIRED | Type | Defines
             "end": 1604674800
           }
         ],
-        "url": "https://example.com/more-info",
+        "url": [
+          {
+            "text": "https://example.com/more-info",
+            "language": "en"
+          }
+        ], 
         "summary": [
           {
             "text": "Disruption of Service",
@@ -1400,7 +1425,7 @@ See examples below.
                 "text": "NE 24th/NE Knott",
                 "language": "en"
               }
-            ]
+            ],
             "start": 1593878400,
             "end": 1593907260,
             "rules": [
