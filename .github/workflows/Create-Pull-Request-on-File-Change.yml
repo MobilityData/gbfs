@@ -1,0 +1,38 @@
+name: Create Pull Request in GBFS website repo when gbfs.md is modified
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'gbfs.md'
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3.4.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: 16
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4.2.4
+        with:
+          token: ${{ secrets.GITHUB_ACTION_GENERAL }}
+          path: 'docs/specification/reference.md'
+          committer: MobilityData IO <io@mobilitydata.org>
+          commit-message: 'gbfs.md file in GBFS repo has been modified'
+          branch: 'gbfs-md-updated'
+          add-path: : |
+            docs/specification/reference.md
+          title: 'gbfs.md file modified'
+          body: 'Automatically created this pull request after gbfs.md file has been modified in the https://github.com/MobilityData/gbfs repo.'
+          reviewers: josee-sabourin
