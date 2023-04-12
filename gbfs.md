@@ -256,7 +256,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 3600,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "name": "Example Bike Rental",
     "system_id": "example_cityname",
@@ -282,7 +282,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "feeds": [
       {
@@ -318,7 +318,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1667004473,
   "ttl":0,
-  "version":"3.0",
+  "version":"3.0-RC",
   "data":{
     "datasets":[
       {
@@ -329,7 +329,7 @@ Field Name | REQUIRED | Type | Defines
             "url":"https://berlin.example.com/gbfs/2/gbfs"
           },
           {
-            "version":"3.0",
+            "version":"3.0-RC",
             "url":"https://berlin.example.com/gbfs/3/gbfs"
           }
         ]
@@ -342,7 +342,7 @@ Field Name | REQUIRED | Type | Defines
             "url":"https://paris.example.com/gbfs/2/gbfs"
           },
           {
-            "version":"3.0",
+            "version":"3.0-RC",
             "url":"https://paris.example.com/gbfs/3/gbfs"
           }
         ]
@@ -369,7 +369,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "versions": [
       {
@@ -377,7 +377,7 @@ Field Name | REQUIRED | Type | Defines
         "url": "https://www.example.com/gbfs/2/gbfs"
       },
       {
-        "version": "3.0",
+        "version": "3.0-RC",
         "url": "https://www.example.com/gbfs/3/gbfs"
       }
     ]
@@ -433,7 +433,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 1800,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "system_id": "example_cityname",
     "languages": ["en"],
@@ -545,7 +545,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "vehicle_types": [
       {
@@ -728,7 +728,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "stations": [
       {
@@ -768,7 +768,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "stations": [
       {
@@ -859,7 +859,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "stations": [
       {
@@ -962,7 +962,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1640887163,
   "ttl":0,
-  "version":"3.0",
+  "version":"3.0-RC",
   "data":{
     "vehicles":[
       {
@@ -1000,7 +1000,7 @@ Field Name | REQUIRED | Type | Defines
  {
   "last_updated": 1640887163,
   "ttl":0,
-  "version":"3.0",
+  "version":"3.0-RC",
   "data":{
     "vehicles":[
       {
@@ -1063,7 +1063,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 86400,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "regions": [
       {
@@ -1143,7 +1143,7 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "plans": [
       {
@@ -1196,7 +1196,7 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "plans": [
       {
@@ -1262,7 +1262,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1604519393,
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "alerts": [
       {
@@ -1359,7 +1359,7 @@ See examples below.
 {
   "last_updated": 1640887163,
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "geofencing_zones": {
       "type": "FeatureCollection",
@@ -1645,7 +1645,7 @@ Other supported parameters include:
 {
   "last_updated": 1640887163,
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "name": "Example Bike Rental",
     "system_id": "example_cityname",
@@ -1669,7 +1669,7 @@ Other supported parameters include:
 {
   "last_updated": 1640887163,
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "stations": [
       {
@@ -1697,7 +1697,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": 1572447999,
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "name": "Example Bike Rental",
     "system_id": "example_cityname",
@@ -1723,7 +1723,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": 1609866247,
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "stations": [
       {
@@ -1749,7 +1749,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": 1609866247,
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "stations": [
       {
