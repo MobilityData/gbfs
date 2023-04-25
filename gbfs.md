@@ -142,7 +142,7 @@ Publishers SHOULD implement auto-discovery of GBFS feeds by linking to the locat
 ### Localization
 
 * Each supported language MUST be listed in the `languages` field in `system_information.json`. *(as of v3.0-RC)*
-* Translations MUST be provided for each supported language for all translateable fields. *(as of v3.0-RC)*
+* Translations MUST be provided for each supported language for all translateable fields of type Array&lt;[Localized String](#localized-string)&gt;. *(as of v3.0-RC)*
 * URLs pointing to text intended for consumption by end-users MUST be provided for each supported language. *(as of v3.0-RC)*
 
 ### Text Fields and Naming
@@ -188,6 +188,7 @@ It is RECOMMENDED that all GBFS data sets be offered under an open data license.
 ## Field Types
 
 * Array - A JSON element consisting of an ordered sequence of zero or more values.
+* Array&lt;Type&gt; - A JSON element consisting of an ordered sequence of zero or more values of the specified sub-type.
 * Boolean - One of two possible values, `true` or `false`. Boolean values MUST be JSON booleans, not strings (meaning `true` or `false`, not `"true"` or `"false"`). *(as of v2.0)*
 * Country code - Country code following the [ISO 3166-1 alpha-2 notation](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
 * Date - A date in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) Complete Date Extended Format: YYYY-MM-DD. Example: `2019-09-13` for September 13th, 2019.
@@ -206,6 +207,14 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 * Language - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to https://www.rfc-editor.org/rfc/bcp/bcp47.txt and https://www.w3.org/International/articles/language-tags/. Examples: `en` for English, `en-US` for American English, or `de` for German.
 * Latitude - WGS84 latitude in decimal degrees. The value MUST be greater than or equal to -90.0 and less than or equal to 90.0. Example: `41.890169` for the Colosseum in Rome.
 * Longitude - WGS84 longitude in decimal degrees. The value MUST be greater than or equal to -180.0 and less than or equal to 180.0. Example: `12.492269` for the Colosseum in Rome.
+* <a name="localized-string"></a> Localized String - A JSON element representing a String value that has been translated into a specific language.  The element consists of the following name-value pairs:
+
+  Field Name | REQUIRED | Type | Defines
+  ---|---|---|---
+  `text` | Yes | String | The translated text.
+  `language` | Yes | Language | IETF BCP 47 language code.  Must match one of the values specified by the `languages` field in `system_information.json`.
+
+  Most commonly specified as `Array<Localized String>` when specifying translations in multiple languages.  See [Localization](#localization) for more details.
 * Non-negative Float - A 32-bit floating point number greater than or equal to 0.
 * Non-negative Integer - An integer greater than or equal to 0.
 * Object - A JSON element consisting of key-value pairs (fields).
@@ -247,7 +256,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 3600,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "name": "Example Bike Rental",
     "system_id": "example_cityname",
@@ -273,7 +282,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "feeds": [
       {
@@ -309,7 +318,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1667004473,
   "ttl":0,
-  "version":"3.0",
+  "version":"3.0-RC",
   "data":{
     "datasets":[
       {
@@ -320,7 +329,7 @@ Field Name | REQUIRED | Type | Defines
             "url":"https://berlin.example.com/gbfs/2/gbfs"
           },
           {
-            "version":"3.0",
+            "version":"3.0-RC",
             "url":"https://berlin.example.com/gbfs/3/gbfs"
           }
         ]
@@ -333,7 +342,7 @@ Field Name | REQUIRED | Type | Defines
             "url":"https://paris.example.com/gbfs/2/gbfs"
           },
           {
-            "version":"3.0",
+            "version":"3.0-RC",
             "url":"https://paris.example.com/gbfs/3/gbfs"
           }
         ]
@@ -360,7 +369,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "versions": [
       {
@@ -368,7 +377,7 @@ Field Name | REQUIRED | Type | Defines
         "url": "https://www.example.com/gbfs/2/gbfs"
       },
       {
-        "version": "3.0",
+        "version": "3.0-RC",
         "url": "https://www.example.com/gbfs/3/gbfs"
       }
     ]
@@ -384,16 +393,10 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `system_id` | Yes | ID | This is a globally unique identifier for the vehicle share system. Each distinct system or geographic area in which vehicles are operated MUST have its own unique `system_id`. It is up to the publisher of the feed to guarantee uniqueness and MUST be checked against existing `system_id` fields in  [systems.csv](https://github.com/NABSA/gbfs/blob/master/systems.csv) to ensure this. This value is intended to remain the same over the life of the system. <br><br> System IDs SHOULD be recognizable as belonging to a particular system as opposed to random strings - for example, `bcycle_austin` or `biketown_pdx`.
 `languages` <br/>*(added of v3.0-RC)* | Yes | Array | List of languages used in translated strings. Each element in the list must be of type Language.
-`name` <br/>*(as of v3.0-RC)* | Yes | Array | Name of the system to be displayed to customers. An array with one object per supported language with the following keys:
-\-&nbsp; `text` | Yes | String | The translated text.
-\-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
+`name` <br/>*(as of v3.0-RC)* | Yes | Array&lt;Localized String&gt; | Name of the system to be displayed to customers.
 `opening_hours` <br/>*(added in v3.0-RC)*| Yes | String | Hours and dates of operation for the system in [OSM opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) format. *(added in v3.0-RC)*
-`short_name` *(as of v3.0-RC)* | OPTIONAL | Array | Abbreviation for a system. An array with one object per supported language with the following keys:
-\-&nbsp; `text`| Yes | String | The translated text.
-\-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
-`operator` <br/>*(as of v3.0-RC)* | OPTIONAL | Array | Name of the system operator. An array with one object per supported language with the following keys:
-\-&nbsp; `text` | Yes | String | The translated text
-\-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
+`short_name` *(as of v3.0-RC)* | OPTIONAL | Array&lt;Localized String&gt; | Abbreviation for a system.
+`operator` <br/>*(as of v3.0-RC)* | OPTIONAL | Array&lt;Localized String&gt; | Name of the system operator.
 `url` | OPTIONAL | URL | The URL of the vehicle share system.
 `purchase_url` | OPTIONAL | URL | URL where a customer can purchase a membership.
 `start_date` | OPTIONAL | Date | Date that the system began operations.
@@ -404,9 +407,7 @@ Field Name | REQUIRED | Type | Defines
 `timezone` | Yes | Timezone | The time zone where the system is located.
 `license_id` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | String | REQUIRED if the dataset is provided under a standard license. An identifier for a standard license from the [SPDX License List](https://spdx.org/licenses/). Provide `license_id` rather than `license_url` if the license is included in the SPDX License List. See the GBFS wiki for a [comparison of a subset of standard licenses](data-licenses.md). If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
 `license_url` | Conditionally REQUIRED <br/>*(as of v3.0-RC)* | URL | REQUIRED if the dataset is provided under a customized license. A fully qualified URL of a page that defines the license terms for the GBFS data for this system. Do not specify a `license_url` if `license_id` is specified. If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode). *(as of v3.0-RC)*
-`attribution_organization_name` <br/>*(added in v3.0-RC)* | OPTIONAL | Array | If the feed license requires attribution, name of the organization to which attribution should be provided. An array with one object per supported language with the following keys:
-\-&nbsp; `text` | Yes | String | The translated text
-\-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
+`attribution_organization_name` <br/>*(added in v3.0-RC)* | OPTIONAL | Array&lt;Localized String&gt; | If the feed license requires attribution, name of the organization to which attribution should be provided.
 `attribution_url` <br/>*(added in v3.0-RC)* | OPTIONAL | URL | URL of the organization to which attribution should be provided.
 `brand_assets` <br/>*(added in v2.3)*  | OPTIONAL | Object | An object where each key defines one of the items listed below.
 \- `brand_last_modified` <br/>*(added in v2.3)*  | Conditionally REQUIRED | Date | REQUIRED if `brand_assets` object is defined. Date that indicates the last time any included brand assets were updated or modified.
@@ -414,13 +415,9 @@ Field Name | REQUIRED | Type | Defines
 \- `brand_image_url` <br/>*(added in v2.3)*  | Conditionally REQUIRED |  URL |  REQUIRED if `brand_assets` object is defined. A fully qualified URL pointing to the location of a graphic file representing the brand for the service. File MUST be in SVG V1.1 format and MUST be either square or round.
 \- `brand_image_url_dark` <br/>*(added in v2.3)*  | OPTIONAL |  URL | A fully qualified URL pointing to the location of a graphic file representing the brand for the service for use in dark mode applications.  File MUST be in SVG V1.1 format and MUST be either square or round.
 \- `color` <br/>*(added in v2.3)*  | OPTIONAL |  String |  Color used to represent the brand for the service expressed as a 6 digit hexadecimal color code in the form #000000.
-`terms_url` <br/>*(as of v3.0-RC)* | OPTIONAL | Array | A fully qualified URL pointing to the terms of service (also often called "terms of use" or "terms and conditions") for the service. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | URL | URL pointing to the terms in the given language.
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
+`terms_url` <br/>*(as of v3.0-RC)* | OPTIONAL | Array&lt;Localized String&gt; | A fully qualified URL pointing to the terms of service (also often called "terms of use" or "terms and conditions") for the service.
 `terms_last_updated` <br/>*(added in v2.3)* |Conditionally REQUIRED | Date | REQUIRED if `terms_url` is defined. The date that the terms of service provided at `terms_url` were last updated. 
-`privacy_url` <br/>*(as of v3.0-RC)*| OPTIONAL | Array | A fully qualified URL pointing to the privacy policy for the service. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | URL | URL pointing to the privacy policy in the given language.
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
+`privacy_url` <br/>*(as of v3.0-RC)*| OPTIONAL | Array&lt;Localized String&gt; | A fully qualified URL pointing to the privacy policy for the service.
 `privacy_last_updated` <br/>*(added in v2.3)* |Conditionally REQUIRED | Date | REQUIRED if `privacy_url` is defined. The date that the privacy policy provided at `privacy_url` was last updated. 
 `rental_apps` | OPTIONAL | Object | Contains rental app information in the `android` and `ios` JSON objects.
 \-&nbsp;`android` | OPTIONAL | Object | Contains rental app download and app discovery information for the Android platform in the `store_uri` and `discovery_uri` fields. See [examples](#deep-links-examples) of how to use these fields and [supported analytics](#analytics).
@@ -436,7 +433,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 1800,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "system_id": "example_cityname",
     "languages": ["en"],
@@ -522,22 +519,14 @@ Field Name | REQUIRED | Type | Defines
 &emsp;\-&nbsp; `country_code`<br/>*(added in v2.3)*| Conditionally REQUIRED | Country code | REQUIRED if `eco_label` is defined. Country where the `eco_sticker` applies.
 &emsp;\-&nbsp; `eco_sticker`<br/>*(added in v2.3)* | Conditionally REQUIRED | String | REQUIRED if `eco_label` is defined. Name of the eco label. The name must be written in lowercase, separated by an underscore.<br /><br />Example of `eco_sticker` in Europe :<ul><li>CritAirLabel (France) <ul><li>critair</li><li>critair_1</li><li>critair_2</li><li>critair_3</li><li>critair_4</li><li>critair_5</li></ul></li><li>UmweltPlakette (Germany)<ul><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li><li>euro_6</li><li>euro_6_temp</li><li>euro_E</li></ul></li><li>UmweltPickerl (Austria)<ul><li>euro_1</li><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li></ul><li>Reg_certificates (Belgium)<ul><li>reg_certificates</li></ul><li>Distintivo_ambiental (Spain)<ul><li>0</li><li>eco</li><li>b</li><li>c</li></ul></li></ul>
 \- `max_range_meters` | Conditionally REQUIRED | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is REQUIRED. This represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example, a full battery or full tank of gas).
-\- `name` <br/>*(as of v3.0-RC)* | OPTIONAL | Array | The public name of this vehicle type. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string.
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
+\- `name` <br/>*(as of v3.0-RC)* | OPTIONAL | Array&lt;Localized String&gt; | The public name of this vehicle type.
 \- `vehicle_accessories`<br/>*(added in v2.3)* | OPTIONAL | Array | Description of accessories available in the vehicle.  These accessories are part of the vehicle and are not supposed to change frequently. Current valid values are:<ul><li>`air_conditioning` _(Vehicle has air conditioning)_</li><li>`automatic` _(Automatic gear switch)_</li><li>`manual` _(Manual gear switch)_</li><li>`convertible` _(Vehicle is convertible)_</li><li>`cruise_control` _(Vehicle has a cruise control system ("Tempomat"))_</li><li>`doors_2` _(Vehicle has 2 doors)_</li><li>`doors_3` _(Vehicle has 3 doors)_</li><li>`doors_4` _(Vehicle has 4 doors)_</li><li>`doors_5` _(Vehicle has 5 doors)_</li><li>`navigation` _(Vehicle has a built-in navigation system)_</li></ul>
 \- `g_CO2_km`<br/>*(added in v2.3)* | OPTIONAL | Non-negative integer | Maximum quantity of CO2, in grams, emitted per kilometer, according to the [WLTP](https://en.wikipedia.org/wiki/Worldwide_Harmonised_Light_Vehicles_Test_Procedure).
 \- `vehicle_image`<br/>*(added in v2.3)* | OPTIONAL | URL | URL to an image that would assist the user in identifying the vehicle (for example, an image of the vehicle or a logo).<br /> Allowed formats: JPEG, PNG.
-| \- `make`<br/>*(as of v3.0-RC)* | OPTIONAL| Array | The name of the vehicle manufacturer. <br><br>Example: <ul><li>CUBE Bikes</li><li>Renault</li></ul> An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code
-| \- `model`<br/>*(as of v3.0-RC)* | OPTIONAL| Array | The name of the vehicle model. <br><br>Example <ul><li>Giulia</li><li>MX50</li></ul> An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string.
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
+| \- `make`<br/>*(as of v3.0-RC)* | OPTIONAL| Array&lt;Localized String&gt; | The name of the vehicle manufacturer. <br><br>Example: <ul><li>CUBE Bikes</li><li>Renault</li></ul>
+| \- `model`<br/>*(as of v3.0-RC)* | OPTIONAL| Array&lt;Localized String&gt; | The name of the vehicle model. <br><br>Example <ul><li>Giulia</li><li>MX50</li></ul>
 | \- `color`<br/>*(added in v2.3)*| OPTIONAL| String| The color of the vehicle. <br><br>All words must be in lower case, without special characters, quotation marks, hyphens, underscores, commas, or dots. Spaces are allowed in case of a compound name. <br><br>Example <ul><li>green</li><li>dark blue</li></ul> 
-| \- `description`<br/>*(added in v3.0-RC)*| OPTIONAL | Array | Customer-readable description of the vehicle type outlining special features or how-tos. An array with one object per supported language with the following keys:
-&emsp;\-&nbsp; `text` | Yes | String | The translated text.
-&emsp;\-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
+| \- `description`<br/>*(added in v3.0-RC)*| OPTIONAL | Array&lt;Localized String&gt; | Customer-readable description of the vehicle type outlining special features or how-tos.
 \- `wheel_count`<br/>*(added in v2.3)* | OPTIONAL | Non-negative Integer | Number of wheels this vehicle type has.
 \- `max_permitted_speed`<br/>*(added in v2.3)* | OPTIONAL | Non-negative Integer | The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations.
 \- `rated_power`<br/>*(added in v2.3)* | OPTIONAL | Non-negative Integer | The rated power of the motor for this vehicle type in watts.
@@ -556,7 +545,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "vehicle_types": [
       {
@@ -704,12 +693,8 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `stations` | Yes | Array | Array that contains one object per station as defined below.
 \-&nbsp; `station_id` | Yes | ID | Identifier of a station.
-\-&nbsp; `name` <br/>*(as of v3.0-RC)* | Yes | Array | The public name of the station for display in maps, digital signage, and other text applications. Names SHOULD reflect the station location through the use of a cross street or local landmark. Abbreviations SHOULD NOT be used for names and other text (for example, "St." for "Street") unless a location is called by its abbreviated name (for example, “JFK Airport”). See [Text Fields and Naming](#text-fields-and-naming). <br>Examples: <ul><li>Broadway and East 22nd Street</li><li>Convention Center</li><li>Central Park South</li></ul>. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string.
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
-\-&nbsp; `short_name` <br/>*(as of v3.0-RC)*  | OPTIONAL | Array | Short name or other type of identifier. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string.
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
+\-&nbsp; `name` <br/>*(as of v3.0-RC)* | Yes | Array&lt;Localized String&gt; | The public name of the station for display in maps, digital signage, and other text applications. Names SHOULD reflect the station location through the use of a cross street or local landmark. Abbreviations SHOULD NOT be used for names and other text (for example, "St." for "Street") unless a location is called by its abbreviated name (for example, “JFK Airport”). See [Text Fields and Naming](#text-fields-and-naming). <br>Examples: <ul><li>Broadway and East 22nd Street</li><li>Convention Center</li><li>Central Park South</li></ul>.
+\-&nbsp; `short_name` <br/>*(as of v3.0-RC)*  | OPTIONAL | Array&lt;Localized String&gt; | Short name or other type of identifier.
 \-&nbsp;`lat` | Yes | Latitude | Latitude of the station in decimal degrees. This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 \-&nbsp;`lon` | Yes | Longitude | Longitude of the station in decimal degrees. This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 \-&nbsp;`address` | OPTIONAL | String | Address (street number and name) where station is located. This MUST be a valid address, not a free-form text description. Example: 1234 Main Street
@@ -743,7 +728,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "stations": [
       {
@@ -783,7 +768,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "stations": [
       {
@@ -874,7 +859,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "stations": [
       {
@@ -977,7 +962,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated":1640887163,
   "ttl":0,
-  "version":"3.0",
+  "version":"3.0-RC",
   "data":{
     "vehicles":[
       {
@@ -1015,7 +1000,7 @@ Field Name | REQUIRED | Type | Defines
  {
   "last_updated": 1640887163,
   "ttl":0,
-  "version":"3.0",
+  "version":"3.0-RC",
   "data":{
     "vehicles":[
       {
@@ -1070,9 +1055,7 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `regions` | Yes | Array | Array of objects as defined below.
 \-&nbsp; `region_id` | Yes | ID | Identifier for the region.
-\-&nbsp; `name` <br/>*(as of v3.0-RC)* | Yes | Array | Public name for this region. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string.
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
+\-&nbsp; `name` <br/>*(as of v3.0-RC)* | Yes | Array&lt;Localized String&gt; | Public name for this region.
 
 **Example:**
 
@@ -1080,7 +1063,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1640887163,
   "ttl": 86400,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "regions": [
       {
@@ -1133,17 +1116,13 @@ Field Name | REQUIRED | Type | Defines
 `plans` | Yes | Array | Array of objects as defined below.
 \-&nbsp; `plan_id` | Yes | ID | Identifier for a pricing plan in the system.
 \-&nbsp; `url` | OPTIONAL | URL | URL where the customer can learn more about this pricing plan.
-\-&nbsp; `name` <br/>*(as of v3.0-RC)* | Yes | Array | Name of this pricing plan. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string.
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
+\-&nbsp; `name` <br/>*(as of v3.0-RC)* | Yes | Array&lt;Localized String&gt; | Name of this pricing plan.
 \-&nbsp;`currency` | Yes | String | Currency used to pay the fare. <br /><br /> This pricing is in ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217 <br />(for example, `CAD` for Canadian dollars, `EUR` for euros, or `JPY` for Japanese yen.)
 \-&nbsp;`price` | Yes | Non-Negative Float | Fare price, in the unit specified by `currency`. <br/>*(added in v2.2)* In case of non-rate price, this field is the total price. In case of rate price, this field is the base price that is charged only once per trip (typically the price for unlocking) in addition to `per_km_pricing` and/or `per_min_pricing`.
 \-&nbsp;`reservation_price_per_min` <br/>*(added in v3.0-RC)*  | OPTIONAL | Non-Negative Float | The cost, described as per minute rate, to reserve the vehicle prior to beginning a rental. This amount is charged for each minute of the vehicle reservation until the rental is initiated, or until the number of minutes defined in `vehicle_types.json#default_reserve_time` elapses, whichever comes first. When using this field, you MUST declare a value in `vehicle_types.json#default_reserve_time`. This field MUST NOT be combined in a single pricing plan with `reservation_price_flat_rate`.
 \-&nbsp;`reservation_price_flat_rate` <br/>*(added in v3.0-RC)* | OPTIONAL | Non-Negative Float | The cost, described as a flat rate, to reserve the vehicle prior to beginning a rental. This amount is charged once to reserve the vehicle for the duration of the time defined by `vehicle_types.json#default_reserve_time`. When using this field, you MUST declare a value in `vehicle_types.json#default_reserve_time`. This field MUST NOT be combined in a single pricing plan with `reservation_price_per_min`.
 \-&nbsp;`is_taxable` | Yes | Boolean | Will additional tax be added to the base price?<br /><br />`true` - Yes.<br />  `false` - No.  <br /><br />`false` MAY be used to indicate that tax is not charged or that tax is included in the base price.
-\-&nbsp; `description` <br/>*(as of v3.0-RC)* | Yes | Array | Customer-readable description of the pricing plan. This SHOULD include the duration, price, conditions, etc. that the publisher would like users to see. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string.
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
+\-&nbsp; `description` <br/>*(as of v3.0-RC)* | Yes | Array&lt;Localized String&gt; | Customer-readable description of the pricing plan. This SHOULD include the duration, price, conditions, etc. that the publisher would like users to see.
 \-&nbsp;`per_km_pricing` <br/>*(added in v2.2)* | OPTIONAL | Array | Array of segments when the price is a function of distance traveled, displayed in kilometers.<br /><br />Total cost is the addition of `price` and all segments in `per_km_pricing` and `per_min_pricing`. If this array is not provided, there are no variable costs based on distance.
 &emsp;&emsp;\-&nbsp;`start` <br/>*(added in v2.2)* | Conditionally REQUIRED | Non-Negative Integer | REQUIRED if `per_km_pricing` is defined. The kilometer at which this segment rate starts being charged *(inclusive)*.
 &emsp;&emsp;\-&nbsp;`rate` <br/>*(added in v2.2)* | Conditionally REQUIRED | Float | REQUIRED if `per_km_pricing` is defined. Rate that is charged for each kilometer `interval` after the `start`. Can be a negative number, which indicates that the traveler will receive a discount.
@@ -1164,7 +1143,7 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "plans": [
       {
@@ -1217,7 +1196,7 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
 {
   "last_updated": 1640887163,
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "plans": [
       {
@@ -1272,15 +1251,9 @@ Field Name | REQUIRED | Type | Defines
 &emsp;\-&nbsp;`end` | OPTIONAL | Timestamp | End time of the alert. If there is currently no end time planned for the alert, this can be omitted.
 \-&nbsp;`station_ids` | OPTIONAL | Array | If this is an alert that affects one or more stations, include their ID(s). Otherwise omit this field. If both `station_id` and `region_id` are omitted, this alert affects the entire system.
 \-&nbsp;`region_ids` | OPTIONAL | Array | If this system has regions, and if this alert only affects certain regions, include their ID(s). Otherwise, omit this field. If both `station_id`s and `region_id`s are omitted, this alert affects the entire system.
-\-&nbsp; `url` <br/>*(as of v3.0-RC)* | OPTIONAL | Array | URL where the customer can learn more information about this alert. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | URL | URL pointing to the alert in the given language.
-&emsp; \-&nbsp; `language` | Yes | Language | IETF BCP 47 language code.
-\-&nbsp; `summary` <br/>*(as of v3.0-RC)*  | Yes | Array | A short summary of this alert to be displayed to the customer. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string.
-&emsp; \-&nbsp; `language` | Yes | Array | IETF BCP 47 language code.
-\-&nbsp; `description` <br/>*(as of v3.0-RC)*  | OPTIONAL | Array | Detailed description of the alert. An array with one object per supported language with the following keys:
-&emsp; \-&nbsp; `text` | Yes | String | The translated string.
-&emsp; \-&nbsp; `language` | Yes | Array | IETF BCP 47 language code.
+\-&nbsp; `url` <br/>*(as of v3.0-RC)* | OPTIONAL | Array&lt;Localized String&gt; | URL where the customer can learn more information about this alert.
+\-&nbsp; `summary` <br/>*(as of v3.0-RC)*  | Yes | Array&lt;Localized String&gt; | A short summary of this alert to be displayed to the customer.
+\-&nbsp; `description` <br/>*(as of v3.0-RC)*  | OPTIONAL | Array&lt;Localized String&gt; | Detailed description of the alert.
 \-&nbsp;`last_updated` | OPTIONAL | Timestamp | Indicates the last time the info for the alert was updated.
 
 **Example:**
@@ -1289,7 +1262,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": 1604519393,
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "alerts": [
       {
@@ -1351,9 +1324,7 @@ Field Name | REQUIRED | Type | Defines
 &emsp;\-&nbsp;`type` | Yes | String | “Feature” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
 &emsp;\-&nbsp;`geometry` | Yes | GeoJSON MultiPolygon | A polygon that describes where rides may or may not be able to start, end, go through, or have other limitations or affordances. Rules may only apply to the interior of a polygon. All geofencing zones contained in this list are public (meaning they can be displayed on a map for public use).
 &emsp;\-&nbsp;`properties` | Yes | Object | Properties: As defined below, describing travel allowances and limitations.
-&emsp; &emsp; \-&nbsp; `name` <br/>*(as of v3.0-RC)*  | OPTIONAL | Array | Public name of the geofencing zone. An array with one object per supported language with the following keys:
-&emsp; &emsp; &emsp; \-&nbsp; `text` | Yes | String | The translated string.
-&emsp; &emsp; &emsp; \-&nbsp; `language` | Yes | String | IETF BCP 47 language code.
+&emsp; &emsp; \-&nbsp; `name` <br/>*(as of v3.0-RC)*  | OPTIONAL | Array&lt;Localized String&gt; | Public name of the geofencing zone.
 &emsp;&emsp;\-&nbsp;`start` | OPTIONAL | Timestamp | Start time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
 &emsp;&emsp;\-&nbsp;`end` | OPTIONAL | Timestamp | End time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
 &emsp;&emsp;\-&nbsp;`rules` | OPTIONAL | Array&lt;[Rule](#geofencing-rule-object)&gt; | Array of [Rule](#geofencing-rule-object) objects defining restrictions that apply within the area of the polygon.  See [Geofencing Rule Precedence](#geofencing-rule-precedence) for details on semantics of overlapping polygons, vehicle types, and other precedence rules.
@@ -1388,7 +1359,7 @@ See examples below.
 {
   "last_updated": 1640887163,
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "geofencing_zones": {
       "type": "FeatureCollection",
@@ -1674,7 +1645,7 @@ Other supported parameters include:
 {
   "last_updated": 1640887163,
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "name": "Example Bike Rental",
     "system_id": "example_cityname",
@@ -1698,7 +1669,7 @@ Other supported parameters include:
 {
   "last_updated": 1640887163,
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "stations": [
       {
@@ -1726,7 +1697,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": 1572447999,
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "name": "Example Bike Rental",
     "system_id": "example_cityname",
@@ -1752,7 +1723,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": 1609866247,
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "stations": [
       {
@@ -1778,7 +1749,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": 1609866247,
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.0-RC",
   "data": {
     "stations": [
       {
