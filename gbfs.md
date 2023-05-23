@@ -245,7 +245,7 @@ Every JSON file presented in this specification contains the same common header 
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`last_updated` | Yes | Timestamp | Indicates the last time data in the feed was updated. This timestamp represents the publisher's knowledge of the current state of the system at this point in time.
+`last_updated` | Yes | Timestamp | Time at which the data in the feed was guaranteed to be up-to-date. This timestamp represents the publisher's knowledge of the current state of the system at this point in time.
 `ttl` | Yes | Non-negative integer | Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).
 `version` | Yes | String | GBFS version number to which the feed conforms, according to the versioning framework.
 `data` | Yes | Object | Response data in the form of name:value pairs.
