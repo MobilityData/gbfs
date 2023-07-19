@@ -221,7 +221,7 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 * Phone Number *as of v3.0-RC* - Phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I/en) format. The phone number MUST start with a "+". The characters following the "+" MUST be integers and MUST NOT contain any hyphens, spaces or parentheses.
 * String - Can only contain text. Strings MUST NOT contain any formatting codes (including HTML) other than newlines.
 * Time - Service time in the HH:MM:SS format for the time zone indicated in `system_information.json` (00:00:00 - 47:59:59). Time can stretch up to one additional day in the future to accommodate situations where, for example, a system was open from 11:30pm - 11pm the next day (23:30:00-47:00:00).
-* Timestamp - Timestamp fields MUST be represented as strings in [RFC3339 format](https://www.rfc-editor.org/rfc/rfc3339), for example `2023-07-17T13:34:13Z`. The offset (timezone) MUST be UTC, so the timestamp MUST end in `Z`. 
+* Timestamp - Timestamp fields MUST be represented as strings in [RFC3339 format](https://www.rfc-editor.org/rfc/rfc3339), for example `2023-07-17T13:34:13+02:00`. 
 * Timezone - TZ timezone from the https://www.iana.org/time-zones. Timezone names never contain the space character but MAY contain an underscore. Refer to https://en.wikipedia.org/wiki/List_of_tz_zones for a list of valid values.
 Example: `Asia/Tokyo`, `America/Los_Angeles` or `Africa/Cairo`.
 * URI - A fully qualified URI that includes the scheme (for example, `com.example.android://`). Any special characters in the URI MUST be correctly escaped. See the following https://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URI values. Note that URIs MAY be URLs.
@@ -254,7 +254,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 3600,
   "version": "3.0-RC",
   "data": {
@@ -280,7 +280,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
   "version": "3.0-RC",
   "data": {
@@ -316,7 +316,7 @@ Field Name | REQUIRED | Type | Defines
 **Example:**
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl":0,
   "version":"3.0-RC",
   "data":{
@@ -367,7 +367,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
   "version": "3.0-RC",
   "data": {
@@ -431,7 +431,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 1800,
   "version": "3.0-RC",
   "data": {
@@ -543,7 +543,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
   "version": "3.0-RC",
   "data": {
@@ -726,7 +726,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
   "version": "3.0-RC",
   "data": {
@@ -766,7 +766,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
   "version": "3.0-RC",
   "data": {
@@ -857,7 +857,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
   "version": "3.0-RC",
   "data": {
@@ -867,7 +867,7 @@ Field Name | REQUIRED | Type | Defines
         "is_installed": true,
         "is_renting": true,
         "is_returning": true,
-        "last_reported": "2023-07-17T13:34:13Z",
+        "last_reported": "2023-07-17T13:34:13+02:00",
         "num_docks_available": 3,
         "num_docks_disabled" : 1,
         "vehicle_docks_available": [
@@ -898,7 +898,7 @@ Field Name | REQUIRED | Type | Defines
         "is_installed": true,
         "is_renting": true,
         "is_returning": true,
-        "last_reported": "2023-07-17T13:34:13Z",
+        "last_reported": "2023-07-17T13:34:13+02:00",
         "num_docks_available": 8,
         "num_docks_disabled" : 1,
         "vehicle_docks_available": [
@@ -960,14 +960,14 @@ Field Name | REQUIRED | Type | Defines
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl":0,
   "version":"3.0-RC",
   "data":{
     "vehicles":[
       {
         "vehicle_id":"973a5c94-c288-4a2b-afa6-de8aeb6ae2e5",
-        "last_reported": "2023-07-17T13:34:13Z",
+        "last_reported": "2023-07-17T13:34:13+02:00",
         "lat":12.345678,
         "lon":56.789012,
         "is_reserved":false,
@@ -980,7 +980,7 @@ Field Name | REQUIRED | Type | Defines
       },
       {
         "vehicle_id":"987fd100-b822-4347-86a4-b3eef8ca8b53",
-        "last_reported": "2023-07-17T13:34:13Z",
+        "last_reported": "2023-07-17T13:34:13+02:00",
         "is_reserved":false,
         "is_disabled":false,
         "vehicle_type_id":"def456",
@@ -998,14 +998,14 @@ Field Name | REQUIRED | Type | Defines
 ```json
 
  {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl":0,
   "version":"3.0-RC",
   "data":{
     "vehicles":[
       {
         "vehicle_id":"45bd3fb7-a2d5-4def-9de1-c645844ba962",
-        "last_reported": "2023-07-17T13:34:13Z",
+        "last_reported": "2023-07-17T13:34:13+02:00",
         "lat":12.345678,
         "lon":56.789012,
         "is_reserved":false,
@@ -1021,7 +1021,7 @@ Field Name | REQUIRED | Type | Defines
       },
       {
         "vehicle_id":"d4521def-7922-4e46-8e1d-8ac397239bd0",
-        "last_reported": "2023-07-17T13:34:13Z",
+        "last_reported": "2023-07-17T13:34:13+02:00",
         "is_reserved":false,
         "is_disabled":false,
         "vehicle_type_id":"def456",
@@ -1061,7 +1061,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 86400,
   "version": "3.0-RC",
   "data": {
@@ -1141,7 +1141,7 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
   "version": "3.0-RC",
   "data": {
@@ -1194,7 +1194,7 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
   "version": "3.0-RC",
   "data": {
@@ -1260,7 +1260,7 @@ Field Name | REQUIRED | Type | Defines
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
   "version": "3.0-RC",
   "data": {
@@ -1275,7 +1275,7 @@ Field Name | REQUIRED | Type | Defines
         ],
         "times": [
           {
-            "start": "2023-07-17T13:34:13Z",
+            "start": "2023-07-17T13:34:13+02:00",
             "end": "2023-07-18T13:34:13Z"
           }
         ],
@@ -1297,7 +1297,7 @@ Field Name | REQUIRED | Type | Defines
             "language": "en"
           }
         ],
-        "last_updated": "2023-07-17T13:34:13Z",
+        "last_updated": "2023-07-17T13:34:13+02:00",
       }
     ]
   }
@@ -1357,7 +1357,7 @@ See examples below.
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
   "version": "3.0-RC",
   "data": {
@@ -1426,7 +1426,7 @@ See examples below.
                 "language": "en"
               }
             ],
-            "start": "2023-07-17T13:34:13Z",
+            "start": "2023-07-17T13:34:13+02:00",
             "end": "2024-07-17T13:34:13Z",
             "rules": [
               {
@@ -1643,7 +1643,7 @@ Other supported parameters include:
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
   "version": "3.0-RC",
   "data": {
@@ -1667,7 +1667,7 @@ Other supported parameters include:
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
   "version": "3.0-RC",
   "data": {
@@ -1695,7 +1695,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
   "version": "3.0-RC",
   "data": {
@@ -1721,7 +1721,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
   "version": "3.0-RC",
   "data": {
@@ -1747,7 +1747,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 
 ```json
 {
-  "last_updated": "2023-07-17T13:34:13Z",
+  "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
   "version": "3.0-RC",
   "data": {
