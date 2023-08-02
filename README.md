@@ -28,7 +28,7 @@ The specification has been designed with the following concepts in mind:
 The data in the specification contained in this document is intended for consumption by clients intending to provide real-time (or semi-real-time) transit advice and is designed as such.
 
 ## How to Participate
-GBFS is an open source project developed under a consensus-based governance model. Contributors come from across the shared mobility industry, public sector, civic technology and elsewhere. GBFS is not owned by any one person or organization. The specification is not fixed or unchangeable. As the shared mobility industry evolves, it is expected that the specification will be extended by the GBFS community to include new features and capabilities over time. <br/><br> Comments or questions can be addressed to the community by [opening an issue](https://github.com/NABSA/gbfs/issues). Proposals for changes or additions to the specification can be made through [pull requests](https://github.com/NABSA/gbfs/pulls). Questions can also be addressed to the community via the [public GBFS Slack channel](https://bit.ly/mobilitydata-slack) or to the shared mobility staff at MobilityData: [sharedmobility@mobilitydata.org](mailto:sharedmobility@mobilitydata.org).
+GBFS is an open source project developed under a consensus-based governance model. Contributors come from across the shared mobility industry, public sector, civic technology and elsewhere. GBFS is not owned by any one person or organization. The specification is not fixed or unchangeable. As the shared mobility industry evolves, it is expected that the specification will be extended by the GBFS community to include new features and capabilities over time. <br/><br> Comments or questions can be addressed to the community by [opening an issue](https://github.com/MobilityData/gbfs/issues). Proposals for changes or additions to the specification can be made through [pull requests](https://github.com/MobilityData/gbfs/pulls). Questions can also be addressed to the community via the [public GBFS Slack channel](https://bit.ly/mobilitydata-slack) or to the shared mobility staff at MobilityData: [sharedmobility@mobilitydata.org](mailto:sharedmobility@mobilitydata.org).
 If you are new to engaging with the community on this repository, firstly welcome! Here is a brief overview of how to contribute to the specification:
 * Anyone can raise an issue.
 * Anyone can open a pull request - make sure PRs in line with our [Guiding Principles](#guiding-principles).
@@ -41,7 +41,7 @@ If you are new to engaging with the community on this repository, firstly welcom
 Find a real-world example of the governance in action [here](https://github.com/MobilityData/gbfs/pull/454). For a more in depth look at the change and contribution process, go to [governance.md](https://github.com/MobilityData/gbfs/blob/master/governance.md).
 
 ### Project Roadmap
-MobiltyData has compiled a [project roadmap](https://github.com/NABSA/gbfs/wiki/Project-Roadmap) with a list of major features, changes and other work coming up in the near future.
+MobiltyData has compiled a [project roadmap](https://github.com/MobilityData/gbfs/wiki/Project-Roadmap) with a list of major features, changes and other work coming up in the near future.
 
 ## Current Version *(Recommended)* 
 |   Version | Type  | Release Date |  Status | JSON Schema | Release Notes |

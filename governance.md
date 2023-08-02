@@ -26,6 +26,6 @@ To manage the change process, the following guidelines have been established.
     * Implementation requirements are that at least 1 producer and 1 consumer implement the changes.
     * The implementors MUST be stakeholders other than The Advocate.
     * Once implemented successfully, the change is merged into an official current release.
-* Editorial changes as well as items that are not found in [gbfs.md](https://github.com/NABSA/gbfs/blob/master/gbfs.md) do not need to be voted on. Extensions that include new capabilities and features MUST be voted on.
+* Editorial changes as well as items that are not found in [gbfs.md](https://github.com/MobilityData/gbfs/blob/master/gbfs.md) do not need to be voted on. Extensions that include new capabilities and features MUST be voted on.
 * Issues and pull requests will be considered stale after 120 days, at which point participants will be notified via comment. Should they wish to keep the discussion open, it is the responsibility of the participants to re-engage in the conversation. If there is no re-engagement, the issue or pull request will be closed 60 days after the stale date.
 
