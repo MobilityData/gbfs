@@ -33,7 +33,7 @@ If you are new to engaging with the community on this repository, firstly welcom
 * Anyone can raise an issue.
 * Anyone can open a pull request - make sure PRs in line with our [Guiding Principles](#guiding-principles).
 * If you are wanting to open a pull request but don't know how, MobiilityData is happy to help. Get in touch at [sharedmobility@mobilitydata.org](mailto:sharedmobility@mobilitydata.org).
-* Discussions on pull requests must be a minimum of seven calendar days.
+* Discussions on pull requests must be a minimum of 7 calendar days.
 * Votes are open for a total of 10 calendar days, anyone can vote.
 * A successful vote must have at least 3 votes, not including the pull request author.
 * A successful vote must include a vote from a GBFS producer and a GBFS consumer.
