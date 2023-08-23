@@ -24,14 +24,14 @@ jobs:
         run: npm install
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4.2.4
+        uses: peter-evans/create-pull-request@v5.0.2
         with:
           token: ${{ secrets.GENERIC_ACTION_REPO_SCOPE }}
           path: 'docs/specification/reference.md'
           committer: MobilityData IO <io@mobilitydata.org>
           commit-message: 'gbfs.md file in GBFS repo has been modified'
           branch: 'gbfs-md-updated'
-          add-path:: |
+          add-path: |
             docs/specification/reference.md
           title: 'gbfs.md file modified'
           body: 'Automatically created this pull request after gbfs.md file has been modified in the https://github.com/MobilityData/gbfs repo.'
