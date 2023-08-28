@@ -15,13 +15,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3.4.0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3.6.0
-        with:
-          node-version: 16
+#      - name: Setup Node.js
+#        uses: actions/setup-node@v3.6.0
+#        with:
+#          node-version: 16
 
-      - name: Install Dependencies
-        run: npm install
+#      - name: Install Dependencies
+#        run: npm install
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5.0.2
