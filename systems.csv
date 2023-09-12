@@ -402,11 +402,11 @@ US,Austin,"Austin, TX",Link_Austin,https://www.link.city,https://wrangler-mds-pr
 US,Austin B-cycle,"Austin, TX",bcycle_austin,http://austinbcycle.com,https://gbfs.bcycle.com/bcycle_austin/gbfs.json
 US,Aventura BCycle,"Aventura, FL",bcycle_aventura,https://aventura.bcycle.com,https://gbfs.bcycle.com/bcycle_aventura/gbfs.json
 US,Baltimore,"Baltimore, MD",Link_Baltimore,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Baltimore/gbfs.json
-US,Bay Wheels,"San Francisco Bay Area, CA",BA,https://www.baywheels.com/,https://gbfs.baywheels.com/gbfs/gbfs.json
+US,Bay Wheels,"San Francisco Bay Area, CA",BA,https://www.baywheels.com/,https://gbfs.baywheels.com/gbfs/2.3/gbfs.json
 US,Bike Chattanooga,"Chattanooga, TN",bike_chattanooga,http://www.bikechattanooga.com/,https://chat.publicbikesystem.net/ube/gbfs/v1/
 US,BikeLNK,"Lincoln, NE",bcycle_bikelnk,https://bikelnk.bcycle.com,https://gbfs.bcycle.com/bcycle_bikelnk/gbfs.json
 US,Bikeshare Kona,"Kona, HI",bikeshare_kona,https://hawaiiislandbikeshare.org/,https://kona.publicbikesystem.net/ube/gbfs/v1/
-US,BIKETOWN,"Portland, OR",biketown_pdx,https://www.biketownpdx.com/,https://gbfs.biketownpdx.com/gbfs/gbfs.json
+US,BIKETOWN,"Portland, OR",biketown_pdx,https://www.biketownpdx.com/,https://gbfs.biketownpdx.com/gbfs/2.3/gbfs.json
 US,Biki,"Honolulu, HI",go_biki,https://gobiki.org/,https://hon.publicbikesystem.net/ube/gbfs/v1/
 US,Bird Alexandria,"Alexandria, VA",bird-alexandria,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/alexandria/gbfs.json
 US,Bird Chicago,"Chicago, IL",bird-chicago,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/chicago/gbfs.json
@@ -430,16 +430,16 @@ US,Bolt Portland,"Portland OR",bolt_ptl,https://micromobility.com,https://bolt.m
 US,Bolt Washington DC,"Washington DC, DC",bolt_dc,https://micromobility.com,https://api-lb.micromobility.com/dc/gbfs/en/gbfs.json
 US,Broward B-cycle,"Fort Lauderdale, FL",bcycle_broward,https://broward.bcycle.com,https://gbfs.bcycle.com/bcycle_broward/gbfs.json
 US,Bublr Bikes,"Milwaukee, WI",bcycle_bublr,http://bublrbikes.com,https://gbfs.bcycle.com/bcycle_bublr/gbfs.json
-US,Capital Bike Share,"Washington, DC",cabi,http://www.capitalbikeshare.com,https://gbfs.capitalbikeshare.com/gbfs/gbfs.json
+US,Capital Bike Share,"Washington, DC",cabi,http://www.capitalbikeshare.com,https://gbfs.capitalbikeshare.com/gbfs/2.3/gbfs.json
 US,Charlotte B-cycle,"Charlotte, NC",bcycle_charlotte,https://charlotte.bcycle.com,https://gbfs.bcycle.com/bcycle_charlotte/gbfs.json
 US,Cincy Red Bike,"Cincinnati, OH",bcycle_cincyredbike,http://www.cincyredbike.org,https://gbfs.bcycle.com/bcycle_cincyredbike/gbfs.json
-US,Citi Bike,"NYC, NY",NYC,https://www.citibikenyc.com,https://gbfs.citibikenyc.com/gbfs/gbfs.json
+US,Citi Bike,"NYC, NY",NYC,https://www.citibikenyc.com,https://gbfs.citibikenyc.com/gbfs/2.3/gbfs.json
 US,Clarksville B-cycle,"Clarksville, TN",bcycle_clarksville,https://clarksville.bcycle.com,https://gbfs.bcycle.com/bcycle_clarksville/gbfs.json
 US,Clemson BikeShare,"Clemson, SC",bcycle_clemson,https://clemson.bcycle.com,https://gbfs.bcycle.com/bcycle_clemson/gbfs.json
 US,Cleveland,"Cleveland, OH",Link_Cleveland,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Cleveland/gbfs.json
 US,CLEVR Mobility,"Oakland, CA",daecbe87-a9f2-4a5a-b5df-8e3e14180513,https://www.clevrmobility.com/,https://portal.clevrmobility.com/api/gbfs/oakland/en/discovery/
 US,Coast Bike Share,"St. Petersburg, FL",coast_bike_share,http://coastbikeshare.com/,http://coast.socialbicycles.com/opendata/gbfs.json
-US,CoGo,"Columbus, OH",cogo,http://www.cogobikeshare.com/,https://gbfs.cogobikeshare.com/gbfs/gbfs.json
+US,CoGo,"Columbus, OH",cogo,http://www.cogobikeshare.com/,https://gbfs.cogobikeshare.com/gbfs/2.3/gbfs.json
 US,Columbus,"Columbus, OH",Link_Columbus,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Columbus/gbfs.json
 US,Des Moines B-cycle,"Des Moines, IA",bcycle_desmoines,https://desmoines.bcycle.com,https://gbfs.bcycle.com/bcycle_desmoines/gbfs.json
 US,Divvy,"Chicago, IL",divvy,http://www.divvybikes.com/,https://gbfs.divvybikes.com/gbfs/gbfs.json
@@ -496,9 +496,9 @@ US,LINK Alexandria,"Alexandria, VA",Link_Alexandria,https://www.link.city,https:
 US,LINK Oakland,"Oakland, CA",Link_Oakland,https://www.link.city,https://wrangler-mds-production.herokuapp.com/gbfs/Oakland/gbfs.json
 US,LINK Seattle,"Seattle, WA",Link_Seattle,https://www.link.city,"https://wrangler-mds-production.herokuapp.com/gbfs/Seattle,%20WA/gbfs.json"
 US,Louvelo,"Louisville, KY",Louvelo,https://louvelo.com/,https://lou.publicbikesystem.net/ube/gbfs/v1/
-US,Lyft,"Washington, DC",lyft_dca,https://www.lyft.com/scooters/washington-dc,https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/dca/gbfs.json
-US,Lyft Scooters Chicago,"Chicago, IL",chicago,https://www.divvybikes.com,https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/chi/gbfs.json
-US,Lyft Scooters Denver,"Denver, CO",lyft_den,https://www.lyft.com/,https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/den/gbfs.json
+US,Lyft,"Washington, DC",lyft_dca,https://www.lyft.com/scooters/washington-dc,https://gbfs.lyft.com/gbfs/2.3/dca/gbfs.json
+US,Lyft Scooters Chicago,"Chicago, IL",chicago,https://www.divvybikes.com,https://gbfs.divvybikes.com/gbfs/2.3/gbfs.json
+US,Lyft Scooters Denver,"Denver, CO",lyft_den,https://www.lyft.com/,https://gbfs.lyft.com/gbfs/2.3/den/gbfs.json
 US,Lyft Scooters Los Angeles,"Los Angeles, CA",lyft_lax,https://www.lyft.com/,https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/lax/gbfs.json
 US,Lyft Scooters Miami,"Miami, FL",lyft_mia,https://www.lyft.com/,https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/mia/gbfs.json
 US,Lyft Scooters Minneapolis,"Minneapolis, MN",niceridemn,https://www.lyft.com/,https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/msp/gbfs.json
