@@ -1336,7 +1336,7 @@ A `Rule` object defines the set of restrictions in place for a particular zone. 
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`vehicle_type_id` | OPTIONAL | Array | Array of IDs of vehicle types for which any restrictions SHOULD be applied (see vehicle type definitions in `vehicle_types.json`). If vehicle type IDs are not specified, then restrictions apply to all vehicle types.
+`vehicle_type_ids` | OPTIONAL | Array | Array of IDs of vehicle types for which any restrictions SHOULD be applied (see vehicle type definitions in `vehicle_types.json`). If vehicle type IDs are not specified, then restrictions apply to all vehicle types.
 `ride_start_allowed` | REQUIRED | Boolean | Is the ride allowed to start in this zone? <br /><br /> `true` - Ride can start in this zone. <br /> `false` - Ride cannot start in this zone.
 `ride_end_allowed` | REQUIRED | Boolean | Is the ride allowed to end in this zone? <br /><br /> `true` - Ride can end in this zone. <br /> `false` - Ride cannot end in this zone.
 `ride_through_allowed` | REQUIRED | Boolean | Is the ride allowed to travel through this zone? <br /><br /> `true` - Ride can travel through this zone. <br /> `false` - Ride cannot travel through this zone.
@@ -1345,7 +1345,7 @@ Field Name | REQUIRED | Type | Defines
 
 #### Geofencing Rule Precedence
 
-Geofencing [Rule](#geofencing-rule-object) objects are specified within arrays for the `rules` and `global_rules` fields of `geofencing_zones.json` to allow for different restrictions for different vehicle types.  When multiple rules in the same array apply to a particular vehicle type, per the semantics of the `vehicle_type_id` field, then the earlier rule (in order of the JSON file) takes precedence for that vehicle type.
+Geofencing [Rule](#geofencing-rule-object) objects are specified within arrays for the `rules` and `global_rules` fields of `geofencing_zones.json` to allow for different restrictions for different vehicle types.  When multiple rules in the same array apply to a particular vehicle type, per the semantics of the `vehicle_type_ids` field, then the earlier rule (in order of the JSON file) takes precedence for that vehicle type.
 
 When multiple overlapping polygons define rules that apply to a particular vehicle type, then the rules from the earlier polygon (in order of the JSON file) takes precedence for that vehicle type in the overlapping area.  Polygons with inactive time ranges should be excluded from consideration when considering precedence.
 
@@ -1430,7 +1430,7 @@ See examples below.
             "end": 1593907260,
             "rules": [
               {
-                "vehicle_type_id": [
+                "vehicle_type_ids": [
                   "moped1",
                   "car1"
                 ],
@@ -1473,7 +1473,7 @@ In the examples below, only a minimal set of fields are specified for clarity.
     "properties": {
       "rules": [
         {
-          "vehicle_type_id": ["bike"],
+          "vehicle_type_ids": ["bike"],
           "ride_through_allowed": true
         }
       ]
@@ -1484,7 +1484,7 @@ In the examples below, only a minimal set of fields are specified for clarity.
     "properties": {
       "rules": [
         {
-          "vehicle_type_id": ["bike"],
+          "vehicle_type_ids": ["bike"],
           "ride_through_allowed": false,
           "maximum_speed_kph": 20
         }
@@ -1494,7 +1494,7 @@ In the examples below, only a minimal set of fields are specified for clarity.
 ],
 "global_rules": [
   {
-    "vehicle_type_id": ["bike"],
+    "vehicle_type_ids": ["bike"],
     "ride_through_allowed": false,
     "maximum_speed_kph": 10
   }
@@ -1521,7 +1521,7 @@ g  | bike | false | 10
     "properties": {
       "rules": [
         {
-          "vehicle_type_id": ["bike"],
+          "vehicle_type_ids": ["bike"],
           "ride_through_allowed": true
         }
       ]
@@ -1532,7 +1532,7 @@ g  | bike | false | 10
     "properties": {
       "rules": [
         {
-          "vehicle_type_id": ["scooter"],
+          "vehicle_type_ids": ["scooter"],
           "ride_through_allowed": false
         }
       ]
@@ -1541,11 +1541,11 @@ g  | bike | false | 10
 ],
 "global_rules": [
   {
-    "vehicle_type_id": ["bike"],
+    "vehicle_type_ids": ["bike"],
     "ride_through_allowed": false
   },
   {
-    "vehicle_type_id": ["scooter"],
+    "vehicle_type_ids": ["scooter"],
     "ride_through_allowed": true
   }
 ]
@@ -1574,7 +1574,7 @@ g  | scooter | true
     "properties": {
       "rules": [
         {
-          "vehicle_type_id": ["bike", "scooter"],
+          "vehicle_type_ids": ["bike", "scooter"],
           "ride_through_allowed": true
         }
       ]
@@ -1585,7 +1585,7 @@ g  | scooter | true
     "properties": {
       "rules": [
         {
-          "vehicle_type_id": ["scooter"],
+          "vehicle_type_ids": ["scooter"],
           "ride_through_allowed": false
         }
       ]
