@@ -1,0 +1,29 @@
+name: 'Close stale issues and PRs'
+on:
+  schedule:
+    - cron: '0 4 * * *'
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Load secrets from 1Password
+        id: onepw_secrets
+        uses: 1password/load-secrets-action@v1
+        with:
+            export-env: true # Export loaded secrets as environment variables
+        env:
+            OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+            CREDENTIALS: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/ifkeehu5gzi7wy5ub5qvwkaire/credential"
+            # op://<vault>/<item>[/<section>]/<field>  — Or right-click on the field and select copy secret reference
+            
+      - name: Close stale issues
+        uses: actions/stale@v4.1.1
+        with:
+          repo-token: ${{ env.CREDENTIALS }}
+          days-before-stale: 120
+          days-before-close: 60
+          stale-issue-message: 'This discussion has been automatically marked as stale because it has not had recent activity. It will be closed in 60 days if no further activity occurs. Thank you for your contributions.'
+          stale-issue-label: 'stale'
+          exempt-pr-labels: 'v3.0'
+          close-issue-message: 'This discussion has been closed due to inactivity. Discussions can always be reopened after they have been closed.'
