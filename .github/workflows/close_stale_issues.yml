@@ -7,7 +7,7 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - name: Load secrets from 1Password
+      - name: Load token from 1Password
         id: onepw_secrets
         uses: 1password/load-secrets-action@v1
         with:
@@ -15,7 +15,6 @@ jobs:
         env:
             OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
             CREDENTIALS: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/ifkeehu5gzi7wy5ub5qvwkaire/credential"
-            # op://<vault>/<item>[/<section>]/<field>  — Or right-click on the field and select copy secret reference
             
       - name: Close stale issues
         uses: actions/stale@v4.1.1
