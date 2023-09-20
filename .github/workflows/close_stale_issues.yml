@@ -17,7 +17,7 @@ jobs:
             CREDENTIALS: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/ifkeehu5gzi7wy5ub5qvwkaire/credential"
             
       - name: Close stale issues
-        uses: actions/stale@v4.1.1
+        uses: actions/stale@v5.2.1
         with:
           repo-token: ${{ env.CREDENTIALS }}
           operations-per-run: 100
