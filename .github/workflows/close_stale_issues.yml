@@ -20,6 +20,7 @@ jobs:
         uses: actions/stale@v4.1.1
         with:
           repo-token: ${{ env.CREDENTIALS }}
+          operations-per-run: 100
           days-before-stale: 120
           days-before-close: 60
           stale-issue-message: 'This discussion has been automatically marked as stale because it has not had recent activity. It will be closed in 60 days if no further activity occurs. Thank you for your contributions.'
