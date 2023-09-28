@@ -202,7 +202,7 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 * ID - Should be represented as a string that identifies that particular entity. An ID:
     * MUST be unique within like fields (for example, `station_id` MUST be unique among stations)
     * Does not have to be globally unique, unless otherwise specified
-    * MUST be in the ASCII printable caracter range, space excluded (0x21 to 0x7E) https://en.wikipedia.org/wiki/ASCII#Printable_characters
+    * MUST be in the ASCII printable character range, space excluded (0x21 to 0x7E) https://en.wikipedia.org/wiki/ASCII#Printable_characters
     * SHOULD be restricted to `A-Z`, `a-z`, `0-9` and `.@:/_-`
     * MUST be persistent for a given entity (station, plan, etc.). An exception is `vehicle_id`, which MUST NOT be persistent for privacy reasons (see `vehicle_status.json`). *(as of v2.0)*
 * Language - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to https://www.rfc-editor.org/rfc/bcp/bcp47.txt and https://www.w3.org/International/articles/language-tags/. Examples: `en` for English, `en-US` for American English, or `de` for German.
