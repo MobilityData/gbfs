@@ -523,24 +523,24 @@ MX,Ecobici,"Mexico City, MX",MEX,https://www.ecobici.cdmx.gob.mx,https://gbfs.me
 MX,Mibici Guadalajara,"Guadalajara, MX",mibici_guadalajara,https://www.mibici.net/en/,https://guadalajara-mx.publicbikesystem.net/customer/gbfs/v2/gbfs.json,https://gbfs-validator.netlify.app/?url=https%3A%2F%2Fguadalajara-mx.publicbikesystem.net%2Fcustomer%2Fgbfs%2Fv2%2Fgbfs.json
 MX,YOY - San Luis Potosi,MX,nextbike_yp,https://www.yoymobility.com/es/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_yp/gbfs.json,https://gbfs-validator.netlify.app/?url=https%3A%2F%2Fgbfs.nextbike.net%2Fmaps%2Fgbfs%2Fv2%2Fnextbike_yp%2Fgbfs.json
 MY,Zeus Kuala Lumpur,"Kuala Lumpur, MY",zeus_kuala lumpur,https://zeusscooters.com/,https://zeus.city/api/v1/mds/gbfs/kuala%20lumpur/gbfs.json,https://gbfs-validator.netlify.app/validator?url=https%3A%2F%2Fzeus.city%2Fapi%2Fv1%2Fmds%2Fgbfs%2Fkuala%2520lumpur%2Fgbfs.json
-NL,Check Technologies,check_almere,"Almere, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/almere/gbfs.json
-NL,Check Technologies,check_amersfoort,"Amersfoort, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/amersfoort/gbfs.json
-NL,Check Technologies,check_amsterdam,"Amsterdam, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/amsterdam/gbfs.json
-NL,Check Technologies,check_breda,"Breda, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/breda/gbfs.json
-NL,Check Technologies,check_delft,"Delft, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/delft/gbfs.json
-NL,Check Technologies,check_denbosch,"Den Bosch, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/denbosch/gbfs.json
-NL,Check Technologies,check_denhaag,"Den Haag, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/denhaag/gbfs.json
-NL,Check Technologies,check_eindhoven,"Eindhoven, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/eindhoven/gbfs.json
-NL,Check Technologies,check_groningen,"Groningen, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/groningen/gbfs.json
-NL,Check Technologies,check_hilversum,"Hilversum, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/hilversum/gbfs.json
-NL,Check Technologies,check_lansingerland,"Lansingerland, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/lansingerland/gbfs.json
-NL,Check Technologies,check_leeuwarden,"Leeuwarden, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/leeuwarden/gbfs.json
-NL,Check Technologies,check_nijmegen,"Nijmegen, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/nijmegen/gbfs.json
-NL,Check Technologies,check_rijswijk,"Rijswijk, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/rijswijk/gbfs.json
-NL,Check Technologies,check_rotterdam,"Rotterdam, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/rotterdam/gbfs.json
-NL,Check Technologies,check_schiedam,"Schiedam, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/schiedam/gbfs.json
-NL,Check Technologies,check_vlaardingen,"Vlaardingen, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/vlaardingen/gbfs.json
-NL,Check Technologies,check_zwolle,"Zwolle, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/zwolle/gbfs.json
+NL,Check Technologies,check_almere,"Almere, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/almere/gbfs.json,
+NL,Check Technologies,check_amersfoort,"Amersfoort, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/amersfoort/gbfs.json,
+NL,Check Technologies,check_amsterdam,"Amsterdam, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/amsterdam/gbfs.json,
+NL,Check Technologies,check_breda,"Breda, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/breda/gbfs.json,
+NL,Check Technologies,check_delft,"Delft, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/delft/gbfs.json,
+NL,Check Technologies,check_denbosch,"Den Bosch, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/denbosch/gbfs.json,
+NL,Check Technologies,check_denhaag,"Den Haag, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/denhaag/gbfs.json,
+NL,Check Technologies,check_eindhoven,"Eindhoven, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/eindhoven/gbfs.json,
+NL,Check Technologies,check_groningen,"Groningen, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/groningen/gbfs.json,
+NL,Check Technologies,check_hilversum,"Hilversum, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/hilversum/gbfs.json,
+NL,Check Technologies,check_lansingerland,"Lansingerland, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/lansingerland/gbfs.json,
+NL,Check Technologies,check_leeuwarden,"Leeuwarden, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/leeuwarden/gbfs.json,
+NL,Check Technologies,check_nijmegen,"Nijmegen, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/nijmegen/gbfs.json,
+NL,Check Technologies,check_rijswijk,"Rijswijk, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/rijswijk/gbfs.json,
+NL,Check Technologies,check_rotterdam,"Rotterdam, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/rotterdam/gbfs.json,
+NL,Check Technologies,check_schiedam,"Schiedam, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/schiedam/gbfs.json,
+NL,Check Technologies,check_vlaardingen,"Vlaardingen, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/vlaardingen/gbfs.json,
+NL,Check Technologies,check_zwolle,"Zwolle, NL",https://ridecheck.app,https://api.ridecheck.app/gbfs/v3/zwolle/gbfs.json,
 NL,Cykl,"Wageningen, NL",CKL,https://www.cykl.nl/,https://www.cykl.nl/gbfs/gbfs.json,https://gbfs-validator.netlify.app/?url=https%3A%2F%2Fwww.cykl.nl%2Fgbfs%2Fgbfs.json
 NL,Donkey Republic Amsterdam,"Amsterdam, NL",donkey_am,https://www.donkey.bike/cities/bike-rental-amsterdam/,https://stables.donkey.bike/api/public/gbfs/2/donkey_am/gbfs.json,https://gbfs-validator.netlify.app/?url=https%3A%2F%2Fstables.donkey.bike%2Fapi%2Fpublic%2Fgbfs%2F2%2Fdonkey_am%2Fgbfs.json
 NL,Donkey Republic Den Haag,"Den Haag, NL",donkey_den_haag,https://www.donkey.bike/cities/bike-rental-den-haag/,https://stables.donkey.bike/api/public/gbfs/2/donkey_den_haag/gbfs.json,https://gbfs-validator.netlify.app/?url=https%3A%2F%2Fstables.donkey.bike%2Fapi%2Fpublic%2Fgbfs%2F2%2Fdonkey_den_haag%2Fgbfs.json
