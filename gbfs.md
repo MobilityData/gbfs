@@ -815,7 +815,7 @@ Field Name | REQUIRED | Type | Defines
             "vehicle_type_ids": ["abc123", "def456"],
             "count": 15
           },
-                    {
+          {
             "vehicle_type_ids": ["def456"],
             "count": 1
           }
