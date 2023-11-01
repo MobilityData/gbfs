@@ -6,7 +6,7 @@ This document explains the types of files and data that comprise the General Bik
 
 This documentation refers to **v3.0-RC**.
 
-**For the current version see [**version 2.3**](https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md).** For past and upcoming versions see the [README](README.md#current-version-recommended).
+**For the current version see [**version 2.3**](https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md).** For past and upcoming versions see the [README](https://github.com/MobilityData/gbfs/blob/master/README.md#current-version-recommended).
 
 ## Terminology
 
@@ -81,7 +81,7 @@ geofencing_zones.json <br/>*(added in v2.1)* | OPTIONAL | Geofencing zones and t
 
 Datasets SHOULD be published at an easily accessible, public, permanent URL. (for example, https://www.example.com/gbfs/v3/gbfs.json). The URL SHOULD be directly available without requiring login to access the file to facilitate download by consuming software applications.
 
-To be compliant with GBFS, all systems MUST have an entry in the [systems.csv](https://github.com/NABSA/gbfs/blob/master/systems.csv) file.
+To be compliant with GBFS, all systems MUST have an entry in the [systems.csv](https://github.com/MobilityData/gbfs/blob/master/systems.csv) file.
 
 ### Feed Availability
 
@@ -125,7 +125,7 @@ The version of the GBFS specification to which a feed conforms is declared in th
 
 GBFS documentation will include a list of current and past supported MAJOR and MINOR versions. Supported versions SHALL NOT span more than two MAJOR versions. Past versions with _Supported_ status MAY be patched to correct bugs or vulnerabilities, but new features will not be introduced. Past versions with _Deprecated_ status will not be patched, and their use SHOULD be discontinued. Producers SHOULD continue to maintain existing feeds while they have _Supported_ status.
 
-GBFS producers SHOULD provide endpoints that conform to the current MAJOR version release within 180 days of a new MAJOR version release. It is not necessary to support more than one MINOR release of the same MAJOR release group, because MINOR releases are backwards-compatible. See [Specification Versioning](https://github.com/NABSA/gbfs/blob/master/README.md#specification-versioning).
+GBFS producers SHOULD provide endpoints that conform to the current MAJOR version release within 180 days of a new MAJOR version release. It is not necessary to support more than one MINOR release of the same MAJOR release group, because MINOR releases are backwards-compatible. See [Specification Versioning](https://github.com/MobilityData/gbfs/blob/master/README.md#specification-versioning).
 
 ### Auto-Discovery
 
@@ -183,7 +183,7 @@ The data returned by the near-realtime endpoints `station_status.json` and `vehi
 
 ## Licensing
 
-It is RECOMMENDED that all GBFS data sets be offered under an open data license. Open data licenses allow consumers to freely use, modify, and share GBFS data for any purpose in perpetuity. Licensing of GBFS data provides certainty to GBFS consumers, allowing them to integrate GBFS data into their work. All GBFS data sets SHOULD specify a license using the `license_id` field with an [SPDX identifier](https://spdx.org/licenses/) or by using the `license_url` field with a URL pointing to a custom license in `system_information.json`. See the GBFS repo for a [comparison of a subset of standard licenses](https://github.com/NABSA/gbfs/blob/master/data-licenses.md).
+It is RECOMMENDED that all GBFS data sets be offered under an open data license. Open data licenses allow consumers to freely use, modify, and share GBFS data for any purpose in perpetuity. Licensing of GBFS data provides certainty to GBFS consumers, allowing them to integrate GBFS data into their work. All GBFS data sets SHOULD specify a license using the `license_id` field with an [SPDX identifier](https://spdx.org/licenses/) or by using the `license_url` field with a URL pointing to a custom license in `system_information.json`. See the GBFS repo for a [comparison of a subset of standard licenses](https://github.com/MobilityData/gbfs/blob/master/data-licenses.md).
 
 ## Field Types
 
@@ -229,9 +229,9 @@ Example: `Asia/Tokyo`, `America/Los_Angeles` or `Africa/Cairo`.
 
 ### Extensions Outside of the Specification
 
-To accommodate the needs of feed producers and consumers prior to the adoption of a change, additional fields can be added to feeds even if these fields are not part of the official specification. Custom extensions that may provide value to the GBFS community and align with the [GBFS Guiding Principles](https://github.com/NABSA/gbfs/blob/master/README.md#guiding-principles) SHOULD be proposed for inclusion in the specification through the change process. Extreme caution is advised to avoid introducing extensions which may be used to track the movements of vehicles or their users.
+To accommodate the needs of feed producers and consumers prior to the adoption of a change, additional fields can be added to feeds even if these fields are not part of the official specification. Custom extensions that may provide value to the GBFS community and align with the [GBFS Guiding Principles](https://github.com/MobilityData/gbfs/blob/master/README.md#guiding-principles) SHOULD be proposed for inclusion in the specification through the change process. Extreme caution is advised to avoid introducing extensions which may be used to track the movements of vehicles or their users.
 
-Field names of extensions SHOULD be prefixed with an underscore ( _ ) character. It is strongly RECOMMENDED that these additional fields be documented on the [wiki](https://github.com/NABSA/gbfs/wiki) page of the GBFS repository in this format:
+Field names of extensions SHOULD be prefixed with an underscore ( _ ) character. It is strongly RECOMMENDED that these additional fields be documented on the [wiki](https://github.com/MobilityData/gbfs/wiki) page of the GBFS repository in this format:
 
 Submitted by | Field Name | File Name | Defines
 ---|---|---|---
@@ -391,7 +391,7 @@ The following fields are all attributes within the main `data` object for this f
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`system_id` | Yes | ID | This is a globally unique identifier for the vehicle share system. Each distinct system or geographic area in which vehicles are operated MUST have its own unique `system_id`. It is up to the publisher of the feed to guarantee uniqueness and MUST be checked against existing `system_id` fields in  [systems.csv](https://github.com/NABSA/gbfs/blob/master/systems.csv) to ensure this. This value is intended to remain the same over the life of the system. <br><br> System IDs SHOULD be recognizable as belonging to a particular system as opposed to random strings - for example, `bcycle_austin` or `biketown_pdx`.
+`system_id` | Yes | ID | This is a globally unique identifier for the vehicle share system. Each distinct system or geographic area in which vehicles are operated MUST have its own unique `system_id`. It is up to the publisher of the feed to guarantee uniqueness and MUST be checked against existing `system_id` fields in  [systems.csv](https://github.com/MobilityData/gbfs/blob/master/systems.csv) to ensure this. This value is intended to remain the same over the life of the system. <br><br> System IDs SHOULD be recognizable as belonging to a particular system as opposed to random strings - for example, `bcycle_austin` or `biketown_pdx`.
 `languages` <br/>*(added of v3.0-RC)* | Yes | Array | List of languages used in translated strings. Each element in the list must be of type Language.
 `name` <br/>*(as of v3.0-RC)* | Yes | Array&lt;Localized String&gt; | Name of the system to be displayed to customers.
 `opening_hours` <br/>*(added in v3.0-RC)*| Yes | String | Hours and dates of operation for the system in [OSM opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) format. *(added in v3.0-RC)*
@@ -405,7 +405,7 @@ Field Name | REQUIRED | Type | Defines
 `feed_contact_email` | Yes <br/>*(as of v3.0-RC)* | Email | This field MUST contain a single contact email for feed consumers to report issues with the feed. This email address SHOULD point to a stable email address, that does not correspond to an individual but rather the team or company that manages GBFS feeds.
 `manifest_url` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | URL | REQUIRED if the producer publishes datasets for more than one system geography, for example Berlin and Paris. A fully qualified URL pointing to the [manifest.json](#manifestjson) file for the publisher.
 `timezone` | Yes | Timezone | The time zone where the system is located.
-`license_id` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | String | REQUIRED if the dataset is provided under a standard license. An identifier for a standard license from the [SPDX License List](https://spdx.org/licenses/). Provide `license_id` rather than `license_url` if the license is included in the SPDX License List. See the GBFS wiki for a [comparison of a subset of standard licenses](data-licenses.md). If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
+`license_id` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | String | REQUIRED if the dataset is provided under a standard license. An identifier for a standard license from the [SPDX License List](https://spdx.org/licenses/). Provide `license_id` rather than `license_url` if the license is included in the SPDX License List. See the GBFS wiki for a [comparison of a subset of standard licenses](https://github.com/MobilityData/gbfs/blob/master/data-licenses.md). If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
 `license_url` | Conditionally REQUIRED <br/>*(as of v3.0-RC)* | URL | REQUIRED if the dataset is provided under a customized license. A fully qualified URL of a page that defines the license terms for the GBFS data for this system. Do not specify a `license_url` if `license_id` is specified. If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode). *(as of v3.0-RC)*
 `attribution_organization_name` <br/>*(added in v3.0-RC)* | OPTIONAL | Array&lt;Localized String&gt; | If the feed license requires attribution, name of the organization to which attribution should be provided.
 `attribution_url` <br/>*(added in v3.0-RC)* | OPTIONAL | URL | URL of the organization to which attribution should be provided.
@@ -1041,11 +1041,11 @@ Field Name | REQUIRED | Type | Defines
 
 ### system_hours.json
 
-This file has been deprecated in v3.0-RC. For earlier versions see the [version history](https://github.com/NABSA/gbfs/wiki/Complete-Version-History). 
+This file has been deprecated in v3.0-RC. For earlier versions see the [version history](https://github.com/MobilityData/gbfs/wiki/Complete-Version-History). 
 
 ### system_calendar.json
 
-This file has been deprecated in v3.0-RC. For earlier versions see the [version history](https://github.com/NABSA/gbfs/wiki/Complete-Version-History). 
+This file has been deprecated in v3.0-RC. For earlier versions see the [version history](https://github.com/MobilityData/gbfs/wiki/Complete-Version-History). 
 
 ### system_regions.json
 
@@ -1460,7 +1460,7 @@ See examples below.
 
 The following polygon diagram will be used in a number of examples below of geofencing rule resolution.
 
-![Geofencing Example Diagram with two overlapping polygons A and B, and areas a, b, and ab.](images/geofencing_example.svg)
+![Geofencing Example Diagram with two overlapping polygons A and B, and areas a, b, and ab.](https://raw.githubusercontent.com/MobilityData/gbfs/master/images/geofencing_example.svg)
 
 In the examples below, only a minimal set of fields are specified for clarity.
 
