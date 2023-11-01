@@ -215,6 +215,7 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
   `language` | Yes | Language | IETF BCP 47 language code.  Must match one of the values specified by the `languages` field in `system_information.json`.
 
   Most commonly specified as `Array<Localized String>` when specifying translations in multiple languages.  See [Localization](#localization) for more details.
+
 * Non-negative Float - A 32-bit floating point number greater than or equal to 0.
 * Non-negative Integer - An integer greater than or equal to 0.
 * Object - A JSON element consisting of key-value pairs (fields).
