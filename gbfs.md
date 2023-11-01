@@ -6,7 +6,7 @@ This document explains the types of files and data that comprise the General Bik
 
 This documentation refers to **v3.0-RC**.
 
-**For the current version see [**version 2.3**](https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md).** For past and upcoming versions see the [README](README.md#current-version-recommended).
+**For the current version see [**version 2.3**](https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md).** For past and upcoming versions see the [README](https://github.com/MobilityData/gbfs/blob/master/README.md#current-version-recommended).
 
 ## Terminology
 
@@ -405,7 +405,7 @@ Field Name | REQUIRED | Type | Defines
 `feed_contact_email` | Yes <br/>*(as of v3.0-RC)* | Email | This field MUST contain a single contact email for feed consumers to report issues with the feed. This email address SHOULD point to a stable email address, that does not correspond to an individual but rather the team or company that manages GBFS feeds.
 `manifest_url` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | URL | REQUIRED if the producer publishes datasets for more than one system geography, for example Berlin and Paris. A fully qualified URL pointing to the [manifest.json](#manifestjson) file for the publisher.
 `timezone` | Yes | Timezone | The time zone where the system is located.
-`license_id` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | String | REQUIRED if the dataset is provided under a standard license. An identifier for a standard license from the [SPDX License List](https://spdx.org/licenses/). Provide `license_id` rather than `license_url` if the license is included in the SPDX License List. See the GBFS wiki for a [comparison of a subset of standard licenses](data-licenses.md). If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
+`license_id` <br/>*(added in v3.0-RC)* | Conditionally REQUIRED | String | REQUIRED if the dataset is provided under a standard license. An identifier for a standard license from the [SPDX License List](https://spdx.org/licenses/). Provide `license_id` rather than `license_url` if the license is included in the SPDX License List. See the GBFS wiki for a [comparison of a subset of standard licenses](https://github.com/MobilityData/gbfs/blob/master/data-licenses.md). If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
 `license_url` | Conditionally REQUIRED <br/>*(as of v3.0-RC)* | URL | REQUIRED if the dataset is provided under a customized license. A fully qualified URL of a page that defines the license terms for the GBFS data for this system. Do not specify a `license_url` if `license_id` is specified. If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode). *(as of v3.0-RC)*
 `attribution_organization_name` <br/>*(added in v3.0-RC)* | OPTIONAL | Array&lt;Localized String&gt; | If the feed license requires attribution, name of the organization to which attribution should be provided.
 `attribution_url` <br/>*(added in v3.0-RC)* | OPTIONAL | URL | URL of the organization to which attribution should be provided.
@@ -1460,7 +1460,7 @@ See examples below.
 
 The following polygon diagram will be used in a number of examples below of geofencing rule resolution.
 
-![Geofencing Example Diagram with two overlapping polygons A and B, and areas a, b, and ab.](images/geofencing_example.svg)
+![Geofencing Example Diagram with two overlapping polygons A and B, and areas a, b, and ab.](https://raw.githubusercontent.com/MobilityData/gbfs/master/images/geofencing_example.svg)
 
 In the examples below, only a minimal set of fields are specified for clarity.
 
