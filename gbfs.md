@@ -88,11 +88,13 @@ To be compliant with GBFS, all systems MUST have an entry in the [systems.csv](h
 Automated tools for application performance monitoring SHOULD be used to ensure feed availability.
 Producers MUST provide a technical contact who can respond to feed outages in the `feed_contact_email` field in the `system_information.json` file.
 
-### Seasonal Shutdowns, Disruptions of Service
+### Seasonal Shutdowns, Disruptions of Service, Termination of Service
 
 Feeds SHOULD continue to be published during seasonal or temporary shutdowns.  Feed URLs SHOULD NOT return a 404.  An empty vehicles array SHOULD be returned by `vehicle_status.json`. Stations in `station_status.json` SHOULD be set to `is_renting:false`, `is_returning:false` and `is_installed:false` where applicable. Seasonal shutdown dates SHOULD be reflected using `opening_hours` in `system_information.json`.
 
 Announcements for disruptions of service, including disabled stations or temporary closures of stations or systems SHOULD be made in `system_alerts.json`.
+
+Permanent shutdowns resulting in the termination of service SHOULD be communicated to data consumers via `system_information.json#termination_date`.
 
 ###  Hours and Dates of Operation
 Beginning with v3.0-RC, hours and dates of operation are described using the Open Street Map [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) format. The OSM opening_hours syntax is quite complex, therefore it is RECOMMENDED that publishers validate their opening_hours data to ensure its accuracy.
@@ -401,6 +403,7 @@ Field Name | REQUIRED | Type | Defines
 `url` | OPTIONAL | URL | The URL of the vehicle share system.
 `purchase_url` | OPTIONAL | URL | URL where a customer can purchase a membership.
 `start_date` | OPTIONAL | Date | Date that the system began operations.
+`termination_date` <br/>*(added in v3.0-RC2)* | OPTIONAL | Date | Date after which this data source will no longer be available to consuming applications.<br><br>This OPTIONAL field SHOULD be used to notify 3rd party data consumers when a service is planning a permanent (non-seasonal) shutdown. Publishers SHOULD include this date in their feeds as soon as they know of an impending shutdown. Publishers SHOULD continue to publish feeds for 30 days following a permanent shutdown after which they SHOULD return a helpful http status code and text, for example `410 service no longer available ...` for all feed endpoint URLs.
 `phone_number` <br/>*(as of v3.0-RC)* | OPTIONAL | Phone Number | This OPTIONAL field SHOULD contain a single voice telephone number for the specified system’s customer service department. MUST be in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I/en) format as defined in [Field Types](#field-types). 
 `email` | OPTIONAL | Email | This OPTIONAL field SHOULD contain a single contact email address actively monitored by the operator’s customer service department. This email address SHOULD be a direct contact point where riders can reach a customer service representative.
 `feed_contact_email` | Yes <br/>*(as of v3.0-RC)* | Email | This field MUST contain a single contact email for feed consumers to report issues with the feed. This email address SHOULD point to a stable email address, that does not correspond to an individual but rather the team or company that manages GBFS feeds.
