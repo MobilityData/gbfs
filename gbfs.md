@@ -221,7 +221,7 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 * Phone Number *as of v3.0-RC* - Phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I/en) format. The phone number MUST start with a "+". The characters following the "+" MUST be integers and MUST NOT contain any hyphens, spaces or parentheses.
 * String - Can only contain text. Strings MUST NOT contain any formatting codes (including HTML) other than newlines.
 * Time - Service time in the HH:MM:SS format for the time zone indicated in `system_information.json` (00:00:00 - 47:59:59). Time can stretch up to one additional day in the future to accommodate situations where, for example, a system was open from 11:30pm - 11pm the next day (23:30:00-47:00:00).
-* Timestamp - Timestamp fields MUST be represented as strings in [RFC3339 format](https://www.rfc-editor.org/rfc/rfc3339), for example `2023-07-17T13:34:13+02:00`. 
+* Timestamp - Timestamp fields MUST be represented as strings in [RFC3339 format](https://www.rfc-editor.org/rfc/rfc3339), for example `2023-07-17T13:34:13+02:00`. *(as of v3.0-RC2)*
 * Timezone - TZ timezone from the https://www.iana.org/time-zones. Timezone names never contain the space character but MAY contain an underscore. Refer to https://en.wikipedia.org/wiki/List_of_tz_zones for a list of valid values.
 Example: `Asia/Tokyo`, `America/Los_Angeles` or `Africa/Cairo`.
 * URI - A fully qualified URI that includes the scheme (for example, `com.example.android://`). Any special characters in the URI MUST be correctly escaped. See the following https://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URI values. Note that URIs MAY be URLs.
