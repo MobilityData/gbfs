@@ -235,11 +235,11 @@ Example: `Asia/Tokyo`, `America/Los_Angeles` or `Africa/Cairo`.
 
 To accommodate the needs of feed producers and consumers prior to the adoption of a change, additional fields can be added to feeds even if these fields are not part of the official specification. Custom extensions that may provide value to the GBFS community and align with the [GBFS Guiding Principles](https://github.com/MobilityData/gbfs/blob/master/README.md#guiding-principles) SHOULD be proposed for inclusion in the specification through the change process. Extreme caution is advised to avoid introducing extensions which may be used to track the movements of vehicles or their users.
 
-Field names of extensions SHOULD be prefixed with an underscore ( _ ) character. It is strongly RECOMMENDED that these additional fields be documented on the [wiki](https://github.com/MobilityData/gbfs/wiki) page of the GBFS repository in this format:
+Field names of extensions SHOULD be prefixed with an underscore (_) character. It is strongly RECOMMENDED that these additional fields be documented on [gbfs.org](https://gbfs.org/specification/#extensions-outside-of-the-specification) in this format:
 
-Submitted by | Field Name | File Name | Defines
+Field Name | File Name | Organization name | Defines
 ---|---|---|---
-Publisher's name|_field_name|Name of GBFS endpoint where field is used|Description of purpose of use
+_field_name | Name of GBFS endpoint where field is used | Publisher's name | Description of purpose or use
 
 ## JSON Files
 
