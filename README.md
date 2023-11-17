@@ -115,7 +115,7 @@ Caution should be taken to avoid making changes to the spec that would render ex
 Each new addition to the spec adds complexity. We want to avoid additions to the spec that do not provide additional value to the shared mobility end user.
 
 ## Systems Catalog - Systems Implementing GBFS
-There are now over 600 shared mobility systems publishing GBFS worldwide. This list contains all known systems publishing GBFS feeds and is maintained by the GBFS community. This is an incomplete list. If you have or are aware of a system that doesn’t appear on the list please add it.
+There are now over 900 shared mobility systems publishing GBFS worldwide. This list contains all known systems publishing GBFS feeds and is maintained by the GBFS community. This is an incomplete list. If you have or are aware of a system that doesn’t appear on the list please add it.
 If you would like to add a system, please fork this repository and submit a pull request. Please keep this list alphabetized by country and system name. Alternatively, fill out [this contribution form](https://forms.gle/WSXFuXx9k4PSTfbC9) for a Github-less contribution. 
 * [systems.csv](systems.csv)
 
@@ -127,7 +127,7 @@ Location | Yes| Primary city in which the system is located followed by country 
 System ID | Yes | ID for the system. This MUST match the `system_id` field in `system_information.json`.
 URL | Yes | URL for the system from the `url` field in `system_information.json`. If the `url` field is not included in `system_information.json` this SHOULD be the primary URL for the system operator.
 Auto-Discovery URL | Yes | URL for the system's `gbfs.json` auto-discovery file.
-Validation Report | Optional | URL to the validation report of the system which can be obtained by running the Auto-Discovery URL into the [GBFS Validator](https://gbfs-validator.netlify.app/). This is not mandatory, MobilityData can add this link before merging the pull request. 
+Authentication Info URL | Conditionally REQUIRED | If authentication is required, this MUST contain a URL to a human-readable page describing how the authentication should be performed and how credentials can be created.
 
 ## GBFS JSON Schemas
 Complete JSON schemas for each version of GBFS can be found [here](https://github.com/MobilityData/gbfs-json-schema).
