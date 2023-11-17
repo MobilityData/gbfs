@@ -511,6 +511,7 @@ IT,Link Turin,"Turin, IT",Link_Turin,https://www.superpedestrian.com,https://mds
 IT,Verona Bike,"Verona, IT",verona-bike,https://bikeverona.it/en,https://gbfs.urbansharing.com/bikeverona.it/gbfs.json,
 IT,Zeus Anzio,"Anzio, IT",zeus_anzio,https://zeusscooters.com/,https://zeus.city/api/v1/mds/gbfs/anzio/gbfs.json,
 IT,Zeus Mazara,"Mazara, IT",zeus_mazara,https://zeusscooters.com/,https://zeus.city/api/v1/mds/gbfs/mazara/gbfs.json,
+JP,docomo bike share service,JP,docomo-cycle,https://docomo-cycle.jp/,https://api-public.odpt.org/api/v4/gbfs/docomo-cycle/gbfs.json,
 JP,docomo bike share service,"Tokyo, JP",docomo-cycle-tokyo,https://docomo-cycle.jp/,https://api-public.odpt.org/api/v4/gbfs/docomo-cycle-tokyo/gbfs.json,
 JP,HELLO CYCLING,JP,hellocycling,https://www.hellocycling.jp,https://api-public.odpt.org/api/v4/gbfs/hellocycling/gbfs.json,
 LI,Donkey Republic Liechtenstein,Liechtenstein,donkey_li,https://www.donkey.bike/cities/,https://stables.donkey.bike/api/public/gbfs/2/donkey_li/gbfs.json,
