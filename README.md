@@ -127,7 +127,7 @@ Location | Yes| Primary city in which the system is located followed by country 
 System ID | Yes | ID for the system. This MUST match the `system_id` field in `system_information.json`.
 URL | Yes | URL for the system from the `url` field in `system_information.json`. If the `url` field is not included in `system_information.json` this SHOULD be the primary URL for the system operator.
 Auto-Discovery URL | Yes | URL for the system's `gbfs.json` auto-discovery file.
-Validation Report | Optional | URL to the validation report of the system which can be obtained by running the Auto-Discovery URL into the [GBFS Validator](https://gbfs-validator.netlify.app/). This is not mandatory, MobilityData can add this link before merging the pull request. 
+Authentication Info URL | Conditionally REQUIRED | If authentication is required, this MUST contain a URL to a human-readable page describing how the authentication should be performed and how credentials can be created.
 
 ## GBFS JSON Schemas
 Complete JSON schemas for each version of GBFS can be found [here](https://github.com/MobilityData/gbfs-json-schema).
