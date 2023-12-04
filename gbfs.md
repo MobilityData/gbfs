@@ -317,7 +317,7 @@ Field Name | REQUIRED | Type | Defines
 &emsp;&emsp;\-`version` | Yes | String | The semantic version of the feed in the form `X.Y`.                               
 &emsp;&emsp;\-`url` | Yes  | URL | URL of the corresponding `gbfs.json` endpoint.
 &emsp;&emsp;\-`area` | OPTIONAL | GeoJSON MultiPolygon | A GeoJSON MultiPolygon that describes the operating area. If `area` is supplied, then the record defines the area in which vehicles can be rented and returned.
-&emsp;&emsp;\-`country_code` | OPTIONAL | String | The country code of the operating area. The field MUST not be specified if the operating area spans multiple countries.
+&emsp;&emsp;\-`country_code` | OPTIONAL | String | The country code of the operating area. The field MUST NOT be specified if the operating area spans multiple countries.
 
 **Example:**
 ```json
