@@ -316,7 +316,9 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`versions` | Yes | Array | Contains one object, as defined below, for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number. 
 &emsp;&emsp;\-`version` | Yes | String | The semantic version of the feed in the form `X.Y`.                               
 &emsp;&emsp;\-`url` | Yes  | URL | URL of the corresponding `gbfs.json` endpoint.
- 
+&emsp;&emsp;\-`area` | OPTIONAL | GeoJSON MultiPolygon | A GeoJSON MultiPolygon that describes the operating area. If `area` is supplied, then the record defines the area in which vehicles can be rented and returned.
+&emsp;&emsp;\-`country_code` | OPTIONAL | String | The country code of the operating area. The field MUST not be specified if the operating area spans multiple countries.
+
 **Example:**
 ```json
 {
@@ -336,7 +338,45 @@ Field Name | REQUIRED | Type | Defines
             "version":"3.0-RC",
             "url":"https://berlin.example.com/gbfs/3/gbfs"
           }
-        ]
+        ],
+        "area": {
+          "type": "MultiPolygon",
+          "coordinates": [
+            [
+              [
+                [
+                  13.10821,
+                  52.58563
+                ],
+                [
+                  13.29743,
+                  52.67046
+                ],
+                [
+                  13.48451,
+                  52.6855
+                ],
+                [
+                  13.77993,
+                  52.43458
+                ],
+                [
+                  13.65355,
+                  52.33048
+                ],
+                [
+                  13.08165,
+                  52.38793
+                ],
+                [
+                  13.10821,
+                  52.58563
+                ]
+              ]
+            ]
+          ]
+        },
+        "country_code": "DE"
       },
       {
         "system_id":"example_paris",
@@ -349,7 +389,49 @@ Field Name | REQUIRED | Type | Defines
             "version":"3.0-RC",
             "url":"https://paris.example.com/gbfs/3/gbfs"
           }
-        ]
+        ],
+        "area": {
+          "type": "MultiPolygon",
+          "coordinates": [
+            [
+              [
+                [
+                  2.14306,
+                  48.89971
+                ],
+                [
+                  2.36707,
+                  48.99455
+                ],
+                [
+                  2.60219,
+                  49.01987
+                ],
+                [
+                  2.615,
+                  48.69025
+                ],
+                [
+                  2.52167,
+                  48.6867
+                ],
+                [
+                  2.26838,
+                  48.73275
+                ],
+                [
+                  2.13103,
+                  48.80833
+                ],
+                [
+                  2.14306,
+                  48.89971
+                ]
+              ]
+            ]
+          ]
+        },
+        "country_code": "FR"
       }
     ]
   }
