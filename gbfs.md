@@ -674,7 +674,7 @@ Field Name | REQUIRED | Type | Defines
         "model": [
           {
             "text": "Clio",
-            "language": "en",
+            "language": "en"
           }
         ],
         "color": "white",
@@ -1299,7 +1299,7 @@ Field Name | REQUIRED | Type | Defines
             "language": "en"
           }
         ],
-        "last_updated": "2023-07-17T13:34:13+02:00",
+        "last_updated": "2023-07-17T13:34:13+02:00"
       }
     ]
   }
