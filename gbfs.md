@@ -222,7 +222,7 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 
   Field Name | REQUIRED | Type | Defines
   ---|---|---|---
-  `text` | Yes | URL | The URL of the translated ressource.
+  `text` | Yes | URL | The URL of the translated resource.
   `language` | Yes | Language | IETF BCP 47 language code.  Must match one of the values specified by the `languages` field in `system_information.json`.
 
 * Non-negative Float - A 32-bit floating point number greater than or equal to 0.
