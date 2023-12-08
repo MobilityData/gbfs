@@ -262,7 +262,12 @@ Field Name | REQUIRED | Type | Defines
   "ttl": 3600,
   "version": "3.0-RC2",
   "data": {
-    "name": "Example Bike Rental",
+    "name": [
+      {
+        "text": "Example Bike Rental",
+        "language": "en"
+      }
+    ],
     "system_id": "example_cityname",
     "timezone": "America/Chicago",
     "languages": ["en"]
@@ -1683,7 +1688,12 @@ Other supported parameters include:
     "stations": [
       {
         "station_id": "425",
-        "name": "Coppertail",
+        "name": [
+          {
+            "text": "Coppertail",
+            "language": "en"
+          }
+        ],
         "lat": 27.956333,
         "lon": -82.430436,
         "rental_uris": {
@@ -1742,7 +1752,12 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
     "stations": [
       {
         "station_id": "425",
-        "name": "Coppertail",
+        "name": [
+          {
+            "text": "Coppertail",
+            "language": "en"
+          }
+        ],
         "lat": 27.956333,
         "lon": -82.430436,
         "rental_uris":{
@@ -1768,7 +1783,12 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
     "stations": [
       {
         "station_id": "425",
-        "name": "Coppertail",
+        "name": [
+          {
+            "text": "Coppertail",
+            "language": "en"
+          }
+        ],
         "lat": 27.956333,
         "lon": -82.430436,
         "rental_uris": {
