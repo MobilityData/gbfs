@@ -260,7 +260,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 3600,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "name": "Example Bike Rental",
     "system_id": "example_cityname",
@@ -286,7 +286,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "feeds": [
       {
@@ -373,7 +373,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "versions": [
       {
@@ -381,7 +381,7 @@ Field Name | REQUIRED | Type | Defines
         "url": "https://www.example.com/gbfs/2/gbfs"
       },
       {
-        "version": "3.0-RC",
+        "version": "3.0-RC2",
         "url": "https://www.example.com/gbfs/3/gbfs"
       }
     ]
@@ -438,7 +438,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 1800,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "system_id": "example_cityname",
     "languages": ["en"],
@@ -550,7 +550,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "vehicle_types": [
       {
@@ -733,7 +733,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "stations": [
       {
@@ -769,7 +769,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "stations": [
       {
@@ -861,7 +861,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "stations": [
       {
@@ -1065,7 +1065,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 86400,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "regions": [
       {
@@ -1145,7 +1145,7 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "plans": [
       {
@@ -1198,7 +1198,7 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "plans": [
       {
@@ -1264,7 +1264,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "alerts": [
       {
@@ -1361,7 +1361,7 @@ See examples below.
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "geofencing_zones": {
       "type": "FeatureCollection",
@@ -1647,7 +1647,7 @@ Other supported parameters include:
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "name": [
       {
@@ -1678,7 +1678,7 @@ Other supported parameters include:
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "stations": [
       {
@@ -1706,7 +1706,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "name": [
       {
@@ -1737,7 +1737,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "stations": [
       {
@@ -1763,7 +1763,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "stations": [
       {
