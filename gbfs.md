@@ -218,7 +218,7 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
   `language` | Yes | Language | IETF BCP 47 language code.  Must match one of the values specified by the `languages` field in `system_information.json`.
 
   Most commonly specified as `Array<Localized String>` when specifying translations in multiple languages.  See [Localization](#localization) for more details.
-* <a name="localized-url"></a> Localized URL - A JSON element representing the URL of a ressource that has been translated into a specific language. The element consists of the following name-value pairs:
+* <a name="localized-url"></a> Localized URL - A JSON element representing the URL of a resource that has been translated into a specific language. The element consists of the following name-value pairs:
 
   Field Name | REQUIRED | Type | Defines
   ---|---|---|---
