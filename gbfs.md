@@ -603,7 +603,7 @@ Field Name | REQUIRED | Type | Defines
           "icon_last_modified": "2021-06-15"
         },
         "default_pricing_plan_id": "cargo_plan_1",
-        "pricing_plans_ids": [
+        "pricing_plan_ids": [
           "cargo_plan_1",
           "cargo_plan_2",
           "cargo_plan_3"
@@ -1649,15 +1649,22 @@ Other supported parameters include:
   "ttl": 60,
   "version": "3.0-RC",
   "data": {
-    "name": "Example Bike Rental",
+    "name": [
+      {
+        "text": "Example Bike Rental",
+        "language": "en"
+      }
+    ],
     "system_id": "example_cityname",
     "timezone": "America/Chicago",
     "languages": ["en"],
     "rental_apps": {
       "android": {
+        "store_uri": "https://play.google.com/store/apps/details?id=com.example.android",
         "discovery_uri": "com.example.android://"
       },
       "ios": {
+        "store_uri": "https://apps.apple.com/app/apple-store/id123456789",
         "discovery_uri": "com.example.ios://"
       }
     }
@@ -1701,7 +1708,12 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
   "ttl": 60,
   "version": "3.0-RC",
   "data": {
-    "name": "Example Bike Rental",
+    "name": [
+      {
+        "text": "Example Bike Rental",
+        "language": "en"
+      }
+    ],
     "system_id": "example_cityname",
     "timezone": "America/Chicago",
     "languages": ["en"],
