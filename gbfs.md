@@ -277,7 +277,7 @@ The `gbfs.json` discovery file SHOULD represent a single system or geographic ar
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`feeds` | Yes | Array<Object> | An array of all of the feeds that are published by this auto-discovery file.
+`feeds` | Yes | Array&lt;Object&gt; | An array of all of the feeds that are published by this auto-discovery file.
 \-&nbsp; `name` | Yes | String | Key identifying the type of feed this is. The key MUST be the base file name defined in the spec for the corresponding feed type ( `system_information` for `system_information.json` file, `station_information` for `station_information.json` file).
 \-&nbsp; `url` | Yes | URL | URL for the feed. Note that the actual feed endpoints (urls) may not be defined in the `file_name.json` format. For example, a valid feed endpoint could end with `station_info` instead of `station_information.json`.
 
@@ -312,9 +312,9 @@ The following fields are all attributes within the main `data` object for this f
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`datasets` | Yes | Array<Object> | 
+`datasets` | Yes | Array&lt;Object&gt; | 
 \-&nbsp;`system_id` | Yes | ID | The `system_id` from `system_information.json` for the corresponding data set(s).
-\-&nbsp;`versions` | Yes | Array<Object> | Contains one object for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number. 
+\-&nbsp;`versions` | Yes | Array&lt;Object&gt; | Contains one object for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number. 
 &emsp;&emsp;\-`version` | Yes | String | The semantic version of the feed in the form `X.Y`.                               
 &emsp;&emsp;\-`url` | Yes  | URL | URL of the corresponding `gbfs.json` endpoint.
  
@@ -364,7 +364,7 @@ The following fields are all attributes within the main `data` object for this f
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`versions` | Yes | Array<Object> | Contains one object, for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number.
+`versions` | Yes | Array&lt;Object&gt; | Contains one object, for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number.
 \-&nbsp; `version` | Yes | String | The semantic version of the feed in the form `X.Y`.
 \-&nbsp; `url` | Yes | URL | URL of the corresponding gbfs.json endpoint.
 
@@ -397,7 +397,7 @@ The following fields are all attributes within the main `data` object for this f
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `system_id` | Yes | ID | This is a globally unique identifier for the vehicle share system. Each distinct system or geographic area in which vehicles are operated MUST have its own unique `system_id`. It is up to the publisher of the feed to guarantee uniqueness and MUST be checked against existing `system_id` fields in  [systems.csv](https://github.com/MobilityData/gbfs/blob/master/systems.csv) to ensure this. This value is intended to remain the same over the life of the system. <br><br> System IDs SHOULD be recognizable as belonging to a particular system as opposed to random strings - for example, `bcycle_austin` or `biketown_pdx`.
-`languages` <br/>*(added of v3.0-RC)* | Yes | Array<Language> | List of languages used in translated strings.
+`languages` <br/>*(added of v3.0-RC)* | Yes | Array&lt;Language&gt; | List of languages used in translated strings.
 `name` <br/>*(as of v3.0-RC)* | Yes | Array&lt;Localized String&gt; | Name of the system to be displayed to customers.
 `opening_hours` <br/>*(added in v3.0-RC)*| Yes | String | Hours and dates of operation for the system in [OSM opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) format. *(added in v3.0-RC)*
 `short_name` *(as of v3.0-RC)* | OPTIONAL | Array&lt;Localized String&gt; | Abbreviation for a system.
@@ -514,14 +514,14 @@ REQUIRED of systems that include information about vehicle types in the `vehicle
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`vehicle_types` | Yes | Array<Object> | Contains one object per vehicle type in the system.
+`vehicle_types` | Yes | Array&lt;Object&gt; | Contains one object per vehicle type in the system.
 \- `vehicle_type_id` | Yes | ID | Unique identifier of a vehicle type. See [Field Types](#field-types) above for ID field requirements.
 \- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`cargo_bicycle` *(added in v2.3)*</li><li>`car`</li><li>`moped`</li><li>`scooter_standing` *(standing kick scooter, added in v2.3)*</li><li>`scooter_seated` *(this is a kick scooter with a seat, not to be confused with `moped`, added in v2.3)*</li><li>`other`</li></ul>
 \- `rider_capacity`<br/>*(added in v2.3)* | OPTIONAL | Non-negative integer | The number of riders (driver included) the vehicle can legally accommodate.
 \- `cargo_volume_capacity`<br/>*(added in v2.3)* | OPTIONAL | Non-negative integer | Cargo volume available in the vehicle, expressed in liters. For cars, it corresponds to the space between the boot floor, including the storage under the hatch, to the rear shelf in the trunk.
 \- `cargo_load_capacity`<br/>*(added in v2.3)* | OPTIONAL | Non-negative integer | The capacity of the vehicle cargo space (excluding passengers), expressed in kilograms.
 \- `propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides electric motor assist only in combination with human propulsion - no throttle mode)_</li><li>`electric` _(Powered by battery-powered electric motor with throttle mode)_</li><li>`combustion` _(Powered by gasoline combustion engine)_</li><li>`combustion_diesel` _(Powered by diesel combustion engine, added in v2.3)_</li><li>`hybrid` _(Powered by combined combustion engine and battery-powered motor, added in v2.3)_</li><li>`plug_in_hybrid` _(Powered by combined combustion engine and battery-powered motor with plug-in charging, added in v2.3)_</li><li>`hydrogen_fuel_cell` _(Powered by hydrogen fuel cell powered electric motor, added in v2.3)_</li></ul> This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/main/general-information.md#propulsion-types).
-\- `eco_labels`<br/>*(as of v3.0-RC2)* | OPTIONAL | Array<Object> | Vehicle air quality certificate. Official anti-pollution certificate, based on the information on the vehicle's registration certificate, attesting to its level of pollutant emissions based on a defined standard. In Europe, for example, it is the European emission standard. The aim of this measure is to encourage the use of the least polluting vehicles by allowing them to drive during pollution peaks or in low emission zones.
+\- `eco_labels`<br/>*(as of v3.0-RC2)* | OPTIONAL | Array&lt;Object&gt; | Vehicle air quality certificate. Official anti-pollution certificate, based on the information on the vehicle's registration certificate, attesting to its level of pollutant emissions based on a defined standard. In Europe, for example, it is the European emission standard. The aim of this measure is to encourage the use of the least polluting vehicles by allowing them to drive during pollution peaks or in low emission zones.
 &emsp;\-&nbsp; `country_code`<br/>*(added in v2.3)*| REQUIRED | Country code | Country where the `eco_sticker` applies.
 &emsp;\-&nbsp; `eco_sticker`<br/>*(added in v2.3)* | REQUIRED | String | Name of the eco label. The name must be written in lowercase, separated by an underscore.<br /><br />Example of `eco_sticker` in Europe :<ul><li>CritAirLabel (France) <ul><li>critair</li><li>critair_1</li><li>critair_2</li><li>critair_3</li><li>critair_4</li><li>critair_5</li></ul></li><li>UmweltPlakette (Germany)<ul><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li><li>euro_6</li><li>euro_6_temp</li><li>euro_E</li></ul></li><li>UmweltPickerl (Austria)<ul><li>euro_1</li><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li></ul><li>Reg_certificates (Belgium)<ul><li>reg_certificates</li></ul><li>Distintivo_ambiental (Spain)<ul><li>0</li><li>eco</li><li>b</li><li>c</li></ul></li></ul>
 \- `max_range_meters` | Conditionally REQUIRED | Non-negative float | If the vehicle has a motor (as indicated by having a value other than `human` in the `propulsion_type` field), this field is REQUIRED. This represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example, a full battery or full tank of gas).
@@ -697,7 +697,7 @@ All stations included in `station_information.json` are considered public (meani
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`stations` | Yes | Array<Object> | Contains one object per station.
+`stations` | Yes | Array&lt;Object&gt; | Contains one object per station.
 \-&nbsp; `station_id` | Yes | ID | Identifier of a station.
 \-&nbsp; `name` <br/>*(as of v3.0-RC)* | Yes | Array&lt;Localized String&gt; | The public name of the station for display in maps, digital signage, and other text applications. Names SHOULD reflect the station location through the use of a cross street or local landmark. Abbreviations SHOULD NOT be used for names and other text (for example, "St." for "Street") unless a location is called by its abbreviated name (for example, “JFK Airport”). See [Text Fields and Naming](#text-fields-and-naming). <br>Examples: <ul><li>Broadway and East 22nd Street</li><li>Convention Center</li><li>Central Park South</li></ul>.
 \-&nbsp; `short_name` <br/>*(as of v3.0-RC)*  | OPTIONAL | Array&lt;Localized String&gt; | Short name or other type of identifier.
@@ -715,10 +715,10 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`parking_hoop`<br/>*(added in v2.3)* | OPTIONAL | Boolean | Are parking hoops present at this station?<br /><br />`true` - Parking hoops are present at this station.<br />`false` - Parking hoops are not present at this station.<br /><br />Parking hoops are lockable devices that are used to secure a parking space to prevent parking of unauthorized vehicles.
 \-&nbsp;`contact_phone`<br/>*(added in v2.3)* | OPTIONAL | Phone number | Contact phone of the station.
 \-&nbsp;`capacity` | OPTIONAL | Non-negative integer | Number of total docking points installed at this station, both available and unavailable, regardless of what vehicle types are allowed at each dock. <br/><br/>If this is a virtual station defined using the `is_virtual_station` field, this number represents the total number of vehicles of all types that can be parked at the virtual station.<br/><br/>If the virtual station is defined by `station_area`, this is the number that can park within the station area. If `lat`/`lon` are defined, this is the number that can park at those coordinates.
-\-&nbsp;`vehicle_types_capacity` <br/>*(as of v3.0-RC2)* | OPTIONAL | Array<Object> | These objects are used to model the parking capacity of virtual stations (defined using the `is_virtual_station` field) for each vehicle type that can be returned to this station. The total number of vehicles from each of these objects SHOULD add up to match the value specified in the `capacity` field.
+\-&nbsp;`vehicle_types_capacity` <br/>*(as of v3.0-RC2)* | OPTIONAL | Array&lt;Object&gt; | These objects are used to model the parking capacity of virtual stations (defined using the `is_virtual_station` field) for each vehicle type that can be returned to this station. The total number of vehicles from each of these objects SHOULD add up to match the value specified in the `capacity` field.
 &emsp;&emsp;\-&nbsp;`vehicle_type_ids` <br/>*(as of v3.0-RC2)* | REQUIRED | Array | The `vehicle_type_ids`, as defined in `vehicle_types.json`, that may park at the virtual station.
 &emsp;&emsp;\-&nbsp;`count`| REQUIRED | Non-negative integer | A number representing the total number of vehicles of the specified `vehicle_type_ids` that can park within the virtual station.<br /><br />If the virtual station is defined by `station_area`, this is the number that can park within the station area. If `lat`/`lon` is defined, this is the number that can park at those coordinates.
-\-&nbsp;`vehicle_docks_capacity` <br/>*(as of v3.0-RC2)* | OPTIONAL | Array<Object> | These objects are used to model the total docking capacity of a station, both available and unavailable, for each type of vehicle that may dock at this station. The total number of docks from each of these objects SHOULD add up to match the value specified in the `capacity` field.
+\-&nbsp;`vehicle_docks_capacity` <br/>*(as of v3.0-RC2)* | OPTIONAL | Array&lt;Object&gt; | These objects are used to model the total docking capacity of a station, both available and unavailable, for each type of vehicle that may dock at this station. The total number of docks from each of these objects SHOULD add up to match the value specified in the `capacity` field.
 &emsp;&emsp;\-&nbsp;`vehicle_type_ids` <br/>*(as of v3.0-RC2)* | REQUIRED | Array | An array of strings where each string represents a `vehicle_type_id` that is able to use a particular type of dock at the station.
 &emsp;&emsp;\-&nbsp;`count`| REQUIRED | Non-negative integer | A number representing the total number of docks at the station, both available and unavailable, that may accept the vehicle types specified by `vehicle_type_ids`.
 \-&nbsp;`is_valet_station` <br/>*(added in v2.1)* | OPTIONAL | Boolean | Are valet services provided at this station? <br /><br /> `true` - Valet services are provided at this station. <br /> `false` - Valet services are not provided at this station. <br /><br /> If this field is empty, it is assumed that valet services are not provided at this station. <br><br>This field’s boolean SHOULD be set to `true` during the hours which valet service is provided at the station. Valet service is defined as providing unlimited capacity at a station.
@@ -839,7 +839,7 @@ Describes the capacity and rental availability of a station. Data returned SHOUL
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`stations` | Yes | Array<Object> | Contains one object per station in the system.
+`stations` | Yes | Array&lt;Object&gt; | Contains one object per station in the system.
 \-&nbsp;`station_id` | Yes | ID | Identifier of a station. See [station_information.json](#station_informationjson).
 \-&nbsp;`num_vehicles_available` | Yes | Non-negative integer | Number of functional vehicles physically at the station that may be offered for rental. To know if the vehicles are available for rental, see `is_renting`. <br/><br/>If `is_renting` = `true` this is the number of vehicles that are currently available for rent. If `is_renting` =`false` this is the number of vehicles that would be available for rent if the station were set to allow rentals.
 \- `vehicle_types_available` <br/>*(added in v2.1)* | Conditionally REQUIRED | Array | REQUIRED if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field's value is an array of objects. Each of these objects is used to model the total number of each defined vehicle type available at a station. The total number of vehicles from each of these objects SHOULD add up to match the value specified in the `num_vehicles_available`  field.
@@ -848,7 +848,7 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`num_vehicles_disabled` | OPTIONAL | Non-negative integer | Number of disabled vehicles of any type at the station. Vendors who do not want to publicize the number of disabled vehicles or docks in their system can opt to omit station `capacity` (in [station_information.json](#station_informationjson), `num_vehicles_disabled`, and `num_docks_disabled` *(as of v2.0)*. If station `capacity` is published, then broken docks/vehicles can be inferred (though not specifically whether the decreased capacity is a broken vehicle or dock).
 \-&nbsp;`num_docks_available` | Conditionally REQUIRED <br/>*(as of v2.0)* | Non-negative integer | REQUIRED except for stations that have unlimited docking capacity (e.g. virtual stations) *(as of v2.0)*. Number of functional docks physically at the station that are able to accept vehicles for return. To know if the docks are accepting vehicle returns, see `is_returning`. <br /><br/> If `is_returning` = `true` this is the number of docks that are currently available to accept vehicle returns. If `is_returning` = `false` this is the number of docks that would be available if the station were set to allow returns.
 \- `vehicle_docks_available` <br/>*(added in v2.1)* | Conditionally REQUIRED | Array | This field is REQUIRED in feeds where the [vehicle_types.json](#vehicle_typesjson) is defined and where certain docks are only able to accept certain vehicle types. If every dock at the station is able to accept any vehicle type, then this field is not REQUIRED. This field's value is an array of objects. Each of these objects is used to model the number of docks available for certain vehicle types. The total number of docks from each of these objects SHOULD add up to match the value specified in the `num_docks_available` field.
-&emsp;\- `vehicle_type_ids` <br/>*(added in v2.1)* | REQUIRED | Array<String> | Each string represents a `vehicle_type_id` that is able to use a particular type of dock at the station
+&emsp;\- `vehicle_type_ids` <br/>*(added in v2.1)* | REQUIRED | Array&lt;String&gt; | Each string represents a `vehicle_type_id` that is able to use a particular type of dock at the station
 &emsp;\- `count` <br/>*(added in v2.1)* | REQUIRED | Non-negative integer | A number representing the total number of available vehicles of the corresponding vehicle type as defined in the `vehicle_types` array at the station that can accept vehicles of the specified types in the `vehicle_types` array.
 \-&nbsp;`num_docks_disabled` | OPTIONAL | Non-negative integer | Number of disabled dock points at the station.
 \-&nbsp;`is_installed` | Yes | Boolean | Is the station currently on the street?<br/><br/>`true` - Station is installed on the street.<br/>`false` - Station is not installed on the street.<br/><br/>Boolean SHOULD be set to `true` when equipment is present on the street. In seasonal systems where equipment is removed during winter, boolean SHOULD be set to `false` during the off season. May also be set to false to indicate planned (future) stations which have not yet been installed.
@@ -938,7 +938,7 @@ Field Name | REQUIRED | Type | Defines
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`vehicles`<br />*(as of v3.0-RC)*  | Yes | Array<Object> | Contains one object per vehicle that is currently deployed in the field and not part of an active rental.
+`vehicles`<br />*(as of v3.0-RC)*  | Yes | Array&lt;Object&gt; | Contains one object per vehicle that is currently deployed in the field and not part of an active rental.
 \-&nbsp;`vehicle_id`<br />*(as of v3.0-RC)*  | Yes | ID | Identifier of a vehicle. The `vehicle_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `vehicle_id` identifier SHOULD only be rotated once per trip.
 \-&nbsp;`lat` | Conditionally REQUIRED <br/>*(as of v2.1)* | Latitude | Latitude of the vehicle in decimal degrees. *(as of v2.1)* REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 \-&nbsp;`lon` | Conditionally REQUIRED <br/>*(as of v2.1)* | Longitude | Longitude of the vehicle in decimal degrees. *(as of v2.1)* REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
@@ -1056,7 +1056,7 @@ Describes regions for a system. Regions are a subset of a shared mobility system
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`regions` | Yes | Array<Object> |
+`regions` | Yes | Array&lt;Object&gt; |
 \-&nbsp; `region_id` | Yes | ID | Identifier for the region.
 \-&nbsp; `name` <br/>*(as of v3.0-RC)* | Yes | Array&lt;Localized String&gt; | Public name for this region.
 
@@ -1116,7 +1116,7 @@ Describes pricing for the system. <br/>The following fields are all attributes w
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`plans` | Yes | Array<Object> |
+`plans` | Yes | Array&lt;Object&gt; |
 \-&nbsp; `plan_id` | Yes | ID | Identifier for a pricing plan in the system.
 \-&nbsp; `url` | OPTIONAL | URL | URL where the customer can learn more about this pricing plan.
 \-&nbsp; `name` <br/>*(as of v3.0-RC)* | Yes | Array&lt;Localized String&gt; | Name of this pricing plan.
@@ -1246,10 +1246,10 @@ Obsolete alerts SHOULD be removed so the client application can safely present t
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`alerts` | Yes | Array<Object> | Objects each indicating a system alert.
+`alerts` | Yes | Array&lt;Object&gt; | Objects each indicating a system alert.
 \-&nbsp;`alert_id` | Yes | ID | Identifier for this alert.
 \-&nbsp;`type` | Yes | Enum | Valid values are:<br /><br /><ul><li>`system_closure`</li><li>`station_closure`</li><li>`station_move`</li><li>`other`</li></ul>
-\-&nbsp;`times` | OPTIONAL | Array<Object> | The fields `start` and `end` indicate when the alert is in effect (for example, when the system or station is actually closed, or when a station is scheduled to be moved).
+\-&nbsp;`times` | OPTIONAL | Array&lt;Object&gt; | The fields `start` and `end` indicate when the alert is in effect (for example, when the system or station is actually closed, or when a station is scheduled to be moved).
 &emsp;\-&nbsp;`start` | REQUIRED | Timestamp | Start time of the alert.
 &emsp;\-&nbsp;`end` | OPTIONAL | Timestamp | End time of the alert. If there is currently no end time planned for the alert, this can be omitted.
 \-&nbsp;`station_ids` | OPTIONAL | Array | If this is an alert that affects one or more stations, include their ID(s). Otherwise omit this field. If both `station_ids` and `region_ids` are omitted, this alert affects the entire system.
@@ -1323,7 +1323,7 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `geofencing_zones` | Yes | GeoJSON FeatureCollection | Each geofenced zone and its associated rules and attributes is described as an object within the array of features, as follows.
 \-&nbsp;`type` | Yes | String | “FeatureCollection” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
-\-&nbsp;`features` | Yes | Array<Object> |
+\-&nbsp;`features` | Yes | Array&lt;Object&gt; |
 &emsp;\-&nbsp;`type` | Yes | String | “Feature” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
 &emsp;\-&nbsp;`geometry` | Yes | GeoJSON MultiPolygon | A polygon that describes where rides may or may not be able to start, end, go through, or have other limitations or affordances. Rules may only apply to the interior of a polygon. All geofencing zones contained in this list are public (meaning they can be displayed on a map for public use).
 &emsp;\-&nbsp;`properties` | Yes | Object | Properties describing travel allowances and limitations.
