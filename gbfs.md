@@ -144,7 +144,7 @@ Publishers SHOULD implement auto-discovery of GBFS feeds by linking to the locat
 ### Localization
 
 * Each supported language MUST be listed in the `languages` field in `system_information.json`. *(as of v3.0-RC)*
-* Translations MUST be provided for each supported language for all translateable fields of type Array&lt;[Localized String](#localized-string)&gt;. *(as of v3.0-RC)*
+* Translations MUST be provided for each supported language for all translateable fields of type Array&lt;[Localized String](#localized-string)&gt; and Array&lt;[Localized URL](#localized-url)&gt;. *(as of v3.0-RC)*
 * URLs pointing to text intended for consumption by end-users MUST be provided for each supported language. *(as of v3.0-RC)*
 
 ### Text Fields and Naming
@@ -210,7 +210,7 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 * Language - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to https://www.rfc-editor.org/rfc/bcp/bcp47.txt and https://www.w3.org/International/articles/language-tags/. Examples: `en` for English, `en-US` for American English, or `de` for German.
 * Latitude - WGS84 latitude in decimal degrees. The value MUST be greater than or equal to -90.0 and less than or equal to 90.0. Example: `41.890169` for the Colosseum in Rome.
 * Longitude - WGS84 longitude in decimal degrees. The value MUST be greater than or equal to -180.0 and less than or equal to 180.0. Example: `12.492269` for the Colosseum in Rome.
-* <a name="localized-string"></a> Localized String - A JSON element representing a String value that has been translated into a specific language.  The element consists of the following name-value pairs:
+* <a name="localized-string"></a> Localized String - A JSON element representing a String value that has been translated into a specific language. The element consists of the following name-value pairs:
 
   Field Name | REQUIRED | Type | Defines
   ---|---|---|---
@@ -218,6 +218,12 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
   `language` | Yes | Language | IETF BCP 47 language code.  Must match one of the values specified by the `languages` field in `system_information.json`.
 
   Most commonly specified as `Array<Localized String>` when specifying translations in multiple languages.  See [Localization](#localization) for more details.
+* <a name="localized-url"></a> Localized URL - A JSON element representing the URL of a resource that has been translated into a specific language. The element consists of the following name-value pairs:
+
+  Field Name | REQUIRED | Type | Defines
+  ---|---|---|---
+  `text` | Yes | URL | The URL of the translated resource.
+  `language` | Yes | Language | IETF BCP 47 language code.  Must match one of the values specified by the `languages` field in `system_information.json`.
 
 * Non-negative Float - A 32-bit floating point number greater than or equal to 0.
 * Non-negative Integer - An integer greater than or equal to 0.
@@ -420,9 +426,9 @@ Field Name | REQUIRED | Type | Defines
 \- `brand_image_url` <br/>*(added in v2.3)*  | Conditionally REQUIRED |  URL |  REQUIRED if `brand_assets` object is defined. A fully qualified URL pointing to the location of a graphic file representing the brand for the service. File MUST be in SVG V1.1 format and MUST be either square or round.
 \- `brand_image_url_dark` <br/>*(added in v2.3)*  | OPTIONAL |  URL | A fully qualified URL pointing to the location of a graphic file representing the brand for the service for use in dark mode applications.  File MUST be in SVG V1.1 format and MUST be either square or round.
 \- `color` <br/>*(added in v2.3)*  | OPTIONAL |  String |  Color used to represent the brand for the service expressed as a 6 digit hexadecimal color code in the form #000000.
-`terms_url` <br/>*(as of v3.0-RC)* | OPTIONAL | Array&lt;Localized String&gt; | A fully qualified URL pointing to the terms of service (also often called "terms of use" or "terms and conditions") for the service.
+`terms_url` <br/>*(as of v3.0-RC)* | OPTIONAL | Array&lt;Localized URL&gt; | A fully qualified URL pointing to the terms of service (also often called "terms of use" or "terms and conditions") for the service.
 `terms_last_updated` <br/>*(added in v2.3)* |Conditionally REQUIRED | Date | REQUIRED if `terms_url` is defined. The date that the terms of service provided at `terms_url` were last updated. 
-`privacy_url` <br/>*(as of v3.0-RC)*| OPTIONAL | Array&lt;Localized String&gt; | A fully qualified URL pointing to the privacy policy for the service.
+`privacy_url` <br/>*(as of v3.0-RC)*| OPTIONAL | Array&lt;Localized URL&gt; | A fully qualified URL pointing to the privacy policy for the service.
 `privacy_last_updated` <br/>*(added in v2.3)* |Conditionally REQUIRED | Date | REQUIRED if `privacy_url` is defined. The date that the privacy policy provided at `privacy_url` was last updated. 
 `rental_apps` | OPTIONAL | Object | Contains rental app information in the `android` and `ios` JSON objects.
 \-&nbsp;`android` | OPTIONAL | Object | Contains rental app download and app discovery information for the Android platform in the `store_uri` and `discovery_uri` fields. See [examples](#deep-links-examples) of how to use these fields and [supported analytics](#analytics).
@@ -1253,7 +1259,7 @@ Field Name | REQUIRED | Type | Defines
 &emsp;\-&nbsp;`end` | OPTIONAL | Timestamp | End time of the alert. If there is currently no end time planned for the alert, this can be omitted.
 \-&nbsp;`station_ids` | OPTIONAL | Array | If this is an alert that affects one or more stations, include their ID(s). Otherwise omit this field. If both `station_ids` and `region_ids` are omitted, this alert affects the entire system.
 \-&nbsp;`region_ids` | OPTIONAL | Array | If this system has regions, and if this alert only affects certain regions, include their ID(s). Otherwise, omit this field. If both `station_ids` and `region_ids` are omitted, this alert affects the entire system.
-\-&nbsp; `url` <br/>*(as of v3.0-RC)* | OPTIONAL | Array&lt;Localized String&gt; | URL where the customer can learn more information about this alert.
+\-&nbsp; `url` <br/>*(as of v3.0-RC)* | OPTIONAL | Array&lt;Localized URL&gt; | A fully qualified URL where the customer can learn more information about this alert.
 \-&nbsp; `summary` <br/>*(as of v3.0-RC)*  | Yes | Array&lt;Localized String&gt; | A short summary of this alert to be displayed to the customer.
 \-&nbsp; `description` <br/>*(as of v3.0-RC)*  | OPTIONAL | Array&lt;Localized String&gt; | Detailed description of the alert.
 \-&nbsp;`last_updated` | OPTIONAL | Timestamp | Indicates the last time the info for the alert was updated.
