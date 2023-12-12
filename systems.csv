@@ -44,6 +44,10 @@ BE,Dott Charleroi,"Charleroi,BE",dott-charleroi,https://ridedott.com,https://gbf
 BE,Dott Ghent,"Ghent,BE",dott-ghent,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/ghent/gbfs.json,
 BE,Dott Liege,"Liege,BE",dott-liege,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/liege/gbfs.json,
 BE,Dott Namur,"Namur,BE",dott-namur,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/namur/gbfs.json,
+BE,Hoppy,"Ghent, BE",hoppsharing_gent,https://behoppy.eu/,https://eu-mobility.joyride.tech/api/v1/gbfs/a640fd4b-5a16-48c6-9aa2-d72674caf5f8/3e98a50a40a54d4884c6aa01d8c18510/gbfs.json
+BE,Hoppy,"Hasselt, BE",hoppy_Hasselt,https://behoppy.eu/,https://eu-mobility.joyride.tech/api/v1/gbfs/a640fd4b-5a16-48c6-9aa2-d72674caf5f8/2a29c4c627e14399a19436855d25ceb9/gbfs.json
+BE,Hoppy,"Mechelen, BE",hoppy_Mechelen,https://behoppy.eu/,https://eu-mobility.joyride.tech/api/v1/gbfs/a640fd4b-5a16-48c6-9aa2-d72674caf5f8/1c03f680d52141df85c33675bea6d625/gbfs.json
+BE,Hoppy,"Blankenberge, BE",hoppy_Blankenberge,https://behoppy.eu/,https://eu-mobility.joyride.tech/api/v1/gbfs/a640fd4b-5a16-48c6-9aa2-d72674caf5f8/57cb68a183234d0189474e7122944d81/gbfs.json
 BE,Lime Antwerp,"Antwerp, BE",lime_antwerp,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/antwerp/gbfs.json,
 BE,Lime Brussels,"Brussels, BE",lime_brussels,https://www.li.me,https://data.lime.bike/api/partners/v2/gbfs/brussels/gbfs.json,
 BE,Pony Brussels,"Bruxelles, BE",pony_brussels,https://getapony.com,https://gbfs.getapony.com/v1/brussels/en/gbfs.json,
