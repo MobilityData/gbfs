@@ -260,9 +260,14 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 3600,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
-    "name": "Example Bike Rental",
+    "name": [
+      {
+        "text": "Example Bike Rental",
+        "language": "en"
+      }
+    ],
     "system_id": "example_cityname",
     "timezone": "America/Chicago",
     "languages": ["en"]
@@ -286,7 +291,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "feeds": [
       {
@@ -373,7 +378,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "versions": [
       {
@@ -381,7 +386,7 @@ Field Name | REQUIRED | Type | Defines
         "url": "https://www.example.com/gbfs/2/gbfs"
       },
       {
-        "version": "3.0-RC",
+        "version": "3.0-RC2",
         "url": "https://www.example.com/gbfs/3/gbfs"
       }
     ]
@@ -438,7 +443,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 1800,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "system_id": "example_cityname",
     "languages": ["en"],
@@ -550,7 +555,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "vehicle_types": [
       {
@@ -603,7 +608,7 @@ Field Name | REQUIRED | Type | Defines
           "icon_last_modified": "2021-06-15"
         },
         "default_pricing_plan_id": "cargo_plan_1",
-        "pricing_plans_ids": [
+        "pricing_plan_ids": [
           "cargo_plan_1",
           "cargo_plan_2",
           "cargo_plan_3"
@@ -674,7 +679,7 @@ Field Name | REQUIRED | Type | Defines
         "model": [
           {
             "text": "Clio",
-            "language": "en",
+            "language": "en"
           }
         ],
         "color": "white",
@@ -733,7 +738,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "stations": [
       {
@@ -769,7 +774,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "stations": [
       {
@@ -861,7 +866,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "stations": [
       {
@@ -1065,7 +1070,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 86400,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "regions": [
       {
@@ -1145,7 +1150,7 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "plans": [
       {
@@ -1198,7 +1203,7 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "plans": [
       {
@@ -1264,7 +1269,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "alerts": [
       {
@@ -1299,7 +1304,7 @@ Field Name | REQUIRED | Type | Defines
             "language": "en"
           }
         ],
-        "last_updated": "2023-07-17T13:34:13+02:00",
+        "last_updated": "2023-07-17T13:34:13+02:00"
       }
     ]
   }
@@ -1361,7 +1366,7 @@ See examples below.
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "geofencing_zones": {
       "type": "FeatureCollection",
@@ -1647,17 +1652,24 @@ Other supported parameters include:
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
-    "name": "Example Bike Rental",
+    "name": [
+      {
+        "text": "Example Bike Rental",
+        "language": "en"
+      }
+    ],
     "system_id": "example_cityname",
     "timezone": "America/Chicago",
     "languages": ["en"],
     "rental_apps": {
       "android": {
+        "store_uri": "https://play.google.com/store/apps/details?id=com.example.android",
         "discovery_uri": "com.example.android://"
       },
       "ios": {
+        "store_uri": "https://apps.apple.com/app/apple-store/id123456789",
         "discovery_uri": "com.example.ios://"
       }
     }
@@ -1671,12 +1683,17 @@ Other supported parameters include:
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "stations": [
       {
         "station_id": "425",
-        "name": "Coppertail",
+        "name": [
+          {
+            "text": "Coppertail",
+            "language": "en"
+          }
+        ],
         "lat": 27.956333,
         "lon": -82.430436,
         "rental_uris": {
@@ -1699,9 +1716,14 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
-    "name": "Example Bike Rental",
+    "name": [
+      {
+        "text": "Example Bike Rental",
+        "language": "en"
+      }
+    ],
     "system_id": "example_cityname",
     "timezone": "America/Chicago",
     "languages": ["en"],
@@ -1725,12 +1747,17 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "stations": [
       {
         "station_id": "425",
-        "name": "Coppertail",
+        "name": [
+          {
+            "text": "Coppertail",
+            "language": "en"
+          }
+        ],
         "lat": 27.956333,
         "lon": -82.430436,
         "rental_uris":{
@@ -1751,12 +1778,17 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0-RC",
+  "version": "3.0-RC2",
   "data": {
     "stations": [
       {
         "station_id": "425",
-        "name": "Coppertail",
+        "name": [
+          {
+            "text": "Coppertail",
+            "language": "en"
+          }
+        ],
         "lat": 27.956333,
         "lon": -82.430436,
         "rental_uris": {
