@@ -312,7 +312,7 @@ The following fields are all attributes within the main `data` object for this f
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`datasets` | Yes | Array&lt;Object&gt; | 
+`datasets` | Yes | Array&lt;Object&gt; | An array of `datasets` produced by a publisher.
 \-&nbsp;`system_id` | Yes | ID | The `system_id` from `system_information.json` for the corresponding data set(s).
 \-&nbsp;`versions` | Yes | Array&lt;Object&gt; | Contains one object for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number. 
 &emsp;&emsp;\-`version` | Yes | String | The semantic version of the feed in the form `X.Y`.                               
@@ -415,7 +415,7 @@ Field Name | REQUIRED | Type | Defines
 `license_url` | Conditionally REQUIRED <br/>*(as of v3.0-RC)* | URL | REQUIRED if the dataset is provided under a customized license. A fully qualified URL of a page that defines the license terms for the GBFS data for this system. Do not specify a `license_url` if `license_id` is specified. If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode). *(as of v3.0-RC)*
 `attribution_organization_name` <br/>*(added in v3.0-RC)* | OPTIONAL | Array&lt;Localized String&gt; | If the feed license requires attribution, name of the organization to which attribution should be provided.
 `attribution_url` <br/>*(added in v3.0-RC)* | OPTIONAL | URL | URL of the organization to which attribution should be provided.
-`brand_assets` <br/>*(added in v2.3)*  | OPTIONAL | Object |
+`brand_assets` <br/>*(added in v2.3)*  | OPTIONAL | Object | Object containing branding information about the system.
 \- `brand_last_modified` <br/>*(added in v2.3)*  | REQUIRED | Date | Date that indicates the last time any included brand assets were updated or modified.
 \- `brand_terms_url` <br/>*(added in v2.3)*   | OPTIONAL |  URL |  A fully qualified URL pointing to the location of a page that defines the license terms of brand icons, colors, or other trademark information.  This field MUST NOT take the place of `license_url` or `license_id`.
 \- `brand_image_url` <br/>*(added in v2.3)*  |  REQUIRED |  URL | A fully qualified URL pointing to the location of a graphic file representing the brand for the service. File MUST be in SVG V1.1 format and MUST be either square or round.
@@ -538,7 +538,7 @@ Field Name | REQUIRED | Type | Defines
 \- `rated_power`<br/>*(added in v2.3)* | OPTIONAL | Non-negative Integer | The rated power of the motor for this vehicle type in watts.
 \- `default_reserve_time`<br/>*(added in v2.3)* | Conditionally REQUIRED <br/>*(as of v3.0-RC)* | Non-negative Integer | REQUIRED if `reservation_price_per_min` or `reservation_price_flat_rate` are defined. Maximum time in minutes that a vehicle can be reserved before a rental begins. When a vehicle is reserved by a user, the vehicle remains locked until the rental begins. During this time the vehicle is unavailable and cannot be reserved or rented by other users. The vehicle status in `vehicle_status.json` MUST be set to `is_reserved = true`. If the value of `default_reserve_time` elapses without a rental beginning, the vehicle status MUST change to `is_reserved = false`. If `default_reserve_time` is set to `0`, the vehicle type cannot be reserved. 
 \- `return_constraint`<br/>*(as of v2.3)*| OPTIONAL | Enum | The conditions for returning the vehicle at the end of the rental. <br /><br />Current valid values are:<br /><ul><li>`free_floating` _(The vehicle can be returned anywhere permitted within the service area. Note that the vehicle is subject to rules in `geofencing_zones.json` if defined.)_</li><li>`roundtrip_station` _(The vehicle has to be returned to the same station from which it was initially rented. Note that a specific station can be assigned to the vehicle in `free_bike_status.json` using `home_station`.)_</li><li>`any_station` _(The vehicle has to be returned to any station within the service area.)_</li><li>`hybrid` (The vehicle can be returned to any station, or anywhere else permitted within the service area. Note that the vehicle is subject to rules in `geofencing_zones.json` if defined.)</li>
-\- `vehicle_assets`<br/>*(added in v2.3)*| OPTIONAL | Object |
+\- `vehicle_assets`<br/>*(added in v2.3)*| OPTIONAL | Object | Object containing branding information about that vehicle type.
 &emsp;&emsp;\- `icon_url`<br/>*(added in v2.3)*| REQUIRED | URL | A fully qualified URL pointing to the location of a graphic icon file that MAY be used to represent this vehicle type on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
 &emsp;&emsp;\- `icon_url_dark`<br/>*(added in v2.3)*| OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type when in dark mode on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
 &emsp;&emsp;\- `icon_last_modified`<br/>*(added in v2.3)*| REQUIRED | Date | Date that indicates the last time any included vehicle icon images were modified or updated. 
@@ -1056,7 +1056,7 @@ Describes regions for a system. Regions are a subset of a shared mobility system
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`regions` | Yes | Array&lt;Object&gt; |
+`regions` | Yes | Array&lt;Object&gt; | Regions of the system.
 \-&nbsp; `region_id` | Yes | ID | Identifier for the region.
 \-&nbsp; `name` <br/>*(as of v3.0-RC)* | Yes | Array&lt;Localized String&gt; | Public name for this region.
 
@@ -1116,7 +1116,7 @@ Describes pricing for the system. <br/>The following fields are all attributes w
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`plans` | Yes | Array&lt;Object&gt; |
+`plans` | Yes | Array&lt;Object&gt; | Pricing plans for the system.
 \-&nbsp; `plan_id` | Yes | ID | Identifier for a pricing plan in the system.
 \-&nbsp; `url` | OPTIONAL | URL | URL where the customer can learn more about this pricing plan.
 \-&nbsp; `name` <br/>*(as of v3.0-RC)* | Yes | Array&lt;Localized String&gt; | Name of this pricing plan.
@@ -1323,7 +1323,7 @@ Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `geofencing_zones` | Yes | GeoJSON FeatureCollection | Each geofenced zone and its associated rules and attributes is described as an object within the array of features, as follows.
 \-&nbsp;`type` | Yes | String | “FeatureCollection” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
-\-&nbsp;`features` | Yes | Array&lt;Object&gt; |
+\-&nbsp;`features` | Yes | Array&lt;Object&gt; | An array of GeoJSON Feature representing the geofenced zone.
 &emsp;\-&nbsp;`type` | Yes | String | “Feature” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
 &emsp;\-&nbsp;`geometry` | Yes | GeoJSON MultiPolygon | A polygon that describes where rides may or may not be able to start, end, go through, or have other limitations or affordances. Rules may only apply to the interior of a polygon. All geofencing zones contained in this list are public (meaning they can be displayed on a map for public use).
 &emsp;\-&nbsp;`properties` | Yes | Object | Properties describing travel allowances and limitations.
