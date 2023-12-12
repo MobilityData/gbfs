@@ -1259,7 +1259,6 @@ Field Name | REQUIRED | Type | Defines
 &emsp;\-&nbsp;`end` | OPTIONAL | Timestamp | End time of the alert. If there is currently no end time planned for the alert, this can be omitted.
 \-&nbsp;`station_ids` | OPTIONAL | Array | If this is an alert that affects one or more stations, include their ID(s). Otherwise omit this field. If both `station_ids` and `region_ids` are omitted, this alert affects the entire system.
 \-&nbsp;`region_ids` | OPTIONAL | Array | If this system has regions, and if this alert only affects certain regions, include their ID(s). Otherwise, omit this field. If both `station_ids` and `region_ids` are omitted, this alert affects the entire system.
-\-&nbsp; `url` <br/>*(as of v3.0-RC)* | OPTIONAL | Array&lt;Localized String&gt; | URL where the customer can learn more information about this alert.
 \-&nbsp; `url` <br/>*(as of v3.0-RC)* | OPTIONAL | Array&lt;Localized URL&gt; | A fully qualified URL where the customer can learn more information about this alert.
 \-&nbsp; `summary` <br/>*(as of v3.0-RC)*  | Yes | Array&lt;Localized String&gt; | A short summary of this alert to be displayed to the customer.
 \-&nbsp; `description` <br/>*(as of v3.0-RC)*  | OPTIONAL | Array&lt;Localized String&gt; | Detailed description of the alert.
