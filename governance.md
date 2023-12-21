@@ -17,9 +17,9 @@ To manage the change process, the following guidelines have been established.
     * _I hereby call a vote on this proposal. Voting will be open for 10 full calendar days until 11:59PM UTC on X. \
 Please vote for or against the proposal, and include the organization for which you are voting in your comment. \
 Please note if you can commit to implementing the proposal._
-* The person calling for the vote SHOULD announce the vote on the Slack channel with a link to the PR. The message SHOULD conform to this template:
+* The person calling for the vote SHOULD announce the vote in the Slack channel with a link to the PR. The message SHOULD conform to this template:
     * _A vote has been called on PR # [title of PR] (link to PR). This vote will be open for 10 full calendar days, until 11:59PM UTC on X. Please vote for or against the proposal on GitHub._
-* When there are 2 calendar days remaining on the vote, the Maintainer SHOULD comment on the PR on the Git repository and send a reminder on the Slack channel. The reminder SHOULD conform to this template:
+* When there are 2 calendar days remaining on the vote, the Maintainer SHOULD comment on the PR on the Git repository and send a reminder in the Slack channel. The reminder SHOULD conform to this template:
     * Slack: \
 _Voting on PR # [title of PR] (link to PR) closes in 2 calendar days. Please vote for or against the proposal on GitHub._
     * Git repository: \
