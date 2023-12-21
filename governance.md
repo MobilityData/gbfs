@@ -48,8 +48,9 @@ _Voting on this PR closes in 2 calendar days. Please vote for or against the pro
 * MAJOR releases are limited to no more than once a 12 month period. Multiple breaking changes SHOULD be batched together into a single release every 12 months.
 * MINOR releases are limited to no more than once a 6 month period. Multiple non breaking changes SHOULD be batched into a single release every 6 months. Non breaking changes MAY be batched into a MAJOR release.
 * The current release cycle is:
-    * MAJOR releases SHOULD be released every November by the Maintainer. Voting for a MAJOR release SHOULD be complete by October 31st.
-    * MINOR releases SHOULD be released every May and November by the Maintainer. Voting for a MINOR release SHOULD be complete by April 30th or October 31st.
+    * MINOR versions SHOULD be released every May by the Maintainer. Voting for a MINOR version SHOULD be complete by April 30th.
+    * MAJOR versions SHOULD be released every November by the Maintainer. Voting for a MAJOR version SHOULD be complete by October 31st.
+    * In the event that there is no MAJOR version release for the period, a MINOR version MAY be released in November.
 
 Key Dates | Period
 -- | --
