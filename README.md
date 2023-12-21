@@ -94,8 +94,7 @@ Examples of non-breaking changes include:
 
 
 #### Version Release Cycles - Release Deprecation
-* There is no strict limitation on the frequency of MAJOR releases, but the GBFS community aims to limit MAJOR releases to no more than one a 12 month period. To limit releases, multiple breaking changes SHOULD be batched together in a single release.
-* There is no guideline to limit the number of MINOR releases. MINOR changes may be applied at any time. MINOR changes MAY be batched together in single release or released immediately, based on the needs of the community.
+See the [Governance](https://github.com/MobilityData/gbfs/blob/master/governance.md#version-release-cycles) for Version Release Cycles.
 * GBFS documentation will include a list of current and supported MAJOR and MINOR versions. Supported versions SHALL NOT span more than two MAJOR versions. Past versions that are beyond the two most recent MAJOR versions will be deprecated 180 days after the latest MAJOR version becomes official.
  
 ## Guiding Principles
