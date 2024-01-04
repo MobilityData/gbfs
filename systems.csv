@@ -336,7 +336,7 @@ FR,CristoLib,"Créteil, Paris, FR",creteil,https://www.cristolib.fr/,https://tra
 FR,C-Vélo,"Clermont-Ferrand, FR",CVelo_FR_Clermont-Ferrand,https://www.c-velo.fr,https://clermontferrand.publicbikesystem.net/customer/gbfs/v2/gbfs.json,
 FR,Cy'clic,"Rouen, FR",rouen,http://cyclic.rouen.fr/,https://transport.data.gouv.fr/gbfs/rouen/gbfs.json,
 FR,Cyclolib,"Carcassonne,FR",carcassonne,https://cyclolib.fr/en,https://gbfs.urbansharing.com/cyclolib.fr/gbfs.json,
-FR,Donkey Republic Brest,"Brest, FR",donkey_brest,https://www.donkey.bike/cities/bike-rental-brest/,https://stables.donkey.bike/api/public/gbfs/2/donkey_brest/gbfs.json,
+FR,VéloZef,"Brest, FR",velozef_brest,https://www.bibus.fr/services/velozef-le-velo-assistance-electrique-en-libre-service,https://www.data.gouv.fr/fr/datasets/r/8b670e96-34e4-40dd-8c0d-2bdd22b07a5b,
 FR,Donkey Republic Valenciennes,"Valenciennes,FR",donkey_valenciennes,https://www.donkey.bike/cities/bike-rental-valenciennes/,https://stables.donkey.bike/api/public/gbfs/2/donkey_valenciennes/gbfs.json,
 FR,Dott Bordeaux,"Bordeaux,FR",dott-bordeaux,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/bordeaux/gbfs.json,
 FR,Dott Grenoble,"Grenoble,FR",dott-grenoble,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/grenoble/gbfs.json,
