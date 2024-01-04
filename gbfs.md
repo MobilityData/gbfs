@@ -188,10 +188,9 @@ The data returned by the near-realtime endpoints `station_status.json` and `vehi
 It is RECOMMENDED that all GBFS data sets be offered under an open data license. Open data licenses allow consumers to freely use, modify, and share GBFS data for any purpose in perpetuity. Licensing of GBFS data provides certainty to GBFS consumers, allowing them to integrate GBFS data into their work. All GBFS data sets SHOULD specify a license using the `license_id` field with an [SPDX identifier](https://spdx.org/licenses/) or by using the `license_url` field with a URL pointing to a custom license in `system_information.json`. See the GBFS repo for a [comparison of a subset of standard licenses](https://github.com/MobilityData/gbfs/blob/master/data-licenses.md).
 
 ## Field Types
-* Object - A JSON object, with its keys defined under it.
+* Object - A JSON object with keys defined inside.
 * Array - A JSON element consisting of an ordered sequence of zero or more values.
 * Array&lt;Type&gt; - A JSON element consisting of an ordered sequence of zero or more values of the specified sub-type.
-* Array&lt;Object&gt; - A JSON array of objects, with its keys defined under it.
 * Boolean - One of two possible values, `true` or `false`. Boolean values MUST be JSON booleans, not strings (meaning `true` or `false`, not `"true"` or `"false"`). *(as of v2.0)*
 * Country code - Country code following the [ISO 3166-1 alpha-2 notation](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
 * Date - A date in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) Complete Date Extended Format: YYYY-MM-DD. Example: `2019-09-13` for September 13th, 2019.
@@ -375,7 +374,7 @@ The following fields are all attributes within the main `data` object for this f
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`versions` | Yes | Array&lt;Object&gt; | Contains one object, for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number.
+`versions` | Yes | Array&lt;Object&gt; | Contains one object for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number.
 \-&nbsp; `version` | Yes | String | The semantic version of the feed in the form `X.Y`.
 \-&nbsp; `url` | Yes | URL | URL of the corresponding gbfs.json endpoint.
 
@@ -525,7 +524,7 @@ REQUIRED of systems that include information about vehicle types in the `vehicle
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`vehicle_types` | Yes | Array&lt;Object&gt; | Contains one object per vehicle type in the system.
+`vehicle_types` | Yes | Array&lt;Object&gt; | Contains one object per vehicle type.
 \- `vehicle_type_id` | Yes | ID | Unique identifier of a vehicle type. See [Field Types](#field-types) above for ID field requirements.
 \- `form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`cargo_bicycle` *(added in v2.3)*</li><li>`car`</li><li>`moped`</li><li>`scooter_standing` *(standing kick scooter, added in v2.3)*</li><li>`scooter_seated` *(this is a kick scooter with a seat, not to be confused with `moped`, added in v2.3)*</li><li>`other`</li></ul>
 \- `rider_capacity`<br/>*(added in v2.3)* | OPTIONAL | Non-negative integer | The number of riders (driver included) the vehicle can legally accommodate.
@@ -549,7 +548,7 @@ Field Name | REQUIRED | Type | Defines
 \- `rated_power`<br/>*(added in v2.3)* | OPTIONAL | Non-negative Integer | The rated power of the motor for this vehicle type in watts.
 \- `default_reserve_time`<br/>*(added in v2.3)* | Conditionally REQUIRED <br/>*(as of v3.0-RC)* | Non-negative Integer | REQUIRED if `reservation_price_per_min` or `reservation_price_flat_rate` are defined. Maximum time in minutes that a vehicle can be reserved before a rental begins. When a vehicle is reserved by a user, the vehicle remains locked until the rental begins. During this time the vehicle is unavailable and cannot be reserved or rented by other users. The vehicle status in `vehicle_status.json` MUST be set to `is_reserved = true`. If the value of `default_reserve_time` elapses without a rental beginning, the vehicle status MUST change to `is_reserved = false`. If `default_reserve_time` is set to `0`, the vehicle type cannot be reserved. 
 \- `return_constraint`<br/>*(as of v2.3)*| OPTIONAL | Enum | The conditions for returning the vehicle at the end of the rental. <br /><br />Current valid values are:<br /><ul><li>`free_floating` _(The vehicle can be returned anywhere permitted within the service area. Note that the vehicle is subject to rules in `geofencing_zones.json` if defined.)_</li><li>`roundtrip_station` _(The vehicle has to be returned to the same station from which it was initially rented. Note that a specific station can be assigned to the vehicle in `free_bike_status.json` using `home_station`.)_</li><li>`any_station` _(The vehicle has to be returned to any station within the service area.)_</li><li>`hybrid` (The vehicle can be returned to any station, or anywhere else permitted within the service area. Note that the vehicle is subject to rules in `geofencing_zones.json` if defined.)</li>
-\- `vehicle_assets`<br/>*(added in v2.3)*| OPTIONAL | Object | Object containing branding information about that vehicle type.
+\- `vehicle_assets`<br/>*(added in v2.3)*| OPTIONAL | Object | Object containing the branding information for this vehicle type.
 &emsp;&emsp;\- `icon_url`<br/>*(added in v2.3)*| REQUIRED | URL | A fully qualified URL pointing to the location of a graphic icon file that MAY be used to represent this vehicle type on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
 &emsp;&emsp;\- `icon_url_dark`<br/>*(added in v2.3)*| OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type when in dark mode on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
 &emsp;&emsp;\- `icon_last_modified`<br/>*(added in v2.3)*| REQUIRED | Date | Date that indicates the last time any included vehicle icon images were modified or updated. 
@@ -850,7 +849,7 @@ Describes the capacity and rental availability of a station. Data returned SHOUL
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`stations` | Yes | Array&lt;Object&gt; | Contains one object per station in the system.
+`stations` | Yes | Array&lt;Object&gt; | Contains one object per station.
 \-&nbsp;`station_id` | Yes | ID | Identifier of a station. See [station_information.json](#station_informationjson).
 \-&nbsp;`num_vehicles_available` | Yes | Non-negative integer | Number of functional vehicles physically at the station that may be offered for rental. To know if the vehicles are available for rental, see `is_renting`. <br/><br/>If `is_renting` = `true` this is the number of vehicles that are currently available for rent. If `is_renting` =`false` this is the number of vehicles that would be available for rent if the station were set to allow rentals.
 \- `vehicle_types_available` <br/>*(added in v2.1)* | Conditionally REQUIRED | Array | REQUIRED if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field's value is an array of objects. Each of these objects is used to model the total number of each defined vehicle type available at a station. The total number of vehicles from each of these objects SHOULD add up to match the value specified in the `num_vehicles_available`  field.
@@ -1067,7 +1066,7 @@ Describes regions for a system. Regions are a subset of a shared mobility system
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`regions` | Yes | Array&lt;Object&gt; | Regions of the system.
+`regions` | Yes | Array&lt;Object&gt; | Contains one object per region.
 \-&nbsp; `region_id` | Yes | ID | Identifier for the region.
 \-&nbsp; `name` <br/>*(as of v3.0-RC)* | Yes | Array&lt;Localized String&gt; | Public name for this region.
 
@@ -1127,7 +1126,7 @@ Describes pricing for the system. <br/>The following fields are all attributes w
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`plans` | Yes | Array&lt;Object&gt; | Pricing plans for the system.
+`plans` | Yes | Array&lt;Object&gt; | Contains one object per pricing plan.
 \-&nbsp; `plan_id` | Yes | ID | Identifier for a pricing plan in the system.
 \-&nbsp; `url` | OPTIONAL | URL | URL where the customer can learn more about this pricing plan.
 \-&nbsp; `name` <br/>*(as of v3.0-RC)* | Yes | Array&lt;Localized String&gt; | Name of this pricing plan.
@@ -1257,7 +1256,7 @@ Obsolete alerts SHOULD be removed so the client application can safely present t
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`alerts` | Yes | Array&lt;Object&gt; | Objects each indicating a system alert.
+`alerts` | Yes | Array&lt;Object&gt; | Contains one object per system alert.
 \-&nbsp;`alert_id` | Yes | ID | Identifier for this alert.
 \-&nbsp;`type` | Yes | Enum | Valid values are:<br /><br /><ul><li>`system_closure`</li><li>`station_closure`</li><li>`station_move`</li><li>`other`</li></ul>
 \-&nbsp;`times` | OPTIONAL | Array&lt;Object&gt; | The fields `start` and `end` indicate when the alert is in effect (for example, when the system or station is actually closed, or when a station is scheduled to be moved).
@@ -1337,7 +1336,7 @@ Field Name | REQUIRED | Type | Defines
 \-&nbsp;`features` | Yes | Array&lt;Object&gt; | An array of GeoJSON Feature representing the geofenced zone.
 &emsp;\-&nbsp;`type` | Yes | String | “Feature” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
 &emsp;\-&nbsp;`geometry` | Yes | GeoJSON MultiPolygon | A polygon that describes where rides may or may not be able to start, end, go through, or have other limitations or affordances. Rules may only apply to the interior of a polygon. All geofencing zones contained in this list are public (meaning they can be displayed on a map for public use).
-&emsp;\-&nbsp;`properties` | Yes | Object | Properties describing travel allowances and limitations.
+&emsp;\-&nbsp;`properties` | Yes | Object | Travel allowances and limitations.
 &emsp;&emsp;\-&nbsp; `name` <br/>*(as of v3.0-RC)*  | OPTIONAL | Array&lt;Localized String&gt; | Public name of the geofencing zone.
 &emsp;&emsp;\-&nbsp;`start` | OPTIONAL | Timestamp | Start time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
 &emsp;&emsp;\-&nbsp;`end` | OPTIONAL | Timestamp | End time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
