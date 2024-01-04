@@ -188,7 +188,6 @@ The data returned by the near-realtime endpoints `station_status.json` and `vehi
 It is RECOMMENDED that all GBFS data sets be offered under an open data license. Open data licenses allow consumers to freely use, modify, and share GBFS data for any purpose in perpetuity. Licensing of GBFS data provides certainty to GBFS consumers, allowing them to integrate GBFS data into their work. All GBFS data sets SHOULD specify a license using the `license_id` field with an [SPDX identifier](https://spdx.org/licenses/) or by using the `license_url` field with a URL pointing to a custom license in `system_information.json`. See the GBFS repo for a [comparison of a subset of standard licenses](https://github.com/MobilityData/gbfs/blob/master/data-licenses.md).
 
 ## Field Types
-* Object - A JSON element consisting of key-value pairs (fields).
 * Array - A JSON element consisting of an ordered sequence of zero or more values.
 * Array&lt;Type&gt; - A JSON element consisting of an ordered sequence of zero or more values of the specified sub-type.
 * Boolean - One of two possible values, `true` or `false`. Boolean values MUST be JSON booleans, not strings (meaning `true` or `false`, not `"true"` or `"false"`). *(as of v2.0)*
@@ -227,6 +226,7 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 
 * Non-negative Float - A 32-bit floating point number greater than or equal to 0.
 * Non-negative Integer - An integer greater than or equal to 0.
+* Object - A JSON element consisting of key-value pairs (fields).
 * Phone Number *as of v3.0-RC* - Phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I/en) format. The phone number MUST start with a "+". The characters following the "+" MUST be integers and MUST NOT contain any hyphens, spaces or parentheses.
 * String - Can only contain text. Strings MUST NOT contain any formatting codes (including HTML) other than newlines.
 * Time - Service time in the HH:MM:SS format for the time zone indicated in `system_information.json` (00:00:00 - 47:59:59). Time can stretch up to one additional day in the future to accommodate situations where, for example, a system was open from 11:30pm - 11pm the next day (23:30:00-47:00:00).
