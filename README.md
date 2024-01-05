@@ -17,7 +17,7 @@ Documentation for the General Bikeshare Feed Specification, a standardized data 
 ## What is GBFS?
 The General Bikeshare Feed Specification, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability. GBFS is intended to make information publicly available online; therefore information that is personally identifiable is not currently and will not become part of the core specification.
  
-GBFS was created in 2014 by [Mitch Vars](https://github.com/mplsmitch) with collaboration from public, private sector and non-profit shared mobility system owners and operators, application developers, and technology vendors. [Michael Frumin](https://github.com/fruminator), [Jesse Chan-Norris](https://github.com/jcn) and others made significant contributions of time and expertise toward the development of v1.0 on behalf of Motivate International LLC (now Lyft). The [North American Bikeshare Association’s](http://www.nabsa.net) endorsement, support, and hosting was key to its success starting in 2015. In 2019, NABSA chose MobilityData to govern and facilitate the improvement of GBFS. MobilityData hosts a [GBFS Resource Center](https://gbfs.mobilitydata.org/) and a [public GBFS Slack channel](https://share.mobilitydata.org/slack) - you are welcome to contact us there or at <sharedmobility@mobilitydata.org> with questions.  
+GBFS was created in 2014 by [Mitch Vars](https://github.com/mplsmitch) with collaboration from public, private sector and non-profit shared mobility system owners and operators, application developers, and technology vendors. [Michael Frumin](https://github.com/fruminator), [Jesse Chan-Norris](https://github.com/jcn) and others made significant contributions of time and expertise toward the development of v1.0 on behalf of Motivate International LLC (now Lyft). The [North American Bikeshare Association’s](http://www.nabsa.net) endorsement, support, and hosting was key to its success starting in 2015. In 2019, NABSA chose MobilityData to govern and facilitate the improvement of GBFS. MobilityData hosts a [GBFS Resource Center](https://gbfs.org/) and a [public GBFS Slack channel](https://share.mobilitydata.org/slack) - you are welcome to contact us there or at <sharedmobility@mobilitydata.org> with questions.  
 
 GBFS is intended as a specification for real-time, read-only data - any data being written back into individual shared mobility systems are excluded from this spec.
 
@@ -59,7 +59,7 @@ Release Candidates will receive *Current Version* status when they have been ful
 
 |  Version | Type  | Release Date   | Status                     | JSON Schema                                                                            | Release Notes       |
 |:---:|:-----:|----------------|----------------------------|----------------------------------------------------------------------------------------|---------------------|
-|[v3.0-RC2](https://github.com/MobilityData/gbfs/blob/master/gbfs.md) | MAJOR | November 14, 2023 | ✅ Ready for implementation | [v3.0-RC Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v3.0-RC2) | [v3.0-RC2 Release Notes](https://github.com/MobilityData/gbfs/releases/tag/v3.0-RC2) |
+|[v3.0-RC2](https://github.com/MobilityData/gbfs/blob/master/gbfs.md) | MAJOR | November 14, 2023 | ✅ Ready for implementation | [v3.0-RC2 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v3.0-RC2) | [v3.0-RC2 Release Notes](https://github.com/MobilityData/gbfs/releases/tag/v3.0-RC2) |
 |[v3.0-RC](https://github.com/MobilityData/gbfs/blob/v3.0-RC/gbfs.md) | MAJOR | March 10, 2023 | ✅ Ready for implementation | [v3.0-RC Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v3.0-RC) | [v3.0-RC Article](https://mobilitydata.org/2023-the-year-of-v3/) |
 
 ### Past Version Releases 
@@ -132,7 +132,7 @@ Authentication Info URL | Conditionally REQUIRED | If authentication is required
 ## GBFS JSON Schemas
 Complete JSON schemas for each version of GBFS can be found [here](https://github.com/MobilityData/gbfs-json-schema).
 ## GBFS and Other Shared Mobility Resources
-Including APIs, datasets, validators, research, and software can be found [here](https://gbfs.mobilitydata.org/toolbox/resources/).
+Including APIs, datasets, validators, research, and software can be found [here](https://gbfs.org/toolbox/resources/).
 ## Relationship Between GBFS and MDS
 There are many similarities between GBFS and [MDS](https://github.com/openmobilityfoundation/mobility-data-specification) (Mobility Data Specification), however, their intended use cases are different. GBFS is a real-time or near real-time specification for public data primarily intended to provide transit advice through consumer-facing applications. MDS is not public data and is intended for use only by mobility regulators. Publishing a public GBFS feed is a [requirement](https://github.com/openmobilityfoundation/mobility-data-specification#gbfs-requirement) of all MDS compatible *Provider* APIs.
 ## Copyright
