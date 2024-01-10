@@ -123,7 +123,7 @@ If you would like to add a system, please fork this repository and submit a pull
  --- | :---: | ---- 
 |Country Code | Yes | ISO 3166-1 alpha-2 code designating the country where the system is located. For a list of valid codes [see here](https://en.wikipedia.org/wiki/ISO_3166-1).
 | Name | Yes| Name of the mobility system. This MUST match the `name` field in `system_information.json`
-Location | Yes| Primary city in which the system is located, followed by a comma and a space, then the 2-letter country code. The location name SHOULD be in English if the location has an English name (eg: `Brussels, BE`).
+Location | Yes| Primary city in which the system is located, followed by the 2-letter state code for US systems. The location name SHOULD be in English if the location has an English name (eg: `Brussels`).
 System ID | Yes | ID for the system. This MUST match the `system_id` field in `system_information.json`.
 URL | Yes | URL for the system from the `url` field in `system_information.json`. If the `url` field is not included in `system_information.json` this SHOULD be the primary URL for the system operator.
 Auto-Discovery URL | Yes | URL for the system's `gbfs.json` auto-discovery file.
