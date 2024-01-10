@@ -384,7 +384,7 @@ FR,Vélomagg',"Montpellier, FR",montpellier,https://www.tam-voyages.com/presenta
 FR,Vélopop,"Avignon, FR",Vélopop_FR_Avignon,https://www.velopop.fr/,https://avignon-gbfs.klervi.net/gbfs/gbfs.json,
 FR,VélOstan'lib,"Nancy, FR",nancy,http://www.velostanlib.fr/,https://transport.data.gouv.fr/gbfs/nancy/gbfs.json,
 FR,VélÔToulouse,"Toulouse, FR",toulouse,http://www.velo.toulouse.fr/,https://transport.data.gouv.fr/gbfs/toulouse/gbfs.json,
-FR,VéloZef,"Brest, FR",velozef_brest,https://www.bibus.fr/services/velozef-le-velo-assistance-electrique-en-libre-service,https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/brest/en/gbfs.json?&key=OGNhZDNjMDQtYTA0Yi00NzU2LWE0MTItOGJlYzE1Y2E4NGEx,
+FR,VéloZef,"Brest, FR",velozef,https://www.bibus.fr/services/velozef-le-velo-assistance-electrique-en-libre-service,https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/brest/en/gbfs.json?&key=OGNhZDNjMDQtYTA0Yi00NzU2LWE0MTItOGJlYzE1Y2E4NGEx,
 FR,Vélo'v,"Lyon, FR",lyon,https://velov.grandlyon.com/en/home,https://transport.data.gouv.fr/gbfs/lyon/gbfs.json,
 FR,Vélivert (Saint-Étienne),"Saint-Étienne, FR",velivert_saint_etienne,https://api.sigma.fifteen.eu,https://api.saint-etienne-metropole.fr/velivert/api/gbfs/gbfs.json,
 FR,VélYcéo,"Saint-Nazaire, FR",velyceo,https://www.velyceo.com,https://api.gbfs.v1.ecovelo.mobi/gbfs/velyceo,
