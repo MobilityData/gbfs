@@ -515,7 +515,7 @@ IT,Zeus Anzio,Anzio,zeus_anzio,https://zeusscooters.com/,https://zeus.city/api/v
 IT,Zeus Mazara,Mazara,zeus_mazara,https://zeusscooters.com/,https://zeus.city/api/v1/mds/gbfs/mazara/gbfs.json,
 JP,docomo bike share service,Japan,docomo-cycle,https://docomo-cycle.jp/,https://api-public.odpt.org/api/v4/gbfs/docomo-cycle/gbfs.json,
 JP,docomo bike share service,Tokyo,docomo-cycle-tokyo,https://docomo-cycle.jp/,https://api-public.odpt.org/api/v4/gbfs/docomo-cycle-tokyo/gbfs.json,
-JP,HELLO CYCLING,Japan,hellocycling,https://www.hellocycling.jp,https://api-public.odpt.org/api/v4/gbfs/hellocycling/gbfs.json,
+JP,HELLO CYCLING,Tokyo,hellocycling,https://www.hellocycling.jp,https://api-public.odpt.org/api/v4/gbfs/hellocycling/gbfs.json,
 LI,Donkey Republic Liechtenstein,Liechtenstein,donkey_li,https://www.donkey.bike/cities/,https://stables.donkey.bike/api/public/gbfs/2/donkey_li/gbfs.json,
 LV,nextbike LV,Rīga,nextbike_lv,https://www.nextbike.lv/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_lv/gbfs.json,
 MC,MonaBike,Monaco,mona_bike,https://monabike.mc/,https://monaco.publicbikesystem.net/customer/gbfs/v2/gbfs.json,
