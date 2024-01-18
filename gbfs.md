@@ -326,7 +326,7 @@ Field Name | REQUIRED | Type | Defines
 `datasets[].versions` | Yes | Array&lt;Object&gt; | Contains one object for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number. 
 `datasets[].versions[].version` | Yes | String | The semantic version of the feed in the form `X.Y`.                               
 `datasets[].versions[].url` | Yes  | URL | URL of the corresponding `gbfs.json` endpoint.
-`datasets[].area` | OPTIONAL | GeoJSON MultiPolygon | A GeoJSON MultiPolygon that describes the operating area. If `area` is supplied, then the record defines the area in which vehicles can be rented and returned.
+`datasets[].area` | OPTIONAL | GeoJSON MultiPolygon | A GeoJSON MultiPolygon that describes the operating area. If `area` is supplied, then the record describes the general operating area of the system for the purpose of discovery. Geographic details of the system's operating restrictions must be explicitly specified using station locations and geofencing zones, where appropriate.
 `datasets[].country_code` | OPTIONAL | Country Code | The ISO 3166-1 alpha-2 country code of the operating area. The field MUST NOT be specified if the operating area spans multiple countries.
 
 **Example:**
