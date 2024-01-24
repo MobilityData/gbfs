@@ -126,7 +126,7 @@ Location | Yes| Primary city in which the system is located, followed by the 2-l
 System ID | Yes | ID for the system. This MUST match the `system_id` field in `system_information.json`.
 URL | Yes | URL for the system from the `url` field in `system_information.json`. If the `url` field is not included in `system_information.json` this SHOULD be the primary URL for the system operator.
 Auto-Discovery URL | Yes | URL for the system's `gbfs.json` auto-discovery file.
-Authentication Info | Conditionally REQUIRED | If authentication is required, this MUST contain a URL to a human-readable page describing how the authentication should be performed and how credentials can be created, or directly contain the public key-value pair to be added to the URL.
+Authentication Info | Conditionally REQUIRED | If authentication is required, this MUST contain a URL to a human-readable page describing how the authentication should be performed and how credentials can be created, or directly contain the public key-value pair to append to the feed URLs.
 
 ## GBFS JSON Schemas
 Complete JSON schemas for each version of GBFS can be found [here](https://github.com/MobilityData/gbfs-json-schema).
