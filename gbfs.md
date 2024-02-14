@@ -1404,30 +1404,6 @@ See examples below.
                     45.562982
                   ]
                 ]
-              ],
-              [
-                [
-                  [
-                    -122.650680,
-                    45.548197
-                  ],
-                  [
-                    -122.650852,
-                    45.534731
-                  ],
-                  [
-                    -122.630939,
-                    45.535212
-                  ],
-                  [
-                    -122.630424,
-                    45.548197
-                  ],
-                  [
-                    -122.650680,
-                    45.548197
-                  ]
-                ]
               ]
             ]
           },
@@ -1446,9 +1422,8 @@ See examples below.
                   "moped1",
                   "car1"
                 ],
-                "ride_start_allowed": false,
-                "ride_end_allowed": false,
-                "ride_through_allowed": true,
+                "ride_start_allowed": true,
+                "ride_end_allowed": true,
                 "maximum_speed_kph": 10,
                 "station_parking": true
               }
