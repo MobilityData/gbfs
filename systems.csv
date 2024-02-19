@@ -279,7 +279,6 @@ ES,Bilbaobizi (Bilbao),Bilbao,nextbike_bo,https://www.bilbaobizi.bilbao.eus/eu/b
 ES,Bird Madrid,Madrid,bird-madrid,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/madrid/gbfs.json,
 ES,Bird Zaragoza,Zaragoza,bird zaragoza,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/zaragoza/gbfs.json,
 ES,Dbizi,Donostia,sansebastian,https://www.dbizi.eus,https://sansebastian.publicbikesystem.net/ube/gbfs/v1/,
-ES,Donkey Republic Barcelona,Barcelona,donkey_barcelona,https://www.donkey.bike/cities/bike-rental-barcelona/,https://stables.donkey.bike/api/public/gbfs/2/donkey_barcelona/gbfs.json,
 ES,Dott Estepona,Estepona,dott-estepona,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/estepona/gbfs.json,
 ES,Dott Madrid,Madrid,dott-madrid,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/madrid/gbfs.json,
 ES,Dott Malaga,Malaga,dott-malaga,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/malaga/gbfs.json,
