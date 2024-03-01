@@ -41,7 +41,7 @@ If you are new to engaging with the community on this repository, firstly welcom
 Find a real-world example of the governance in action [here](https://github.com/MobilityData/gbfs/pull/454). For a more in depth look at the change and contribution process, go to [governance.md](https://github.com/MobilityData/gbfs/blob/master/governance.md).
 
 ### Project Roadmap
-MobiltyData has compiled a [project roadmap](https://github.com/MobilityData/gbfs/wiki/Project-Roadmap) with a list of major features, changes and other work coming up in the near future.
+MobiltyData has compiled a [project roadmap](https://portal.productboard.com/26qpteg4wct9px3jts94uqv8/tabs/99-planned) with a list of major features, changes and other work coming up in the near future.
 
 ## Current Version *(Recommended)* 
 |   Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
