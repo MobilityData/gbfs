@@ -55,7 +55,7 @@ BE,Pony Charleroi,Charleroi,pony_Charleroi,https://getapony.com/,https://gbfs.ge
 BE,Pony Liège,Liege,pony_liège,https://getapony.com,https://gbfs.getapony.com/v1/liege/en/gbfs.json,
 BE,Pony Namur,Namur,pony_Namur,https://getapony.com/,https://gbfs.getapony.com/v1/namur/en/gbfs.json,
 BE,Velo Antwerpen,Antwerp,cc_smartbike_antwerp,https://www.velo-antwerpen.be/nl,https://gbfs.smartbike.com/antwerp/1.0/gbfs.json,
-BE,Voi Brussels,Brussels,voiscooters.com,https://www.voiscooters.com/,https://api.voiapp.io/gbfs/be/7a4cb689-a2ee-409d-a5fe-49d2e8d50717/v2/gbfs.json,
+BE,Voi Brussels,Brussels,voiscooters.com,https://www.voiscooters.com/,https://api.voiapp.io/gbfs/be/7a4cb689-a2ee-409d-a5fe-49d2e8d50717/v2/gbfs.json,https://www.transportdata.be/dataset/voi
 BG,nextbike Bulgaria,Dobrich,netbike_bg,https://nextbike.eu/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bg/gbfs.json,
 BR,Bike Itaú - Pernambuco,Recife,bike_pe,https://bikeitau.com.br/bikepe,https://rec.publicbikesystem.net/customer/gbfs/v2/gbfs.json,
 BR,Bike Itaú - Poa,Porto Alegre,bike_poa,https://bikeitau.com.br/bikepoa,https://poa.publicbikesystem.net/customer/gbfs/v2/gbfs.json,
