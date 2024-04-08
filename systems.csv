@@ -8,7 +8,7 @@ AT,LINK Linz,Linz,Link_Linz,https://www.superpedestrian.com,https://mds.linkyour
 AT,LINK Vienna,Vienna,Link_Vienna,https://www.superpedestrian.com,https://mds.linkyour.city/gbfs/at_vienna/gbfs.json,
 AT,nextbike Burgenland Austria,Neusiedler See,nextbike_na,https://www.nextbike.at/de/burgenland/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_na/gbfs.json,
 AT,nextbike Klagenfurt Austria,Klagenfurt,nextbike_ka,https://www.nextbike.at/de/klagenfurt/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ka/gbfs.json,
-AT,nextbike Niederösterreich Austria,Austria,nextbike_la,https://www.nextbike.at/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_la/gbfs.json,,
+AT,nextbike Niederösterreich Austria,Austria,nextbike_la,https://www.nextbike.at/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_la/gbfs.json,
 AT,Stadtrad Innsbruck Austria,Innsbruck,nextbike_si,https://stadtrad.ivb.at/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_si/gbfs.json,
 AT,VVT REGIORAD Tirol,Austria,nextbike_vt,https://regiorad.vvt.at/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vt/gbfs.json,
 AT,WienMobil Rad,Vienna,nextbike_wr,https://www.nextbike.at/de/wien/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wr/gbfs.json,
@@ -148,27 +148,27 @@ DE,BARshare Barnim Cars,Berlin,barshare-car,https://www.barshare.de/,https://ope
 DE,Bergisches e-Bike,Bergisches e-Bike,nextbike_ac,https://www.nextbike.de/bergisches-ebike/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ac/gbfs.json,
 DE,Bird Ulm,Ulm,bird-ulm,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/ulm/gbfs.json,
 DE,Bonn nextbike,Bonn,nextbike_bf,https://www.nextbike.de/bonn/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bf/gbfs.json,
-DK,Donkey Republic Aalborg,Aalborg,donkey_aalborg,https://www.donkey.bike/cities/bike-rental-aalborg/,https://stables.donkey.bike/api/public/gbfs/2/donkey_aalborg/gbfs.json
-DK,Donkey Republic Aarhus,Aarhus,donkey_aarhus,https://www.donkey.bike/cities/bike-rental-aarhus/,https://stables.donkey.bike/api/public/gbfs/2/donkey_aarhus/gbfs.json
-DK,Donkey Republic Ballerup,Ballerup,donkey_ballerup,https://www.donkey.bike/,https://stables.donkey.bike/api/public/gbfs/2/donkey_ballerup/gbfs.json
+DK,Donkey Republic Aalborg,Aalborg,donkey_aalborg,https://www.donkey.bike/cities/bike-rental-aalborg/,https://stables.donkey.bike/api/public/gbfs/2/donkey_aalborg/gbfs.json,
+DK,Donkey Republic Aarhus,Aarhus,donkey_aarhus,https://www.donkey.bike/cities/bike-rental-aarhus/,https://stables.donkey.bike/api/public/gbfs/2/donkey_aarhus/gbfs.json,
+DK,Donkey Republic Ballerup,Ballerup,donkey_ballerup,https://www.donkey.bike/,https://stables.donkey.bike/api/public/gbfs/2/donkey_ballerup/gbfs.json,
 DE,Donkey Republic Bamberg,Bamberg,donkey_bamberg,https://www.donkey.bike/,https://stables.donkey.bike/api/public/gbfs/2/donkey_bamberg/gbfs.json,
-DK,Donkey Republic Bandholm,Bandholm,donkey_bandholm,https://www.donkey.bike/cities/bike-rental-bandholm/,https://stables.donkey.bike/api/public/gbfs/2/donkey_bandholm/gbfs.json
+DK,Donkey Republic Bandholm,Bandholm,donkey_bandholm,https://www.donkey.bike/cities/bike-rental-bandholm/,https://stables.donkey.bike/api/public/gbfs/2/donkey_bandholm/gbfs.json,
 DE,Donkey Republic Berlin,Berlin,donkey_berlin,https://www.donkey.bike/cities/bike-rental-berlin/,https://stables.donkey.bike/api/public/gbfs/2/donkey_berlin/gbfs.json,
-DK,Donkey Republic Copenhagen,Copenhagen,donkey_copenhagen,https://www.donkey.bike/cities/bike-rental-copenhagen/,https://stables.donkey.bike/api/public/gbfs/2/donkey_copenhagen/gbfs.json
-DK,Donkey Republic Frederikshavn,Frederikshavn,donkey_frederikshavn,https://www.donkey.bike/cities/bike-rental-frederikshavn/,https://stables.donkey.bike/api/public/gbfs/2/donkey_frederikshavn/gbfs.json
+DK,Donkey Republic Copenhagen,Copenhagen,donkey_copenhagen,https://www.donkey.bike/cities/bike-rental-copenhagen/,https://stables.donkey.bike/api/public/gbfs/2/donkey_copenhagen/gbfs.json,
+DK,Donkey Republic Frederikshavn,Frederikshavn,donkey_frederikshavn,https://www.donkey.bike/cities/bike-rental-frederikshavn/,https://stables.donkey.bike/api/public/gbfs/2/donkey_frederikshavn/gbfs.json,
 DE,Donkey Republic Freiburg,Freiburg,donkey_freiburg,https://www.donkey.bike/cities/bike-rental-freiburg/,https://stables.donkey.bike/api/public/gbfs/2/donkey_freiburg/gbfs.json,
-DK,Donkey Republic Glostrup,Glostrup,donkey_glostrup,https://www.donkey.bike/cities/bike-rental-glostrup/,https://stables.donkey.bike/api/public/gbfs/2/donkey_glostrup/gbfs.json
-DK,Donkey Republic Herning,Herning,donkey_herning,https://www.donkey.bike/cities/herning/,https://stables.donkey.bike/api/public/gbfs/2/donkey_herning/gbfs.json
-DK,Donkey Republic Hillerød,Hillerød,donkey_hillerod,https://www.donkey.bike,https://stables.donkey.bike/api/public/gbfs/2/donkey_hillerod/gbfs
+DK,Donkey Republic Glostrup,Glostrup,donkey_glostrup,https://www.donkey.bike/cities/bike-rental-glostrup/,https://stables.donkey.bike/api/public/gbfs/2/donkey_glostrup/gbfs.json,
+DK,Donkey Republic Herning,Herning,donkey_herning,https://www.donkey.bike/cities/herning/,https://stables.donkey.bike/api/public/gbfs/2/donkey_herning/gbfs.json,
+DK,Donkey Republic Hillerød,Hillerød,donkey_hillerod,https://www.donkey.bike,https://stables.donkey.bike/api/public/gbfs/2/donkey_hillerod/gbfs,
 DE,Donkey Republic Kiel,Kiel,donkey_kiel,https://www.donkey.bike/cities/bike-rental-kiel/,https://stables.donkey.bike/api/public/gbfs/2/donkey_kiel/gbfs.json,
-DK,Donkey Republic Klampenborg,Klampenborg,donkey_klampenborg,https://www.donkey.bike/cities/bike-rental-klampenborg/,https://stables.donkey.bike/api/public/gbfs/2/donkey_klampenborg/gbfs.json
-DK,Donkey Republic Lalandia (Rødby),Lalandia (Rødby),donkey_lalandia,https://www.donkey.bike/cities/bike-rental-lalandia-rodby/,https://stables.donkey.bike/api/public/gbfs/2/donkey_lalandia/gbfs.json
-DK,Donkey Republic Middelfart,Middelfart,donkey_middelfart,https://www.donkey.bike/cities/bike-rental-middelfart/,https://stables.donkey.bike/api/public/gbfs/2/donkey_middelfart/gbfs.json
+DK,Donkey Republic Klampenborg,Klampenborg,donkey_klampenborg,https://www.donkey.bike/cities/bike-rental-klampenborg/,https://stables.donkey.bike/api/public/gbfs/2/donkey_klampenborg/gbfs.json,
+DK,Donkey Republic Lalandia (Rødby),Lalandia (Rødby),donkey_lalandia,https://www.donkey.bike/cities/bike-rental-lalandia-rodby/,https://stables.donkey.bike/api/public/gbfs/2/donkey_lalandia/gbfs.json,
+DK,Donkey Republic Middelfart,Middelfart,donkey_middelfart,https://www.donkey.bike/cities/bike-rental-middelfart/,https://stables.donkey.bike/api/public/gbfs/2/donkey_middelfart/gbfs.json,
 DE,Donkey Republic Munich,Munich,donkey_munich,https://www.donkey.bike/cities/bike-rental-munich/,https://stables.donkey.bike/api/public/gbfs/2/donkey_munich/gbfs.json,
-DK,Donkey Republic Odense,Odense,donkey_odense,https://www.donkey.bike/cities/bike-rental-odense/,https://stables.donkey.bike/api/public/gbfs/2/donkey_odense/gbfs.json
+DK,Donkey Republic Odense,Odense,donkey_odense,https://www.donkey.bike/cities/bike-rental-odense/,https://stables.donkey.bike/api/public/gbfs/2/donkey_odense/gbfs.json,
 DE,Donkey Republic Regensburg,Regensburg,donkey_regensburg,https://www.donkey.bike/cities/bike-rental-regensburg/,https://stables.donkey.bike/api/public/gbfs/2/donkey_regensburg/gbfs.json,
-DK,Donkey Republic Rødvig,Rødvig,donkey_roedvig,https://www.donkey.bike/cities/bike-rental-rodvig/,https://stables.donkey.bike/api/public/gbfs/2/donkey_roedvig/gbfs.json
-DK,Donkey Republic Store Heddinge,Store Heddinge,donkey_store_heddinge,https://www.donkey.bike/cities/bike-rental-store-heddinge/,https://stables.donkey.bike/api/public/gbfs/2/donkey_store_heddinge/gbfs.json
+DK,Donkey Republic Rødvig,Rødvig,donkey_roedvig,https://www.donkey.bike/cities/bike-rental-rodvig/,https://stables.donkey.bike/api/public/gbfs/2/donkey_roedvig/gbfs.json,
+DK,Donkey Republic Store Heddinge,Store Heddinge,donkey_store_heddinge,https://www.donkey.bike/cities/bike-rental-store-heddinge/,https://stables.donkey.bike/api/public/gbfs/2/donkey_store_heddinge/gbfs.json,
 DE,EDEKA Grünheide,Grünheide (Mark),nextbike_ed,https://www.nextbike.de/gruenheide/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ed/gbfs.json,
 DE,Eifel e-Bike,Eifel,nextbike_eb,https://www.nextbike.de/eifel-ebike/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_eb/gbfs.json,
 DE,EinfachMobil,Ortenaukreis,nextbike_eh,https://www.nextbike.de/einfachmobil/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_eh/gbfs.json,
