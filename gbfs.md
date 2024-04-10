@@ -6,7 +6,7 @@ This document explains the types of files and data that comprise the General Bik
 
 This documentation refers to **v3.0**.
 
-**For the current version see [**version 2.3**](https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md).** For past and upcoming versions see the [README](https://github.com/MobilityData/gbfs/blob/master/README.md#current-version-recommended).
+For past and upcoming versions see the [README](https://github.com/MobilityData/gbfs/blob/master/README.md#current-version-recommended).
 
 ## Terminology
 
