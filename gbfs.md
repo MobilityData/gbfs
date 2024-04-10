@@ -1053,11 +1053,11 @@ Field Name | REQUIRED | Type | Defines
 
 ### system_hours.json
 
-This file has been removed in v3.0. For earlier versions see the [version history](https://github.com/MobilityData/gbfs/wiki/Complete-Version-History). 
+This file has been removed in v3.0. For earlier versions see the [README](https://github.com/MobilityData/gbfs/blob/master/README.md#current-version-recommended). 
 
 ### system_calendar.json
 
-This file has been removed in v3.0. For earlier versions see the [version history](https://github.com/MobilityData/gbfs/wiki/Complete-Version-History). 
+This file has been removed in v3.0. For earlier versions see the [README](https://github.com/MobilityData/gbfs/blob/master/README.md#current-version-recommended). 
 
 ### system_regions.json
 
