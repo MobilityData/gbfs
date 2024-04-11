@@ -75,7 +75,7 @@ Past  versions with *Deprecated* status will not be patched and their use SHOULD
 |  [v1.0](https://github.com/MobilityData/gbfs/blob/v1.0/gbfs.md) | MAJOR  | Prior to October 2019 | :x: &nbsp; *Deprecated*  | [v1.0 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v1.0)| |
  
 ### Full Version History 
-The complete GBFS version history is available on the [wiki](https://github.com/MobilityData/gbfs/wiki/Complete-Version-History).
+The complete GBFS version history is available in the [Release Notes](https://github.com/MobilityData/gbfs/releases).
 
 ## Specification Versioning
 To enable the evolution of GBFS, including changes that would otherwise break backwards-compatibility with consuming applications, GBFS uses [semantic versioning](https://semver.org/).
