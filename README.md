@@ -46,7 +46,7 @@ MobiltyData has compiled a [project roadmap](https://portal.productboard.com/26q
 ## Current Version *(Recommended)* 
 |   Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
 |:---:|:---:|---|---|---| ---|
-| [v2.3](https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md) | MINOR  | April 5, 2022 | :white_check_mark: &nbsp; *Current Version*  | [v2.3 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.3) | [v2.3 Release Notes](https://github.com/MobilityData/gbfs/releases/tag/v2.3) |
+| [v3.0](https://github.com/MobilityData/gbfs/blob/v3.0/gbfs.md) | MAJOR  | April 11, 2024 | :white_check_mark: &nbsp; *Current Version*  | [v3.0 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v3.0) | [v3.0 Article](https://mobilitydata.org/gbfs-v3-0-is-live-heres-why-youll-love-it/) |
 
 
 ### Upcoming MAJOR Version 
@@ -59,8 +59,7 @@ Release Candidates will receive *Current Version* status when they have been ful
 
 |  Version | Type  | Release Date   | Status                     | JSON Schema                                                                            | Release Notes       |
 |:---:|:-----:|----------------|----------------------------|----------------------------------------------------------------------------------------|---------------------|
-|[v3.0-RC2](https://github.com/MobilityData/gbfs/blob/master/gbfs.md) | MAJOR | November 14, 2023 | ✅ Ready for implementation | [v3.0-RC2 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v3.0-RC2) | [v3.0-RC2 Release Notes](https://github.com/MobilityData/gbfs/releases/tag/v3.0-RC2) |
-|[v3.0-RC](https://github.com/MobilityData/gbfs/blob/v3.0-RC/gbfs.md) | MAJOR | March 10, 2023 | ✅ Ready for implementation | [v3.0-RC Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v3.0-RC) | [v3.0-RC Article](https://mobilitydata.org/2023-the-year-of-v3/) |
+| No current Release Candidate versions |  |  |  |  |  |
 
 ### Past Version Releases 
 Past versions with *Supported* status MAY be patched to correct bugs or vulnerabilities but new features will not be introduced.<br />
@@ -68,6 +67,7 @@ Past  versions with *Deprecated* status will not be patched and their use SHOULD
 
 |  Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
 |:---:|:---:|---|---|---|---|
+| [v2.3](https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md) | MINOR  | April 5, 2022 | :white_check_mark: &nbsp; *Supported*  | [v2.3 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.3) | [v2.3 Release Notes](https://github.com/MobilityData/gbfs/releases/tag/v2.3) |
 |  [v2.2](https://github.com/MobilityData/gbfs/blob/v2.2/gbfs.md) | MINOR  | March 19, 2021 |:white_check_mark: &nbsp; *Supported*  | [v2.2 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.2)| [v2.2 Article](https://mobilitydata.org/cities-gbfs-v2-2-is-here-for-you/)
 |  [v2.1](https://github.com/MobilityData/gbfs/blob/v2.1/gbfs.md) | MINOR  | March 18, 2021 |:white_check_mark: &nbsp; *Supported*  | [v2.1 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.1)| [v2.1 Article](https://mobilitydata.org/gbfs-now-fully-supports-dockless-systems-%f0%9f%9b%b4%f0%9f%91%8f/)
 |  [v2.0](https://github.com/MobilityData/gbfs/blob/v2.0/gbfs.md) | MAJOR  | March 16, 2020 | :white_check_mark: &nbsp;  *Supported*  | [v2.0 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.0) | [v2.0 Article](https://mobilitydata.org/whats-new-in-gbfs-v2-0-%f0%9f%9a%b2%f0%9f%9b%b4/) |
