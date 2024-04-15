@@ -46,7 +46,7 @@ MobiltyData has compiled a [project roadmap](https://portal.productboard.com/26q
 ## Current Version *(Recommended)* 
 |   Version | Type  | Release Date |  Status | JSON Schema | Release Notes |
 |:---:|:---:|---|---|---| ---|
-| [v3.0](https://github.com/MobilityData/gbfs/blob/v3.0/gbfs.md) | MAJOR  | April 11, 2024 | :white_check_mark: &nbsp; *Current Version*  | [v3.0 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v3.0) | [v3.0 Article](https://mobilitydata.org/gbfs-v3-0-is-live-heres-why-youll-love-it/) |
+| [v3.0](https://github.com/MobilityData/gbfs/blob/v3.0/gbfs.md) | MAJOR  | April 11, 2024 | :white_check_mark: &nbsp; *Current Version*  | [v3.0 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v3.0) | [v3.0 Article](https://mobilitydata.org/how-to-upgrade-to-gbfs-v3-0/) |
 
 
 ### Upcoming MAJOR Version 
