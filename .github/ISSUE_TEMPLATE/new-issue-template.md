@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-### Have you read our [FAQ](https://gbfs.org/learn/faq/)? It’s possible your question can be answered there!
+### Have you read our [FAQ](https://gbfs.mobilitydata.org/faq)? It’s possible your question can be answered there!
 
 ### If you are new to the specification, please introduce yourself (name and organization/link to GBFS). It’s helpful to know who we're chatting with!
 
