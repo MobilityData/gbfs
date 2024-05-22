@@ -4,7 +4,7 @@ This document explains the types of files and data that comprise the General Bik
 
 ## Reference version
 
-This documentation refers to **v3.0**.
+This documentation refers to **v3.1-RC**.
 
 For past and upcoming versions see the [README](https://github.com/MobilityData/gbfs/blob/master/README.md#current-version-recommended).
 
@@ -265,7 +265,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 3600,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "name": [
       {
@@ -296,7 +296,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "feeds": [
       {
@@ -326,27 +326,27 @@ Field Name | REQUIRED | Type | Defines
 `datasets[].versions` | Yes | Array&lt;Object&gt; | Contains one object for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number. 
 `datasets[].versions[].version` | Yes | String | The semantic version of the feed in the form `X.Y`.                               
 `datasets[].versions[].url` | Yes  | URL | URL of the corresponding `gbfs.json` endpoint.
-`datasets[].area` | OPTIONAL | GeoJSON MultiPolygon | A GeoJSON MultiPolygon that describes the operating area. If `area` is supplied, then the record describes the general operating area of the system for the purpose of discovery. Geographic details of the system's operating restrictions must be explicitly specified using station locations and geofencing zones, where appropriate.
-`datasets[].country_code` | OPTIONAL | Country Code | The ISO 3166-1 alpha-2 country code of the operating area. The field MUST NOT be specified if the operating area spans multiple countries.
+`datasets[].area` <br/>*(added in v3.1-RC)* | OPTIONAL | GeoJSON MultiPolygon | A GeoJSON MultiPolygon that describes the operating area. If `area` is supplied, then the record describes the general operating area of the system for the purpose of discovery. Geographic details of the system's operating restrictions must be explicitly specified using station locations and geofencing zones, where appropriate.
+`datasets[].country_code` <br/>*(added in v3.1-RC)* | OPTIONAL | Country Code | The ISO 3166-1 alpha-2 country code of the operating area. The field MUST NOT be specified if the operating area spans multiple countries.
 
 **Example:**
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl":0,
-  "version":"3.0",
+  "version": "3.1-RC",
   "data":{
     "datasets":[
       {
         "system_id":"example_berlin",
         "versions":[
           {
-            "version":"2.0",
+            "version": "2.0",
             "url":"https://berlin.example.com/gbfs/2/gbfs"
           },
           {
-            "version":"3.0",
-            "url":"https://berlin.example.com/gbfs/3/gbfs"
+            "version": "3.1-RC",
+            "url":"https://berlin.example.com/gbfs/3.1-RC/gbfs"
           }
         ],
         "area": {
@@ -392,12 +392,12 @@ Field Name | REQUIRED | Type | Defines
         "system_id":"example_paris",
         "versions":[
           {
-            "version":"2.0",
+            "version": "2.0",
             "url":"https://paris.example.com/gbfs/2/gbfs"
           },
           {
-            "version":"3.0",
-            "url":"https://paris.example.com/gbfs/3/gbfs"
+            "version": "3.1-RC",
+            "url":"https://paris.example.com/gbfs/3.1-RC/gbfs"
           }
         ],
         "area": {
@@ -465,7 +465,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "versions": [
       {
@@ -473,8 +473,8 @@ Field Name | REQUIRED | Type | Defines
         "url": "https://www.example.com/gbfs/2/gbfs"
       },
       {
-        "version": "3.0",
-        "url": "https://www.example.com/gbfs/3/gbfs"
+        "version": "3.1-RC",
+        "url": "https://www.example.com/gbfs/3.1-RC/gbfs"
       }
     ]
   }
@@ -530,7 +530,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 1800,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "system_id": "example_cityname",
     "languages": ["en"],
@@ -642,7 +642,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "vehicle_types": [
       {
@@ -825,7 +825,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "stations": [
       {
@@ -861,7 +861,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "stations": [
       {
@@ -953,7 +953,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "stations": [
       {
@@ -1056,7 +1056,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl":0,
-  "version":"3.0",
+  "version": "3.1-RC",
   "data":{
     "vehicles":[
       {
@@ -1094,7 +1094,7 @@ Field Name | REQUIRED | Type | Defines
  {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl":0,
-  "version":"3.0",
+  "version": "3.1-RC",
   "data":{
     "vehicles":[
       {
@@ -1157,7 +1157,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 86400,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "regions": [
       {
@@ -1213,8 +1213,8 @@ Field Name | REQUIRED | Type | Defines
 `plans[].name` <br/>*(as of v3.0)* | Yes | Array&lt;Localized String&gt; | Name of this pricing plan.
 `plans[].currency` | Yes | String | Currency used to pay the fare. <br /><br /> This pricing is in ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217 <br />(for example, `CAD` for Canadian dollars, `EUR` for euros, or `JPY` for Japanese yen.)
 `plans[].price` | Yes | Non-Negative Float | Fare price, in the unit specified by `currency`. <br/>*(added in v2.2)* In case of non-rate price, this field is the total price. In case of rate price, this field is the base price that is charged only once per trip (typically the price for unlocking) in addition to `per_km_pricing` and/or `per_min_pricing`.
-`plans[].reservation_price_per_min` <br/>*(added in v3.1)* | OPTIONAL | Non-Negative Float | The cost, described as per minute rate, to reserve the vehicle prior to beginning a rental. This amount is charged for each minute of the vehicle reservation until the rental is initiated, or until the number of minutes defined in `vehicle_types.json#default_reserve_time` elapses, whichever comes first. When using this field, you MUST declare a value in `vehicle_types.json#default_reserve_time`. This field MUST NOT be combined in a single pricing plan with `reservation_price_flat_rate`.
-`plans[].reservation_price_flat_rate` <br/>*(added in v3.1)* | OPTIONAL | Non-Negative Float | The cost, described as a flat rate, to reserve the vehicle prior to beginning a rental. This amount is charged once to reserve the vehicle for the duration of the time defined by `vehicle_types.json#default_reserve_time`. When using this field, you MUST declare a value in `vehicle_types.json#default_reserve_time`. This field MUST NOT be combined in a single pricing plan with `reservation_price_per_min`.
+`plans[].reservation_price_per_min` <br/>*(added in v3.1-RC)* | OPTIONAL | Non-Negative Float | The cost, described as per minute rate, to reserve the vehicle prior to beginning a rental. This amount is charged for each minute of the vehicle reservation until the rental is initiated, or until the number of minutes defined in `vehicle_types.json#default_reserve_time` elapses, whichever comes first. When using this field, you MUST declare a value in `vehicle_types.json#default_reserve_time`. This field MUST NOT be combined in a single pricing plan with `reservation_price_flat_rate`.
+`plans[].reservation_price_flat_rate` <br/>*(added in v3.1-RC)* | OPTIONAL | Non-Negative Float | The cost, described as a flat rate, to reserve the vehicle prior to beginning a rental. This amount is charged once to reserve the vehicle for the duration of the time defined by `vehicle_types.json#default_reserve_time`. When using this field, you MUST declare a value in `vehicle_types.json#default_reserve_time`. This field MUST NOT be combined in a single pricing plan with `reservation_price_per_min`.
 `plans[].is_taxable` | Yes | Boolean | Will additional tax be added to the base price?<br /><br />`true` - Yes.<br />  `false` - No.  <br /><br />`false` MAY be used to indicate that tax is not charged or that tax is included in the base price.
 `plans[].description` <br/>*(as of v3.0)* | Yes | Array&lt;Localized String&gt; | Customer-readable description of the pricing plan. This SHOULD include the duration, price, conditions, etc. that the publisher would like users to see.
 `plans[].per_km_pricing` <br/>*(added in v2.2)* | OPTIONAL | Array&lt;Object&gt; | Array of segments when the price is a function of distance traveled, displayed in kilometers.<br /><br />Total cost is the addition of `price` and all segments in `per_km_pricing` and `per_min_pricing`. If this array is not provided, there are no variable costs based on distance.
@@ -1237,7 +1237,7 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "plans": [
       {
@@ -1290,7 +1290,7 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "plans": [
       {
@@ -1356,7 +1356,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "alerts": [
       {
@@ -1453,7 +1453,7 @@ See examples below.
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "geofencing_zones": {
       "type": "FeatureCollection",
@@ -1714,7 +1714,7 @@ Other supported parameters include:
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "name": [
       {
@@ -1745,7 +1745,7 @@ Other supported parameters include:
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "stations": [
       {
@@ -1778,7 +1778,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "name": [
       {
@@ -1809,7 +1809,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "stations": [
       {
@@ -1840,7 +1840,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.0",
+  "version": "3.1-RC",
   "data": {
     "stations": [
       {
