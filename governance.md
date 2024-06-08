@@ -8,6 +8,8 @@ Changes to the specification (gbfs.md) and the specification governance (governa
 ### Maintainer Role
 The specification has a designated Maintainer. The Maintainer MAY be an individual, a group of individuals or an organization. The current Maintainer is [MobilityData](http://mobilitydata.org). The Maintainer role includes but is not limited to: reviewing PRs, maintaining documentation, facilitation and counting of votes, merging successful proposals, managing releases and their [Version Release Cycles](#version-release-cycles). The current Git repository is the [GBFS Github repository](https://github.com/MobilityData/gbfs). The current Slack channel is the #gbfs channel on the [MobilityData Slack](https://mobilitydata-io.slack.com/).
 ### Change Process
+![Change Process](https://raw.githubusercontent.com/MobilityData/gbfs/master/images/change_process.jpg)
+
 To manage the change process, the following guidelines have been established.
 
 * Anyone can propose a change.

@@ -701,7 +701,7 @@ US,Boulder BCycle,"Boulder, CO",bcycle_boulder,https://boulder.bcycle.com,https:
 US,Bird Cleveland,"Cleveland, OH",bird-cleveland,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/cleveland/gbfs.json,
 US,Bird Columbus,"Columbus, OH",bird-columbus,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/columbus/gbfs.json,
 US,Bird Culver City,"Culver City, CA",bird-culver-city,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/culver-city/gbfs.json,
-US,Bird Detriot,"Detroit, MI",bird-detroit,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/detroit/gbfs.json,
+US,Bird Detroit,"Detroit, MI",bird-detroit,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/detroit/gbfs.json,
 US,Bird Durham,"Durham, NC",bird-durham,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/durham/gbfs.json,
 US,Bird Fairfax,"Fairfax, VA",bird-fairfax,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/fairfax/gbfs.json,
 US,Bird Indianapolis,"Indianapolis, IN",bird-indianapolis,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/indianapolis/gbfs.json,
@@ -842,7 +842,7 @@ US,Spin San Francisco,"San Francisco, CA",provider-null-san_francisco,https://ww
 US,Spin San Marcos,"San Marcos, TX",provider-null-san_marcos,https://www.spin.pm,https://mds.bird.co/gbfs/v2/public/provider/spin/san_marcos/gbfs.json,
 US,Spin Santa Monica,"Santa Monica, CA",provider-null-santa_monica,https://www.spin.pm,https://mds.bird.co/gbfs/v2/public/provider/spin/santa_monica/gbfs.json,
 US,Spin St George,"St George, UT",provider-null-st_george,https://www.spin.pm,https://mds.bird.co/gbfs/v2/public/provider/spin/st_george/gbfs.json,
-US,Spin St. Paul, "St. Paul, MN",provider-null-st_paul,https://www.spin.pm,https://mds.bird.co/gbfs/v2/public/provider/spin/st_paul/gbfs.json
+US,Spin St. Paul,"St. Paul, MN",provider-null-st_paul,https://www.spin.pm,https://mds.bird.co/gbfs/v2/public/provider/spin/st_paul/gbfs.json,
 US,Spin Stillwater,"Stillwater, OK",provider-null-stillwater,https://www.spin.pm,https://mds.bird.co/gbfs/v2/public/provider/spin/stillwater/gbfs.json,
 US,Spin Tallahassee,"Tallahassee, FL",provider-null-tallahassee,https://www.spin.pm,https://mds.bird.co/gbfs/v2/public/provider/spin/tallahassee/gbfs.json,
 US,Spin Tampa,"Tampa, FL",provider-null-tampa,https://www.spin.pm,https://mds.bird.co/gbfs/v2/public/provider/spin/tampa/gbfs.json,
