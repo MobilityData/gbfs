@@ -1506,6 +1506,7 @@ See examples below.
                 ],
                 "ride_start_allowed": true,
                 "ride_end_allowed": true,
+                "ride_through_allowed": true,
                 "maximum_speed_kph": 10,
                 "station_parking": true
               }
