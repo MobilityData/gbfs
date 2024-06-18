@@ -398,7 +398,7 @@ FR,Vélocéo,Vannes,Veloceo_FR_Vannes,https://veloceo.kiceo.fr/,https://vannes-g
 FR,VéloCité,Besançon,besançon,https://www.velocite.besancon.fr/,https://transport.data.gouv.fr/gbfs/besancon/gbfs.json,
 FR,VéloCité,Mulhouse,mulhouse,https://www.compte-mobilite.fr/services/velos-en-libre-service/,https://transport.data.gouv.fr/gbfs/mulhouse/gbfs.json,
 FR,Vélomagg',Montpellier,montpellier,https://www.tam-voyages.com/presentation/?rub_code=1&thm_id=6,https://montpellier-fr-smoove.klervi.net/gbfs/gbfs.json,
-FR,Vélopop,Avignon,velopop,https://www.velopop.fr/,https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/avignon/gbfs.json,key=NWNiMjc5YmQtMzVlOC00MmJiLTkyYTItNzZkMDViMzA2MzA2
+FR,Vélopop,Avignon,velopop,https://velo-grandavignon.fr/fr/,https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/avignon/gbfs.json,key=NWNiMjc5YmQtMzVlOC00MmJiLTkyYTItNzZkMDViMzA2MzA2
 FR,VélOstan'lib,Nancy,nancy,http://www.velostanlib.fr/,https://transport.data.gouv.fr/gbfs/nancy/gbfs.json,
 FR,VélÔToulouse,Toulouse,toulouse,http://www.velo.toulouse.fr/,https://transport.data.gouv.fr/gbfs/toulouse/gbfs.json,
 FR,VéloZef,Brest,velozef,https://www.bibus.fr/services/velozef-le-velo-assistance-electrique-en-libre-service,https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/brest/en/gbfs.json,key=OGNhZDNjMDQtYTA0Yi00NzU2LWE0MTItOGJlYzE1Y2E4NGEx
