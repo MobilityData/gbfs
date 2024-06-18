@@ -94,7 +94,7 @@ CH,Lime Opfikon,Opfikon,lime_opfikon,https://www.li.me/,https://data.lime.bike/a
 CH,Lime Basel,Basel,lime_basel,https://www.li.me/,https://api.mobidata-bw.de/sharing/gbfs/lime_basel/gbfs,
 CH,Lime Uster,Uster,lime_uster,https://www.li.me/,https://api.mobidata-bw.de/sharing/gbfs/lime_uster/gbfs,
 CH,Lime Zug,Zug,lime_zug,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/zug/gbfs.json,
-CH,Lime Zurich,Zurich,lime_zurich,https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/avignon/gbfs.json?&key=NWNiMjc5YmQtMzVlOC00MmJiLTkyYTItNzZkMDViMzA2MzA2,,
+CH,Lime Zurich,Zurich,lime_zurich,https://www.li.me/,https://api.mobidata-bw.de/sharing/gbfs/lime_zurich/gbfs,
 CH,LINK Basel,Basel,Link_Basel,https://www.superpedestrian.com,https://mds.linkyour.city/gbfs/ch_basel/gbfs.json,
 CH,nextbike Switzerland,Switzerland,nextbike_ch,https://www.nextbike.ch/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ch/gbfs.json,
 CH,PubliBike,Switzerland,publibike,https://www.publibike.ch,https://api.publibike.ch/v1/gbfs/v2/gbfs.json,
