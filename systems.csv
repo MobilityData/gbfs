@@ -612,6 +612,7 @@ NO,Voi Oslo,Oslo,voioslo,https://www.voi.com/,https://api.entur.io/mobility/v2/g
 NO,Voi Stavanger,Stavanger,voistavanger,https://www.voi.com/,https://api.entur.io/mobility/v2/gbfs/v3/voistavanger/gbfs,
 NO,Voi Trondheim,Trondheim,voitrondheim,https://www.voi.com/,https://api.entur.io/mobility/v2/gbfs/v3/voitrondheim/gbfs,
 NO,Zeus Oslo,Oslo,zeus_oslo,https://zeusscooters.com/,https://zeus.city/api/v1/mds/gbfs/oslo/gbfs.json,
+NZ,Flamingo Dunedin,Dunedin,flamingo_dunedin,https://rideflamingo.com,https://data.rideflamingo.com/gbfs/3/dunedin/gbfs.json,
 NZ,Flamingo Palerston North,Palmerston North,flamingo_palmerston_north,https://rideflamingo.com,https://data.rideflamingo.com/gbfs/3/palmerston-north/gbfs.json,
 NZ,Flamingo Porirua,"Porirua, NZ",flamingo_porirua,https://rideflamingo.com,https://data.rideflamingo.com/gbfs/3/porirua/gbfs.json,
 NZ,Flamingo Waimakariri,Waimakariri District,flamingo_waimakariri,https://rideflamingo.com,https://data.rideflamingo.com/gbfs/3/waimakariri/gbfs.json,
