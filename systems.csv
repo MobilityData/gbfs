@@ -39,7 +39,6 @@ BE,Pony Charleroi,Charleroi,pony_Charleroi,https://getapony.com/,https://gbfs.ge
 BE,Pony Liège,Liege,pony_liège,https://getapony.com,https://gbfs.getapony.com/v1/liege/en/gbfs.json,2.2,
 BE,Pony Namur,Namur,pony_Namur,https://getapony.com/,https://gbfs.getapony.com/v1/namur/en/gbfs.json,1.0,
 BE,Velo Antwerpen,Antwerp,cc_smartbike_antwerp,https://www.velo-antwerpen.be/nl,https://gbfs.smartbike.com/antwerp/1.0/gbfs.json,2.0,
-BE,Voi Brussels,Brussels,voiscooters.com,https://www.voi.com/,https://api.voiapp.io/gbfs/be/7a4cb689-a2ee-409d-a5fe-49d2e8d50717/v2/gbfs.json,1.0,https://www.transportdata.be/dataset/voi
 BG,nextbike Bulgaria,Dobrich,netbike_bg,https://nextbike.eu/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bg/gbfs.json,2.3,
 BR,Bike Itaú - Pernambuco,Recife,bike_pe,https://bikeitau.com.br/bikepe,https://rec.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
 BR,Bike Itaú - Poa,Porto Alegre,bike_poa,https://bikeitau.com.br/bikepoa,https://poa.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
@@ -406,7 +405,7 @@ FR,Vélo'v,Lyon,lyon,https://velov.grandlyon.com/en/home,https://transport.data.
 FR,Vélivert,Saint-Étienne,velivert_saint_etienne,https://www.velivert.fr/,https://api.saint-etienne-metropole.fr/velivert/api/gbfs/gbfs.json,2.2,
 FR,VélYcéo,Saint-Nazaire,velyceo,https://www.velyceo.com,https://api.gbfs.v1.ecovelo.mobi/gbfs/velyceo,1.0,
 FR,V'lille,Lille,vlille,https://www.ilevia.fr/cms/vlille/,https://transport.data.gouv.fr/gbfs/vlille/gbfs.json,,
-FR,Voi Marseille,Marseille,voiscooters.com,https://www.voi.com/,https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/gbfs.json,2.3,
+FR,Voi Marseille,Marseille,voi_Marseille,https://www.voi.com/,https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/66/gbfs.json,2.3,
 GB,BelfastBikes,Belfast,nextbike_bu,https://www.belfastbikes.co.uk/en/belfast/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bu/gbfs.json,2.3,
 GB,Beryl - BCP,Bournemouth/Christchurch/Poole,beryl_bcp,https://beryl.cc/scheme/bournemouth-christchurch-and-poole,https://gbfs.beryl.cc/v2_2/BCP/gbfs.json,2.1 ; 2.2,
 GB,Beryl - Brighton,Brighton,beryl_brighton,https://beryl.cc/,https://gbfs.beryl.cc/v2_2/Brighton/gbfs.json,2.1 ; 2.2,
