@@ -55,7 +55,7 @@ This section defines terms that are used throughout this document.
 * Field - In JSON, a name/value pair consists of a field name (in double quotes), followed by a colon, followed by a value. (https://www.w3schools.com/js/js_json_syntax.asp)
 * GeoJSON - GeoJSON is a format for encoding a variety of geographic data structures. (https://geojson.org/)
 * REQUIRED - The field MUST be included in the dataset, and a value MUST be provided in that field for each record. (A required field inside an OPTIONAL Object is only required when the Object is present.)
-* OPTIONAL - The field MAY be omitted from the dataset. If an OPTIONAL column is included, some of the entries in that field MAY be empty strings. An omitted field is equivalent to a field that is empty.
+* OPTIONAL - The field MAY be omitted from the dataset.
 * Conditionally REQUIRED - The field or file is REQUIRED under certain conditions, which are outlined in the field or file description. Outside of these conditions, this field or file is OPTIONAL.
 
 ## Files
@@ -200,7 +200,7 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 * Float *(added in v2.1)* - A 32-bit floating point number.
 * GeoJSON FeatureCollection - A FeatureCollection as described by the IETF RFC 7946 https://tools.ietf.org/html/rfc7946#section-3.3.
 * GeoJSON MultiPolygon - A Geometry Object as described by the IETF RFC https://tools.ietf.org/html/rfc7946#section-3.1.7.
-* ID - Should be represented as a string that identifies that particular entity. An ID:
+* ID - Should be represented as a non-empty string that identifies that particular entity. An ID:
     * MUST be unique within like fields (for example, `station_id` MUST be unique among stations)
     * Does not have to be globally unique, unless otherwise specified
     * MUST be in the ASCII printable character range, space excluded (0x21 to 0x7E) https://en.wikipedia.org/wiki/ASCII#Printable_characters *(as of v3.0)*
@@ -209,7 +209,7 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 * Language - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to https://www.rfc-editor.org/rfc/bcp/bcp47.txt and https://www.w3.org/International/articles/language-tags/. Examples: `en` for English, `en-US` for American English, or `de` for German.
 * Latitude - WGS84 latitude in decimal degrees. The value MUST be greater than or equal to -90.0 and less than or equal to 90.0. Example: `41.890169` for the Colosseum in Rome.
 * Longitude - WGS84 longitude in decimal degrees. The value MUST be greater than or equal to -180.0 and less than or equal to 180.0. Example: `12.492269` for the Colosseum in Rome.
-* <a name="localized-string"></a> Localized String - A JSON element representing a String value that has been translated into a specific language. The element consists of the following name-value pairs:
+* <a name="localized-string"></a> Localized String - A JSON element representing a non-empty String value that has been translated into a specific language. The element consists of the following name-value pairs:
 
   Field Name | REQUIRED | Type | Defines
   ---|---|---|---
@@ -228,7 +228,7 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 * Non-negative Integer - An integer greater than or equal to 0.
 * Object - A JSON element consisting of key-value pairs (fields).
 * Phone Number *as of v3.0* - Phone number in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I/en) format. The phone number MUST start with a "+". The characters following the "+" MUST be integers and MUST NOT contain any hyphens, spaces or parentheses.
-* String - Can only contain text. Strings MUST NOT contain any formatting codes (including HTML) other than newlines.
+* String - Can only contain text. Strings MUST NOT contain any formatting codes (including HTML) other than newlines. They MUST NOT be empty (zero-length).
 * Time - Service time in the HH:MM:SS format for the time zone indicated in `system_information.json` (00:00:00 - 47:59:59). Time can stretch up to one additional day in the future to accommodate situations where, for example, a system was open from 11:30pm - 11pm the next day (23:30:00-47:00:00).
 * Timestamp - Timestamp fields MUST be represented as strings in [RFC3339 format](https://www.rfc-editor.org/rfc/rfc3339), for example `2023-07-17T13:34:13+02:00`. *(as of v3.0)*
 * Timezone - TZ timezone from the https://www.iana.org/time-zones. Timezone names never contain the space character but MAY contain an underscore. Refer to https://en.wikipedia.org/wiki/List_of_tz_zones for a list of valid values.
