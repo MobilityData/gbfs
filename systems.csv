@@ -57,6 +57,8 @@ CA,Lime Calgary,Calgary,lime_calgary,https://www.li.me/,https://data.lime.bike/a
 CA,Lime Edmonton,Edmonton,lime_edmonton,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/edmonton/gbfs.json,2.2,
 CA,Lime Kelowna,Kelowna,lime_kelowna,https://www.li.me,https://data.lime.bike/api/partners/v2/gbfs/kelowna/gbfs.json,2.2,
 CA,Lime Ottawa,Ottawa,lime_ottawa,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/ottawa/gbfs.json,2.2,
+CA,LocoMotion Montreal,Montreal,locomotion_montreal,https://locomotion.app,https://locomotion.app/api/gbfs/3.0/montreal/gbfs,3.0,
+CA,LocoMotion Sherbrooke,Sherbrooke,locomotion_sherbrooke,https://locomotion.app,https://locomotion.app/api/gbfs/3.0/sherbrooke/gbfs,3.0,
 CA,Mobi Bike Share,Vancouver,Mobibikes_CA_Vancouver,https://www.mobibikes.ca/,https://vancouver-gbfs.smoove.pro/gbfs/2/gbfs.json,1.0 ; 2.3,
 CA,Neuron Mobility,Airdrie,neuron_ard,https://www.rideneuron.com,https://mds-global-ard.neuron-mobility.com/gbfs/2/,2.0,
 CA,Neuron Mobility,Brampton,neuron_bmt,https://www.rideneuron.com,https://mds-global-bmt.neuron-mobility.com/gbfs/2/,2.0,
