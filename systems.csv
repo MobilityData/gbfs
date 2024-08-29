@@ -18,7 +18,7 @@ BA,nextbike BIH,Bosnia and Herzegovina,nextbike_ba,https://www.nextbike.ba/bs/,h
 BA,Zenica,Zenica,nextbike_bz,https://www.nextbike.ba/bs/zenica/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bz/gbfs.json,2.3,
 BE,Bird Antwerp,Antwerp,bird-antwerp,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/antwerp/gbfs.json,1.1 ; 2.3,
 BE,Blue-bike,Antwerp,bluebike,https://www.blue-bike.be/nl,https://api.delijn.be/gbfs/gbfs.json,2.3,
-BE,Bolt OÜ,Brussels,BoltEU,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/2/336/gbfs,1.0 ; 2.2,
+BE,Bolt Technology OÜ,Brussels,BoltEU_Brussels,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3/336/gbfs,1.0 ; 2.3 ; 3.0,
 BE,Donkey Republic Antwerp,Antwerp,donkey_antwerp,https://www.donkey.bike/cities/bike-rental-antwerp/,https://stables.donkey.bike/api/public/gbfs/2/donkey_antwerp/gbfs.json,1.0 ; 2.3,
 BE,Donkey Republic Ghent,Ghent,donkey_gh,https://www.donkey.bike/cities/bike-rental-ghent/,https://stables.donkey.bike/api/public/gbfs/2/donkey_gh/gbfs.json,1.0 ; 2.3,
 BE,Donkey Republic Kortrijk & Leiedal,Kortrijk & Leiedal,donkey_kortrijk_leiedal,https://www.donkey.bike/cities/bike-rental-kortrijk-zuid-west-vlaanderen/,https://stables.donkey.bike/api/public/gbfs/2/donkey_kortrijk_leiedal/gbfs,1.0 ; 2.3,
