@@ -865,3 +865,4 @@ US,Truckee BCycle,"Truckee, CA",bcycle_truckee,https://truckee.bcycle.com/,https
 US,Tugo,"Tucson, AZ",tugo,https://tugobikeshare.com/,https://tucson.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
 US,Valentine Bike Share,"Valentine, NE",bcycle_valentine,https://heartlandbikeshare.org,https://gbfs.bcycle.com/bcycle_valentine/gbfs.json,1.1,
 US,WE-cycle,"Aspen, CO",we_cycle,https://www.we-cycle.org,https://aspen.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
+XK,Nextbike Prishtina,"Prishtina, XK",nextbike_gs,https://www.prishtinabike.com,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gs/gbfs.json,2.3,
