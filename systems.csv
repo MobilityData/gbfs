@@ -455,6 +455,7 @@ GB,Santander Cycles - Brunel,Brunel University,nextbike_ub,https://www.nextbike.
 GB,Santander Cycles - Milton Keynes,Milton Keynes,nextbike_ku,https://www.nextbike.co.uk/en/milton-keynes/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ku/gbfs.json,2.3,
 GB,Santander Cycles - Swansea,Swansea University,nextbike_uu,https://www.nextbike.co.uk/en/swansea-university/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_uu/gbfs.json,2.3,
 GB,WESTcargo powered by nextbike,"Bristol, GB",nextbike_we,https://www.nextbike.co.uk/westcargo/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_we/gbfs.json,2.3,
+GR,Link Thessaloniki,"Thessaloniki, GR",Link_Thessaloniki,https://www.superpedestrian.com,https://mds.linkyour.city/gbfs/gr_thessaloniki/gbfs.json,2.2,
 HR,eMobi (Croatia),Osijek,nextbike_em,https://www.nextbike.hr/hr/osijek/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_em/gbfs.json,2.3,
 HR,Grad Drniš (Croatia),Drniš,nextbike_gd,https://www.nextbike.hr/hr/drnis/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gd/gbfs.json,2.3,
 HR,Grad Ivanić-Grad (Croatia),Ivanic Grad,nextbike_ig,https://www.nextbike.hr/hr/ivanicgrad/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ig/gbfs.json,2.3,
