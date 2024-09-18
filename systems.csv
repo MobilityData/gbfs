@@ -369,6 +369,7 @@ FR,Dott Tignes,Tignes,dott-tignes,https://ridedott.com,https://gbfs.api.ridedott
 FR,Dott Val-d’isere,Val-d’isere,dott-val-d’iser,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/val-d%E2%80%99isere/gbfs.json,2.3,
 FR,Impulsyon,La Roche-sur-Yon,impulsyon,https://impulsyon.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/impulsyon/gbfs.json,2.2 ; 3.0,
 FR,Karu'Vélo,Pointe-à-Pitre,karu,https://karuvelo.ecovelo.mobi/,https://api.gbfs.v3.0.ecovelo.mobi/karu/gbfs.json,2.2 ; 3.0,
+FR,Knot Strasbourg,Strasbourg,knot_strasbourg,https://knot.city/ride/where/strasbourg/,https://api.knotcity.io/gbfs/v3/strasbourg/gbfs.json,3.0,
 FR,La Baule,La Baule,labaule,https://labaule.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/labaule/gbfs.json,2.2 ; 3.0,
 FR,Le Marcel,Troyes,lemarcel,https://lemarcelavelo.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/lemarcel/gbfs.json,2.2 ; 3.0,
 FR,Le Vélo par TBM,Bordeaux,velo-tbm-bordeaux,https://www.infotbm.com/fr/le-velo,https://bdx.mecatran.com/utw/ws/gbfs/bordeaux/v3/gbfs.json,3.0,apiKey=opendata-bordeaux-metropole-flux-gtfs-rt
