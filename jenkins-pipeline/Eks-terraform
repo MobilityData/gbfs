@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+    environment {
+        AWS_DEFAULT_REGION = 'eu-west-2'
+        AWS_CREDENTIALS = credentials('ACCESS_ID')
+    }
+    stages {
+        stage('Code') {
+            steps {
+                git credentialsId: 'Git_Hub', url: 'https://github.com/Manojsiriparthi/gbfs-data.git'
+            }
+        }
+         stage('Terraform Init') {
+            steps {
+                dir('Eks-Terraform') {
+                    script {
+                      sh 'terraform init'
+                    }
+                }
+            }
+        }
+        stage('Terraform Plan') {
+            steps {
+                dir('Eks-Terraform') {
+                    script {
+                      sh 'terraform plan'
+                    }
+                }
+            }
+        }
+        stage('Terraform Action') {
+            steps {
+                dir('Eks-Terraform') {
+                    script {
+                      sh 'terraform ${action} --auto-approve'
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,60 @@
+pipeline {
+    agent any
+    
+    environment {
+        SLACK_TOKEN = credentials('slack_token') 
+        KUBECONFIG_CONTENT = credentials('KUBECONFIG_CONTENT') 
+        SLACK_CHANNEL = '#gbfs' 
+    }
+    stages {
+        stage('Checkout Git Repository') {
+            steps {
+                git credentialsId: 'Git_Hub', url: "https://github.com/${GIT_REPO_NAME}.git"
+            }
+        }
+        stage('Kubernetes Deployment') {
+            steps {
+                script {
+                    Dir("Kubernetes-Manifestfiles") {
+                       sh "kubectl apply -f cron-job"
+                    }
+                }
+            }
+        }
+        stage('Send Slack Notification') {
+            steps {
+                script {
+                    slackSend(
+                        channel: SLACK_CHANNEL,
+                        color: "good",
+                        message: "Successfully deployed to Kubernetes using CronJob from GitHub repository: ${GIT_REPO_NAME}."
+                    )
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            script {
+                slackSend(
+                    channel: SLACK_CHANNEL,
+                    color: "good",
+                    message: "Jenkins Pipeline succeeded. Kubernetes CronJob updated and deployed."
+                )
+            }
+        }
+        failure {
+            script {
+                slackSend(
+                    channel: SLACK_CHANNEL,
+                    color: "danger",
+                    message: "Jenkins Pipeline failed during build or deployment."
+                )
+            }
+        }
+        always {
+            cleanWs() 
+    }
+}
+
