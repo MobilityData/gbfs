@@ -1,0 +1,22 @@
+{
+   "providers": [
+       {
+           "name": "careem",
+           "station_info_url": "https://dubai.publicbikesystem.net/customer/gbfs/v2/en/station_information.json",
+           "station_status_url": "https://dubai.publicbikesystem.net/customer/gbfs/v2/en/station_status.json",
+           "table_name": "careem_bikes"
+       },
+       {
+           "name": "rio",
+           "station_info_url": "https://riodejaneiro.publicbikesystem.net/customer/gbfs/v2/en/station_information.json",
+           "station_status_url": "https://riodejaneiro.publicbikesystem.net/customer/gbfs/v2/en/station_status.json",
+           "table_name": "rio_bikes"
+       },
+       {
+           "name": "brighton",
+           "station_info_url": "https://beryl-gbfs-production.web.app/v2_2/Brighton/station_information.json",
+           "station_status_url": "https://beryl-gbfs-production.web.app/v2_2/Brighton/station_status.json",
+           "table_name": "brighton_bikes"
+       }
+   ]
+}
