@@ -71,7 +71,7 @@ Past  versions with *Deprecated* status will not be patched and their use SHOULD
 |  [v2.2](https://github.com/MobilityData/gbfs/blob/v2.2/gbfs.md) | MINOR  | March 19, 2021 |:white_check_mark: &nbsp; *Supported*  | [v2.2 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.2)| [v2.2 Article](https://mobilitydata.org/cities-gbfs-v2-2-is-here-for-you/)
 |  [v2.1](https://github.com/MobilityData/gbfs/blob/v2.1/gbfs.md) | MINOR  | March 18, 2021 |:white_check_mark: &nbsp; *Supported*  | [v2.1 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.1)| [v2.1 Article](https://mobilitydata.org/gbfs-now-fully-supports-dockless-systems-%f0%9f%9b%b4%f0%9f%91%8f/)
 |  [v2.0](https://github.com/MobilityData/gbfs/blob/v2.0/gbfs.md) | MAJOR  | March 16, 2020 | :white_check_mark: &nbsp;  *Supported*  | [v2.0 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v2.0) | [v2.0 Article](https://mobilitydata.org/whats-new-in-gbfs-v2-0-%f0%9f%9a%b2%f0%9f%9b%b4/) |
-|  [v1.1](https://github.com/MobilityData/gbfs/blob/v1.1/gbfs.md) | MINOR | March 16, 2020 |:white_check_mark: &nbsp; *Supported*  | [v1.1 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v1.1) | |
+|  [v1.1](https://github.com/MobilityData/gbfs/blob/v1.1/gbfs.md) | MINOR | March 16, 2020 |:x: &nbsp; *Deprecated*   | [v1.1 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v1.1) | |
 |  [v1.0](https://github.com/MobilityData/gbfs/blob/v1.0/gbfs.md) | MAJOR  | Prior to October 2019 | :x: &nbsp; *Deprecated*  | [v1.0 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v1.0)| |
  
 ### Full Version History 
@@ -92,11 +92,12 @@ Examples of non-breaking changes include:
 * Adding new enum values
 * Modifying documentation or specification language in a way that clarifies semantics or recommended practices
 
-
-#### Version Release Cycles - Release Deprecation
-See the [Governance](https://github.com/MobilityData/gbfs/blob/master/governance.md#version-release-cycles) for Version Release Cycles.
+#### Release Deprecation
 * GBFS documentation will include a list of current and supported MAJOR and MINOR versions. Supported versions SHALL NOT span more than two MAJOR versions. Past versions that are beyond the two most recent MAJOR versions will be deprecated 180 days after the latest MAJOR version becomes official.
  
+#### Version Release Cycles  
+* See the [Governance](https://github.com/MobilityData/gbfs/blob/master/governance.md#version-release-cycles) for Version Release Cycles.
+
 ## Guiding Principles
 To preserve the original vision of GBFS, the following guiding principles should be taken into consideration when proposing extensions to the spec:
 
