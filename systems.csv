@@ -598,7 +598,6 @@ NL,Donkey Republic Den Haag,Den Haag,donkey_den_haag,https://www.donkey.bike/cit
 NL,Donkey Republic Dordrecht,Dordrecht,donkey_dordrecht,https://www.donkey.bike/cities/bike-rental-dordrecht/,https://stables.donkey.bike/api/public/gbfs/2/donkey_dordrecht/gbfs.json,1.0 ; 2.3,
 NL,Donkey Republic Gorinchem,Gorinchem,donkey_gorinchem,https://www.donkey.bike/,https://stables.donkey.bike/api/public/gbfs/2/donkey_gorinchem/gbfs.json,1.0 ; 2.3,
 NL,Donkey Republic Rotterdam,Rotterdam,donkey_rt,https://www.donkey.bike/nl/steden/deelfietsen-rotterdam/,https://stables.donkey.bike/api/public/gbfs/2/donkey_rt/gbfs.json,1.0 ; 2.3,
-NL,Donkey Republic Rotterdam/Den Haag,Rotterdam,donkey_rotterdam_den_haag,donkeyrepublic.com,https://stables.donkey.bike/api/public/gbfs/2/donkey_rotterdam_den_haag/gbfs,1.0 ; 2.3,
 NL,Donkey Republic Utrecht,Utrecht,donkey_ut,https://www.donkey.bike/cities/bike-rental-utrecht/,https://stables.donkey.bike/api/public/gbfs/2/donkey_ut/gbfs.json,1.0 ; 2.3,
 NL,Donkey Republic Utrechtse Heuvelrug,Utrechtse Heuvelrug,donkey_utrechtse_heuvelrug,https://www.donkey.bike/,https://stables.donkey.bike/api/public/gbfs/2/donkey_utrechtse_heuvelrug/gbfs.json,1.0 ; 2.3,
 NL,GoAbout,Netherlands,goabout,https://goabout.com,https://gbfs.goabout.com/2/gbfs.json,2.0,
