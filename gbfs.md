@@ -62,10 +62,10 @@ This section defines terms that are used throughout this document.
 
 File Name | REQUIRED | Defines
 ---|---|---
-gbfs.json | Yes <br/>*(as of v2.0)* | Auto-discovery file that links to the other files published for the system. To avoid circular references this file MUST NOT contain links to `manifest.json`.
+gbfs.json | REQUIRED <br/>*(as of v2.0)* | Auto-discovery file that links to the other files published for the system. To avoid circular references this file MUST NOT contain links to `manifest.json`.
 manifest.json *(added in v3.0)* | Conditionally REQUIRED | Required of any GBFS dataset provider that publishes more than one GBFS dataset. For example, if you publish one set of files for Berlin and a different set for Paris, this file is REQUIRED. A discovery file containing a comprehensive list of `gbfs.json` URLs for all GBFS datasets published by the provider.
 gbfs_versions.json | OPTIONAL | Lists all feed endpoints published according to versions of the GBFS documentation.
-system_information.json | Yes | Details including system operator, system location, year implemented, URL, contact info, time zone.
+system_information.json | REQUIRED | Details including system operator, system location, year implemented, URL, contact info, time zone.
 vehicle_types.json <br/>*(added in v2.1)* | Conditionally REQUIRED | Describes the types of vehicles that System operator has available for rent. REQUIRED of systems that include information about vehicle types in the `vehicle_status` file. If this file is not included, then all vehicles in the feed are assumed to be non-motorized bicycles.
 station_information.json | Conditionally REQUIRED | List of all stations, their capacities and locations. REQUIRED of systems utilizing docks.
 station_status.json | Conditionally REQUIRED | Number of available vehicles and docks at each station and station availability. REQUIRED of systems utilizing docks.
@@ -213,16 +213,16 @@ Example: The `rental_methods` field contains values `creditcard`, `paypass`, etc
 
   Field Name | REQUIRED | Type | Defines
   ---|---|---|---
-  `text` | Yes | String | The translated text.
-  `language` | Yes | Language | IETF BCP 47 language code.  Must match one of the values specified by the `languages` field in `system_information.json`.
+  `text` | REQUIRED | String | The translated text.
+  `language` | REQUIRED | Language | IETF BCP 47 language code.  Must match one of the values specified by the `languages` field in `system_information.json`.
 
   Most commonly specified as `Array<Localized String>` when specifying translations in multiple languages.  See [Localization](#localization) for more details.
 * <a name="localized-url"></a> Localized URL - A JSON element representing the URL of a resource that has been translated into a specific language. The element consists of the following name-value pairs:
 
   Field Name | REQUIRED | Type | Defines
   ---|---|---|---
-  `text` | Yes | URL | The URL of the translated resource.
-  `language` | Yes | Language | IETF BCP 47 language code.  Must match one of the values specified by the `languages` field in `system_information.json`.
+  `text` | REQUIRED | URL | The URL of the translated resource.
+  `language` | REQUIRED | Language | IETF BCP 47 language code.  Must match one of the values specified by the `languages` field in `system_information.json`.
 
 * Non-negative Float - A 32-bit floating point number greater than or equal to 0.
 * Non-negative Integer - An integer greater than or equal to 0.
@@ -254,10 +254,10 @@ Every JSON file presented in this specification contains the same common header 
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`last_updated` | Yes | Timestamp | Indicates the last time data in the feed was updated. This timestamp represents the publisher's knowledge of the current state of the system at this point in time.
-`ttl` | Yes | Non-negative integer | Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).
-`version` | Yes | String | GBFS version number to which the feed conforms, according to the versioning framework.
-`data` | Yes | Object | Response data in the form of name:value pairs.
+`last_updated` | REQUIRED | Timestamp | Indicates the last time data in the feed was updated. This timestamp represents the publisher's knowledge of the current state of the system at this point in time.
+`ttl` | REQUIRED | Non-negative integer | Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).
+`version` | REQUIRED | String | GBFS version number to which the feed conforms, according to the versioning framework.
+`data` | REQUIRED | Object | Response data in the form of name:value pairs.
 
 **Example:**
 
@@ -286,9 +286,9 @@ The `gbfs.json` discovery file SHOULD represent a single system or geographic ar
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`feeds` | Yes | Array&lt;Object&gt; | An array of all of the feeds that are published by this auto-discovery file.
-`feeds[].name` | Yes | String | Key identifying the type of feed this is. The key MUST be the base file name defined in the spec for the corresponding feed type ( `system_information` for `system_information.json` file, `station_information` for `station_information.json` file).
-`feeds[].url` | Yes | URL | URL for the feed. Note that the actual feed endpoints (urls) may not be defined in the `file_name.json` format. For example, a valid feed endpoint could end with `station_info` instead of `station_information.json`.
+`feeds` | REQUIRED | Array&lt;Object&gt; | An array of all of the feeds that are published by this auto-discovery file.
+`feeds[].name` | REQUIRED | String | Key identifying the type of feed this is. The key MUST be the base file name defined in the spec for the corresponding feed type ( `system_information` for `system_information.json` file, `station_information` for `station_information.json` file).
+`feeds[].url` | REQUIRED | URL | URL for the feed. Note that the actual feed endpoints (urls) may not be defined in the `file_name.json` format. For example, a valid feed endpoint could end with `station_info` instead of `station_information.json`.
 
 **Example:**
 
@@ -321,11 +321,11 @@ The following fields are all attributes within the main `data` object for this f
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`datasets` | Yes | Array&lt;Object&gt; | An array of `datasets` produced by a publisher.
-`datasets[].system_id` | Yes | ID | The `system_id` from `system_information.json` for the corresponding data set(s).
-`datasets[].versions` | Yes | Array&lt;Object&gt; | Contains one object for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number. 
-`datasets[].versions[].version` | Yes | String | The semantic version of the feed in the form `X.Y`.                               
-`datasets[].versions[].url` | Yes  | URL | URL of the corresponding `gbfs.json` endpoint.
+`datasets` | REQUIRED | Array&lt;Object&gt; | An array of `datasets` produced by a publisher.
+`datasets[].system_id` | REQUIRED | ID | The `system_id` from `system_information.json` for the corresponding data set(s).
+`datasets[].versions` | REQUIRED | Array&lt;Object&gt; | Contains one object for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number. 
+`datasets[].versions[].version` | REQUIRED | String | The semantic version of the feed in the form `X.Y`.                               
+`datasets[].versions[].url` | REQUIRED  | URL | URL of the corresponding `gbfs.json` endpoint.
 `datasets[].area` <br/>*(added in v3.1-RC)* | OPTIONAL | GeoJSON MultiPolygon | A GeoJSON MultiPolygon that describes the operating area. If `area` is supplied, then the record describes the general operating area of the system for the purpose of discovery. Geographic details of the system's operating restrictions must be explicitly specified using station locations and geofencing zones, where appropriate.
 `datasets[].country_code` <br/>*(added in v3.1-RC)* | OPTIONAL | Country Code | The ISO 3166-1 alpha-2 country code of the operating area. The field MUST NOT be specified if the operating area spans multiple countries.
 
@@ -455,9 +455,9 @@ The following fields are all attributes within the main `data` object for this f
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`versions` | Yes | Array&lt;Object&gt; | Contains one object for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number.
-`versions[].version` | Yes | String | The semantic version of the feed in the form `X.Y`.
-`versions[].url` | Yes | URL | URL of the corresponding gbfs.json endpoint.
+`versions` | REQUIRED | Array&lt;Object&gt; | Contains one object for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number.
+`versions[].version` | REQUIRED | String | The semantic version of the feed in the form `X.Y`.
+`versions[].url` | REQUIRED | URL | URL of the corresponding gbfs.json endpoint.
 
 **Example:**
 
@@ -487,10 +487,10 @@ The following fields are all attributes within the main `data` object for this f
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`system_id` | Yes | ID | This is a globally unique identifier for the vehicle share system. Each distinct system or geographic area in which vehicles are operated MUST have its own unique `system_id`. It is up to the publisher of the feed to guarantee uniqueness and MUST be checked against existing `system_id` fields in  [systems.csv](https://github.com/MobilityData/gbfs/blob/master/systems.csv) to ensure this. This value is intended to remain the same over the life of the system. <br><br> System IDs SHOULD be recognizable as belonging to a particular system as opposed to random strings - for example, `bcycle_austin` or `biketown_pdx`.
-`languages` <br/>*(added of v3.0)* | Yes | Array&lt;Language&gt; | List of languages used in translated strings.
-`name` <br/>*(as of v3.0)* | Yes | Array&lt;Localized String&gt; | Name of the system to be displayed to customers.
-`opening_hours` <br/>*(added in v3.0)*| Yes | String | Hours and dates of operation for the system in [OSM opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) format. *(added in v3.0)*
+`system_id` | REQUIRED | ID | This is a globally unique identifier for the vehicle share system. Each distinct system or geographic area in which vehicles are operated MUST have its own unique `system_id`. It is up to the publisher of the feed to guarantee uniqueness and MUST be checked against existing `system_id` fields in  [systems.csv](https://github.com/MobilityData/gbfs/blob/master/systems.csv) to ensure this. This value is intended to remain the same over the life of the system. <br><br> System IDs SHOULD be recognizable as belonging to a particular system as opposed to random strings - for example, `bcycle_austin` or `biketown_pdx`.
+`languages` <br/>*(added of v3.0)* | REQUIRED | Array&lt;Language&gt; | List of languages used in translated strings.
+`name` <br/>*(as of v3.0)* | REQUIRED | Array&lt;Localized String&gt; | Name of the system to be displayed to customers.
+`opening_hours` <br/>*(added in v3.0)*| REQUIRED | String | Hours and dates of operation for the system in [OSM opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) format. *(added in v3.0)*
 `short_name` *(as of v3.0)* | OPTIONAL | Array&lt;Localized String&gt; | Abbreviation for a system.
 `operator` <br/>*(as of v3.0)* | OPTIONAL | Array&lt;Localized String&gt; | Name of the system operator.
 `url` | OPTIONAL | URL | The URL of the vehicle share system.
@@ -499,9 +499,9 @@ Field Name | REQUIRED | Type | Defines
 `termination_date` <br/>*(added in v3.0)* | OPTIONAL | Date | Date after which this data source will no longer be available to consuming applications.<br><br>This OPTIONAL field SHOULD be used to notify 3rd party data consumers when a service is planning a permanent (non-seasonal) shutdown. Publishers SHOULD include this date in their feeds as soon as they know of an impending shutdown. Publishers SHOULD continue to publish feeds for 30 days following a permanent shutdown after which they SHOULD return a helpful http status code and text, for example `410 service no longer available ...` for all feed endpoint URLs.
 `phone_number` <br/>*(as of v3.0)* | OPTIONAL | Phone Number | This OPTIONAL field SHOULD contain a single voice telephone number for the specified system’s customer service department. MUST be in [E.164](https://www.itu.int/rec/T-REC-E.164-201011-I/en) format as defined in [Field Types](#field-types). 
 `email` | OPTIONAL | Email | This OPTIONAL field SHOULD contain a single contact email address actively monitored by the operator’s customer service department. This email address SHOULD be a direct contact point where riders can reach a customer service representative.
-`feed_contact_email` | Yes <br/>*(as of v3.0)* | Email | This field MUST contain a single contact email for feed consumers to report issues with the feed. This email address SHOULD point to a stable email address, that does not correspond to an individual but rather the team or company that manages GBFS feeds.
+`feed_contact_email` | REQUIRED <br/>*(as of v3.0)* | Email | This field MUST contain a single contact email for feed consumers to report issues with the feed. This email address SHOULD point to a stable email address, that does not correspond to an individual but rather the team or company that manages GBFS feeds.
 `manifest_url` <br/>*(added in v3.0)* | Conditionally REQUIRED | URL | REQUIRED if the producer publishes datasets for more than one system geography, for example Berlin and Paris. A fully qualified URL pointing to the [manifest.json](#manifestjson) file for the publisher.
-`timezone` | Yes | Timezone | The time zone where the system is located.
+`timezone` | REQUIRED | Timezone | The time zone where the system is located.
 `license_id` <br/>*(added in v3.0)* | Conditionally REQUIRED | String | REQUIRED if the dataset is provided under a standard license. An identifier for a standard license from the [SPDX License List](https://spdx.org/licenses/). Provide `license_id` rather than `license_url` if the license is included in the SPDX License List. See the GBFS wiki for a [comparison of a subset of standard licenses](https://github.com/MobilityData/gbfs/blob/master/data-licenses.md). If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
 `license_url` | Conditionally REQUIRED <br/>*(as of v3.0)* | URL | REQUIRED if the dataset is provided under a customized license. A fully qualified URL of a page that defines the license terms for the GBFS data for this system. Do not specify a `license_url` if `license_id` is specified. If the `license_id` and `license_url` fields are blank or omitted, this indicates that the feed is provided under the [Creative Commons Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode). *(as of v3.0)*
 `attribution_organization_name` <br/>*(added in v3.0)* | OPTIONAL | Array&lt;Localized String&gt; | If the feed license requires attribution, name of the organization to which attribution should be provided.
@@ -605,13 +605,13 @@ REQUIRED of systems that include information about vehicle types in the `vehicle
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`vehicle_types` | Yes | Array&lt;Object&gt; | Contains one object per vehicle type.
-`vehicle_types[].vehicle_type_id` | Yes | ID | Unique identifier of a vehicle type. See [Field Types](#field-types) above for ID field requirements.
-`vehicle_types[].form_factor` | Yes | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`cargo_bicycle` *(added in v2.3)*</li><li>`car`</li><li>`moped`</li><li>`scooter_standing` *(standing kick scooter, added in v2.3)*</li><li>`scooter_seated` *(this is a kick scooter with a seat, not to be confused with `moped`, added in v2.3)*</li><li>`other`</li></ul>
+`vehicle_types` | REQUIRED | Array&lt;Object&gt; | Contains one object per vehicle type.
+`vehicle_types[].vehicle_type_id` | REQUIRED | ID | Unique identifier of a vehicle type. See [Field Types](#field-types) above for ID field requirements.
+`vehicle_types[].form_factor` | REQUIRED | Enum | The vehicle's general form factor. <br /><br />Current valid values are:<br /><ul><li>`bicycle`</li><li>`cargo_bicycle` *(added in v2.3)*</li><li>`car`</li><li>`moped`</li><li>`scooter_standing` *(standing kick scooter, added in v2.3)*</li><li>`scooter_seated` *(this is a kick scooter with a seat, not to be confused with `moped`, added in v2.3)*</li><li>`other`</li></ul>
 `vehicle_types[].rider_capacity`<br/>*(added in v2.3)* | OPTIONAL | Non-negative integer | The number of riders (driver included) the vehicle can legally accommodate.
 `vehicle_types[].cargo_volume_capacity`<br/>*(added in v2.3)* | OPTIONAL | Non-negative integer | Cargo volume available in the vehicle, expressed in liters. For cars, it corresponds to the space between the boot floor, including the storage under the hatch, to the rear shelf in the trunk.
 `vehicle_types[].cargo_load_capacity`<br/>*(added in v2.3)* | OPTIONAL | Non-negative integer | The capacity of the vehicle cargo space (excluding passengers), expressed in kilograms.
-`vehicle_types[].propulsion_type` | Yes | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides electric motor assist only in combination with human propulsion - no throttle mode)_</li><li>`electric` _(Powered by battery-powered electric motor with throttle mode)_</li><li>`combustion` _(Powered by gasoline combustion engine)_</li><li>`combustion_diesel` _(Powered by diesel combustion engine, added in v2.3)_</li><li>`hybrid` _(Powered by combined combustion engine and battery-powered motor, added in v2.3)_</li><li>`plug_in_hybrid` _(Powered by combined combustion engine and battery-powered motor with plug-in charging, added in v2.3)_</li><li>`hydrogen_fuel_cell` _(Powered by hydrogen fuel cell powered electric motor, added in v2.3)_</li></ul> This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/main/general-information.md#propulsion-types).
+`vehicle_types[].propulsion_type` | REQUIRED | Enum | The primary propulsion type of the vehicle. <br /><br />Current valid values are:<br /><ul><li>`human` _(Pedal or foot propulsion)_</li><li>`electric_assist` _(Provides electric motor assist only in combination with human propulsion - no throttle mode)_</li><li>`electric` _(Powered by battery-powered electric motor with throttle mode)_</li><li>`combustion` _(Powered by gasoline combustion engine)_</li><li>`combustion_diesel` _(Powered by diesel combustion engine, added in v2.3)_</li><li>`hybrid` _(Powered by combined combustion engine and battery-powered motor, added in v2.3)_</li><li>`plug_in_hybrid` _(Powered by combined combustion engine and battery-powered motor with plug-in charging, added in v2.3)_</li><li>`hydrogen_fuel_cell` _(Powered by hydrogen fuel cell powered electric motor, added in v2.3)_</li></ul> This field was inspired by, but differs from the propulsion types field described in the [Open Mobility Foundation Mobility Data Specification](https://github.com/openmobilityfoundation/mobility-data-specification/blob/main/general-information.md#propulsion-types).
 `vehicle_types[].eco_labels`<br/>*(as of v3.0)* | OPTIONAL | Array&lt;Object&gt; | Vehicle air quality certificate. Official anti-pollution certificate, based on the information on the vehicle's registration certificate, attesting to its level of pollutant emissions based on a defined standard. In Europe, for example, it is the European emission standard. The aim of this measure is to encourage the use of the least polluting vehicles by allowing them to drive during pollution peaks or in low emission zones.
 `vehicle_types[].eco_labels[].country_code`<br/>*(added in v2.3)*| REQUIRED | Country code | Country where the `eco_sticker` applies.
 `vehicle_types[].eco_labels[].eco_sticker`<br/>*(added in v2.3)* | REQUIRED | String | Name of the eco label. The name must be written in lowercase, separated by an underscore.<br /><br />Example of `eco_sticker` in Europe :<ul><li>CritAirLabel (France) <ul><li>critair</li><li>critair_1</li><li>critair_2</li><li>critair_3</li><li>critair_4</li><li>critair_5</li></ul></li><li>UmweltPlakette (Germany)<ul><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li><li>euro_6</li><li>euro_6_temp</li><li>euro_E</li></ul></li><li>UmweltPickerl (Austria)<ul><li>euro_1</li><li>euro_2</li><li>euro_3</li><li>euro_4</li><li>euro_5</li></ul><li>Reg_certificates (Belgium)<ul><li>reg_certificates</li></ul><li>Distintivo_ambiental (Spain)<ul><li>0</li><li>eco</li><li>b</li><li>c</li></ul></li></ul>
@@ -788,12 +788,12 @@ All stations included in `station_information.json` are considered public (meani
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`stations` | Yes | Array&lt;Object&gt; | Contains one object per station.
-`stations[].station_id` | Yes | ID | Identifier of a station.
-`stations[].name` <br/>*(as of v3.0)* | Yes | Array&lt;Localized String&gt; | The public name of the station for display in maps, digital signage, and other text applications. Names SHOULD reflect the station location through the use of a cross street or local landmark. Abbreviations SHOULD NOT be used for names and other text (for example, "St." for "Street") unless a location is called by its abbreviated name (for example, “JFK Airport”). See [Text Fields and Naming](#text-fields-and-naming). <br>Examples: <ul><li>Broadway and East 22nd Street</li><li>Convention Center</li><li>Central Park South</li></ul>.
+`stations` | REQUIRED | Array&lt;Object&gt; | Contains one object per station.
+`stations[].station_id` | REQUIRED | ID | Identifier of a station.
+`stations[].name` <br/>*(as of v3.0)* | REQUIRED | Array&lt;Localized String&gt; | The public name of the station for display in maps, digital signage, and other text applications. Names SHOULD reflect the station location through the use of a cross street or local landmark. Abbreviations SHOULD NOT be used for names and other text (for example, "St." for "Street") unless a location is called by its abbreviated name (for example, “JFK Airport”). See [Text Fields and Naming](#text-fields-and-naming). <br>Examples: <ul><li>Broadway and East 22nd Street</li><li>Convention Center</li><li>Central Park South</li></ul>.
 `stations[].short_name` <br/>*(as of v3.0)*  | OPTIONAL | Array&lt;Localized String&gt; | Short name or other type of identifier.
-`stations[].lat` | Yes | Latitude | Latitude of the station in decimal degrees. This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
-`stations[].lon` | Yes | Longitude | Longitude of the station in decimal degrees. This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
+`stations[].lat` | REQUIRED | Latitude | Latitude of the station in decimal degrees. This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
+`stations[].lon` | REQUIRED | Longitude | Longitude of the station in decimal degrees. This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 `stations[].address` | OPTIONAL | String | Address (street number and name) where station is located. This MUST be a valid address, not a free-form text description. Example: 1234 Main Street
 `stations[].cross_street` | OPTIONAL | String | Cross street or landmark where the station is located.
 `stations[].region_id` | OPTIONAL | ID | Identifier of the region where station is located. See [system_regions.json](#system_regionsjson).
@@ -930,22 +930,22 @@ Describes the capacity and rental availability of a station. Data returned SHOUL
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`stations` | Yes | Array&lt;Object&gt; | Contains one object per station.
-`stations[].station_id` | Yes | ID | Identifier of a station. See [station_information.json](#station_informationjson).
-`stations[].num_vehicles_available` | Yes | Non-negative integer | Number of functional vehicles physically at the station that may be offered for rental. To know if the vehicles are available for rental, see `is_renting`. <br/><br/>If `is_renting` = `true` this is the number of vehicles that are currently available for rent. If `is_renting` =`false` this is the number of vehicles that would be available for rent if the station were set to allow rentals.
+`stations` | REQUIRED | Array&lt;Object&gt; | Contains one object per station.
+`stations[].station_id` | REQUIRED | ID | Identifier of a station. See [station_information.json](#station_informationjson).
+`stations[].num_vehicles_available` | REQUIRED | Non-negative integer | Number of functional vehicles physically at the station that may be offered for rental. To know if the vehicles are available for rental, see `is_renting`. <br/><br/>If `is_renting` = `true` this is the number of vehicles that are currently available for rent. If `is_renting` =`false` this is the number of vehicles that would be available for rent if the station were set to allow rentals.
 `stations[].vehicle_types_available` <br/>*(added in v2.1)* | Conditionally REQUIRED | Array&lt;Object&gt; | REQUIRED if the [vehicle_types.json](#vehicle_typesjson) file has been defined. This field's value is an array of objects. Each of these objects is used to model the total number of each defined vehicle type available at a station. The total number of vehicles from each of these objects SHOULD add up to match the value specified in the `num_vehicles_available`  field.
-`stations[].vehicle_types_available[].vehicle_type_id` <br/>*(added in v2.1)* | Yes | ID | The `vehicle_type_id` of each vehicle type at the station as described in [vehicle_types.json](#vehicle_typesjson). A vehicle type not available at the station can be omitted from the list or specified with `count` = `0`.
-`stations[].vehicle_types_available[].count` <br/>*(added in v2.1)* | Yes | Non-negative integer | A number representing the total number of available vehicles of the corresponding `vehicle_type_id` as defined in [vehicle_types.json](#vehicle_typesjson) at the station.
+`stations[].vehicle_types_available[].vehicle_type_id` <br/>*(added in v2.1)* | REQUIRED | ID | The `vehicle_type_id` of each vehicle type at the station as described in [vehicle_types.json](#vehicle_typesjson). A vehicle type not available at the station can be omitted from the list or specified with `count` = `0`.
+`stations[].vehicle_types_available[].count` <br/>*(added in v2.1)* | REQUIRED | Non-negative integer | A number representing the total number of available vehicles of the corresponding `vehicle_type_id` as defined in [vehicle_types.json](#vehicle_typesjson) at the station.
 `stations[].num_vehicles_disabled` | OPTIONAL | Non-negative integer | Number of disabled vehicles of any type at the station. Vendors who do not want to publicize the number of disabled vehicles or docks in their system can opt to omit station `capacity` (in [station_information.json](#station_informationjson), `num_vehicles_disabled`, and `num_docks_disabled` *(as of v2.0)*. If station `capacity` is published, then broken docks/vehicles can be inferred (though not specifically whether the decreased capacity is a broken vehicle or dock).
 `stations[].num_docks_available` | Conditionally REQUIRED <br/>*(as of v2.0)* | Non-negative integer | REQUIRED except for stations that have unlimited docking capacity (e.g. virtual stations) *(as of v2.0)*. Number of functional docks physically at the station that are able to accept vehicles for return. To know if the docks are accepting vehicle returns, see `is_returning`. <br /><br/> If `is_returning` = `true` this is the number of docks that are currently available to accept vehicle returns. If `is_returning` = `false` this is the number of docks that would be available if the station were set to allow returns.
 `stations[].vehicle_docks_available` <br/>*(added in v2.1)* | Conditionally REQUIRED | Array&lt;Object&gt; | This field is REQUIRED in feeds where the [vehicle_types.json](#vehicle_typesjson) is defined and where certain docks are only able to accept certain vehicle types. If every dock at the station is able to accept any vehicle type, then this field is not REQUIRED. This field's value is an array of objects. Each of these objects is used to model the number of docks available for certain vehicle types. The total number of docks from each of these objects SHOULD add up to match the value specified in the `num_docks_available` field.
 `stations[].vehicle_docks_available[].vehicle_type_ids` <br/>*(added in v2.1)* | REQUIRED | Array&lt;ID&gt; | An array of `vehicle_type_ids` that are able to use a particular type of dock at the station
 `stations[].vehicle_docks_available[].count` <br/>*(added in v2.1)* | REQUIRED | Non-negative integer | A number representing the total number of available vehicles of the corresponding vehicle type as defined in the `vehicle_types` array at the station that can accept vehicles of the specified types in the `vehicle_types` array.
 `stations[].num_docks_disabled` | OPTIONAL | Non-negative integer | Number of disabled dock points at the station.
-`stations[].is_installed` | Yes | Boolean | Is the station currently on the street?<br/><br/>`true` - Station is installed on the street.<br/>`false` - Station is not installed on the street.<br/><br/>Boolean SHOULD be set to `true` when equipment is present on the street. In seasonal systems where equipment is removed during winter, boolean SHOULD be set to `false` during the off season. May also be set to false to indicate planned (future) stations which have not yet been installed.
-`stations[].is_renting` | Yes | Boolean | Is the station currently renting vehicles? <br /><br />`true` - Station is renting vehicles. Even if the station is empty, if it would otherwise allow rentals, this value MUST be `true`.<br/>`false` - Station is not renting vehicles.<br/><br/>If the station is temporarily taken out of service and not allowing rentals, this field MUST be set to `false`.<br/><br/>If a station becomes inaccessible to users due to road construction or other factors this field SHOULD be set to `false`. Field SHOULD be set to `false` during hours or days when the system is not offering vehicles for rent.
-`stations[].is_returning` | Yes | Boolean | Is the station accepting vehicle returns? <br /><br />`true` - Station is accepting vehicle returns. Even if the station is full, if it would otherwise allow vehicle returns, this value MUST be `true`.<br /> `false` - Station is not accepting vehicle returns.<br/><br/>If the station is temporarily taken out of service and not allowing vehicle returns, this field MUST be set to `false`.<br/><br/>If a station becomes inaccessible to users due to road construction or other factors, this field SHOULD be set to `false`.
-`stations[].last_reported` | Yes | Timestamp | The last time this station reported its status to the operator's backend.
+`stations[].is_installed` | REQUIRED | Boolean | Is the station currently on the street?<br/><br/>`true` - Station is installed on the street.<br/>`false` - Station is not installed on the street.<br/><br/>Boolean SHOULD be set to `true` when equipment is present on the street. In seasonal systems where equipment is removed during winter, boolean SHOULD be set to `false` during the off season. May also be set to false to indicate planned (future) stations which have not yet been installed.
+`stations[].is_renting` | REQUIRED | Boolean | Is the station currently renting vehicles? <br /><br />`true` - Station is renting vehicles. Even if the station is empty, if it would otherwise allow rentals, this value MUST be `true`.<br/>`false` - Station is not renting vehicles.<br/><br/>If the station is temporarily taken out of service and not allowing rentals, this field MUST be set to `false`.<br/><br/>If a station becomes inaccessible to users due to road construction or other factors this field SHOULD be set to `false`. Field SHOULD be set to `false` during hours or days when the system is not offering vehicles for rent.
+`stations[].is_returning` | REQUIRED | Boolean | Is the station accepting vehicle returns? <br /><br />`true` - Station is accepting vehicle returns. Even if the station is full, if it would otherwise allow vehicle returns, this value MUST be `true`.<br /> `false` - Station is not accepting vehicle returns.<br/><br/>If the station is temporarily taken out of service and not allowing vehicle returns, this field MUST be set to `false`.<br/><br/>If a station becomes inaccessible to users due to road construction or other factors, this field SHOULD be set to `false`.
+`stations[].last_reported` | REQUIRED | Timestamp | The last time this station reported its status to the operator's backend.
 
 **Example:**
 
@@ -1029,12 +1029,12 @@ Field Name | REQUIRED | Type | Defines
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`vehicles`<br />*(as of v3.0)*  | Yes | Array&lt;Object&gt; | Contains one object per vehicle that is currently deployed in the field and not part of an active rental.
-`vehicles[].vehicle_id`<br />*(as of v3.0)*  | Yes | ID | Identifier of a vehicle. The `vehicle_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `vehicle_id` identifier SHOULD only be rotated once per trip.
+`vehicles`<br />*(as of v3.0)*  | REQUIRED | Array&lt;Object&gt; | Contains one object per vehicle that is currently deployed in the field and not part of an active rental.
+`vehicles[].vehicle_id`<br />*(as of v3.0)*  | REQUIRED | ID | Identifier of a vehicle. The `vehicle_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `vehicle_id` identifier SHOULD only be rotated once per trip.
 `vehicles[].lat` | Conditionally REQUIRED <br/>*(as of v2.1)* | Latitude | Latitude of the vehicle in decimal degrees. *(as of v2.1)* REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 `vehicles[].lon` | Conditionally REQUIRED <br/>*(as of v2.1)* | Longitude | Longitude of the vehicle in decimal degrees. *(as of v2.1)* REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
-`vehicles[].is_reserved` | Yes | Boolean | Is the vehicle currently reserved? <br /><br /> `true` - Vehicle is currently reserved. <br /> `false` - Vehicle is not currently reserved.
-`vehicles[].is_disabled` | Yes | Boolean | Is the vehicle currently disabled? <br /><br /> `true` - Vehicle is currently disabled. <br /> `false` - Vehicle is not currently disabled.<br><br>This field is used to indicate vehicles that are in the field but not available for rental due to a mechanical issue or low battery etc. Publishing this data may prevent users from attempting to rent vehicles that are disabled and not available for rental. This field SHOULD NOT be set to `true` when the system is closed for vehicles that would otherwise be rentable. 
+`vehicles[].is_reserved` | REQUIRED | Boolean | Is the vehicle currently reserved? <br /><br /> `true` - Vehicle is currently reserved. <br /> `false` - Vehicle is not currently reserved.
+`vehicles[].is_disabled` | REQUIRED | Boolean | Is the vehicle currently disabled? <br /><br /> `true` - Vehicle is currently disabled. <br /> `false` - Vehicle is not currently disabled.<br><br>This field is used to indicate vehicles that are in the field but not available for rental due to a mechanical issue or low battery etc. Publishing this data may prevent users from attempting to rent vehicles that are disabled and not available for rental. This field SHOULD NOT be set to `true` when the system is closed for vehicles that would otherwise be rentable. 
 `vehicles[].rental_uris` | OPTIONAL | Object | JSON object that contains rental URIs for Android, iOS, and web in the `android`, `ios`, and `web` fields. See [examples](#deep-links-examples) of how to use these fields and [supported analytics](#analytics).
 `vehicles[].rental_uris.android` | OPTIONAL | URI | URI that can be passed to an Android app with an android.intent.action.VIEW Android intent to support Android Deep Links (https://developer.android.com/training/app-links/deep-linking). Please use Android App Links (https://developer.android.com/training/app-links) if possible, so viewing apps do not need to manually manage the redirect of the user to the app store if the user does not have the application installed. <br><br>This URI SHOULD be a deep link specific to this vehicle, and SHOULD NOT be a general rental page that includes information for more than one vehicle. The deep link SHOULD take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application. Note that providers MUST rotate identifiers within deep links after each rental to avoid unintentionally exposing private vehicle trip origins and destinations.<br><br>If this field is empty, it means deep linking is not supported in the native Android rental app.<br><br>Note that the URI does not necessarily include the `vehicle_id` for this vehicle - other identifiers can be used by the rental app within the URI to uniquely identify this vehicle. <br><br>See the [Analytics](#analytics) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>Android App Links example value: `https://www.example.com/app?sid=1234567890&platform=android` <br><br>Deep Link (without App Links) example value: `com.example.android://open.example.app/app?sid=1234567890`
 `vehicles[].rental_uris.ios` | OPTIONAL | URI | URI that can be used on iOS to launch the rental app for this vehicle. More information on this iOS feature can be found [here](https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/communicating_with_other_apps_using_custom_urls?language=objc). Please use iOS Universal Links (https://developer.apple.com/ios/universal-links/) if possible, so viewing apps provide a fallback web experience if the application is not installed. <br><br>This URI SHOULD be a deep link specific to this vehicle, and SHOULD NOT be a general rental page that includes information for more than one vehicle.  The deep link SHOULD take users directly to this vehicle, without any prompts, interstitial pages, or logins. Make sure that users can see this vehicle even if they never previously opened the application. Note that providers MUST rotate identifiers within deep links after each rental to avoid unintentionally exposing private vehicle trip origins and destinations. <br><br>If this field is empty, it means deep linking is not supported in the native iOS rental app.<br><br>Note that the URI does not necessarily include the `vehicle_id` - other identifiers can be used by the rental app within the URL to uniquely identify this vehicle. <br><br>See the [Analytics](#analytics) section for how viewing apps can report the origin of the deep link to rental apps. <br><br>iOS Universal Links example value: `https://www.example.com/app?sid=1234567890&platform=ios` <br><br>Deep Link (without Universal Links) example value: `com.example.ios://open.example.app/app?sid=1234567890`
@@ -1147,9 +1147,9 @@ Describes regions for a system. Regions are a subset of a shared mobility system
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`regions` | Yes | Array&lt;Object&gt; | Contains one object per region.
-`regions[].region_id` | Yes | ID | Identifier for the region.
-`regions[].name` <br/>*(as of v3.0)* | Yes | Array&lt;Localized String&gt; | Public name for this region.
+`regions` | REQUIRED | Array&lt;Object&gt; | Contains one object per region.
+`regions[].region_id` | REQUIRED | ID | Identifier for the region.
+`regions[].name` <br/>*(as of v3.0)* | REQUIRED | Array&lt;Localized String&gt; | Public name for this region.
 
 **Example:**
 
@@ -1207,16 +1207,16 @@ Describes pricing for the system. <br/>The following fields are all attributes w
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`plans` | Yes | Array&lt;Object&gt; | Contains one object per pricing plan.
-`plans[].plan_id` | Yes | ID | Identifier for a pricing plan in the system.
+`plans` | REQUIRED | Array&lt;Object&gt; | Contains one object per pricing plan.
+`plans[].plan_id` | REQUIRED | ID | Identifier for a pricing plan in the system.
 `plans[].url` | OPTIONAL | URL | URL where the customer can learn more about this pricing plan.
-`plans[].name` <br/>*(as of v3.0)* | Yes | Array&lt;Localized String&gt; | Name of this pricing plan.
-`plans[].currency` | Yes | String | Currency used to pay the fare. <br /><br /> This pricing is in ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217 <br />(for example, `CAD` for Canadian dollars, `EUR` for euros, or `JPY` for Japanese yen.)
-`plans[].price` | Yes | Non-Negative Float | Fare price, in the unit specified by `currency`. <br/>*(added in v2.2)* In case of non-rate price, this field is the total price. In case of rate price, this field is the base price that is charged only once per trip (typically the price for unlocking) in addition to `per_km_pricing` and/or `per_min_pricing`.
+`plans[].name` <br/>*(as of v3.0)* | REQUIRED | Array&lt;Localized String&gt; | Name of this pricing plan.
+`plans[].currency` | REQUIRED | String | Currency used to pay the fare. <br /><br /> This pricing is in ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217 <br />(for example, `CAD` for Canadian dollars, `EUR` for euros, or `JPY` for Japanese yen.)
+`plans[].price` | REQUIRED | Non-Negative Float | Fare price, in the unit specified by `currency`. <br/>*(added in v2.2)* In case of non-rate price, this field is the total price. In case of rate price, this field is the base price that is charged only once per trip (typically the price for unlocking) in addition to `per_km_pricing` and/or `per_min_pricing`.
 `plans[].reservation_price_per_min` <br/>*(added in v3.1-RC)* | OPTIONAL | Non-Negative Float | The cost, described as per minute rate, to reserve the vehicle prior to beginning a rental. This amount is charged for each minute of the vehicle reservation until the rental is initiated, or until the number of minutes defined in `vehicle_types.json#default_reserve_time` elapses, whichever comes first. When using this field, you MUST declare a value in `vehicle_types.json#default_reserve_time`. This field MUST NOT be combined in a single pricing plan with `reservation_price_flat_rate`.
 `plans[].reservation_price_flat_rate` <br/>*(added in v3.1-RC)* | OPTIONAL | Non-Negative Float | The cost, described as a flat rate, to reserve the vehicle prior to beginning a rental. This amount is charged once to reserve the vehicle for the duration of the time defined by `vehicle_types.json#default_reserve_time`. When using this field, you MUST declare a value in `vehicle_types.json#default_reserve_time`. This field MUST NOT be combined in a single pricing plan with `reservation_price_per_min`.
-`plans[].is_taxable` | Yes | Boolean | Will additional tax be added to the base price?<br /><br />`true` - Yes.<br />  `false` - No.  <br /><br />`false` MAY be used to indicate that tax is not charged or that tax is included in the base price.
-`plans[].description` <br/>*(as of v3.0)* | Yes | Array&lt;Localized String&gt; | Customer-readable description of the pricing plan. This SHOULD include the duration, price, conditions, etc. that the publisher would like users to see.
+`plans[].is_taxable` | REQUIRED | Boolean | Will additional tax be added to the base price?<br /><br />`true` - Yes.<br />  `false` - No.  <br /><br />`false` MAY be used to indicate that tax is not charged or that tax is included in the base price.
+`plans[].description` <br/>*(as of v3.0)* | REQUIRED | Array&lt;Localized String&gt; | Customer-readable description of the pricing plan. This SHOULD include the duration, price, conditions, etc. that the publisher would like users to see.
 `plans[].per_km_pricing` <br/>*(added in v2.2)* | OPTIONAL | Array&lt;Object&gt; | Array of segments when the price is a function of distance traveled, displayed in kilometers.<br /><br />Total cost is the addition of `price` and all segments in `per_km_pricing` and `per_min_pricing`. If this array is not provided, there are no variable costs based on distance.
 `plans[].per_km_pricing[].start` <br/>*(added in v2.2)* | REQUIRED | Non-Negative Integer | The kilometer at which this segment rate starts being charged *(inclusive)*.
 `plans[].per_km_pricing[].rate` <br/>*(added in v2.2)* | REQUIRED | Float | Rate that is charged for each kilometer `interval` after the `start`. Can be a negative number, which indicates that the traveler will receive a discount.
@@ -1337,16 +1337,16 @@ Obsolete alerts SHOULD be removed so the client application can safely present t
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`alerts` | Yes | Array&lt;Object&gt; | Contains one object per system alert.
-`alerts[].alert_id` | Yes | ID | Identifier for this alert.
-`alerts[].type` | Yes | Enum | Valid values are:<br /><br /><ul><li>`system_closure`</li><li>`station_closure`</li><li>`station_move`</li><li>`other`</li></ul>
+`alerts` | REQUIRED | Array&lt;Object&gt; | Contains one object per system alert.
+`alerts[].alert_id` | REQUIRED | ID | Identifier for this alert.
+`alerts[].type` | REQUIRED | Enum | Valid values are:<br /><br /><ul><li>`system_closure`</li><li>`station_closure`</li><li>`station_move`</li><li>`other`</li></ul>
 `alerts[].times` | OPTIONAL | Array&lt;Object&gt; | The fields `start` and `end` indicate when the alert is in effect (for example, when the system or station is actually closed, or when a station is scheduled to be moved).
 `alerts[].times[].start` | REQUIRED | Timestamp | Start time of the alert.
 `alerts[].times[].end` | OPTIONAL | Timestamp | End time of the alert. If there is currently no end time planned for the alert, this can be omitted.
 `alerts[].station_ids` | OPTIONAL | Array&lt;ID&gt; | If this is an alert that affects one or more stations, include their ID(s). Otherwise omit this field. If both `station_ids` and `region_ids` are omitted, this alert affects the entire system.
 `alerts[].region_ids` | OPTIONAL | Array&lt;ID&gt; | If this system has regions, and if this alert only affects certain regions, include their ID(s). Otherwise, omit this field. If both `station_ids` and `region_ids` are omitted, this alert affects the entire system.
 `alerts[].url` <br/>*(as of v3.0)* | OPTIONAL | Array&lt;Localized URL&gt; | A fully qualified URL where the customer can learn more information about this alert.
-`alerts[].summary` <br/>*(as of v3.0)*  | Yes | Array&lt;Localized String&gt; | A short summary of this alert to be displayed to the customer.
+`alerts[].summary` <br/>*(as of v3.0)*  | REQUIRED | Array&lt;Localized String&gt; | A short summary of this alert to be displayed to the customer.
 `alerts[].description` <br/>*(as of v3.0)*  | OPTIONAL | Array&lt;Localized String&gt; | Detailed description of the alert.
 `alerts[].last_updated` | OPTIONAL | Timestamp | Indicates the last time the info for the alert was updated.
 
@@ -1412,17 +1412,17 @@ The following fields are all attributes within the main `data` object for this f
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
-`geofencing_zones` | Yes | GeoJSON FeatureCollection | Each geofenced zone and its associated rules and attributes is described as an object within the array of features, as follows.
-`geofencing_zones[].type` | Yes | String | “FeatureCollection” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
-`geofencing_zones[].features` | Yes | Array&lt;Object&gt; | An array of GeoJSON Feature representing the geofenced zone.
-`geofencing_zones[].features[].type` | Yes | String | “Feature” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
-`geofencing_zones[].features[].geometry` | Yes | GeoJSON MultiPolygon | A polygon that describes where rides may or may not be able to start, end, go through, or have other limitations or affordances. Rules may only apply to the interior of a polygon. All geofencing zones contained in this list are public (meaning they can be displayed on a map for public use).
-`geofencing_zones[].features[].properties` | Yes | Object | Travel allowances and limitations.
+`geofencing_zones` | REQUIRED | GeoJSON FeatureCollection | Each geofenced zone and its associated rules and attributes is described as an object within the array of features, as follows.
+`geofencing_zones[].type` | REQUIRED | String | “FeatureCollection” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
+`geofencing_zones[].features` | REQUIRED | Array&lt;Object&gt; | An array of GeoJSON Feature representing the geofenced zone.
+`geofencing_zones[].features[].type` | REQUIRED | String | “Feature” (as per IETF [RFC 7946](https://tools.ietf.org/html/rfc7946#section-3.3)).
+`geofencing_zones[].features[].geometry` | REQUIRED | GeoJSON MultiPolygon | A polygon that describes where rides may or may not be able to start, end, go through, or have other limitations or affordances. Rules may only apply to the interior of a polygon. All geofencing zones contained in this list are public (meaning they can be displayed on a map for public use).
+`geofencing_zones[].features[].properties` | REQUIRED | Object | Travel allowances and limitations.
 `geofencing_zones[].features[].properties.name` <br/>*(as of v3.0)*  | OPTIONAL | Array&lt;Localized String&gt; | Public name of the geofencing zone.
 `geofencing_zones[].features[].properties.start` | OPTIONAL | Timestamp | Start time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
 `geofencing_zones[].features[].properties.end` | OPTIONAL | Timestamp | End time of the geofencing zone. If the geofencing zone is always active, this can be omitted.
 `geofencing_zones[].features[].properties.rules` | OPTIONAL | Array&lt;[Rule](#geofencing-rule-object)&gt; | Array of [Rule](#geofencing-rule-object) objects defining restrictions that apply within the area of the polygon.  See [Geofencing Rule Precedence](#geofencing-rule-precedence) for details on semantics of overlapping polygons, vehicle types, and other precedence rules.
-`global_rules` <br/>*(added in v3.0)* | Yes | Array&lt;[Rule](#geofencing-rule-object)&gt; | Array of [Rule](#geofencing-rule-object) objects defining restrictions that apply globally in all areas as the default restrictions, except where overridden with an explicit geofencing zone.  See [Geofencing Rule Precedence](#geofencing-rule-precedence) for more details.<br/>A rule or list of rules, as appropriate, must be specified in the global rules list covering all vehicle types in the feed.
+`global_rules` <br/>*(added in v3.0)* | REQUIRED | Array&lt;[Rule](#geofencing-rule-object)&gt; | Array of [Rule](#geofencing-rule-object) objects defining restrictions that apply globally in all areas as the default restrictions, except where overridden with an explicit geofencing zone.  See [Geofencing Rule Precedence](#geofencing-rule-precedence) for more details.<br/>A rule or list of rules, as appropriate, must be specified in the global rules list covering all vehicle types in the feed.
 
 #### Geofencing Rule Object
 
