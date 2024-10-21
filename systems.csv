@@ -603,7 +603,6 @@ NL,Donkey Republic Utrecht,Utrecht,donkey_ut,https://www.donkey.bike/cities/bike
 NL,Donkey Republic Utrechtse Heuvelrug,Utrechtse Heuvelrug,donkey_utrechtse_heuvelrug,https://www.donkey.bike/,https://stables.donkey.bike/api/public/gbfs/2/donkey_utrechtse_heuvelrug/gbfs.json,1.0 ; 2.3,
 NL,GoAbout,Netherlands,goabout,https://goabout.com,https://gbfs.goabout.com/2/gbfs.json,2.0,
 NL,NS OV Fiets,Netherlands,ns_ov_fiets,https://www.ns.nl/en/door-to-door/ov-fiets,http://gbfs.openov.nl/ovfiets/gbfs.json,1.0,
-NO,Bergen Bysykkel,Bergen,bergenbysykkel,https://www.bergenbysykkel.no,https://api.entur.io/mobility/v2/gbfs/v3/bergenbysykkel/gbfs,3.0,
 NO,Bergen City Bike,Bergen,bergen-city-bike,https://bergenbysykkel.no/en,https://gbfs.urbansharing.com/bergenbysykkel.no/gbfs.json,2.3,
 NO,Bolt Arpsborg,Arpsborg,boltsarpsborg,https://www.bolt.eu/,https://api.entur.io/mobility/v2/gbfs/v3/boltsarpsborg/gbfs,3.0,
 NO,Bolt Bergen,Bergen,boltbergen,https://bolt.eu/en/cities/bergen/,https://api.entur.io/mobility/v2/gbfs/v3/boltbergen/gbfs,3.0,
