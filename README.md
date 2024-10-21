@@ -124,17 +124,18 @@ If you would like to add a system, please fork this repository and submit a Pull
 - Create a new branch, and
 - Propose your changes by opening a [new pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
 
-Please keep this list alphabetized by country and system name. Alternatively, fill out [this contribution form](https://forms.gle/WSXFuXx9k4PSTfbC9) for a Github-less contribution. 
+Please keep this list alphabetized by country and system name. Alternatively, fill out [this contribution form](https://share.mobilitydata.org/gbfs-feed-contribution-form) for a Github-less contribution. 
 * [systems.csv](systems.csv)
 
  Field Name | REQUIRED | Definition 
  --- | :---: | ---- 
-|Country Code | Yes | ISO 3166-1 alpha-2 code designating the country where the system is located. For a list of valid codes [see here](https://en.wikipedia.org/wiki/ISO_3166-1).
-| Name | Yes| Name of the mobility system. This MUST match the `name` field in `system_information.json`
-Location | Yes| Primary city in which the system is located, followed by the 2-letter state code for US systems. The location name SHOULD be in English if the location has an English name (eg: `Brussels`).
-System ID | Yes | ID for the system. This MUST match the `system_id` field in `system_information.json`.
-URL | Yes | URL for the system from the `url` field in `system_information.json`. If the `url` field is not included in `system_information.json` this SHOULD be the primary URL for the system operator.
-Auto-Discovery URL | Yes | URL for the system's `gbfs.json` auto-discovery file.
+|Country Code | REQUIRED | ISO 3166-1 alpha-2 code designating the country where the system is located. For a list of valid codes [see here](https://en.wikipedia.org/wiki/ISO_3166-1).
+| Name | REQUIRED| Name of the mobility system. This MUST match the `name` field in `system_information.json`
+Location | REQUIRED| Primary city in which the system is located, followed by the 2-letter state code for US systems. The location name SHOULD be in English if the location has an English name (eg: `Brussels`).
+System ID | REQUIRED | ID for the system. This MUST match the `system_id` field in `system_information.json`.
+URL | REQUIRED | URL for the system from the `url` field in `system_information.json`. If the `url` field is not included in `system_information.json` this SHOULD be the primary URL for the system operator.
+Auto-Discovery URL | REQUIRED | URL for the system's `gbfs.json` auto-discovery file.
+Supported Versions | REQUIRED | List of GBFS version(s) under which the feed is published. Multiple values ​​are separated by a semi-colon surrounded with 1 space on each side for readability (" ; ").
 Authentication Info | Conditionally REQUIRED | If authentication is required, this MUST contain a URL to a human-readable page describing how the authentication should be performed and how credentials can be created, or directly contain the public key-value pair to append to the feed URLs.
 
 ## GBFS JSON Schemas
