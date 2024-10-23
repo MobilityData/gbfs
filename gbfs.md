@@ -79,7 +79,11 @@ geofencing_zones.json <br/>*(added in v2.1)* | OPTIONAL | Geofencing zones and t
 
 ## Accessibility
 
-Datasets SHOULD be published at an easily accessible, public, permanent URL. (for example, https://www.example.com/gbfs/v3/gbfs.json). The URL SHOULD be directly available without requiring login to access the file to facilitate download by consuming software applications.
+Datasets SHOULD be published at an easily accessible, public, permanent URL. 
+
+The URL SHOULD contain the MAJOR version number. If upgrading to a MINOR version, the URL SHOULD NOT change. (for example, https://www.example.com/gbfs/v3/gbfs.json). 
+
+The URL SHOULD be directly available without requiring login to access the file to facilitate download by consuming software applications.
 
 To be compliant with GBFS, all systems MUST have an entry in the [systems.csv](https://github.com/MobilityData/gbfs/blob/master/systems.csv) file.
 
