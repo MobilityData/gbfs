@@ -646,6 +646,7 @@ NZ,Flamingo Palerston North,Palmerston North,flamingo_palmerston_north,https://r
 NZ,Flamingo Porirua,"Porirua, NZ",flamingo_porirua,https://rideflamingo.com,https://data.rideflamingo.com/gbfs/3/porirua/gbfs.json,2.3 ; 3.0-RC,
 NZ,Flamingo Waimakariri,Waimakariri District,flamingo_waimakariri,https://rideflamingo.com,https://data.rideflamingo.com/gbfs/3/waimakariri/gbfs.json,2.3 ; 3.0-RC,
 NZ,Flamingo Wellington,Wellington,flamingo_wellington,https://rideflamingo.com,https://data.rideflamingo.com/gbfs/3/wellington/gbfs.json,2.3 ; 3.0-RC,
+NZ,JOLT,Hutt Valley,jolt_hutt_valley,https://joltscooters.co.nz,https://prod-api.joltscooters.co.nz/api/gbfs/hutt_valley/gbfs.json,2.3,
 NZ,Neuron Mobility,Christchurch,neuron_chc,https://www.rideneuron.com/,https://mds-global-chc.neuron-mobility.com/gbfs/2/,1.0,
 NZ,Neuron Mobility,Dunedin,neuron_dud,https://www.rideneuron.com/,https://mds-global-dud.neuron-mobility.com/gbfs/2/,,
 NZ,nextbike New Zealand,New Zealand,nextbike_nz,https://www.nextbike.co.nz/en/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_nz/gbfs.json,,
