@@ -891,3 +891,4 @@ US,Tugo,"Tucson, AZ",tugo,https://tugobikeshare.com/,https://tucson.publicbikesy
 US,Valentine Bike Share,"Valentine, NE",bcycle_valentine,https://heartlandbikeshare.org,https://gbfs.bcycle.com/bcycle_valentine/gbfs.json,1.1,
 US,WE-cycle,"Aspen, CO",we_cycle,https://www.we-cycle.org,https://aspen.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
 XK,Nextbike Prishtina,"Prishtina, XK",nextbike_gs,https://www.prishtinabike.com,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gs/gbfs.json,2.3,
+FR,Citiz Grand Est,Strasbourg,citiz_grand_est,https://citiz.coop/,https://backend.citiz.fr/public/provider/1/gbfs/v3.0/gbfs.json,3.0,
