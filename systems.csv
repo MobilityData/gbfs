@@ -722,7 +722,7 @@ PT,LINK Almada,Almada,Link_Almada,https://www.superpedestrian.com,https://mds.li
 RO,Buzau VeloCity,Buzau,nextbike_bv,https://www.velocitybuzau.ro/ro/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bv/gbfs.json,2.3,
 RO,Dej Velo City,Dej,dej_bikecity,https://www.dejvelocity.ro/,https://dej.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
 RO,Drobeta Velopark,Drobeta,nextbike_rd,https://www.nextbike.ro/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rd/gbfs.json,2.3,
-RO,Hunedoara,Hunedoara,hunedoara,,https://hunedoara.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
+RO,Hunedoara,Hunedoara,hunedoara,https://www.velocorvin.ro/,https://hunedoara.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
 RO,Moinesti,Moinesti,moinesti,https://www.bikecitymoinesti.ro/en/,https://moinesti.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
 RO,nextbike Romania,Focșani,nextbike_nw,https://nextbike.ro/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_nw/gbfs.json,2.3,
 RO,Saturn,Saturn,nextbike_rs,https://www.nextbike.ro/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rs/gbfs.json,2.3,
