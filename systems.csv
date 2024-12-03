@@ -1,6 +1,7 @@
 Country Code,Name,Location,System ID,URL,Auto-Discovery URL,Supported Versions,Authentication Info
 AE,Careem BIKE,Dubai,careem_bike,https://www.careem.com/en-ae/careem-bike/,https://dubai.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
-AR,Bike Nordelta,Buenos Aires,bike_nordelta,https://bikeitau.com.br/nordelta/,https://nordelta.publicbikesystem.net/ube/gbfs/v2/,1.1 ; 2.3,
+AR,Bike Nordelta,Buenos Aires,bike_nordelta,https://bikeitau.com.br/nordelta/,https://nordelta.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
+
 AR,Ecobici,Buenos Aires,bike_buenosaires,https://www.buenosaires.gob.ar/ecobici,https://buenosaires.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
 AR,MiBiciTuBici,Rosario,biketobike,https://www.mibicitubici.gob.ar/,https://www.mibicitubici.gob.ar/opendata/gbfs.json,1.0,
 AT,city bike Linz,Linz,nextbike_al,https://citybikelinz.at/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_al/gbfs.json,2.3,
@@ -307,7 +308,7 @@ ES,Bird Zaragoza,Zaragoza,bird zaragoza,https://www.bird.co,https://mds.bird.co/
 ES,Bizkaibizi Spain,"Bilbao, ES",nextbike_bw,https://www.bizkaibizi.eus/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bw/gbfs.json,2.3,
 ES,Bolt Oviedo,Oviedo,BoltEU_Oviedo,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3/1020/gbfs,1.0 ; 2.3 ; 3.0,
 ES,Bolt Paterna,Paterna,BoltEU_Paterna,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3/1799/gbfs,1.0 ; 2.3 ; 3.1,
-ES,Dbizi,Donostia,sansebastian,https://www.dbizi.eus,https://sansebastian.publicbikesystem.net/ube/gbfs/v2/,1.1 ; 2.3,
+ES,Dbizi,Donostia,sansebastian,https://www.dbizi.eus,https://sansebastian.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
 ES,Dott Estepona,Estepona,dott-estepona,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/estepona/gbfs.json,2.3,
 ES,Dott Madrid,Madrid,dott-madrid,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/madrid/gbfs.json,2.3,
 ES,Dott Malaga,Malaga,dott-malaga,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/malaga/gbfs.json,2.3,
