@@ -765,7 +765,7 @@ UA,nextbike Kiev,Kiev,nextbike_nu,https://www.nextbike.ua/uk/,https://gbfs.nextb
 UA,nextbike Vinnitsa (Ukraine),Vinnytsia,nextbike_uv,https://www.nextbike.ua/uk/Vinnytsia/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_uv/gbfs.json,2.3,
 US,Arizona,"Tempe, AZ",17,https://gohopr.com/,https://gbfs.hopr.city/api/gbfs/17/,2.2,
 US,Aventura BCycle,"Aventura, FL",bcycle_aventura,https://aventura.bcycle.com,https://gbfs.bcycle.com/bcycle_aventura/gbfs.json,1.1,
-US,Bay Wheels,"San Francisco, CA",BA,https://www.baywheels.com/,https://gbfs.baywheels.com/gbfs/2.3/gbfs.json,2.3,
+US,Bay Wheels,"San Francisco, CA",lyft_bay,https://www.baywheels.com/,https://gbfs.baywheels.com/gbfs/2.3/gbfs.json,2.3,
 US,Bentonville BCycle,"Bentonville, AR",bcycle_bentonville,https://bentonville.bcycle.com,https://gbfs.bcycle.com/bcycle_bentonville/gbfs.json,1.1,
 US,Bike Chattanooga,"Chattanooga, TN",bike_chattanooga,https://www.bikechattanooga.com/,https://chat.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
 US,BikeLNK,"Lincoln, NE",bcycle_bikelnk,https://bikelnk.bcycle.com,https://gbfs.bcycle.com/bcycle_bikelnk/gbfs.json,1.1,
