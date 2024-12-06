@@ -336,6 +336,7 @@ ES,LINK Velez-Malaga,Velez-Malaga,Link_Velez-Malaga,https://www.superpedestrian.
 ES,Lovesharing,Canary Islands,nextbike_ls,https://www.lovesharing.com/bikesharing/es/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ls/gbfs.json,2.3,
 ES,nextbike León,León,nextbike_sl,https://www.alsa-nextbike.es/es/leon/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_sl/gbfs.json,2.3,
 ES,Ontibici,"Ontinyent, ES",nextbike_oy,https://www.ontibici.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_oy/gbfs.json,2.3,
+ES,Sevici,Seville,seville,https://www.sevici.es/,https://api.cyclocity.fr/contracts/seville/gbfs/gbfs.json,2.3,
 ES,Sitycleta (Las Palmas),Las Palmas de Gran Canaria,nextbike_el,https://www.sitycleta.com/es/laspalmas/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_el/gbfs.json,2.3,
 ES,TUeBICI,"Santander, ES",nextbike_ek,https://www.tuebici.es/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ek/gbfs.json,2.3,
 ES,Valladolid,Valladolid,BIKI_valladolid,https://biki-valladolid.es,https://valladolid.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
