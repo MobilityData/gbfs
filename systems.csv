@@ -767,6 +767,7 @@ SE,Donkey Republic Båstad,Båstad,donkey_baastad,https://www.donkey.bike/cities
 SE,Donkey Republic Malmö,Malmö,donkey_malmoe,https://www.donkey.bike/cities/bike-rental-malmo/,https://stables.donkey.bike/api/public/gbfs/2/donkey_malmoe/gbfs.json,1.0 ; 2.3,
 SE,Donkey Republic Ystad,Ystad,donkey_ystad,https://www.donkey.bike/cities/bike-rental-ystad/,https://stables.donkey.bike/api/public/gbfs/2/donkey_ystad/gbfs.json,1.0 ; 2.3,
 SE,Dott Stockholm,Stockholm,dott-stockholm,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/stockholm/gbfs.json,2.3,
+SE,Lundahoj,Lund,lund,https://www.lundahoj.se/,https://api.cyclocity.fr/contracts/lund/gbfs/gbfs.json,2.3,
 SE,Qick Borlänge,Borlänge,463,https://www.qickscooters.com/,https://qickscooters.rideatom.com/gbfs/v2_2/en/gbfs?id=463,2.2,
 SE,Qick Eskilstuna,Eskilstuna,462,https://www.qickscooters.com/,https://qickscooters.rideatom.com/gbfs/v2_2/en/gbfs?id=462,2.2,
 SE,Qick Falun,Falun,464,https://www.qickscooters.com/,https://qickscooters.rideatom.com/gbfs/v2_2/en/gbfs?id=464,2.2,
