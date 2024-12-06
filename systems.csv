@@ -600,6 +600,7 @@ IT,Verona Bike,Verona,verona-bike,https://bikeverona.it/en,https://gbfs.urbansha
 IT,Zeus Anzio,Anzio,zeus_anzio,https://zeusscooters.com/,https://zeus.city/api/v1/mds/gbfs/anzio/gbfs.json,2.2,
 IT,Zeus Augusta,Augusta,zeus_augusta,https://zeusscooters.com,https://zeus.city/api/v1/mds/gbfs/augusta/gbfs.json,2.2,
 IT,Zeus Mazara,Mazara,zeus_mazara,https://zeusscooters.com/,https://zeus.city/api/v1/mds/gbfs/mazara/gbfs.json,2.2,
+JP,CyclOcity,Toyama,toyama,https://www.cyclocity.jp/,https://api.cyclocity.fr/contracts/toyama/gbfs/gbfs.json,2.3,
 JP,docomo bike share service,Japan,docomo-cycle,https://docomo-cycle.jp/,https://api-public.odpt.org/api/v4/gbfs/docomo-cycle/gbfs.json,2.3,
 JP,docomo bike share service,Tokyo,docomo-cycle-tokyo,https://docomo-cycle.jp/,https://api-public.odpt.org/api/v4/gbfs/docomo-cycle-tokyo/gbfs.json,2.3,
 JP,HELLO CYCLING,Japan,hellocycling,https://www.hellocycling.jp,https://api-public.odpt.org/api/v4/gbfs/hellocycling/gbfs.json,2.3,
