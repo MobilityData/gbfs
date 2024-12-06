@@ -544,6 +544,7 @@ HU,Donkey Republic Budapest,Budapest,donkey_budapest,https://www.donkey.bike/cit
 HU,MOL Bubi,Budapest,nextbike_bh,https://molbubi.hu/hu/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bh/gbfs.json,2.3,
 IE,Bolt Portlaoise,Portlaoise,BoltEU_Portlaoise,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3/2036/gbfs,1.0 ; 2.3 ; 3.0,
 IE,Castletroy Bikes (Ireland),Castleroy,nextbike_lm,https://www.nextbike.ie/limerick/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_lm/gbfs.json,2.3,
+IE,Dublinbikes,Dublin,dublin,https://www.dublinbikes.ie/,https://api.cyclocity.fr/contracts/dublin/gbfs/gbfs.json,2.3,
 IE,Navan Bikes (Ireland),Navan,nextbike_ll,https://www.nextbike.ie/meath-navan/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ll/gbfs.json,2.3,
 IL,Bird Tel Aviv,Tel Aviv,bird-tel-aviv,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/tel-aviv/gbfs.json,1.1 ; 2.3,
 IL,Dott Petah-Tikva,Petah Tikva,dott-petah-tikva,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/petah-tikva/gbfs.json,2.3,
