@@ -605,6 +605,7 @@ JP,kotobike,Japan,kotobike,https://kotobike.jp,https://app.kotobike.jp/api/expos
 LI,Donkey Republic Liechtenstein,Liechtenstein,donkey_li,https://www.donkey.bike/cities/,https://stables.donkey.bike/api/public/gbfs/2/donkey_li/gbfs.json,1.0 ; 2.3,
 LI,LIEmobil Liechtenstein,Liechtenstein,liemobil_liechtenstein,https://liemobil.li/,https://api.mobidata-bw.de/sharing/gbfs/liemobil_liechtenstein/gbfs,2.3,
 LT,Bolt Alytus,Alytus,BoltEU_Alytus,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3/252/gbfs,1.0 ; 2.3 ; 3.0,
+LU,Vel'OH!,Luxembourg,luxembourg,https://myveloh.lu/,https://api.cyclocity.fr/contracts/luxembourg/gbfs/gbfs.json,2.3,
 LV,nextbike LV,Rīga,nextbike_lv,https://www.nextbike.lv/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_lv/gbfs.json,2.3,
 MC,MonaBike,Monaco,mona_bike,https://monabike.mc/,https://monaco.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
 MT,Helbiz Malta,Malta,HELBIZ-US,https://helbiz.com/,https://gbfs.helbiz.com/v2.2/malta/gbfs.json,1.1 ; 2.0 ; 2.1 ; 2.2,
