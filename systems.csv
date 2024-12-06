@@ -34,6 +34,7 @@ BE,Dott Charleroi,Charleroi,dott-charleroi,https://ridedott.com,https://gbfs.api
 BE,Dott Ghent,Ghent,dott-ghent,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/ghent/gbfs.json,2.3,
 BE,Dott Liege,Liege,dott-liege,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/liege/gbfs.json,2.3,
 BE,Dott Namur,Namur,dott-namur,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/namur/gbfs.json,2.3,
+BE,Li Bia Velo,Namur,namur,https://www.libiavelo.be/,https://api.cyclocity.fr/contracts/namur/gbfs/gbfs.json,2.3,
 BE,Lime Antwerp,Antwerp,lime_antwerp,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/antwerp/gbfs.json,2.2,
 BE,Lime Brussels,Brussels,lime_brussels,https://www.li.me,https://data.lime.bike/api/partners/v2/gbfs/brussels/gbfs.json,2.2,
 BE,Pony Brussels,Brussels,pony_brussels,https://getapony.com,https://gbfs.getapony.com/v1/brussels/en/gbfs.json,2.2,
