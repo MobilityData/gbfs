@@ -339,6 +339,7 @@ ES,Ontibici,"Ontinyent, ES",nextbike_oy,https://www.ontibici.com/,https://gbfs.n
 ES,Sevici,Seville,seville,https://www.sevici.es/,https://api.cyclocity.fr/contracts/seville/gbfs/gbfs.json,2.3,
 ES,Sitycleta (Las Palmas),Las Palmas de Gran Canaria,nextbike_el,https://www.sitycleta.com/es/laspalmas/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_el/gbfs.json,2.3,
 ES,TUeBICI,"Santander, ES",nextbike_ek,https://www.tuebici.es/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ek/gbfs.json,2.3,
+ES,Valenbisi,Valencia,valence,https://www.valenbisi.es/,https://api.cyclocity.fr/contracts/valence/gbfs/gbfs.json,2.3,
 ES,Valladolid,Valladolid,BIKI_valladolid,https://biki-valladolid.es,https://valladolid.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
 FI,Bolt Helsinki,Helsinki,BoltEU_Helsinki,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3/10/gbfs,1.0 ; 2.3 ; 3.0,
 FI,Donkey Republic Hämeenlinna,Hämeenlinna,donkey_haemeenlinna,https://www.donkey.bike/cities/bike-rental-hameenlinna/,https://stables.donkey.bike/api/public/gbfs/2/donkey_haemeenlinna/gbfs.json,1.0 ; 2.3,
