@@ -783,6 +783,7 @@ SE,Zeus Falun,Falun,zeus_falun,https://zeusscooters.com/,https://zeus.city/api/v
 SE,Zeus Halmstad,Hamstad,zeus_halmstad,https://zeusscooters.com/,https://zeus.city/api/v1/mds/gbfs/halmstad/gbfs.json,2.2,
 SE,Zeus Karlstad,Karlstad,zeus_karlstad,https://zeusscooters.com/,https://zeus.city/api/v1/mds/gbfs/karlstad/gbfs.json,2.2,
 SI,BicikeLJ,Ljubljana,ljubljana,https://www.bicikelj.si/,https://api.cyclocity.fr/contracts/ljubljana/gbfs/gbfs.json,2.3,
+SI,MBajk,Maribor,maribor,https://www.mbajk.si/,https://api.cyclocity.fr/contracts/maribor/gbfs/gbfs.json,2.3,
 SI,Nomago Bikes - GO2GO,Nova Gorica,nextbike_ce,https://bikes.nomago.si/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ce/gbfs.json,2.3,
 SI,Nomago Bikes - GO2GO Gorizia,Gorizia,nextbike_cd,https://bikes.nomago.si/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cd/gbfs.json,2.3,
 SI,Nomago Bikes - KOLESCE,Slovenia,nextbike_cn,https://bikes.nomago.si/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cn/gbfs.json,2.3,
