@@ -460,7 +460,7 @@ FR,VélOstan'lib,Nancy,nancy,https://www.velostanlib.fr/,https://api.cyclocity.f
 FR,VélÔToulouse,Toulouse,toulouse,http://www.velo.toulouse.fr/,https://transport.data.gouv.fr/gbfs/toulouse/gbfs.json,1.1,
 FR,VéloZef,Brest,velozef,https://www.bibus.fr/services/velozef-le-velo-assistance-electrique-en-libre-service,https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/brest/en/gbfs.json,1.0,key=OGNhZDNjMDQtYTA0Yi00NzU2LWE0MTItOGJlYzE1Y2E4NGEx
 FR,Vélo'Cité,Laon,velocite,https://velocite.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/velocite/gbfs.json,2.2 ; 3.0,
-FR,Vélo'v,Lyon,lyon,https://velov.grandlyon.com/en/home,https://transport.data.gouv.fr/gbfs/lyon/gbfs.json,1.1,
+FR,Vélo'v,Lyon,lyon,https://velov.grandlyon.com/en/home,https://api.cyclocity.fr/contracts/lyon/gbfs/gbfs.json,2.3,
 FR,Vélibéo,Brive-la-Gaillarde,velibeo,https://velibeo.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/velibeo/gbfs.json,2.2 ; 3.0,
 FR,Vélivert,Saint-Étienne,velivert_saint_etienne,https://www.velivert.fr/,https://api.saint-etienne-metropole.fr/velivert/api/gbfs/gbfs.json,2.2,
 FR,VélYcéo,Saint-Nazaire,velyceo,https://velyceo.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/velyceo/gbfs.json,2.2 ; 3.0,
