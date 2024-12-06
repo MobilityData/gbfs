@@ -371,6 +371,7 @@ FR,Bird Sarreguemines,Sarreguemines,bird-sarreguemines,https://bird.co,https://m
 FR,Bird Vichy,Vichy,bird-vichy,https://bird.co,https://mds.bird.co/gbfs/v2/public/vichy/gbfs.json,1.1 ; 2.3,
 FR,CaliVélo,Libourne,calivelo,https://calivelo.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/calivelo/gbfs.json,2.2 ; 3.0,
 FR,CapCotentin,Cherbourg-en-Cotentin,capcotentin,https://capcotentin.ecovelo.mobi/,https://api.gbfs.v3.0.ecovelo.mobi/capcotentin/gbfs.json,2.2 ; 3.0,
+FR,VélO2,Cergy-Pontoise,cergy,https://www.velo2.cergypontoise.fr/,https://api.cyclocity.fr/contracts/cergy/gbfs/gbfs.json,2.3,
 FR,Choletbus 2 Roues,Cholet,choletbus,https://choletbus.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/choletbus/gbfs.json,2.2 ; 3.0,
 FR,Citiz AUPA,Bayonne,aupa,https://citiz.coop/,https://backend.citiz.fr/public/provider/20/gbfs/v3.0/gbfs.json,3.0,
 FR,Citiz Alpes Loire,Grenoble,citiz_alpes_loire,https://citiz.coop/,https://backend.citiz.fr/public/provider/5/gbfs/v3.0/gbfs.json,3.0,
