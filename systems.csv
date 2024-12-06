@@ -454,7 +454,7 @@ FR,VéloCité,Besançon,besançon,https://www.velocite.besancon.fr/,https://tran
 FR,VéloCité,Mulhouse,mulhouse,https://www.compte-mobilite.fr/services/velos-en-libre-service/,https://api.cyclocity.fr/contracts/mulhouse/gbfs/gbfs.json,2.3,
 FR,Vélomagg',Montpellier,montpellier,https://www.tam-voyages.com/presentation/?rub_code=1&thm_id=6,https://montpellier-fr-smoove.klervi.net/gbfs/gbfs.json,,
 FR,Vélopop,Avignon,velopop,https://velo-grandavignon.fr/fr/,https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/avignon/gbfs.json,1.0,key=NWNiMjc5YmQtMzVlOC00MmJiLTkyYTItNzZkMDViMzA2MzA2
-FR,VélOstan'lib,Nancy,nancy,http://www.velostanlib.fr/,https://transport.data.gouv.fr/gbfs/nancy/gbfs.json,1.1,
+FR,VélOstan'lib,Nancy,nancy,https://www.velostanlib.fr/,https://api.cyclocity.fr/contracts/nancy/gbfs/gbfs.json,2.3,
 FR,VélÔToulouse,Toulouse,toulouse,http://www.velo.toulouse.fr/,https://transport.data.gouv.fr/gbfs/toulouse/gbfs.json,1.1,
 FR,VéloZef,Brest,velozef,https://www.bibus.fr/services/velozef-le-velo-assistance-electrique-en-libre-service,https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/brest/en/gbfs.json,1.0,key=OGNhZDNjMDQtYTA0Yi00NzU2LWE0MTItOGJlYzE1Y2E4NGEx
 FR,Vélo'Cité,Laon,velocite,https://velocite.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/velocite/gbfs.json,2.2 ; 3.0,
