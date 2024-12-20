@@ -122,6 +122,7 @@ Hours and dates of operation SHOULD be published even in cases where services ar
 
 * Files are distributed as individual HTTP endpoints.
     * All endpoints MUST use HTTPS
+    * All endpoints MUST respond to HTTP requests in less than 5 seconds
     * REQUIRED files MUST NOT 404. They MUST return a properly formatted JSON file as defined in [Output Format](#output-format).
     * OPTIONAL files MAY 404. A 404 of an OPTIONAL file SHOULD NOT be considered an error.
 
