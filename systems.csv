@@ -425,6 +425,7 @@ ES,BiciPalma,Palma,nextbike_ea,https://www.bicipalma.com/es/palma/,https://gbfs.
 ES,Bilbaobizi (Bilbao),Bilbao,nextbike_bo,https://www.bilbaobizi.bilbao.eus/eu/bilbao/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bo/gbfs.json,2.3,
 ES,Bird Madrid,Madrid,bird-madrid,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/madrid/gbfs.json,1.1 ; 2.3,
 ES,Bird Zaragoza,Zaragoza,bird zaragoza,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/zaragoza/gbfs.json,1.1 ; 2.3,
+ES,Bizi,Zaragoza,zaragoza,https://bizi.zaragoza.es,https://zaragoza.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
 ES,Bizkaibizi Spain,"Bilbao, ES",nextbike_bw,https://www.bizkaibizi.eus/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bw/gbfs.json,2.3,
 ES,Bolt Oviedo,Oviedo,BoltEU_Oviedo,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3/1020/gbfs,1.0 ; 2.3 ; 3.0,
 ES,Dbizi,Donostia,sansebastian,https://www.dbizi.eus,https://sansebastian.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
