@@ -71,7 +71,7 @@ vehicle_types.json <br/>*(added in v2.1)* | Conditionally REQUIRED | Describes t
 station_information.json | Conditionally REQUIRED | List of all stations, their capacities and locations. REQUIRED of systems utilizing docks.
 station_status.json | Conditionally REQUIRED | Number of available vehicles and docks at each station and station availability. REQUIRED of systems utilizing docks.
 vehicle_status.json <br/>*(as of v3.0, formerly free_bike_status.json)* | Conditionally REQUIRED | *(as of v2.1)* Describes all vehicles that are not currently in active rental. REQUIRED for free floating (dockless) vehicles. OPTIONAL for station based (docked) vehicles. Vehicles that are part of an active rental MUST NOT appear in this feed.
-vehicle_type_availability.json <br/>*(added in v3.1-RC2)* | OPTIONAL | Describes the future availability of each vehicle type by station. Useful for systems that allow vehicles to be reserved in advance (e.g. carsharing). OPTIONAL for station based (docked) vehicles. Not supported for free floating (dockless) vehicles.
+vehicle_type_availability.json <br/>*(added in v3.1-RC2)* | OPTIONAL | Describes the future availability of each vehicle type by station. Useful for systems that allow vehicles to be reserved in advance (e.g. carsharing, cargo bike share, etc). OPTIONAL for station based (docked) vehicles. Not supported for free floating (dockless) vehicles.
 system_hours.json | - | This file is removed *(as of v3.0)*. See `system_information.opening_hours` for system hours of operation.
 system_calendar.json | - | This file is removed *(as of v3.0)*. See `system_information.opening_hours` for system dates of operation.
 system_regions.json | OPTIONAL | Regions the system is broken up into.
@@ -1143,7 +1143,7 @@ Field Name | REQUIRED | Type | Defines
 
 *(added in v3.1-RC2)*
 
-Describes the future availability of each vehicle type by station. Useful for systems that allow vehicles to be reserved in advance (e.g. carsharing). OPTIONAL for station based (docked) vehicles. Not supported for free floating (dockless) vehicles. Data returned SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date. See [Data Latency](#data-latency).<br/>The following fields are all attributes within the main `data` object for this feed.
+Describes the future availability of each vehicle type by station. Useful for systems that allow vehicles to be reserved in advance (e.g. carsharing, cargo bike share, etc). OPTIONAL for station based (docked) vehicles. Not supported for free floating (dockless) vehicles. Data returned SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date. See [Data Latency](#data-latency).<br/>The following fields are all attributes within the main `data` object for this feed.
 
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
