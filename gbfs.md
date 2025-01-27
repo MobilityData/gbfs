@@ -1173,7 +1173,7 @@ Field Name | REQUIRED | Type | Defines
               {"from": "2024-12-24T08:15Z", "until": "2024-12-24T09:15Z" },
               {"from": "2024-12-24T08:45Z", "until": "2024-12-24T10:00Z" }
             ]
-          },
+          }
         ]
       }
     ]
