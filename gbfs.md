@@ -30,6 +30,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     * [station_information.json](#station_informationjson)
     * [station_status.json](#station_statusjson)
     * [vehicle_status.json](#vehicle_statusjson) *(formerly free_bike_status.json)*
+    * [vehicle_type_availability.json](#vehicle_type_availabilityjson) *(added in v3.1-RC2)*
     * [system_hours.json](#system_hoursjson) *(removed in v3.0)*
     * [system_calendar.json](#system_calendarjson) *(removed in v3.0)*
     * [system_regions.json](#system_regionsjson)
@@ -70,6 +71,7 @@ vehicle_types.json <br/>*(added in v2.1)* | Conditionally REQUIRED | Describes t
 station_information.json | Conditionally REQUIRED | List of all stations, their capacities and locations. REQUIRED of systems utilizing docks.
 station_status.json | Conditionally REQUIRED | Number of available vehicles and docks at each station and station availability. REQUIRED of systems utilizing docks.
 vehicle_status.json <br/>*(as of v3.0, formerly free_bike_status.json)* | Conditionally REQUIRED | *(as of v2.1)* Describes all vehicles that are not currently in active rental. REQUIRED for free floating (dockless) vehicles. OPTIONAL for station based (docked) vehicles. Vehicles that are part of an active rental MUST NOT appear in this feed.
+vehicle_type_availability.json <br/>*(added in v3.1-RC2)* | OPTIONAL | Describes the future availability of each vehicle type by station. OPTIONAL for station based (docked) vehicles. Not supported for free floating (dockless) vehicles.
 system_hours.json | - | This file is removed *(as of v3.0)*. See `system_information.opening_hours` for system hours of operation.
 system_calendar.json | - | This file is removed *(as of v3.0)*. See `system_information.opening_hours` for system dates of operation.
 system_regions.json | OPTIONAL | Regions the system is broken up into.
@@ -1130,6 +1132,48 @@ Field Name | REQUIRED | Type | Defines
         "home_station_id":"146",
         "vehicle_equipment":[
           "child_seat_a"
+        ]
+      }
+    ]
+  }
+}
+```
+
+### vehicle_type_availability.json
+
+*(added in v3.1-RC2)*
+
+Describes the future availability of each vehicle type by station. OPTIONAL for station based (docked) vehicles. Not supported for free floating (dockless) vehicles. Data returned SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date. See [Data Latency](#data-latency).<br/>The following fields are all attributes within the main `data` object for this feed.
+
+Field Name | REQUIRED | Type | Defines
+---|---|---|---
+`vehicle_types` | REQUIRED | Array&lt;Object&gt; | Contains one object per vehicle type.
+`vehicle_types[].vehicle_type_id` | REQUIRED | ID | Unique identifier of a vehicle type as defined in [vehicle_types.json](#vehicle_typesjson).
+`vehicle_types[].availability[]` | REQUIRED | Array&lt;Object&gt; | Array of availability for the specified vehicle type.
+`vehicle_types[].availability[].station_id` | REQUIRED | ID | Unique identifier of a station as defined in [station_information.json](#station_informationjson).
+`vehicle_types[].availability[].time_slots[]` | REQUIRED | Array&lt;Object&gt; | Array of time slots during which at least one vehicle of the specified type is available at this station. The same vehicle must be available for the entire duration of the time slot.
+`vehicle_types[].availability[].time_slots[].from` | REQUIRED | Datetime | Start date and time of available time slot.
+`vehicle_types[].availability[].time_slots[].until` | REQUIRED | Datetime | End date and time of available time slot.
+
+**Example**
+
+```json
+{
+  "last_updated": "2023-07-17T13:34:13+02:00",
+  "ttl": 0,
+  "version": "3.1-RC2",
+  "data": {
+    "vehicle_types": [
+      {
+        "vehicle_type_id": "abc123",
+        "availability": [
+          { 
+            "station_id": "station1",
+            "time_slots": [ //intervals can overlap
+              {"from": "2024-12-24T08:15Z", "until": "2024-12-24T09:15Z" },
+              {"from": "2024-12-24T08:45Z", "until": "2024-12-24T10:00Z" }
+            ]
+          },
         ]
       }
     ]
