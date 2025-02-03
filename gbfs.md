@@ -1153,7 +1153,7 @@ Field Name | REQUIRED | Type | Defines
 `vehicle_types[].availability[].station_id` | REQUIRED | ID | Unique identifier of a station as defined in [station_information.json](#station_informationjson).
 `vehicle_types[].availability[].time_slots[]` | REQUIRED | Array&lt;Object&gt; | Array of time slots during which at least one vehicle of the specified type is available at this station. The same vehicle must be available for the entire duration of the time slot. The time slots intervals can overlap.
 `vehicle_types[].availability[].time_slots[].from` | REQUIRED | Datetime | Start date and time of available time slot.
-`vehicle_types[].availability[].time_slots[].until` | REQUIRED | Datetime | End date and time of available time slot.
+`vehicle_types[].availability[].time_slots[].until` | OPTIONAL | Datetime | End date and time of available time slot. If this field is empty, it means that the vehicle type is available all the time from the date in the `from` field.
 
 **Example**
 
@@ -1175,8 +1175,7 @@ Field Name | REQUIRED | Type | Defines
                 "until": "2024-12-24T09:15Z"
               },
               {
-                "from": "2024-12-24T08:45Z",
-                "until": "2024-12-24T10:00Z"
+                "from": "2024-12-24T08:45Z"
               }
             ]
           }
