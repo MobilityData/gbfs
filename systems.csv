@@ -46,6 +46,7 @@ BE,Bolt Ypres,Ypres,BoltEU_Ypres,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3
 BE,Donkey Republic Antwerp,Antwerp,donkey_antwerp,https://www.donkey.bike/cities/bike-rental-antwerp/,https://stables.donkey.bike/api/public/gbfs/2/donkey_antwerp/gbfs.json,1.0 ; 2.3,
 BE,Donkey Republic Ghent,Ghent,donkey_gh,https://www.donkey.bike/cities/bike-rental-ghent/,https://stables.donkey.bike/api/public/gbfs/2/donkey_gh/gbfs.json,1.0 ; 2.3,
 BE,Donkey Republic Kortrijk & Leiedal,Kortrijk & Leiedal,donkey_kortrijk_leiedal,https://www.donkey.bike/cities/bike-rental-kortrijk-zuid-west-vlaanderen/,https://stables.donkey.bike/api/public/gbfs/2/donkey_kortrijk_leiedal/gbfs,1.0 ; 2.3,
+BE,Donkey Republic Westhoek,Westhoek,donkey_westhoek,https://www.donkey.bike/cities/bike-rental-de-panne/,https://stables.donkey.bike/api/public/gbfs/2/donkey_westhoek/gbfs.json,1.0 ; 2.3,
 BE,Dott Aalst,Aalst,dott-aalst,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/aalst/gbfs.json,2.3,
 BE,Dott Brussels,Brussels,dott-brussels,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/brussels/gbfs.json,2.3,
 BE,Dott Charleroi,Charleroi,dott-charleroi,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/charleroi/gbfs.json,2.3,
