@@ -43,7 +43,7 @@ BE,Bolt Ghent,Ghent,BoltEU_Ghent,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3
 BE,Bolt Liège,Liège,BoltEU_Liege,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3/2047/gbfs,1.0 ; 2.3 ; 3.0,
 BE,Bolt Namur,Namur,BoltEU_Namur,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3/290/gbfs,1.0 ; 2.3 ; 3.0,
 BE,Bolt Ypres,Ypres,BoltEU_Ypres,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3/1228/gbfs,1.0 ; 2.3 ; 3.0,
-BE,Donkey Republic Westhoek,Westhoek,donkey_westhoek,https://www.donkey.bike/cities/bike-rental-veurne/,https://stables.donkey.bike/api/public/gbfs/2/donkey_westhoek/gbfs.json,1.0 ; 2.3,
+BE,Donkey Republic Westhoek,Westhoek,donkey_westhoek,https://www.donkey.bike/cities/bike-rental-de-panne/,https://stables.donkey.bike/api/public/gbfs/2/donkey_westhoek/gbfs.json,1.0 ; 2.3,
 BE,Donkey Republic Antwerp,Antwerp,donkey_antwerp,https://www.donkey.bike/cities/bike-rental-antwerp/,https://stables.donkey.bike/api/public/gbfs/2/donkey_antwerp/gbfs.json,1.0 ; 2.3,
 BE,Donkey Republic Ghent,Ghent,donkey_gh,https://www.donkey.bike/cities/bike-rental-ghent/,https://stables.donkey.bike/api/public/gbfs/2/donkey_gh/gbfs.json,1.0 ; 2.3,
 BE,Donkey Republic Kortrijk & Leiedal,Kortrijk & Leiedal,donkey_kortrijk_leiedal,https://www.donkey.bike/cities/bike-rental-kortrijk-zuid-west-vlaanderen/,https://stables.donkey.bike/api/public/gbfs/2/donkey_kortrijk_leiedal/gbfs,1.0 ; 2.3,
