@@ -1151,7 +1151,7 @@ Field Name | REQUIRED | Type | Defines
 `vehicle_types[].vehicle_type_id` | REQUIRED | ID | Unique identifier of a vehicle type as defined in [vehicle_types.json](#vehicle_typesjson).
 `vehicle_types[].availability[]` | REQUIRED | Array&lt;Object&gt; | Array of availability for the specified vehicle type.
 `vehicle_types[].availability[].station_id` | REQUIRED | ID | Unique identifier of a station as defined in [station_information.json](#station_informationjson).
-`vehicle_types[].availability[].time_slots[]` | REQUIRED | Array&lt;Object&gt; | Array of time slots during which at least one vehicle of the specified type is available at this station. The same vehicle must be available for the entire duration of the time slot.
+`vehicle_types[].availability[].time_slots[]` | REQUIRED | Array&lt;Object&gt; | Array of time slots during which at least one vehicle of the specified type is available at this station. The same vehicle must be available for the entire duration of the time slot. The time slots intervals can overlap.
 `vehicle_types[].availability[].time_slots[].from` | REQUIRED | Datetime | Start date and time of available time slot.
 `vehicle_types[].availability[].time_slots[].until` | REQUIRED | Datetime | End date and time of available time slot.
 
@@ -1169,9 +1169,15 @@ Field Name | REQUIRED | Type | Defines
         "availability": [
           { 
             "station_id": "station1",
-            "time_slots": [ //intervals can overlap
-              {"from": "2024-12-24T08:15Z", "until": "2024-12-24T09:15Z" },
-              {"from": "2024-12-24T08:45Z", "until": "2024-12-24T10:00Z" }
+            "time_slots": [
+              {
+                "from": "2024-12-24T08:15Z",
+                "until": "2024-12-24T09:15Z"
+              },
+              {
+                "from": "2024-12-24T08:45Z",
+                "until": "2024-12-24T10:00Z"
+              }
             ]
           }
         ]
