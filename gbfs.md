@@ -1036,7 +1036,7 @@ Field Name | REQUIRED | Type | Defines
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `vehicles`<br />*(as of v3.0)*  | REQUIRED | Array&lt;Object&gt; | Contains one object per vehicle that is currently deployed in the field and not part of an active rental.
-`vehicles[].vehicle_id`<br />*(as of v3.0)*  | REQUIRED | ID | Identifier of a vehicle. The `vehicle_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `vehicle_id` identifier SHOULD only be rotated once per trip.
+`vehicles[].vehicle_id`<br />*(as of v3.0)*  | REQUIRED | ID | Identifier of a vehicle. The `vehicle_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `vehicle_id` identifier SHOULD only be rotated once per trip.<br/><br/>The `vehicle_id` SHOULD be the same as in [vehicle_availability.json](#vehicle_availabilityjson) if the file has been defined.
 `vehicles[].lat` | Conditionally REQUIRED <br/>*(as of v2.1)* | Latitude | Latitude of the vehicle in decimal degrees. *(as of v2.1)* REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 `vehicles[].lon` | Conditionally REQUIRED <br/>*(as of v2.1)* | Longitude | Longitude of the vehicle in decimal degrees. *(as of v2.1)* REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 `vehicles[].is_reserved` | REQUIRED | Boolean | Is the vehicle currently reserved? <br /><br /> `true` - Vehicle is currently reserved. <br /> `false` - Vehicle is not currently reserved.
@@ -1148,7 +1148,7 @@ Describes the future availability of each vehicle. Useful for systems that allow
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `vehicles` | REQUIRED | Array&lt;Object&gt; | Contains one object per vehicle.
-`vehicles[].vehicle_id` | REQUIRED | ID | Identifier of a vehicle. The `vehicle_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `vehicle_id` identifier SHOULD only be rotated once per trip.
+`vehicles[].vehicle_id` | REQUIRED | ID | Identifier of a vehicle. The `vehicle_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `vehicle_id` identifier SHOULD only be rotated once per trip.<br/><br/>The `vehicle_id` SHOULD be the same as in [vehicle_status.json](#vehicle_statusjson) if the file has been defined and the vehicle is currently available.
 `vehicles[].vehicle_type_id` | REQUIRED | ID | Unique identifier of a vehicle type as defined in [vehicle_types.json](#vehicle_typesjson).
 `vehicles[].home_station_id` | OPTIONAL | ID | The `station_id` of the station this vehicle must be returned to as defined in [station_information.json](#station_informationjson).
 `vehicles[].availabilities[]` | REQUIRED | Array&lt;Object&gt; | Array of time slots during which the specified vehicle is available.
