@@ -268,7 +268,7 @@ Field Name | REQUIRED | Type | Defines
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 3600,
+  "ttl": 300,
   "version": "3.1-RC",
   "data": {
     "name": [
@@ -299,7 +299,7 @@ Field Name | REQUIRED | Type | Defines
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 0,
+  "ttl": 300,
   "version": "3.1-RC",
   "data": {
     "feeds": [
@@ -337,7 +337,7 @@ Field Name | REQUIRED | Type | Defines
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl":0,
+  "ttl": 300,
   "version": "3.1-RC",
   "data":{
     "datasets":[
@@ -468,7 +468,7 @@ Field Name | REQUIRED | Type | Defines
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 0,
+  "ttl": 300,
   "version": "3.1-RC",
   "data": {
     "versions": [
@@ -533,7 +533,7 @@ Field Name | REQUIRED | Type | Defines
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 1800,
+  "ttl": 300,
   "version": "3.1-RC",
   "data": {
     "system_id": "example_cityname",
@@ -645,7 +645,7 @@ Field Name | REQUIRED | Type | Defines
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 0,
+  "ttl": 300,
   "version": "3.1-RC",
   "data": {
     "vehicle_types": [
@@ -828,7 +828,7 @@ Field Name | REQUIRED | Type | Defines
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 0,
+  "ttl": 300,
   "version": "3.1-RC",
   "data": {
     "stations": [
@@ -864,7 +864,7 @@ Field Name | REQUIRED | Type | Defines
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 0,
+  "ttl": 300,
   "version": "3.1-RC",
   "data": {
     "stations": [
@@ -1059,7 +1059,7 @@ Field Name | REQUIRED | Type | Defines
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl":0,
+  "ttl": 0,
   "version": "3.1-RC",
   "data":{
     "vehicles":[
@@ -1097,7 +1097,7 @@ Field Name | REQUIRED | Type | Defines
 
  {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl":0,
+  "ttl": 0,
   "version": "3.1-RC",
   "data":{
     "vehicles":[
@@ -1160,7 +1160,7 @@ Field Name | REQUIRED | Type | Defines
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 86400,
+  "ttl": 300,
   "version": "3.1-RC",
   "data": {
     "regions": [
@@ -1240,7 +1240,7 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 0,
+  "ttl": 300,
   "version": "3.1-RC",
   "data": {
     "plans": [
@@ -1293,7 +1293,7 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 0,
+  "ttl": 300,
   "version": "3.1-RC",
   "data": {
     "plans": [
@@ -1456,7 +1456,7 @@ See examples below.
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 60,
+  "ttl": 300,
   "version": "3.1-RC",
   "data": {
     "geofencing_zones": {
@@ -1718,7 +1718,7 @@ Other supported parameters include:
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 60,
+  "ttl": 300,
   "version": "3.1-RC",
   "data": {
     "name": [
@@ -1749,7 +1749,7 @@ Other supported parameters include:
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 60,
+  "ttl": 300,
   "version": "3.1-RC",
   "data": {
     "stations": [
@@ -1782,7 +1782,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 60,
+  "ttl": 300,
   "version": "3.1-RC",
   "data": {
     "name": [
@@ -1813,7 +1813,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 60,
+  "ttl": 300,
   "version": "3.1-RC",
   "data": {
     "stations": [
@@ -1844,7 +1844,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 60,
+  "ttl": 300,
   "version": "3.1-RC",
   "data": {
     "stations": [
