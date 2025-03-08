@@ -1,6 +1,6 @@
 # IAM role for EKS Cluster
-resource "aws_iam_role" "eks_cluster_role" {
-  name = "eks-cluster-role"
+resource "aws_iam_role" "opensearch_cluster_role" {
+  name = "opensearch-cluster-role"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
@@ -16,18 +16,18 @@ resource "aws_iam_role" "eks_cluster_role" {
   })
 
   tags = {
-    Name = "eks-cluster-role"
+    Name = "opensearch-cluster-role"
   }
 }
 
 resource "aws_iam_role_policy_attachment" "eks_cluster_policy_attachment" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
-  role       = aws_iam_role.eks_cluster_role.name
+  role       = aws_iam_role.opensearch_cluster_role.name
 }
 
 # IAM role for EKS Node Group
-resource "aws_iam_role" "eks_node_role" {
-  name = "eks-node-role"
+resource "aws_iam_role" "opensearch_node_role" {
+  name = "opensearch-node-role"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
@@ -43,32 +43,32 @@ resource "aws_iam_role" "eks_node_role" {
   })
 
   tags = {
-    Name = "eks-node-role"
+    Name = "opensearch-node-role"
   }
 }
 
 # Attach AmazonEKSWorkerNodePolicy to the worker node role
 resource "aws_iam_role_policy_attachment" "eks_node_policy_attachment" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
-  role       = aws_iam_role.eks_node_role.name
+  role       = aws_iam_role.opensearch_node_role.name
 }
 
 # Attach AmazonEKS_CNI_Policy to allow CNI plugin management
 resource "aws_iam_role_policy_attachment" "eks_cni_policy_attachment" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
-  role       = aws_iam_role.eks_node_role.name
+  role       = aws_iam_role.opensearch_node_role.name
 }
 
 # Attach AmazonEC2ContainerRegistryReadOnly to allow pulling images from ECR
 resource "aws_iam_role_policy_attachment" "eks_ecr_readonly_policy_attachment" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
-  role       = aws_iam_role.eks_node_role.name
+  role       = aws_iam_role.opensearch_node_role.name
 }
 
 # EKS Cluster
-resource "aws_eks_cluster" "gbfs_cluster" {
+resource "aws_eks_cluster" "opensearch_cluster" {
   name     = var.eks_cluster_name
-  role_arn = aws_iam_role.eks_cluster_role.arn
+  role_arn = aws_iam_role.opensearch_cluster_role.arn
 
   vpc_config {
     # Attach the subnets and security groups from your VPC
@@ -87,9 +87,9 @@ resource "aws_eks_cluster" "gbfs_cluster" {
 
 # EKS Node Group
 resource "aws_eks_node_group" "opensearch_node_group" {
-  cluster_name    = aws_eks_cluster.gbfs_cluster.name
+  cluster_name    = aws_eks_cluster.opensearch_cluster.name
   node_group_name = var.node_group_name
-  node_role_arn   = aws_iam_role.eks_node_role.arn
+  node_role_arn   = aws_iam_role.opensearch_node_role.arn
 
   # Attach the VPC subnets to the node group
   subnet_ids = [aws_subnet.subnet1.id, aws_subnet.subnet2.id]
