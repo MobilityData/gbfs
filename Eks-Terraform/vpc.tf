@@ -10,7 +10,7 @@ resource "aws_vpc" "opensearch_vpc" {
 
 # Subnet 1
 resource "aws_subnet" "subnet1" {
-  vpc_id                  = aws_vpc.gbfs_vpc.id
+  vpc_id                  = aws_vpc.opensearch_vpc.id
   cidr_block              = var.subnet1_cidr
   availability_zone       = "${var.region}a"
   map_public_ip_on_launch = true
@@ -22,7 +22,7 @@ resource "aws_subnet" "subnet1" {
 
 # Subnet 2
 resource "aws_subnet" "subnet2" {
-  vpc_id                  = aws_vpc.gbfs_vpc.id
+  vpc_id                  = aws_vpc.opensearch_vpc.id
   cidr_block              = var.subnet2_cidr
   availability_zone       = "${var.region}b"
   map_public_ip_on_launch = true
@@ -34,7 +34,7 @@ resource "aws_subnet" "subnet2" {
 
 # Internet Gateway
 resource "aws_internet_gateway" "igw" {
-  vpc_id = aws_vpc.gbfs_vpc.id
+  vpc_id = aws_vpc.opensearch_vpc.id
 
   tags = {
     Name = "opensearch-igw"
@@ -43,7 +43,7 @@ resource "aws_internet_gateway" "igw" {
 
 # Route Table
 resource "aws_route_table" "rt" {
-  vpc_id = aws_vpc.gbfs_vpc.id
+  vpc_id = aws_vpc.opensearch_vpc.id
 
   route {
     cidr_block = "0.0.0.0/0"
@@ -68,7 +68,7 @@ resource "aws_route_table_association" "subnet2_rta" {
 
 # Security Groups
 resource "aws_security_group" "eks_sg" {
-  vpc_id = aws_vpc.gbfs_vpc.id
+  vpc_id = aws_vpc.opensearch_vpc.id
 
   # Allow traffic from the EKS cluster nodes to the MySQL instance
   ingress {
@@ -76,7 +76,7 @@ resource "aws_security_group" "eks_sg" {
     to_port     = 9200
     protocol    = "tcp"
     # Restrict this to the EKS node security group (you may need to create a separate SG for EKS nodes)
-    security_groups = [aws_security_group.eks_nodes_sg.id]  # Allow only EKS nodes to connect to MySQL
+    security_groups = [aws_security_group.eks_nodes_sg.id]  
   }
 
   ingress {
@@ -107,7 +107,7 @@ resource "aws_security_group" "eks_sg" {
 
 # Security Group for EKS Nodes
 resource "aws_security_group" "eks_nodes_sg" {
-  vpc_id = aws_vpc.gbfs_vpc.id
+  vpc_id = aws_vpc.opensearch_vpc.id
 
 
   egress {
