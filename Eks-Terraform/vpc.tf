@@ -70,13 +70,11 @@ resource "aws_route_table_association" "subnet2_rta" {
 resource "aws_security_group" "eks_sg" {
   vpc_id = aws_vpc.opensearch_vpc.id
 
-  # Allow traffic from the EKS cluster nodes to the MySQL instance
+  # Allow traffic from the EKS cluster nodes 
   ingress {
     from_port   = 9200
     to_port     = 9200
     protocol    = "tcp"
-    # Restrict this to the EKS node security group (you may need to create a separate SG for EKS nodes)
-    security_groups = [aws_security_group.eks_nodes_sg.id]  
   }
 
   ingress {
@@ -104,29 +102,3 @@ resource "aws_security_group" "eks_sg" {
     Name = "opensearch-sg"
   }
 }
-
-# Security Group for EKS Nodes
-resource "aws_security_group" "eks_nodes_sg" {
-  vpc_id = aws_vpc.opensearch_vpc.id
-
-
-  egress {
-    from_port   = 9200
-    to_port     = 9200
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]  
-  }
-
-  # General outbound rules
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name = "opensearch-eks-nodes-sg"
-  }
-}
-
