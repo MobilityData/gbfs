@@ -20,37 +20,12 @@ variable "region" {
 
 variable "eks_cluster_name" {
   description = "Name of the EKS cluster"
-  default     = "gbfs-cluster"
+  default     = "opensearch-cluster"
 }
 
 variable "node_group_name" {
   description = "Name of the EKS Node Group"
-  default     = "gbfs-node-group"
-}
-
-variable "db_instance_class" {
-  description = "RDS instance class"
-  default     = "db.t3.micro"
-}
-
-variable "db_name" {
-  description = "Name of the MySQL database"
-  default     = "gbfsdb"
-}
-
-variable "db_username" {
-  description = "Username for the MySQL database"
-  default     = "manoj"
-}
-
-variable "db_password" {
-  description = "Password for the MySQL database"
-  default     = "Manoj2627"
-}
-
-variable "s3_bucket_name" {
-  description = "S3 bucket name for backups"
-  default     = "gbfs-backup-bucket"
+  default     = "opensearch-node-group"
 }
 
 variable "desired_size" {
