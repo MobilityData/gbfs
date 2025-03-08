@@ -1,10 +1,10 @@
 # VPC creation
-resource "aws_vpc" "gbfs_vpc" {
+resource "aws_vpc" "opensearch_vpc" {
   cidr_block           = var.vpc_cidr
   enable_dns_hostnames = true
 
   tags = {
-    Name = "gbfs-vpc"
+    Name = "opensearch-vpc"
   }
 }
 
@@ -16,7 +16,7 @@ resource "aws_subnet" "subnet1" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "gbfs-subnet-1"
+    Name = "opensearch-subnet-1"
   }
 }
 
@@ -28,7 +28,7 @@ resource "aws_subnet" "subnet2" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "gbfs-subnet-2"
+    Name = "open-search-subnet-2"
   }
 }
 
@@ -37,7 +37,7 @@ resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.gbfs_vpc.id
 
   tags = {
-    Name = "gbfs-igw"
+    Name = "opensearch-igw"
   }
 }
 
@@ -51,7 +51,7 @@ resource "aws_route_table" "rt" {
   }
 
   tags = {
-    Name = "gbfs-route-table"
+    Name = "opensearch-route-table"
   }
 }
 
@@ -72,8 +72,8 @@ resource "aws_security_group" "eks_sg" {
 
   # Allow traffic from the EKS cluster nodes to the MySQL instance
   ingress {
-    from_port   = 3306
-    to_port     = 3306
+    from_port   = 9200
+    to_port     = 9200
     protocol    = "tcp"
     # Restrict this to the EKS node security group (you may need to create a separate SG for EKS nodes)
     security_groups = [aws_security_group.eks_nodes_sg.id]  # Allow only EKS nodes to connect to MySQL
@@ -93,14 +93,6 @@ resource "aws_security_group" "eks_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  # Inbound rule for all traffic within the VPC (consider restricting this further)
-  ingress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
   egress {
     from_port   = 0
     to_port     = 0
@@ -109,7 +101,7 @@ resource "aws_security_group" "eks_sg" {
   }
 
   tags = {
-    Name = "gbfs-sg"
+    Name = "opensearch-sg"
   }
 }
 
@@ -117,12 +109,12 @@ resource "aws_security_group" "eks_sg" {
 resource "aws_security_group" "eks_nodes_sg" {
   vpc_id = aws_vpc.gbfs_vpc.id
 
-  # Allow outbound traffic to MySQL RDS instance
+
   egress {
-    from_port   = 3306
-    to_port     = 3306
+    from_port   = 9200
+    to_port     = 9200
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]  # Allow traffic to RDS; restrict in production
+    cidr_blocks = ["0.0.0.0/0"]  
   }
 
   # General outbound rules
@@ -134,7 +126,7 @@ resource "aws_security_group" "eks_nodes_sg" {
   }
 
   tags = {
-    Name = "gbfs-eks-nodes-sg"
+    Name = "opensearch-eks-nodes-sg"
   }
 }
 
