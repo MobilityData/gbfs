@@ -81,12 +81,12 @@ resource "aws_eks_cluster" "gbfs_cluster" {
   ]
 
   tags = {
-    Name = "gbfs-eks-cluster"
+    Name = "opensearch-eks-cluster"
   }
 }
 
 # EKS Node Group
-resource "aws_eks_node_group" "gbfs_node_group" {
+resource "aws_eks_node_group" "opensearch_node_group" {
   cluster_name    = aws_eks_cluster.gbfs_cluster.name
   node_group_name = var.node_group_name
   node_role_arn   = aws_iam_role.eks_node_role.arn
@@ -107,7 +107,7 @@ resource "aws_eks_node_group" "gbfs_node_group" {
   ]
 
   tags = {
-    Name = "gbfs-eks-node-group"
+    Name = "opensearch-eks-node-group"
   }
 }
 
