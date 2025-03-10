@@ -812,6 +812,7 @@ NO,Oslo Bysykkel,Oslo,oslobysykkel,https://oslobysykkel.no/,https://api.entur.io
 NO,Ryde Fredrikstad,Fredrikstad,rydefredrikstad,https://www.ryde-technology.com/,https://api.entur.io/mobility/v2/gbfs/v3/rydefredrikstad/gbfs,2.3 ; 3.0,
 NO,Ryde_Oslo,Oslo,rydeoslo,https://www.ryde-technology.com/,https://api.entur.io/mobility/v2/gbfs/v3/rydeoslo/gbfs,2.3 ; 3.0,
 NO,Ryde Porsgrunn,Porsgrunn,rydeskienporsgrunn,https://www.ryde-technology.com/,https://api.entur.io/mobility/v2/gbfs/v3/rydeskienporsgrunn/gbfs,2.3 ; 3.0,
+NO,Ryde Sarpsborg,Sarpsborg,rydesarpsborg,https://www.ryde-technology.com/,https://api.entur.io/mobility/v2/gbfs/v3/rydesarpsborg/gbfs,2.3 ; 3.0,
 NO,Ryde Trondheim,Trondheim,rydetrondheim,https://www.ryde-technology.com/,https://api.entur.io/mobility/v2/gbfs/v3/rydetrondheim/gbfs,2.3 ; 3.0,
 NO,Trondheim Bysykkel,Trondheim,trondheimbysykkel,https://trondheimbysykkel.no/,https://api.entur.io/mobility/v2/gbfs/v3/trondheimbysykkel/gbfs,3.0,
 NO,Voi Arendal,Arendal,voiarendal,https://www.voi.com/,https://api.entur.io/mobility/v2/gbfs/v3/voiarendal/gbfs,3.0,
