@@ -100,7 +100,7 @@ CA,Neuron Mobility,Vernon,neuron_yve,https://www.rideneuron.com,https://mds.neur
 CA,PBSC HQ,Montreal,pbsn,https://lyfturbansolutions.com/cities,https://pbsn.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
 CA,Sobi Hamilton,Hamilton,sobi_hamilton,https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json,1.0,
 CA,UBC,UBC - Canada,13,https://gohopr.com/,https://gbfs.hopr.city/api/gbfs/13,2.2,
-CH,2EM Car Sharing,Switzerland,zem_ch,https://www.2em.ch,https://api.mobidata-bw.de/sharing/gbfs/zem_ch/gbfs,2.3,
+CH,2EM Car Sharing,Switzerland,2em_cars,https://www.2em.ch,https://gbfs.prod.sharedmobility.ch/v2/gbfs/2em_cars/gbfs,2.3,Authorization=gbfs@sharedmobility.ch
 CH,Bird Basel,Basel,bird-basel,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/basel/gbfs.json,1.1 ; 2.3,
 CH,Bird Biel,Biel,bird-biel,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/biel/gbfs.json,1.1 ; 2.3,
 CH,Bird Bulle,Bulle,bird-bulle,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/bulle/gbfs.json,1.1 ; 2.3,
