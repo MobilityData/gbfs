@@ -130,6 +130,7 @@ CH,Lime Opfikon,Opfikon,lime_opfikon,https://www.li.me/,https://data.lime.bike/a
 CH,Lime Basel,Basel,lime_basel,https://www.li.me/,https://api.mobidata-bw.de/sharing/gbfs/lime_basel/gbfs,2.3,
 CH,Lime Uster,Uster,lime_uster,https://www.li.me/,https://api.mobidata-bw.de/sharing/gbfs/lime_uster/gbfs,2.3,
 CH,Lime Wetzikon,Wetzikon,lime_wetzikon,https://www.li.me/,https://gbfs.prod.sharedmobility.ch/v2/gbfs/lime_wetzikon/gbfs,2.3,Authorization=gbfs@sharedmobility.ch
+CH,Lime Winterthur,Winterthur,lime_winterthur,https://www.li.me/,https://gbfs.prod.sharedmobility.ch/v2/gbfs/lime_winterthur/gbfs,2.3,Authorization=gbfs@sharedmobility.ch
 CH,Lime Zug,Zug,lime_zug,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/zug/gbfs.json,2.2,
 CH,Lime Zurich,Zurich,lime_zurich,https://www.li.me/,https://api.mobidata-bw.de/sharing/gbfs/lime_zurich/gbfs,2.3,
 CH,LINK Basel,Basel,Link_Basel,https://www.superpedestrian.com,https://mds.linkyour.city/gbfs/ch_basel/gbfs.json,2.2 ; 2.3,
