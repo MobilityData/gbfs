@@ -134,6 +134,7 @@ CH,Lime Winterthur,Winterthur,lime_winterthur,https://www.li.me/,https://gbfs.pr
 CH,Lime Zug,Zug,lime_zug,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/zug/gbfs.json,2.2,
 CH,Lime Zurich,Zurich,lime_zurich,https://www.li.me/,https://api.mobidata-bw.de/sharing/gbfs/lime_zurich/gbfs,2.3,
 CH,LINK Basel,Basel,Link_Basel,https://www.superpedestrian.com,https://mds.linkyour.city/gbfs/ch_basel/gbfs.json,2.2 ; 2.3,
+CH,Mobility,Switzerland,mobility,https://www.mobility.ch,https://gbfs.prod.sharedmobility.ch/v2/gbfs/mobility/gbfs,2.3,Authorization=gbfs@sharedmobility.ch
 CH,nextbike Switzerland,Switzerland,nextbike_ch,https://www.nextbike.ch/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ch/gbfs.json,2.3,
 CH,PubliBike,Switzerland,publibike,https://www.publibike.ch,https://api.publibike.ch/v1/gbfs/v2/gbfs.json,2.3,
 CH,PickeBike Aubonne,Aubonne,pickebike_aubonne,https://www.pickebike.ch/de/,https://api.mobidata-bw.de/sharing/gbfs/pickebike_aubonne/gbfs,2.3,
