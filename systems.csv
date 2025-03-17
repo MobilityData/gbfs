@@ -199,6 +199,7 @@ DE,Bolt Reutlingen-Tübingen,Reutlingen-Tübingen,bolt_reutlingen_tuebingen,http
 DE,Bolt Stuttgart,"Stuttgart, DE",bolt_stuttgart,https://www.bolt.eu/,https://api.mobidata-bw.de/sharing/gbfs/v3/bolt_stuttgart/gbfs,2.3 ; 3.0,
 DE,Bird Ulm,Ulm,bird-ulm,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/ulm/gbfs.json,1.1 ; 2.3,
 DE,Bonn nextbike,Bonn,nextbike_bf,https://www.nextbike.de/bonn/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bf/gbfs.json,2.3,
+DE,CarSharing Renningen,Renningen,oekostadt_renningen,https://carsharing-renningen.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/oekostadt_renningen/gbfs,2.3 ; 3.0,
 DE,DCS Bike,"Mannheim, DE",nextbike_rr,https://www.nextbike.de/dcs-bike/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rr/gbfs.json,2.3,
 DE,Deer,Germany,deer,https://www.deer-mobility.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/deer/gbfs,2.3 ; 3.0,
 DE,Die Grüne Flotte,Freiburg im Breisgau,gruene-flotte_freiburg,https://gruene-flotte.com/carsharing/,https://api.mobidata-bw.de/sharing/gbfs/v3/gruene-flotte_freiburg/gbfs,2.3 ; 3.0,
