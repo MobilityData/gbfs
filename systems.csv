@@ -368,6 +368,7 @@ DE,Tier Aachen,Aachen,openvelo_aachen_tier,https://www.tier.app,https://nitro.op
 DE,UsedomRad Germany,Usedom,nextbike_ur,https://usedomrad.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ur/gbfs.json,2.3,
 DE,VAG_Rad,Nuremberg,nextbike_dv,https://www.vagrad.de/de/nuernberg/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dv/gbfs.json,2.3,
 DE,Velocity Aachen,Aachen,openvelo_aachen_velocity,https://velocity-aachen.de,https://nitro.openvelo.org/aachen/velocity/v2/gbfs.json,2.1,
+DE,Voi,Germany,voi_de,https://www.voi.com/,https://api.mobidata-bw.de/sharing/gbfs/v3/voi_de/gbfs,2.3 ; 3.0,
 DE,VRNnextbike,Rhine-Neckar,nextbike_vn,https://www.vrnnextbike.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vn/gbfs.json,2.3,
 DE,westBike,Heinsberg,nextbike_gh,https://www.west-bike.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gh/gbfs.json,2.3,
 DE,WinsenRad,Winsen (Luhe),nextbike_wd,https://www.winsenrad.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wd/gbfs.json,2.3,
