@@ -112,6 +112,7 @@ CH,Bird Zurich,Zurich,bird-zurich,https://www.bird.co,https://mds.bird.co/gbfs/v
 CH,Bolt Basel,Basel,bolt_basel,https://www.bolt.eu/,https://api.mobidata-bw.de/sharing/gbfs/v3/bolt_basel/gbfs,2.3 ; 3.0,
 CH,Bolt Zurich,Zurich,bolt_zurich,https://www.bolt.eu/,https://api.mobidata-bw.de/sharing/gbfs/v3/bolt_zurich/gbfs,2.3 ; 3.0,
 CH,carvelo eCargo-Bike Sharing,Switzerland,carvelo2go_ch,https://www.carvelo.ch,https://api.mobidata-bw.de/sharing/gbfs/v3/carvelo2go_ch/gbfs,2.3 ; 3.0,
+CH,Car-ship,Constance,car_ship,https://www.car-ship.jetzt/,https://api.mobidata-bw.de/sharing/gbfs/v3/car_ship/gbfs,2.3 ; 3.0,
 CH,Donkey Republic Geneva,Geneva,donkey_ge,https://www.donkey.bike/cities/bike-rental-geneva/,https://stables.donkey.bike/api/public/gbfs/2/donkey_ge/gbfs,1.0 ; 2.3,
 CH,Donkey Republic Kreuzlingen,Kreuzlingen,donkey_kreuzlingen,https://www.donkey.bike/cities/bike-rental-kreuzlingen/,https://stables.donkey.bike/api/public/gbfs/2/donkey_kreuzlingen/gbfs.json,1.0 ; 2.3,
 CH,Donkey Republic Le Locle,Le Locle,donkey_le_locle,https://www.donkey.bike/cities/bike-rental-le-locle/,https://stables.donkey.bike/api/public/gbfs/2/donkey_le_locle/gbfs,1.0 ; 2.3,
