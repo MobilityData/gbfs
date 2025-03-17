@@ -299,6 +299,7 @@ DE,Felyx Aachen,Aachen,openvelo_aachen_felyx,https://felyx.com/de/de/aachen,http
 DE,Flinkster,Germany,flinkster_carsharing,https://www.flinkster.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/flinkster_carsharing/gbfs,2.3 ; 3.0,
 DE,fLotte Brandenburg,Berlin,flotte-brandenburg,http://www.flotte-brandenburg.de/,https://opendata.bbnavi.de/flotte/flotte-brandenburg/gbfs.json,2.3,
 DE,Frelo Freiburg,Freiburg,nextbike_df,https://www.frelo-freiburg.de/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_df/gbfs.json,2.3,
+DE,Gmünd bewegt!,Schwäbisch Gmünd,gmuend_bewegt,https://www.stwgd.de/privatkunden/mobilitaet/e-carsharing.html,https://api.mobidata-bw.de/sharing/gbfs/v3/gmuend_bewegt/gbfs,2.3 ; 3.0,
 DE,Graben - ready4green,Graben,nextbike_da,https://www.nextbike.de/ready4green/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_da/gbfs.json,2.3,
 DE,Heraeus Hanau,Hanau,nextbike_hg,https://www.nextbike.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_hg/gbfs.json,2.3,
 DE,KVB Rad Germany,Cologne,nextbike_kg,https://www.kvb-rad.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_kg/gbfs.json,2.3,
