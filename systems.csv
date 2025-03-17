@@ -339,6 +339,7 @@ DE,nextbike Norderstedt,Norderstedt,nextbike_nn,https://www.nextbike.de/norderst
 DE,nextbike Rüsselsheim am Main,Rüsselsheim,nextbike_do,https://www.nextbike.de/ruesselsheim/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_do/gbfs.json,2.3,
 DE,nextbike Wiesbaden,Wiesbaden,nextbike_wn,https://www.nextbike.de/wiesbaden/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wn/gbfs.json,2.3,
 DE,Nibelungen-Bike,Braunschweig,nextbike_dn,https://www.nextbike.de/braunschweig/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dn/gbfs.json,2.3,
+DE,OberSchwabenMobil CarSharing,Halle (Saale),oberschwabenmobil,https://www.oberschwabenmobil.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/oberschwabenmobil/gbfs,2.3 ; 3.0,
 DE,OLi-Bike,Oldenburg,nextbike_wo,https://www.oli-bike.de/de/oldenburg/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wo/gbfs.json,2.3,
 DE,Potsdam Rad,Potsdam,nextbike_dc,https://www.nextbike.de/potsdam/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dc/gbfs.json,2.3,
 DE,Roxy Freiburg,Freiburg im Breisgau,1227,https://roxy-mobility.com,https://roxy.rideatom.com/gbfs/v2_2/en/gbfs?id=1227,2.2,
