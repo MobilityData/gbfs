@@ -362,6 +362,7 @@ DE,Stadtmobil Südbaden,Südbaden,stadtmobil_suedbaden,https://www.stadtmobil-su
 DE,Stadtwerk Tauberfranken,Germany,stadtwerk_tauberfranken,https://stadtwerk-tauberfranken.de/elektromobilitaet/e-carsharing/,https://api.mobidata-bw.de/sharing/gbfs/v3/stadtwerk_tauberfranken/gbfs,2.3 ; 3.0,
 DE,swu2go Carsharing,Ulm,swu2go,https://www.swu.de/privatkunden/produkte-leistungen/mobilitaet/swu2go,https://ixsi.swu.de/gbfs.json,2.0,
 DE,TeilAuto Biberach,Biberach,teilauto_biberach,https://www.teilauto-biberach.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_biberach/gbfs,2.3 ; 3.0,
+DE,TeilAuto Neckar-Alb,Neckar-Alb,teilauto_neckar-alb,https://www.teilauto-neckar-alb.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_neckar-alb/gbfs,2.3 ; 3.0,
 DE,Tier Aachen,Aachen,openvelo_aachen_tier,https://www.tier.app,https://nitro.openvelo.org/aachen/tier/v2/gbfs.json,2.1,
 DE,UsedomRad Germany,Usedom,nextbike_ur,https://usedomrad.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ur/gbfs.json,2.3,
 DE,VAG_Rad,Nuremberg,nextbike_dv,https://www.vagrad.de/de/nuernberg/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dv/gbfs.json,2.3,
