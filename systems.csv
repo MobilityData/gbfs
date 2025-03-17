@@ -323,6 +323,7 @@ DE,MOBIbike,Dresden,nextbike_dx,https://www.nextbike.de/dresden/,https://gbfs.ne
 DE,mobic,Rhein-Erft-Kreis,nextbike_re,https://www.nextbike.de/mobic/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_re/gbfs.json,2.3,
 DE,Movemix Bike,"Halle, DE",nextbike_mx,https://www.movemix-bike.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_mx/gbfs.json,2.3,
 DE,MV-Rad,Mecklenburg-Vorpommern,nextbike_um,https://mv-rad.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_um/gbfs.json,2.3,
+DE,Naturenergie sharing,South Baden,naturenergie_sharing,https://www.naturenergie-sharing.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/naturenergie_sharing/gbfs,2.3 ; 3.0,
 DE,NEW MöBus nextbike,Mönchengladbach,nextbike_sn,https://www.nextbike.de/moenchengladbach/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_sn/gbfs.json,2.3,
 DE,nextbike Berlin,Berlin,nextbike_bn,https://www.nextbike.de/berlin/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bn/gbfs.json,2.3,
 DE,nextbike Düsseldorf,Düsseldorf,nextbike_dd,https://www.nextbike.de/duesseldorf/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dd/gbfs.json,2.3,
