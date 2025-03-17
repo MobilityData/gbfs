@@ -201,6 +201,7 @@ DE,Bird Ulm,Ulm,bird-ulm,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/
 DE,Bonn nextbike,Bonn,nextbike_bf,https://www.nextbike.de/bonn/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bf/gbfs.json,2.3,
 DE,DCS Bike,"Mannheim, DE",nextbike_rr,https://www.nextbike.de/dcs-bike/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rr/gbfs.json,2.3,
 DE,Deer,Germany,deer,https://www.deer-mobility.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/deer/gbfs,2.3 ; 3.0,
+DE,Die Grüne Flotte,Freiburg im Breisgau,gruene-flotte_freiburg,https://gruene-flotte.com/carsharing/,https://api.mobidata-bw.de/sharing/gbfs/v3/gruene-flotte_freiburg/gbfs,2.3 ; 3.0,
 DE,Donkey Republic Bamberg,Bamberg,donkey_bamberg,https://www.donkey.bike/,https://stables.donkey.bike/api/public/gbfs/2/donkey_bamberg/gbfs.json,1.0 ; 2.3,
 DE,Donkey Republic Berlin,Berlin,donkey_berlin,https://www.donkey.bike/cities/bike-rental-berlin/,https://stables.donkey.bike/api/public/gbfs/2/donkey_berlin/gbfs.json,1.0 ; 2.3,
 DE,Donkey Republic Freiburg,Freiburg,donkey_freiburg,https://www.donkey.bike/cities/bike-rental-freiburg/,https://stables.donkey.bike/api/public/gbfs/2/donkey_freiburg/gbfs.json,1.0 ; 2.3,
