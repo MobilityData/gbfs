@@ -357,6 +357,7 @@ DE,sprintRAD,Hannover,nextbike_dh,https://www.nextbike.de/hannover/,https://gbfs
 DE,StadtRad Greifswald,Greifswald,nextbike_ug,https://stadtrad-greifswald.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ug/gbfs.json,2.3,
 DE,Stadtmobil Stuttgart,Stuttgart,stadtmobil_stuttgart,https://stuttgart.stadtmobil.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/stadtmobil_stuttgart/gbfs,2.3 ; 3.0,
 DE,Stadtmobil Karlsruhe,Karlsruhe,stadtmobil_karlsruhe,https://karlsruhe.stadtmobil.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/stadtmobil_karlsruhe/gbfs,2.3 ; 3.0,
+DE,Stadtmobil Rhein-Neckar,Rhein-Neckar,stadtmobil_rhein-neckar,https://rhein-neckar.stadtmobil.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/stadtmobil_rhein-neckar/gbfs,2.3 ; 3.0,
 DE,Stadtmobil Südbaden,Südbaden,stadtmobil_suedbaden,https://www.stadtmobil-suedbaden.de/,https://api.mobidata-bw.de/sharing/gbfs/stadtmobil_suedbaden/gbfs,2.3,
 DE,Stadtwerk Tauberfranken,Germany,stadtwerk_tauberfranken,https://stadtwerk-tauberfranken.de/elektromobilitaet/e-carsharing/,https://api.mobidata-bw.de/sharing/gbfs/v3/stadtwerk_tauberfranken/gbfs,2.3 ; 3.0,
 DE,swu2go Carsharing,Ulm,swu2go,https://www.swu.de/privatkunden/produkte-leistungen/mobilitaet/swu2go,https://ixsi.swu.de/gbfs.json,2.0,
