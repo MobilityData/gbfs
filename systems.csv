@@ -375,6 +375,7 @@ DE,WinsenRad,Winsen (Luhe),nextbike_wd,https://www.winsenrad.de/,https://gbfs.ne
 DE,WK-Bike (Bremen),Bremen,nextbike_wk,https://www.wk-bike.de/de/bremen/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wk/gbfs.json,2.3,
 DE,wupsiRad Leverkusen,Leverkusen,nextbike_dw,https://www.wupsirad.de/de/leverkusen/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dw/gbfs.json,2.3,
 DE,Yoio Freiburg,Freiburg im Breisgau,71,http://www.yoio.app,https://yoio.rideatom.com/gbfs/v2_2/en/gbfs?id=71,2.2,
+DE,zeo Carsharing,Bruchsal,zeo_bruchsal,https://www.zeo-carsharing.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/zeo_bruchsal/gbfs,2.3 ; 3.0,
 DE,Zeus Bamberg,Bamber,zeus_bamberg,https://zeusscooters.com/,https://zeus.city/api/v1/mds/gbfs/bamberg/gbfs.json,2.2,
 DE,Zeus Castrop Rauxel,Castrop Rauxel,zeus_castrop-rauxel,https://zeusscooters.com/,https://zeus.city/api/v1/mds/gbfs/castrop-rauxel/gbfs.json,2.2,
 DE,Zeus Duisburg,Druisburg,zeus_duisburg,https://zeusscooters.com/,https://zeus.city/api/v1/mds/gbfs/duisburg/gbfs.json,2.2,
