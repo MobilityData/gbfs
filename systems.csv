@@ -296,6 +296,7 @@ DE,EDEKA Grünheide,Grünheide (Mark),nextbike_ed,https://www.nextbike.de/gruenh
 DE,Eifel e-Bike,Eifel,nextbike_eb,https://www.nextbike.de/eifel-ebike/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_eb/gbfs.json,2.3,
 DE,EinfachMobil,Ortenaukreis,nextbike_eh,https://www.nextbike.de/einfachmobil/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_eh/gbfs.json,2.3,
 DE,Felyx Aachen,Aachen,openvelo_aachen_felyx,https://felyx.com/de/de/aachen,https://nitro.openvelo.org/aachen/felyx/v2/gbfs.json,2.1,
+DE,Flinkster,Germany,flinkster_carsharing,https://www.flinkster.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/flinkster_carsharing/gbfs,2.3 ; 3.0,
 DE,fLotte Brandenburg,Berlin,flotte-brandenburg,http://www.flotte-brandenburg.de/,https://opendata.bbnavi.de/flotte/flotte-brandenburg/gbfs.json,2.3,
 DE,Frelo Freiburg,Freiburg,nextbike_df,https://www.frelo-freiburg.de/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_df/gbfs.json,2.3,
 DE,Graben - ready4green,Graben,nextbike_da,https://www.nextbike.de/ready4green/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_da/gbfs.json,2.3,
