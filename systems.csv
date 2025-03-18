@@ -598,7 +598,7 @@ FR,Vélomagg',Montpellier,montpellier,https://www.tam-voyages.com/presentation/?
 FR,Vélopop,Avignon,velopop,https://velo-grandavignon.fr/fr/,https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/avignon/gbfs.json,1.0,key=NWNiMjc5YmQtMzVlOC00MmJiLTkyYTItNzZkMDViMzA2MzA2
 FR,VélOstan'lib,Nancy,nancy,https://www.velostanlib.fr/,https://api.cyclocity.fr/contracts/nancy/gbfs/gbfs.json,2.3,
 FR,VélÔToulouse,Toulouse,toulouse,http://www.velo.toulouse.fr/,https://api.cyclocity.fr/contracts/toulouse/gbfs/gbfs.json,2.3,
-FR,VéloZef,Brest,velozef,https://www.bibus.fr/services/velozef-le-velo-assistance-electrique-en-libre-service,https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/brest/en/gbfs.json,1.0,key=OGNhZDNjMDQtYTA0Yi00NzU2LWE0MTItOGJlYzE1Y2E4NGEx
+FR,VéloZef,Brest,velozef,https://www.bibus.fr/services/velozef-le-velo-assistance-electrique-en-libre-service,https://gbfs.partners.fifteen.eu/gbfs/2.2/brest/en/gbfs.json,2.2,
 FR,Vélo'Cité,Laon,velocite,https://velocite.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/velocite/gbfs.json,2.2 ; 3.0,
 FR,Vélo'v,Lyon,lyon,https://velov.grandlyon.com/en/home,https://api.cyclocity.fr/contracts/lyon/gbfs/gbfs.json,2.3,
 FR,Vélibéo,Brive-la-Gaillarde,velibeo,https://velibeo.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/velibeo/gbfs.json,2.2 ; 3.0,
