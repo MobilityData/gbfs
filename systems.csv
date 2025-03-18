@@ -584,6 +584,7 @@ FR,Rhoule,Piriac-sur-Mer,rhoule,https://rhoule.ecovelo.mobi,https://api.gbfs.v3.
 FR,Rubis'Velo,Bourg-en-Bresse,beb,https://rubis.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/beb/gbfs.json,2.2 ; 3.0,
 FR,Semo Vélo,Louviers,semo,https://semo.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/semo/gbfs.json,2.2 ; 3.0,
 FR,Tempovelo,Agen,tempovelo,https://tempovelo.ecovelo.mobi/,https://api.gbfs.v3.0.ecovelo.mobi/tempovelo/gbfs.json,2.2 ; 3.0,
+FR,Ti Vélo,Landerneau,ti_velo,https://www.landerneau.bzh,https://gbfs.partners.fifteen.eu/gbfs/2.2/landerneau/en/gbfs.json,2.2,
 FR,TIER Paris,Paris,tier_paris,https://www.tier.app,https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/,2.1 ; 2.2 ; 2.3 ; 3.0,
 FR,TLP Mobilites,Tarbes,tlpmobilites,https://tlpmobilites.ecovelo.mobi/,https://api.gbfs.v3.0.ecovelo.mobi/tlpmobilites/gbfs.json,2.2 ; 3.0,
 FR,Velam,Amiens,amiens,https://velam.cyclocity.fr/,https://api.cyclocity.fr/contracts/amiens/gbfs/gbfs.json,2.3,
