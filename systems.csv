@@ -489,6 +489,7 @@ FI,Donkey Republic Riihimäki,Riihimäki,donkey_riihimaki,https://www.donkey.bik
 FI,Donkey Republic Turku,Turku,donkey_turku,https://www.donkey.bike/cities/bike-rental-hyvinkaa/,https://stables.donkey.bike/api/public/gbfs/2/donkey_turku/gbfs.json,1.0 ; 2.3,
 FI,Joe Rauma,Rauma,475,https://www.joescooter.fi/,https://joe.rideatom.com/gbfs/v2_2/en/gbfs?id=475,2.2,
 FR,Altervelo Libre-service,"Saint-Pierre, L'Étang-Salé & Saint-Louis",altervelo,https://altervelo.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/altervelo/gbfs.json,2.2 ; 3.0,
+FR,AQTA,Auray,auray-quiberon,https://www.auray-quiberon.fr/,https://gbfs.partners.fifteen.eu/gbfs/auray-quiberon/gbfs.json,2.2,
 FR,Bird Bordeaux,Bordeaux,bird-bordeaux,https://bird.co,https://mds.bird.co/gbfs/v2/public/bordeaux/gbfs.json,1.1 ; 2.3,
 FR,Bird Castres,Castres,bird-castres,https://bird.co,https://mds.bird.co/gbfs/v2/public/castres/gbfs.json,1.1 ; 2.3,
 FR,Bird Chalonsenchampagne,Châlons-en-Champagne,bird-chalonsenchampagne,https://bird.co,https://mds.bird.co/gbfs/v2/public/chalonsenchampagne/gbfs.json,1.1 ; 2.3,
