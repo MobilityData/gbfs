@@ -562,6 +562,7 @@ FR,Naolib,Nantes,nantes,https://velo.naolib.fr/,https://api.cyclocity.fr/contrac
 FR,Naolib Micromob',Chantrerie,chantrerie,https://naolib.fr/fr/velos/micromob-1,https://api.gbfs.v3.0.ecovelo.mobi/chantrerie/gbfs.json,2.2 ; 3.0,
 FR,Ogalo Cyclette,Saumur,ogalo,https://ogalo.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/ogalo/gbfs.json,2.2 ; 3.0,
 FR,Optymo Belfort,Belfort,Optymo_FR_Belfort,https://www.optymo.fr/,https://belfort-gbfs.klervi.net/gbfs/gbfs.json,,
+FR,Optymo Belfort Auto libre-service,Belfort,Optymo_Belfort_ALS,https://www.optymo.fr/,https://data.optymo.fr/als/gbfs.json,2.3,
 FR,Pony Angers,Angers,pony_Angers,https://getapony.com/,https://gbfs.getapony.com/v1/angers/en/gbfs.json,2.2,
 FR,Pony Basque Country,Basque Country,pony_Basque_Country,https://getapony.com/,https://gbfs.getapony.com/v1/basque_country/en/gbfs.json,2.2,
 FR,Pony Beauvais,Beauvais,pony_Beauvais,https://getapony.com/,https://gbfs.getapony.com/v1/beauvais/en/gbfs.json,2.2,
