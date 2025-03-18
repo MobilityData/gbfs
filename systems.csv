@@ -606,7 +606,7 @@ FR,Vélivert,Saint-Étienne,velivert_saint_etienne,https://www.velivert.fr/,http
 FR,VélYcéo,Saint-Nazaire,velyceo,https://velyceo.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/velyceo/gbfs.json,2.2 ; 3.0,
 FR,Vernou Vélo,Vernou-en-Sologne,vernouvelo,https://vernouvelo.ecovelo.mobi/,https://api.gbfs.v3.0.ecovelo.mobi/vernouvelo/gbfs.json,2.2 ; 3.0,
 FR,Vertuose,Longwy,vertuose,https://vertuose.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/vertuose/gbfs.json,2.2 ; 3.0,
-FR,V'lille,Lille,vlille,https://www.ilevia.fr/cms/vlille/,https://transport.data.gouv.fr/gbfs/vlille/gbfs.json,,
+FR,V'lille,Lille,v_lille,https://www.ilevia.fr/v-lille,https://media.ilevia.fr/opendata/gbfs.json,2.3,
 FR,Voi Marseille,Marseille,voi_Marseille,https://www.voi.com/,https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/66/gbfs.json,2.3,
 FR,Zebullo,Reims,zebullo,https://zebullo.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/zebullo/gbfs.json,2.2 ; 3.0,
 GB,BelfastBikes,Belfast,nextbike_bu,https://www.belfastbikes.co.uk/en/belfast/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bu/gbfs.json,2.3,
