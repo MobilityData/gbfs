@@ -607,6 +607,7 @@ FR,Vélivert,Saint-Étienne,velivert_saint_etienne,https://www.velivert.fr/,http
 FR,VélYcéo,Saint-Nazaire,velyceo,https://velyceo.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/velyceo/gbfs.json,2.2 ; 3.0,
 FR,Vernou Vélo,Vernou-en-Sologne,vernouvelo,https://vernouvelo.ecovelo.mobi/,https://api.gbfs.v3.0.ecovelo.mobi/vernouvelo/gbfs.json,2.2 ; 3.0,
 FR,Vertuose,Longwy,vertuose,https://vertuose.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/vertuose/gbfs.json,2.2 ; 3.0,
+FR,Vilvolt,Épinal,vilvolt_epinal,https://vilvolt.fr/,https://gbfs.partners.fifteen.eu/gbfs/epinal/gbfs.json,2.2,
 FR,V'lille,Lille,v_lille,https://www.ilevia.fr/v-lille,https://media.ilevia.fr/opendata/gbfs.json,2.3,
 FR,Voi Le Havre,Le Havre,voi_Le_Havre,https://www.voi.com/,https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/336/gbfs.json,2.3,
 FR,Voi Marseille,Marseille,voi_Marseille,https://www.voi.com/,https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/66/gbfs.json,2.3,
