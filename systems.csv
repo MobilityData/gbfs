@@ -100,7 +100,7 @@ CA,Neuron Mobility,Vernon,neuron_yve,https://www.rideneuron.com,https://mds.neur
 CA,PBSC HQ,Montreal,pbsn,https://lyfturbansolutions.com/cities,https://pbsn.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,
 CA,Sobi Hamilton,Hamilton,sobi_hamilton,https://hamilton.socialbicycles.com/,https://hamilton.socialbicycles.com/opendata/gbfs.json,1.0,
 CA,UBC,UBC - Canada,13,https://gohopr.com/,https://gbfs.hopr.city/api/gbfs/13,2.2,
-CH,2EM Car Sharing,Switzerland,2em_cars,https://www.2em.ch,https://gbfs.prod.sharedmobility.ch/v2/gbfs/2em_cars/gbfs,2.3,Authorization=gbfs@sharedmobility.ch
+CH,2EM Car Sharing,Switzerland,2em_cars,https://www.2em.ch,https://gbfs.prod.sharedmobility.ch/v2/gbfs/2em_cars/gbfs,2.3,https://github.com/SFOE/sharedmobility/blob/main/Access%20the%20data.md
 CH,Bird Basel,Basel,bird-basel,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/basel/gbfs.json,1.1 ; 2.3,
 CH,Bird Biel,Biel,bird-biel,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/biel/gbfs.json,1.1 ; 2.3,
 CH,Bird Bulle,Bulle,bird-bulle,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/bulle/gbfs.json,1.1 ; 2.3,
@@ -130,12 +130,12 @@ CH,edrive carsharing,Switzerland,edrivecarsharing_ch,https://www.edrivecarsharin
 CH,Lime Opfikon,Opfikon,lime_opfikon,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/opfikon/gbfs.json,2.2,
 CH,Lime Basel,Basel,lime_basel,https://www.li.me/,https://api.mobidata-bw.de/sharing/gbfs/v3/lime_basel/gbfs,2.3 ; 3.0,
 CH,Lime Uster,Uster,lime_uster,https://www.li.me/,https://api.mobidata-bw.de/sharing/gbfs/v3/lime_uster/gbfs,2.3 ; 3.0,
-CH,Lime Wetzikon,Wetzikon,lime_wetzikon,https://www.li.me/,https://gbfs.prod.sharedmobility.ch/v2/gbfs/lime_wetzikon/gbfs,2.3,Authorization=gbfs@sharedmobility.ch
-CH,Lime Winterthur,Winterthur,lime_winterthur,https://www.li.me/,https://gbfs.prod.sharedmobility.ch/v2/gbfs/lime_winterthur/gbfs,2.3,Authorization=gbfs@sharedmobility.ch
+CH,Lime Wetzikon,Wetzikon,lime_wetzikon,https://www.li.me/,https://gbfs.prod.sharedmobility.ch/v2/gbfs/lime_wetzikon/gbfs,2.3,https://github.com/SFOE/sharedmobility/blob/main/Access%20the%20data.md
+CH,Lime Winterthur,Winterthur,lime_winterthur,https://www.li.me/,https://gbfs.prod.sharedmobility.ch/v2/gbfs/lime_winterthur/gbfs,2.3,https://github.com/SFOE/sharedmobility/blob/main/Access%20the%20data.md
 CH,Lime Zug,Zug,lime_zug,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/zug/gbfs.json,2.2,
 CH,Lime Zurich,Zurich,lime_zurich,https://www.li.me/,https://api.mobidata-bw.de/sharing/gbfs/v3/lime_zurich/gbfs,2.3 ; 3.0,
 CH,LINK Basel,Basel,Link_Basel,https://www.superpedestrian.com,https://mds.linkyour.city/gbfs/ch_basel/gbfs.json,2.2 ; 2.3,
-CH,Mobility,Switzerland,mobility,https://www.mobility.ch,https://gbfs.prod.sharedmobility.ch/v2/gbfs/mobility/gbfs,2.3,Authorization=gbfs@sharedmobility.ch
+CH,Mobility,Switzerland,mobility,https://www.mobility.ch,https://gbfs.prod.sharedmobility.ch/v2/gbfs/mobility/gbfs,2.3,https://github.com/SFOE/sharedmobility/blob/main/Access%20the%20data.md
 CH,nextbike Switzerland,Switzerland,nextbike_ch,https://www.nextbike.ch/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ch/gbfs.json,2.3,
 CH,PubliBike,Switzerland,publibike,https://www.publibike.ch,https://api.publibike.ch/v1/gbfs/v2/gbfs.json,2.3,
 CH,PickeBike Aubonne,Aubonne,pickebike_aubonne,https://www.pickebike.ch/de/,https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_aubonne/gbfs,2.3 ; 3.0,
