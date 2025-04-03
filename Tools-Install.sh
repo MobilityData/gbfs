@@ -19,13 +19,6 @@ sudo usermod -aG docker ubuntu
 sudo systemctl restart docker
 sudo chmod 777 /var/run/docker.sock
 
-# Installing AWS CLI
-#!/bin/bash
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-sudo apt install unzip -y
-unzip awscliv2.zip
-sudo ./aws/install
-
 # Installing Kubectl
 #!/bin/bash
 sudo apt update
@@ -35,10 +28,51 @@ sudo chmod +x kubectl
 sudo mv kubectl /usr/local/bin/
 kubectl version --client
 
-# Installing Terraform
-#!/bin/bash
-wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
-sudo apt update
-sudo apt install terraform -y
+# Install eksctl
+curl -sLO "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz"
+tar -xzf eksctl_Linux_amd64.tar.gz
+sudo mv eksctl /usr/local/bin
+eksctl version  # Verify installation
+
+# Verify Installation
+eksctl version
+
+# Create the EKS Cluster
+eksctl create cluster \
+  --name my-eks-cluster \
+  --region us-east-1 \
+  --nodegroup-name my-node-group \
+  --node-type t2.large \
+  --nodes 2 \
+  --nodes-min 2 \
+  --nodes-max 2 \
+  --managed
+
+# Update kubeconfig
+aws eks update-kubeconfig --region us-east-1 --name my-eks-cluster
+
+# Check Nodes
+kubectl get nodes
+
+# Install Helm
+curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+# Verify Installation
+helm version
+
+# Add Prometheus & Grafana Helm Chart
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+# Install Prometheus & Grafana
+kubectl create namespace monitoring
+helm install prometheus-stack prometheus-community/kube-prometheus-stack -n monitoring
+
+# Verify Installation
+kubectl get all -n monitoring
+
+
+
+
+
 
