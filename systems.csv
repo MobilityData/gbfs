@@ -1,4 +1,4 @@
-Country Code,Name,Location,System ID,URL,Auto-Discovery URL,Supported Versions,Authentication Info,Authentication Type,Authentication Parameter Name
+Country Code,Name,Location,System ID,URL,Auto-Discovery URL,Supported Versions,Authentication Info URL,Authentication Type,Authentication Parameter Name
 AE,Careem BIKE,Dubai,careem_bike,https://www.careem.com/en-ae/careem-bike/,https://dubai.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,,,
 AE,Dott Abu Dhabi,Abu Dhabi,dott-abu-dhabi,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/abu-dhabi/gbfs.json,2.3,,,
 AE,Dott Dubai,Dubai,dott-dubai,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/dubai/gbfs.json,2.3,,,
