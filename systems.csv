@@ -350,9 +350,9 @@ DE,SAP Walldorf,Walldorf,nextbike_ds,https://www.nextbike.de/walldorf/,https://g
 DE,Call a Bike,Germany,callabike,https://www.callabike.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/callabike/gbfs,2.3 ; 3.0,,,
 DE,Call a Bike,Germany,callabike_ice,https://www.callabike.de/de/ice-stationen,https://api.mobidata-bw.de/sharing/gbfs/v3/callabike_ice/gbfs,2.3 ; 3.0,,,
 DE,LastenVelo Freiburg,Freiburg,lastenvelo_fr,https://www.lastenvelofreiburg.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/lastenvelo_fr/gbfs,2.3 ; 3.0,,,
-DE,StadtRadHamburg,Hamburg,stadtrad_hamburg,https://stadtrad.hamburg.de/,https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/v2/de/StadtRadHamburg/gbfs,1,https://developers.deutschebahn.com/db-api-marketplace/apis/start,2,DB-Client-Id|DB-Api-Key
+DE,StadtRadHamburg,Hamburg,stadtrad_hamburg,https://stadtrad.hamburg.de/,https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/v2/de/StadtRadHamburg/gbfs,2.3,https://developers.deutschebahn.com/db-api-marketplace/apis/start,2,DB-Client-Id|DB-Api-Key
 DE,RegioRadStuttgart,Stuttgart,regiorad_stuttgart,https://www.regioradstuttgart.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/regiorad_stuttgart/gbfs,2.3 ; 3.0,,,
-DE,StadtRADLueneburg,Lübeburg,stadtrad_lueneburg,https://stadtradlueneburg.de/,https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/v2/de/StadtRADLueneburg/gbfs,1,https://developers.deutschebahn.com/db-api-marketplace/apis/start,2,DB-Client-Id|DB-Api-Key
+DE,StadtRADLueneburg,Lübeburg,stadtrad_lueneburg,https://stadtradlueneburg.de/,https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/v2/de/StadtRADLueneburg/gbfs,2.3,https://developers.deutschebahn.com/db-api-marketplace/apis/start,2,DB-Client-Id|DB-Api-Key
 DE,sprintRAD,Hannover,nextbike_dh,https://www.nextbike.de/hannover/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dh/gbfs.json,2.3,,,
 DE,StadtRad Greifswald,Greifswald,nextbike_ug,https://stadtrad-greifswald.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ug/gbfs.json,2.3,,,
 DE,Stadtmobil Stuttgart,Stuttgart,stadtmobil_stuttgart,https://stuttgart.stadtmobil.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/stadtmobil_stuttgart/gbfs,2.3 ; 3.0,,,
