@@ -1232,6 +1232,9 @@ Field Name | REQUIRED | Type | Defines
 `plans[].per_min_pricing[].interval` <br/>*(added in v2.2)* | REQUIRED | Non-Negative Integer | Interval in minutes at which the `rate` of this segment is either reapplied indefinitely, or up until (but not including) the `end` minute, if `end` is defined.<br /><br />An interval of 0 indicates the rate is only charged once.
 `plans[].per_min_pricing[].end` <br/>*(added in v2.2)* | OPTIONAL | Non-Negative Integer | The minute at which the rate will no longer apply  *(exclusive)* for example, if `end` is `20` the rate no longer applies after 19:59.<br /><br />If this field is empty, the price issued for this segment is charged until the trip ends, in addition to the cost of any subsequent segments.
 `plans[].surge_pricing` <br/>*(added in v2.2)* | OPTIONAL | Boolean | Is there currently an increase in price in response to increased demand in this pricing plan? If this field is empty, it means there is no surge pricing in effect.<br /><br />`true` - Surge pricing is in effect.<br />  `false` - Surge pricing is not in effect.
+`plans[].fare_capping` <br/>*(added in v3.1-RC2)* | OPTIONAL | Object | Object defining a capped fare once a price threshold has been spent within a timeframe. The same fare cap applies to each subsequent timeframe. For example, a fare capped at 15.00 CAD per 12-hour period.
+`plans[].fare_capping.duration` <br/>*(added in v3.1-RC2)* | REQUIRED | Non-Negative Integer | Amount of time in minutes during which the fare is capped.
+`plans[].fare_capping.price` <br/>*(added in v3.1-RC2)* | REQUIRED | Non-Negative Float | The maximum fare threshold for the current timeframe, in the unit specified by `currency`.
 
 **Example 1:**
 
@@ -1288,7 +1291,7 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 
 **Example 2:**
 
-This example demonstrates a pricing scheme that has a rate both by minute and by km. The user is charged $0.25 per km as well as $0.50 per minute. Both of these rates happen concurrently and are not dependent on one another.
+This example demonstrates a pricing scheme that has a rate both by minute and by km. The user is charged $0.25 per km as well as $0.50 per minute. Both of these rates happen concurrently and are not dependent on one another. The fare is capped at 15.00 CAD per 12-hour period (720 minutes).
 
 ```json
 {
@@ -1310,7 +1313,7 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
         "is_taxable": true,
         "description": [
           {
-            "text": "$3 unlock fee, $0.25 per kilometer and 0.50 per minute.",
+            "text": "$3 unlock fee, $0.25 per kilometer and 0.50 per minute, capped at $15 per 12-hour period.",
             "language": "en"
           }
         ],
@@ -1327,7 +1330,11 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
             "rate": 0.50,
             "interval": 1
           }
-        ]
+        ],
+        "fare_capping": {
+          "duration": 720,
+          "price": 15.00
+        }
       }
     ]
   }
