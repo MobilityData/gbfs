@@ -1033,7 +1033,7 @@ SE,Dott Trollhättan,Trollhättan,dott-trollhattan,https://ridedott.com/,https:/
 SE,Dott Varberg,Varberg,dott-varberg,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/varberg/gbfs.json,2.3,,,
 SE,Dott Värnamo,Värnamo,dott-varnamo,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/varnamo/gbfs.json,2.3,,,
 SE,Dott Vaxjo,Vaxjo,dott-vaxjo,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/vaxjo/gbfs.json,2.3,,,
-SE,Gothenburg Cargo,Gothenborg,nextbike_zc,https://gothenburg-cargo.nextbike.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_zc/gbfs.json,2.3,,,
+SE,Gothenburg Cargo,Gothenburg,nextbike_zc,https://gothenburg-cargo.nextbike.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_zc/gbfs.json,2.3,,,
 SE,Lundahoj,Lund,lund,https://www.lundahoj.se/,https://api.cyclocity.fr/contracts/lund/gbfs/gbfs.json,2.3,,,
 SE,Qick Borlänge,Borlänge,463,https://www.qickscooters.com/,https://qickscooters.rideatom.com/gbfs/v2_2/en/gbfs?id=463,2.2,,,
 SE,Qick Eskilstuna,Eskilstuna,462,https://www.qickscooters.com/,https://qickscooters.rideatom.com/gbfs/v2_2/en/gbfs?id=462,2.2,,,
