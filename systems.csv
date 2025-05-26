@@ -192,8 +192,6 @@ DE,BARshare Barnim Bikes,Werneuchen,barshare-bicycle,https://www.barshare.de/,ht
 DE,BARshare Barnim Cargo Bikes,Werneuchen,barshare-other,https://www.barshare.de/,https://opendata.bbnavi.de/barshare/other/gbfs.json,2.2,,,
 DE,BARshare Barnim Cars,Berlin,barshare-car,https://www.barshare.de/,https://opendata.bbnavi.de/barshare/car/gbfs.json,2.2,,,
 DE,Bergisches e-Bike,Bergisches e-Bike,nextbike_ac,https://www.nextbike.de/bergisches-ebike/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ac/gbfs.json,2.3,,,
-DE,Bolt Bremen,Bremen,BoltEU_Bremen,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3/1662/gbfs,1.0 ; 2.3 ; 3.0,,,
-DE,Bolt Dusseldorf,Dusseldorf,BoltEU_Dusseldorf,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3/717/gbfs,1.0 ; 2.3 ; 3.0,,,
 DE,Bolt Karlsruhe,Karlsruhe,bolt_karlsruhe,https://www.bolt.eu/,https://api.mobidata-bw.de/sharing/gbfs/v3/bolt_karlsruhe/gbfs,2.3 ; 3.0,,,
 DE,Bolt Reutlingen-Tübingen,Reutlingen-Tübingen,bolt_reutlingen_tuebingen,https://www.bolt.eu/,https://api.mobidata-bw.de/sharing/gbfs/v3/bolt_reutlingen_tuebingen/gbfs,2.3 ; 3.0,,,
 DE,Bolt Stuttgart,"Stuttgart, DE",bolt_stuttgart,https://www.bolt.eu/,https://api.mobidata-bw.de/sharing/gbfs/v3/bolt_stuttgart/gbfs,2.3 ; 3.0,,,
