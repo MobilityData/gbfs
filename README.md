@@ -59,6 +59,7 @@ Release Candidates will receive *Current Version* status when they have been ful
 
 |  Version | Type  | Release Date   | Status                     | JSON Schema                                                                            | Release Notes       |
 |:---:|:-----:|----------------|----------------------------|----------------------------------------------------------------------------------------|---------------------|
+| [v3.1-RC2](https://github.com/MobilityData/gbfs/blob/v3.1-RC2/gbfs.md) | MINOR | May 28, 2025 | :white_check_mark: Ready for implementation | coming soon | [v3.1-RC2 Release Notes](https://github.com/MobilityData/gbfs/releases/tag/v3.1-RC2) |
 | [v3.1-RC](https://github.com/MobilityData/gbfs/blob/v3.1-RC/gbfs.md) | MINOR | May 22, 2024 | :white_check_mark: Ready for implementation | [v3.1-RC Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v3.1-RC) | [v3.1-RC Release Notes](https://github.com/MobilityData/gbfs/releases/tag/v3.1-RC) |
 
 ### Past Version Releases 
