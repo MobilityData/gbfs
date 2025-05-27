@@ -802,7 +802,7 @@ Field Name | REQUIRED | Type | Defines
 `stations[].cross_street` | OPTIONAL | String | Cross street or landmark where the station is located.
 `stations[].region_id` | OPTIONAL | ID | Identifier of the region where station is located. See [system_regions.json](#system_regionsjson).
 `stations[].post_code` | OPTIONAL | String | Postal code where station is located.
-`stations[].city` <br/>*(added in v3.1)* | OPTIONAL | String | City where station is located.
+`stations[].city` <br/>*(added in v3.1-RC2)* | OPTIONAL | String | City where station is located.
 `stations[].station_opening_hours` <br/>*(added in v3.0)* | OPTIONAL | String | Hours of operation for the station in [OSM opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) format. If `station_opening_hours` is defined it overrides any `opening_hours` defined in `system_information.json` for the station for which it is defined.
 `stations[].rental_methods` | OPTIONAL | Array&lt;String&gt; | Payment methods accepted at this station. <br /> Current valid values are:<br /> <ul><li>`key` (operator issued vehicle key / fob / card)</li><li>`creditcard`</li><li>`paypass`</li><li>`applepay`</li><li>`androidpay`</li><li>`transitcard`</li><li>`accountnumber`</li><li>`phone`</li></ul>
 `stations[].is_virtual_station` <br/>*(added in v2.1)* | OPTIONAL | Boolean | Is this station a location with or without smart dock technology? <br /><br /> `true` - The station is a location without smart docking infrastructure.<br /><br /> `false` - The station consists of smart docking infrastructure (docks). <br /><br /> This field SHOULD be published by mobility systems that have station locations without standard, internet connected physical docking infrastructure. These may be racks or geofenced areas designated for rental and/or return of vehicles. Locations that fit within this description SHOULD have the `is_virtual_station` boolean set to `true`.
@@ -879,6 +879,7 @@ Field Name | REQUIRED | Type | Defines
         ],
         "lat": 45.516445,
         "lon": -122.655775,
+        "city": "Portland, OR",
         "is_valet_station": false,
         "is_virtual_station": true,
         "is_charging_station": false,
