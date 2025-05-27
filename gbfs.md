@@ -30,6 +30,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     * [station_information.json](#station_informationjson)
     * [station_status.json](#station_statusjson)
     * [vehicle_status.json](#vehicle_statusjson) *(formerly free_bike_status.json)*
+    * [vehicle_availability.json](#vehicle_availabilityjson) *(added in v3.1-RC2)*
     * [system_hours.json](#system_hoursjson) *(removed in v3.0)*
     * [system_calendar.json](#system_calendarjson) *(removed in v3.0)*
     * [system_regions.json](#system_regionsjson)
@@ -70,6 +71,7 @@ vehicle_types.json <br/>*(added in v2.1)* | Conditionally REQUIRED | Describes t
 station_information.json | Conditionally REQUIRED | List of all stations, their capacities and locations. REQUIRED of systems utilizing docks.
 station_status.json | Conditionally REQUIRED | Number of available vehicles and docks at each station and station availability. REQUIRED of systems utilizing docks.
 vehicle_status.json <br/>*(as of v3.0, formerly free_bike_status.json)* | Conditionally REQUIRED | *(as of v2.1)* Describes all vehicles that are not currently in active rental. REQUIRED for free floating (dockless) vehicles. OPTIONAL for station based (docked) vehicles. Vehicles that are part of an active rental MUST NOT appear in this feed.
+vehicle_availability.json <br/>*(added in v3.1-RC2)* | OPTIONAL | Describes the future availability of each vehicle. Useful for systems that allow vehicles to be reserved in advance (e.g. carsharing, cargo bike share, etc). This file is OPTIONAL for station based (docked) vehicles. Not supported for free floating (dockless) vehicles.
 system_hours.json | - | This file is removed *(as of v3.0)*. See `system_information.opening_hours` for system hours of operation.
 system_calendar.json | - | This file is removed *(as of v3.0)*. See `system_information.opening_hours` for system dates of operation.
 system_regions.json | OPTIONAL | Regions the system is broken up into.
@@ -1036,7 +1038,7 @@ Field Name | REQUIRED | Type | Defines
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `vehicles`<br />*(as of v3.0)*  | REQUIRED | Array&lt;Object&gt; | Contains one object per vehicle that is currently deployed in the field and not part of an active rental.
-`vehicles[].vehicle_id`<br />*(as of v3.0)*  | REQUIRED | ID | Identifier of a vehicle. The `vehicle_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `vehicle_id` identifier SHOULD only be rotated once per trip.
+`vehicles[].vehicle_id`<br />*(as of v3.0)*  | REQUIRED | ID | Identifier of a vehicle. The `vehicle_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `vehicle_id` identifier SHOULD only be rotated once per trip.<br/><br/>The `vehicle_id` SHOULD be the same as in [vehicle_availability.json](#vehicle_availabilityjson) if the file has been defined.
 `vehicles[].lat` | Conditionally REQUIRED <br/>*(as of v2.1)* | Latitude | Latitude of the vehicle in decimal degrees. *(as of v2.1)* REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 `vehicles[].lon` | Conditionally REQUIRED <br/>*(as of v2.1)* | Longitude | Longitude of the vehicle in decimal degrees. *(as of v2.1)* REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 `vehicles[].is_reserved` | REQUIRED | Boolean | Is the vehicle currently reserved? <br /><br /> `true` - Vehicle is currently reserved. <br /> `false` - Vehicle is not currently reserved.
@@ -1132,6 +1134,66 @@ Field Name | REQUIRED | Type | Defines
         "home_station_id":"146",
         "vehicle_equipment":[
           "child_seat_a"
+        ]
+      }
+    ]
+  }
+}
+```
+
+### vehicle_availability.json
+
+*(added in v3.1-RC2)*
+
+Describes the future availability of each vehicle. Useful for systems that allow vehicles to be reserved in advance (e.g. carsharing, cargo bike share, etc). This file is OPTIONAL for station based (docked) vehicles. Not supported for free floating (dockless) vehicles. Data returned SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date. See [Data Latency](#data-latency).<br/>The following fields are all attributes within the main `data` object for this feed.
+
+Field Name | REQUIRED | Type | Defines
+---|---|---|---
+`vehicles` | REQUIRED | Array&lt;Object&gt; | Contains one object per vehicle.
+`vehicles[].vehicle_id` | REQUIRED | ID | Identifier of a vehicle. The `vehicle_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `vehicle_id` identifier SHOULD only be rotated once per trip.<br/><br/>The `vehicle_id` SHOULD be the same as in [vehicle_status.json](#vehicle_statusjson) if the file has been defined and the vehicle is currently available.
+`vehicles[].vehicle_type_id` | REQUIRED | ID | Unique identifier of a vehicle type as defined in [vehicle_types.json](#vehicle_typesjson).
+`vehicles[].station_id` | REQUIRED | ID | The `station_id` of the station where this vehicle is located when available as defined in [station_information.json](#station_informationjson).
+`vehicles[].pricing_plan_id` | OPTIONAL | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plansjson). If this field is defined it supersedes `default_pricing_plan_id` in `vehicle_types.json`. This field SHOULD be used to override `default_pricing_plan_id` in `vehicle_types.json` to define pricing plans for individual vehicles when necessary.
+`vehicles[].vehicle_equipment` | OPTIONAL | Array&lt;String&gt; | List of vehicle equipment provided by the operator in addition to the accessories already provided in the vehicle (field `vehicle_accessories` of `vehicle_types.json`) but subject to more frequent updates.<br/><br/>Current valid values are:<ul><li>`child_seat_a` _(Baby seat ("0-10kg"))_</li><li>`child_seat_b`	 _(Seat or seat extension for small children ("9-18 kg"))_</li><li>`child_seat_c`	_(Seat or seat extension for older children ("15-36 kg"))_</li><li>`winter_tires` 	_(Vehicle has tires for winter weather)_</li><li>`snow_chains`</li></ul>
+`vehicles[].availabilities[]` | REQUIRED | Array&lt;Object&gt; | Array of time slots during which the specified vehicle is available.
+`vehicles[].availabilities[].from` | REQUIRED | Datetime | Start date and time of available time slot.
+`vehicles[].availabilities[].until` | OPTIONAL | Datetime | End date and time of available time slot. If this field is empty, it means that the vehicle is available all the time from the date in the `from` field.
+
+**Example**
+
+```json
+{
+  "last_updated": "2023-07-17T13:34:13+02:00",
+  "ttl": 0,
+  "version": "3.1-RC2",
+  "data": {
+    "vehicles": [
+      {
+        "vehicle_id": "45bd3fb7-a2d5-4def-9de1-c645844ba962",
+        "vehicle_type_id": "abc123",
+        "station_id": "station1",
+        "pricing_plan_id": "plan3",
+        "vehicle_equipment": [
+          "child_seat_a"
+        ],
+        "availabilities": [
+          {
+            "from": "2024-12-24T08:15Z",
+            "until": "2024-12-24T09:15Z"
+          },
+          {
+            "from": "2024-12-25T10:30Z"
+          }
+        ]
+      },
+      {
+        "vehicle_id": "987fd100-b822-4347-86a4-b3eef8ca8b53",
+        "vehicle_type_id": "def456",
+        "station_id": "86",
+        "availabilities": [
+          {
+            "from": "2024-12-24T08:45Z"
+          }
         ]
       }
     ]
