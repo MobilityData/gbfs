@@ -3,7 +3,7 @@ name: Notify Mobility Feed API on Systems Update
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - systems.csv  # Only run if this file changes
   workflow_dispatch:  # Allow manual trigger
