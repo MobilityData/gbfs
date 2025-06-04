@@ -1006,7 +1006,6 @@ RO,nextbike Romania,Focșani,nextbike_nw,https://nextbike.ro/,https://gbfs.nextb
 RO,Saturn,Saturn,nextbike_rs,https://www.nextbike.ro/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rs/gbfs.json,2.3,,,
 RO,Sibiu BikeCity,Sibiu,sibiu_bikecity,https://bikecity.sibiu.ro,https://sibiu.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,,,
 RO,Slatina Velo City,"Slatina, RO",nextbike_rv,https://www.slatinavelocity.ro/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rv/gbfs.json,2.3,,,
-RO,Târgu-Mures,Târgu-Mures,targumures,,https://targumures.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,,,
 RO,Topoloveni Bike,Topoloveni,nextbike_rt,https://www.nextbike.ro/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rt/gbfs.json,2.3,,,
 RO,Velo Sântana,Sântana,santana_bikecity,https://velosantana.ro,https://santana.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,,,
 SA,Dott Jeddah,Jeddah,dott-jeddah,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/jeddah/gbfs.json,2.3,,,
