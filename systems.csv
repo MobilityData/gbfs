@@ -436,7 +436,7 @@ ES,BiciMAD (unofficial),Madrid,bici_madrid,https://www.bicimad.com/,https://gbfs
 ES,BiciMislata Mislata,Mislata,nextbike_ad,https://bicimislata.mibisivalencia.es/en/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ad/gbfs.json,2.3,,,
 ES,Bicing,Barcelona,bike_barcelona,https://www.bicing.barcelona/,https://barcelona-sp.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,,,
 ES,BiciPalma,Palma,nextbike_ea,https://www.bicipalma.com/es/palma/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ea/gbfs.json,2.3,,,
-ES,Bilbaobizi (Bilbao),Bilbao,nextbike_bo,https://www.bilbaobizi.bilbao.eus/eu/bilbao/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bo/gbfs.json,2.3,,,
+ES,Bilbao Bizi,Bilbao,bilbao,https://www.bilbao.eus/apps/bilbaobizi/preguntas_frecuentes_es.htm,https://bilbao.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,,,
 ES,Bird Madrid,Madrid,bird-madrid,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/madrid/gbfs.json,1.1 ; 2.3,,,
 ES,Bird Zaragoza,Zaragoza,bird zaragoza,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/zaragoza/gbfs.json,1.1 ; 2.3,,,
 ES,Bizi,Zaragoza,zaragoza,https://bizi.zaragoza.es,https://zaragoza.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,,,
