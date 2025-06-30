@@ -1178,11 +1178,11 @@ Field Name | REQUIRED | Type | Defines
         ],
         "availabilities": [
           {
-            "from": "2024-12-24T08:15Z",
-            "until": "2024-12-24T09:15Z"
+            "from": "2024-12-24T08:15:00Z",
+            "until": "2024-12-24T09:15:00Z"
           },
           {
-            "from": "2024-12-25T10:30Z"
+            "from": "2024-12-25T10:30:00Z"
           }
         ]
       },
@@ -1192,7 +1192,7 @@ Field Name | REQUIRED | Type | Defines
         "station_id": "86",
         "availabilities": [
           {
-            "from": "2024-12-24T08:45Z"
+            "from": "2024-12-24T08:45:00Z"
           }
         ]
       }
