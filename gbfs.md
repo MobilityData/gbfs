@@ -4,7 +4,7 @@ This document explains the types of files and data that comprise the General Bik
 
 ## Reference version
 
-This documentation refers to **v3.1-RC**.
+This documentation refers to **v3.1-RC2**.
 
 For past and upcoming versions see the [README](https://github.com/MobilityData/gbfs/blob/master/README.md#current-version-recommended).
 
@@ -30,6 +30,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     * [station_information.json](#station_informationjson)
     * [station_status.json](#station_statusjson)
     * [vehicle_status.json](#vehicle_statusjson) *(formerly free_bike_status.json)*
+    * [vehicle_availability.json](#vehicle_availabilityjson) *(added in v3.1-RC2)*
     * [system_hours.json](#system_hoursjson) *(removed in v3.0)*
     * [system_calendar.json](#system_calendarjson) *(removed in v3.0)*
     * [system_regions.json](#system_regionsjson)
@@ -70,6 +71,7 @@ vehicle_types.json <br/>*(added in v2.1)* | Conditionally REQUIRED | Describes t
 station_information.json | Conditionally REQUIRED | List of all stations, their capacities and locations. REQUIRED of systems utilizing docks.
 station_status.json | Conditionally REQUIRED | Number of available vehicles and docks at each station and station availability. REQUIRED of systems utilizing docks.
 vehicle_status.json <br/>*(as of v3.0, formerly free_bike_status.json)* | Conditionally REQUIRED | *(as of v2.1)* Describes all vehicles that are not currently in active rental. REQUIRED for free floating (dockless) vehicles. OPTIONAL for station based (docked) vehicles. Vehicles that are part of an active rental MUST NOT appear in this feed.
+vehicle_availability.json <br/>*(added in v3.1-RC2)* | OPTIONAL | Describes the future availability of each vehicle. Useful for systems that allow vehicles to be reserved in advance (e.g. carsharing, cargo bike share, etc). This file is OPTIONAL for station based (docked) vehicles. Not supported for free floating (dockless) vehicles.
 system_hours.json | - | This file is removed *(as of v3.0)*. See `system_information.opening_hours` for system hours of operation.
 system_calendar.json | - | This file is removed *(as of v3.0)*. See `system_information.opening_hours` for system dates of operation.
 system_regions.json | OPTIONAL | Regions the system is broken up into.
@@ -802,6 +804,7 @@ Field Name | REQUIRED | Type | Defines
 `stations[].cross_street` | OPTIONAL | String | Cross street or landmark where the station is located.
 `stations[].region_id` | OPTIONAL | ID | Identifier of the region where station is located. See [system_regions.json](#system_regionsjson).
 `stations[].post_code` | OPTIONAL | String | Postal code where station is located.
+`stations[].city` <br/>*(added in v3.1-RC2)* | OPTIONAL | String | City where station is located.
 `stations[].station_opening_hours` <br/>*(added in v3.0)* | OPTIONAL | String | Hours of operation for the station in [OSM opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) format. If `station_opening_hours` is defined it overrides any `opening_hours` defined in `system_information.json` for the station for which it is defined.
 `stations[].rental_methods` | OPTIONAL | Array&lt;String&gt; | Payment methods accepted at this station. <br /> Current valid values are:<br /> <ul><li>`key` (operator issued vehicle key / fob / card)</li><li>`creditcard`</li><li>`paypass`</li><li>`applepay`</li><li>`androidpay`</li><li>`transitcard`</li><li>`accountnumber`</li><li>`phone`</li></ul>
 `stations[].is_virtual_station` <br/>*(added in v2.1)* | OPTIONAL | Boolean | Is this station a location with or without smart dock technology? <br /><br /> `true` - The station is a location without smart docking infrastructure.<br /><br /> `false` - The station consists of smart docking infrastructure (docks). <br /><br /> This field SHOULD be published by mobility systems that have station locations without standard, internet connected physical docking infrastructure. These may be racks or geofenced areas designated for rental and/or return of vehicles. Locations that fit within this description SHOULD have the `is_virtual_station` boolean set to `true`.
@@ -878,6 +881,7 @@ Field Name | REQUIRED | Type | Defines
         ],
         "lat": 45.516445,
         "lon": -122.655775,
+        "city": "Portland, OR",
         "is_valet_station": false,
         "is_virtual_station": true,
         "is_charging_station": false,
@@ -1034,7 +1038,7 @@ Field Name | REQUIRED | Type | Defines
 Field Name | REQUIRED | Type | Defines
 ---|---|---|---
 `vehicles`<br />*(as of v3.0)*  | REQUIRED | Array&lt;Object&gt; | Contains one object per vehicle that is currently deployed in the field and not part of an active rental.
-`vehicles[].vehicle_id`<br />*(as of v3.0)*  | REQUIRED | ID | Identifier of a vehicle. The `vehicle_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `vehicle_id` identifier SHOULD only be rotated once per trip.
+`vehicles[].vehicle_id`<br />*(as of v3.0)*  | REQUIRED | ID | Identifier of a vehicle. The `vehicle_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `vehicle_id` identifier SHOULD only be rotated once per trip.<br/><br/>The `vehicle_id` SHOULD be the same as in [vehicle_availability.json](#vehicle_availabilityjson) if the file has been defined.
 `vehicles[].lat` | Conditionally REQUIRED <br/>*(as of v2.1)* | Latitude | Latitude of the vehicle in decimal degrees. *(as of v2.1)* REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 `vehicles[].lon` | Conditionally REQUIRED <br/>*(as of v2.1)* | Longitude | Longitude of the vehicle in decimal degrees. *(as of v2.1)* REQUIRED if `station_id` is not provided for this vehicle (free floating). This field SHOULD have a precision of 6 decimal places (0.000001). See [Coordinate Precision](#coordinate-precision).
 `vehicles[].is_reserved` | REQUIRED | Boolean | Is the vehicle currently reserved? <br /><br /> `true` - Vehicle is currently reserved. <br /> `false` - Vehicle is not currently reserved.
@@ -1137,6 +1141,66 @@ Field Name | REQUIRED | Type | Defines
 }
 ```
 
+### vehicle_availability.json
+
+*(added in v3.1-RC2)*
+
+Describes the future availability of each vehicle. Useful for systems that allow vehicles to be reserved in advance (e.g. carsharing, cargo bike share, etc). This file is OPTIONAL for station based (docked) vehicles. Not supported for free floating (dockless) vehicles. Data returned SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date. See [Data Latency](#data-latency).<br/>The following fields are all attributes within the main `data` object for this feed.
+
+Field Name | REQUIRED | Type | Defines
+---|---|---|---
+`vehicles` | REQUIRED | Array&lt;Object&gt; | Contains one object per vehicle.
+`vehicles[].vehicle_id` | REQUIRED | ID | Identifier of a vehicle. The `vehicle_id` identifier MUST be rotated to a random string after each trip to protect user privacy *(as of v2.0)*. Use of persistent vehicle IDs poses a threat to user privacy. The `vehicle_id` identifier SHOULD only be rotated once per trip.<br/><br/>The `vehicle_id` SHOULD be the same as in [vehicle_status.json](#vehicle_statusjson) if the file has been defined and the vehicle is currently available.
+`vehicles[].vehicle_type_id` | REQUIRED | ID | Unique identifier of a vehicle type as defined in [vehicle_types.json](#vehicle_typesjson).
+`vehicles[].station_id` | REQUIRED | ID | The `station_id` of the station where this vehicle is located when available as defined in [station_information.json](#station_informationjson).
+`vehicles[].pricing_plan_id` | OPTIONAL | ID | The `plan_id` of the pricing plan this vehicle is eligible for as described in [system_pricing_plans.json](#system_pricing_plansjson). If this field is defined it supersedes `default_pricing_plan_id` in `vehicle_types.json`. This field SHOULD be used to override `default_pricing_plan_id` in `vehicle_types.json` to define pricing plans for individual vehicles when necessary.
+`vehicles[].vehicle_equipment` | OPTIONAL | Array&lt;String&gt; | List of vehicle equipment provided by the operator in addition to the accessories already provided in the vehicle (field `vehicle_accessories` of `vehicle_types.json`) but subject to more frequent updates.<br/><br/>Current valid values are:<ul><li>`child_seat_a` _(Baby seat ("0-10kg"))_</li><li>`child_seat_b`	 _(Seat or seat extension for small children ("9-18 kg"))_</li><li>`child_seat_c`	_(Seat or seat extension for older children ("15-36 kg"))_</li><li>`winter_tires` 	_(Vehicle has tires for winter weather)_</li><li>`snow_chains`</li></ul>
+`vehicles[].availabilities[]` | REQUIRED | Array&lt;Object&gt; | Array of time slots during which the specified vehicle is available.
+`vehicles[].availabilities[].from` | REQUIRED | Datetime | Start date and time of available time slot.
+`vehicles[].availabilities[].until` | OPTIONAL | Datetime | End date and time of available time slot. If this field is empty, it means that the vehicle is available all the time from the date in the `from` field.
+
+**Example**
+
+```json
+{
+  "last_updated": "2023-07-17T13:34:13+02:00",
+  "ttl": 0,
+  "version": "3.1-RC2",
+  "data": {
+    "vehicles": [
+      {
+        "vehicle_id": "45bd3fb7-a2d5-4def-9de1-c645844ba962",
+        "vehicle_type_id": "abc123",
+        "station_id": "station1",
+        "pricing_plan_id": "plan3",
+        "vehicle_equipment": [
+          "child_seat_a"
+        ],
+        "availabilities": [
+          {
+            "from": "2024-12-24T08:15:00Z",
+            "until": "2024-12-24T09:15:00Z"
+          },
+          {
+            "from": "2024-12-25T10:30:00Z"
+          }
+        ]
+      },
+      {
+        "vehicle_id": "987fd100-b822-4347-86a4-b3eef8ca8b53",
+        "vehicle_type_id": "def456",
+        "station_id": "86",
+        "availabilities": [
+          {
+            "from": "2024-12-24T08:45:00Z"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
 ### system_hours.json
 
 This file has been removed in v3.0. For earlier versions see the [README](https://github.com/MobilityData/gbfs/blob/master/README.md#current-version-recommended). 
@@ -1232,6 +1296,9 @@ Field Name | REQUIRED | Type | Defines
 `plans[].per_min_pricing[].interval` <br/>*(added in v2.2)* | REQUIRED | Non-Negative Integer | Interval in minutes at which the `rate` of this segment is either reapplied indefinitely, or up until (but not including) the `end` minute, if `end` is defined.<br /><br />An interval of 0 indicates the rate is only charged once.
 `plans[].per_min_pricing[].end` <br/>*(added in v2.2)* | OPTIONAL | Non-Negative Integer | The minute at which the rate will no longer apply  *(exclusive)* for example, if `end` is `20` the rate no longer applies after 19:59.<br /><br />If this field is empty, the price issued for this segment is charged until the trip ends, in addition to the cost of any subsequent segments.
 `plans[].surge_pricing` <br/>*(added in v2.2)* | OPTIONAL | Boolean | Is there currently an increase in price in response to increased demand in this pricing plan? If this field is empty, it means there is no surge pricing in effect.<br /><br />`true` - Surge pricing is in effect.<br />  `false` - Surge pricing is not in effect.
+`plans[].fare_capping` <br/>*(added in v3.1-RC2)* | OPTIONAL | Object | Object defining a capped fare once a price threshold has been spent within a timeframe. The same fare cap applies to each subsequent timeframe. For example, a fare capped at 15.00 CAD per 12-hour period.
+`plans[].fare_capping.duration` <br/>*(added in v3.1-RC2)* | REQUIRED | Non-Negative Integer | Amount of time in minutes during which the fare is capped.
+`plans[].fare_capping.price` <br/>*(added in v3.1-RC2)* | REQUIRED | Non-Negative Float | The maximum fare threshold for the current timeframe, in the unit specified by `currency`.
 
 **Example 1:**
 
@@ -1288,7 +1355,7 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
 
 **Example 2:**
 
-This example demonstrates a pricing scheme that has a rate both by minute and by km. The user is charged $0.25 per km as well as $0.50 per minute. Both of these rates happen concurrently and are not dependent on one another.
+This example demonstrates a pricing scheme that has a rate both by minute and by km. The user is charged $0.25 per km as well as $0.50 per minute. Both of these rates happen concurrently and are not dependent on one another. The fare is capped at 15.00 CAD per 12-hour period (720 minutes).
 
 ```json
 {
@@ -1310,7 +1377,7 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
         "is_taxable": true,
         "description": [
           {
-            "text": "$3 unlock fee, $0.25 per kilometer and 0.50 per minute.",
+            "text": "$3 unlock fee, $0.25 per kilometer and 0.50 per minute, capped at $15 per 12-hour period.",
             "language": "en"
           }
         ],
@@ -1327,7 +1394,11 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
             "rate": 0.50,
             "interval": 1
           }
-        ]
+        ],
+        "fare_capping": {
+          "duration": 720,
+          "price": 15.00
+        }
       }
     ]
   }
