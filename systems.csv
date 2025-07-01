@@ -320,7 +320,7 @@ DE,Lime Solingen,Solingen,lime_solingen,https://www.li.me,https://data.lime.bike
 DE,LINK Constance,Constance,Link_Constance,https://www.superpedestrian.com,https://mds.linkyour.city/gbfs/de_constance/gbfs.json,2.2 ; 2.3,,,
 DE,LINK Nuremberg,Nuremberg,Link_nuremberg,https://www.superpedestrian.com,https://mds.linkyour.city/gbfs/de_nuremberg/gbfs.json,2.2 ; 2.3,,,
 DE,LINK Regensburg,Regensburg,Link_Regensburg,https://www.superpedestrian.com,https://mds.linkyour.city/gbfs/de_regensburg/gbfs.json,2.2 ; 2.3,,,
-DE,Lime Wuppertal,Wuppertal,lime_wuppertal,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/wuppertal/gbfs.json	2.2,,,
+DE,Lime Wuppertal,Wuppertal,lime_wuppertal,https://www.li.me,https://data.lime.bike/api/partners/v2/gbfs/wuppertal/gbfs.json,2.2,,,
 DE,LINK Wurzburg,Wurzburg,Link_Wurzburg,https://www.superpedestrian.com,https://mds.linkyour.city/gbfs/de_wurzburg/gbfs.json,2.2 ; 2.3,,,
 DE,meinRad,Mainz,nextbike_mz,https://www.mainzer-mobilitaet.de/mehr-mobilitaet/meinrad/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_mz/gbfs.json,2.3,,,
 DE,meinSiggi,Bielefeld,nextbike_dg,https://www.nextbike.de/bielefeld/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dg/gbfs.json,2.3,,,
