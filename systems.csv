@@ -1007,7 +1007,7 @@ PT,LINK Lisbon,Lisbon,Link_Lisbon,https://www.superpedestrian.com,https://mds.li
 PT,LINK Almada,Almada,Link_Almada,https://www.superpedestrian.com,https://mds.linkyour.city/gbfs/pt_almada/gbfs.json,2.2 ; 2.3,,,
 QA,Dott Doha,Doha,dott-doha,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/doha/gbfs.json,2.3,,,
 RO,Alba Iulia Velocity,Alba Iulia,nextbike_ai,https://www.albaiuliavelocity.ro/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ai/gbfs.json,2.3,,,
-RO,BikeCity Campia Turzii,Câmpia Turzii,nextbike_rc,https://www.nextbike.ro/ro/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rc/gbfs.json,2.3,,,
+RO,BikeCity Campia Turzii,Câmpia Turzii,nextbike_rc,https://www.nextbike.ro/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rc/gbfs.json,2.3,,,
 RO,Buzau VeloCity,Buzau,nextbike_bv,https://www.velocitybuzau.ro/ro/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bv/gbfs.json,2.3,,,
 RO,Dej Velo City,Dej,dej_bikecity,https://www.dejvelocity.ro/,https://dej.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,,,
 RO,Drobeta Velopark,Drobeta,nextbike_rd,https://www.nextbike.ro/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rd/gbfs.json,2.3,,,
