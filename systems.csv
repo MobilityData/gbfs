@@ -1285,6 +1285,7 @@ US,Spin Tampa,"Tampa, FL",provider-null-tampa,https://www.spin.pm,https://mds.bi
 US,Spin Tempe,"Tempe, AZ",provider-null-tempe,https://www.spin.pm,https://mds.bird.co/gbfs/v2/public/provider/spin/tempe/gbfs.json,2.3,,,
 US,Spin University of Central Florida,"Orlando, FL",provider-null-university_of_central_florida,https://www.spin.pm,https://mds.bird.co/gbfs/v2/public/provider/spin/university_of_central_florida/gbfs.json,2.3,,,
 US,Spin Washington DC,"Washington, DC",spin washington_dc,https://www.spin.pm,https://mds.bird.co/gbfs/v2/public/provider/spin/washington_dc/gbfs.json,2.3,,,
+US,Trinity Metro Bikes,"Fort Worth, TX",fortworth,https://ridetrinitymetro.org/bikes-fort-worth/,https://fortworth.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,,,
 US,Truckee BCycle,"Truckee, CA",bcycle_truckee,https://truckee.bcycle.com/,https://gbfs.bcycle.com/bcycle_truckee/gbfs.json,1.1,,,
 US,Tugo,"Tucson, AZ",tugo,https://tugobikeshare.com/,https://tucson.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,,,
 US,Valentine Bike Share,"Valentine, NE",bcycle_valentine,https://heartlandbikeshare.org,https://gbfs.bcycle.com/bcycle_valentine/gbfs.json,1.1,,,
