@@ -591,7 +591,6 @@ FR,Citiz Lille Arras,Lille,citiz_lille_arras,https://citiz.coop/,https://backend
 FR,Citiz Métropole Lyon,Lyon,citiz_metropole_lyon,https://citiz.coop/,https://backend.citiz.fr/public/provider/3/gbfs/v3.0/gbfs.json,3.0,,,
 FR,Citiz Nantes,Nantes,citiz_nantes,https://citiz.coop/,https://backend.citiz.fr/public/provider/15/gbfs/v3.0/gbfs.json,3.0,,,
 FR,Citiz Occitanie,Toulouse,citiz_occitanie,https://citiz.coop/,https://backend.citiz.fr/public/provider/8/gbfs/v3.0/gbfs.json,3.0,,,
-FR,Citiz Ogalo,Saumur,ogalo,https://citiz.coop/,https://backend.citiz.fr/public/provider/21/gbfs/v3.0/gbfs.json,3.0,,,
 FR,Citiz Provence,Marseille,citiz_provence,https://citiz.coop/,https://backend.citiz.fr/public/provider/6/gbfs/v3.0/gbfs.json,3.0,,,
 FR,Citiz Rennes Métropole,Rennes,citiz_rennes_metropole,https://citiz.coop/,https://backend.citiz.fr/public/provider/19/gbfs/v3.0/gbfs.json,3.0,,,
 FR,Cycl'AM,Ardenne Métropole,cyclam,https://cyclam.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/cyclam/gbfs.json,2.2 ; 3.0,,,
