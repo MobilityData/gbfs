@@ -635,6 +635,7 @@ Field Name | REQUIRED | Type | Defines
 `vehicle_types[].rated_power`<br/>*(added in v2.3)* | OPTIONAL | Non-negative Integer | The rated power of the motor for this vehicle type in watts.
 `vehicle_types[].default_reserve_time`<br/>*(added in v2.3)* | Conditionally REQUIRED | Non-negative Integer | REQUIRED if `reservation_price_per_min` or `reservation_price_flat_rate` are defined. Maximum time in minutes that a vehicle can be reserved before a rental begins. When a vehicle is reserved by a user, the vehicle remains locked until the rental begins. During this time the vehicle is unavailable and cannot be reserved or rented by other users. The vehicle status in `vehicle_status.json` MUST be set to `is_reserved = true`. If the value of `default_reserve_time` elapses without a rental beginning, the vehicle status MUST change to `is_reserved = false`. If `default_reserve_time` is set to `0`, the vehicle type cannot be reserved. 
 `vehicle_types[].return_constraint`<br/>*(as of v2.3)*| OPTIONAL | Enum | The conditions for returning the vehicle at the end of the rental. <br /><br />Current valid values are:<br /><ul><li>`free_floating` _(The vehicle can be returned anywhere permitted within the service area. Note that the vehicle is subject to rules in `geofencing_zones.json` if defined.)_</li><li>`roundtrip_station` _(The vehicle has to be returned to the same station from which it was initially rented. Note that a specific station can be assigned to the vehicle in `vehicle_status.json` using `home_station`.)_</li><li>`any_station` _(The vehicle has to be returned to any station within the service area.)_</li><li>`hybrid` (The vehicle can be returned to any station, or anywhere else permitted within the service area. Note that the vehicle is subject to rules in `geofencing_zones.json` if defined.)</li>
+`vehicle_types[].min_age` | OPTIONAL | Non-negative Integer | Minimum age required to use this vehicle.
 `vehicle_types[].vehicle_assets`<br/>*(added in v2.3)*| OPTIONAL | Object | Object containing the branding information for this vehicle type.
 `vehicle_types[].vehicle_assets.icon_url`<br/>*(added in v2.3)*| REQUIRED | URL | A fully qualified URL pointing to the location of a graphic icon file that MAY be used to represent this vehicle type on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
 `vehicle_types[].vehicle_assets.icon_url_dark`<br/>*(added in v2.3)*| OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type when in dark mode on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
@@ -664,6 +665,7 @@ Field Name | REQUIRED | Type | Defines
         "wheel_count": 2,
         "default_reserve_time": 30,
         "return_constraint": "any_station",
+        "min_age": 14,
         "vehicle_assets": {
           "icon_url": "https://www.example.com/assets/icon_bicycle.svg",
           "icon_url_dark": "https://www.example.com/assets/icon_bicycle_dark.svg",
@@ -695,6 +697,7 @@ Field Name | REQUIRED | Type | Defines
         "wheel_count": 3,
         "default_reserve_time": 30,
         "return_constraint": "roundtrip_station",
+         "min_age": 16,
         "vehicle_assets": {
           "icon_url": "https://www.example.com/assets/icon_cargobicycle.svg",
           "icon_url_dark": "https://www.example.com/assets/icon_cargobicycle_dark.svg",
@@ -723,6 +726,7 @@ Field Name | REQUIRED | Type | Defines
         "default_reserve_time": 30,
         "max_range_meters": 12345,
         "return_constraint": "free_floating",
+         "min_age": 18,
         "vehicle_assets": {
           "icon_url": "https://www.example.com/assets/icon_escooter.svg",
           "icon_url_dark": "https://www.example.com/assets/icon_escooter_dark.svg",
@@ -756,6 +760,7 @@ Field Name | REQUIRED | Type | Defines
         "default_reserve_time": 0,
         "max_range_meters": 523992,
         "return_constraint": "roundtrip_station",
+        "min_age": 18,
         "vehicle_accessories": [
           "doors_4",
           "automatic",
