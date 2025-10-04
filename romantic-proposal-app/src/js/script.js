@@ -1,29 +1,68 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const proposalElement = document.getElementById('proposalMessage');
-    if (proposalElement) {
-        proposalElement.textContent = 'Will you be my forever? 💖';
+function showSection(sectionId) {
+    // Hide all sections
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+    
+    // Show the selected section
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+        targetSection.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+}
 
-    const loveQuotesElement = document.getElementById('loveQuotes');
-    if (loveQuotesElement) {
-        loveQuotesElement.innerHTML = `
-            <p>"Love is composed of a single soul inhabiting two bodies." - Aristotle</p>
-            <p>"You know you’re in love when you can’t fall asleep because reality is finally better than your dreams." - Dr. Seuss</p>
-        `;
-    }
+// Add floating hearts effect
+function createFloatingHeart() {
+    const heart = document.createElement('div');
+    heart.innerHTML = '❤️';
+    heart.style.position = 'fixed';
+    heart.style.left = Math.random() * 100 + '%';
+    heart.style.top = '100%';
+    heart.style.fontSize = Math.random() * 20 + 20 + 'px';
+    heart.style.opacity = '0.7';
+    heart.style.zIndex = '999';
+    heart.style.pointerEvents = 'none';
+    heart.style.transition = 'all 4s linear';
+    
+    document.body.appendChild(heart);
+    
+    setTimeout(() => {
+        heart.style.top = '-100px';
+        heart.style.opacity = '0';
+    }, 100);
+    
+    setTimeout(() => {
+        heart.remove();
+    }, 4100);
+}
 
-    const careMessagesElement = document.getElementById('careMessages');
-    if (careMessagesElement) {
-        careMessagesElement.innerHTML = `
-            <p>I care about you more than words can express.</p>
-            <p>Your happiness is my priority.</p>
-        `;
-    }
+// Create floating hearts periodically
+setInterval(createFloatingHeart, 2000);
 
-    const sharePictureButton = document.getElementById('sharePictureButton');
-    if (sharePictureButton) {
-        sharePictureButton.addEventListener('click', () => {
-            alert('I am waiting for your picture! 😊');
-        });
+// Add sparkle effect on mouse move
+document.addEventListener('mousemove', (e) => {
+    if (Math.random() > 0.9) {
+        const sparkle = document.createElement('div');
+        sparkle.innerHTML = '✨';
+        sparkle.style.position = 'fixed';
+        sparkle.style.left = e.clientX + 'px';
+        sparkle.style.top = e.clientY + 'px';
+        sparkle.style.pointerEvents = 'none';
+        sparkle.style.fontSize = '20px';
+        sparkle.style.zIndex = '999';
+        sparkle.style.transition = 'all 1s ease-out';
+        
+        document.body.appendChild(sparkle);
+        
+        setTimeout(() => {
+            sparkle.style.opacity = '0';
+            sparkle.style.transform = 'translateY(-50px)';
+        }, 10);
+        
+        setTimeout(() => {
+            sparkle.remove();
+        }, 1010);
     }
 });

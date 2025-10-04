@@ -3,36 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Romantic Proposal</title>
+    <title>For Shubhanshika ❤️</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Will You Be Mine?</h1>
-    </header>
-    <main>
-        <section id="proposal">
-            <h2>My Proposal</h2>
-            <p>I want to spend the rest of my life with you. You make every moment special!</p>
-        </section>
-        <section id="love-quotes">
-            <h2>Love Quotes</h2>
-            <blockquote>"Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day."</blockquote>
-            <blockquote>"You know you're in love when you can't fall asleep because reality is finally better than your dreams."</blockquote>
-        </section>
-        <section id="care">
-            <h2>My Care</h2>
-            <p>I promise to always be there for you, to support you, and to cherish every moment we share.</p>
-        </section>
-        <section id="final-ask">
-            <h2>Are You Impressed?</h2>
-            <p>If you are, please share your picture with me. I'm waiting!</p>
-            <img src="assets/love-symbol.png" alt="Love Symbol" />
-        </section>
-    </main>
-    <footer>
-        <p>Thank you for considering my proposal!</p>
-    </footer>
+    <div class="background-overlay"></div>
+    
+    <div class="heart-container">
+        <div class="heart"></div>
+    </div>
+
+    <!-- Home Section - Proposal -->
+    <section id="home" class="section active">
+        <div class="container">
+            <h1 class="name-title">Dear Shubhanshika 💕</h1>
+            <h2 class="proposal-title">Will You Be Mine?</h2>
+            <div class="proposal-box">
+                <p class="proposal-text">From the moment I met you, my life changed in the most beautiful way.</p>
+                <p class="proposal-text">Your smile lights up my world, and your laughter is the sweetest melody I've ever heard.</p>
+                <p class="proposal-text">I want to spend the rest of my life with you, making every moment special, creating beautiful memories together.</p>
+                <p class="proposal-text">You are not just my love, you are my best friend, my confidant, and my everything.</p>
+                <p class="proposal-highlight">Shubhanshika, you make every single day worth living! ✨</p>
+            </div>
+            <button class="btn" onclick="showSection('love')">Continue Reading ➡️</button>
+        </div>
+    </section>
+
+    <!-- Love Quotes Section -->
+    <section id="love" class="section">
+        <div class="container">
+            <h1 class="title">💖 Beautiful Love Quotes 💖</h1>
+            <div class="quote-box">
+                <p class="quote">"Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day."</p>
+                <p class="author">- Unknown</p>
+            </div>
+            <div class="quote-box">
+                <p class="quote">"You know you're in love when you can't fall asleep because reality is finally better than your dreams."</p>
+                <p class="author">- Dr. Seuss</p>
+            </div>
+            <div class="quote-box">
+                <p class="quote">"In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."</p>
+                <p class="author">- Maya Angelou</p>
+            </div>
+            <div class="quote-box">
+                <p class="quote">"I have found the one whom my soul loves."</p>
+                <p class="author">- Song of Solomon 3:4</p>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-back" onclick="showSection('home')">⬅️ Back</button>
+                <button class="btn" onclick="showSection('care')">Next ➡️</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Care Section -->
+    <section id="care" class="section">
+        <div class="container">
+            <h1 class="title">🤗 My Promise To You 🤗</h1>
+            <div class="care-content">
+                <p>I promise to always be there for you, in good times and challenging times.</p>
+                <p>I will support your dreams and stand by your side through every journey.</p>
+                <p>I promise to cherish every moment we share and make you smile every single day.</p>
+                <p>Your happiness is my priority, and I'll do everything to keep that beautiful smile on your face.</p>
+                <p>I will love you unconditionally, respect you deeply, and protect you always.</p>
+                <p>Together, we will create a lifetime of beautiful memories and endless love.</p>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-back" onclick="showSection('love')">⬅️ Back</button>
+                <button class="btn" onclick="showSection('final')">Continue ➡️</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Section -->
+    <section id="final" class="section">
+        <div class="container">
+            <h1 class="title">💌 Are You Impressed? 💌</h1>
+            <div class="final-content">
+                <p class="impressed-text">If my words have touched your heart...</p>
+                <p class="impressed-text">If you feel the connection we share...</p>
+                <p class="impressed-text">If I've made you smile...</p>
+                
+                <h2 class="waiting-text">I Would Love To See Your Beautiful Smile! 📸</h2>
+                
+                <div class="special-message">
+                    <p>Your pictures would make my soul happy every single day! 🌟</p>
+                    <p>Just seeing your face brightens my entire world.</p>
+                    <p>Share your photo with me, Shubhanshika - I'm eagerly waiting to see that gorgeous smile of yours!</p>
+                </div>
+                
+                <div class="hearts-animation">
+                    <span>❤️</span>
+                    <span>💕</span>
+                    <span>💖</span>
+                    <span>💗</span>
+                    <span>💓</span>
+                    <span>💝</span>
+                    <span>💞</span>
+                </div>
+                
+                <p class="final-note">With all my love and affection,<br>Forever Yours 💕</p>
+            </div>
+            <button class="btn btn-back" onclick="showSection('care')">⬅️ Back to Promises</button>
+        </div>
+    </section>
+
     <script src="js/script.js"></script>
 </body>
 </html>
