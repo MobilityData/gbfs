@@ -1,0 +1,57 @@
+body {
+    background-color: #ffebcd; /* Light background color */
+    font-family: 'Arial', sans-serif; /* Font style */
+    color: #333; /* Text color */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 3em;
+    color: #ff4500; /* Orange color for the main heading */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section {
+    background-color: #fff; /* White background for sections */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.quote {
+    font-style: italic;
+    color: #4682b4; /* Steel blue for quotes */
+    margin: 10px 0;
+}
+
+.love-symbol {
+    font-size: 5em;
+    color: #ff69b4; /* Hot pink for love symbol */
+    text-align: center;
+    margin: 20px 0;
+}
+
+button {
+    background-color: #32cd32; /* Lime green for button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #28a745; /* Darker green on hover */
+}
