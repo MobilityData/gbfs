@@ -1264,3 +1264,4 @@ US,Valentine Bike Share,"Valentine, NE",bcycle_valentine,https://heartlandbikesh
 US,Veo Washington DC,"Washington, DC",Veo Mobility,https://www.veoride.com/,https://cluster-prod.veoride.com/api/shares/name/DC_City/gbfs,2.2,,,
 US,WE-cycle,"Aspen, CO",we_cycle,https://www.we-cycle.org,https://aspen.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,,,
 XK,Prishtina bike,Prishtina,nextbike_gs,https://www.prishtinabike.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gs/gbfs.json,2.3,,,
+PT,Bora,Viseu Dão Lafões,bora_viseu,https://www.cimvdl.pt/bora/,https://gbfs.primelayer.pt/gbfs-smartmobility/gbfs/v3/gbfs.json,3.0,,,
