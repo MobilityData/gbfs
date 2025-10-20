@@ -1196,7 +1196,7 @@ US,Lime Oakland,"Oakland, CA",lime_oakland,https://www.li.me/,https://data.lime.
 US,Lime Portland,"Portland, OR",lime_portland,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/portland/gbfs.json,2.2,,,
 US,Lime San Francisco,"San Francisco, CA",lime_san_francisco,https://li.me,https://data.lime.bike/api/partners/v2/gbfs/san_francisco/gbfs.json,2.2,,,
 US,Lime San Jose,"San Jose, CA",lime_san_jose,https://www.li.me,https://data.lime.bike/api/partners/v2/gbfs/san_jose/gbfs.json,2.2,,,
-US,Lime Seattle,"Seattle, WA",lime_seattle,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/seattle/gbfs.json,2.2,,,
+US,Lime Seattle,"Seattle, WA",lime_seattle,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/seattle/gbfs.json,1.0 ; 2.2,,,
 US,Lime Washington DC,"Washington, DC",lime_washington_dc,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/washington_dc/gbfs.json,2.2,,,
 US,Lyft,"Washington, DC",lyft_dca,https://www.lyft.com/scooters/washington-dc,https://gbfs.lyft.com/gbfs/2.3/dca/gbfs.json,2.3,,,
 US,Lyft Scooters Chicago,"Chicago, IL",chicago,https://www.divvybikes.com,https://gbfs.divvybikes.com/gbfs/2.3/gbfs.json,2.3,,,
@@ -1264,3 +1264,4 @@ US,Valentine Bike Share,"Valentine, NE",bcycle_valentine,https://heartlandbikesh
 US,Veo Washington DC,"Washington, DC",Veo Mobility,https://www.veoride.com/,https://cluster-prod.veoride.com/api/shares/name/DC_City/gbfs,2.2,,,
 US,WE-cycle,"Aspen, CO",we_cycle,https://www.we-cycle.org,https://aspen.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,,,
 XK,Prishtina bike,Prishtina,nextbike_gs,https://www.prishtinabike.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gs/gbfs.json,2.3,,,
+
