@@ -1044,6 +1044,7 @@ PT,Bird Porto,Porto,bird-porto,https://www.bird.co,https://mds.bird.co/gbfs/v2/p
 PT,Bolt Covilhã,Covilhã,BoltEU_Covilhã,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3/832/gbfs,1.0 ; 2.3 ; 3.0,,,
 PT,Bolt Esposende,Esposende,BoltEU_Esposende,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3/1766/gbfs,1.0 ; 2.3 ; 3.0,,,
 PT,Bolt Ponta Delgada,Ponta Delgada,BoltEU_Ponta Delgada,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3/2092/gbfs,1.0 ; 2.3 ; 3.0,,,
+PT,Bora,Viseu Dão Lafões,bora_viseu,https://www.cimvdl.pt/bora/,https://gbfs.primelayer.pt/gbfs-smartmobility/gbfs/v3/gbfs.json,3.0,,,
 PT,Demoland Loule,Great Britain,nextbike_tb,https://www.nextbike.de/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_tb/gbfs.json,2.3,,,
 PT,LINK Almada,Almada,Link_Almada,https://www.superpedestrian.com,https://mds.linkyour.city/gbfs/pt_almada/gbfs.json,2.2 ; 2.3,,,
 PT,LINK Faro,Faro,Link_Faro,https://www.superpedestrian.com,https://mds.linkyour.city/gbfs/pt_faro/gbfs.json,2.2 ; 2.3,,,
@@ -1299,4 +1300,3 @@ US,Veo Washington DC,"Washington, DC",Veo Mobility,https://www.veoride.com,https
 US,Veo Wichita,"Wichita, KS",Veo Mobility,https://www.veoride.com,https://cluster-prod.veoride.com/api/shares/name/wta/gbfs,2.2,,,
 US,WE-cycle,"Aspen, CO",we_cycle,https://www.we-cycle.org,https://aspen.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,,,
 XK,Prishtina bike,Prishtina,nextbike_gs,https://www.prishtinabike.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gs/gbfs.json,2.3,,,
-
