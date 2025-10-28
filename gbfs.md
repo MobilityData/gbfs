@@ -697,7 +697,7 @@ Field Name | REQUIRED | Type | Defines
         "wheel_count": 3,
         "default_reserve_time": 30,
         "return_constraint": "roundtrip_station",
-         "min_age": 16,
+        "min_age": 16,
         "vehicle_assets": {
           "icon_url": "https://www.example.com/assets/icon_cargobicycle.svg",
           "icon_url_dark": "https://www.example.com/assets/icon_cargobicycle_dark.svg",
@@ -726,7 +726,7 @@ Field Name | REQUIRED | Type | Defines
         "default_reserve_time": 30,
         "max_range_meters": 12345,
         "return_constraint": "free_floating",
-         "min_age": 18,
+        "min_age": 18,
         "vehicle_assets": {
           "icon_url": "https://www.example.com/assets/icon_escooter.svg",
           "icon_url_dark": "https://www.example.com/assets/icon_escooter_dark.svg",
