@@ -301,7 +301,6 @@ DE,Flinkster,Germany,flinkster_carsharing,https://www.flinkster.de/,https://api.
 DE,flux Bikesharing,Friedrichsdorf,nextbike_ev,https://www.nextbike.de/flux-bikesharing/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ev/gbfs.json,2.3,,,
 DE,Ford Carsharing (Autohaus Baur),Germany,ford_carsharing_autohausbaur,https://www.ford-carsharing.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/ford_carsharing_autohausbaur/gbfs,3.0,,,
 DE,Frelo,Freiburg,nextbike_df,https://www.frelo-freiburg.de/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_df/gbfs.json,2.3,,,
-DE,Gmünd bewegt!,Schwäbisch Gmünd,gmuend_bewegt,https://www.stwgd.de/privatkunden/mobilitaet/e-carsharing.html,https://api.mobidata-bw.de/sharing/gbfs/v2/gmuend_bewegt/gbfs,2.3 ; 3.0,,,
 DE,Graben - ready4green,Graben,nextbike_da,https://www.nextbike.de/ready4green/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_da/gbfs.json,2.3,,,
 DE,Gülf - das Gültsteiner Lastenrad,Herrenberg,herrenberg_guelf,https://gueltsteinmobil.de/guelf-unser-lastenfahrrad/guelf-unser-lastenfahrrad,https://api.mobidata-bw.de/sharing/gbfs/v3/herrenberg_guelf/gbfs,3.0,,,
 DE,HelBi (Kreis Soest),DE,nextbike_hb,https://www.nextbike.de/helbi/de/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_hb/gbfs.json,2.3,,,
