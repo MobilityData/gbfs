@@ -193,7 +193,6 @@ DE,Bre.Bike,Bremen,nextbike_bq,https://www.nextbike.de/bre.bike/de/de/bremen/,ht
 DE,Call a Bike,Germany,callabike,https://www.callabike.de/,https://api.mobidata-bw.de/sharing/gbfs/v2/callabike/gbfs,2.3 ; 3.0,,,
 DE,Carsharing in Wertheim,Wertheim,stadtwerke_wertheim,https://www.stadtwerke-wertheim.de/carsharing,https://api.mobidata-bw.de/sharing/gbfs/v3/stadtwerke_wertheim/gbfs,3.0,,,
 DE,CarSharing Renningen,Renningen,oekostadt_renningen,https://carsharing-renningen.de/,https://api.mobidata-bw.de/sharing/gbfs/v2/oekostadt_renningen/gbfs,2.3 ; 3.0,,,
-DE,COONO E-Carsharing,Tübingen,coono,https://www.coono-sharing.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/coono/gbfs,3.0,,,
 DE,Deer,Germany,deer,https://www.deer-mobility.de/,https://api.mobidata-bw.de/sharing/gbfs/v2/deer/gbfs,2.3 ; 3.0,,,
 DE,Die Grüne Flotte,Freiburg im Breisgau,gruene-flotte_freiburg,https://gruene-flotte.com/carsharing/,https://api.mobidata-bw.de/sharing/gbfs/v2/gruene-flotte_freiburg/gbfs,2.3 ; 3.0,,,
 DE,Donkey Republic Bamberg,Bamberg,donkey_bamberg,https://www.donkey.bike/,https://stables.donkey.bike/api/public/gbfs/2/donkey_bamberg/gbfs.json,1.0 ; 2.3,,,
