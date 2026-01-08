@@ -229,7 +229,6 @@ DE,Dott Detmold,Detmold,dott-detmold,https://ridedott.com/,https://gbfs.api.ride
 DE,Dott Dortmund,Dortmund,dott-dortmund,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/dortmund/gbfs.json,2.3,,,
 DE,Dott Duisburg,Duisburg,dott-duisburg,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/duisburg/gbfs.json,2.3,,,
 DE,Dott Dusseldorf,Dusseldorf,dott-dusseldorf,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/dusseldorf/gbfs.json,2.3,,,
-DE,Dott Ellwangen,Ellwangen,dott-ellwangen,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/ellwangen/gbfs.json,2.3,,,
 DE,Dott Elmshorn,Elmshorn,dott-elmshorn,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/elmshorn/gbfs.json,2.3,,,
 DE,Dott Erfurt,Erfurt,dott-erfurt,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/erfurt/gbfs.json,2.3,,,
 DE,Dott Erlangen,Erlangen,dott-erlangen,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/erlangen/gbfs.json,2.3,,,
@@ -240,7 +239,6 @@ DE,Dott Friedrichshafen,Friedrichshafen,dott-friedrichshafen,https://ridedott.co
 DE,Dott Gera,Gera,dott-gera,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/gera/gbfs.json,2.3,,,
 DE,Dott Gifhorn,Gifhorn,dott-gifhorn,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/gifhorn/gbfs.json,2.3,,,
 DE,Dott Gladbeck,Gladbeck,dott-gladbeck,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/gladbeck/gbfs.json,2.3,,,
-DE,Dott Greifswald,Greifswald,dott-greifswald,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/greifswald/gbfs.json,2.3,,,
 DE,Dott Hamburg,Hamburg,dott-hamburg,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/hamburg/gbfs.json,2.3,,,
 DE,Dott Hamm,Hamm,dott-hamm,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/hamm/gbfs.json,2.3,,,
 DE,Dott Hannover,Hannover,dott-hannover,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/hannover/gbfs.json,2.3,,,
@@ -1245,3 +1243,4 @@ US,Veo Washington DC,"Washington, DC",Veo Mobility,https://www.veoride.com,https
 US,Veo Wichita,"Wichita, KS",Veo Mobility,https://www.veoride.com,https://cluster-prod.veoride.com/api/shares/name/wta/gbfs,2.2,,,
 US,WE-cycle,"Aspen, CO",we_cycle,https://www.we-cycle.org,https://aspen.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,,,
 XK,Prishtina bike,Prishtina,nextbike_gs,https://www.prishtinabike.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gs/gbfs.json,2.3,,,
+
