@@ -902,6 +902,7 @@ NO,Voi Stavanger,Stavanger,voistavanger,https://www.voi.com/,https://api.entur.i
 NO,Voi Trondheim,Trondheim,voitrondheim,https://www.voi.com/,https://api.entur.io/mobility/v2/gbfs/v3/voitrondheim/gbfs,3.0,,,
 NO,Zeus Oslo,Oslo,zeus_oslo,https://zeusscooters.com/,https://zeus.city/api/v1/mds/gbfs/oslo/gbfs.json,2.2,,,
 NZ,Flamingo Auckland,Auckland,flamingo_auckland,https://rideflamingo.com,https://data.rideflamingo.com/gbfs/3/auckland/gbfs.json,2.3 ; 3.0,,,
+NZ,Flamingo Christchurch,Christchurch,flamingo_christchurch,https://rideflamingo.com,https://data.rideflamingo.com/gbfs/3/christchurch/gbfs.json,2.3 ; 3.0,,,
 NZ,Flamingo Dunedin,Dunedin,flamingo_dunedin,https://rideflamingo.com,https://data.rideflamingo.com/gbfs/3/dunedin/gbfs.json,2.3 ; 3.0,,,
 NZ,Flamingo Palmerston North,Palmerston North,flamingo_palmerston_north,https://rideflamingo.com,https://data.rideflamingo.com/gbfs/3/palmerston-north/gbfs.json,2.3 ; 3.0,,,
 NZ,Flamingo Porirua,"Porirua",flamingo_porirua,https://rideflamingo.com,https://data.rideflamingo.com/gbfs/3/porirua/gbfs.json,2.3 ; 3.0,,,
@@ -1245,3 +1246,4 @@ US,Veo Washington DC,"Washington, DC",Veo Mobility,https://www.veoride.com,https
 US,Veo Wichita,"Wichita, KS",Veo Mobility,https://www.veoride.com,https://cluster-prod.veoride.com/api/shares/name/wta/gbfs,2.2,,,
 US,WE-cycle,"Aspen, CO",we_cycle,https://www.we-cycle.org,https://aspen.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,,,
 XK,Prishtina bike,Prishtina,nextbike_gs,https://www.prishtinabike.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gs/gbfs.json,2.3,,,
+
