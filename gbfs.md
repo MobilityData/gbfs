@@ -128,7 +128,7 @@ Hours and dates of operation SHOULD be published even in cases where services ar
     * OPTIONAL files MAY 404. A 404 of an OPTIONAL file SHOULD NOT be considered an error.
 * HTTP responses SHOULD include the [`ETag` HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag).
 * Clients receiving `Etag`s SHOULD use the [`If-None-Match` HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-None-Match) for subsequent requests.
-* HTTP responses to requests including the `If-None-Match` HTTP header SHOULD respect it by returning a [304 Not Modified](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304) when appropriate.
+* HTTP responses to requests containing the `If-None-Match` HTTP header SHOULD respect it by returning a [304 Not Modified](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304) when appropriate.
 
 ### Version Endpoints
 
