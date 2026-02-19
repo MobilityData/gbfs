@@ -751,6 +751,7 @@ HU,Dott Hatvan,Hatvan,dott-hatvan,https://ridedott.com/,https://gbfs.api.ridedot
 HU,Dott Miskolc,Miskolc,dott-miskolc,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/miskolc/gbfs.json,2.3,,,
 HU,Dott Pápa,Pápa,dott-papa,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/papa/gbfs.json,2.3,,,
 HU,Dott Siófok,Siófok,dott-siofok,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/siofok/gbfs.json,2.3,,,
+HU,MOL Bubi,Budapest,nextbike_bh,https://molbubi.hu/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bh/gbfs.json,2.3,,,
 IE,Beryl Belfast,Belfast,beryl_belfast,https://beryl.cc/,https://gbfs.beryl.cc/v2_2/Belfast/gbfs.json,2.1 ; 2.2,,,
 IE,Bleeper Bikes,Dublin,e6cb78c4-5ba5-4414-a2a2-bbf1ed91f76c,https://bleeperactive.com/pages/bikeshare,https://data.smartdublin.ie/bleeperbike-api/gbfs,2.3,,,
 IE,Dublinbikes,Dublin,dublin,https://www.dublinbikes.ie/,https://api.cyclocity.fr/contracts/dublin/gbfs/v3/gbfs.json,2.3 ; 3.0,,,
@@ -1245,5 +1246,6 @@ US,Veo Washington DC,"Washington, DC",Veo Mobility,https://www.veoride.com,https
 US,Veo Wichita,"Wichita, KS",Veo Mobility,https://www.veoride.com,https://cluster-prod.veoride.com/api/shares/name/wta/gbfs,2.2,,,
 US,WE-cycle,"Aspen, CO",we_cycle,https://www.we-cycle.org,https://aspen.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,,,
 XK,Prishtina bike,Prishtina,nextbike_gs,https://www.prishtinabike.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gs/gbfs.json,2.3,,,
+
 
 
