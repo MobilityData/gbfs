@@ -637,6 +637,7 @@ FR,Vivélo,Vichy,vivelo,https://www.mobivie.fr/se-deplacer/vivelo/,https://gbfs.
 FR,Voi Grenoble,Grenoble,voi_Grenoble,https://www.voi.com/,https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/358/gbfs.json,2.3,,,
 FR,Voi Le Havre,Le Havre,voi_Le_Havre,https://www.voi.com/,https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/336/gbfs.json,2.3,,,
 FR,Voi Marseille,Marseille,voi_Marseille,https://www.voi.com/,https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/66/gbfs.json,2.3,,,
+FR,Voi Paris,Paris,voi_Paris,https://www.voi.com/,https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/352/gbfs.json,2.3,,,
 FR,Voi Saint-Quentin-en-Yvelines,Saint-Quentin-en-Yvelines,voi_SQY,https://www.voi.com/,https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/355/gbfs.json,2.3,,,
 FR,Vélhop - Strasbourg,"Strasbourg, FR",nextbike_ae,https://vls.velhop.strasbourg.eu/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ae/gbfs.json,2.3,,,
 FR,Vélib' Metropole,Paris,Paris,https://www.velib-metropole.fr/,https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/gbfs.json,1.0,,,
@@ -1246,6 +1247,3 @@ US,Veo Washington DC,"Washington, DC",Veo Mobility,https://www.veoride.com,https
 US,Veo Wichita,"Wichita, KS",Veo Mobility,https://www.veoride.com,https://cluster-prod.veoride.com/api/shares/name/wta/gbfs,2.2,,,
 US,WE-cycle,"Aspen, CO",we_cycle,https://www.we-cycle.org,https://aspen.publicbikesystem.net/customer/gbfs/v2/gbfs.json,1.1 ; 2.3,,,
 XK,Prishtina bike,Prishtina,nextbike_gs,https://www.prishtinabike.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gs/gbfs.json,2.3,,,
-
-
-
