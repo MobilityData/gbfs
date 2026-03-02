@@ -622,7 +622,6 @@ FR,NemoVélo,Nîmes,nemovelo,https://nemo-velo.fr/,https://api.gbfs.v3.0.ecovelo
 FR,Ogalo Cyclette,Saumur,ogalo,https://ogalo.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/ogalo/gbfs.json,2.2 ; 3.0,,,
 FR,Ogalo,Vivy,ogalo,https://ogalo-saumurvaldeloire.fr/,https://backend.citiz.fr/public/provider/21/gbfs/v3.0/gbfs.json,3.0,,,
 FR,Ogalo,Montreuil-Bellay,ogalo,https://www.anjouloireterritoire.fr/,https://backend.citiz.fr/public/provider/21/gbfs/3.0/gbfs.json,3,,,
-FR,Ogalo Cyclette,Saumur,ogalo,https://ogalo.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/ogalo/gbfs.json,2.2 ; 3.0,,,
 FR,OLORON,Oloron-Sainte-Marie,mp_OLORON,https://www.mobility-parc.net/,https://www.mobility-parc.net/gbfs/v3/OLORON/gbfs.json,3,,,
 FR,Optymo Belfort,Belfort,Optymo_FR_Belfort,https://www.optymo.fr/,https://data.optymo.fr/vls/gbfs.json,1.0,,,
 FR,Optymo Belfort Auto libre-service,Belfort,Optymo_Belfort_ALS,https://www.optymo.fr/,https://data.optymo.fr/als/gbfs.json,2.3,,,
