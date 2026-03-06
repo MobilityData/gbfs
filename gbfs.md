@@ -109,7 +109,7 @@ Beginning with v3.0, hours and dates of operation are described using the Open S
 * [OSM opening_hours validation tool](https://openingh.openstreetmap.de/evaluation_tool/)
 * [OSM opening_hours project and code libraries](https://github.com/opening-hours)
 
-Hours and dates of operation SHOULD be published even in cases where services are continuously available 24/7. During periods when a system or station is outside of opening hours, stations SHOULD be set to `is_renting = false`. During these periods, `station_status.json.num_vehicles_available` and `station_status.json.num_docks_available` SHOULD reflect the number of vehicles and docks that would be available if the system or station were open. The `vehicles` array in `vehicle_status` SHOULD reflect those vehicles that are in the field and accessible to users that would be available for rental if the system were open.
+Hours and dates of operation MUST be published even in cases where services are continuously available 24/7. During periods when a system or station is outside of opening hours, stations SHOULD be set to `is_renting = false`. During these periods, `station_status.json.num_vehicles_available` and `station_status.json.num_docks_available` SHOULD reflect the number of vehicles and docks that would be available if the system or station were open. The `vehicles` array in `vehicle_status` SHOULD reflect those vehicles that are in the field and accessible to users that would be available for rental if the system were open.
 
 ## File Requirements
 
