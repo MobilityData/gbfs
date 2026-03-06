@@ -580,7 +580,7 @@ FR,Citiz Rennes Métropole,Rennes,citiz_rennes_metropole,https://citiz.coop/,htt
 FR,Cycl'AM,Ardenne Métropole,cyclam,https://cyclam.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/cyclam/gbfs.json,2.2 ; 3.0,,,
 FR,Cyclolibre,Carcassonne,cyclolibre,https://cyclolibre.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/cyclolibre/gbfs.json,2.2 ; 3.0,,,
 FR,Cyclovis,Soissons,cyclovis,https://cyclovis.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/cyclovis/gbfs.json,2.2 ; 3.0,,,
-FR,Donkey Republic Valenciennes,Valenciennes,donkey_valenciennes,https://www.donkey.bike/cities/bike-rental-valenciennes/,https://stables.donkey.bike/api/public/gbfs/3.0/valenciennes/gbfs.json,1.0 ; 2.3 ; 3.0,,,
+FR,Donkey Republic Valenciennes,Valenciennes,valenciennes,https://www.donkey.bike/cities/bike-rental-valenciennes/,https://stables.donkey.bike/api/public/gbfs/3.0/valenciennes/gbfs.json,1.0 ; 2.3 ; 3.0,,,
 FR,Dott Bordeaux,Bordeaux,dott-bordeaux,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/bordeaux/gbfs.json,2.3,,,
 FR,Dott Bourgoin Jallieu,Bourgoin-Jallieu,dott-bourgoin-jallieu,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/bourgoin-jallieu/gbfs.json,2.3,,,
 FR,Dott Gpseo,Grand Paris Seine et Oise,dott-gpseo,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/gpseo/gbfs.json,2.3,,,
