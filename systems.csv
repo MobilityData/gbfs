@@ -781,8 +781,6 @@ IT,Amicarnapoli,Naples,amicarnapoli,https://www.amicarnapoli.it,https://www.amic
 IT,Bird Florence,Florence,bird-florence,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/florence/gbfs.json,1.1 ; 2.3,,,
 IT,Bird Milan,Milan,bird-milan,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/milan/gbfs.json,1.1 ; 2.3,,,
 IT,Bird Rome,Rome,bird-rome,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/rome/gbfs.json,1.1 ; 2.3,,,
-IT,Cooltra Milan,Milan,milan,https://cooltra.com/,https://maas.zeus.cooltra.com/gbfs/milan/3.0/en/gbfs.json,3.0,,,
-IT,Cooltra Rome,Rome,rome,https://cooltra.com/,https://maas.zeus.cooltra.com/gbfs/rome/3.0/en/gbfs.json,3.0,,,
 IT,Cooltra Turin,Turin,turin,https://cooltra.com/,https://maas.zeus.cooltra.com/gbfs/turin/3.0/en/gbfs.json,3.0,,,
 IT,Dott Arezzo,Arezzo,dott-arezzo,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/arezzo/gbfs.json,2.3,,,
 IT,Dott Bari,Bari,dott-bari,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/bari/gbfs.json,2.3,,,
