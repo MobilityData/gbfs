@@ -220,7 +220,6 @@ DE,Donkey Republic Kiel,Kiel,donkey_kiel,https://www.donkey.bike/cities/bike-ren
 DE,Donkey Republic Munich,Munich,donkey_munich,https://www.donkey.bike/cities/bike-rental-munich/,https://stables.donkey.bike/api/public/gbfs/2/donkey_munich/gbfs.json,1.0 ; 2.3,,,
 DE,Donkey Republic Regensburg,Regensburg,donkey_regensburg,https://www.donkey.bike/cities/bike-rental-regensburg/,https://stables.donkey.bike/api/public/gbfs/2/donkey_regensburg/gbfs.json,1.0 ; 2.3,,,
 DE,Donkey Republic Schleswig,Schleswig,donkey_schleswig,https://www.donkey.bike/cities/schlei-region/,https://stables.donkey.bike/api/public/gbfs/2/donkey_schleswig/gbfs.json,1.0 ; 2.3,,,
-DE,Donkey Smile24,Schlei Region,donkey_smile,https://www.donkey.bike,https://stables.donkey.bike/api/public/gbfs/3.0/donkey_smile/gbfs.json,1.0 ; 2.3 ; 3.0,,,
 DE,Donkey Tuttlingen,Tuttlingen,Tuttlingen,https://www.donkey.bike,https://stables.donkey.bike/api/public/gbfs/3.0/Tuttlingen/gbfs.json,1.0 ; 2.3 ; 3.0,,,
 DE,Dott Aachen,Aachen,dott-aachen,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/aachen/gbfs.json,2.3,,,
 DE,Dott Baunatal,Baunatal,dott-baunatal,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/baunatal/gbfs.json,2.3,,,
