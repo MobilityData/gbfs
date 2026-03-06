@@ -873,7 +873,6 @@ NL,Felyx Tilburg,Tilburg,cooltra_tilburg,https://cooltra.com,https://maas.zeus.c
 NL,Felyx Zwolle,Zwolle,cooltra_zwolle,https://cooltra.com,https://maas.zeus.cooltra.com/gbfs/zwolle/3.0/en/gbfs.json,3.0,,,
 NL,GoAbout,Netherlands,goabout,https://goabout.com,https://gbfs.goabout.com/2/gbfs.json,2.0,,,
 NL,NS OV Fiets,Netherlands,ns_ov_fiets,https://www.ns.nl/en/door-to-door/ov-fiets,http://gbfs.openov.nl/ovfiets/gbfs.json,1.0,,,
-NO,Bergen Bysykkel,Bergen,bergenbysykkel,https://bergenbysykkel.no,https://api.entur.io/mobility/v2/gbfs/v3/bergenbysykkel/gbfs,2.3 ; 3.0,,,
 NO,Bergen City Bike,Bergen,bergen-city-bike,https://bergenbysykkel.no/en,https://gbfs.urbansharing.com/bergenbysykkel.no/gbfs.json,2.3,,,
 NO,Bolt Lillestrom,Lillestrom,boltlillestrom,https://www.bolt.eu/,https://api.entur.io/mobility/v2/gbfs/v3/boltlillestrom/gbfs,2.3 ; 3.0,,,
 NO,Bolt Arpsborg,Arpsborg,boltsarpsborg,https://www.bolt.eu/,https://api.entur.io/mobility/v2/gbfs/v3/boltsarpsborg/gbfs,2.3 ; 3.0,,,
