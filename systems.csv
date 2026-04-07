@@ -69,7 +69,7 @@ BR,Bike Itaú - Sampa,São Paulo,bike_sampa,https://bikeitau.com.br/bikesampa,ht
 BR,Bike Porto Alegre,Porto Alegre,bike_poa,https://bikeitau.com.br/porto-alegre/,https://portoalegre.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json,1.1 ; 2.3 ; 3.0,,,
 BR,Rivi Bike,Largo Dos Coqueiros,rivi_bike,https://www.rivieradesaolourenco.com/lazer-e-servicos/rivibike/,https://riviera.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json,1.1 ; 2.3 ; 3.0,,,
 CA,Accès Vélo,Saguenay,saguenay_bike,https://sts.saguenay.ca/infos-pratiques/acces-velo-1/acces-velo,https://saguenay.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json,1.1 ; 2.3 ; 3.0,,,
-CA,àVélo,Ville de Québec,avelo_quebec,https://www.rtcquebec.ca/informations-pratiques/services-complementaires/avelo,https://quebec.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json,1.1 ; 2.3 ; 3.0,,
+CA,àVélo,Ville de Québec,avelo_quebec,https://www.rtcquebec.ca/informations-pratiques/services-complementaires/avelo,https://quebec.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json,1.1 ; 2.3 ; 3.0,,,
 CA,Bike Share Toronto,Toronto,bike_share_toronto,https://www.bikesharetoronto.com/,https://toronto.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json,1.1 ; 2.3 ; 3.0,,,
 CA,Bird Calgary,Calgary,bird-calgary,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/calgary/gbfs.json,1.1 ; 2.3,,,
 CA,Bird Edmonton,Edmonton,bird-edmonton,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/edmonton/gbfs.json,1.1 ; 2.3,,,
