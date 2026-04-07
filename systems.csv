@@ -687,6 +687,7 @@ FR,Voi Saint-Quentin-en-Yvelines,Saint-Quentin-en-Yvelines,voi_SQY,https://www.v
 FR,Zebullo,Reims,zebullo,https://zebullo.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/zebullo/gbfs.json,2.2 ; 3.0,,,
 GB,Beryl - BCP,Bournemouth/Christchurch/Poole,beryl_bcp,https://beryl.cc/scheme/bournemouth-christchurch-and-poole,https://beryl-gbfs-production.web.app/v2_2/BCP/gbfs.json,2.1 ; 2.2,,,
 GB,Beryl - Brighton,Brighton,beryl_brighton,https://beryl.cc/,https://beryl-gbfs-production.web.app/v2_2/Brighton/gbfs.json,2.1 ; 2.2,,,
+GB,Beryl - Canterbury,Canterbury,beryl_canterbury,https://beryl.cc/,https://beryl-gbfs-production.web.app/v2_2/Canterbury/gbfs.json,2.1 ; 2.2,,,
 GB,Beryl - Cornwall,Cornwall,beryl_cornwall,https://beryl.cc/scheme/cornwall,https://beryl-gbfs-production.web.app/v2_2/Cornwall/gbfs.json,2.1 ; 2.2,,,
 GB,Beryl - Eastleigh,Eastleigh,beryl_eastleigh,https://beryl.cc/,https://beryl-gbfs-production.web.app/v2_2/Eastleigh/gbfs.json,2.1 ; 2.2,,,
 GB,Beryl - Greater Manchester,Manchester,beryl_greater_manchester,https://beryl.cc/scheme/greater-manchester,https://beryl-gbfs-production.web.app/v2_2/Greater_Manchester/gbfs.json,2.1 ; 2.2,,,
