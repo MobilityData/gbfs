@@ -599,6 +599,7 @@ FR,Dott SIEMU,Marne-la-Vallée,dott-siemu,https://ridedott.com/,https://gbfs.api
 FR,Dott Tignes,Tignes,dott-tignes,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/tignes/gbfs.json,2.3,,,
 FR,Dott Versailles Grand-Parc,Versailles,dott-versailles-grand-parc,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/versailles-grand-parc/gbfs.json,2.3,,,
 FR,Gévaudan,Gévaudan,mp_GEVAUDAN,https://www.mobility-parc.net/,https://www.mobility-parc.net/gbfs/v3/GEVAUDAN/gbfs.json,3.0,,,
+FR,GraouLib',Metz,graoulib_metz,https://www.eurometropolemetz.eu/a-la-une/une/graoulib-la-location-de-velos-electriques-en-libre-service,https://gbfs.partners.fifteen.eu/gbfs/2.2/metz/en/gbfs.json,2.2,,,
 FR,IDEcycle (Pau),PAU,idecycle_pau,https://gbfs.partners.fifteen.eu,https://gbfs.partners.fifteen.eu/gbfs/2.2/pau/en/gbfs.json,2.2,,,
 FR,Impulsyon,La Roche-sur-Yon,impulsyon,https://impulsyon.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/impulsyon/gbfs.json,2.2 ; 3.0,,,
 FR,Karu'Vélo,Pointe-à-Pitre,karu,https://karuvelo.ecovelo.mobi/,https://api.gbfs.v3.0.ecovelo.mobi/karu/gbfs.json,2.2 ; 3.0,,,
