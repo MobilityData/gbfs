@@ -314,7 +314,7 @@ DE,Eifel e-Bike,Eifel,nextbike_eb,https://www.nextbike.de/eifel-ebike/,https://g
 DE,Einfach Unterwegs,Germany,einfach_unterwegs,https://www.einfach-unterwegs.eu/,https://api.mobidata-bw.de/sharing/gbfs/v3/einfach_unterwegs/gbfs,3.0,,,
 DE,EinfachMobil,Ortenaukreis,nextbike_eh,https://www.nextbike.de/einfachmobil/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_eh/gbfs.json,2.3,,,
 DE,esel.ac,Aachen,esel_ac,https://esel.ac/,https://di.esel.ac/gbfs/gbfs.json,2.1,,,
-DE,euregiobike,Aachen,nextbike_an,https://www.euregiobike.eu,https://api.nextbike.net/maps/gbfs/v1/nextbike_an/gbfs.json,2.3,,,
+DE,euregiobike,Aachen,nextbike_an,https://www.euregiobike.eu,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_an/gbfs.json,2.3,,,
 DE,FaRe - das Bananologen Lastenrad,Herrenberg,herrenberg_fare,https://bananologen-herrenberg.jimdosite.com/,https://api.mobidata-bw.de/sharing/gbfs/v3/herrenberg_fare/gbfs,3.0,,,
 DE,Flinkster,Germany,flinkster_carsharing,https://www.flinkster.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/flinkster_carsharing/gbfs,2.3 ; 3.0,,,
 DE,flux Bikesharing,Friedrichsdorf,nextbike_ev,https://www.nextbike.de/flux-bikesharing/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ev/gbfs.json,2.3,,,
