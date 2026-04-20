@@ -613,6 +613,7 @@ FR,Leo and Go,Lyon,84b174c4-eb74-5d07-bdeb-27f4215d2aa9,https://www.leoandgo.com
 FR,Les Petites Reines,Les Sables-d'Olonne,petitesreines,https://lespetitesreines.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/petitesreines/gbfs.json,2.2 ; 3.0,,,
 FR,levélo - Marseille,Marseille,levelo_inurba_marseille,https://levelo.ampmetropole.fr,https://gbfs.omega.fifteen.eu/gbfs/2.2/marseille/en/gbfs.json,2.2,,,
 FR,Libélo,Valence,libelo,https://www.vrd-mobilites.fr/velo/,https://valence.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json,1.1 ; 2.3 ; 3.0,,,
+FR,Lime Lille,Lille,lime_lille,https://www.li.me,https://data.lime.bike/api/partners/v2/gbfs/lille/gbfs.json,2.2,,,
 FR,Lime Marseille,Marseille,lime_marseille,https://www.li.me,https://data.lime.bike/api/partners/v2/gbfs/marseille/gbfs.json,2.2,,,
 FR,Lime Nice,Nice,lime_nice,https://www.li.me,https://data.lime.bike/api/partners/v2/gbfs/nice/gbfs.json,2.2,,,
 FR,Lime Paris,Paris,lime_paris,https://li.me/,https://data.lime.bike/api/partners/v2/gbfs/paris/gbfs.json,2.2,,,
