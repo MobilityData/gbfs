@@ -449,7 +449,6 @@ ES,bibo,Boadilla del Monte,nextbike_by,https://www.biciboadilla.com/es/boadilla-
 ES,biciArteixo,"Artexio, ES",nextbike_aa,https://www.biciarteixo.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_aa/gbfs.json,2.3,,,
 ES,Bicicoruña,A Coruña,acoruna,https://www.bicicoruna.es,https://acoruna.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json,1.1 ; 2.3 ; 3.0,,,
 ES,bicimad,Madrid,bicimad_madrid,https://www.bicimad.com,https://madrid.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json,1.1 ; 2.3 ; 3.0,,,
-ES,BiciMAD (unofficial),Madrid,bici_madrid,https://www.bicimad.com/,https://gbfs.bici.madrid/gbfs.json,2.3,,,
 ES,BiciMislata,Mislata,nextbike_ad,https://bicimislata.mibisivalencia.es,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ad/gbfs.json,2.3,,,
 ES,Bicing,Barcelona,bike_barcelona,https://www.bicing.barcelona/,https://barcelona.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json,1.1 ; 2.3 ; 3.0,,,
 ES,BicinRivas,Rivas-Vaciamadrid,rivas,https://bicinrivas.rivasciudad.es/,https://rivas.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json,1.1 ; 2.3 ; 3.0,,,
