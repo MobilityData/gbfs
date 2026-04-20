@@ -586,6 +586,7 @@ FR,Citiz Nantes,Nantes,citiz_nantes,https://citiz.coop/,https://backend.citiz.fr
 FR,Citiz Occitanie,Toulouse,citiz_occitanie,https://citiz.coop/,https://backend.citiz.fr/public/provider/8/gbfs/v3.0/gbfs.json,3.0,,,
 FR,Citiz Provence,Marseille,citiz_provence,https://citiz.coop/,https://backend.citiz.fr/public/provider/6/gbfs/v3.0/gbfs.json,3.0,,,
 FR,Citiz Rennes Métropole,Rennes,citiz_rennes_metropole,https://citiz.coop/,https://backend.citiz.fr/public/provider/19/gbfs/v3.0/gbfs.json,3.0,,,
+FR,Clem,France,clem-france,https://www.clem-e.com/,https://gbfs.clem.mobi/gbfs.json,3.0,,,
 FR,Cycl'AM,Ardenne Métropole,cyclam,https://cyclam.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/cyclam/gbfs.json,2.2 ; 3.0,,,
 FR,Cyclolibre,Carcassonne,cyclolibre,https://cyclolibre.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/cyclolibre/gbfs.json,2.2 ; 3.0,,,
 FR,Cyclovis,Soissons,cyclovis,https://cyclovis.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/cyclovis/gbfs.json,2.2 ; 3.0,,,
