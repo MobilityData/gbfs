@@ -670,6 +670,7 @@ FR,VélO2,Cergy-Pontoise,cergy,https://www.velo2.cergypontoise.fr/,https://api.c
 FR,VélO2,FR,nextbike_ah,https://www.velo2.cergypontoise.fr/fr/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ah/gbfs.json,2.3,,,
 FR,VéloCité,Besançon,besancon,https://www.velocite.besancon.fr/,https://api.cyclocity.fr/contracts/besancon/gbfs/v3/gbfs.json,2.3 ; 3.0,,,
 FR,VéloCité Mulhouse,Mulhouse,nextbike_af,https://www.velocite-mulhouse.fr/fr/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_af/gbfs.json,2.3,,,
+FR,Vélomagg,Montpellier,velomagg_montpellier,https://www.tam-voyages.com/presentation/?rub_code=1&thm_id=24,https://gbfs.theta.fifteen.eu/gbfs/montpellier/gbfs.json,2.2,,,
 FR,VéloModalis - TERRA,Royan,velo-modalis,https://velomodalis.fr/,https://gbfs.partners.fifteen.eu/gbfs/2.2/velo-modalis/en/gbfs.json,2.2,,,
 FR,VéloMoove,Pompey,velomoove_pompey,https://velomoove.bassinpompey.fr,https://gbfs.partners.fifteen.eu/gbfs/2.2/pompey/en/gbfs.json,2.2,,,
 FR,Vélonecy,Annecy,velonecy60minutes_annecy,https://mobilites.grandannecy.fr/,https://gbfs.partners.fifteen.eu/gbfs/2.2/annecy/en/gbfs.json,2.2,,,
