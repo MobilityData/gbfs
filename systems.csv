@@ -141,7 +141,7 @@ CH,Lime Wetzikon,Wetzikon,lime_wetzikon,https://www.li.me/,https://gbfs.prod.sha
 CH,Lime Winterthur,Winterthur,lime_winterthur,https://www.li.me/,https://gbfs.prod.sharedmobility.ch/v2/gbfs/lime_winterthur/gbfs,2.3,https://github.com/SFOE/sharedmobility/blob/main/Access%20the%20data.md,2,Authorization
 CH,Lime Zug,Zug,lime_zug,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/zug/gbfs.json,2.2,,,
 CH,Lime Zurich,Zurich,lime_zurich,https://www.li.me/,https://api.mobidata-bw.de/sharing/gbfs/v3/lime_zurich/gbfs,2.3 ; 3.0,,,
-CH,Mobility,Switzerland,mobility,https://www.mobility.ch,https://api.mobidata-bw.de/sharing/gbfs/v3/mobility_ch/gbfs,3.0,,,
+CH,Mobility,Switzerland,mobility_ch,https://www.mobility.ch,https://api.mobidata-bw.de/sharing/gbfs/v3/mobility_ch/gbfs,3.0,,,
 CH,MyBuxi,Switzerland,mybuxi_ch,https://mybuxi.ch/,https://api.mobidata-bw.de/sharing/gbfs/v3/mybuxi_ch/gbfs,3.0,,,
 CH,nextbike Switzerland,Switzerland,nextbike_ch,https://www.nextbike.ch/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ch/gbfs.json,2.3,,,
 CH,PickeBike Aubonne,Aubonne,pickebike_aubonne,https://www.pickebike.ch/de/,https://api.mobidata-bw.de/sharing/gbfs/v3/pickebike_aubonne/gbfs,2.3 ; 3.0,,,
