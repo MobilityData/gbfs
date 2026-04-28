@@ -151,6 +151,7 @@ CH,PubliBike,Switzerland,publibike,https://www.publibike.ch,https://api.publibik
 CH,QuickRent,Switzerland,quickrent.ch,https://www.quickrent.ch/,https://quickrent.ch/sbb/api/v1/gbfs,3.0,,,
 CH,Share Birrer,Switzerland,share_birrer_ch,https://www.share-birrer.ch/,https://www.share-birrer.ch/gbfs/gbfs.json,2.2,,,
 CH,sharedmobility.ch,Switzerland,sharedmobility.ch,https://www.sharedmobility.ch/info,https://www.sharedmobility.ch/gbfs.json,2.0,,,
+CH,Sponti-Car,Switzerland,sponti,https://www.sponti-car.ch/en/sponti-car-locations/,https://gbfs.prod.sharedmobility.ch/v2/gbfs/sponti/gbfs,2.3,https://github.com/SFOE/sharedmobility/blob/main/Access%20the%20data.md,2,Authorization
 CH,Velospot,Switzerland,velospot_ch,https://www.velospot.info/customer/public,https://api.mobidata-bw.de/sharing/gbfs/v3/velospot_ch/gbfs,2.3 ; 3.0,,,
 CH,Voi Switzerland,Switzerland,voi_ch,https://www.voi.com/,https://api.mobidata-bw.de/sharing/gbfs/v3/voi_ch/gbfs,2.3 ; 3.0,,,
 CL,Bike Itaú - Santiago,Santiago,bike_santiago,https://www.bikesantiago.cl/,https://santiago.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json,1.1 ; 2.3 ; 3.0,,,
