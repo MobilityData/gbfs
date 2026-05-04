@@ -461,6 +461,7 @@ DK,Donkey Republic Odense,Odense,donkey_odense,https://www.donkey.bike/cities/bi
 DK,Donkey Republic Rødvig,Rødvig,donkey_roedvig,https://www.donkey.bike/cities/bike-rental-rodvig/,https://stables.donkey.bike/api/public/gbfs/3.0/donkey_roedvig/gbfs.json,1.0 ; 2.3 ; 3.0,,,
 DK,Donkey Republic Store Heddinge,Store Heddinge,donkey_store_heddinge,https://www.donkey.bike/cities/bike-rental-store-heddinge/,https://stables.donkey.bike/api/public/gbfs/3.0/donkey_store_heddinge/gbfs.json,1.0 ; 2.3 ; 3.0,,,
 DK,Dott Copenhagen,Copenhagen,dott-copenhagen,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/copenhagen/gbfs.json,2.3,,,
+DK,Dott Frederikssund,Frederikssund,dott-frederikssund,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/frederikssund/gbfs.json,2.3,,,
 DK,Dott Region Hovedstaden,Region Hovedstaden,dott-region-h,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/region-h/gbfs.json,2.3,,,
 DK,Dott Roskilde,Roskilde,dott-roskilde,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/roskilde/gbfs.json,2.3,,,
 ES,AMBici,Barcelona,nextbike_bs,https://www.ambici.cat/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bs/gbfs.json,2.3,,,
