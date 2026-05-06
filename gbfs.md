@@ -124,6 +124,7 @@ Hours and dates of operation MUST be published even in cases where services are 
 
 * Files are distributed as individual HTTP endpoints.
     * All endpoints MUST use HTTPS
+    * All endpoints SHOULD respond to HTTP requests in less than 1 second
     * REQUIRED files MUST NOT 404. They MUST return a properly formatted JSON file as defined in [Output Format](#output-format).
     * OPTIONAL files MAY 404. A 404 of an OPTIONAL file SHOULD NOT be considered an error.
 * HTTP responses SHOULD include the [`ETag` HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag).
