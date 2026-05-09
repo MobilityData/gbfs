@@ -95,7 +95,7 @@ CA,Bird Leduc,Leduc,bird-leduc,https://www.bird.co,https://mds.bird.co/gbfs/v2/p
 CA,Bird Ottawa,Ottawa,bird-ottawa,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/ottawa/gbfs.json,1.1 ; 2.3,,,
 CA,Bird Saskatoon,Saskatoon,bird-saskatoon,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/saskatoon/gbfs.json,1.1 ; 2.3,,,
 CA,Bird Vaughan,Vaughan,bird-vaughan,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/vaughan/gbfs.json,1.1 ; 2.3,,,
-CA,BIXI Montréal,Montreal,Bixi_MTL,https://www.bixi.com/,https://gbfs.velobixi.com/gbfs/gbfs.json,1.0,,,
+CA,BIXI Montréal,Montreal,Bixi_MTL,https://www.bixi.com/,https://gbfs.velobixi.com/gbfs/2-2/gbfs.json,1.0 ; 2.2,,,
 CA,Lime Calgary,Calgary,lime_calgary,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/calgary/gbfs.json,2.2,,,
 CA,Lime Edmonton,Edmonton,lime_edmonton,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/edmonton/gbfs.json,2.2,,,
 CA,Lime Kelowna,Kelowna,lime_kelowna,https://www.li.me,https://data.lime.bike/api/partners/v2/gbfs/kelowna/gbfs.json,2.2,,,
