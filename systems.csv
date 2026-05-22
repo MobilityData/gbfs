@@ -848,6 +848,7 @@ FR,Vertuose,Longwy,vertuose,https://vertuose.ecovelo.mobi,https://api.gbfs.v3.0.
 FR,Viavélo,Villefranche-sur-Saone,viavelo,https://viavelo.ecovelo.mobi/,https://api.gbfs.v3.0.ecovelo.mobi/viavelo/gbfs.json,2.2 ; 3.0,,,
 FR,Vilvolt,Épinal,vilvolt_epinal,https://vilvolt.fr/,https://gbfs.partners.fifteen.eu/gbfs/epinal/gbfs.json,2.2,,,
 FR,Vivélo,Vichy,vivelo,https://www.mobivie.fr/se-deplacer/vivelo/,https://gbfs.partners.fifteen.eu/gbfs/vichy/gbfs.json,2.2,,,
+FR,Voi Grand Paris Seine et Oise,Grand Paris Seine et Oise,voi_Grand_Paris_Seine_et_Oise,https://www.voi.com/,https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/422/gbfs.json,2.3,,,
 FR,Voi Grenoble,Grenoble,voi_Grenoble,https://www.voi.com/,https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/358/gbfs.json,2.3,,,
 FR,Voi Le Havre,Le Havre,voi_Le_Havre,https://www.voi.com/,https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/336/gbfs.json,2.3,,,
 FR,Voi Marseille,Marseille,voi_Marseille,https://www.voi.com/,https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/66/gbfs.json,2.3,,,
