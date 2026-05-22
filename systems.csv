@@ -34,6 +34,7 @@ AT,Getaround Innsbruck,Innsbruck,getaround_innsbruck,https://getaround.com/car-r
 AT,nextbike Klagenfurt Austria,Klagenfurt,nextbike_ka,https://www.nextbike.at/de/klagenfurt/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ka/gbfs.json,2.3,,,
 AT,nextbike Niederösterreich,Austria,nextbike_la,https://www.nextbike.at/niederoesterreich/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_la/gbfs.json,2.3,,,
 AT,Stadtrad Innsbruck Austria,Innsbruck,nextbike_si,https://stadtrad-innsbruck.at/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_si/gbfs.json,2.3,,,
+AT,VMOBIL Rad,Dornbirn,nextbike_vo,https://www.nextbike.at/vmobilrad/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vo/gbfs.json,2.3,,,
 AT,VVT REGIORAD Tirol,Austria,nextbike_vt,https://regiorad.vvt.at/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vt/gbfs.json,2.3,,,
 AT,WienMobil Rad,Vienna,nextbike_wr,https://www.nextbike.at/wienmobilrad/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wr/gbfs.json,2.3,,,
 BA,BL bike,Banja Luka,nextbike_bj,https://www.nextbike.ba/sr/banjaluka/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bj/gbfs.json,2.3,,,
