@@ -59,7 +59,7 @@ Release Candidates will receive *Current Version* status when they have been ful
 
 |  Version | Type  | Release Date   | Status                     | JSON Schema                                                                            | Release Notes       |
 |:---:|:-----:|----------------|----------------------------|----------------------------------------------------------------------------------------|---------------------|
-| [v3.1-RC2](https://github.com/MobilityData/gbfs/blob/v3.1-RC2/gbfs.md) | MINOR | May 28, 2025 | :white_check_mark: Ready for implementation | [v3.1-RC2 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v3.1-RC2) | [v3.1-RC2 Release Notes](https://github.com/MobilityData/gbfs/releases/tag/v3.1-RC2) |
+| [v3.1-RC3](https://github.com/MobilityData/gbfs/blob/v3.1-RC3/gbfs.md) | MINOR | TBD | :white_check_mark: Ready for implementation | [v3.1-RC3 Schema](https://github.com/MobilityData/gbfs-json-schema/tree/master/v3.1-RC3) | [v3.1-RC3 Release Notes](https://github.com/MobilityData/gbfs/releases/tag/v3.1-RC3) |
 
 ### Past Version Releases 
 Past versions with *Supported* status MAY be patched to correct bugs or vulnerabilities but new features will not be introduced.<br />
