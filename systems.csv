@@ -508,7 +508,7 @@ ES,Dott Murcia,Murcia,dott-murcia,https://ridedott.com/,https://gbfs.api.ridedot
 ES,Dott Tarragona,Tarragona,dott-tarragona,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/tarragona/gbfs.json,2.3,,,
 ES,Dott Tenerife,Tenerife,dott-tenerife,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/tenerife/gbfs.json,2.3,,,
 ES,Dott Tenerife-Sur,Tenerife-Sur,dott-tenerife-sur,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/tenerife-sur/gbfs.json,2.3,,,
-ES,Ganxeta,Reus,ganxeta_reus,https://ganxeta.cat,https://gbfs.ganxeta.cat/v2/gbfs.json,2.3,,,
+ES,Ganxeta,Reus,ganxeta_reus,https://ganxeta.cat,https://gbfs.ganxeta.cat/v3/gbfs.json,2.3 ; 3.0,,,
 ES,Getaround Alcobendas,Alcobendas,getaround_alcobendas,https://getaround.com/car-rental/alcobendas,https://getaround.com/gbfs/v3/alcobendas/gbfs,3.0,,,
 ES,Getaround Alicante,Alicante,getaround_alicante,https://getaround.com/car-rental/alicante,https://getaround.com/gbfs/v3/alicante/gbfs,3.0,,,
 ES,Getaround Aranjuez,Aranjuez,getaround_aranjuez,https://getaround.com/car-rental/aranjuez,https://getaround.com/gbfs/v3/aranjuez/gbfs,3.0,,,
