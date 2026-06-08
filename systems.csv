@@ -776,6 +776,7 @@ FR,Lime Lille,Lille,lime_lille,https://www.li.me,https://data.lime.bike/api/part
 FR,Lime Marseille,Marseille,lime_marseille,https://www.li.me,https://data.lime.bike/api/partners/v2/gbfs/marseille/gbfs.json,2.2,,,
 FR,Lime Nice,Nice,lime_nice,https://www.li.me,https://data.lime.bike/api/partners/v2/gbfs/nice/gbfs.json,2.2,,,
 FR,Lime Paris,Paris,lime_paris,https://li.me/,https://data.lime.bike/api/partners/v2/gbfs/paris/gbfs.json,2.2,,,
+FR,Lime Sophia Antipolis,Sophia Antipolis,lime_casa,https://li.me/,https://data.lime.bike/api/partners/v2/gbfs/casa/gbfs.json,2.2,,,
 FR,LOVELO Libre-service,Rouen,inurba-rouen,https://lovelolibreservice.fr/,https://gbfs.urbansharing.com/lovelolibreservice.fr/gbfs.json,2.3,,,
 FR,MontenVélo,Mont Blanc,montenvelo_mont_blanc,https://montenvelo.fr/,https://gbfs.partners.fifteen.eu/gbfs/2.2/mont_blanc/en/gbfs.json,2.2,,,
 FR,Naolib,Nantes,nantes,https://velo.naolib.fr/,https://api.cyclocity.fr/contracts/nantes/gbfs/v3/gbfs.json,2.3 ; 3.0,,,
