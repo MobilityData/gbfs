@@ -336,7 +336,6 @@ DE,flux Bikesharing,Friedrichsdorf,nextbike_ev,https://www.nextbike.de/flux-bike
 DE,Ford Carsharing (Autohaus Baur),Germany,ford_carsharing_autohausbaur,https://www.ford-carsharing.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/ford_carsharing_autohausbaur/gbfs,3.0,,,
 DE,Ford Carsharing (Autohaus Kauderer),Eislingen,ford_carsharing_autohauskauderer,https://www.ford-carsharing.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/ford_carsharing_autohauskauderer/gbfs,2.3 ; 3.0,,,
 DE,franke,Freiburg im Breisgau,freibe,https://suewag2go.de/frank-e,https://api.mobidata-bw.de/sharing/gbfs/v3/freibe/gbfs,2.3 ; 3.0,,,
-DE,franke,Ludwigsburg,lube,https://suewag2go.de/frank-e,https://api.mobidata-bw.de/sharing/gbfs/v3/lube/gbfs,2.3 ; 3.0,,,
 DE,Frelo,Freiburg,nextbike_df,https://www.frelo-freiburg.de/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_df/gbfs.json,2.3,,,
 DE,Getaround Berlin,Berlin,getaround_berlin,https://getaround.com/car-rental/berlin,https://getaround.com/gbfs/v3/berlin/gbfs,3.0,,,
 DE,Getaround Essen,Essen,getaround_essen,https://getaround.com/car-rental/essen,https://getaround.com/gbfs/v3/essen/gbfs,3.0,,,
