@@ -856,6 +856,7 @@ FR,YEGO Bordeaux,Bordeaux,yego bordeaux,https://www.rideyego.com/,https://servic
 FR,YEGO Nice,Nice,yego nice,https://www.rideyego.com/,https://services.rideyego.com/gbfs/2-3/nice/fr/gbfs,1.1 ; 2.0 ; 2.1 ; 2.2 ; 2.3,,,
 FR,YEGO Paris,Paris,yego paris,https://www.rideyego.com/,https://services.rideyego.com/gbfs/2-3/paris/fr/gbfs,1.1 ; 2.0 ; 2.1 ; 2.2 ; 2.3,,,
 FR,YEGO Toulouse,Toulouse,yego toulouse,https://www.rideyego.com/,https://services.rideyego.com/gbfs/2-3/toulouse/fr/gbfs,1.1 ; 2.0 ; 2.1 ; 2.2 ; 2.3,,,
+FR,Yélo,La Rochelle,citiz_la_rochelle,https://yelo.agglo-larochelle.fr/services/libre-service-velos/,https://opendata.agglo-larochelle.fr/sites/default/files/dataset/2dc/df9ac-ca89-4e3f-af7e-5d75f255ee5e/gbfs.json,3.0,,,
 FR,Zebullo,Reims,zebullo,https://zebullo.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/zebullo/gbfs.json,2.2 ; 3.0,,,
 GB,Beryl - BCP,Bournemouth/Christchurch/Poole,beryl_bcp,https://beryl.cc/scheme/bournemouth-christchurch-and-poole,https://beryl-gbfs-production.web.app/v2_2/BCP/gbfs.json,2.1 ; 2.2,,,
 GB,Beryl - Bradford,Bradford,beryl_bradford,https://beryl.cc/,https://beryl-gbfs-production.web.app/v2_2/Bradford/gbfs.json,2.1 ; 2.2,,,
