@@ -822,7 +822,7 @@ FR,Vélibéo,Brive-la-Gaillarde,velibeo,https://velibeo.ecovelo.mobi,https://api
 FR,Vélivert,Saint-Étienne,velivert_saint_etienne,https://www.velivert.fr/,https://api.saint-etienne-metropole.fr/velivert/api/gbfs/gbfs.json,2.2,,,
 FR,Vélo d'Aqui,Argelès-sur-Mer,velodaqui,https://velodaqui.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/velodaqui/gbfs.json,2.2 ; 3.0,,,
 FR,Vélo Fluo Grand-Est,Grand Est,grand-est,https://www.fluo.grandest.fr/velo-fluo/,https://gbfs.partners.fifteen.eu/gbfs/2.2/velo-fluo/en/gbfs.json,2.2,,,
-FR,Vélo Modalis,Angoulême,velo_modalis_angouleme,https://velomodalis.fr/fr/,https://gbfs.partners.fifteen.eu/gbfs/2.2/angouleme/en/gbfs.json,2.2,,,
+FR,Vélo Modalis Angoulême,Angoulême,velo_modalis_angouleme,https://velomodalis.fr/fr/,https://gbfs.partners.fifteen.eu/gbfs/2.2/angouleme/en/gbfs.json,2.2,,,
 FR,Vélo Modalis Grand Cognac,Cognac,velo-modalis,https://velomodalis.fr/,https://gbfs.partners.fifteen.eu/gbfs/2.2/velo-modalis/en/gbfs.json,2.2,,,
 FR,Vélo Modalis Royan,Royan,modalis_royan,https://velomodalis.fr/,https://gbfs.partners.fifteen.eu/gbfs/2.2/modalis-royan/en/gbfs.json,2.2,,,
 FR,Vélo Modalis Saintes,Saintes,velo-modalis-saintes,https://velomodalis.fr/fr/,https://gbfs.partners.fifteen.eu/gbfs/2.2/saintes/en/gbfs.json,2.2,,,
