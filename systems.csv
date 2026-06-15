@@ -399,7 +399,7 @@ DE,Stadtmobil Stuttgart,Stuttgart,stadtmobil_stuttgart,https://stuttgart.stadtmo
 DE,stadtRad - das stadtnavi Lastenrad,Herrenberg,herrenberg_stadtrad,https://www.herrenberg.de/Mobilit%C3%A4t/Leihbares-Lastenrad,https://api.mobidata-bw.de/sharing/gbfs/v3/herrenberg_stadtrad/gbfs,2.3 ; 3.0,,,
 DE,StadtRad Greifswald,Greifswald,nextbike_ug,https://stadtrad-greifswald.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ug/gbfs.json,2.3,,,
 DE,StadtRadHamburg,Hamburg,stadtrad_hamburg,https://stadtrad.hamburg.de/,https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/v2/de/StadtRadHamburg/gbfs,2.3,https://developers.deutschebahn.com/db-api-marketplace/apis/start,2,DB-Client-Id|DB-Api-Key
-DE,StadtRADLueneburg,Lübeburg,stadtrad_lueneburg,https://stadtradlueneburg.de/,https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/v2/de/StadtRADLueneburg/gbfs,2.3,https://developers.deutschebahn.com/db-api-marketplace/apis/start,2,DB-Client-Id|DB-Api-Key
+DE,StadtRADLueneburg,Lüneburg,stadtrad_lueneburg,https://stadtradlueneburg.de/,https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/v2/de/StadtRADLueneburg/gbfs,2.3,https://developers.deutschebahn.com/db-api-marketplace/apis/start,2,DB-Client-Id|DB-Api-Key
 DE,Stadtwerk Tauberfranken,Germany,stadtwerk_tauberfranken,https://stadtwerk-tauberfranken.de/elektromobilitaet/e-carsharing/,https://api.mobidata-bw.de/sharing/gbfs/v3/stadtwerk_tauberfranken/gbfs,2.3 ; 3.0,,,
 DE,Stella,Stuttgart,stella,https://www.stella-sharing.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/stella/gbfs,3.0,,,
 DE,swabi - augsburg,Augsburg,swabi,https://swabi.eu/,https://gbfs.partners.fifteen.eu/gbfs/2.2/swabi/en/gbfs.json,2.2,,,
@@ -412,7 +412,7 @@ DE,VAG_Rad,Nuremberg,nextbike_dv,https://www.vagrad.de/,https://gbfs.nextbike.ne
 DE,Veloleo,Braunschweig,nextbike_dn,https://www.nextbike.de/veloleo/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dn/gbfs.json,2.3,,,
 DE,Voi,Germany,voi_de,https://www.voi.com/,https://api.mobidata-bw.de/sharing/gbfs/v3/voi_de/gbfs,2.3 ; 3.0,,,
 DE,VRNnextbike,Rhine-Neckar,nextbike_vn,https://www.vrnnextbike.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vn/gbfs.json,2.3,,,
-DE,welo,Welo,nextbike_wa,https://www.nextbike.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/gbfs.json,2.3,,,
+DE,welo,Bonn,nextbike_wa,https://www.nextbike.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wa/gbfs.json,2.3,,,
 DE,westBike,Heinsberg,nextbike_gh,https://www.west-bike.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gh/gbfs.json,2.3,,,
 DE,WinsenRad,Winsen (Luhe),nextbike_wd,https://www.winsenrad.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_wd/gbfs.json,2.3,,,
 DE,wupsiRad Leverkusen,Leverkusen,nextbike_dw,https://www.wupsirad.de/leverkusen/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dw/gbfs.json,2.3,,,
