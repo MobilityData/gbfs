@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Load token from 1Password
         id: onepw_secrets
-        uses: 1password/load-secrets-action@v1
+        uses: 1Password/load-secrets-action@v4.0.1
         with:
             export-env: true # Export loaded secrets as environment variables
         env:
@@ -17,7 +17,7 @@ jobs:
             CREDENTIALS: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/ifkeehu5gzi7wy5ub5qvwkaire/credential"
             
       - name: Close stale issues
-        uses: actions/stale@v5.2.1
+        uses: actions/stale@v10.3.0
         with:
           repo-token: ${{ env.CREDENTIALS }}
           operations-per-run: 100
