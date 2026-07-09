@@ -1310,6 +1310,7 @@ Field Name | REQUIRED | Type | Defines
 `plans[].fare_capping.price` <br/>*(added in v3.1-RC2)* | REQUIRED | Non-Negative Float | The maximum fare threshold for the current timeframe, in the unit specified by `currency`.
 
 **Example 1:**
+
 This example demonstrates a pricing scheme where the fare is calculated per x minutes and then per minute. The user is charged $2 for the first half-hour (base price). For the second half-hour, the user is charged $3 more. Beyond one hour, the user is charged $0.10 more per min.
 
 ```json
