@@ -1310,8 +1310,7 @@ Field Name | REQUIRED | Type | Defines
 `plans[].fare_capping.price` <br/>*(added in v3.1-RC2)* | REQUIRED | Non-Negative Float | The maximum fare threshold for the current timeframe, in the unit specified by `currency`.
 
 **Example 1:**
-
-The user does not pay more than the base price for the first 10 km. After 10 km the user pays $1 per km. After 25 km the user pays $0.50 per km and an additional $3 every 5 km, the extension price, in addition to $0.50 per km.
+This example demonstrates a pricing scheme where the fare is calculated per x minutes and then per minute. The user is charged $2 for the first half-hour (base price). For the second half-hour, the user is charged $3 more. Beyond one hour, the user is charged $0.10 more per min.
 
 ```json
 {
@@ -1334,26 +1333,21 @@ The user does not pay more than the base price for the first 10 km. After 10 km 
         "is_taxable": false,
         "description": [
           {
-            "text": "Includes 10km, overage fees apply after 10km.",
+            "text": "First half-hour: $2, second half-hour: $3, beyond one hour: $0.10/min",
             "language": "en"
           }
         ],
-        "per_km_pricing": [
+        "per_min_pricing": [
           {
-            "start": 10,
-            "rate": 1.00,
-            "interval": 1,
-            "end": 25
-          },
-          {
-            "start": 25,
-            "rate": 0.50,
-            "interval": 1
-          },
-          {
-            "start": 25,
+            "start": 30,
+            "end": 60,
             "rate": 3.00,
-            "interval": 5
+            "interval": 0
+          },
+          {
+            "start": 60,
+            "rate": 0.10,
+            "interval": 1
           }
         ]
       }
