@@ -31,6 +31,7 @@ AT,Dott Wels,Wels,dott-wels,https://ridedott.com/,https://gbfs.api.ridedott.com/
 AT,EVENTbike - Austria,Eisenstadt,nextbike_eq,https://www.nextbike.at/eventbike-austria/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_eq/gbfs.json,2.3,,,
 AT,Getaround Graz,Graz,getaround_graz,https://getaround.com/car-rental/graz,https://getaround.com/gbfs/v3/graz/gbfs,3.0,,,
 AT,Getaround Innsbruck,Innsbruck,getaround_innsbruck,https://getaround.com/car-rental/innsbruck,https://getaround.com/gbfs/v3/innsbruck/gbfs,3.0,,,
+AT,LiBike,Nenzing,nextbike_lh,http://nextbike.at/liebherr/de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_lh/gbfs.json,2.3,,,
 AT,nextbike Klagenfurt Austria,Klagenfurt,nextbike_ka,https://www.nextbike.at/de/klagenfurt/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ka/gbfs.json,2.3,,,
 AT,nextbike Niederösterreich,Austria,nextbike_la,https://www.nextbike.at/niederoesterreich/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_la/gbfs.json,2.3,,,
 AT,Stadtrad Innsbruck Austria,Innsbruck,nextbike_si,https://stadtrad-innsbruck.at/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_si/gbfs.json,2.3,,,
