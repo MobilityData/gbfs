@@ -15,6 +15,8 @@
 //   headCsv : systems.csv from the PR head (default: systems.csv)
 //
 const fs = require('fs');
+const net = require('net');
+const dns = require('dns').promises;
 const http = require('http');
 const https = require('https');
 const { URL } = require('url');
@@ -26,8 +28,58 @@ const URL_COLUMNS = ['URL', 'Auto-Discovery URL'];
 const TIMEOUT_MS = 20000;
 const MAX_REDIRECTS = 5;
 const CONCURRENCY = 6;
+// This job runs on untrusted fork PRs, so cap how many outbound checks a single
+// PR can trigger. A legitimate contribution adds a handful of systems at a time.
+const MAX_NEW_URLS = 200;
 const USER_AGENT =
   'Mozilla/5.0 (compatible; gbfs.org-ci/1.0; +https://github.com/MobilityData/gbfs)';
+
+// --- SSRF guard ------------------------------------------------------------
+// URLs come from untrusted PR authors and are fetched by the CI runner, so
+// refuse to connect to loopback / private / link-local / CGNAT / ULA addresses
+// (this blocks probing of the runner's own network and cloud metadata endpoints
+// such as 169.254.169.254). Hostnames are resolved and every resolved address
+// is checked, and each redirect hop is re-validated.
+function isBlockedIPv4(ip) {
+  const p = ip.split('.').map(Number);
+  if (p.length !== 4 || p.some((n) => Number.isNaN(n) || n < 0 || n > 255)) return true;
+  const [a, b] = p;
+  if (a === 0) return true;                       // 0.0.0.0/8
+  if (a === 10) return true;                      // 10.0.0.0/8
+  if (a === 127) return true;                     // loopback
+  if (a === 169 && b === 254) return true;        // link-local (incl. metadata)
+  if (a === 172 && b >= 16 && b <= 31) return true; // 172.16.0.0/12
+  if (a === 192 && b === 168) return true;        // 192.168.0.0/16
+  if (a === 100 && b >= 64 && b <= 127) return true; // CGNAT 100.64.0.0/10
+  return false;
+}
+function isBlockedIPv6(ip) {
+  const s = ip.toLowerCase().split('%')[0]; // strip zone id
+  if (s === '::1' || s === '::') return true;                 // loopback / unspecified
+  const mapped = s.match(/::ffff:(\d+\.\d+\.\d+\.\d+)$/);     // IPv4-mapped
+  if (mapped) return isBlockedIPv4(mapped[1]);
+  if (/^fe[89ab]/.test(s)) return true;                       // fe80::/10 link-local
+  if (/^f[cd]/.test(s)) return true;                          // fc00::/7 ULA
+  return false;
+}
+function isBlockedIp(ip) {
+  if (net.isIPv4(ip)) return isBlockedIPv4(ip);
+  if (net.isIPv6(ip)) return isBlockedIPv6(ip);
+  return true; // not a recognizable IP -> treat as unsafe
+}
+async function hostIsSafe(hostname) {
+  const h = hostname.toLowerCase().replace(/^\[|\]$/g, ''); // strip IPv6 brackets
+  if (h === 'localhost' || h.endsWith('.localhost')) return false;
+  if (net.isIP(h)) return !isBlockedIp(h);
+  let addrs;
+  try {
+    addrs = await dns.lookup(h, { all: true });
+  } catch (e) {
+    return false; // unresolvable -> unsafe (also fails the 2xx check)
+  }
+  if (!addrs.length) return false;
+  return addrs.every((a) => !isBlockedIp(a.address));
+}
 
 // --- CSV parsing (same shape as validate-systems-csv.js) -------------------
 function parseCSV(text) {
@@ -80,20 +132,27 @@ function urlsFrom(text) {
 
 // --- HTTP check ------------------------------------------------------------
 // Resolve one URL, following redirects, resolving to { url, status, ok, error }.
-function checkOnce(rawUrl, redirectsLeft) {
-  return new Promise((resolve) => {
-    let target;
-    try {
-      target = new URL(rawUrl);
-    } catch (e) {
-      resolve({ url: rawUrl, status: null, ok: false, error: `invalid URL: ${e.message}` });
-      return;
-    }
-    if (target.protocol !== 'http:' && target.protocol !== 'https:') {
-      resolve({ url: rawUrl, status: null, ok: false, error: `unsupported protocol: ${target.protocol}` });
-      return;
-    }
+// Async because the SSRF host check resolves DNS before any connection is made.
+async function checkOnce(rawUrl, redirectsLeft) {
+  let target;
+  try {
+    target = new URL(rawUrl);
+  } catch (e) {
+    return { url: rawUrl, status: null, ok: false, error: `invalid URL: ${e.message}` };
+  }
+  if (target.protocol !== 'http:' && target.protocol !== 'https:') {
+    return { url: rawUrl, status: null, ok: false, error: `unsupported protocol: ${target.protocol}` };
+  }
+  if (!(await hostIsSafe(target.hostname))) {
+    return {
+      url: rawUrl,
+      status: null,
+      ok: false,
+      error: `blocked host (local/private address not allowed): ${target.hostname}`,
+    };
+  }
 
+  return new Promise((resolve) => {
     const lib = target.protocol === 'https:' ? https : http;
     const req = lib.request(
       target,
@@ -166,6 +225,14 @@ async function main() {
   if (newUrls.length === 0) {
     console.log('No newly added URLs to check.');
     process.exit(0);
+  }
+
+  if (newUrls.length > MAX_NEW_URLS) {
+    console.log(
+      `::error::This PR adds ${newUrls.length} new URLs, exceeding the limit of ${MAX_NEW_URLS}. ` +
+      `Please split it into smaller pull requests.`
+    );
+    process.exit(1);
   }
 
   console.log(`Checking ${newUrls.length} newly added URL(s) for HTTP 200-299...\n`);

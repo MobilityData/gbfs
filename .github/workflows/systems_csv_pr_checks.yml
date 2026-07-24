@@ -61,6 +61,8 @@ jobs:
   check-new-urls:
     name: Check new URLs return 2xx
     runs-on: ubuntu-latest
+    # Only spend network requests once the file is known to be well-formed.
+    needs: validate-structure
     steps:
       - uses: actions/checkout@v4
         with:

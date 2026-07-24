@@ -43,6 +43,13 @@ const OPTIONAL = new Set([
 // Columns whose emptiness is only a warning.
 const WARN_IF_EMPTY = new Set(['Supported Versions']);
 
+// Escape a GitHub Actions workflow-command message so newlines, carriage
+// returns, and percent signs survive intact instead of truncating the
+// annotation at the first newline.
+function ghEscapeData(s) {
+  return String(s).replace(/%/g, '%25').replace(/\r/g, '%0D').replace(/\n/g, '%0A');
+}
+
 // Parse CSV into records, tracking the 1-based source line where each record starts.
 // Returns { records: [{ fields, line }], error: {line, message} | null }.
 function parseCSV(text) {
@@ -147,7 +154,7 @@ function main() {
   for (let r = 1; r < records.length; r++) {
     const { fields, line } = records[r];
 
-    // Ignore a fully blank trailing line.
+    // Ignore fully blank lines (e.g. a trailing newline at end of file).
     if (isBlankRecord(fields)) continue;
 
     if (fields.length !== N) {
@@ -173,10 +180,10 @@ function main() {
   }
 
   for (const w of warnings) {
-    console.log(`::warning file=${FILE},line=${w.line}::${w.message}`);
+    console.log(`::warning file=${FILE},line=${w.line}::${ghEscapeData(w.message)}`);
   }
   for (const e of errors) {
-    console.log(`::error file=${FILE},line=${e.line}::${e.message}`);
+    console.log(`::error file=${FILE},line=${e.line}::${ghEscapeData(e.message)}`);
   }
 
   const dataRows = records.length - 1;

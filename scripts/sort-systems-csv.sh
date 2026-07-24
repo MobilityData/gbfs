@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 #
 # Sort systems.csv in place: keep the header row, then sort the remaining rows
-# by column 1 (Country Code) and column 2 (Name), comma-separated, en_US.UTF-8.
+# by column 1 (Country Code) and column 2 (Name), comma-separated.
 #
 # Mirrors the canonical one-liner:
-#   (head -n 1; LC_ALL=en_US.UTF-8 sort --field-separator=',' --key=1,1 --key=2,2) < systems.csv
+#   (head -n 1; LC_ALL=C sort -t, -k1,1 -k2,2) < systems.csv
 #
-# On Linux / GitHub Actions runners, `sort` is GNU sort, so no override is needed.
-# On macOS, install GNU coreutils (`brew install coreutils`) and run with:
-#   GNUSORT=gsort ./scripts/sort-systems-csv.sh
+# LC_ALL=C forces a byte-wise ordering, which is identical on every platform
+# (macOS BSD sort, Linux/CI GNU sort). This is deliberate: a locale-aware sort
+# (e.g. en_US.UTF-8) orders punctuation, spacing, case, and accented characters
+# differently between macOS and glibc, so the CI auto-sort and a contributor
+# sorting locally would disagree and fight in a loop. Byte order avoids that.
 #
 # Usage:
 #   ./scripts/sort-systems-csv.sh [path-to-csv]   # sort in place (default: systems.csv)
@@ -24,9 +26,6 @@ fi
 
 CSV="${1:-systems.csv}"
 
-# GNU sort binary. Override with GNUSORT=gsort on macOS.
-SORT_BIN="${GNUSORT:-sort}"
-
 if [[ ! -f "$CSV" ]]; then
   echo "error: file not found: $CSV" >&2
   exit 2
@@ -37,7 +36,7 @@ trap 'rm -f "$sorted"' EXIT
 
 {
   head -n 1 "$CSV"
-  tail -n +2 "$CSV" | LC_ALL=en_US.UTF-8 "$SORT_BIN" --field-separator=',' --key=1,1 --key=2,2
+  tail -n +2 "$CSV" | LC_ALL=C sort -t, -k1,1 -k2,2
 } > "$sorted"
 
 if [[ "$CHECK" -eq 1 ]]; then
