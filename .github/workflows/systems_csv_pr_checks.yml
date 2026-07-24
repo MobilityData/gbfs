@@ -1,0 +1,76 @@
+name: systems.csv PR checks
+
+# Runs whenever a pull request adds or changes systems.csv.
+#   1. sort              - re-sort the file and push the result as a separate commit
+#                          (same-repo PR branches only; forks are skipped, see below).
+#   2. validate-structure- fail on malformed rows / missing required values.
+#   3. check-new-urls    - fail if any newly added URL does not return HTTP 200-299.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - systems.csv
+
+# Cancel superseded runs when new commits are pushed to the same PR.
+concurrency:
+  group: systems-csv-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  sort:
+    name: Sort systems.csv
+    runs-on: ubuntu-latest
+    # The default GITHUB_TOKEN cannot push to a forked repository, so auto-sorting
+    # is limited to branches in this repo. Fork PRs are left untouched here and get
+    # sorted when master is next updated.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sort systems.csv
+        run: bash scripts/sort-systems-csv.sh systems.csv
+
+      - name: Commit sorted file if it changed
+        run: |
+          if git diff --quiet -- systems.csv; then
+            echo "systems.csv already sorted; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add systems.csv
+          git commit -m "chore: sort systems.csv"
+          git push origin "HEAD:${{ github.head_ref }}"
+
+  validate-structure:
+    name: Validate structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate systems.csv structure
+        run: node scripts/validate-systems-csv.js systems.csv
+
+  check-new-urls:
+    name: Check new URLs return 2xx
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Extract base systems.csv
+        run: |
+          git show "${{ github.event.pull_request.base.sha }}:systems.csv" > /tmp/systems.base.csv 2>/dev/null \
+            || : > /tmp/systems.base.csv
+      - name: Check newly added URLs
+        run: node scripts/check-new-urls.js /tmp/systems.base.csv systems.csv

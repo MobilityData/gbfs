@@ -138,7 +138,15 @@ If you would like to add a system, please fork this repository and submit a Pull
 - Create a new branch, and
 - Propose your changes by opening a [new pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
 
-Please keep this list alphabetized by country and system name. Alternatively, fill out [this contribution form](https://share.mobilitydata.org/gbfs-feed-contribution-form) for a Github-less contribution. 
+This list is kept sorted alphabetically, first by **Country Code** and then by **Name** (the two leftmost columns). You don't need to insert your new row in exactly the right place: when you open a pull request that changes `systems.csv`, an automated GitHub Action re-sorts the file and pushes the sorted result back to your branch as a separate `chore: sort systems.csv` commit. (This runs for pull requests opened from a branch in this repository. If you are contributing from a fork, the automatic commit is skipped — you can optionally sort the file yourself, see below.)
+
+Technically, the sort keeps the header row in place and orders the remaining rows with GNU `sort` using a comma field separator and two sort keys — column 1 (Country Code), then column 2 (Name) — under the `en_US.UTF-8` locale. It is equivalent to:
+
+```bash
+(head -n 1; LC_ALL=en_US.UTF-8 sort --field-separator=',' --key=1,1 --key=2,2) < systems.csv
+```
+
+To reproduce the exact ordering locally, run `./scripts/sort-systems-csv.sh` (on macOS, install GNU coreutils with `brew install coreutils` and run `GNUSORT=gsort ./scripts/sort-systems-csv.sh`). Alternatively, fill out [this contribution form](https://share.mobilitydata.org/gbfs-feed-contribution-form) for a Github-less contribution.
 * [systems.csv](systems.csv)
 
  Field Name | REQUIRED | Definition 
