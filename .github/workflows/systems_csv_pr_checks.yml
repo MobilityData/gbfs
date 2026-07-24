@@ -32,8 +32,11 @@ jobs:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
       - name: Sort systems.csv
-        run: bash scripts/sort-systems-csv.sh systems.csv
+        run: node scripts/sort-systems-csv.js systems.csv
 
       - name: Commit sorted file if it changed
         run: |

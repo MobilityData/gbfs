@@ -140,13 +140,9 @@ If you would like to add a system, please fork this repository and submit a Pull
 
 This list is kept sorted, first by **Country Code** and then by **Name** (the two leftmost columns). You don't need to insert your new row in exactly the right place: when you open a pull request that changes `systems.csv`, an automated GitHub Action re-sorts the file and pushes the sorted result back to your branch as a separate `chore: sort systems.csv` commit. (This runs for pull requests opened from a branch in this repository. If you are contributing from a fork, the automatic commit is skipped — you can sort the file yourself, see below.)
 
-Technically, the sort keeps the header row in place and orders the remaining rows by column 1 (Country Code), then column 2 (Name), using a comma field separator. It runs under `LC_ALL=C`, i.e. a byte-wise ordering (so uppercase sorts before lowercase, and non-ASCII characters sort after ASCII). This locale is chosen deliberately: it produces identical results on macOS and Linux, so sorting locally always matches what the CI produces. It is equivalent to:
+Technically, the sort keeps the header row in place and orders the remaining rows by column 1 (Country Code), then column 2 (Name). Ordering is byte-wise (equivalent to `LC_ALL=C`): uppercase sorts before lowercase and non-ASCII characters sort after ASCII. The sorter is CSV-quoting-aware, so a Name that is quoted because it contains a comma is sorted by its real value rather than by the text up to the first comma. Because the comparison is implemented in the script rather than delegated to the platform `sort`, the result is identical on macOS and on the Linux CI runner, so sorting locally always matches what the CI produces.
 
-```bash
-(head -n 1; LC_ALL=C sort -t, -k1,1 -k2,2) < systems.csv
-```
-
-To reproduce the exact ordering locally, run `./scripts/sort-systems-csv.sh` — no special tools are required (the stock `sort` on both macOS and Linux gives the same result under `LC_ALL=C`). Alternatively, fill out [this contribution form](https://share.mobilitydata.org/gbfs-feed-contribution-form) for a GitHub-less contribution.
+To reproduce the exact ordering locally, run `node scripts/sort-systems-csv.js` (Node.js is the only requirement; use `--check` to verify without writing). Alternatively, fill out [this contribution form](https://share.mobilitydata.org/gbfs-feed-contribution-form) for a GitHub-less contribution.
 * [systems.csv](systems.csv)
 
  Field Name | REQUIRED | Definition 
