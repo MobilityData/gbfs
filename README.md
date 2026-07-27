@@ -142,7 +142,21 @@ This list is kept sorted by the four leftmost columns, in order: **Country Code*
 
 Technically, the sort keeps the header row in place and orders the remaining rows by the first four columns, in order: column 1 (Country Code), column 2 (Name), column 3 (Location), then column 4 (System ID). Ordering is byte-wise (equivalent to `LC_ALL=C`): uppercase sorts before lowercase and non-ASCII characters sort after ASCII. The sorter is CSV-quoting-aware, so a field that is quoted because it contains a comma is sorted by its real value rather than by the text up to the first comma. Because the comparison is implemented in the script rather than delegated to the platform `sort`, the result is identical on macOS and on the Linux CI runner, so sorting locally always matches what the CI produces.
 
-To reproduce the exact ordering locally, run `node scripts/sort-systems-csv.js` (Node.js is the only requirement; use `--check` to verify without writing). Alternatively, fill out [this contribution form](https://share.mobilitydata.org/gbfs-feed-contribution-form) for a GitHub-less contribution.
+To reproduce the exact ordering locally, run either of these — pick whichever suits your environment. They are equivalent and produce byte-identical output; the CI workflow runs the Node one.
+
+```bash
+node scripts/sort-systems-csv.js     # requires Node.js
+./scripts/sort-systems-csv.sh        # requires bash, awk, sort, cut
+```
+
+Both accept an optional path (default `systems.csv`) and a `--check` flag, which reports whether the file is already sorted without modifying it — useful before opening a pull request:
+
+```bash
+node scripts/sort-systems-csv.js --check
+./scripts/sort-systems-csv.sh --check
+```
+
+Alternatively, fill out [this contribution form](https://share.mobilitydata.org/gbfs-feed-contribution-form) for a GitHub-less contribution.
 * [systems.csv](systems.csv)
 
  Field Name | REQUIRED | Definition 

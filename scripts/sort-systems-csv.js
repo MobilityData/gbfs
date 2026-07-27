@@ -72,7 +72,10 @@ function sortedText(raw) {
   if (lines.length <= 1) return raw; // header only (or empty) - nothing to sort
 
   const header = lines[0];
-  const body = lines.slice(1);
+  // Blank lines carry no row data; drop them rather than sorting them to the
+  // top of the file. scripts/sort-systems-csv.sh does the same, so the two
+  // implementations stay byte-identical.
+  const body = lines.slice(1).filter((l) => l.length > 0);
 
   // Sort keys: the first four columns, in order.
   const KEY_COLUMNS = 4;
@@ -112,7 +115,14 @@ function main() {
     process.exit(2);
   }
 
-  const sorted = sortedText(raw);
+  let sorted;
+  try {
+    sorted = sortedText(raw);
+  } catch (e) {
+    // Malformed CSV: exit 3, matching scripts/sort-systems-csv.sh.
+    console.error(`error: ${e.message}`);
+    process.exit(3);
+  }
 
   if (check) {
     if (sorted === raw) {
