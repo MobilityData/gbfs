@@ -2,9 +2,10 @@
 'use strict';
 //
 // Sort systems.csv: keep the header row in place, then sort the remaining rows
-// by column 1 (Country Code), then column 2 (Name).
+// by the first four columns, in order: column 1 (Country Code), column 2
+// (Name), column 3 (Location), column 4 (System ID).
 //
-// This is CSV-quoting-aware: a Name that is quoted because it contains a comma
+// This is CSV-quoting-aware: a field that is quoted because it contains a comma
 // (e.g. "Veo University of Illinois, Urbana-Champaign") is sorted by its real
 // value, not by the text up to the first raw comma. Rows are re-emitted exactly
 // as they appeared in the file (original quoting preserved) - only their order
@@ -73,6 +74,9 @@ function sortedText(raw) {
   const header = lines[0];
   const body = lines.slice(1);
 
+  // Sort keys: the first four columns, in order.
+  const KEY_COLUMNS = 4;
+
   const decorated = body.map((line, index) => {
     const { fields, balanced } = parseLine(line);
     if (!balanced) {
@@ -81,15 +85,18 @@ function sortedText(raw) {
         `Run the structure validation first.`
       );
     }
-    return { line, k0: fields[0] || '', k1: fields[1] || '' };
+    const keys = [];
+    for (let k = 0; k < KEY_COLUMNS; k++) keys.push(fields[k] || '');
+    return { line, keys };
   });
 
-  decorated.sort(
-    (a, b) =>
-      byteCompare(a.k0, b.k0) ||
-      byteCompare(a.k1, b.k1) ||
-      byteCompare(a.line, b.line) // deterministic tie-break on the full row
-  );
+  decorated.sort((a, b) => {
+    for (let k = 0; k < KEY_COLUMNS; k++) {
+      const c = byteCompare(a.keys[k], b.keys[k]);
+      if (c) return c;
+    }
+    return byteCompare(a.line, b.line); // deterministic tie-break on the full row
+  });
 
   let out = [header, ...decorated.map((d) => d.line)].join('\n');
   if (hadTrailingNewline) out += '\n';
