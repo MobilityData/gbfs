@@ -13,6 +13,10 @@
 # Urbana-Champaign") is sorted by its real value, not by the text up to the
 # first raw comma. Rows are re-emitted verbatim - only their order changes.
 #
+# Sorting is case-insensitive (A-Z folded to a-z), so "nextbike" sorts right
+# after "LiBike" rather than below every uppercase name. Folding is ASCII-only;
+# see scripts/sort-systems-csv.js for why full Unicode folding is avoided.
+#
 # How it works: awk parses each data row and prepends the four sort keys,
 # separated by a control character (\x01) that cannot occur in the CSV. The
 # result is sorted byte-wise (LC_ALL=C) on those key fields, with the original
@@ -46,7 +50,28 @@ trap 'rm -f "$sorted"' EXIT
   head -n 1 "$CSV"
 
   # Decorate: <k1><SEP><k2><SEP><k3><SEP><k4><SEP><original row>
-  tail -n +2 "$CSV" | awk -v SEP="$SEP" '
+  # LC_ALL=C keeps awk byte-oriented, so the ASCII fold below cannot be affected
+  # by the ambient locale.
+  tail -n +2 "$CSV" | LC_ALL=C awk -v SEP="$SEP" '
+    BEGIN {
+      # Explicit A-Z -> a-z map. Not tolower(): its treatment of non-ASCII
+      # varies by awk implementation and locale, which would desynchronize this
+      # script from scripts/sort-systems-csv.js.
+      u = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      l = "abcdefghijklmnopqrstuvwxyz"
+      for (i = 1; i <= 26; i++) fold[substr(u, i, 1)] = substr(l, i, 1)
+    }
+
+    # Fold A-Z to a-z, passing every other byte through untouched.
+    function ascii_lower(s,    i, c, out) {
+      out = ""
+      for (i = 1; i <= length(s); i++) {
+        c = substr(s, i, 1)
+        out = out ((c in fold) ? fold[c] : c)
+      }
+      return out
+    }
+
     # Parse a CSV record into the array out[1..n], honoring "" escapes.
     function parse_csv(line, out,    i, c, field, inq, n) {
       n = 0; field = ""; inq = 0
@@ -75,7 +100,8 @@ trap 'rm -f "$sorted"' EXIT
         printf "error: unbalanced quotes on data line %d; refusing to sort a malformed CSV.\n", NR + 1 > "/dev/stderr"
         exit 3
       }
-      printf "%s%s%s%s%s%s%s%s%s\n", f[1], SEP, f[2], SEP, f[3], SEP, f[4], SEP, $0
+      printf "%s%s%s%s%s%s%s%s%s\n", ascii_lower(f[1]), SEP, ascii_lower(f[2]), SEP,
+                                     ascii_lower(f[3]), SEP, ascii_lower(f[4]), SEP, $0
     }
   ' | LC_ALL=C sort -t "$SEP" -k1,1 -k2,2 -k3,3 -k4,4 -k5,5 |
     # Strip the four key fields, leaving the original row. The row itself cannot

@@ -11,11 +11,21 @@
 // as they appeared in the file (original quoting preserved) - only their order
 // changes.
 //
-// Ordering is byte-wise (equivalent to LC_ALL=C): comparison is on the UTF-8
-// bytes of each field, so uppercase sorts before lowercase and non-ASCII sorts
-// after ASCII. Because the comparison is implemented here rather than delegated
-// to the platform `sort`, the result is identical on macOS and on the Linux CI
-// runner, so local sorting always matches what the workflow produces.
+// Ordering is case-insensitive: keys are compared with A-Z folded to a-z, so
+// "nextbike" sorts right after "LiBike" instead of being pushed below every
+// uppercase name. Rows whose keys differ only in case fall back to a byte-wise
+// comparison of the whole row, keeping the result deterministic.
+//
+// Case folding is deliberately ASCII-only (A-Z only; accented and other
+// non-ASCII characters are left untouched and compared by their UTF-8 bytes).
+// Full Unicode folding is avoided because JavaScript's toLowerCase() and awk's
+// tolower() disagree about non-ASCII, which would make this script and
+// scripts/sort-systems-csv.sh produce different orderings.
+//
+// Apart from case folding, comparison is byte-wise (equivalent to LC_ALL=C).
+// Because the comparison is implemented here rather than delegated to the
+// platform `sort`, the result is identical on macOS and on the Linux CI runner,
+// so local sorting always matches what the workflow produces.
 //
 // Usage:
 //   node scripts/sort-systems-csv.js [path-to-csv]   # sort in place (default: systems.csv)
@@ -64,6 +74,18 @@ function byteCompare(a, b) {
   return Buffer.compare(Buffer.from(a, 'utf8'), Buffer.from(b, 'utf8'));
 }
 
+// Fold A-Z to a-z and nothing else. Intentionally not toLowerCase(): full
+// Unicode folding differs from awk's tolower(), which would desynchronize this
+// script from scripts/sort-systems-csv.sh.
+function asciiLower(s) {
+  let out = '';
+  for (let i = 0; i < s.length; i++) {
+    const c = s.charCodeAt(i);
+    out += c >= 65 && c <= 90 ? String.fromCharCode(c + 32) : s[i];
+  }
+  return out;
+}
+
 function sortedText(raw) {
   const hadTrailingNewline = raw.endsWith('\n');
   const lines = raw.split('\n');
@@ -89,7 +111,7 @@ function sortedText(raw) {
       );
     }
     const keys = [];
-    for (let k = 0; k < KEY_COLUMNS; k++) keys.push(fields[k] || '');
+    for (let k = 0; k < KEY_COLUMNS; k++) keys.push(asciiLower(fields[k] || ''));
     return { line, keys };
   });
 
