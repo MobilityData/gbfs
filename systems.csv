@@ -941,6 +941,7 @@ HR,Jastrebarsko (Croatia),Jastrebarsko,nextbike_cj,https://www.nextbike.hr/hr/ja
 HR,nextbike Croatia,Croatia,nextbike_hr,https://www.nextbike.hr/hr/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_hr/gbfs.json,2.3,,,
 HR,Općina Brinje (Croatia),Brinje,nextbike_br,https://www.nextbike.hr/hr/brinje/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_br/gbfs.json,2.3,,,
 HR,Porec bike share (Croatia),Porec,nextbike_cv,https://www.porecbikeshare.com/hr/porecbikeshare/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cv/gbfs.json,2.3,,,
+HU,Bubi 3.0,Budapest,inurba-budapest,https://molbubi.hu/,https://gbfs.urbansharing.com/molbubi.hu/gbfs.json,2.3,,,
 HU,Donkey Republic Budapest,Budapest,donkey_budapest,https://www.donkey.bike/cities/bike-rental-budapest/,https://stables.donkey.bike/api/public/gbfs/3.0/donkey_budapest/gbfs.json,1.0 ; 2.3 ; 3.0,,,
 HU,Dott Budapest,Budapest,dott-budapest,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/budapest/gbfs.json,2.3,,,
 HU,Dott Dunaujvaros,Dunaujvaros,dott-dunaujvaros,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/dunaujvaros/gbfs.json,2.3,,,
