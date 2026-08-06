@@ -138,7 +138,27 @@ If you would like to add a system, please fork this repository and submit a Pull
 - Create a new branch, and
 - Propose your changes by opening a [new pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
 
-Please keep this list alphabetized by country and system name. Alternatively, fill out [this contribution form](https://share.mobilitydata.org/gbfs-feed-contribution-form) for a Github-less contribution. 
+This list is kept sorted (case-insensitively) by the four leftmost columns, in order: **Country Code**, **Name**, **Location**, then **System ID**. You don't need to insert your new row in exactly the right place: when you open a pull request that changes `systems.csv`, an automated GitHub Action re-sorts the file and pushes the sorted result back to your branch as a separate `chore: sort systems.csv` commit. (This runs for pull requests opened from a branch in this repository. If you are contributing from a fork, the automatic commit is skipped — you can sort the file yourself, see below.)
+
+Technically, the sort keeps the header row in place and orders the remaining rows by the first four columns, in order: column 1 (Country Code), column 2 (Name), column 3 (Location), then column 4 (System ID). Sorting is **case-insensitive**, so `nextbike Klagenfurt Austria` sorts directly after `LiBike` instead of below every name that happens to start with an uppercase letter. Rows whose keys differ only in case are ordered deterministically by a byte-wise comparison of the whole row.
+
+Case folding is ASCII-only (`A`-`Z` to `a`-`z`): accented and other non-ASCII characters are compared by their UTF-8 bytes, which means names beginning with such a character (for example `Ökobike`) sort after all ASCII names. Aside from case folding, comparison is byte-wise (equivalent to `LC_ALL=C`). The sorter is also CSV-quoting-aware, so a field that is quoted because it contains a comma is sorted by its real value rather than by the text up to the first comma. Because the comparison is implemented in the scripts rather than delegated to the platform `sort`, the result is identical on macOS and on the Linux CI runner, so sorting locally always matches what the CI produces.
+
+To reproduce the exact ordering locally, run either of these — pick whichever suits your environment. They are equivalent and produce byte-identical output; the CI workflow runs the Node one.
+
+```bash
+node scripts/sort-systems-csv.js     # requires Node.js
+./scripts/sort-systems-csv.sh        # requires bash, awk, sort, cut
+```
+
+Both accept an optional path (default `systems.csv`) and a `--check` flag, which reports whether the file is already sorted without modifying it — useful before opening a pull request:
+
+```bash
+node scripts/sort-systems-csv.js --check
+./scripts/sort-systems-csv.sh --check
+```
+
+Alternatively, fill out [this contribution form](https://share.mobilitydata.org/gbfs-feed-contribution-form) for a GitHub-less contribution.
 * [systems.csv](systems.csv)
 
  Field Name | REQUIRED | Definition 
