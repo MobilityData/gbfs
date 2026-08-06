@@ -1345,7 +1345,7 @@ SK,Senica bajk,"Senica, SK",nextbike_av,https://www.senicabajk.sk,https://gbfs.n
 TR,AAR Bike,Konya,linka_aar_bike,https://aarbike.com.tr/,https://app.linkalock.com/api/gbfs/D2uRLGw8vBa2FJxa8/gbfs.json,2.3,,,
 UA,3electra,Kyiv,66,https://3electra.com.ua/,https://zelectra.rideatom.com/gbfs/66/v3.0/gbfs,2.2 ; 3.0,,,
 US,Aventura BCycle,"Aventura, FL",bcycle_aventura,https://aventura.bcycle.com,https://gbfs.bcycle.com/bcycle_aventura/gbfs.json,1.1,,,
-US,Bay Wheels,"San Francisco, CA",lyft_bay,https://www.baywheels.com/,https://gbfs.baywheels.com/gbfs/2.3/gbfs.json,2.3,,,
+US,Lyft Bike,"San Francisco, CA",lyft_bay,https://lyftbikes.com/,https://gbfs.lyftbikes.com/gbfs/2.3/gbfs.json,2.3,,,
 US,Bentonville BCycle,"Bentonville, AR",bcycle_bentonville,https://bentonville.bcycle.com,https://gbfs.bcycle.com/bcycle_bentonville/gbfs.json,1.1,,,
 US,Bike Chattanooga,"Chattanooga, TN",bike_chattanooga,https://www.bikechattanooga.com/,https://chattanooga.publicbikesystem.net/customer/gbfs/v3.0/gbfs.json,1.1 ; 2.3 ; 3.0,,,
 US,BikeLNK,"Lincoln, NE",bcycle_bikelnk,https://bikelnk.bcycle.com,https://gbfs.bcycle.com/bcycle_bikelnk/gbfs.json,1.1,,,
