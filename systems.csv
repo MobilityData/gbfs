@@ -783,6 +783,7 @@ FR,Lime Nice,Nice,lime_nice,https://www.li.me,https://data.lime.bike/api/partner
 FR,Lime Paris,Paris,lime_paris,https://li.me/,https://data.lime.bike/api/partners/v2/gbfs/paris/gbfs.json,2.2,,,
 FR,Lime Sophia Antipolis,Sophia Antipolis,lime_casa,https://li.me/,https://data.lime.bike/api/partners/v2/gbfs/casa/gbfs.json,2.2,,,
 FR,LOVELO Libre-service,Rouen,inurba-rouen,https://lovelolibreservice.fr/,https://gbfs.urbansharing.com/lovelolibreservice.fr/gbfs.json,2.3,,,
+FR,Marguerite - Véhicule en libre-service à Nantes,Nantes,Marguerite_FR_Nantes,https://www.imarguerite.com,https://www.imarguerite.com/opendata/gbfs/gbfs.json,2.3,,,
 FR,MontenVélo,Mont Blanc,montenvelo_mont_blanc,https://montenvelo.fr/,https://gbfs.partners.fifteen.eu/gbfs/2.2/mont_blanc/en/gbfs.json,2.2,,,
 FR,Naolib,Nantes,nantes,https://velo.naolib.fr/,https://api.cyclocity.fr/contracts/nantes/gbfs/v3/gbfs.json,2.3 ; 3.0,,,
 FR,Naolib Micromob',Chantrerie,chantrerie,https://naolib.fr/fr/velos/micromob-1,https://api.gbfs.v3.0.ecovelo.mobi/chantrerie/gbfs.json,2.2 ; 3.0,,,
