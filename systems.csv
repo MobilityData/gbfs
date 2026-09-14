@@ -357,7 +357,6 @@ DE,LaRa to go,Waiblingen,lara_to_go,https://energieagentur-remsmurr.de/projekte/
 DE,LastenVelo Freiburg,Freiburg,lastenvelo_fr,https://www.lastenvelofreiburg.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/lastenvelo_fr/gbfs,2.3 ; 3.0,,,
 DE,Lime Dresden,Dresden,lime_dresden,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/dresden/gbfs.json,2.2,,,
 DE,Lime Frankfurt,Frankfurt,lime_frankfurt,https://www.li.me,https://data.lime.bike/api/partners/v2/gbfs/frankfurt/gbfs.json,2.2,,,
-DE,Lime Hamburg,Hamburg,lime_hamburg,https://li.me,https://data.lime.bike/api/partners/v2/gbfs/hamburg/gbfs.json,2.2,,,
 DE,Lime Oberhausen,Oberhausen,lime_oberhausen,https://www.li.me,https://data.lime.bike/api/partners/v2/gbfs/oberhausen/gbfs.json,2.2,,,
 DE,Lime Stuttgart,Stuttgart,lime_stuttgart,https://www.li.me/,https://api.mobidata-bw.de/sharing/gbfs/v3/lime_stuttgart/gbfs,3.0,,,
 DE,Lime Stuttgart-Konstanz,Stuttgart-Konstanz,lime_bw,https://www.li.me/,https://api.mobidata-bw.de/sharing/gbfs/v3/lime_bw/gbfs,2.3 ; 3.0,,,
