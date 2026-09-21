@@ -1439,6 +1439,7 @@ US,Lime San Francisco,"San Francisco, CA",lime_san_francisco,https://li.me,https
 US,Lime San Jose,"San Jose, CA",lime_san_jose,https://www.li.me,https://data.lime.bike/api/partners/v2/gbfs/san_jose/gbfs.json,2.2,,,
 US,Lime Seattle,"Seattle, WA",lime_seattle,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/seattle/gbfs.json,1.0 ; 2.2,,,
 US,Lime Washington DC,"Washington, DC",lime_washington_dc,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/washington_dc/gbfs.json,2.2,,,
+US,Long Beach CA Bikeshare,"Long Beach, CA",long_beach_ca_bikeshare,https://www.longbeachbikeshare.com,https://www.longbeachbikeshare.com/opendata/gbfs.json,1.0,,,
 US,Lyft,"Washington, DC",lyft_dca,https://www.lyft.com/scooters/washington-dc,https://gbfs.lyft.com/gbfs/2.3/dca/gbfs.json,2.3,,,
 US,Lyft Scooters Denver,"Denver, CO",lyft_den,https://www.lyft.com/,https://gbfs.lyft.com/gbfs/2.3/den/gbfs.json,2.3,,,
 US,Madison B-cycle,"Madison, WI",bcycle_madison,https://madison.bcycle.com,https://gbfs.bcycle.com/bcycle_madison/gbfs.json,1.1,,,
