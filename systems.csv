@@ -1394,6 +1394,7 @@ US,Bird Seattle Washington,"Seattle, WA",bird-seattle-washington,https://www.bir
 US,Bird St Louis,"St Louis, MO",bird-st-louis,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/st-louis/gbfs.json,1.1 ; 2.3,,,
 US,Bird Tempe,"Tempe, AZ",bird-tempe,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/tempe/gbfs.json,1.1 ; 2.3,,,
 US,Bird Washington DC,"Washington, DC",bird-washington-dc,https://www.bird.co,https://mds.bird.co/gbfs/v2/public/washington-dc/gbfs.json,1.1 ; 2.3,,,
+US,BisParks BCycle,"Bismarck, ND",bcycle_bismarck,https://www.bisparks.org/bcycle,https://gbfs.bcycle.com/bcycle_bismarck/gbfs.json,1.1,,,
 US,Blue Bikes,"Boston, MA",bluebikes,https://www.bluebikes.com/,https://gbfs.bluebikes.com/gbfs/gbfs.json,1.1,,,
 US,Bolt Technology OÜ,"Austin, TX",BoltEU_Austin,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3/339/gbfs,1.0 ; 2.3 ; 3.0,,,
 US,Bolt Technology OÜ,"Washington, DC",BoltEU_Washington DC,https://www.bolt.eu/,https://mds.bolt.eu/gbfs/3/23/gbfs,1.0 ; 2.3 ; 3.0,,,
