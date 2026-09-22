@@ -1337,6 +1337,7 @@ SI,Kras Brkini Bikes,Sežana,scbikes_kras,https://kras.scbikes.com/,https://gbfs
 SI,Kulu Valley Bikes,Ajdovščina,scbikes_kulu,https://kulu.scbikes.com/,https://gbfs.derp.si/gbfs/scbikes_kulu/gbfs.json,2.3,,,
 SI,Kvik,Ljubljana,kvik,https://kvik.us/si,https://gbfs.derp.si/gbfs/kvik/gbfs.json,2.3,,,
 SI,MBajk,Maribor,maribor,https://www.mbajk.si/,https://api.cyclocity.fr/contracts/maribor/gbfs/v3/gbfs.json,2.3 ; 3.0,,,
+SI,MICikel,Velenje,micikel,https://www.micikel.bike/,https://gbfs.derp.si/gbfs/micikel/gbfs.json,2.3,,,
 SI,Mobilno Obsotelje,Rogaška Slatina,scbikes_pors,https://pors.scbikes.com/,https://gbfs.derp.si/gbfs/scbikes_pors/gbfs.json,2.3,,,
 SI,Nomago Bikes -  LJUBLJANA in MEDVODE,Ljubljana,nextbike_cc,https://bikes.nomago.si/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cc/gbfs.json,2.3,,,
 SI,Nomago Bikes - GO2GO,Nova Gorica,nextbike_ce,https://bikes.nomago.si/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ce/gbfs.json,2.3,,,
