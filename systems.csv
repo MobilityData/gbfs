@@ -1331,6 +1331,7 @@ SE,Zeus Karlstad,Karlstad,zeus_karlstad,https://zeusscooters.com/,https://zeus.c
 SI,Avant2Go SI,Ljubljana,avant2go_si,https://avant2go.si/en/car-sharing/cities/ljubljana,https://gbfs.derp.si/gbfs/avant2go_si/gbfs.json,2.3,,,
 SI,BicikeLJ,Ljubljana,ljubljana,https://www.bicikelj.si/,https://api.cyclocity.fr/contracts/ljubljana/gbfs/v3/gbfs.json,2.3 ; 3.0,,,
 SI,Biciklanc,Vrhnika,scbikes_biciklanc,https://biciklanc.scbikes.com/,https://gbfs.derp.si/gbfs/scbikes_biciklanc/gbfs.json,2.3,,,
+SI,Bolt Ljubljana,Ljubljana,BoltEU_Ljubljana,https://www.bolt.eu/,https://gbfs.derp.si/bolt_proxy/2/359/gbfs,2.3,,,
 SI,Dolenjska in Bela Krajina Bike,Novo Mesto,scbikes_gonm,https://gonm.scbikes.com/,https://gbfs.derp.si/gbfs/scbikes_gonm/gbfs.json,2.3,,,
 SI,Gorenjska Bike,Kranj,scbikes_gbike,https://gbike.scbikes.com/,https://gbfs.derp.si/gbfs/scbikes_gbike/gbfs.json,2.3,,,
 SI,Kras Brkini Bikes,Sežana,scbikes_kras,https://kras.scbikes.com/,https://gbfs.derp.si/gbfs/scbikes_kras/gbfs.json,2.3,,,
