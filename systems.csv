@@ -535,6 +535,7 @@ ES,moxsi (Las Palmas de Gran Canaria),Las Palmas de Gran Canaria,nextbike_el,htt
 ES,MugiBIKE (Vitoria),Vitoria-Gasteiz,mugibike_vitoria,https://www.mugibike.eus,https://gbfs.partners.fifteen.eu/gbfs/2.2/vitoria/en/gbfs.json,2.2,,,
 ES,nextbike BiciLOG,Logroño,nextbike_ej,https://www.nextbike-bicilog.com/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ej/gbfs.json,2.3,,,
 ES,nextbike León,León,nextbike_sl,https://www.alsa-nextbike.es/leon/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_sl/gbfs.json,2.3,,,
+ES,Roquebike,Almería,nextbike_ra,https://www.nextbike.es/roquebike,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ra/gbfs.json,2.3,,,
 ES,Sevici,Seville,seville,https://www.sevici.es/,https://api.cyclocity.fr/contracts/seville/gbfs/v3/gbfs.json,2.3 ; 3.0,,,
 ES,TORRENTBICI,Torrent,nextbike_en,https://www.mibisivalencia.es/torrentbici/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_en/gbfs.json,2.3,,,
 ES,TUeBICI,"Santander, ES",nextbike_ek,https://www.tuebici.es/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ek/gbfs.json,2.3,,,
