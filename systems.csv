@@ -1015,7 +1015,6 @@ JP,CyclOcity,Toyama,toyama,https://www.cyclocity.jp/,https://api.cyclocity.fr/co
 JP,docomo bike share service,Japan,docomo-cycle,https://docomo-cycle.jp/,https://api-public.odpt.org/api/v4/gbfs/docomo-cycle/gbfs.json,2.3,,,
 JP,docomo bike share service,Tokyo,docomo-cycle-tokyo,https://docomo-cycle.jp/,https://api-public.odpt.org/api/v4/gbfs/docomo-cycle-tokyo/gbfs.json,2.3,,,
 JP,HELLO CYCLING,Japan,hellocycling,https://www.hellocycling.jp,https://api-public.odpt.org/api/v4/gbfs/hellocycling/gbfs.json,2.3,,,
-JP,kotobike,Japan,kotobike,https://kotobike.jp,https://app.kotobike.jp/api/exposed/v2/gbfs/gbfs.json,2.3,,,
 LI,Donkey Republic Liechtenstein,Liechtenstein,donkey_li,https://www.donkey.bike/cities/,https://stables.donkey.bike/api/public/gbfs/3.0/donkey_li/gbfs.json,1.0 ; 2.3 ; 3.0,,,
 LI,LIEmobil Liechtenstein,Liechtenstein,liemobil_liechtenstein,https://liemobil.li/,https://api.mobidata-bw.de/sharing/gbfs/v3/liemobil_liechtenstein/gbfs,2.3 ; 3.0,,,
 LT,Cyclocity,Vilnius,vilnius,https://www.cyclocity.lt/,https://api.cyclocity.fr/contracts/vilnius/gbfs/v3/gbfs.json,2.3 ; 3.0,,,
