@@ -158,6 +158,11 @@ Authentication Parameter Name | Conditionally REQUIRED | If authentication is re
 Complete JSON schemas for each version of GBFS can be found [here](https://github.com/MobilityData/gbfs-json-schema).
 ## GBFS and Other Shared Mobility Resources
 Including APIs, datasets, validators, research, and software can be found [here](https://gbfs.org/tools/).
+
+### Open-Source Tooling & Agent Skill
+
+- [`gbfs-mcp`](https://github.com/aminamos/gbfs-mcp) — open-source Model Context Protocol (MCP) server & CLI for GBFS v3.0 / v2.3. Search the `systems.csv` catalog of 1,000+ systems, resolve `gbfs.json` auto-discovery manifests, and query live station availability, free-floating vehicles, alerts, and vehicle types.
+- [Agent skill (`skills/gbfs/SKILL.md`)](skills/gbfs/SKILL.md) — reference runbook for AI assistants and developers parsing `gbfs.json`, respecting `ttl` caching, and reasoning about station status, `free_bike_status`, and fleet data.
 ## Relationship Between GBFS and MDS
 There are many similarities between GBFS and [MDS](https://github.com/openmobilityfoundation/mobility-data-specification) (Mobility Data Specification), however, their intended use cases are different. GBFS is a real-time or near real-time specification for public data primarily intended to provide transit advice through consumer-facing applications. MDS is not public data and is intended for use only by mobility regulators. Publishing a public GBFS feed is a [requirement](https://github.com/openmobilityfoundation/mobility-data-specification#gbfs-requirement) of all MDS compatible *Provider* APIs.
 ## Copyright
