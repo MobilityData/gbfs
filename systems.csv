@@ -355,6 +355,7 @@ DE,KVV.nextbike,Karlsruhe,nextbike_fg,https://www.kvv-nextbike.de/de/,https://gb
 DE,Landkreis Nordsachsen,Nordsachsen,nextbike_lc,https://www.nextbike.de/nordsachsen/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_lc/gbfs.json,2.3,,,
 DE,LaRa to go,Waiblingen,lara_to_go,https://energieagentur-remsmurr.de/projekte/Lastenradverleih,https://api.mobidata-bw.de/sharing/gbfs/v3/lara_to_go/gbfs,3.0,,,
 DE,LastenVelo Freiburg,Freiburg,lastenvelo_fr,https://www.lastenvelofreiburg.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/lastenvelo_fr/gbfs,2.3 ; 3.0,,,
+DE,Lastenkarle Karlsruhe,Karlsruhe,lastenkarle,https://lastenkarle.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/lastenkarle/gbfs,2.3 ; 3.0,,,
 DE,Lime Dresden,Dresden,lime_dresden,https://www.li.me/,https://data.lime.bike/api/partners/v2/gbfs/dresden/gbfs.json,2.2,,,
 DE,Lime Frankfurt,Frankfurt,lime_frankfurt,https://www.li.me,https://data.lime.bike/api/partners/v2/gbfs/frankfurt/gbfs.json,2.2,,,
 DE,Lime Hamburg,Hamburg,lime_hamburg,https://li.me,https://data.lime.bike/api/partners/v2/gbfs/hamburg/gbfs.json,2.2,,,
