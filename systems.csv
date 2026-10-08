@@ -790,6 +790,7 @@ FR,Lime Marseille,Marseille,lime_marseille,https://www.li.me,https://data.lime.b
 FR,Lime Nogent-sur-Marne,Nogent-sur-Marne,lime_nogent,https://www.li.me,https://data.lime.bike/api/partners/v2/gbfs/nogent/gbfs.json,2.2,,,
 FR,Lime Nice,Nice,lime_nice,https://www.li.me,https://data.lime.bike/api/partners/v2/gbfs/nice/gbfs.json,2.2,,,
 FR,Lime Paris,Paris,lime_paris,https://li.me/,https://data.lime.bike/api/partners/v2/gbfs/paris/gbfs.json,2.2,,,
+FR,Lime Paris Saclay,Paris-Saclay,lime_paris_saclay,https://li.me/,https://data.lime.bike/api/partners/v2/gbfs/paris_saclay/gbfs.json,2.2,,,
 FR,Lime Sophia Antipolis,Sophia Antipolis,lime_casa,https://li.me/,https://data.lime.bike/api/partners/v2/gbfs/casa/gbfs.json,2.2,,,
 FR,LOVELO Libre-service,Rouen,inurba-rouen,https://lovelolibreservice.fr/,https://gbfs.urbansharing.com/lovelolibreservice.fr/gbfs.json,2.3,,,
 FR,Marguerite - Véhicule en libre-service à Nantes,Nantes,Marguerite_FR_Nantes,https://www.imarguerite.com,https://www.imarguerite.com/opendata/gbfs/gbfs.json,2.3,,,
