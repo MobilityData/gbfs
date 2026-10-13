@@ -133,20 +133,24 @@ There are hundreds of shared mobility systems publishing GBFS worldwide. This li
 
 If you would like to add a system, please fork this repository and submit a Pull Request. To open a Pull Request, please do the following:
 
-- [Create an account on GitHub](https://github.com/join) if you do not already have one
 - [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repository
-- Create a new branch, and
-- Propose your changes by opening a [new pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
-
-This list is kept sorted (case-insensitively) by the four leftmost columns, in order: **Country Code**, **Name**, **Location**, then **System ID**. You don't need to insert your new row in exactly the right place: when you open a pull request that changes `systems.csv`, an automated GitHub Action re-sorts the file and pushes the sorted result back to your branch as a separate `chore: sort systems.csv` commit. (This runs for pull requests opened from a branch in this repository. If you are contributing from a fork, the automatic commit is skipped — you can sort the file yourself, see below.)
-
-Technically, the sort keeps the header row in place and orders the remaining rows by the first four columns, in order: column 1 (Country Code), column 2 (Name), column 3 (Location), then column 4 (System ID). Sorting is **case-insensitive**, so `nextbike Klagenfurt Austria` sorts directly after `LiBike` instead of below every name that happens to start with an uppercase letter. Rows whose keys differ only in case are ordered deterministically by a byte-wise comparison of the whole row.
-
-Case folding is ASCII-only (`A`-`Z` to `a`-`z`): accented and other non-ASCII characters are compared by their UTF-8 bytes, which means names beginning with such a character (for example `Ökobike`) sort after all ASCII names. Aside from case folding, comparison is byte-wise (equivalent to `LC_ALL=C`). The sorter is also CSV-quoting-aware, so a field that is quoted because it contains a comma is sorted by its real value rather than by the text up to the first comma. Because the comparison is implemented in the scripts rather than delegated to the platform `sort`, the result is identical on macOS and on the Linux CI runner, so sorting locally always matches what the CI produces.
+- Create a new branch, and propose your changes by opening a [new pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
 
 Alternatively, fill out [this contribution form](https://share.mobilitydata.org/gbfs-feed-contribution-form) for a GitHub-less contribution.
 * [systems.csv](systems.csv)
 
+### Sorting
+`systems.csv` is sorted case-insensitively by **Country Code**, **Name**, **Location**, then **System ID**.
+
+- You don't need to insert rows in the right place. On pull requests that change `systems.csv`, a GitHub Action sorts the file and pushes a `chore: sort systems.csv` commit to your branch.
+- Sorting rules:
+  - The header row stays first.
+  - Case folding is ASCII-only; everything else is byte-wise (`LC_ALL=C`). Names starting with non-ASCII characters (e.g. `Ökobike`) sort after all ASCII names.
+  - Rows that differ only in case are ordered by a byte-wise comparison of the whole row.
+  - Quoted fields (e.g. containing commas) sort by their real value.
+- Local sorting gives the same result as CI on both macOS and Linux.
+
+### Fields description
  Field Name | REQUIRED | Definition 
  --- | :---: | ---- 
 |Country Code | REQUIRED | ISO 3166-1 alpha-2 code designating the country where the system is located. For a list of valid codes [see here](https://en.wikipedia.org/wiki/ISO_3166-1).
@@ -161,10 +165,15 @@ Authentication Type | Conditionally REQUIRED |  If authentication is required, t
 Authentication Parameter Name | Conditionally REQUIRED | If authentication is required, the parameter name MUST be included. The **Authentication Parameter Name** field defines the name of the parameter to pass in the URL or header to provide the authentication credentials. This field is required for `Authentication Type=1` and `Authentication Type=2`. In case of multiple parameters, use the pipe character to separate them (`\|`).
 
 ## GBFS JSON Schemas
+
 Complete JSON schemas for each version of GBFS can be found [here](https://github.com/MobilityData/gbfs-json-schema).
+
 ## GBFS and Other Shared Mobility Resources
+
 Including APIs, datasets, validators, research, and software can be found [here](https://gbfs.org/tools/).
+
 ## Relationship Between GBFS and MDS
+
 There are many similarities between GBFS and [MDS](https://github.com/openmobilityfoundation/mobility-data-specification) (Mobility Data Specification), however, their intended use cases are different. GBFS is a real-time or near real-time specification for public data primarily intended to provide transit advice through consumer-facing applications. MDS is not public data and is intended for use only by mobility regulators. Publishing a public GBFS feed is a [requirement](https://github.com/openmobilityfoundation/mobility-data-specification#gbfs-requirement) of all MDS compatible *Provider* APIs.
 ## Copyright
 The copyright for GBFS is held by the [MobilityData](https://mobilitydata.org/). 
