@@ -12,9 +12,16 @@
 //   4. "Supported Versions" empty -> WARNING (surfaced to author/reviewers, non-fatal).
 //   5. The last 3 Authentication columns are optional and may be empty.
 //
+// A value containing only whitespace counts as empty. Fully blank lines (such as a trailing newline) are ignored.
+//
 // Emits GitHub Actions annotations (::error / ::warning) so issues appear inline on the PR.
 //
 // Usage: node scripts/validate-systems-csv.js [path-to-csv]   (default: systems.csv)
+//
+// Exit codes:
+//   0  no errors (warnings may still be reported)
+//   1  one or more errors, or the file is empty
+//   2  file cannot be read
 //
 const fs = require('fs');
 

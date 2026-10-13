@@ -4,9 +4,7 @@
 # by the first four columns, in order: column 1 (Country Code), column 2 (Name),
 # column 3 (Location), column 4 (System ID).
 #
-# This is a shell equivalent of scripts/sort-systems-csv.js, provided for
-# convenience. Both implementations produce byte-identical output; the CI
-# workflow runs the Node one. Use whichever you prefer locally.
+# This is a shell equivalent of scripts/sort-systems-csv.js, provided for convenience. The CI workflow runs the Node one; use whichever you prefer locally. Both produce byte-identical output, with one exception: if the file has no final newline, this script adds one while the Node script preserves its absence.
 #
 # Like the Node sorter, this is CSV-quoting-aware: a field that is quoted
 # because it contains a comma (e.g. "Veo University of Illinois,
@@ -25,6 +23,17 @@
 # Usage:
 #   ./scripts/sort-systems-csv.sh [path-to-csv]   # sort in place (default: systems.csv)
 #   ./scripts/sort-systems-csv.sh --check [path]  # exit 1 if not already sorted
+#
+# Other behavior:
+#   - Blank lines in the body are dropped, not sorted.
+#   - --check prints a unified diff of what sorting would change (the Node script does not), and never writes the file.
+#   - The \x01 key separator is assumed absent from the CSV; this is not checked.
+#
+# Exit codes:
+#   0  sorted (or already sorted; with --check, already sorted)
+#   1  --check only: file is not sorted
+#   2  file not found
+#   3  malformed CSV (unbalanced quotes); the file is left unchanged
 #
 set -euo pipefail
 

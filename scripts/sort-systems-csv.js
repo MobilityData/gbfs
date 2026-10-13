@@ -31,6 +31,17 @@
 //   node scripts/sort-systems-csv.js [path-to-csv]   # sort in place (default: systems.csv)
 //   node scripts/sort-systems-csv.js --check [path]  # exit 1 if not already sorted
 //
+// Other behavior:
+//   - Blank lines in the body are dropped, not sorted.
+//   - A missing final newline is preserved as-is (the file is not given one).
+//   - --check only reports; it does not print a diff and never writes the file.
+//
+// Exit codes:
+//   0  sorted (or already sorted; with --check, already sorted)
+//   1  --check only: file is not sorted
+//   2  file cannot be read
+//   3  malformed CSV (unbalanced quotes); nothing is written
+//
 const fs = require('fs');
 
 let check = false;

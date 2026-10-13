@@ -10,9 +10,24 @@
 // Both URL columns are checked: "URL" (operator homepage) and "Auto-Discovery URL"
 // (the GBFS feed). Redirects are followed; the FINAL status must be 2xx.
 //
-// Usage: node scripts/check-new-urls.js <baseCsv> <headCsv>
-//   baseCsv : systems.csv from the PR base (may be empty/absent if the file is new)
+// URLs are compared as exact strings (after trimming whitespace). Any change to an existing URL, even adding a trailing slash or switching http to https, makes it count as newly added, so it gets checked.
+//
+// Limits and safeguards:
+//   - Hosts that resolve to loopback, private, link-local, CGNAT or ULA addresses are refused, and every redirect hop is re-checked (SSRF guard, see below).
+//   - Only http and https URLs are accepted.
+//   - At most 200 new URLs per PR; above that the check fails and asks for a smaller PR.
+//   - Each request uses GET, times out after 20 seconds, and follows up to 5 redirects.
+//   - A network error or timeout is retried once; an HTTP error status is not retried.
+//   - Up to 6 URLs are checked in parallel.
+//
+// Usage: node scripts/check-new-urls.js [baseCsv] [headCsv]
+//   baseCsv : systems.csv from the PR base; if omitted, missing or empty, every URL in headCsv is treated as new
 //   headCsv : systems.csv from the PR head (default: systems.csv)
+//
+// Exit codes:
+//   0  no new URLs, or every new URL returned 2xx
+//   1  at least one new URL failed, or the 200-URL limit was exceeded
+//   2  unexpected failure (for example headCsv cannot be read)
 //
 const fs = require('fs');
 const net = require('net');
