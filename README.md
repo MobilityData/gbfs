@@ -144,7 +144,6 @@ Alternatively, fill out [this contribution form](https://share.mobilitydata.org/
 
 - You don't need to insert rows in the right place. On pull requests that change `systems.csv`, a GitHub Action sorts the file and pushes a `chore: sort systems.csv` commit to your branch.
 - Sorting rules:
-  - The header row stays first.
   - Case folding is ASCII-only; everything else is byte-wise (`LC_ALL=C`). Names starting with non-ASCII characters (e.g. `Ökobike`) sort after all ASCII names.
   - Rows that differ only in case are ordered by a byte-wise comparison of the whole row.
   - Quoted fields (e.g. containing commas) sort by their real value.
