@@ -463,7 +463,7 @@ FI,Donkey Republic Porvoo,Porvoo,donkey_porvoo,https://www.donkey.bike/cities/bi
 FI,Donkey Republic Raasepori,Raasepori,donkey_raasepori,https://www.donkey.bike/cities/bike-rental-raasepori/,https://stables.donkey.bike/api/public/gbfs/3.0/donkey_raasepori/gbfs,1.0 ; 2.3 ; 3.0,,,
 FI,Donkey Republic Riihimäki,Riihimäki,donkey_riihimaki,https://www.donkey.bike/cities/bike-rental-riihimaki/,https://stables.donkey.bike/api/public/gbfs/3.0/donkey_riihimaki/gbfs,1.0 ; 2.3 ; 3.0,,,
 FI,Donkey Republic Turku,Turku,donkey_turku,https://www.donkey.bike/cities/bike-rental-hyvinkaa/,https://stables.donkey.bike/api/public/gbfs/3.0/donkey_turku/gbfs.json,1.0 ; 2.3 ; 3.0,,,
-FI,Donkey RepublicHelsinki,Helsinki,donkey_helsinki,https://donkey.bike/,https://stables.donkey.bike/api/public/gbfs/3.0/donkey_helsinki/gbfs.json,1.0 ; 2.3 ; 3.0,,,
+FI,Donkey Republic Helsinki,Helsinki,donkey_helsinki,https://donkey.bike/,https://stables.donkey.bike/api/public/gbfs/3.0/donkey_helsinki/gbfs.json,1.0 ; 2.3 ; 3.0,,,
 FI,Joe Rauma,Rauma,475,https://www.joescooter.fi/,https://joe.rideatom.com/gbfs/v2_2/en/gbfs?id=475,2.2,,,
 FR,7 Vallées Vélo,Marconne,7vallees,https://7valleesvelo.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/7vallees/gbfs.json,2.2 ; 3.0,,,
 FR,Altervelo Libre-service,"Saint-Pierre, L'Étang-Salé & Saint-Louis",altervelo,https://altervelo.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/altervelo/gbfs.json,2.2 ; 3.0,,,
