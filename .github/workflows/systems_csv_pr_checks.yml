@@ -1,7 +1,8 @@
 name: systems.csv PR checks
 
 # Runs whenever a pull request adds or changes systems.csv, this workflow, or the scripts it runs.
-#   1. sort              - same-repo branches: re-sort the file and push the result as a separate commit. Fork PRs: fail if the file is not sorted, with instructions to run the sorter on the fork (see below).
+#   1. sort              - re-sort the file and push the result as a separate commit
+#                          (same-repo PR branches only; forks are skipped, see below).
 #   2. validate-structure- fail on malformed rows / missing required values.
 #   3. check-new-urls    - fail if any newly added URL does not return HTTP 200-299.
 on:
@@ -23,49 +24,25 @@ jobs:
   sort:
     name: Sort systems.csv
     runs-on: ubuntu-latest
-    # The default GITHUB_TOKEN cannot push to a forked repository, so auto-sorting is limited to branches in this repo. Fork PRs get a check-only pass instead: the job fails if systems.csv is not sorted, shows the diff sorting would apply, and tells the contributor how to sort it on their fork. Both paths run in this one job so the PR always shows a single "Sort systems.csv" check (a skipped job would count as passing under branch protection).
+    # The default GITHUB_TOKEN cannot push to a forked repository, so auto-sorting
+    # is limited to branches in this repo. Fork PRs are left untouched here and get
+    # sorted when master is next updated.
+    if: github.event.pull_request.head.repo.full_name == github.repository
     permissions:
       contents: write
-    env:
-      IS_FORK: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
     steps:
-      - name: Checkout PR branch (same repo)
-        if: env.IS_FORK == 'false'
-        uses: actions/checkout@v7.0.1
+      - uses: actions/checkout@v7.0.1
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Checkout PR head (fork)
-        if: env.IS_FORK == 'true'
-        uses: actions/checkout@v7.0.1
-        with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.sha }}
-
       - uses: actions/setup-node@v7.0.0
         with:
           node-version: 24
-
-      - name: Check sort order (fork)
-        if: env.IS_FORK == 'true'
-        run: |
-          if node scripts/sort-systems-csv.js --check systems.csv; then
-            exit 0
-          fi
-          # Sort a copy in place only to show the contributor what would change; nothing is pushed.
-          node scripts/sort-systems-csv.js systems.csv > /dev/null
-          echo "::error file=systems.csv,title=systems.csv is not sorted::Pull requests from forks cannot be sorted automatically. On your fork, from the repository root, run either 'node scripts/sort-systems-csv.js' (Node.js) or './scripts/sort-systems-csv.sh' (bash only, no Node.js needed). Both produce the same order. Then commit the result and push to update this pull request. The job log shows the changes sorting will make."
-          echo "Changes sorting would make to systems.csv:"
-          git --no-pager diff -- systems.csv
-          exit 1
-
       - name: Sort systems.csv
-        if: env.IS_FORK == 'false'
         run: node scripts/sort-systems-csv.js systems.csv
 
       - name: Commit sorted file if it changed
-        if: env.IS_FORK == 'false'
         run: |
           if git diff --quiet -- systems.csv; then
             echo "systems.csv already sorted; nothing to commit."

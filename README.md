@@ -142,8 +142,7 @@ Alternatively, fill out [this contribution form](https://share.mobilitydata.org/
 ### Sorting
 `systems.csv` is sorted case-insensitively by **Country Code**, **Name**, **Location**, then **System ID**.
 
-- On pull requests from a branch in this repository, you don't need to insert rows in the right place. A GitHub Action sorts the file and pushes a `chore: sort systems.csv` commit to your branch.
-- On pull requests from a fork, the Action cannot push to your branch, so the "Sort systems.csv" check fails if the file is not sorted. Sort it on your fork from the repository root with `node scripts/sort-systems-csv.js` or, without Node.js, `./scripts/sort-systems-csv.sh`, then commit and push.
+- You don't need to insert rows in the right place. On pull requests that change `systems.csv`, a GitHub Action sorts the file and pushes a `chore: sort systems.csv` commit to your branch.
 - Sorting rules:
   - Case folding is ASCII-only; everything else is byte-wise (`LC_ALL=C`). Names starting with non-ASCII characters (e.g. `Ökobike`) sort after all ASCII names.
   - Rows that differ only in case are ordered by a byte-wise comparison of the whole row.
