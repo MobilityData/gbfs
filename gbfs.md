@@ -963,6 +963,7 @@ Field Name | REQUIRED | Type | Defines
 `stations[].is_renting` | REQUIRED | Boolean | Is the station currently renting vehicles? <br /><br />`true` - Station is renting vehicles. Even if the station is empty, if it would otherwise allow rentals, this value MUST be `true`.<br/>`false` - Station is not renting vehicles.<br/><br/>If the station is temporarily taken out of service and not allowing rentals, this field MUST be set to `false`.<br/><br/>If a station becomes inaccessible to users due to road construction or other factors this field SHOULD be set to `false`. Field SHOULD be set to `false` during hours or days when the system is not offering vehicles for rent.
 `stations[].is_returning` | REQUIRED | Boolean | Is the station accepting vehicle returns? <br /><br />`true` - Station is accepting vehicle returns. Even if the station is full, if it would otherwise allow vehicle returns, this value MUST be `true`.<br /> `false` - Station is not accepting vehicle returns.<br/><br/>If the station is temporarily taken out of service and not allowing vehicle returns, this field MUST be set to `false`.<br/><br/>If a station becomes inaccessible to users due to road construction or other factors, this field SHOULD be set to `false`.
 `stations[].last_reported` | REQUIRED | Timestamp | The last time this station reported its status to the operator's backend.
+`stations[].station_points` <br/>*(added in v3.2-RC)* | OPTIONAL | Non-negative integer | Number of points the operator's rebalancing incentive program currently awards to a rider for helping rebalance the system at this station: starting a trip here when the station is relatively full, or ending a trip here when it is relatively empty. A value of `0` means no points are currently awarded. How points are earned, the direction that qualifies, and how they are redeemed are defined by the operator and are outside the scope of this specification. This value SHOULD be updated with the same frequency as the rest of `station_status.json`.
 
 **Example:**
 
@@ -979,6 +980,7 @@ Field Name | REQUIRED | Type | Defines
         "is_renting": true,
         "is_returning": true,
         "last_reported": "2023-07-17T13:34:13+02:00",
+        "station_points": 2,
         "num_docks_available": 3,
         "num_docks_disabled" : 1,
         "vehicle_docks_available": [
@@ -1010,6 +1012,7 @@ Field Name | REQUIRED | Type | Defines
         "is_renting": true,
         "is_returning": true,
         "last_reported": "2023-07-17T13:34:13+02:00",
+        "station_points": 0,
         "num_docks_available": 8,
         "num_docks_disabled" : 1,
         "vehicle_docks_available": [
