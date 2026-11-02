@@ -1017,7 +1017,6 @@ NZ,JOLT Selwyn,Selwyn,jolt_selwyn,https://joltscooters.co.nz,https://prod-api.jo
 PL,BIKER Białystok,Białystok,nextbike_bp,https://bikerbialystok.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_bp/gbfs.json,2.3,,,
 PL,Chełmski Rower,Chełmski,nextbike_cw,https://chelmskirower.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_cw/gbfs.json,2.3,,,
 PL,Dott Oświęcim,Oświęcim,dott-oswiecim,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/oswiecim/gbfs.json,2.3,,,
-PL,Dott Sosnowiec,Sosnowiec,dott-sosnowiec,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/sosnowiec/gbfs.json,2.3,,,
 PL,Dott Wołomin,Wołomin,dott-wołomin,https://ridedott.com/,https://gbfs.api.ridedott.com/public/v2/wo%C5%82omin/gbfs.json,2.3,,,
 PL,GRM Grodzisk Poland,Grodzisk,nextbike_gp,https://www.rowerygrodzisk.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_gp/gbfs.json,2.3,,,
 PL,JasKółka,Jastrzębie-Zdrój,nextbike_pj,https://www.rower.jastrzebie.pl/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_pj/gbfs.json,2.3,,,
