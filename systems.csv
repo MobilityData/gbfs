@@ -666,6 +666,7 @@ FR,Optymo Belfort,Belfort,Optymo_FR_Belfort,https://www.optymo.fr/,https://data.
 FR,Optymo Belfort Auto libre-service,Belfort,Optymo_Belfort_ALS,https://www.optymo.fr/,https://data.optymo.fr/als/gbfs.json,2.3,,,
 FR,PAYS D'OPALE,Pays d'Opale,mp_Opale,https://www.mobility-parc.net/,https://www.mobility-parc.net/gbfs/v3/Opale/gbfs.json,3.0,,,
 FR,PAYS DE L'ARBRESLE - VEL'PAR,Courzieu,mp_ARBRESLE,https://www.mobility-parc.net/,https://www.mobility-parc.net/gbfs/v3/ARBRESLE/gbfs.json,3.0,,,
+FR,Pays des Herbiers Mobilités,Les Herbiers,lesherbiers,https://paysdesherbiersmobilites.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/lesherbiers/gbfs.json,2.2 ; 3.0,,,
 FR,PAYS DU COQUELICOT,Albert,mp_COQUELICOT,https://www.mobility-parc.net/,https://www.mobility-parc.net/gbfs/v3/COQUELICOT/gbfs.json,3.0,,,
 FR,Pony Angers,Angers,pony_Angers,https://getapony.com/,https://proxy.transport.data.gouv.fr/resource/pony-angers-gbfs/gbfs.json,2.2,,,
 FR,Pony Basque Country,Basque Country,pony_Basque_Country,https://getapony.com/,https://proxy.transport.data.gouv.fr/resource/pony-pays-basque-gbfs/gbfs.json,2.2,,,
