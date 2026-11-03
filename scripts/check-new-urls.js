@@ -17,18 +17,15 @@
 //   - Only http and https URLs are accepted.
 //   - At most 200 new URLs per PR; above that the check fails and asks for a smaller PR.
 //   - Each request uses GET, times out after 20 seconds, and follows up to 5 redirects.
-//   - A network error or timeout is retried once; an HTTP error status is not retried, except 429 (below).
-//   - HTTP 429 (Too Many Requests) is retried up to 2 times, waiting for the server's Retry-After delay each time (10 seconds if the header is missing or unreadable, capped at 60 seconds).
+//   - A network error or timeout is retried once; an HTTP error status is not retried.
 //   - Up to 6 URLs are checked in parallel.
-//
-// Rate limiting: some feed hosts (for example Entur) rate-limit by client, and GitHub Actions runners share IP addresses with many other jobs, so a working URL can keep returning 429 from CI. If a URL still returns 429 after the retries, it is reported as a warning, not an error, and does not fail the check. Reviewers should open those URLs manually to confirm they work.
 //
 // Usage: node scripts/check-new-urls.js [baseCsv] [headCsv]
 //   baseCsv : systems.csv from the PR base; if omitted, missing or empty, every URL in headCsv is treated as new
 //   headCsv : systems.csv from the PR head (default: systems.csv)
 //
 // Exit codes:
-//   0  no new URLs, or every new URL returned 2xx (or was still rate-limited with 429, reported as a warning)
+//   0  no new URLs, or every new URL returned 2xx
 //   1  at least one new URL failed, or the 200-URL limit was exceeded
 //   2  unexpected failure (for example headCsv cannot be read)
 //
@@ -46,10 +43,6 @@ const URL_COLUMNS = ['URL', 'Auto-Discovery URL'];
 const TIMEOUT_MS = 20000;
 const MAX_REDIRECTS = 5;
 const CONCURRENCY = 6;
-// HTTP 429 handling: retry this many times, waiting for Retry-After (bounded below).
-const MAX_429_RETRIES = 2;
-const DEFAULT_RETRY_AFTER_MS = 10000;
-const MAX_RETRY_AFTER_MS = 60000;
 // This job runs on untrusted fork PRs, so cap how many outbound checks a single
 // PR can trigger. A legitimate contribution adds a handful of systems at a time.
 const MAX_NEW_URLS = 200;
@@ -199,13 +192,7 @@ async function checkOnce(rawUrl, redirectsLeft) {
           return;
         }
         res.resume(); // drain so the socket can be freed
-        resolve({
-          url: rawUrl,
-          status,
-          ok: status >= 200 && status <= 299,
-          error: null,
-          retryAfter: res.headers['retry-after'] || null,
-        });
+        resolve({ url: rawUrl, status, ok: status >= 200 && status <= 299, error: null });
       }
     );
 
@@ -217,36 +204,12 @@ async function checkOnce(rawUrl, redirectsLeft) {
   });
 }
 
-// Convert a Retry-After header (delay in seconds, or an HTTP date) to a wait in milliseconds, bounded to [0, MAX_RETRY_AFTER_MS]. Missing or unreadable values use DEFAULT_RETRY_AFTER_MS.
-function retryAfterMs(value) {
-  let ms = DEFAULT_RETRY_AFTER_MS;
-  if (value) {
-    const v = String(value).trim();
-    if (/^\d+$/.test(v)) {
-      ms = Number(v) * 1000;
-    } else {
-      const date = Date.parse(v);
-      if (!Number.isNaN(date)) ms = date - Date.now();
-    }
-  }
-  return Math.min(Math.max(ms, 0), MAX_RETRY_AFTER_MS);
-}
-
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
-// Check a URL with one retry on transient failure (network error / timeout), and up to MAX_429_RETRIES retries on HTTP 429 after the server's Retry-After delay. A URL still rate-limited after that is flagged `rateLimited` so it is reported as a warning instead of a failure.
+// Check a URL with one retry on transient failure (network error / timeout).
 async function checkUrl(rawUrl) {
   let result = await checkOnce(rawUrl, MAX_REDIRECTS);
   if (!result.ok && result.status === null) {
     result = await checkOnce(rawUrl, MAX_REDIRECTS);
   }
-  for (let attempt = 1; result.status === 429 && attempt <= MAX_429_RETRIES; attempt++) {
-    const wait = retryAfterMs(result.retryAfter);
-    console.log(`  429  ${rawUrl}: waiting ${Math.round(wait / 1000)}s before retry ${attempt}/${MAX_429_RETRIES}`);
-    await sleep(wait);
-    result = await checkOnce(rawUrl, MAX_REDIRECTS);
-  }
-  if (result.status === 429) result.rateLimited = true;
   return result;
 }
 
@@ -291,27 +254,13 @@ async function main() {
   const results = await runPool(newUrls, checkUrl, CONCURRENCY);
 
   const failed = [];
-  const rateLimited = [];
   for (const r of results) {
     if (r.ok) {
       console.log(`  ok   ${r.status}  ${r.url}`);
-    } else if (r.rateLimited) {
-      rateLimited.push(r);
-      console.log(`  WARN HTTP 429 (still rate-limited after ${MAX_429_RETRIES} retries)  ${r.url}`);
     } else {
       failed.push(r);
       const detail = r.status !== null ? `HTTP ${r.status}` : r.error;
       console.log(`  FAIL ${detail}  ${r.url}`);
-    }
-  }
-
-  if (rateLimited.length > 0) {
-    console.log('');
-    for (const r of rateLimited) {
-      console.log(
-        `::warning::New URL is rate-limiting the CI runner (HTTP 429 after ${MAX_429_RETRIES} retries), so it could not be verified. ` +
-        `Please open it manually to confirm it works: ${r.url}`
-      );
     }
   }
 
@@ -323,14 +272,6 @@ async function main() {
     }
     console.log(`\n${failed.length} of ${newUrls.length} new URL(s) did not return 200-299.`);
     process.exit(1);
-  }
-
-  if (rateLimited.length > 0) {
-    console.log(
-      `\n${newUrls.length - rateLimited.length} of ${newUrls.length} new URL(s) returned 200-299; ` +
-      `${rateLimited.length} could not be verified because of rate limiting (see warnings).`
-    );
-    process.exit(0);
   }
 
   console.log(`\nAll ${newUrls.length} new URL(s) returned 200-299.`);
