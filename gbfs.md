@@ -4,7 +4,7 @@ This document explains the types of files and data that comprise the General Bik
 
 ## Reference version
 
-This documentation refers to **v3.1-RC3**.
+This documentation refers to **v3.2-RC**.
 
 For past and upcoming versions see the [README](https://github.com/MobilityData/gbfs/blob/master/README.md#current-version-recommended).
 
@@ -275,7 +275,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "name": [
       {
@@ -306,7 +306,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "feeds": [
       {
@@ -344,7 +344,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data":{
     "datasets":[
       {
@@ -355,8 +355,8 @@ Field Name | REQUIRED | Type | Defines
             "url":"https://berlin.example.com/gbfs/2/gbfs"
           },
           {
-            "version": "3.1-RC",
-            "url":"https://berlin.example.com/gbfs/3.1-RC/gbfs"
+            "version": "3.1",
+            "url":"https://berlin.example.com/gbfs/3.1/gbfs"
           }
         ],
         "area": {
@@ -406,8 +406,8 @@ Field Name | REQUIRED | Type | Defines
             "url":"https://paris.example.com/gbfs/2/gbfs"
           },
           {
-            "version": "3.1-RC",
-            "url":"https://paris.example.com/gbfs/3.1-RC/gbfs"
+            "version": "3.1",
+            "url":"https://paris.example.com/gbfs/3.1/gbfs"
           }
         ],
         "area": {
@@ -475,7 +475,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "versions": [
       {
@@ -483,8 +483,8 @@ Field Name | REQUIRED | Type | Defines
         "url": "https://www.example.com/gbfs/2/gbfs"
       },
       {
-        "version": "3.1-RC",
-        "url": "https://www.example.com/gbfs/3.1-RC/gbfs"
+        "version": "3.1",
+        "url": "https://www.example.com/gbfs/3.1/gbfs"
       }
     ]
   }
@@ -540,7 +540,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "system_id": "example_cityname",
     "languages": ["en"],
@@ -653,7 +653,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "vehicle_types": [
       {
@@ -841,7 +841,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "stations": [
       {
@@ -877,7 +877,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "stations": [
       {
@@ -970,7 +970,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "stations": [
       {
@@ -1073,7 +1073,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data":{
     "vehicles":[
       {
@@ -1111,7 +1111,7 @@ Field Name | REQUIRED | Type | Defines
  {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data":{
     "vehicles":[
       {
@@ -1234,7 +1234,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "regions": [
       {
@@ -1317,7 +1317,7 @@ This example demonstrates a pricing scheme where the fare is calculated per x mi
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "plans": [
       {
@@ -1365,7 +1365,7 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "plans": [
       {
@@ -1435,7 +1435,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "alerts": [
       {
@@ -1532,7 +1532,7 @@ See examples below.
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "geofencing_zones": {
       "type": "FeatureCollection",
@@ -1794,7 +1794,7 @@ Other supported parameters include:
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "name": [
       {
@@ -1825,7 +1825,7 @@ Other supported parameters include:
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "stations": [
       {
@@ -1858,7 +1858,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "name": [
       {
@@ -1889,7 +1889,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "stations": [
       {
@@ -1920,7 +1920,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1-RC",
+  "version": "3.2-RC",
   "data": {
     "stations": [
       {
