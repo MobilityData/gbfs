@@ -1308,10 +1308,11 @@ Field Name | REQUIRED | Type | Defines
 `plans[].fare_capping` <br/>*(added in v3.1-RC2)* | OPTIONAL | Object | Object defining a capped fare once a price threshold has been spent within a timeframe. The same fare cap applies to each subsequent timeframe. For example, a fare capped at 15.00 CAD per 12-hour period.
 `plans[].fare_capping.duration` <br/>*(added in v3.1-RC2)* | REQUIRED | Non-Negative Integer | Amount of time in minutes during which the fare is capped.
 `plans[].fare_capping.price` <br/>*(added in v3.1-RC2)* | REQUIRED | Non-Negative Float | The maximum fare threshold for the current timeframe, in the unit specified by `currency`.
+`plans[].max_rental_duration` <br/>*(added in v3.2-RC)* | OPTIONAL | Non-Negative Integer | Maximum amount of time in minutes for which a vehicle can be rented.
 
 **Example 1:**
 
-This example demonstrates a pricing scheme where the fare is calculated per x minutes and then per minute. The user is charged $2 for the first half-hour (base price). For the second half-hour, the user is charged $3 more. Beyond one hour, the user is charged $0.10 more per min.
+This example demonstrates a pricing scheme where the fare is calculated per x minutes and then per minute. The user is charged $2 for the first half-hour (base price). For the second half-hour, the user is charged $3 more. Beyond one hour, the user is charged $0.10 more per min. The maximum rental duration is 2 hours.
 
 ```json
 {
@@ -1350,7 +1351,8 @@ This example demonstrates a pricing scheme where the fare is calculated per x mi
             "rate": 0.10,
             "interval": 1
           }
-        ]
+        ],
+        "max_rental_duration": 120
       }
     ]
   }
