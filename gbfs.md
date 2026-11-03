@@ -30,7 +30,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
     * [station_information.json](#station_informationjson)
     * [station_status.json](#station_statusjson)
     * [vehicle_status.json](#vehicle_statusjson) *(formerly free_bike_status.json)*
-    * [vehicle_availability.json](#vehicle_availabilityjson) *(added in v3.1-RC2)*
+    * [vehicle_availability.json](#vehicle_availabilityjson) *(added in v3.1)*
     * [system_hours.json](#system_hoursjson) *(removed in v3.0)*
     * [system_calendar.json](#system_calendarjson) *(removed in v3.0)*
     * [system_regions.json](#system_regionsjson)
@@ -1152,7 +1152,7 @@ Field Name | REQUIRED | Type | Defines
 
 ### vehicle_availability.json
 
-*(added in v3.1-RC2)*
+*(added in v3.1)*
 
 Describes the future availability of each vehicle. Useful for systems that allow vehicles to be reserved in advance (e.g. carsharing, cargo bike share, etc). This file is OPTIONAL for station based (docked) vehicles. Not supported for free floating (dockless) vehicles. Data returned SHOULD be as close to realtime as possible, but in no case should it be more than 5 minutes out-of-date. See [Data Latency](#data-latency).<br/>The following fields are all attributes within the main `data` object for this feed.
 
@@ -1174,7 +1174,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.1-RC2",
+  "version": "3.2-RC",
   "data": {
     "vehicles": [
       {
