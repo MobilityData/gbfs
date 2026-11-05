@@ -4,7 +4,7 @@ This document explains the types of files and data that comprise the General Bik
 
 ## Reference version
 
-This documentation refers to **v3.1**.
+This documentation refers to **v3.2-RC**.
 
 For past and upcoming versions see the [README](https://github.com/MobilityData/gbfs/blob/master/README.md#current-version-recommended).
 
@@ -275,7 +275,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "name": [
       {
@@ -306,7 +306,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "feeds": [
       {
@@ -336,13 +336,15 @@ Field Name | REQUIRED | Type | Defines
 `datasets[].versions` | REQUIRED | Array&lt;Object&gt; | Contains one object for each of the available versions of a feed. The array MUST be sorted by increasing MAJOR and MINOR version number. 
 `datasets[].versions[].version` | REQUIRED | String | The semantic version of the feed in the form `X.Y`.                               
 `datasets[].versions[].url` | REQUIRED  | URL | URL of the corresponding `gbfs.json` endpoint.
+`datasets[].area` <br/>*(added in v3.1-RC)* | OPTIONAL | GeoJSON MultiPolygon | A GeoJSON MultiPolygon that describes the operating area. If `area` is supplied, then the record describes the general operating area of the system for the purpose of discovery. Geographic details of the system's operating restrictions must be explicitly specified using station locations and geofencing zones, where appropriate.
+`datasets[].country_code` <br/>*(added in v3.1-RC)* | OPTIONAL | Country Code | The ISO 3166-1 alpha-2 country code of the operating area. The field MUST NOT be specified if the operating area spans multiple countries.
 
 **Example:**
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data":{
     "datasets":[
       {
@@ -356,7 +358,45 @@ Field Name | REQUIRED | Type | Defines
             "version": "3.1",
             "url":"https://berlin.example.com/gbfs/3.1/gbfs"
           }
-        ]
+        ],
+        "area": {
+          "type": "MultiPolygon",
+          "coordinates": [
+            [
+              [
+                [
+                  13.10821,
+                  52.58563
+                ],
+                [
+                  13.29743,
+                  52.67046
+                ],
+                [
+                  13.48451,
+                  52.6855
+                ],
+                [
+                  13.77993,
+                  52.43458
+                ],
+                [
+                  13.65355,
+                  52.33048
+                ],
+                [
+                  13.08165,
+                  52.38793
+                ],
+                [
+                  13.10821,
+                  52.58563
+                ]
+              ]
+            ]
+          ]
+        },
+        "country_code": "DE"
       },
       {
         "system_id":"example_paris",
@@ -369,7 +409,49 @@ Field Name | REQUIRED | Type | Defines
             "version": "3.1",
             "url":"https://paris.example.com/gbfs/3.1/gbfs"
           }
-        ]
+        ],
+        "area": {
+          "type": "MultiPolygon",
+          "coordinates": [
+            [
+              [
+                [
+                  2.14306,
+                  48.89971
+                ],
+                [
+                  2.36707,
+                  48.99455
+                ],
+                [
+                  2.60219,
+                  49.01987
+                ],
+                [
+                  2.615,
+                  48.69025
+                ],
+                [
+                  2.52167,
+                  48.6867
+                ],
+                [
+                  2.26838,
+                  48.73275
+                ],
+                [
+                  2.13103,
+                  48.80833
+                ],
+                [
+                  2.14306,
+                  48.89971
+                ]
+              ]
+            ]
+          ]
+        },
+        "country_code": "FR"
       }
     ]
   }
@@ -393,7 +475,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "versions": [
       {
@@ -458,7 +540,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "system_id": "example_cityname",
     "languages": ["en"],
@@ -555,8 +637,9 @@ Field Name | REQUIRED | Type | Defines
 `vehicle_types[].wheel_count`<br/>*(added in v2.3)* | OPTIONAL | Non-negative Integer | Number of wheels this vehicle type has.
 `vehicle_types[].max_permitted_speed`<br/>*(added in v2.3)* | OPTIONAL | Non-negative Integer | The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations.
 `vehicle_types[].rated_power`<br/>*(added in v2.3)* | OPTIONAL | Non-negative Integer | The rated power of the motor for this vehicle type in watts.
-`vehicle_types[].default_reserve_time`<br/>*(added in v2.3)* | OPTIONAL | Non-negative Integer | Maximum time in minutes that a vehicle can be reserved before a rental begins. When a vehicle is reserved by a user, the vehicle remains locked until the rental begins. During this time the vehicle is unavailable and cannot be reserved or rented by other users. The vehicle status in `vehicle_status.json` MUST be set to `is_reserved = true`. If the value of `default_reserve_time` elapses without a rental beginning, the vehicle status MUST change to `is_reserved = false`. If `default_reserve_time` is set to `0`, the vehicle type cannot be reserved. 
+`vehicle_types[].default_reserve_time`<br/>*(added in v2.3)* | Conditionally REQUIRED | Non-negative Integer | REQUIRED if `reservation_price_per_min` or `reservation_price_flat_rate` are defined. Maximum time in minutes that a vehicle can be reserved before a rental begins. When a vehicle is reserved by a user, the vehicle remains locked until the rental begins. During this time the vehicle is unavailable and cannot be reserved or rented by other users. The vehicle status in `vehicle_status.json` MUST be set to `is_reserved = true`. If the value of `default_reserve_time` elapses without a rental beginning, the vehicle status MUST change to `is_reserved = false`. If `default_reserve_time` is set to `0`, the vehicle type cannot be reserved. 
 `vehicle_types[].return_constraint`<br/>*(as of v2.3)*| OPTIONAL | Enum | The conditions for returning the vehicle at the end of the rental. <br /><br />Current valid values are:<br /><ul><li>`free_floating` _(The vehicle can be returned anywhere permitted within the service area. Note that the vehicle is subject to rules in `geofencing_zones.json` if defined.)_</li><li>`roundtrip_station` _(The vehicle has to be returned to the same station from which it was initially rented. Note that a specific station can be assigned to the vehicle in `vehicle_status.json` using `home_station`.)_</li><li>`any_station` _(The vehicle has to be returned to any station within the service area.)_</li><li>`hybrid` (The vehicle can be returned to any station, or anywhere else permitted within the service area. Note that the vehicle is subject to rules in `geofencing_zones.json` if defined.)</li>
+`vehicle_types[].min_age`<br/>*(added in v3.1-RC3)*| OPTIONAL | Non-negative Integer | Minimum age required to use this vehicle.
 `vehicle_types[].vehicle_assets`<br/>*(added in v2.3)*| OPTIONAL | Object | Object containing the branding information for this vehicle type.
 `vehicle_types[].vehicle_assets.icon_url`<br/>*(added in v2.3)*| REQUIRED | URL | A fully qualified URL pointing to the location of a graphic icon file that MAY be used to represent this vehicle type on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
 `vehicle_types[].vehicle_assets.icon_url_dark`<br/>*(added in v2.3)*| OPTIONAL | URL | A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type when in dark mode on maps and in other applications. File MUST be in SVG V1.1 format and MUST be either square or round.
@@ -570,7 +653,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "vehicle_types": [
       {
@@ -586,6 +669,7 @@ Field Name | REQUIRED | Type | Defines
         "wheel_count": 2,
         "default_reserve_time": 30,
         "return_constraint": "any_station",
+        "min_age": 14,
         "vehicle_assets": {
           "icon_url": "https://www.example.com/assets/icon_bicycle.svg",
           "icon_url_dark": "https://www.example.com/assets/icon_bicycle_dark.svg",
@@ -617,6 +701,7 @@ Field Name | REQUIRED | Type | Defines
         "wheel_count": 3,
         "default_reserve_time": 30,
         "return_constraint": "roundtrip_station",
+        "min_age": 16,
         "vehicle_assets": {
           "icon_url": "https://www.example.com/assets/icon_cargobicycle.svg",
           "icon_url_dark": "https://www.example.com/assets/icon_cargobicycle_dark.svg",
@@ -645,6 +730,7 @@ Field Name | REQUIRED | Type | Defines
         "default_reserve_time": 30,
         "max_range_meters": 12345,
         "return_constraint": "free_floating",
+        "min_age": 18,
         "vehicle_assets": {
           "icon_url": "https://www.example.com/assets/icon_escooter.svg",
           "icon_url_dark": "https://www.example.com/assets/icon_escooter_dark.svg",
@@ -678,6 +764,7 @@ Field Name | REQUIRED | Type | Defines
         "default_reserve_time": 0,
         "max_range_meters": 523992,
         "return_constraint": "roundtrip_station",
+        "min_age": 18,
         "vehicle_accessories": [
           "doors_4",
           "automatic",
@@ -726,6 +813,7 @@ Field Name | REQUIRED | Type | Defines
 `stations[].cross_street` | OPTIONAL | String | Cross street or landmark where the station is located.
 `stations[].region_id` | OPTIONAL | ID | Identifier of the region where station is located. See [system_regions.json](#system_regionsjson).
 `stations[].post_code` | OPTIONAL | String | Postal code where station is located.
+`stations[].city` <br/>*(added in v3.1-RC2)* | OPTIONAL | String | City where station is located.
 `stations[].station_opening_hours` <br/>*(added in v3.0)* | OPTIONAL | String | Hours of operation for the station in [OSM opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) format. If `station_opening_hours` is defined it overrides any `opening_hours` defined in `system_information.json` for the station for which it is defined.
 `stations[].rental_methods` | OPTIONAL | Array&lt;String&gt; | Payment methods accepted at this station. <br /> Current valid values are:<br /> <ul><li>`key` (operator issued vehicle key / fob / card)</li><li>`creditcard`</li><li>`paypass`</li><li>`applepay`</li><li>`androidpay`</li><li>`transitcard`</li><li>`accountnumber`</li><li>`phone`</li></ul>
 `stations[].is_virtual_station` <br/>*(added in v2.1)* | OPTIONAL | Boolean | Is this station a location with or without smart dock technology? <br /><br /> `true` - The station is a location without smart docking infrastructure.<br /><br /> `false` - The station consists of smart docking infrastructure (docks). <br /><br /> This field SHOULD be published by mobility systems that have station locations without standard, internet connected physical docking infrastructure. These may be racks or geofenced areas designated for rental and/or return of vehicles. Locations that fit within this description SHOULD have the `is_virtual_station` boolean set to `true`.
@@ -753,7 +841,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "stations": [
       {
@@ -789,7 +877,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "stations": [
       {
@@ -802,6 +890,7 @@ Field Name | REQUIRED | Type | Defines
         ],
         "lat": 45.516445,
         "lon": -122.655775,
+        "city": "Portland, OR",
         "is_valet_station": false,
         "is_virtual_station": true,
         "is_charging_station": false,
@@ -881,7 +970,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "stations": [
       {
@@ -984,7 +1073,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data":{
     "vehicles":[
       {
@@ -1022,7 +1111,7 @@ Field Name | REQUIRED | Type | Defines
  {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data":{
     "vehicles":[
       {
@@ -1085,7 +1174,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "vehicles": [
       {
@@ -1145,7 +1234,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "regions": [
       {
@@ -1201,6 +1290,8 @@ Field Name | REQUIRED | Type | Defines
 `plans[].name` <br/>*(as of v3.0)* | REQUIRED | Array&lt;Localized String&gt; | Name of this pricing plan.
 `plans[].currency` | REQUIRED | String | Currency used to pay the fare. <br /><br /> This pricing is in ISO 4217 code: http://en.wikipedia.org/wiki/ISO_4217 <br />(for example, `CAD` for Canadian dollars, `EUR` for euros, or `JPY` for Japanese yen.)
 `plans[].price` | REQUIRED | Non-Negative Float | Fare price, in the unit specified by `currency`. <br/>*(added in v2.2)* In case of non-rate price, this field is the total price. In case of rate price, this field is the base price that is charged only once per trip (typically the price for unlocking) in addition to `per_km_pricing` and/or `per_min_pricing`.
+`plans[].reservation_price_per_min` <br/>*(added in v3.1-RC)* | OPTIONAL | Non-Negative Float | The cost, described as per minute rate, to reserve the vehicle prior to beginning a rental. This amount is charged for each minute of the vehicle reservation until the rental is initiated, or until the number of minutes defined in `vehicle_types.json#default_reserve_time` elapses, whichever comes first. When using this field, you MUST declare a value in `vehicle_types.json#default_reserve_time`. This field MUST NOT be combined in a single pricing plan with `reservation_price_flat_rate`.
+`plans[].reservation_price_flat_rate` <br/>*(added in v3.1-RC)* | OPTIONAL | Non-Negative Float | The cost, described as a flat rate, to reserve the vehicle prior to beginning a rental. This amount is charged once to reserve the vehicle for the duration of the time defined by `vehicle_types.json#default_reserve_time`. When using this field, you MUST declare a value in `vehicle_types.json#default_reserve_time`. This field MUST NOT be combined in a single pricing plan with `reservation_price_per_min`.
 `plans[].is_taxable` | REQUIRED | Boolean | Will additional tax be added to the base price?<br /><br />`true` - Yes.<br />  `false` - No.  <br /><br />`false` MAY be used to indicate that tax is not charged or that tax is included in the base price.
 `plans[].description` <br/>*(as of v3.0)* | REQUIRED | Array&lt;Localized String&gt; | Customer-readable description of the pricing plan. This SHOULD include the duration, price, conditions, etc. that the publisher would like users to see.
 `plans[].per_km_pricing` <br/>*(added in v2.2)* | OPTIONAL | Array&lt;Object&gt; | Array of segments when the price is a function of distance traveled, displayed in kilometers.<br /><br />Total cost is the addition of `price` and all segments in `per_km_pricing` and `per_min_pricing`. If this array is not provided, there are no variable costs based on distance.
@@ -1214,16 +1305,20 @@ Field Name | REQUIRED | Type | Defines
 `plans[].per_min_pricing[].interval` <br/>*(added in v2.2)* | REQUIRED | Non-Negative Integer | Interval in minutes at which the `rate` of this segment is either reapplied indefinitely, or up until (but not including) the `end` minute, if `end` is defined.<br /><br />An interval of 0 indicates the rate is only charged once.
 `plans[].per_min_pricing[].end` <br/>*(added in v2.2)* | OPTIONAL | Non-Negative Integer | The minute at which the rate will no longer apply  *(exclusive)* for example, if `end` is `20` the rate no longer applies after 19:59.<br /><br />If this field is empty, the price issued for this segment is charged until the trip ends, in addition to the cost of any subsequent segments.
 `plans[].surge_pricing` <br/>*(added in v2.2)* | OPTIONAL | Boolean | Is there currently an increase in price in response to increased demand in this pricing plan? If this field is empty, it means there is no surge pricing in effect.<br /><br />`true` - Surge pricing is in effect.<br />  `false` - Surge pricing is not in effect.
+`plans[].fare_capping` <br/>*(added in v3.1-RC2)* | OPTIONAL | Object | Object defining a capped fare once a price threshold has been spent within a timeframe. The same fare cap applies to each subsequent timeframe. For example, a fare capped at 15.00 CAD per 12-hour period.
+`plans[].fare_capping.duration` <br/>*(added in v3.1-RC2)* | REQUIRED | Non-Negative Integer | Amount of time in minutes during which the fare is capped.
+`plans[].fare_capping.price` <br/>*(added in v3.1-RC2)* | REQUIRED | Non-Negative Float | The maximum fare threshold for the current timeframe, in the unit specified by `currency`.
+`plans[].max_rental_duration` <br/>*(added in v3.2-RC)* | OPTIONAL | Non-Negative Integer | Maximum amount of time in minutes for which a vehicle can be rented.
 
 **Example 1:**
 
-This example demonstrates a pricing scheme where the fare is calculated per x minutes and then per minute. The user is charged $2 for the first half-hour (base price). For the second half-hour, the user is charged $3 more. Beyond one hour, the user is charged $0.10 more per min.
+This example demonstrates a pricing scheme where the fare is calculated per x minutes and then per minute. The user is charged $2 for the first half-hour (base price). For the second half-hour, the user is charged $3 more. Beyond one hour, the user is charged $0.10 more per min. The maximum rental duration is 2 hours.
 
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "plans": [
       {
@@ -1236,6 +1331,7 @@ This example demonstrates a pricing scheme where the fare is calculated per x mi
         ],
         "currency": "USD",
         "price": 2.00,
+        "reservation_price_per_min": 0.15,
         "is_taxable": false,
         "description": [
           {
@@ -1255,7 +1351,8 @@ This example demonstrates a pricing scheme where the fare is calculated per x mi
             "rate": 0.10,
             "interval": 1
           }
-        ]
+        ],
+        "max_rental_duration": 120
       }
     ]
   }
@@ -1264,13 +1361,13 @@ This example demonstrates a pricing scheme where the fare is calculated per x mi
 
 **Example 2:**
 
-This example demonstrates a pricing scheme that has a rate both by minute and by km. The user is charged $0.25 per km as well as $0.50 per minute. Both of these rates happen concurrently and are not dependent on one another.
+This example demonstrates a pricing scheme that has a rate both by minute and by km. The user is charged $0.25 per km as well as $0.50 per minute. Both of these rates happen concurrently and are not dependent on one another. The fare is capped at 15.00 CAD per 12-hour period (720 minutes).
 
 ```json
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "plans": [
       {
@@ -1286,7 +1383,7 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
         "is_taxable": true,
         "description": [
           {
-            "text": "$3 unlock fee, $0.25 per kilometer and 0.50 per minute.",
+            "text": "$3 unlock fee, $0.25 per kilometer and 0.50 per minute, capped at $15 per 12-hour period.",
             "language": "en"
           }
         ],
@@ -1303,7 +1400,11 @@ This example demonstrates a pricing scheme that has a rate both by minute and by
             "rate": 0.50,
             "interval": 1
           }
-        ]
+        ],
+        "fare_capping": {
+          "duration": 720,
+          "price": 15.00
+        }
       }
     ]
   }
@@ -1336,7 +1437,7 @@ Field Name | REQUIRED | Type | Defines
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 60,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "alerts": [
       {
@@ -1433,7 +1534,7 @@ See examples below.
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "geofencing_zones": {
       "type": "FeatureCollection",
@@ -1695,7 +1796,7 @@ Other supported parameters include:
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "name": [
       {
@@ -1726,7 +1827,7 @@ Other supported parameters include:
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "stations": [
       {
@@ -1759,7 +1860,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "name": [
       {
@@ -1790,7 +1891,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "stations": [
       {
@@ -1821,7 +1922,7 @@ Note that the Android URI and iOS Universal Link URLs do not necessarily use the
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 300,
-  "version": "3.1",
+  "version": "3.2-RC",
   "data": {
     "stations": [
       {
