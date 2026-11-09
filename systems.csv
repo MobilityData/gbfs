@@ -325,6 +325,7 @@ DE,TeilAuto Neckar-Alb,Neckar-Alb,teilauto_neckar-alb,https://www.teilauto-necka
 DE,TeilAuto Schwäbisch Hall,Schwäbisch Hall,teilauto_schwaebisch_hall,https://www.teilauto-hall.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_schwaebisch_hall/gbfs,2.3 ; 3.0,,,
 DE,UsedomRad,Usedom,nextbike_ur,https://usedomrad.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ur/gbfs.json,2.3,,,
 DE,VAG_Rad,Nuremberg,nextbike_dv,https://www.vagrad.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dv/gbfs.json,2.3,,,
+DE,VCD Carsharing Aschaffenburg,Aschaffenburg,moqo_team_277065271,https://vcd-carsharing.de/,https://portal.moqo.de/api/data_sharing/7nFoN9f8iX1yFHR4oQa5omHk/gbfs,3.0,,,
 DE,Veloleo,Braunschweig,nextbike_dn,https://www.nextbike.de/veloleo/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_dn/gbfs.json,2.3,,,
 DE,Voi,Germany,voi_de,https://www.voi.com/,https://api.mobidata-bw.de/sharing/gbfs/v3/voi_de/gbfs,2.3 ; 3.0,,,
 DE,VRNnextbike,Rhine-Neckar,nextbike_vn,https://www.vrnnextbike.de/,https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_vn/gbfs.json,2.3,,,
