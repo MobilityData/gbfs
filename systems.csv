@@ -320,6 +320,7 @@ DE,Stadtwerk Tauberfranken,Germany,stadtwerk_tauberfranken,https://stadtwerk-tau
 DE,Stella,Stuttgart,stella,https://www.stella-sharing.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/stella/gbfs,3.0,,,
 DE,swabi - augsburg,Augsburg,swabi,https://swabi.eu/,https://gbfs.partners.fifteen.eu/gbfs/2.2/swabi/en/gbfs.json,2.2,,,
 DE,swu2go Carsharing,Ulm,swu2go,https://www.swu.de/privatkunden/produkte-leistungen/mobilitaet/swu2go,https://ixsi.swu.de/gbfs.json,2.0,,,
+DE,Szabo Mobility,Wertheim,szabo_mobility,https://www.szabo.de/carsharing-privat,https://api.mobidata-bw.de/sharing/gbfs/v3/szabo_mobility/gbfs,2.3 ; 3.0,,,
 DE,TeilAuto Biberach,Biberach,teilauto_biberach,https://www.teilauto-biberach.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_biberach/gbfs,2.3 ; 3.0,,,
 DE,TeilAuto Neckar-Alb,Neckar-Alb,teilauto_neckar-alb,https://www.teilauto-neckar-alb.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_neckar-alb/gbfs,2.3 ; 3.0,,,
 DE,TeilAuto Schwäbisch Hall,Schwäbisch Hall,teilauto_schwaebisch_hall,https://www.teilauto-hall.de/,https://api.mobidata-bw.de/sharing/gbfs/v3/teilauto_schwaebisch_hall/gbfs,2.3 ; 3.0,,,
