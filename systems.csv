@@ -532,6 +532,7 @@ FR,Cyclolibre,Carcassonne,cyclolibre,https://cyclolibre.ecovelo.mobi,https://api
 FR,Cyclovis,Soissons,cyclovis,https://cyclovis.ecovelo.mobi,https://api.gbfs.v3.0.ecovelo.mobi/cyclovis/gbfs.json,2.2 ; 3.0,,,
 FR,Donkey Republic Valenciennes,Valenciennes,valenciennes,https://www.donkey.bike/cities/bike-rental-valenciennes/,https://stables.donkey.bike/api/public/gbfs/3.0/valenciennes/gbfs.json,1.0 ; 2.3 ; 3.0,,,
 FR,Dott Bordeaux,Bordeaux,dott-bordeaux,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/bordeaux/gbfs.json,2.3,,,
+FR,Dott Bourgoin-Jallieu,Bourgoin-Jallieu,dott-bourgoin-jallieu,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/bourgoin-jallieu/gbfs.json,2.3,,,
 FR,Dott Lyon,Lyon,dott-lyon,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/lyon/gbfs.json,2.3,,,
 FR,Dott Ol-Vallee,Ol-Vallee,dott-ol-vallee,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/ol-vallee/gbfs.json,2.3,,,
 FR,Dott Paris,Paris,dott-paris,https://ridedott.com,https://gbfs.api.ridedott.com/public/v2/paris/gbfs.json,2.3,,,
