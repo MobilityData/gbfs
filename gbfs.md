@@ -502,7 +502,7 @@ Field Name | REQUIRED | Type | Defines
 `name` <br/>*(as of v3.0)* | REQUIRED | Array&lt;Localized String&gt; | Name of the system to be displayed to customers.
 `opening_hours` <br/>*(added in v3.0)*| REQUIRED | String | Hours and dates of operation for the system in [OSM opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) format. *(added in v3.0)*
 `short_name` *(as of v3.0)* | OPTIONAL | Array&lt;Localized String&gt; | Abbreviation for a system.
-`operator` <br/>*(as of v3.0)* | OPTIONAL | Array&lt;Localized String&gt; | Name of the system operator.
+`operator` <br/>*(as of v3.0)* | REQUIRED | Array&lt;Localized String&gt; | Name of the system operator.
 `url` | OPTIONAL | URL | The URL of the vehicle share system.
 `purchase_url` | OPTIONAL | URL | URL where a customer can purchase a membership.
 `start_date` | OPTIONAL | Date | Date that the system began operations.
