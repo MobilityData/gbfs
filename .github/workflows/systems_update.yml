@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Load secrets from 1Password
         id: onepw_secrets
-        uses: 1password/load-secrets-action@v2.0.0
+        uses: 1password/load-secrets-action@v5.0.1
         with:
           export-env: true
         env:
@@ -22,7 +22,7 @@ jobs:
           CREDENTIALS: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/ifkeehu5gzi7wy5ub5qvwkaire/credential"
 
       - name: Send a notification to the mobility-feed-api
-        uses: peter-evans/repository-dispatch@v2
+        uses: peter-evans/repository-dispatch@v4.0.1
         with:
           token: ${{ env.CREDENTIALS }}
           repository: MobilityData/mobility-feed-api
